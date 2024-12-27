@@ -1,0 +1,123 @@
+html {}
+
+body {
+    font-family: Roboto;
+}
+
+#characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 10px;
+}
+#characters * {
+    transition: 0.3s;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1.5px solid #6D687550;
+    padding: 10px;
+    border-radius: 10px;
+    background: #6D687511;
+}
+.char_img {
+    
+width: 180px;
+    
+height: 180px;
+    
+margin-bottom: 10px;
+}.char_img img {
+    
+width: 100%;
+    
+height: 100%;
+    
+object-fit: contain;
+}
+.char_name {
+
+font-size: 18px;
+
+font-weight: bold;
+
+display: none;
+}
+
+.liked_gifts,
+.loved_gifts {
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-around;
+}
+
+.liked_gifts {
+    /* margin-top: 20px; */
+}
+.giftset {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.gift {}
+ 
+.gift input {
+
+    display: none;
+}
+
+.gift input:checked + label {
+   opacity: 0.5;
+  }
+
+.gift label {
+
+    display: flex;
+
+    width: 50px;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.gift img {
+
+width: 50px;
+
+height: 50px;
+
+/* width: 100%; */
+
+cursor: pointer;
+
+object-fit: contain;
+}
+
+.gift img:hover {
+    transform: scale(1.1);
+}
+
+.gift .name {
+
+    width: 100%;
+
+    font-size: 10px;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+
+    display: none;
+}
