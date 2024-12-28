@@ -31,7 +31,7 @@ $(function () {
 
 
         objCharacter['loved'].forEach(function (objGift, j) {
-            $divLoved.append(`<div class="gift" title="${objGift['source']}">
+            $divLoved.append(`<div class="gift" title="${objGift['giftname']} - ${objGift['source']}">
                 <input class="gift_chb" ${setCheckboxes.has(i + '_lo' + j) ? 'checked' : ''} type="checkbox" id="${i}_lo${j}" name="gifts" value="${i}_lo${j}">
                 <label for="${i}_lo${j}">
                     <img src="images/items/${objGift['imagename']}">
