@@ -4,16 +4,138 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <base target="_blank">
+    <meta name="theme-color" content="#ffffff">
+    <title>Fields of Mistria gift guide</title>
+    <meta name="description" content="Interactive visual gift guide for Fields of Mistria">
+    <meta name="keywords" content="Fields of Mistria, gift guide, visual, interactive, gifting, marriage, hearts, romance, Celine, March, Juniper, Adeline">
+    <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
+
     <link rel="stylesheet" href="style.css?v=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/tippy-bundle.umd.min.js"></script>
+    <script type="text/javascript" src="js/jquery.highlight-5.js"></script>
+
     <script type="text/javascript" src="json.js"></script>
     <script type="text/javascript" src="script.js?v=1"></script>
 </head>
 
 <body>
 
-    <div id="characters"></div>
+    <div id="page">
+        <div id="triangle">
+            <a href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US"><img src="images/items/Rose_tea.png"></a>
+        </div>
+        <div id="side_menu">
+            <div id="filter_content">
 
+                <input id="search_items" type="text" placeholder="Search items, characters..">
+
+                <div id="checkbox_filter" class="collapsed">
+                    <div id="checkbox_filter_items"></div>
+
+                    <label id="checkbox_filter_collapse" class="mode_chbexpand">
+                        <input type='checkbox' id="mode_chbexpand"></input>
+                        <div id="filter_show">Show more
+                            <svg fill="none" height="15" viewBox="0 0 15 15" width="15"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M4.18179 6.18181C4.35753 6.00608 4.64245 6.00608 4.81819 6.18181L7.49999 8.86362L10.1818 6.18181C10.3575 6.00608 10.6424 6.00608 10.8182 6.18181C10.9939 6.35755 10.9939 6.64247 10.8182 6.81821L7.81819 9.81821C7.73379 9.9026 7.61934 9.95001 7.49999 9.95001C7.38064 9.95001 7.26618 9.9026 7.18179 9.81821L4.18179 6.81821C4.00605 6.64247 4.00605 6.35755 4.18179 6.18181Z"
+                                    fill="currentColor" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div id="filter_collapse">Collapse
+                            <svg fill="none" height="15" viewBox="0 0 15 15" width="15"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M4.18179 8.81819C4.00605 8.64245 4.00605 8.35753 4.18179 8.18179L7.18179 5.18179C7.26618 5.0974 7.38064 5.04999 7.49999 5.04999C7.61933 5.04999 7.73379 5.0974 7.81819 5.18179L10.8182 8.18179C10.9939 8.35753 10.9939 8.64245 10.8182 8.81819C10.6424 8.99392 10.3575 8.99392 10.1818 8.81819L7.49999 6.13638L4.81819 8.81819C4.64245 8.99392 4.35753 8.99392 4.18179 8.81819Z"
+                                    fill="currentColor" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+
+                <div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_dark">
+                            <input type='checkbox' id="mode_dark"></input>
+                            <div class='toggler'>
+                                <div class='moon-icon'></div>
+                                <div class='sun-icon'></div>
+                            </div>
+                        </label>
+                        Dark mode
+                    </div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_name">
+                            <input type='checkbox' id="mode_name"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Show names
+                    </div>
+
+                    <div class="switch_wrap">
+                        <label class="switch mode_gift">
+                            <input type='checkbox' id="mode_gift"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Hide gifted items
+                        <svg id="older_browsers" class="feather feather-alert-triangle" fill="none" height="24"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                            <line x1="12" x2="12" y1="9" y2="13" />
+                            <line x1="12" x2="12.01" y1="17" y2="17" />
+                        </svg>
+
+                    </div>
+
+                </div>
+
+                <a id="owner" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1hoa4qm/visual_gift_guide/">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+                        <defs>
+                        </defs>
+                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                            <path
+                                d="M 74.298 90 H 15.702 C 7.03 90 0 82.97 0 74.298 V 15.702 C 0 7.03 7.03 0 15.702 0 h 58.596 C 82.97 0 90 7.03 90 15.702 v 58.596 C 90 82.97 82.97 90 74.298 90 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                            <path
+                                d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 s 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"
+                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                        </g>
+                    </svg>HozBlic</a>
+
+            </div>
+        </div>
+        <div id="content">
+            <div id="characters"></div>
+        </div>
+        <div id="header">
+            <label class="mode_expand side_menu_btn">
+                <input type='checkbox' id="mode_expand"></input>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
+                    </path>
+                </svg>
+
+            </label>
+
+            <div id="title">Fields of Mistria gift guide</div>
+
+        </div>
+    </div>
 </body>
 
 </html>
