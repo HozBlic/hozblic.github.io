@@ -46,6 +46,10 @@
     display: block;
 }
 
+#page:not(.mode_spoilers) .spoiler {
+    display: none;
+}
+
 #page.mode_gift .gift:has(input:checked) {
     display: none;
 }
@@ -103,15 +107,17 @@ body {
     padding-top: 50px;
 }
 
-#page.mode_expand #side_menu {
+#page:not(.mode_collapse) #side_menu {
     max-width: 260px;
     z-index: 2;
     min-width: 260px;
     overflow: unset;
 }
+
 #header #title {
-   transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
 }
+
 @media only screen and (min-width: 550px) {
 
     #side_menu {
@@ -120,13 +126,14 @@ body {
         overflow: hidden;
     }
 
-    #page.mode_expand #side_menu {
+    #page:not(.mode_collapse) #side_menu {
         max-width: 260px;
         min-width: unset;
     }
-    #page.mode_expand #header #title {
-   margin-left: 225px;
-}
+
+    #page:not(.mode_collapse) #header #title {
+        margin-left: 225px;
+    }
 }
 
 .side_menu_btn {
@@ -159,7 +166,7 @@ body {
     fill: var(--color-txt);
 }
 
-#page.mode_expand #header .side_menu_btn svg {
+#page:not(.mode_collapse) #header .side_menu_btn svg {
     transform: rotate(90deg);
     fill: var(--color-txt);
 }
@@ -186,14 +193,16 @@ body {
     overflow: hidden;
     max-height: 280px;
 }
+
 #checkbox_filter_items .spacing {
-    
-min-height: 7px;
+
+    min-height: 7px;
 }
 
 #checkbox_filter_collapse input {
     display: none;
 }
+
 #page.mode_chbexpand #checkbox_filter_items {
     max-height: unset;
 }
@@ -211,6 +220,7 @@ min-height: 7px;
 #page:not(.mode_chbexpand) #filter_show {
     display: flex;
 }
+
 #page.mode_chbexpand #filter_collapse {
     display: flex;
 }
@@ -303,6 +313,8 @@ min-height: 7px;
     font-size: 18px;
     font-weight: bold;
     display: none;
+    color: var(--color-txt);
+    text-decoration: unset;
 }
 
 .liked_gifts,
@@ -389,11 +401,31 @@ min-height: 7px;
     align-items: center;
 }
 
-.gift label img {
+.gift label .image {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    object-fit: contain;
+    background-size: contain;
+}
+
+.gift label .image.nodata {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(var(--color-btn), #00000000, #00000000) !important;
+    color: var(--color-txt);
+}
+
+.gift label .image.nodata:after {
+    content: "?";
+    display: block;
+    position: relative;
+    width: 10px;
+    /* height: 100%; */
+    line-height: 20px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .gift label img:hover {

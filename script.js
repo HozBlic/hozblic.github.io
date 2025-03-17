@@ -83,6 +83,39 @@ const arrObtainEasy = [
     "The Inn",
 ]
 
+const objCharOrder = {
+    "celine": 0,
+    "juniper": 1,
+    "reina": 2,
+    "valen": 3,
+    "adeline": 4,
+    "balor": 5,
+    "march": 6,
+    "hayden": 7,
+    "ryis": 8,
+    "eiland": 9,
+    "dell": 10,
+    "dozy": 11,
+    "elsie": 12,
+    "errol": 13,
+    "hemlock": 14,
+    "holt": 15,
+    "henrietta": 16,
+    "josephine": 17,
+    "landen": 18,
+    "luc": 19,
+    "maple": 20,
+    "nora": 21,
+    "olric": 22,
+    "terithia": 23,
+    "darcy": 24,
+    "louis": 25,
+    "merri": 26,
+    "vera": 27,
+    "caldarus": 28,
+    "seridia": 29
+}
+
 
 $('.gift').each(function () {
     var strObtainAll = $(this).attr('data-cbx');
@@ -91,7 +124,22 @@ $('.gift').each(function () {
     }
 });
 
-var arrCheckboxes = localStorage.getItem("mistria");
+//get rid of old checkbox system
+var arrOldCheckboxes = localStorage.getItem("mistria");
+if (arrOldCheckboxes !== null) {
+    arrOldCheckboxes = JSON.parse(arrOldCheckboxes);
+    var setOldCheckboxes = new Set(arrOldCheckboxes);
+    var setCheckboxes = new Set();
+
+    setOldCheckboxes.forEach(function (strID) {
+        setCheckboxes.add(objOldIDs[strID]);
+    });
+
+    localStorage.setItem("mistria_chb", JSON.stringify([...setCheckboxes]));
+    localStorage.removeItem("mistria");
+}
+
+var arrCheckboxes = localStorage.getItem("mistria_chb");
 if (arrCheckboxes === null) {
     var setCheckboxes = new Set();
 } else {
@@ -107,21 +155,21 @@ if (arrOptions === null) {
     var setOptions = new Set(arrOptions);
 }
 
-function createGiftItem(arrGifts, strAbbrv, $objParent, i) {
-    arrGifts.forEach(function (objGift, j) {
-        strID = i + '_' + strAbbrv + j;
-        strDataCbx = $($.parseHTML(objGift['source'])).text().trim();
+function createGiftItem(arrGifts, strCharacterKey, $objParent) {
+    arrGifts.forEach(function (strGiftKey) {
+        strID = strCharacterKey + '_' + strGiftKey;
+        strDataCbx = $($.parseHTML(objGifts[strGiftKey]['source'])).text().trim();
 
-        $objParent.append(`<div class="gift" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
+        $objParent.append(`<div class="gift ${objGifts[strGiftKey]['spoiler'] || objGifts[strGiftKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
                                 <input class="gift_chb" ${setCheckboxes.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="gifts" value="${strID}">
                                 <label for="${strID}" class="has_tip" id="label_${strID}">
-                                    <img src="images/items/${objGift['imagename']}">
-                                    <div class="name">${objGift['giftname']}</div>
+                                    <div class="image ${objGifts[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objGifts[strGiftKey]['imageName']})"></div>
+                                    <div class="name">${objGifts[strGiftKey]['giftName']}</div>
                                 </label>
                                 <div id="tip_${strID}" class="tip_wrap">
                                     <div class="tip">
-                                        <a target="_blank" href="${objGift['giftlink']}" class="tip_name">${objGift['giftname']}</a>
-                                        <div class="tip_info">${objGift['source']}</div>
+                                        <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objGifts[strGiftKey]['giftLink']}" class="tip_name">${objGifts[strGiftKey]['giftName']}</a>
+                                        <div class="tip_info"><div>${objGifts[strGiftKey]['source']}</div></div>
                                     </div>
                                 </div>
                             </div>`);
@@ -188,22 +236,33 @@ $(function () {
         });
     });
 
-    arrCharacterGifts.forEach(function (objCharacter, i) {
+    Object.entries(objCharacters).forEach(([strCharacterKey, objCharacter]) => {
         var $divCharacter = $("<div>", { "class": "character" });
 
+        if (objCharacter['spoiler']) {
+            $divCharacter.addClass('spoiler');
+        }
+
+        if(strCharacterKey in objCharOrder) {
+            $divCharacter.css('order', objCharOrder[strCharacterKey]);
+        }
+        else{
+            $divCharacter.css('order', 99);
+        }
+
         $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
-                                <div class="char_name">${objCharacter['name']}</div>`);
+                                <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">${objCharacter['name']}</a>`);
         $("#characters").append($divCharacter);
 
         var $divLoved = $("<div>", { "class": "loved_gifts" });
         $divLoved.append('<div class="giftset">Loved</div>');
         $divCharacter.append($divLoved);
-        createGiftItem(objCharacter['loved'], 'lo', $divLoved, i)
+        createGiftItem(objCharacter['loved'], strCharacterKey, $divLoved)
 
         var $divLiked = $("<div>", { "class": "liked_gifts" });
         $divLiked.append('<div class="giftset">Liked</div>');
         $divCharacter.append($divLiked);
-        createGiftItem(objCharacter['liked'], 'li', $divLiked, i)
+        createGiftItem(objCharacter['liked'], strCharacterKey, $divLiked)
     });
 
     $('.gift_chb:checkbox').change(function () {
@@ -212,16 +271,12 @@ $(function () {
         } else {
             setCheckboxes.delete($(this).val())
         }
-        localStorage.setItem("mistria", JSON.stringify([...setCheckboxes]));
+        localStorage.setItem("mistria_chb", JSON.stringify([...setCheckboxes]));
     });
 
-    setOptions.forEach(key => {
-        $(`#${key}`).prop("checked", true);
-        $("#page").addClass(key);
-    })
-
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_expand', 'mode_chbexpand'];
+    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers'];
     arrModes.forEach(function (strMode) {
+        $(`#${strMode}`).prop("checked", false);
         $(`#${strMode}`).change(function () {
             if ($(this).is(':checked')) {
                 $('#page').addClass(strMode);
@@ -231,9 +286,24 @@ $(function () {
                 setOptions.delete(strMode);
             }
             localStorage.setItem("mistria_options", JSON.stringify([...setOptions]));
+
+            if (strMode === 'mode_spoilers') {
+                $('#characters .character').each(function () {
+                    $(this).css('display', '');
+                    if (!$(this).find('.gift:visible').length) {
+                        $(this).hide()
+                    }
+                });
+            }
         });
+
+
     })
 
+    setOptions.forEach(key => {
+        $(`#${key}`).prop("checked", true);
+        $("#page").addClass(key);
+    })
 
     $("#search_items").on("keyup", function () {
         $('#characters').removeHighlight();

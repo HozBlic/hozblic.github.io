@@ -18,8 +18,10 @@
     <script type="text/javascript" src="js/tippy-bundle.umd.min.js"></script>
     <script type="text/javascript" src="js/jquery.highlight-5.js"></script>
 
-    <script type="text/javascript" src="json.js"></script>
-    <script type="text/javascript" src="script.js?v=2"></script>
+    <script type="text/javascript" src="gifts.json.js"></script>
+    <script type="text/javascript" src="oldIDs.json.js"></script>
+    <script type="text/javascript" src="characters.json.js"></script>
+    <script type="text/javascript" src="script.js?v=3"></script>
 </head>
 
 <body>
@@ -78,6 +80,15 @@
                     </div>
 
                     <div class="switch_wrap">
+                        <label class="switch mode_spoilers">
+                            <input type='checkbox' id="mode_spoilers"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Show spoilers
+                    </div>
+
+                    <div class="switch_wrap">
                         <label class="switch mode_gift">
                             <input type='checkbox' id="mode_gift"></input>
                             <div class='toggler'>
@@ -122,8 +133,8 @@
             <div id="characters"></div>
         </div>
         <div id="header">
-            <label class="mode_expand side_menu_btn">
-                <input type='checkbox' id="mode_expand"></input>
+            <label class="mode_collapse side_menu_btn">
+                <input type='checkbox' id="mode_collapse"></input>
                 <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path fill="#fff" fill-rule="evenodd"
                         d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
