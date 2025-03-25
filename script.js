@@ -337,6 +337,10 @@ $(function () {
 
     });
 
+    if($('#search_items').val() != '') {
+        $("#search_items").keyup();
+    }
+
     $('#characters .character').each(function () {
         if (!$(this).find('.gift:visible').length) {
             $(this).hide()
