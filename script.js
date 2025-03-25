@@ -163,13 +163,14 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
         $objParent.append(`<div class="gift ${objGifts[strGiftKey]['spoiler'] || objGifts[strGiftKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
                                 <input class="gift_chb" ${setCheckboxes.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="gifts" value="${strID}">
                                 <label for="${strID}" class="has_tip" id="label_${strID}">
-                                    <div class="image ${objGifts[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objGifts[strGiftKey]['imageName']})"></div>
+                                    <div class="image ${objGifts[strGiftKey]['imageName'] == '' && objGifts[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objGifts[strGiftKey]['imageName']})"></div>
                                     <div class="name">${objGifts[strGiftKey]['giftName']}</div>
                                 </label>
                                 <div id="tip_${strID}" class="tip_wrap">
                                     <div class="tip">
                                         <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objGifts[strGiftKey]['giftLink']}" class="tip_name">${objGifts[strGiftKey]['giftName']}</a>
                                         <div class="tip_info"><div>${objGifts[strGiftKey]['source']}</div></div>
+                                        ${objGifts[strGiftKey]['nodata'] ? 'No data available' : ''}
                                     </div>
                                 </div>
                             </div>`);

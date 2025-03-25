@@ -11085,7 +11085,7 @@ var objGifts =
         "source": ""
     },
     "monster_hoop": {
-        "imageName": "",
+        "imageName": "Monster_hoop.png",
         "giftName": "Monster Hoop",
         "giftLink": "",
         "source": "",
