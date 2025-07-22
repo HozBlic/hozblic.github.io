@@ -341,6 +341,7 @@ body {
     text-decoration: unset;
     gap: 5px;
     align-items: center;
+    height: 42px;
 }
 
 .liked_gifts,
