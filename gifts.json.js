@@ -1,4 +1,4 @@
-var objGifts  =
+var objGifts =
 {
     "treasure_box_wood": {
         "imageName": "",
@@ -27,7 +27,7 @@ var objGifts  =
     "seaweed": {
         "imageName": "Seaweed.png",
         "giftName": "Seaweed",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Seaweed",
+        "giftLink": "Seaweed",
         "source": "<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Diving_Only_Items\" title=\"Fish\">Diving</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki terithia.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_terithia.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Tackle_Shop#Forageables_Cooking_Ingredients\" title=\"Tackle Shop\">Tackle Shop</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>30t</span>\n"
     },
     "clam": {
@@ -39,7 +39,7 @@ var objGifts  =
     "newt": {
         "imageName": "Newt.png",
         "giftName": "Newt",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Newt",
+        "giftLink": "Newt",
         "source": "<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Diving_Only_Items\" title=\"Fish\">Diving</a></span>\n"
     },
     "pearl_clam": {
@@ -63,31 +63,31 @@ var objGifts  =
     "spirula_shell": {
         "imageName": "Spirula_shell.png",
         "giftName": "Spirula Shell",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spirula_Shell",
+        "giftLink": "Spirula_Shell",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> on <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Beach\" title=\"The Beach\">The Beach</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "sand_dollar": {
         "imageName": "Sand_dollar.png",
         "giftName": "Sand Dollar",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sand_Dollar",
+        "giftLink": "Sand_Dollar",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> on <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Beach\" title=\"The Beach\">The Beach</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "pink_scallop_shell": {
         "imageName": "Pink_scallop_shell.png",
         "giftName": "Pink Scallop Shell",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pink_Scallop_Shell",
+        "giftLink": "Pink_Scallop_Shell",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> on <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Beach\" title=\"The Beach\">The Beach</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>\n"
     },
     "blue_conch_shell": {
         "imageName": "Blue_conch_shell.png",
         "giftName": "Blue Conch Shell",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Blue_Conch_Shell",
+        "giftLink": "Blue_Conch_Shell",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> on <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Beach\" title=\"The Beach\">The Beach</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>\n"
     },
     "cod": {
         "imageName": "Cod.png",
         "giftName": "Cod",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cod",
+        "giftLink": "Cod",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Fish\" title=\"Fish\">Diving</a></span>\n"
     },
     "jellyfish": {
@@ -117,13 +117,13 @@ var objGifts  =
     "red_snapper": {
         "imageName": "Red_snapper.png",
         "giftName": "Red Snapper",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Red_Snapper",
+        "giftLink": "Red_Snapper",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "sardine": {
         "imageName": "Sardine.png",
         "giftName": "Sardine",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sardine",
+        "giftLink": "Sardine",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Fish\" title=\"Fish\">Diving</a></span>\n"
     },
     "sea_bream": {
@@ -147,7 +147,7 @@ var objGifts  =
     "tuna": {
         "imageName": "Tuna.png",
         "giftName": "Tuna",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tuna",
+        "giftLink": "Tuna",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "anchovy": {
@@ -165,7 +165,7 @@ var objGifts  =
     "mackerel": {
         "imageName": "Mackerel.png",
         "giftName": "Mackerel",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mackerel",
+        "giftLink": "Mackerel",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "ocean_sunfish": {
@@ -321,7 +321,7 @@ var objGifts  =
     "salmon": {
         "imageName": "Salmon.png",
         "giftName": "Salmon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Salmon",
+        "giftLink": "Salmon",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "smallmouth_bass": {
@@ -501,19 +501,19 @@ var objGifts  =
     "bullfrog": {
         "imageName": "Bullfrog.png",
         "giftName": "Bullfrog",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Bullfrog",
+        "giftLink": "Bullfrog",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Fish\" title=\"Fish\">Diving</a></span>\n"
     },
     "catfish": {
         "imageName": "Catfish.png",
         "giftName": "Catfish",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Catfish",
+        "giftLink": "Catfish",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "frog": {
         "imageName": "Frog.png",
         "giftName": "Frog",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Frog",
+        "giftLink": "Frog",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Fish\" title=\"Fish\">Diving</a></span>\n"
     },
     "koi": {
@@ -549,7 +549,7 @@ var objGifts  =
     "turtle": {
         "imageName": "Turtle.png",
         "giftName": "Turtle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Turtle",
+        "giftLink": "Turtle",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "angel_fish": {
@@ -711,37 +711,37 @@ var objGifts  =
     "miners_helmet": {
         "imageName": "Miners_helmet.png",
         "giftName": "Miner's Helmet",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Miner%27s_Helmet",
+        "giftLink": "Miner%27s_Helmet",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "upper_mines_mushroom": {
         "imageName": "Upper_mines_mushroom.png",
         "giftName": "Upper Mines Mushroom",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Upper_Mines_Mushroom",
+        "giftLink": "Upper_Mines_Mushroom",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">Upper Mines</a>\n"
     },
     "sweetroot": {
         "imageName": "Sweetroot.png",
         "giftName": "Sweetroot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sweetroot",
+        "giftLink": "Sweetroot",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span>\n"
     },
     "shadow_flower": {
         "imageName": "Shadow_flower.png",
         "giftName": "Shadow Flower",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Shadow_Flower",
+        "giftLink": "Shadow_Flower",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span>\n"
     },
     "narrows_moss": {
         "imageName": "Narrows_moss.png",
         "giftName": "Narrows Moss",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Narrows_Moss",
+        "giftLink": "Narrows_Moss",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span>\n"
     },
     "cave_shrimp": {
         "imageName": "Cave_shrimp.png",
         "giftName": "Cave Shrimp",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cave_Shrimp",
+        "giftLink": "Cave_Shrimp",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "rock_guppy": {
@@ -777,13 +777,13 @@ var objGifts  =
     "copper_beetle": {
         "imageName": "Copper_nugget_beetle.png",
         "giftName": "Copper Nugget Beetle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Copper_Nugget_Beetle",
+        "giftLink": "Copper_Nugget_Beetle",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "worm": {
         "imageName": "Worm.png",
         "giftName": "Worm",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Worm",
+        "giftLink": "Worm",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "mine_cricket": {
@@ -952,19 +952,19 @@ var objGifts  =
     "rock_statue": {
         "imageName": "Rock_statue.png",
         "giftName": "Rock Statue",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rock_Statue",
+        "giftLink": "Rock_Statue",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "crystal": {
         "imageName": "Crystal.png",
         "giftName": "Crystal",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crystal",
+        "giftLink": "Crystal",
         "source": "Destroying crystals in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">Deep Earth</a>\n"
     },
     "crystal_berries": {
         "imageName": "Crystal_berries.png",
         "giftName": "Crystal Berries",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crystal_Berries",
+        "giftLink": "Crystal_Berries",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">Deep Earth</a>\n"
     },
     "shale_grass": {
@@ -982,13 +982,13 @@ var objGifts  =
     "rockroot": {
         "imageName": "Rockroot.png",
         "giftName": "Rockroot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rockroot",
+        "giftLink": "Rockroot",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">Deep Earth</a>\n"
     },
     "crystal_rose": {
         "imageName": "Crystal_rose.png",
         "giftName": "Crystal Rose",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crystal_Rose",
+        "giftLink": "Crystal_Rose",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">Deep Earth</a>\n"
     },
     "pebble_minnow": {
@@ -1036,7 +1036,7 @@ var objGifts  =
     "crystalline_cricket": {
         "imageName": "Crystalline_cricket.png",
         "giftName": "Crystalline Cricket",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crystalline_Cricket",
+        "giftLink": "Crystalline_Cricket",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "gem_shard_caterpillar": {
@@ -1054,7 +1054,7 @@ var objGifts  =
     "stone_shell": {
         "imageName": "Stone_shell.png",
         "giftName": "Stone Shell",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Stone_Shell",
+        "giftLink": "Stone_Shell",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "starlight_coral": {
@@ -1084,13 +1084,13 @@ var objGifts  =
     "coral": {
         "imageName": "Coral.png",
         "giftName": "Coral",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Coral",
+        "giftLink": "Coral",
         "source": "Breaking objects in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">Tide Caverns</a>\n"
     },
     "underseaweed": {
         "imageName": "Underseaweed.png",
         "giftName": "Underseaweed",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Underseaweed",
+        "giftLink": "Underseaweed",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">Tide Caverns</a>\n"
     },
     "sea_grapes": {
@@ -1120,7 +1120,7 @@ var objGifts  =
     "sapphire_betta": {
         "imageName": "Sapphire_betta.png",
         "giftName": "Sapphire Betta",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sapphire_Betta",
+        "giftLink": "Sapphire_Betta",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "archerfish": {
@@ -1150,7 +1150,7 @@ var objGifts  =
     "sea_scarab": {
         "imageName": "Sea_scarab.png",
         "giftName": "Sea Scarab",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sea_Scarab",
+        "giftLink": "Sea_Scarab",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "waterfly": {
@@ -1168,7 +1168,7 @@ var objGifts  =
     "puddle_spider": {
         "imageName": "Puddle_spider.png",
         "giftName": "Puddle Spider",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Puddle_Spider",
+        "giftLink": "Puddle_Spider",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "coral_mantis": {
@@ -6486,19 +6486,19 @@ var objGifts  =
     "perfect_copper_ore": {
         "imageName": "Perfect_copper_ore.png",
         "giftName": "Perfect Copper Ore",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perfect_Copper_Ore",
+        "giftLink": "Perfect_Copper_Ore",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Ore\" title=\"Copper Ore\"><img alt=\"Copper t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Ore\" title=\"Copper Ore\">Copper Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>\n"
     },
     "perfect_iron_ore": {
         "imageName": "Perfect_iron_ore.png",
         "giftName": "Perfect Iron Ore",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perfect_Iron_Ore",
+        "giftLink": "Perfect_Iron_Ore",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Iron_Ore\" title=\"Iron Ore\"><img alt=\"Iron t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Iron_Ore\" title=\"Iron Ore\">Iron Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>\n"
     },
     "perfect_silver_ore": {
         "imageName": "Perfect_silver_ore.png",
         "giftName": "Perfect Silver Ore",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perfect_Silver_Ore",
+        "giftLink": "Perfect_Silver_Ore",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Ore\" title=\"Silver Ore\"><img alt=\"Silver t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Ore\" title=\"Silver Ore\">Silver Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "perfect_gold_ore": {
@@ -6517,19 +6517,19 @@ var objGifts  =
     "perfect_ruby": {
         "imageName": "Perfect_ruby.png",
         "giftName": "Perfect Ruby",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perfect_Ruby",
+        "giftLink": "Perfect_Ruby",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ruby\" title=\"Ruby\"><img alt=\"Ruby t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Ruby_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ruby\" title=\"Ruby\">Ruby Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>\n"
     },
     "perfect_sapphire": {
         "imageName": "Perfect_sapphire.png",
         "giftName": "Perfect Sapphire",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perfect_Sapphire",
+        "giftLink": "Perfect_Sapphire",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sapphire\" title=\"Sapphire\"><img alt=\"Sapphire t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Sapphire_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sapphire\" title=\"Sapphire\">Sapphire Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>\n"
     },
     "perfect_emerald": {
         "imageName": "Perfect_emerald.png",
         "giftName": "Perfect Emerald",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perfect_Emerald",
+        "giftLink": "Perfect_Emerald",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Emerald\" title=\"Emerald\"><img alt=\"Emerald t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Emerald_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Emerald\" title=\"Emerald\">Emerald Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "perfect_diamond": {
@@ -6548,7 +6548,7 @@ var objGifts  =
     "tiny_dinosaur_skeleton": {
         "imageName": "Tiny_dinosaur_skeleton.png",
         "giftName": "Tiny Dinosaur Skeleton",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tiny_Dinosaur_Skeleton",
+        "giftLink": "Tiny_Dinosaur_Skeleton",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "trilobite_fossil": {
@@ -6560,7 +6560,7 @@ var objGifts  =
     "meteorite": {
         "imageName": "Meteorite.png",
         "giftName": "Meteorite",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Meteorite",
+        "giftLink": "Meteorite",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "fossilized_egg": {
@@ -6572,7 +6572,7 @@ var objGifts  =
     "amber_trapped_insect": {
         "imageName": "Amber-trapped_insect.png",
         "giftName": "Amber Trapped Insect",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Amber_Trapped_Insect",
+        "giftLink": "Amber_Trapped_Insect",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "dragon_claw": {
@@ -6618,19 +6618,19 @@ var objGifts  =
     "ancient_gold_coin": {
         "imageName": "Ancient_gold_coin.png",
         "giftName": "Ancient Gold Coin",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ancient_Gold_Coin",
+        "giftLink": "Ancient_Gold_Coin",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "ancient_horn_circlet": {
         "imageName": "Ancient_horn_circlet.png",
         "giftName": "Ancient Horn Circlet",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ancient_Horn_Circlet",
+        "giftLink": "Ancient_Horn_Circlet",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "ancient_royal_scepter": {
         "imageName": "Ancient_royal_scepter.png",
         "giftName": "Ancient Royal Scepter",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ancient_Royal_Scepter",
+        "giftLink": "Ancient_Royal_Scepter",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "ancient_stone_lantern": {
@@ -6642,7 +6642,7 @@ var objGifts  =
     "alda_bronze_sword": {
         "imageName": "Alda_bronze_sword.png",
         "giftName": "Alda Bronze Sword",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Alda_Bronze_Sword",
+        "giftLink": "Alda_Bronze_Sword",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "alda_clay_pot": {
@@ -6654,13 +6654,13 @@ var objGifts  =
     "alda_feather_pendant": {
         "imageName": "Alda_feather_pendant.png",
         "giftName": "Alda Feather Pendant",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Alda_Feather_Pendant",
+        "giftLink": "Alda_Feather_Pendant",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "alda_gem_bracelet": {
         "imageName": "Alda_gem_bracelet.png",
         "giftName": "Alda Gem Bracelet",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Alda_Gem_Bracelet",
+        "giftLink": "Alda_Gem_Bracelet",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "alda_mural_tablet": {
@@ -6672,7 +6672,7 @@ var objGifts  =
     "statuette_of_caldarus": {
         "imageName": "Statuette_of_caldarus.png",
         "giftName": "Statuette of Caldarus",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Statuette_of_Caldarus",
+        "giftLink": "Statuette_of_Caldarus",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "caldosian_breastplate": {
@@ -6684,7 +6684,7 @@ var objGifts  =
     "caldosian_drinking_horn": {
         "imageName": "Caldosian_drinking_horn.png",
         "giftName": "Caldosian Drinking Horn",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Caldosian_Drinking_Horn",
+        "giftLink": "Caldosian_Drinking_Horn",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "caldosian_emperor_bust": {
@@ -6696,25 +6696,25 @@ var objGifts  =
     "caldosian_sword": {
         "imageName": "Caldosian_sword.png",
         "giftName": "Caldosian Sword",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Caldosian_Sword",
+        "giftLink": "Caldosian_Sword",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "lost_crown_of_aldaria": {
         "imageName": "Lost_crown_of_aldaria.png",
         "giftName": "Lost Crown of Aldaria",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lost_Crown_Of_Aldaria",
+        "giftLink": "Lost_Crown_Of_Aldaria",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "family_crest_pendant": {
         "imageName": "Family_crest_pendant.png",
         "giftName": "Family Crest Pendant",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Family_Crest_Pendant",
+        "giftLink": "Family_Crest_Pendant",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "aldarian_sword": {
         "imageName": "Aldarian_sword.png",
         "giftName": "Aldarian Sword",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Aldarian_Sword",
+        "giftLink": "Aldarian_Sword",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "aldarian_war_banner": {
@@ -6738,7 +6738,7 @@ var objGifts  =
     "weightless_stone": {
         "imageName": "Weightless_stone.png",
         "giftName": "Weightless Stone",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Weightless_Stone",
+        "giftLink": "Weightless_Stone",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "muttering_cube": {
@@ -6756,19 +6756,19 @@ var objGifts  =
     "black_tablet": {
         "imageName": "Black_tablet.png",
         "giftName": "Black Tablet",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Black_Tablet",
+        "giftLink": "Black_Tablet",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "rusted_treasure_chest": {
         "imageName": "Rusted_treasure_chest.png",
         "giftName": "Rusted Treasure Chest",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rusted_Treasure_Chest",
+        "giftLink": "Rusted_Treasure_Chest",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "rubber_fish": {
         "imageName": "Rubber_fish.png",
         "giftName": "Rubber Fish",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rubber_Fish",
+        "giftLink": "Rubber_Fish",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "water_sphere": {
@@ -6780,7 +6780,7 @@ var objGifts  =
     "giant_fish_scale": {
         "imageName": "Giant_fish_scale.png",
         "giftName": "Giant Fish Scale",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Giant_Fish_Scale",
+        "giftLink": "Giant_Fish_Scale",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>\n"
     },
     "coin_lump": {
@@ -6828,7 +6828,7 @@ var objGifts  =
     "stone_horse": {
         "imageName": "Stone_horse.png",
         "giftName": "Stone Horse",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Stone_Horse",
+        "giftLink": "Stone_Horse",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>\n"
     },
     "shortcut_scroll": {
@@ -7200,7 +7200,7 @@ var objGifts  =
     "red_toadstool": {
         "imageName": "Red_toadstool.png",
         "giftName": "Red Toadstool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Red_Toadstool",
+        "giftLink": "Red_Toadstool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Combat icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Combat_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mushroom_(Monster)\" title=\"Mushroom (Monster)\"><img alt=\"Mushroom red.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mushroom_red.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mushroom_(Monster)\" title=\"Mushroom (Monster)\">Red Mushroom</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>\n"
     },
     "wild_mushroom": {
@@ -7218,7 +7218,7 @@ var objGifts  =
     "monster_powder": {
         "imageName": "Monster_powder.png",
         "giftName": "Monster Powder",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Monster_Powder",
+        "giftLink": "Monster_Powder",
         "source": "<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mushroom_(Monster)\" title=\"Mushroom (Monster)\"><img alt=\"Mushroom red.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mushroom_red.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mushroom_(Monster)\" title=\"Mushroom (Monster)\">Any Mushroom</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\">The Mines</a></span>\n"
     },
     "purple_mushroom": {
@@ -7230,7 +7230,7 @@ var objGifts  =
     "monster_shell": {
         "imageName": "Monster_shell.png",
         "giftName": "Monster Shell",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Monster_Shell",
+        "giftLink": "Monster_Shell",
         "source": "<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Rockclod main.png\" decoding=\"async\" height=\"17\" loading=\"lazy\" src=\"images/tooltip/20px-Rockclod_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Any Rock Clod</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\">The Mines</a></span>\n"
     },
     "monster_core": {
@@ -7260,19 +7260,19 @@ var objGifts  =
     "blackberry_jam": {
         "imageName": "Blackberry_jam.png",
         "giftName": "Blackberry Jam",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Blackberry_Jam",
+        "giftLink": "Blackberry_Jam",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "blueberry_jam": {
         "imageName": "Blueberry_jam.png",
         "giftName": "Blueberry Jam",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Blueberry_Jam",
+        "giftLink": "Blueberry_Jam",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>\n"
     },
     "bread": {
         "imageName": "Bread.png",
         "giftName": "Bread",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Bread",
+        "giftLink": "Bread",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "noodles": {
@@ -7284,31 +7284,31 @@ var objGifts  =
     "rosehip_jam": {
         "imageName": "Rosehip_jam.png",
         "giftName": "Rose Hip Jam",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rosehip_Jam",
+        "giftLink": "Rosehip_Jam",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "wild_berry_jam": {
         "imageName": "Wild_berry_jam.png",
         "giftName": "Wild Berry Jam",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wild_Berry_Jam",
+        "giftLink": "Wild_Berry_Jam",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>\n"
     },
     "marmalade": {
         "imageName": "Marmalade.png",
         "giftName": "Marmalade",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Marmalade",
+        "giftLink": "Marmalade",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "canned_sardines": {
         "imageName": "Canned_sardines.png",
         "giftName": "Canned Sardines",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Canned_Sardines",
+        "giftLink": "Canned_Sardines",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "crunchy_chickpeas": {
         "imageName": "Crunchy_chickpeas.png",
         "giftName": "Crunchy Chickpeas",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crunchy_Chickpeas",
+        "giftLink": "Crunchy_Chickpeas",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>110t</span>\n"
     },
     "deviled_eggs": {
@@ -7320,79 +7320,79 @@ var objGifts  =
     "dried_squid": {
         "imageName": "Dried_squid.png",
         "giftName": "Dried Squid",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Dried_Squid",
+        "giftLink": "Dried_Squid",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "hard_boiled_egg": {
         "imageName": "Hard_boiled_egg.png",
         "giftName": "Hard Boiled Egg",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hard_Boiled_Egg",
+        "giftLink": "Hard_Boiled_Egg",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "pineshroom_toast": {
         "imageName": "Pineshroom_toast.png",
         "giftName": "Pineshroom Toast",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pineshroom_Toast",
+        "giftLink": "Pineshroom_Toast",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "roasted_chestnuts": {
         "imageName": "Roasted_chestnuts.png",
         "giftName": "Roasted Chestnuts",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Roasted_Chestnuts",
+        "giftLink": "Roasted_Chestnuts",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "spicy_cheddar_biscuit": {
         "imageName": "Spicy_cheddar_biscuit.png",
         "giftName": "Spicy Cheddar Biscuit",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spicy_Cheddar_Biscuit",
+        "giftLink": "Spicy_Cheddar_Biscuit",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>,<span class=\"no-wrap\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span> Wish</span>,<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Reina\" title=\"Reina\"><img alt=\"Reina icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Reina_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Reina\" title=\"Reina\">Reina</a></span>\n"
     },
     "spicy_water_chestnuts": {
         "imageName": "Spicy_water_chestnuts.png",
         "giftName": "Spicy Water Chestnuts",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spicy_Water_Chestnuts",
+        "giftLink": "Spicy_Water_Chestnuts",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "toasted_sunflower_seeds": {
         "imageName": "Toasted_sunflower_seeds.png",
         "giftName": "Toasted Sunflower Seeds",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Toasted_Sunflower_Seeds",
+        "giftLink": "Toasted_Sunflower_Seeds",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>220t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "trail_mix": {
         "imageName": "Trail_mix.png",
         "giftName": "Trail Mix",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Trail_Mix",
+        "giftLink": "Trail_Mix",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Luc's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Copper Beetle</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "water_chestnut_fritters": {
         "imageName": "Water_chestnut_fritters.png",
         "giftName": "Water Chestnut Fritters",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Water_Chestnut_Fritters",
+        "giftLink": "Water_Chestnut_Fritters",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "crispy_fried_earthshroom": {
         "imageName": "Crispy_fried_earthshroom.png",
         "giftName": "Crispy Fried Earthshroom",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crispy_Fried_Earthshroom",
+        "giftLink": "Crispy_Fried_Earthshroom",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "berry_bowl": {
         "imageName": "Berry_bowl.png",
         "giftName": "Berry Bowl",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Berry_Bowl",
+        "giftLink": "Berry_Bowl",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span> Wish</span>\n"
     },
     "beet_salad": {
         "imageName": "Beet_salad.png",
         "giftName": "Beet Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Beet_Salad",
+        "giftLink": "Beet_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "braised_carrots": {
         "imageName": "Braised_carrots.png",
         "giftName": "Braised Carrots",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Braised_Carrots",
+        "giftLink": "Braised_Carrots",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "broccoli_salad": {
@@ -7404,37 +7404,37 @@ var objGifts  =
     "cucumber_salad": {
         "imageName": "Cucumber_salad.png",
         "giftName": "Cucumber Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cucumber_Salad",
+        "giftLink": "Cucumber_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "grilled_corn": {
         "imageName": "Grilled_corn.png",
         "giftName": "Grilled Corn",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Grilled_Corn",
+        "giftLink": "Grilled_Corn",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>,<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "herb_salad": {
         "imageName": "Herb_salad.png",
         "giftName": "Herb Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Herb_Salad",
+        "giftLink": "Herb_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>600t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Valen's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Herbs</a></span>,<span class=\"no-wrap\">Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "sauteed_snow_peas": {
         "imageName": "Sauteed_snow_peas.png",
         "giftName": "Sauteed Snow Peas",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sauteed_Snow_Peas",
+        "giftLink": "Sauteed_Snow_Peas",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "sesame_broccoli": {
         "imageName": "Sesame_broccoli.png",
         "giftName": "Sesame Broccoli",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sesame_Broccoli",
+        "giftLink": "Sesame_Broccoli",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "sliced_turnip": {
         "imageName": "Sliced_turnip.png",
         "giftName": "Sliced Turnip",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sliced_Turnip",
+        "giftLink": "Sliced_Turnip",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>,<span class=\"no-wrap\">Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "buttered_peas": {
@@ -7446,73 +7446,73 @@ var objGifts  =
     "cabbage_slaw": {
         "imageName": "Cabbage_slaw.png",
         "giftName": "Cabbage Slaw",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cabbage_Slaw",
+        "giftLink": "Cabbage_Slaw",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>230t</span>,<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "spring_salad": {
         "imageName": "Spring_salad.png",
         "giftName": "Spring Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spring_Salad",
+        "giftLink": "Spring_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>\n"
     },
     "seaweed_salad": {
         "imageName": "Seaweed_salad.png",
         "giftName": "Seaweed Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Seaweed_Salad",
+        "giftLink": "Seaweed_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "summer_salad": {
         "imageName": "Summer_salad.png",
         "giftName": "Summer Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Summer_Salad",
+        "giftLink": "Summer_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon##Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon##Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "turnip_and_cabbage_salad": {
         "imageName": "Turnip_and_cabbage_salad.png",
         "giftName": "Turnip & Cabbage Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Turnip_and_Cabbage_Salad",
+        "giftLink": "Turnip_and_Cabbage_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "steamed_broccoli": {
         "imageName": "Steamed_broccoli.png",
         "giftName": "Steamed Broccoli",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Steamed_Broccoli",
+        "giftLink": "Steamed_Broccoli",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "tide_salad": {
         "imageName": "Tide_salad.png",
         "giftName": "Tide Salad",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tide_Salad",
+        "giftLink": "Tide_Salad",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "deep_sea_soup": {
         "imageName": "Deep_sea_soup.png",
         "giftName": "Deep Sea Soup",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Deep_Sea_Soup",
+        "giftLink": "Deep_Sea_Soup",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\"><img alt=\"Skill icon mining.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Skill_icon_mining.png\" width=\"20\"/></a> Treasure Chests in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>\n"
     },
     "fish_stew": {
         "imageName": "Fish_stew.png",
         "giftName": "Fish Stew",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fish_Stew",
+        "giftLink": "Fish_Stew",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon##Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon##Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "gazpacho": {
         "imageName": "Gazpacho.png",
         "giftName": "Gazpacho",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Gazpacho",
+        "giftLink": "Gazpacho",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>750t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Holt's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Tomatoes</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span><br/><span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "miners_mushroom_stew": {
         "imageName": "Miners_mushroom_stew.png",
         "giftName": "Miner's Mushroom Stew",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Miner%27s_Mushroom_Stew",
+        "giftLink": "Miner%27s_Mushroom_Stew",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "onion_soup": {
         "imageName": "Onion_soup.png",
         "giftName": "Onion Soup",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Onion_Soup",
+        "giftLink": "Onion_Soup",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "potato_soup": {
@@ -7524,109 +7524,109 @@ var objGifts  =
     "pumpkin_stew": {
         "imageName": "Pumpkin_stew.png",
         "giftName": "Pumpkin Stew",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pumpkin_Stew",
+        "giftLink": "Pumpkin_Stew",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "smoked_trout_soup": {
         "imageName": "Smoked_trout_soup.png",
         "giftName": "Smoked Trout Soup",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Smoked_Trout_Soup",
+        "giftLink": "Smoked_Trout_Soup",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "tomato_soup": {
         "imageName": "Tomato_soup.png",
         "giftName": "Tomato Soup",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tomato_Soup",
+        "giftLink": "Tomato_Soup",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "vegetable_soup": {
         "imageName": "Vegetable_soup.png",
         "giftName": "Vegetable Soup",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Vegetable_Soup",
+        "giftLink": "Vegetable_Soup",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>380t</span>\n"
     },
     "winter_stew": {
         "imageName": "Winter_stew.png",
         "giftName": "Winter Stew",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Winter_Stew",
+        "giftLink": "Winter_Stew",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "clam_chowder": {
         "imageName": "Clam_chowder.png",
         "giftName": "Clam Chowder",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Clam_Chowder",
+        "giftLink": "Clam_Chowder",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "baked_potato": {
         "imageName": "Baked_potato.png",
         "giftName": "Baked Potato",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Baked_Potato",
+        "giftLink": "Baked_Potato",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "baked_sweetroot": {
         "imageName": "Baked_sweetroot.png",
         "giftName": "Baked Sweetroot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Baked_Sweetroot",
+        "giftLink": "Baked_Sweetroot",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "braised_burdock": {
         "imageName": "Braised_burdock.png",
         "giftName": "Braised Burdock",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Braised_Burdock",
+        "giftLink": "Braised_Burdock",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "breaded_catfish": {
         "imageName": "Breaded_catfish.png",
         "giftName": "Breaded Catfish",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Breaded_Catfish",
+        "giftLink": "Breaded_Catfish",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>330t</span>\n"
     },
     "crayfish_etouffee": {
         "imageName": "Crayfish_etouffee.png",
         "giftName": "Crayfish Etouffee",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crayfish_Etouffee",
+        "giftLink": "Crayfish_Etouffee",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>320t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>320t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "chickpea_curry": {
         "imageName": "Chickpea_curry.png",
         "giftName": "Chickpea Curry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chickpea_Curry",
+        "giftLink": "Chickpea_Curry",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor\" title=\"Balor\"><img alt=\"Balor icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Balor_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor\" title=\"Balor\">Balor</a></span>\n"
     },
     "cauliflower_curry": {
         "imageName": "Cauliflower_curry.png",
         "giftName": "Cauliflower Curry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cauliflower_Curry",
+        "giftLink": "Cauliflower_Curry",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "deluxe_curry": {
         "imageName": "Deluxe_curry.png",
         "giftName": "Deluxe Curry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Deluxe_Curry",
+        "giftLink": "Deluxe_Curry",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>600t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>\n"
     },
     "fried_rice": {
         "imageName": "Fried_rice.png",
         "giftName": "Fried Rice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fried_Rice",
+        "giftLink": "Fried_Rice",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,200t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span> Wish</span>,<span class=\"no-wrap\">Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "jam_sandwich": {
         "imageName": "Jam_sandwich.png",
         "giftName": "Jam Sandwich",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Jam_Sandwich",
+        "giftLink": "Jam_Sandwich",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "loaded_baked_potato": {
         "imageName": "Loaded_baked_potato.png",
         "giftName": "Loaded Baked Potato",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Loaded_Baked_Potato",
+        "giftLink": "Loaded_Baked_Potato",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden\" title=\"Hayden\"><img alt=\"Hayden icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Hayden_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden\" title=\"Hayden\">Hayden</a></span>\n"
     },
     "mackerel_sashimi": {
         "imageName": "Mackerel_sashimi.png",
         "giftName": "Mackerel Sashimi",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mackerel_Sashimi",
+        "giftLink": "Mackerel_Sashimi",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "mushroom_rice": {
@@ -7638,25 +7638,25 @@ var objGifts  =
     "pan_fried_salmon": {
         "imageName": "Pan_fried_salmon.png",
         "giftName": "Pan-fried Salmon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pan-fried_Salmon",
+        "giftLink": "Pan-fried_Salmon",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "pan_fried_snapper": {
         "imageName": "Pan_fried_snapper.png",
         "giftName": "Pan-fried Snapper",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pan-fried_Snapper",
+        "giftLink": "Pan-fried_Snapper",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "quiche": {
         "imageName": "Quiche.png",
         "giftName": "Quiche",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Quiche",
+        "giftLink": "Quiche",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "red_snapper_sushi": {
         "imageName": "Red_snapper_sushi.png",
         "giftName": "Red Snapper Sushi",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Red_Snapper_Sushi",
+        "giftLink": "Red_Snapper_Sushi",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>250t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>250t</span>\n"
     },
     "riceball": {
@@ -7668,97 +7668,97 @@ var objGifts  =
     "roasted_cauliflower": {
         "imageName": "Roasted_cauliflower.png",
         "giftName": "Roasted Cauliflower",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Roasted_Cauliflower",
+        "giftLink": "Roasted_Cauliflower",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "roasted_sweet_potato": {
         "imageName": "Roasted_sweet_potato.png",
         "giftName": "Roasted Sweet Potato",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Roasted_Sweet_Potato",
+        "giftLink": "Roasted_Sweet_Potato",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "rosemary_garlic_noodles": {
         "imageName": "Rosemary_garlic_noodles.png",
         "giftName": "Rosemary Garlic Noodles",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rosemary_Garlic_Noodles",
+        "giftLink": "Rosemary_Garlic_Noodles",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Recipes\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Recipes\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>420t</span>\n"
     },
     "salmon_sashimi": {
         "imageName": "Salmon_sashimi.png",
         "giftName": "Salmon Sashimi",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Salmon_Sashimi",
+        "giftLink": "Salmon_Sashimi",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "simmered_daikon": {
         "imageName": "Simmered_daikon.png",
         "giftName": "Simmered Daikon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Simmered_Daikon",
+        "giftLink": "Simmered_Daikon",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "sushi_platter": {
         "imageName": "Sushi_platter.png",
         "giftName": "Sushi Platter",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sushi_Platter",
+        "giftLink": "Sushi_Platter",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,000t</span>\n"
     },
     "tuna_sashimi": {
         "imageName": "Tuna_sashimi.png",
         "giftName": "Tuna Sashimi",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tuna_Sashimi",
+        "giftLink": "Tuna_Sashimi",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "vegetable_quiche": {
         "imageName": "Vegetable_quiche.png",
         "giftName": "Vegetable Quiche",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Vegetable_Quiche",
+        "giftLink": "Vegetable_Quiche",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "apple_honey_curry": {
         "imageName": "Apple_honey_curry.png",
         "giftName": "Apple Honey Curry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Apple_Honey_Curry",
+        "giftLink": "Apple_Honey_Curry",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "chili_coconut_curry": {
         "imageName": "Chili_coconut_curry.png",
         "giftName": "Chili Coconut Curry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chili_Coconut_Curry",
+        "giftLink": "Chili_Coconut_Curry",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,600t</span>\n"
     },
     "beet_soup": {
         "imageName": "Beet_soup.png",
         "giftName": "Beet Soup",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Beet_Soup",
+        "giftLink": "Beet_Soup",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,500t</span>\n"
     },
     "harvest_plate": {
         "imageName": "Harvest_plate.png",
         "giftName": "Harvest Plate",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Harvest_Plate",
+        "giftLink": "Harvest_Plate",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "seafood_boil": {
         "imageName": "Seafood_boil.png",
         "giftName": "Seafood Boil",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Seafood_Boil",
+        "giftLink": "Seafood_Boil",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,000t</span>\n"
     },
     "seafood_snow_pea_noodles": {
         "imageName": "Seafood_snow_pea_noodles.png",
         "giftName": "Seafood Snow Pea Noodles",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Seafood_Snow_Pea_Noodles",
+        "giftLink": "Seafood_Snow_Pea_Noodles",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,500t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "spring_galette": {
         "imageName": "Spring_galette.png",
         "giftName": "Spring Galette",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spring_Galette",
+        "giftLink": "Spring_Galette",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,000t</span>,<span class=\"no-wrap\">Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "veggie_sub_sandwich": {
         "imageName": "Veggie_sub_sandwich.png",
         "giftName": "Veggie Sub Sandwich",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Veggie_Sub_Sandwich",
+        "giftLink": "Veggie_Sub_Sandwich",
         "source": "\n"
     },
     "cucumber_sandwich": {
@@ -7770,19 +7770,19 @@ var objGifts  =
     "crab_cakes": {
         "imageName": "Crab_cakes.png",
         "giftName": "Crab Cakes",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crab_Cakes",
+        "giftLink": "Crab_Cakes",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>\n"
     },
     "fish_tacos": {
         "imageName": "Fish_tacos.png",
         "giftName": "Fish Tacos",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fish_Tacos",
+        "giftLink": "Fish_Tacos",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "cod_with_thyme": {
         "imageName": "Cod_with_thyme.png",
         "giftName": "Cod with Thyme",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cod_with_Thyme",
+        "giftLink": "Cod_with_Thyme",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "incredibly_hot_pot": {
@@ -7794,97 +7794,97 @@ var objGifts  =
     "lobster_roll": {
         "imageName": "Lobster_roll.png",
         "giftName": "Lobster Roll",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lobster_Roll",
+        "giftLink": "Lobster_Roll",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon##Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon##Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,000t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>\n"
     },
     "mushroom_steak_dinner": {
         "imageName": "Mushroom_steak_dinner.png",
         "giftName": "Mushroom Steak Dinner",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mushroom_Steak_Dinner",
+        "giftLink": "Mushroom_Steak_Dinner",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>900t</span>,<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "perch_risotto": {
         "imageName": "Perch_risotto.png",
         "giftName": "Perch Risotto",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Perch_Risotto",
+        "giftLink": "Perch_Risotto",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "sea_bream_rice": {
         "imageName": "Sea_bream_rice.png",
         "giftName": "Sea Bream Rice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sea_Bream_Rice",
+        "giftLink": "Sea_Bream_Rice",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "vegetable_pot_pie": {
         "imageName": "Vegetable_pot_pie.png",
         "giftName": "Vegetable Pot Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Vegetable_Pot_Pie",
+        "giftLink": "Vegetable_Pot_Pie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "pizza": {
         "imageName": "Pizza.png",
         "giftName": "Pizza",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pizza",
+        "giftLink": "Pizza",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>450t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Juniper\" title=\"Juniper\"><img alt=\"Juniper icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Juniper_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Juniper\" title=\"Juniper\">Juniper</a></span>\n"
     },
     "grilled_eel_rice_bowl": {
         "imageName": "Grilled_eel_rice_bowl.png",
         "giftName": "Grilled Eel Rice Bowl",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Grilled_Eel_Rice_Bowl",
+        "giftLink": "Grilled_Eel_Rice_Bowl",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "sesame_tuna_bowl": {
         "imageName": "Sesame_tuna_bowl.png",
         "giftName": "Sesame Tuna Bowl",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sesame_Tuna_Bowl",
+        "giftLink": "Sesame_Tuna_Bowl",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "spicy_crab_sushi": {
         "imageName": "Spicy_crab_sushi.png",
         "giftName": "Spicy Crab Sushi",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spicy_Crab_Sushi",
+        "giftLink": "Spicy_Crab_Sushi",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>\n"
     },
     "garlic_bread": {
         "imageName": "Garlic_bread.png",
         "giftName": "Garlic Bread",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Garlic_Bread",
+        "giftLink": "Garlic_Bread",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "turnip_and_potato_gratin": {
         "imageName": "Turnip_and_potato_gratin.png",
         "giftName": "Turnip & Potato Gratin",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Turnip_and_Potato_Gratin",
+        "giftLink": "Turnip_and_Potato_Gratin",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>600t</span>,<span class=\"no-wrap\">Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <span class=\"no-wrap\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "grilled_cheese": {
         "imageName": "Grilled_cheese.png",
         "giftName": "Grilled Cheese",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Grilled_Cheese",
+        "giftLink": "Grilled_Cheese",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>800t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Luc's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for a Pond Skater</a></span>\n"
     },
     "fish_skewer": {
         "imageName": "Fish_skewer.png",
         "giftName": "Fish Skewers",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fish_Skewers",
+        "giftLink": "Fish_Skewers",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "pan_fried_bream": {
         "imageName": "Pan_fried_bream.png",
         "giftName": "Pan Fried Bream",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pan-fried_Bream",
+        "giftLink": "Pan-fried_Bream",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>\n"
     },
     "spicy_corn": {
         "imageName": "Spicy_corn.png",
         "giftName": "Spicy Corn",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Spicy_Corn",
+        "giftLink": "Spicy_Corn",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>340t</span>\n"
     },
     "horseradish_salmon": {
         "imageName": "Horseradish_salmon.png",
         "giftName": "Horseradish Salmon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Horseradish_Salmon",
+        "giftLink": "Horseradish_Salmon",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "herb_butter_pasta": {
@@ -7908,49 +7908,49 @@ var objGifts  =
     "berries_and_cream": {
         "imageName": "Berries_and_cream.png",
         "giftName": "Berries and Cream",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Berries_and_Cream",
+        "giftLink": "Berries_and_Cream",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "candied_lemon_peel": {
         "imageName": "Candied_lemon_peel.png",
         "giftName": "Candied Lemon Peel",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Candied_Lemon_Peel",
+        "giftLink": "Candied_Lemon_Peel",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>\n"
     },
     "candied_strawberries": {
         "imageName": "Candied_strawberries.png",
         "giftName": "Candied Strawberries",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Candied_Strawberries",
+        "giftLink": "Candied_Strawberries",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>250t</span>,<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "caramelized_moon_fruit": {
         "imageName": "Caramelized_moon_fruit.png",
         "giftName": "Caramelized Moon Fruit",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Caramelized_Moon_Fruit",
+        "giftLink": "Caramelized_Moon_Fruit",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "cherry_cobbler": {
         "imageName": "Cherry_cobbler.png",
         "giftName": "Cherry Cobbler",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cherry_Cobbler",
+        "giftLink": "Cherry_Cobbler",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span>  for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>\n"
     },
     "cherry_tart": {
         "imageName": "Cherry_tart.png",
         "giftName": "Cherry Tart",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cherry_Tart",
+        "giftLink": "Cherry_Tart",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\"><img alt=\"Quests heart icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\">Heart Quest</a> \"The Smell of Drying Ink\"</span>\n"
     },
     "peaches_and_cream": {
         "imageName": "Peaches_and_cream.png",
         "giftName": "Peaches and Cream",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Peaches_and_Cream",
+        "giftLink": "Peaches_and_Cream",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "caldosian_chocolate_cake": {
         "imageName": "Chocolate_cake.png",
         "giftName": "Chocolate Cake",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chocolate_Cake",
+        "giftLink": "Chocolate_Cake",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>650t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Eiland\" title=\"Eiland\"><img alt=\"Eiland icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Eiland_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Eiland\" title=\"Eiland\">Eiland</a></span>\n"
     },
     "crystal_berry_pie": {
@@ -7963,91 +7963,91 @@ var objGifts  =
     "sour_lemon_cake": {
         "imageName": "Lemon_cake.png",
         "giftName": "Lemon Cake",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lemon_Cake",
+        "giftLink": "Lemon_Cake",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>,<span class=\"no-wrap\">Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>\n"
     },
     "lemon_pie": {
         "imageName": "Lemon_pie.png",
         "giftName": "Lemon Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lemon_Pie",
+        "giftLink": "Lemon_Pie",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>650t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>650t</span>,<span class=\"no-wrap\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>650t</span>,<span class=\"no-wrap\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Adeline\" title=\"Adeline\"><img alt=\"Adeline icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Adeline_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Adeline\" title=\"Adeline\">Adeline</a></span>\n"
     },
     "pomegranate_sorbet": {
         "imageName": "Pomegranate_sorbet.png",
         "giftName": "Pomegranate Sorbet",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pomegranate_Sorbet",
+        "giftLink": "Pomegranate_Sorbet",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "pumpkin_pie": {
         "imageName": "Pumpkin_pie.png",
         "giftName": "Pumpkin Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pumpkin_Pie",
+        "giftLink": "Pumpkin_Pie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,000t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "strawberries_and_cream": {
         "imageName": "Strawberries_and_cream.png",
         "giftName": "Strawberries and Cream",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Strawberries_and_Cream",
+        "giftLink": "Strawberries_and_Cream",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>\n"
     },
     "strawberry_shortcake": {
         "imageName": "Strawberry_shortcake.png",
         "giftName": "Strawberry Shortcake",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Strawberry_Shortcake",
+        "giftLink": "Strawberry_Shortcake",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>600t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>600t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>600t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>\n"
     },
     "wildberry_pie": {
         "imageName": "Wild_berry_pie.png",
         "giftName": "Wild Berry Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wild_Berry_Pie",
+        "giftLink": "Wild_Berry_Pie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>330t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\"><img alt=\"Quests heart icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\">Heart Quest</a> \"Pie in the Sky\"</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span>,(requires <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\"><img alt=\"Quests heart icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\">Heart Quest</a> \"Pie in the Sky\"</span>) for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "wildberry_scone": {
         "imageName": "Wild_berry_scone.png",
         "giftName": "Wild Berry Scone",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wild_Berry_Scone",
+        "giftLink": "Wild_Berry_Scone",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>260t</span>\n"
     },
     "wintergreen_ice_cream": {
         "imageName": "Wintergreen_ice_cream.png",
         "giftName": "Wintergreen Ice Cream",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wintergreen_Ice_Cream",
+        "giftLink": "Wintergreen_Ice_Cream",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "golden_cookies": {
         "imageName": "Golden_cookies.png",
         "giftName": "Golden Cookies",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Cookies",
+        "giftLink": "Golden_Cookies",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span>\n"
     },
     "golden_cheesecake": {
         "imageName": "Golden_cheesecake.png",
         "giftName": "Golden Cheesecake",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Cheesecake",
+        "giftLink": "Golden_Cheesecake",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span> (2)\n"
     },
     "mont_blanc": {
         "imageName": "Mont_blanc.png",
         "giftName": "Mont Blanc",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mont_Blanc",
+        "giftLink": "Mont_Blanc",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>900t</span>\n"
     },
     "coconut_cream_pie": {
         "imageName": "Coconut_cream_pie.png",
         "giftName": "Coconut Cream Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Coconut_Cream_Pie",
+        "giftLink": "Coconut_Cream_Pie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Reina's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for a Deep Earthworm</a></span>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Ryis\" title=\"Ryis\"><img alt=\"Ryis icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Ryis_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ryis\" title=\"Ryis\">Ryis</a>' <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\"><img alt=\"Quests heart icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\">Heart Quest</a> \"A Bird House\"</span>\n"
     },
     "glowberry_cookies": {
         "imageName": "Glowberry_cookies.png",
         "giftName": "Glowberry Cookies",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Glowberry_Cookies",
+        "giftLink": "Glowberry_Cookies",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Ryis' <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Glowberries</a></span>\n"
     },
     "ice_cream_sundae": {
         "imageName": "Ice_cream_sundae.png",
         "giftName": "Ice Cream Sundae",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ice_Cream_Sundae",
+        "giftLink": "Ice_Cream_Sundae",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>1,200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Reina's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Milk</a></span>\n"
     },
     "spell_fruit_parfait": {
@@ -8060,61 +8060,61 @@ var objGifts  =
     "apple_pie": {
         "imageName": "Apple_pie.png",
         "giftName": "Apple Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Apple_Pie",
+        "giftLink": "Apple_Pie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span>  for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>\n"
     },
     "caramel_candy": {
         "imageName": "Caramel_candy.png",
         "giftName": "Caramel Candy",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Caramel_Candy",
+        "giftLink": "Caramel_Candy",
         "source": "<img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a>\n"
     },
     "pudding": {
         "imageName": "Pudding.png",
         "giftName": "Pudding",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pudding",
+        "giftLink": "Pudding",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>220t</span>,<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "sweet_sesame_balls": {
         "imageName": "Sweet_sesame_balls.png",
         "giftName": "Sweet Sesame Balls",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sweet_Sesame_Balls",
+        "giftLink": "Sweet_Sesame_Balls",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>\n"
     },
     "sweet_potato_pie": {
         "imageName": "Sweet_potato_pie.png",
         "giftName": "Sweet Potato Pie",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sweet_Potato_Pie",
+        "giftLink": "Sweet_Potato_Pie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Food\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>380t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "moon_fruit_cake": {
         "imageName": "Moon_fruit_cake.png",
         "giftName": "Moon Fruit Cake",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Moon_Fruit_Cake",
+        "giftLink": "Moon_Fruit_Cake",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "cranberry_orange_scone": {
         "imageName": "Cranberry_orange_scone.png",
         "giftName": "Cranberry Orange Scone",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cranberry_Orange_Scone",
+        "giftLink": "Cranberry_Orange_Scone",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>900t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "monster_cookie": {
         "imageName": "Monster_cookie.png",
         "giftName": "Monster Cookies",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Monster_Cookie",
+        "giftLink": "Monster_Cookie",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>\n"
     },
     "poached_pear": {
         "imageName": "Poached_pear.png",
         "giftName": "Poached Pear",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Poached_Pear",
+        "giftLink": "Poached_Pear",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>420t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>420t</span>\n"
     },
     "salted_watermelon": {
         "imageName": "Salted_watermelon.png",
         "giftName": "Salted Watermelon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Salted_Watermelon",
+        "giftLink": "Salted_Watermelon",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>240t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>240t</span><br/><span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting Ingredients</a> <small>,(with <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\"><img alt=\"Living off the land.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Living_off_the_land.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Farming_Skill_Perks\" title=\"Skills\">Living Off The Land Skill</a>)</small></span>\n"
     },
     "candied_walnuts": {
@@ -8132,7 +8132,7 @@ var objGifts  =
     "apple_juice": {
         "imageName": "Apple_juice.png",
         "giftName": "Apple Juice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Apple_Juice",
+        "giftLink": "Apple_Juice",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>\n"
     },
     "cherry_smoothie": {
@@ -8144,91 +8144,91 @@ var objGifts  =
     "coconut_milk": {
         "imageName": "Coconut_milk.png",
         "giftName": "Coconut Milk",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Coconut_Milk",
+        "giftLink": "Coconut_Milk",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Landen's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Coconuts</a></span>\n"
     },
     "cranberry_juice": {
         "imageName": "Cranberry_juice.png",
         "giftName": "Cranberry Juice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cranberry_Juice",
+        "giftLink": "Cranberry_Juice",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>\n"
     },
     "grape_juice": {
         "imageName": "Grape_juice.png",
         "giftName": "Grape Juice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Grape_Juice",
+        "giftLink": "Grape_Juice",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>\n"
     },
     "green_tea": {
         "imageName": "Green_Tea.png",
         "giftName": "Green Tea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Green_Tea",
+        "giftLink": "Green_Tea",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Valen\" title=\"Valen\"><img alt=\"Valen icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Valen_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Valen\" title=\"Valen\">Valen</a></span>\n"
     },
     "hot_cocoa": {
         "imageName": "Hot_chocolate.png",
         "giftName": "Hot Chocolate",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hot_Chocolate",
+        "giftLink": "Hot_Chocolate",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>320t</span>\n"
     },
     "jasmine_tea": {
         "imageName": "Jasmine_tea.png",
         "giftName": "Jasmine Tea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Jasmine_Tea",
+        "giftLink": "Jasmine_Tea",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>190t</span>\n"
     },
     "latte": {
         "imageName": "Latte.png",
         "giftName": "Latte",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Latte",
+        "giftLink": "Latte",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>\n"
     },
     "lemonade": {
         "imageName": "Lemonade.png",
         "giftName": "Lemonade",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lemonade",
+        "giftLink": "Lemonade",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>\n"
     },
     "mocha": {
         "imageName": "Mocha.png",
         "giftName": "Mocha",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mocha",
+        "giftLink": "Mocha",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>275t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\"><img alt=\"Calendar icon spring festival.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Calendar_icon_spring_festival.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\">Spring Festival</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>275t</span> (Requires 1st Place)\n"
     },
     "orange_juice": {
         "imageName": "Orange_juice.png",
         "giftName": "Orange Juice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Orange_Juice",
+        "giftLink": "Orange_Juice",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>\n"
     },
     "pomegranate_juice": {
         "imageName": "Pomegranate_juice.png",
         "giftName": "Pomegranate Juice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pomegranate_Juice",
+        "giftLink": "Pomegranate_Juice",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>175t</span>\n"
     },
     "roasted_rice_tea": {
         "imageName": "Roasted_rice_tea.png",
         "giftName": "Roasted Rice Tea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Roasted_Rice_Tea",
+        "giftLink": "Roasted_Rice_Tea",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>360t</span>\n"
     },
     "rose_tea": {
         "imageName": "Rose_tea.png",
         "giftName": "Rose Tea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rose_Tea",
+        "giftLink": "Rose_Tea",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\"><img alt=\"Calendar icon spring festival.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Calendar_icon_spring_festival.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\">Spring Festival</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span> (Requires 1st Place),<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Celine\" title=\"Celine\"><img alt=\"Celine icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Celine_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Celine\" title=\"Celine\">Celine</a></span>\n"
     },
     "cup_of_tea": {
         "imageName": "Cup_of_tea.png",
         "giftName": "Tea with Lemon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tea_with_Lemon",
+        "giftLink": "Tea_with_Lemon",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>400t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>400t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Important_Quests\" title=\"Quests\"><img alt=\"Quests header icon.png\" decoding=\"async\" height=\"21\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_header_icon.png\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Important_Quests\" title=\"Quests\">Important Quest</a>,<span class=\"spoiler-content\" id=\"\" style=\"\"><span>\"Tea with Hayden\"</span></span></span>\n"
     },
     "iced_coffee": {
         "imageName": "Iced_coffee.png",
         "giftName": "Iced Coffee",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Iced_Coffee",
+        "giftLink": "Iced_Coffee",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>110t</span>\n"
     },
     "spirit_mushroom_tea": {
@@ -8240,13 +8240,13 @@ var objGifts  =
     "coffee": {
         "imageName": "Coffee.png",
         "giftName": "Coffee",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Coffee",
+        "giftLink": "Coffee",
         "source": "<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\"><img alt=\"Calendar icon spring festival.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Calendar_icon_spring_festival.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\">Spring Festival</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "beer": {
         "imageName": "Beer.png",
         "giftName": "Beer",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Beer",
+        "giftLink": "Beer",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "floral_tea": {
@@ -8264,31 +8264,31 @@ var objGifts  =
     "lavender_tea": {
         "imageName": "Lavender_tea.png",
         "giftName": "Lavender Tea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lavender_Tea",
+        "giftLink": "Lavender_Tea",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\"><img alt=\"Calendar icon spring festival.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Calendar_icon_spring_festival.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring_Festival#Food_Stall_(Maple)\" title=\"Spring Festival\">Spring Festival</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span> (Requires 1st Place+)\n"
     },
     "red_wine": {
         "imageName": "Red_Wine.png",
         "giftName": "Red Wine",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Red_Wine",
+        "giftLink": "Red_Wine",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "white_wine": {
         "imageName": "White_wine.png",
         "giftName": "White Wine",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/White_Wine",
+        "giftLink": "White_Wine",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "mushroom_brew": {
         "imageName": "Mushroom_brew.png",
         "giftName": "Mushroom Brew",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mushroom_Brew",
+        "giftLink": "Mushroom_Brew",
         "source": "<span class=\"no-wrap\"><img alt=\"Fp wiki event saturday market.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Darcy's_Stall\" title=\"Saturday Market\">Darcy's Stall</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>\n"
     },
     "hot_toddy": {
         "imageName": "Hot_toddy.png",
         "giftName": "Hot Toddy",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hot_Toddy",
+        "giftLink": "Hot_Toddy",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Cooked_Dishes\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>150t</span>\n"
     },
     "twice_baked_rations": {
@@ -8912,139 +8912,139 @@ var objGifts  =
     "animal_currency": {
         "imageName": "Shiny_bead.png",
         "giftName": "Shiny Bead",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead",
+        "giftLink": "Shiny_Bead",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Animals\" title=\"Animals\"><img alt=\"Fp wiki animal.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_animal.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animals\" title=\"Animals\">Animals</a>)</span>\n"
     },
     "egg": {
         "imageName": "Chicken_egg.png",
         "giftName": "Chicken Egg",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chicken_Egg",
+        "giftLink": "Chicken_Egg",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\"><img alt=\"Chickens category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Chickens_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\">Chicken hens</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>,<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/> Hayden's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Wood Fencing</a></span>\n"
     },
     "feather": {
         "imageName": "Rooster_feather.png",
         "giftName": "Rooster Feather",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rooster_Feather",
+        "giftLink": "Rooster_Feather",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\"><img alt=\"Chickens category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Chickens_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\">Roosters</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>240t</span>\n"
     },
     "cow_milk": {
         "imageName": "Milk.png",
         "giftName": "Milk",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Milk",
+        "giftLink": "Milk",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\"><img alt=\"Cows category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Cows_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\">Cows</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span>,<span class=\"no-wrap\"><img alt=\"Inn icon.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/20px-Inn_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Inn#Drinks\" title=\"Inn\">The Inn</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/> Hayden's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Hay</a></span>,<span class=\"no-wrap\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "bull_horn": {
         "imageName": "Bull_horn.png",
         "giftName": "Bull Horn",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Bull_Horn",
+        "giftLink": "Bull_Horn",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\"><img alt=\"Cows category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Cows_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\">Bulls</a>)</span>\n"
     },
     "duck_egg": {
         "imageName": "Duck_egg.png",
         "giftName": "Duck Egg",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Duck_Egg",
+        "giftLink": "Duck_Egg",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\"><img alt=\"Ducks category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Ducks_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\">Duck hens</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "golden_duck_egg": {
         "imageName": "Golden_duck_egg.png",
         "giftName": "Golden Duck Egg",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Duck_Egg",
+        "giftLink": "Golden_Duck_Egg",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\"><img alt=\"Ducks category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Ducks_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\">Duck hens</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "duck_feather": {
         "imageName": "Duck_feather.png",
         "giftName": "Duck Feather",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Duck_Feather",
+        "giftLink": "Duck_Feather",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\"><img alt=\"Ducks category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Ducks_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\">Drakes</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>270t</span>\n"
     },
     "golden_duck_feather": {
         "imageName": "Golden_duck_feather.png",
         "giftName": "Golden Duck Feather",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Duck_Feather",
+        "giftLink": "Golden_Duck_Feather",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\"><img alt=\"Ducks category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Ducks_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck\" title=\"Duck\">Drakes</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "horse_hair": {
         "imageName": "Horse_hair.png",
         "giftName": "Horse Hair",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Horse_Hair",
+        "giftLink": "Horse_Hair",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Horse\" title=\"Horse\"><img alt=\"Horses category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Horses_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Horse\" title=\"Horse\">Horses</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span>  for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>290t</span>\n"
     },
     "golden_horse_hair": {
         "imageName": "Golden_horse_hair.png",
         "giftName": "Golden Horse Hair",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Horse_Hair",
+        "giftLink": "Golden_Horse_Hair",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Horse\" title=\"Horse\"><img alt=\"Horses category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Horses_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Horse\" title=\"Horse\">Horses</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "alpaca_wool": {
         "imageName": "Alpaca_wool.png",
         "giftName": "Alpaca Wool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Alpaca_Wool",
+        "giftLink": "Alpaca_Wool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Alpaca\" title=\"Alpaca\"><img alt=\"Alpaca category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Alpaca_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Alpaca\" title=\"Alpaca\">Alpacas</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>390t</span>\n"
     },
     "golden_alpaca_wool": {
         "imageName": "Golden_alpaca_wool.png",
         "giftName": "Golden Alpaca Wool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Alpaca_Wool",
+        "giftLink": "Golden_Alpaca_Wool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Alpaca\" title=\"Alpaca\"><img alt=\"Alpaca category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Alpaca_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Alpaca\" title=\"Alpaca\">Alpacas</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "bristle": {
         "imageName": "Bristle.png",
         "giftName": "Bristle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Bristle",
+        "giftLink": "Bristle",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Capybara\" title=\"Capybara\"><img alt=\"Capybara category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Capybara_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Capybara\" title=\"Capybara\">Capybaras</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>360t</span>\n"
     },
     "golden_bristle": {
         "imageName": "Golden_bristle.png",
         "giftName": "Golden Bristle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Bristle",
+        "giftLink": "Golden_Bristle",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Capybara\" title=\"Capybara\"><img alt=\"Capybara category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Capybara_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Capybara\" title=\"Capybara\">Capybaras</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "golden_bull_horn": {
         "imageName": "Golden_bull_horn.png",
         "giftName": "Golden Bull Horn",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Bull_Horn",
+        "giftLink": "Golden_Bull_Horn",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\"><img alt=\"Cows category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Cows_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\">Bulls</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "golden_cow_milk": {
         "imageName": "Golden_milk.png",
         "giftName": "Golden Milk",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Milk",
+        "giftLink": "Golden_Milk",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\"><img alt=\"Cows category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Cows_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Cow\" title=\"Cow\">Cows</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>,<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span> (1),<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span> (12)\n"
     },
     "golden_egg": {
         "imageName": "Golden_egg.png",
         "giftName": "Golden Egg",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Egg",
+        "giftLink": "Golden_Egg",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\"><img alt=\"Chickens category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Chickens_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\">Chicken hens</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>,<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span> (1),<span class=\"no-wrap\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span> (12)\n"
     },
     "golden_feather": {
         "imageName": "Golden_feather.png",
         "giftName": "Golden Rooster Feather",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Rooster_Feather",
+        "giftLink": "Golden_Rooster_Feather",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\"><img alt=\"Chickens category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Chickens_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken\" title=\"Chicken\">Roosters</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "rabbit_wool": {
         "imageName": "Rabbit_wool.png",
         "giftName": "Rabbit Wool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rabbit_Wool",
+        "giftLink": "Rabbit_Wool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Rabbit\" title=\"Rabbit\"><img alt=\"Rabbit category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Rabbit_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Rabbit\" title=\"Rabbit\">Rabbits</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>360t</span>\n"
     },
     "golden_rabbit_wool": {
         "imageName": "Golden_rabbit_wool.png",
         "giftName": "Golden Rabbit Wool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Rabbit_Wool",
+        "giftLink": "Golden_Rabbit_Wool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Rabbit\" title=\"Rabbit\"><img alt=\"Rabbit category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Rabbit_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Rabbit\" title=\"Rabbit\">Rabbits</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "sheep_wool": {
         "imageName": "Sheep_wool.png",
         "giftName": "Sheep Wool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sheep_Wool",
+        "giftLink": "Sheep_Wool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep\" title=\"Sheep\"><img alt=\"Sheep category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Sheep_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep\" title=\"Sheep\">Sheeps</a>)</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>480t</span>\n"
     },
     "golden_sheep_wool": {
         "imageName": "Golden_sheep_wool.png",
         "giftName": "Golden Sheep Wool",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Sheep_Wool",
+        "giftLink": "Golden_Sheep_Wool",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\"><img alt=\"Ranching icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Ranching_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ranching\" title=\"Ranching\">Ranching</a> (<span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep\" title=\"Sheep\"><img alt=\"Sheep category icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Sheep_category_icon.png\" width=\"22\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep\" title=\"Sheep\">Sheeps</a>),(Requires at least <span class=\"no-wrap\"><img alt=\"Animal heart full.png\" decoding=\"async\" height=\"14\" loading=\"lazy\" src=\"images/tooltip/14px-Animal_heart_full.png\" width=\"14\"/> 8</span>)</span>\n"
     },
     "heart_shaped_chicken_treat": {
@@ -9122,19 +9122,19 @@ var objGifts  =
     "copper_ingot": {
         "imageName": "Copper_Ingot.png",
         "giftName": "Copper Ingot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Copper_Ingot",
+        "giftLink": "Copper_Ingot",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>250t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "iron_ingot": {
         "imageName": "Iron_Ingot.png",
         "giftName": "Iron Ingot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Iron_Ingot",
+        "giftLink": "Iron_Ingot",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/> March's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for a Monster Shell</a></span> (2),<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/March\" title=\"March\"><img alt=\"March icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-March_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/March\" title=\"March\">March</a></span> (4)\n"
     },
     "silver_ingot": {
         "imageName": "Silver_Ingot.png",
         "giftName": "Silver Ingot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Silver_Ingot",
+        "giftLink": "Silver_Ingot",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span>,<span class=\"no-wrap\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>500t</span> Wish</span>\n"
     },
     "gold_ingot": {
@@ -9459,13 +9459,13 @@ var objGifts  =
     "basic_wood": {
         "imageName": "Wood.png",
         "giftName": "Wood",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wood",
+        "giftLink": "Wood",
         "source": "Cutting trees/branches,Breaking objects in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\">Mines</a>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Other_(Junk)\" title=\"Fish\">Diving</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>20t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>20t</span>\n"
     },
     "hard_wood": {
         "imageName": "Hard_wood.png",
         "giftName": "Hard Wood",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hard_Wood",
+        "giftLink": "Hard_Wood",
         "source": "Large Stumps,(Requires <img alt=\"Copper axe.png\" decoding=\"async\" height=\"30\" loading=\"lazy\" src=\"images/tooltip/30px-Copper_axe.png\" width=\"30\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Axe\" title=\"Copper Axe\">Copper Axe</a> or better),Regular Stumps and Trees,<small> (Requires <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\"><img alt=\"Natural.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Natural.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\">Natural Skill</a>)</small>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>,<span class=\"no-wrap\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Friendship#The_Player's_Birthday\" title=\"Friendship\">Birthday gift</a> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ryis\" title=\"Ryis\"><img alt=\"Ryis icon.png\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Ryis_icon.png\" width=\"22\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Ryis\" title=\"Ryis\">Ryis</a></span>\n"
     },
     "fiber": {
@@ -9477,7 +9477,7 @@ var objGifts  =
     "grass_seed": {
         "imageName": "Grass_seed.png",
         "giftName": "Grass Seed",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Grass_Seed",
+        "giftLink": "Grass_Seed",
         "source": "Cutting Grass,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki hayden.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_hayden.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Supplies\" title=\"Hayden's Shop\">Hayden's Shop</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>,<span class=\"no-wrap\"><img alt=\"Quests header icon.png\" decoding=\"async\" height=\"21\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_header_icon.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Important_Quests\" title=\"Quests\">Important Quest</a>,<span class=\"spoiler-content\" id=\"\" style=\"\"><span>\"Tea with Hayden\"</span></span></span>(10)\n"
     },
     "hay": {
@@ -9489,103 +9489,103 @@ var objGifts  =
     "sod": {
         "imageName": "Sod.png",
         "giftName": "Sod",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sod",
+        "giftLink": "Sod",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span> <small>,(requires <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\"><img alt=\"Steady supplies.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Steady_supplies.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\">Steady Supplies Skill</a>)</small></span>\n"
     },
     "peat": {
         "imageName": "Peat.png",
         "giftName": "Peat",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Peat",
+        "giftLink": "Peat",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span> <small>,(requires <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\"><img alt=\"Steady supplies.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Steady_supplies.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\">Steady Supplies Skill</a>)</small></span>\n"
     },
     "clay": {
         "imageName": "Clay.png",
         "giftName": "Clay",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Clay",
+        "giftLink": "Clay",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Other_(Junk)\" title=\"Fish\">Diving</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>\n"
     },
     "glass": {
         "imageName": "Glass.png",
         "giftName": "Glass",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Glass",
+        "giftLink": "Glass",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Enchantern\" title=\"Enchantern\"><img alt=\"Enchantern yellow.png\" decoding=\"async\" height=\"28\" loading=\"lazy\" src=\"images/tooltip/20px-Enchantern_yellow.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Enchantern\" title=\"Enchantern\">Any Enchantern</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\">The Mines</a></span>,<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Other_(Junk)\" title=\"Fish\">Diving</a></span>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fishing\" title=\"Fishing\">Fishing</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>\n"
     },
     "paper": {
         "imageName": "Paper.png",
         "giftName": "Paper",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Paper",
+        "giftLink": "Paper",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Miscellaneous\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Miscellaneous\" title=\"Milling\">Milling</a></span>\n"
     },
     "shards": {
         "imageName": "Shards.png",
         "giftName": "Shards",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Shards",
+        "giftLink": "Shards",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>\n"
     },
     "shard_mass": {
         "imageName": "Shard_mass.png",
         "giftName": "Shard Mass",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Shard_Mass",
+        "giftLink": "Shard_Mass",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\"><img alt=\"Archaeology icon.png\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Archaeology_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Archaeology\" title=\"Archaeology\">Archaeology</a>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>\n"
     },
     "rock_salt": {
         "imageName": "Rock_salt.png",
         "giftName": "Rock Salt",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rock_Salt",
+        "giftLink": "Rock_Salt",
         "source": "<span class=\"no-wrap\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>\n"
     },
     "oil": {
         "imageName": "Oil.png",
         "giftName": "Oil",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Oil",
+        "giftLink": "Oil",
         "source": "<span class=\"no-wrap\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>,<span class=\"no-wrap\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "soy_sauce": {
         "imageName": "Soy_sauce.png",
         "giftName": "Soy Sauce",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Soy_Sauce",
+        "giftLink": "Soy_Sauce",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>\n"
     },
     "curry_powder": {
         "imageName": "Curry_powder.png",
         "giftName": "Curry Powder",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Curry_Powder",
+        "giftLink": "Curry_Powder",
         "source": "<span class=\"no-wrap\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>40t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>40t</span>\n"
     },
     "honey": {
         "imageName": "Honey.png",
         "giftName": "Honey",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Honey",
+        "giftLink": "Honey",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>(after upgrade)</span></span></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "chocolate": {
         "imageName": "Chocolate.png",
         "giftName": "Chocolate",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chocolate",
+        "giftLink": "Chocolate",
         "source": "<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/> Maple's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for a Mullet</a></span>\n"
     },
     "ore_copper": {
         "imageName": "Copper_Ore.png",
         "giftName": "Copper Ore",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Copper_Ore",
+        "giftLink": "Copper_Ore",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Ore\" title=\"Copper Ore\"><img alt=\"Copper t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Ore\" title=\"Copper Ore\">Copper Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Copperclod.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copperclod.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Copperclods</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Stalagmite\" title=\"Stalagmite\"><img alt=\"Stalagmite blue.png\" decoding=\"async\" height=\"27\" loading=\"lazy\" src=\"images/tooltip/20px-Stalagmite_blue.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Stalagmite\" title=\"Stalagmite\">Blue Stalagmites</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Materials\" title=\"Blacksmith\"><img alt=\"Fp wiki march.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_march.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Materials\" title=\"Blacksmith\">Blacksmith</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>\n"
     },
     "ore_emerald": {
         "imageName": "Emerald.png",
         "giftName": "Emerald",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Emerald",
+        "giftLink": "Emerald",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Emerald\" title=\"Emerald\"><img alt=\"Emerald t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Emerald_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Emerald\" title=\"Emerald\">Emerald Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>240t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Silverclod.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silverclod.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Silverclods</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>\n"
     },
     "ore_ruby": {
         "imageName": "Ruby.png",
         "giftName": "Ruby",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ruby",
+        "giftLink": "Ruby",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ruby\" title=\"Ruby\"><img alt=\"Ruby t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Ruby_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Ruby\" title=\"Ruby\">Ruby Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Copperclod.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copperclod.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Copperclods</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Upper_Mines\" title=\"Mines\">The Upper Mines</a></span></span>\n"
     },
     "ore_sapphire": {
         "imageName": "Sapphire.png",
         "giftName": "Sapphire",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sapphire",
+        "giftLink": "Sapphire",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sapphire\" title=\"Sapphire\"><img alt=\"Sapphire t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Sapphire_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sapphire\" title=\"Sapphire\">Sapphire Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Narrows#3x3_Rock\" title=\"The Narrows\">Large Rock in The Narrows</a>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\"><img alt=\"Fp wiki wishing well.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_wishing_well.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wishing_Well\" title=\"Wishing Well\">Wishing Well</a> <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span> Wish</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Ironclod.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Ironclod.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Ironclods</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>\n"
     },
     "ore_diamond": {
@@ -9617,19 +9617,19 @@ var objGifts  =
     "ore_iron": {
         "imageName": "Iron_Ore.png",
         "giftName": "Iron Ore",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Iron_Ore",
+        "giftLink": "Iron_Ore",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Iron_Ore\" title=\"Iron Ore\"><img alt=\"Iron t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_t2.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Iron_Ore\" title=\"Iron Ore\">Iron Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Ironclod.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Ironclod.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Ironclods</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Tide_Caverns\" title=\"Mines\">The Tide Caverns</a></span></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Stalagmite\" title=\"Stalagmite\"><img alt=\"Stalagmite green.png\" decoding=\"async\" height=\"27\" loading=\"lazy\" src=\"images/tooltip/20px-Stalagmite_green.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Stalagmite\" title=\"Stalagmite\">Green Stalagmites</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Materials\" title=\"Blacksmith\"><img alt=\"Fp wiki march.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_march.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Materials\" title=\"Blacksmith\">Blacksmith</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>50t</span>\n"
     },
     "ore_silver": {
         "imageName": "Silver_Ore.png",
         "giftName": "Silver Ore",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Silver_Ore",
+        "giftLink": "Silver_Ore",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a> <img alt=\"Silver t2.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_t2.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Ore\" title=\"Silver Ore\">Silver Nodes</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>,<span class=\"no-wrap\">Slaying <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Silverclod.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silverclod.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Silverclods</a> in <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Deep_Earth\" title=\"Mines\">The Deep Earth</a></span></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki march.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_march.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Materials\" title=\"Blacksmith\">Blacksmith</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "ore_stone": {
         "imageName": "Stone.png",
         "giftName": "Stone",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Stone",
+        "giftLink": "Stone",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\"><img alt=\"Mining icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Mining_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mining\" title=\"Mining\">Mining</a>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Combat icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Combat_icon.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\"><img alt=\"Rockclod main.png\" decoding=\"async\" height=\"17\" loading=\"lazy\" src=\"images/tooltip/20px-Rockclod_main.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Clod\" title=\"Clod\">Any Rock Clod</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\">The Mines</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>20t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>20t</span>\n"
     },
     "refined_stone": {
@@ -9665,7 +9665,7 @@ var objGifts  =
     "butterfly": {
         "imageName": "Butterfly.png",
         "giftName": "Butterfly",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Butterfly",
+        "giftLink": "Butterfly",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "caterpillar": {
@@ -9701,19 +9701,19 @@ var objGifts  =
     "orchid_mantis": {
         "imageName": "Orchid_mantis.png",
         "giftName": "Orchid Mantis",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Orchid_Mantis",
+        "giftLink": "Orchid_Mantis",
         "source": "<img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a>\n"
     },
     "roly_poly": {
         "imageName": "Roly_poly.png",
         "giftName": "Roly Poly",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Roly_Poly",
+        "giftLink": "Roly_Poly",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "snail": {
         "imageName": "Snail.png",
         "giftName": "Snail",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Snail",
+        "giftLink": "Snail",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "waterbug": {
@@ -9725,13 +9725,13 @@ var objGifts  =
     "cicada": {
         "imageName": "Cicada.png",
         "giftName": "Cicada",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cicada",
+        "giftLink": "Cicada",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "cricket": {
         "imageName": "Cricket.png",
         "giftName": "Cricket",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cricket",
+        "giftLink": "Cricket",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "dragonfly": {
@@ -9743,13 +9743,13 @@ var objGifts  =
     "firefly": {
         "imageName": "Firefly.png",
         "giftName": "Firefly",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Firefly",
+        "giftLink": "Firefly",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "jewel_beetle": {
         "imageName": "Jewel_beetle.png",
         "giftName": "Jewel Beetle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Jewel_Beetle",
+        "giftLink": "Jewel_Beetle",
         "source": "<img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a>\n"
     },
     "magma_beetle": {
@@ -9767,7 +9767,7 @@ var objGifts  =
     "strobe_firefly": {
         "imageName": "Strobe_firefly.png",
         "giftName": "Strobe Firefly",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Strobe_Firefly",
+        "giftLink": "Strobe_Firefly",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "sand_bug": {
@@ -9803,13 +9803,13 @@ var objGifts  =
     "fairy_bee": {
         "imageName": "Fairy_bee.png",
         "giftName": "Fairy Bee",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fairy_Bee",
+        "giftLink": "Fairy_Bee",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "inchworm": {
         "imageName": "Inchworm.png",
         "giftName": "Inchworm",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Inchworm",
+        "giftLink": "Inchworm",
         "source": "<img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a>\n"
     },
     "leafhopper": {
@@ -9821,13 +9821,13 @@ var objGifts  =
     "mistmoth": {
         "imageName": "Mistmoth.png",
         "giftName": "Mistmoth",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mistmoth",
+        "giftLink": "Mistmoth",
         "source": "<img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a>\n"
     },
     "monarch_butterfly": {
         "imageName": "Monarch_butterfly.png",
         "giftName": "Monarch Butterfly",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Monarch_Butterfly",
+        "giftLink": "Monarch_Butterfly",
         "source": "<img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a>\n"
     },
     "tiger_swallowtail_butterfly": {
@@ -9845,7 +9845,7 @@ var objGifts  =
     "crystal_caterpillar": {
         "imageName": "Crystal_caterpillar.png",
         "giftName": "Crystal Caterpillar",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crystal_Caterpillar",
+        "giftLink": "Crystal_Caterpillar",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "brightbulb_moth": {
@@ -9887,7 +9887,7 @@ var objGifts  =
     "snowball_beetle": {
         "imageName": "Snowball_beetle.png",
         "giftName": "Snowball Beetle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Snowball_Beetle",
+        "giftLink": "Snowball_Beetle",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "walking_stick": {
@@ -9905,55 +9905,55 @@ var objGifts  =
     "ant": {
         "imageName": "Ant.png",
         "giftName": "Ant",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ant",
+        "giftLink": "Ant",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "bumblebee": {
         "imageName": "Bumblebee.png",
         "giftName": "Bumblebee",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Bumblebee",
+        "giftLink": "Bumblebee",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "fuzzy_moth": {
         "imageName": "Fuzzy_moth.png",
         "giftName": "Fuzzy Moth",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fuzzy_Moth",
+        "giftLink": "Fuzzy_Moth",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "grasshopper": {
         "imageName": "Grasshopper.png",
         "giftName": "Grasshopper",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Grasshopper",
+        "giftLink": "Grasshopper",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "hermit_crab": {
         "imageName": "Hermit_crab.png",
         "giftName": "Hermit Crab",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hermit_Crab",
+        "giftLink": "Hermit_Crab",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "hummingbird_hawk_moth": {
         "imageName": "Hummingbird_hawk_moth.png",
         "giftName": "Hummingbird Hawk Moth",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hummingbird_Hawk_Moth",
+        "giftLink": "Hummingbird_Hawk_Moth",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "lightning_dragonfly": {
         "imageName": "Lightning_dragonfly.png",
         "giftName": "Lightning Dragonfly",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lightning_Dragonfly",
+        "giftLink": "Lightning_Dragonfly",
         "source": "<img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a>\n"
     },
     "pond_skater": {
         "imageName": "Pond_Skater.png",
         "giftName": "Pond Skater",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pond_Skater",
+        "giftLink": "Pond_Skater",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "praying_mantis": {
         "imageName": "Praying_mantis.png",
         "giftName": "Praying Mantis",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Praying_Mantis",
+        "giftLink": "Praying_Mantis",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "question_mark_butterfly": {
@@ -9977,7 +9977,7 @@ var objGifts  =
     "rhinoceros_beetle": {
         "imageName": "Rhinoceros_beetle.png",
         "giftName": "Rhinoceros Beetle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rhinoceros_Beetle",
+        "giftLink": "Rhinoceros_Beetle",
         "source": "<span class=\"no-wrap\"><img alt=\"Iron Net.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Iron_Net.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Bugs\" title=\"Bugs\">Bug Catching</a></span>\n"
     },
     "pond_snail": {
@@ -9989,7 +9989,7 @@ var objGifts  =
     "river_snail": {
         "imageName": "River_snail.png",
         "giftName": "River Snail",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/River_Snail",
+        "giftLink": "River_Snail",
         "source": "<span class=\"no-wrap\"><img alt=\"Fishing icon.png\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Fishing_icon.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish#Diving_Only_Items\" title=\"Fish\">Diving</a></span>\n"
     },
     "windleaf_butterfly": {
@@ -10025,43 +10025,43 @@ var objGifts  =
     "turnip": {
         "imageName": "Turnip.png",
         "giftName": "Turnip",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Turnip",
+        "giftLink": "Turnip",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "potato": {
         "imageName": "Potato.png",
         "giftName": "Potato",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Potato",
+        "giftLink": "Potato",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span>  for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "cabbage": {
         "imageName": "Cabbage.png",
         "giftName": "Cabbage",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cabbage",
+        "giftLink": "Cabbage",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>540t</span>\n"
     },
     "strawberry": {
         "imageName": "Strawberry.png",
         "giftName": "Strawberry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Strawberry",
+        "giftLink": "Strawberry",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>375t</span>\n"
     },
     "carrot": {
         "imageName": "Carrot.png",
         "giftName": "Carrot",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Carrot",
+        "giftLink": "Carrot",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>250t</span>\n"
     },
     "peas": {
         "imageName": "Peas.png",
         "giftName": "Peas",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Peas",
+        "giftLink": "Peas",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>400t</span>\n"
     },
     "cherry": {
         "imageName": "Cherry.png",
         "giftName": "Cherry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cherry",
+        "giftLink": "Cherry",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Eastern_Road#Cherry_Tree\" title=\"The Eastern Road\">The Eastern Road</a>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "chickpea": {
@@ -10079,49 +10079,49 @@ var objGifts  =
     "tulip": {
         "imageName": "Tulip.png",
         "giftName": "Tulip",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tulip",
+        "giftLink": "Tulip",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Celine's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Gardening Materials</a></span>\n"
     },
     "lilac": {
         "imageName": "Lilac.png",
         "giftName": "Lilac",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lilac",
+        "giftLink": "Lilac",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>140t</span>\n"
     },
     "lemon": {
         "imageName": "Lemon.png",
         "giftName": "Lemon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Lemon",
+        "giftLink": "Lemon",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Narrows#Lemon_Tree\" title=\"The Narrows\">The Narrows</a>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "snowdrop_anemone": {
         "imageName": "Snowdrop_anemone.png",
         "giftName": "Snowdrop Anemone",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Snowdrop_Anemone",
+        "giftLink": "Snowdrop_Anemone",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "middlemist": {
         "imageName": "Middlemist.png",
         "giftName": "Middlemist",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Middlemist",
+        "giftLink": "Middlemist",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "daffodil": {
         "imageName": "Daffodil.png",
         "giftName": "Daffodil",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Daffodil",
+        "giftLink": "Daffodil",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/></a> Celine's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Gardening Materials</a></span>\n"
     },
     "dandelion": {
         "imageName": "Dandelion.png",
         "giftName": "Dandelion",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Dandelion",
+        "giftLink": "Dandelion",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>40t</span>\n"
     },
     "morel_mushroom": {
         "imageName": "Morel_mushroom.png",
         "giftName": "Morel Mushroom",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Morel_Mushroom",
+        "giftLink": "Morel_Mushroom",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "fennel": {
@@ -10139,25 +10139,25 @@ var objGifts  =
     "nettle": {
         "imageName": "Nettle.png",
         "giftName": "Nettle",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Nettle",
+        "giftLink": "Nettle",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>\n"
     },
     "wild_berries": {
         "imageName": "Wild_berries.png",
         "giftName": "Wild Berries",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wild_Berries",
+        "giftLink": "Wild_Berries",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>15t</span>\n"
     },
     "blueberry": {
         "imageName": "Blueberry.png",
         "giftName": "Blueberry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Blueberry",
+        "giftLink": "Blueberry",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Eastern_Road\" title=\"The Eastern Road\">The Eastern Road</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>25t</span>\n"
     },
     "cucumber": {
         "imageName": "Cucumber.png",
         "giftName": "Cucumber",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cucumber",
+        "giftLink": "Cucumber",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "tomato": {
@@ -10169,31 +10169,31 @@ var objGifts  =
     "corn": {
         "imageName": "Corn.png",
         "giftName": "Corn",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Corn",
+        "giftLink": "Corn",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>375t</span>\n"
     },
     "chili_pepper": {
         "imageName": "Chili_pepper.png",
         "giftName": "Chili Pepper",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chili_Pepper",
+        "giftLink": "Chili_Pepper",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>225t</span>\n"
     },
     "watermelon": {
         "imageName": "Watermelon.png",
         "giftName": "Watermelon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Watermelon",
+        "giftLink": "Watermelon",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>540t</span>\n"
     },
     "sugar_cane": {
         "imageName": "Sugar_cane.png",
         "giftName": "Sugar Cane",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sugar_Cane",
+        "giftLink": "Sugar_Cane",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>320t</span>\n"
     },
     "tea": {
         "imageName": "Tea.png",
         "giftName": "Tea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Tea",
+        "giftLink": "Tea",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>400t</span>\n"
     },
     "seed_sunflower": {
@@ -10205,19 +10205,19 @@ var objGifts  =
     "peach": {
         "imageName": "Peach.png",
         "giftName": "Peach",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Peach",
+        "giftLink": "Peach",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Narrows#Peach_Tree\" title=\"The Narrows\">The Narrows</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "pear": {
         "imageName": "Pear.png",
         "giftName": "Pear",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pear",
+        "giftLink": "Pear",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Eastern_Road#Pear_Tree\" title=\"The Eastern Road\">The Eastern Road</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "rose": {
         "imageName": "Rose.png",
         "giftName": "Rose",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rose",
+        "giftLink": "Rose",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>80t</span>\n"
     },
     "dill": {
@@ -10235,7 +10235,7 @@ var objGifts  =
     "sunflower": {
         "imageName": "Sunflower.png",
         "giftName": "Sunflower",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sunflower",
+        "giftLink": "Sunflower",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "sesame": {
@@ -10247,43 +10247,43 @@ var objGifts  =
     "hydrangea": {
         "imageName": "Hydrangea.png",
         "giftName": "Hydrangea",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Hydrangea",
+        "giftLink": "Hydrangea",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Eastern_Road\" title=\"The Eastern Road\">The Eastern Road</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "daisy": {
         "imageName": "Daisy.png",
         "giftName": "Daisy",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Daisy",
+        "giftLink": "Daisy",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>\n"
     },
     "iris": {
         "imageName": "Iris.png",
         "giftName": "Iris",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Iris",
+        "giftLink": "Iris",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "catmint": {
         "imageName": "Catmint.png",
         "giftName": "Catmint",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Catmint",
+        "giftLink": "Catmint",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "night_queen": {
         "imageName": "Night_queen.png",
         "giftName": "Night Queen",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Night_Queen",
+        "giftLink": "Night_Queen",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "coconut": {
         "imageName": "Coconut.png",
         "giftName": "Coconut",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Coconut",
+        "giftLink": "Coconut",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Beach\" title=\"The Beach\">The Beach</a>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "thyme": {
         "imageName": "Thyme.png",
         "giftName": "Thyme",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Thyme",
+        "giftLink": "Thyme",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "oregano": {
@@ -10295,133 +10295,133 @@ var objGifts  =
     "basil": {
         "imageName": "Basil.png",
         "giftName": "Basil",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Basil",
+        "giftLink": "Basil",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Eastern_Road\" title=\"The Eastern Road\">The Eastern Road</a>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "cosmos": {
         "imageName": "Cosmos.png",
         "giftName": "Cosmos",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cosmos",
+        "giftLink": "Cosmos",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon\" title=\"Balor's Wagon\">Balor's Wagon</a></span>  for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "marigold": {
         "imageName": "Marigold.png",
         "giftName": "Marigold",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Marigold",
+        "giftLink": "Marigold",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "wild_grapes": {
         "imageName": "Wild_grapes.png",
         "giftName": "Wild Grapes",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wild_Grapes",
+        "giftLink": "Wild_Grapes",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Narrows\" title=\"The Narrows\">The Narrows</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>15t</span>\n"
     },
     "sweet_potato": {
         "imageName": "Sweet_potato.png",
         "giftName": "Sweet Potato",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sweet_Potato",
+        "giftLink": "Sweet_Potato",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "broccoli": {
         "imageName": "Broccoli.png",
         "giftName": "Broccoli",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Broccoli",
+        "giftLink": "Broccoli",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "pumpkin": {
         "imageName": "Pumpkin.png",
         "giftName": "Pumpkin",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pumpkin",
+        "giftLink": "Pumpkin",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>540t</span>\n"
     },
     "onion": {
         "imageName": "Onion.png",
         "giftName": "Onion",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Onion",
+        "giftLink": "Onion",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>400t</span>\n"
     },
     "cranberry": {
         "imageName": "Cranberry.png",
         "giftName": "Cranberry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cranberry",
+        "giftLink": "Cranberry",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>375t</span>\n"
     },
     "rice_stalk": {
         "imageName": "Rice_stalk.png",
         "giftName": "Rice Stalk",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rice_Stalk",
+        "giftLink": "Rice_Stalk",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>450t</span>\n"
     },
     "wheat": {
         "imageName": "Wheat.png",
         "giftName": "Wheat",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wheat",
+        "giftLink": "Wheat",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>420t</span>\n"
     },
     "moon_fruit": {
         "imageName": "Moon_fruit.png",
         "giftName": "Moon Fruit",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Moon_Fruit",
+        "giftLink": "Moon_Fruit",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>140t</span>\n"
     },
     "rosemary": {
         "imageName": "Rosemary.png",
         "giftName": "Rosemary",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rosemary",
+        "giftLink": "Rosemary",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "orange": {
         "imageName": "Orange.png",
         "giftName": "Orange",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Orange",
+        "giftLink": "Orange",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>180t</span>\n"
     },
     "apple": {
         "imageName": "Apple.png",
         "giftName": "Apple",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Apple",
+        "giftLink": "Apple",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Eastern_Road#Apple_Tree\" title=\"The Eastern Road\">The Eastern Road</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki quests fetch.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_quests_fetch.png\" width=\"20\"/> Dell's <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Requests\" title=\"Quests\">Request for Chestnuts</a></span>\n"
     },
     "chestnut": {
         "imageName": "Chestnut.png",
         "giftName": "Chestnut",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chestnut",
+        "giftLink": "Chestnut",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>60t</span>\n"
     },
     "fog_orchid": {
         "imageName": "Fog_orchid.png",
         "giftName": "Fog Orchid",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Fog_Orchid",
+        "giftLink": "Fog_Orchid",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>\n"
     },
     "viola": {
         "imageName": "Viola.png",
         "giftName": "Viola",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Viola",
+        "giftLink": "Viola",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "celosia": {
         "imageName": "Celosia.png",
         "giftName": "Celosia",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Celosia",
+        "giftLink": "Celosia",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "heather": {
         "imageName": "Heather.png",
         "giftName": "Heather",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Heather",
+        "giftLink": "Heather",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "garlic": {
         "imageName": "Garlic.png",
         "giftName": "Garlic",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Garlic",
+        "giftLink": "Garlic",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "chrysanthemum": {
         "imageName": "Chrysanthemum.png",
         "giftName": "Chrysanthemum",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Chrysanthemum",
+        "giftLink": "Chrysanthemum",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "horseradish": {
@@ -10433,19 +10433,19 @@ var objGifts  =
     "blackberry": {
         "imageName": "Blackberry.png",
         "giftName": "Blackberry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Blackberry",
+        "giftLink": "Blackberry",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>25t</span>\n"
     },
     "cauliflower": {
         "imageName": "Cauliflower.png",
         "giftName": "Cauliflower",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cauliflower",
+        "giftLink": "Cauliflower",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>300t</span>\n"
     },
     "daikon_radish": {
         "imageName": "Daikon_radish.png",
         "giftName": "Daikon Radish",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Daikon_Radish",
+        "giftLink": "Daikon_Radish",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>400t</span>\n"
     },
     "burdock_root": {
@@ -10457,49 +10457,49 @@ var objGifts  =
     "poinsettia": {
         "imageName": "Poinsettia.png",
         "giftName": "Poinsettia",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Poinsettia",
+        "giftLink": "Poinsettia",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "snow_peas": {
         "imageName": "Snow_peas.png",
         "giftName": "Snow Peas",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Snow_Peas",
+        "giftLink": "Snow_Peas",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>375t</span>\n"
     },
     "beet": {
         "imageName": "Beet.png",
         "giftName": "Beet",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Beet",
+        "giftLink": "Beet",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "pomegranate": {
         "imageName": "Pomegranate.png",
         "giftName": "Pomegranate",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Pomegranate",
+        "giftLink": "Pomegranate",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> at <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Narrows#Errol's_Cabin\" title=\"The Narrows\">The Narrows</a>\n"
     },
     "frost_lily": {
         "imageName": "Frost_lily.png",
         "giftName": "Frost Lily",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Frost_Lily",
+        "giftLink": "Frost_Lily",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>100t</span>\n"
     },
     "jasmine": {
         "imageName": "Jasmine.png",
         "giftName": "Jasmine",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Jasmine",
+        "giftLink": "Jasmine",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>140t</span>\n"
     },
     "snapdragon": {
         "imageName": "Snapdragon.png",
         "giftName": "Snapdragon",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Snapdragon",
+        "giftLink": "Snapdragon",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon crops.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a></span>,<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span> in the <a class=\"mw-redirect\" href=\"https://fieldsofmistria.wiki.gg/wiki/Western_Ruins\" title=\"Western Ruins\">Western Ruins</a>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>160t</span>\n"
     },
     "crocus": {
         "imageName": "Crocus.png",
         "giftName": "Crocus",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Crocus",
+        "giftLink": "Crocus",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>\n"
     },
     "holly": {
@@ -10517,7 +10517,7 @@ var objGifts  =
     "glowberry": {
         "imageName": "Glowberry.png",
         "giftName": "Glowberry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Glowberry",
+        "giftLink": "Glowberry",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>\n"
     },
     "oyster_mushroom": {
@@ -10535,19 +10535,19 @@ var objGifts  =
     "rose_hip": {
         "imageName": "Rose_hip.png",
         "giftName": "Rose Hip",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rose_Hip",
+        "giftLink": "Rose_Hip",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>\n"
     },
     "wintergreen_berry": {
         "imageName": "Wintergreen_berry.png",
         "giftName": "Wintergreen Berry",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Wintergreen_Berry",
+        "giftLink": "Wintergreen_Berry",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>\n"
     },
     "plum_blossom": {
         "imageName": "Plum_blossom.png",
         "giftName": "Plum Blossom",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Plum_Blossom",
+        "giftLink": "Plum_Blossom",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>120t</span>\n"
     },
     "pinecone": {
@@ -10565,7 +10565,7 @@ var objGifts  =
     "cattail": {
         "imageName": "Cattail_fluff.png",
         "giftName": "Cattail Fluff",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cattail_Fluff",
+        "giftLink": "Cattail_Fluff",
         "source": "<span class=\"no-wrap\"><img alt=\"Almanac icon forageables.png\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a></span>,<span class=\"no-wrap\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crafting_and_Cooking_Resources\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>25t</span>,<span class=\"no-wrap\"><img alt=\"Fp wiki ryis.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_ryis.png\" width=\"20\"/> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Carpenter#Materials\" title=\"Carpenter\">Carpenter</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>25t</span> <small>,(requires <span style=\"display:inline; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\"><img alt=\"Steady supplies.png\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Steady_supplies.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Woodcrafting_Skill_Perks\" title=\"Skills\">Steady Supplies Skill</a>)</small></span>\n"
     },
     "water_chestnut": {
@@ -10967,85 +10967,85 @@ var objGifts  =
     "flour": {
         "imageName": "Flour.png",
         "giftName": "Flour",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Flour",
+        "giftLink": "Flour",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Milled_Ingredients\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Milled_Ingredients\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "rice": {
         "imageName": "Rice.png",
         "giftName": "Rice",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Rice",
+        "giftLink": "Rice",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>200t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Milled_Ingredients\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Milled_Ingredients\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "sugar": {
         "imageName": "Sugar.png",
         "giftName": "Sugar",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Sugar",
+        "giftLink": "Sugar",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\"><img alt=\"Fp wiki nora.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_nora.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/General_Store#Ingredients\" title=\"General Store\">General Store</a></span> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png\" width=\"18\"/>115t</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Milled_Ingredients\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Milled_Ingredients\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\"><img alt=\"Gold chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Gold_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Golden_Treasure_Box\" title=\"Golden Treasure Box\">Golden Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\"><img alt=\"Silver chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Silver_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Silver_Treasure_Box\" title=\"Silver Treasure Box\">Silver Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\"><img alt=\"Copper chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Copper_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Copper_Treasure_Box\" title=\"Copper Treasure Box\">Copper Treasure Box</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\"><img alt=\"Wooden chest.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Wooden_chest.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Wooden_Treasure_Box\" title=\"Wooden Treasure Box\">Wooden Treasure Box</a></span>\n"
     },
     "cheese": {
         "imageName": "Cheese.png",
         "giftName": "Cheese",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Cheese",
+        "giftLink": "Cheese",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "golden_cheese": {
         "imageName": "Golden_cheese.png",
         "giftName": "Golden Cheese",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Cheese",
+        "giftLink": "Golden_Cheese",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span>\n"
     },
     "butter": {
         "imageName": "Butter.png",
         "giftName": "Butter",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Butter",
+        "giftLink": "Butter",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "golden_butter": {
         "imageName": "Golden_butter.png",
         "giftName": "Golden Butter",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Butter",
+        "giftLink": "Golden_Butter",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span>\n"
     },
     "mayonnaise": {
         "imageName": "Mayonnaise.png",
         "giftName": "Mayonnaise",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Mayonnaise",
+        "giftLink": "Mayonnaise",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "duck_mayonnaise": {
         "imageName": "Duck_mayonnaise.png",
         "giftName": "Duck Mayonnaise",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Duck_Mayonnaise",
+        "giftLink": "Duck_Mayonnaise",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>\n"
     },
     "golden_mayonnaise": {
         "imageName": "Golden_mayonnaise.png",
         "giftName": "Golden Mayonnaise",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Mayonnaise",
+        "giftLink": "Golden_Mayonnaise",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span>\n"
     },
     "golden_duck_mayonnaise": {
         "imageName": "Golden_duck_mayonnaise.png",
         "giftName": "Golden Duck Mayonnaise",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Golden_Duck_Mayonnaise",
+        "giftLink": "Golden_Duck_Mayonnaise",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Products\" title=\"Milling\">Milling</a></span>\n"
     },
     "quality_small_animal_feed": {
         "imageName": "Quality_small_animal_feed.png",
         "giftName": "Quality Small Animal Feed",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Quality_Small_Animal_Feed",
+        "giftLink": "Quality_Small_Animal_Feed",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Feed\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Feed\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\"><img alt=\"Quests heart icon.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#Heart_Quests\" title=\"Quests\">Heart Quest</a> \"Extra Feed\"</span> (3)\n"
     },
     "deluxe_small_animal_feed": {
         "imageName": "Deluxe_small_animal_feed.png",
         "giftName": "Deluxe Small Animal Feed",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Deluxe_Small_Animal_Feed",
+        "giftLink": "Deluxe_Small_Animal_Feed",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Feed\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Feed\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 10</span> Offering</span>\n"
     },
     "ultimate_small_animal_feed": {
         "imageName": "Ultimate_small_animal_feed.png",
         "giftName": "Ultimate Small Animal Feed",
-        "giftLink": "https://fieldsofmistria.wiki.gg/wiki/Ultimate_Small_Animal_Feed",
+        "giftLink": "Ultimate_Small_Animal_Feed",
         "source": "<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Feed\" title=\"Milling\"><img alt=\"Fp wiki mill craft.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Milling#Animal_Feed\" title=\"Milling\">Milling</a></span>,<span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><img alt=\"Shiny bead.png\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png\" width=\"20\"/> 100</span> Offering</span>\n"
     },
     "quality_hay": {

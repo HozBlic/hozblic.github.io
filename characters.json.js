@@ -1,4 +1,4 @@
-var objCharacters                     =
+var objCharacters =
 {
     "zorel": {
         "name": "Zorel",
