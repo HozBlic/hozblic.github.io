@@ -213,7 +213,7 @@ $(function () {
     });
 
     $('input.obtain_cbx').change(function () {
-        $('#characters .character').show();
+        $('#characters .character').css('display', '');
         $('.hide_checkbox').removeClass('hide_checkbox');
 
         if ($('input.obtain_cbx:checked').length) {
@@ -252,7 +252,11 @@ $(function () {
         }
 
         $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
-                                <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">${objCharacter['name']}</a>`);
+                                <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
+                                    ${objCharacter['mini'] ? '<img class="char_img_mini" src="images/mini_profiles/' + objCharacter['name'] + '.png">' : ''}
+                                    ${objCharacter['name']}
+                                </a>
+                            ` );
         $("#characters").append($divCharacter);
 
         var $divLoved = $("<div>", { "class": "loved_gifts" });
@@ -275,7 +279,7 @@ $(function () {
         localStorage.setItem("mistria_chb", JSON.stringify([...setCheckboxes]));
     });
 
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers'];
+    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop("checked", false);
         $(`#${strMode}`).change(function () {
@@ -309,7 +313,7 @@ $(function () {
     $("#search_items").on("keyup", function () {
         $('#characters').removeHighlight();
         $('#characters .character').removeClass('hide_search');
-        $('#characters .character').show();
+        $('#characters .character').css('display', '');
         var value = $(this).val().toLowerCase();
 
         $("#characters .gift").filter(function () {

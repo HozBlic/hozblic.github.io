@@ -40,12 +40,16 @@
 #triangle img:hover {
     transform: scale(1.1);
 }
-
-#page.mode_name .char_name,
+#page.mode_mini .char_img {
+    display: none;
+}
+#page.mode_mini .char_name,
+#page.mode_name .char_name {
+    display: flex;
+}
 #page.mode_name .has_tip .name {
     display: block;
 }
-
 #page:not(.mode_spoilers) .spoiler {
     display: none;
 }
@@ -321,12 +325,22 @@ body {
     object-fit: contain;
 }
 
+.char_img_mini {
+    width: 40px;
+    height: 40px;
+    image-rendering: crisp-edges;
+    margin-top: 2px;
+    object-fit: contain;
+}
+
 .char_name {
     font-size: 18px;
     font-weight: bold;
     display: none;
     color: var(--color-txt);
     text-decoration: unset;
+    gap: 5px;
+    align-items: center;
 }
 
 .liked_gifts,
