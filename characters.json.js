@@ -1,4 +1,4 @@
-var objCharacters                    =
+var objCharacters                     =
 {
     "zorel": {
         "name": "Zorel",
@@ -697,7 +697,7 @@ var objCharacters                    =
             "plum_blossom",
             "rose",
             "snowdrop_anemone",
-            "spring_galette"
+            "temple_flower"
         ]
     },
     "landen": {
@@ -740,22 +740,38 @@ var objCharacters                    =
     "taliferro": {
         "name": "Taliferro",
         "liked": [
-            "sushi_platter",
-            "crayfish_etouffee",
-            "deluxe_curry",
-            "crystal_berry_pie",
+            "chili_coconut_curry",
+            "coconut_cream_pie",
+            "crab_cakes",
+            "fish_tacos",
+            "glowberry_cookies",
+            "golden_cheesecake",
+            "golden_cookies",
+            "herb_salad",
+            "ice_cream_sundae",
+            "incredibly_hot_pot",
+            "lobster_roll",
+            "mushroom_steak_dinner",
+            "perch_risotto",
+            "pumpkin_pie",
             "red_wine",
-            "white_wine",
-            "latte",
-            "mocha",
-            "pan_fried_salmon",
-            "smoked_trout_soup",
-            "golden_egg",
-            "golden_cow_milk"
+            "sea_bream_rice",
+            "vegetable_pot_pie",
+            "vegetable_quiche",
+            "veggie_sub_sandwich",
+            "white_wine"
         ],
         "loved": [
-            "morel_mushroom",
-            "golden_duck_egg"
+            "apple_honey_curry",
+            "beet_soup",
+            "fried_rice",
+            "harvest_plate",
+            "mont_blanc",
+            "seafood_boil",
+            "seafood_snow_pea_noodles",
+            "spell_fruit_parfait",
+            "spring_galette",
+            "sushi_platter"
         ],
         "spoiler": 1
     },
@@ -903,7 +919,7 @@ var objCharacters                    =
             "golden_duck_egg",
             "golden_egg",
             "hard_wood",
-            "monster_cookie",
+            "dog_treat",
             "petrified_wood",
             "tiny_dinosaur_skeleton"
         ]

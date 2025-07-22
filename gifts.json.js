@@ -1,4 +1,4 @@
-var objGifts =
+var objGifts  =
 {
     "treasure_box_wood": {
         "imageName": "",
@@ -7957,7 +7957,7 @@ var objGifts =
         "imageName": "Crystal_berry_pie.png",
         "giftName": "Crystal Berry Pie",
         "giftLink": "Crystal_Berry_Pie",
-        "source": "",
+        "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" data-file-height=\"52\" data-file-width=\"56\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png?176a1c\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a>",
         "spoiler": 1
     },
     "sour_lemon_cake": {
@@ -9114,10 +9114,10 @@ var objGifts =
         "source": ""
     },
     "dog_treat": {
-        "imageName": "",
+        "imageName": "Dog_treat.png",
         "giftName": "Dog Treat",
-        "giftLink": "",
-        "source": ""
+        "giftLink": "Dog_Treat",
+        "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Supplies\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Supplies\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>100t</span><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mill#Animal_Feed\" title=\"Mill\"><img alt=\"Fp wiki mill craft.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mill_craft.png?ec122e\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mill#Animal_Feed\" title=\"Mill\">Milling</a>"
     },
     "copper_ingot": {
         "imageName": "Copper_Ingot.png",
@@ -10941,10 +10941,10 @@ var objGifts =
         "source": ""
     },
     "temple_flower": {
-        "imageName": "",
+        "imageName": "Temple_flower.png",
         "giftName": "Temple Flower",
-        "giftLink": "",
-        "source": ""
+        "giftLink": "Temple_Flower",
+        "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" data-file-height=\"52\" data-file-width=\"56\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png?d97fd0\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/The_Deep_Woods\" title=\"The Deep Woods\">The Deep Woods</a><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" data-file-height=\"52\" data-file-width=\"56\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png?e65cac\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Farming</a><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\"><img alt=\"Fp wiki balor.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_balor.png?5164a1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Balor%27s_Wagon#Crops/Forageables_Cooking_Ingredients\" title=\"Balor's Wagon\">Balor's Wagon</a> <p>(after conditions are met) for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>100t</span></p>"
     },
     "seed_temple_flower": {
         "imageName": "",
@@ -11087,8 +11087,1292 @@ var objGifts =
     "monster_hoop": {
         "imageName": "Monster_hoop.png",
         "giftName": "Monster Hoop",
+        "giftLink": "Monster_Hoop",
+        "source": "Unknown",
+        "spoiler": 1
+    },
+    "queen_berry": {
+        "imageName": "",
+        "giftName": "Queen Berry",
         "giftLink": "",
-        "source": "",
-        "nodata": 1
+        "source": ""
+    },
+    "queen_berry_trophy": {
+        "imageName": "",
+        "giftName": "Golden Queen Berry Trophy",
+        "giftLink": "",
+        "source": ""
+    },
+    "harvest_festival_arch": {
+        "imageName": "",
+        "giftName": "Harvest Festival Arch",
+        "giftLink": "",
+        "source": ""
+    },
+    "harvest_festival_centerpiece": {
+        "imageName": "",
+        "giftName": "Harvest Festival Centerpiece",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_decorative_pumpkin_white": {
+        "imageName": "",
+        "giftName": "Small Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_decorative_pumpkin_yellow": {
+        "imageName": "",
+        "giftName": "Small Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_decorative_pumpkin_orange": {
+        "imageName": "",
+        "giftName": "Small Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_decorative_pumpkin_green": {
+        "imageName": "",
+        "giftName": "Small Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_decorative_pumpkin_purple": {
+        "imageName": "",
+        "giftName": "Small Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_decorative_pumpkin_black": {
+        "imageName": "",
+        "giftName": "Small Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "medium_decorative_pumpkin_white": {
+        "imageName": "",
+        "giftName": "Medium Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "medium_decorative_pumpkin_yellow": {
+        "imageName": "",
+        "giftName": "Medium Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "medium_decorative_pumpkin_orange": {
+        "imageName": "",
+        "giftName": "Medium Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "medium_decorative_pumpkin_green": {
+        "imageName": "",
+        "giftName": "Medium Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "medium_decorative_pumpkin_purple": {
+        "imageName": "",
+        "giftName": "Medium Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "medium_decorative_pumpkin_black": {
+        "imageName": "",
+        "giftName": "Medium Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_decorative_pumpkin_white": {
+        "imageName": "",
+        "giftName": "Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_decorative_pumpkin_yellow": {
+        "imageName": "",
+        "giftName": "Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_decorative_pumpkin_orange": {
+        "imageName": "",
+        "giftName": "Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_decorative_pumpkin_green": {
+        "imageName": "",
+        "giftName": "Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_decorative_pumpkin_purple": {
+        "imageName": "",
+        "giftName": "Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_decorative_pumpkin_black": {
+        "imageName": "",
+        "giftName": "Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "extra_large_decorative_pumpkin_white": {
+        "imageName": "",
+        "giftName": "Extra Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "extra_large_decorative_pumpkin_yellow": {
+        "imageName": "",
+        "giftName": "Extra Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "extra_large_decorative_pumpkin_orange": {
+        "imageName": "",
+        "giftName": "Extra Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "extra_large_decorative_pumpkin_green": {
+        "imageName": "",
+        "giftName": "Extra Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "extra_large_decorative_pumpkin_purple": {
+        "imageName": "",
+        "giftName": "Extra Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "extra_large_decorative_pumpkin_black": {
+        "imageName": "",
+        "giftName": "Extra Large Decorative Pumpkin",
+        "giftLink": "",
+        "source": ""
+    },
+    "pumpkin_pile_white": {
+        "imageName": "",
+        "giftName": "Pumpkin Pile",
+        "giftLink": "",
+        "source": ""
+    },
+    "pumpkin_pile_yellow": {
+        "imageName": "",
+        "giftName": "Pumpkin Pile",
+        "giftLink": "",
+        "source": ""
+    },
+    "pumpkin_pile_orange": {
+        "imageName": "",
+        "giftName": "Pumpkin Pile",
+        "giftLink": "",
+        "source": ""
+    },
+    "pumpkin_pile_green": {
+        "imageName": "",
+        "giftName": "Pumpkin Pile",
+        "giftLink": "",
+        "source": ""
+    },
+    "pumpkin_pile_purple": {
+        "imageName": "",
+        "giftName": "Pumpkin Pile",
+        "giftLink": "",
+        "source": ""
+    },
+    "pumpkin_pile_black": {
+        "imageName": "",
+        "giftName": "Pumpkin Pile",
+        "giftLink": "",
+        "source": ""
+    },
+    "candied_queen_berries": {
+        "imageName": "",
+        "giftName": "Candied Queen Berries",
+        "giftLink": "",
+        "source": ""
+    },
+    "queen_berry_pie": {
+        "imageName": "",
+        "giftName": "Queen Berry Pie",
+        "giftLink": "",
+        "source": ""
+    },
+    "autumn_scarecrow": {
+        "imageName": "",
+        "giftName": "Autumn Scarecrow",
+        "giftLink": "",
+        "source": ""
+    },
+    "cornucopia": {
+        "imageName": "",
+        "giftName": "Cornucopia",
+        "giftLink": "",
+        "source": ""
+    },
+    "harvest_day_pie": {
+        "imageName": "",
+        "giftName": "Special Pie",
+        "giftLink": "",
+        "source": ""
+    },
+    "unknown_item": {
+        "imageName": "",
+        "giftName": "Unknown Item",
+        "giftLink": "",
+        "source": ""
+    },
+    "dragonsworn_chest_and_pants": {
+        "imageName": "",
+        "giftName": "Dragonsworn Chest and Pants",
+        "giftLink": "",
+        "source": ""
+    },
+    "heros_ring": {
+        "imageName": "",
+        "giftName": "Hero's Ring",
+        "giftLink": "",
+        "source": ""
+    },
+    "maples_drawing": {
+        "imageName": "",
+        "giftName": "Maple's Aldarian Star Drawing",
+        "giftLink": "",
+        "source": ""
+    },
+    "abyssal_chest": {
+        "imageName": "",
+        "giftName": "Abyssal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "poison_snake_oil": {
+        "imageName": "",
+        "giftName": "Poison Snake Oil",
+        "giftLink": "",
+        "source": ""
+    },
+    "fire_snake_oil": {
+        "imageName": "",
+        "giftName": "Fire Snake Oil",
+        "giftLink": "",
+        "source": ""
+    },
+    "ice_snake_oil": {
+        "imageName": "",
+        "giftName": "Ice Snake Oil",
+        "giftLink": "",
+        "source": ""
+    },
+    "fast_food": {
+        "imageName": "",
+        "giftName": "Fast Food",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_greenhouse_white_blueprint": {
+        "imageName": "",
+        "giftName": "Small White Greenhouse Blueprint",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_greenhouse_wood_blueprint": {
+        "imageName": "",
+        "giftName": "Small Wood Greenhouse Blueprint",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_greenhouse_white_blueprint": {
+        "imageName": "",
+        "giftName": "Large White Greenhouse Blueprint",
+        "giftLink": "",
+        "source": ""
+    },
+    "large_greenhouse_wood_blueprint": {
+        "imageName": "",
+        "giftName": "Large Wood Greenhouse Blueprint",
+        "giftLink": "",
+        "source": ""
+    },
+    "hero_shield_bronze": {
+        "imageName": "",
+        "giftName": "Champion's Shield",
+        "giftLink": "",
+        "source": ""
+    },
+    "hero_shield_gold": {
+        "imageName": "",
+        "giftName": "Champion's Shield",
+        "giftLink": "",
+        "source": ""
+    },
+    "hero_shield_silver": {
+        "imageName": "",
+        "giftName": "Champion's Shield",
+        "giftLink": "",
+        "source": ""
+    },
+    "royal_chest_wood": {
+        "imageName": "",
+        "giftName": "Royal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "royal_chest_dark_wood": {
+        "imageName": "",
+        "giftName": "Royal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "royal_chest_red": {
+        "imageName": "",
+        "giftName": "Royal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "royal_chest_blue": {
+        "imageName": "",
+        "giftName": "Royal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "royal_chest_purple": {
+        "imageName": "",
+        "giftName": "Royal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "royal_chest_green": {
+        "imageName": "",
+        "giftName": "Royal Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "inn_menu": {
+        "imageName": "",
+        "giftName": "Inn Menu",
+        "giftLink": "",
+        "source": ""
+    },
+    "picnic_set": {
+        "imageName": "",
+        "giftName": "Picnic Set",
+        "giftLink": "",
+        "source": ""
+    },
+    "lovely_seashell": {
+        "imageName": "",
+        "giftName": "Lovely Seashell",
+        "giftLink": "",
+        "source": ""
+    },
+    "dollhouse_bench": {
+        "imageName": "",
+        "giftName": "Dollhouse Bench",
+        "giftLink": "",
+        "source": ""
+    },
+    "rough_gemstone": {
+        "imageName": "",
+        "giftName": "Rough Gemstone",
+        "giftLink": "",
+        "source": ""
+    },
+    "bath_soap": {
+        "imageName": "",
+        "giftName": "Bath Soap",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_beach": {
+        "imageName": "",
+        "giftName": "Beach Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_bath": {
+        "imageName": "",
+        "giftName": "Bath Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_deep_woods": {
+        "imageName": "",
+        "giftName": "Picnic Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_gem_cutting": {
+        "imageName": "",
+        "giftName": "Gem Cutting Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_inn": {
+        "imageName": "",
+        "giftName": "Inn Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_park": {
+        "imageName": "",
+        "giftName": "Park Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "date_photo_shooting_star": {
+        "imageName": "",
+        "giftName": "Shooting Star Date Photo",
+        "giftLink": "",
+        "source": ""
+    },
+    "seed_mystery_bag": {
+        "imageName": "",
+        "giftName": "Magic Seed",
+        "giftLink": "",
+        "source": ""
+    },
+    "essence_stone_giant": {
+        "imageName": "",
+        "giftName": "Giant Essence Stone",
+        "giftLink": "",
+        "source": ""
+    },
+    "bomb": {
+        "imageName": "",
+        "giftName": "Clod Bomb",
+        "giftLink": "",
+        "source": ""
+    },
+    "misty_black_mirror": {
+        "imageName": "",
+        "giftName": "Misty Black Mirror",
+        "giftLink": "",
+        "source": ""
+    },
+    "misty_feather_quill": {
+        "imageName": "",
+        "giftName": "Misty Feather Quill",
+        "giftLink": "",
+        "source": ""
+    },
+    "mist_crystal": {
+        "imageName": "",
+        "giftName": "Mist Crystal",
+        "giftLink": "",
+        "source": ""
+    },
+    "mist_scroll": {
+        "imageName": "",
+        "giftName": "Mist Scroll",
+        "giftLink": "",
+        "source": ""
+    },
+    "mist_flute": {
+        "imageName": "",
+        "giftName": "Mist Flute",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_frying_pan_v1": {
+        "imageName": "",
+        "giftName": "Frying Pan",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_frying_pan_v2": {
+        "imageName": "",
+        "giftName": "Frying Pan",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_frying_pan_v3": {
+        "imageName": "",
+        "giftName": "Frying Pan",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_stockpot_v1": {
+        "imageName": "",
+        "giftName": "Stockpot",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_stockpot_v2": {
+        "imageName": "",
+        "giftName": "Stockpot",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_stockpot_v3": {
+        "imageName": "",
+        "giftName": "Stockpot",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_tea_kettle_v1": {
+        "imageName": "",
+        "giftName": "Tea Kettle",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_tea_kettle_v2": {
+        "imageName": "",
+        "giftName": "Tea Kettle",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_tea_kettle_v3": {
+        "imageName": "",
+        "giftName": "Tea Kettle",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_hanging_pans_v1": {
+        "imageName": "",
+        "giftName": "Hanging Pans",
+        "giftLink": "",
+        "source": ""
+    },
+    "cooking_hanging_pans_v2": {
+        "imageName": "",
+        "giftName": "Hanging Pans",
+        "giftLink": "",
+        "source": ""
+    },
+    "basket": {
+        "imageName": "",
+        "giftName": "Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "beer_mug": {
+        "imageName": "",
+        "giftName": "Beer Mug",
+        "giftLink": "",
+        "source": ""
+    },
+    "box_medium_v1": {
+        "imageName": "",
+        "giftName": "Medium Box",
+        "giftLink": "",
+        "source": ""
+    },
+    "box_small_v1": {
+        "imageName": "",
+        "giftName": "Small Box",
+        "giftLink": "",
+        "source": ""
+    },
+    "box_small_v2": {
+        "imageName": "",
+        "giftName": "Small Box",
+        "giftLink": "",
+        "source": ""
+    },
+    "candle": {
+        "imageName": "",
+        "giftName": "Candle",
+        "giftLink": "",
+        "source": ""
+    },
+    "candle_chamberstick": {
+        "imageName": "",
+        "giftName": "Candle Chamberstick",
+        "giftLink": "",
+        "source": ""
+    },
+    "glass_absinthe": {
+        "imageName": "",
+        "giftName": "Absinthe Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "glass_cocktail": {
+        "imageName": "",
+        "giftName": "Cocktail Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "glass_lemonade": {
+        "imageName": "",
+        "giftName": "Lemonade Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "glass_milk": {
+        "imageName": "",
+        "giftName": "Milk Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "glass_water": {
+        "imageName": "",
+        "giftName": "Water Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "glass_whisky": {
+        "imageName": "",
+        "giftName": "Whisky Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "green_bottle": {
+        "imageName": "",
+        "giftName": "Green Bottle",
+        "giftLink": "",
+        "source": ""
+    },
+    "jar_large": {
+        "imageName": "",
+        "giftName": "Large Jar",
+        "giftLink": "",
+        "source": ""
+    },
+    "jar_medium": {
+        "imageName": "",
+        "giftName": "Medium Jar",
+        "giftLink": "",
+        "source": ""
+    },
+    "jar_pair": {
+        "imageName": "",
+        "giftName": "Pair of Jars",
+        "giftLink": "",
+        "source": ""
+    },
+    "jar_small": {
+        "imageName": "",
+        "giftName": "Small Jar",
+        "giftLink": "",
+        "source": ""
+    },
+    "notepad_white": {
+        "imageName": "",
+        "giftName": "Notepad",
+        "giftLink": "",
+        "source": ""
+    },
+    "notepad_yellow": {
+        "imageName": "",
+        "giftName": "Notepad",
+        "giftLink": "",
+        "source": ""
+    },
+    "paper_stack": {
+        "imageName": "",
+        "giftName": "Paper Stack",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_vase_v1": {
+        "imageName": "",
+        "giftName": "Small Vase",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_vase_v2": {
+        "imageName": "",
+        "giftName": "Small Vase",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_vase_v3": {
+        "imageName": "",
+        "giftName": "Small Vase",
+        "giftLink": "",
+        "source": ""
+    },
+    "small_vase_v4": {
+        "imageName": "",
+        "giftName": "Small Vase",
+        "giftLink": "",
+        "source": ""
+    },
+    "tea_black": {
+        "imageName": "",
+        "giftName": "Black Tea Cup",
+        "giftLink": "",
+        "source": ""
+    },
+    "tea_green": {
+        "imageName": "",
+        "giftName": "Green Tea Cup",
+        "giftLink": "",
+        "source": ""
+    },
+    "wine_glass_red": {
+        "imageName": "",
+        "giftName": "Red Wine Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "wine_glass_rose": {
+        "imageName": "",
+        "giftName": "Rose Wine Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "wine_glass_white": {
+        "imageName": "",
+        "giftName": "White Wine Glass",
+        "giftLink": "",
+        "source": ""
+    },
+    "cream_pet_dish": {
+        "imageName": "",
+        "giftName": "Cream Pet Dish",
+        "giftLink": "",
+        "source": ""
+    },
+    "pink_pet_dish": {
+        "imageName": "",
+        "giftName": "Pink Pet Dish",
+        "giftLink": "",
+        "source": ""
+    },
+    "blue_pet_dish": {
+        "imageName": "",
+        "giftName": "Blue Pet Dish",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_bed_v1": {
+        "imageName": "",
+        "giftName": "Emerald Single Bed",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_bed_v2": {
+        "imageName": "",
+        "giftName": "Emerald Single Bed",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_double_bed_v1": {
+        "imageName": "",
+        "giftName": "Emerald Double Bed",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_double_bed_v2": {
+        "imageName": "",
+        "giftName": "Emerald Double Bed",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_chair_v1": {
+        "imageName": "",
+        "giftName": "Emerald Chair",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_chair_v2": {
+        "imageName": "",
+        "giftName": "Emerald Chair",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_nightstand_v1": {
+        "imageName": "",
+        "giftName": "Emerald Nightstand",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_nightstand_v2": {
+        "imageName": "",
+        "giftName": "Emerald Nightstand",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_rug_v1": {
+        "imageName": "",
+        "giftName": "Emerald Rug",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_rug_v2": {
+        "imageName": "",
+        "giftName": "Emerald Rug",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_wallpaper_v1": {
+        "imageName": "",
+        "giftName": "Emerald Wallpaper",
+        "giftLink": "",
+        "source": ""
+    },
+    "emerald_wallpaper_v2": {
+        "imageName": "",
+        "giftName": "Emerald Wallpaper",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_red": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_orange": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_gold": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_green": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_aqua": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_blue": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_purple": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_pink": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_black": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_gray": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_white": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_light_brown": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_storage_chest_dark_brown": {
+        "imageName": "",
+        "giftName": "Deluxe Storage Chest",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_icebox_white": {
+        "imageName": "",
+        "giftName": "Deluxe Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_icebox_pink": {
+        "imageName": "",
+        "giftName": "Deluxe Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_icebox_blue": {
+        "imageName": "",
+        "giftName": "Deluxe Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_icebox_yellow": {
+        "imageName": "",
+        "giftName": "Deluxe Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "deluxe_icebox_green": {
+        "imageName": "",
+        "giftName": "Deluxe Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "obelisk_beige": {
+        "imageName": "",
+        "giftName": "Obelisk",
+        "giftLink": "",
+        "source": ""
+    },
+    "obelisk_black": {
+        "imageName": "",
+        "giftName": "Obelisk",
+        "giftLink": "",
+        "source": ""
+    },
+    "obelisk_pink": {
+        "imageName": "",
+        "giftName": "Obelisk",
+        "giftLink": "",
+        "source": ""
+    },
+    "obelisk_white": {
+        "imageName": "",
+        "giftName": "Obelisk",
+        "giftLink": "",
+        "source": ""
+    },
+    "obelisk_teal": {
+        "imageName": "",
+        "giftName": "Obelisk",
+        "giftLink": "",
+        "source": ""
+    },
+    "obelisk_plum": {
+        "imageName": "",
+        "giftName": "Obelisk",
+        "giftLink": "",
+        "source": ""
+    },
+    "animated_snow_globe": {
+        "imageName": "",
+        "giftName": "Animated Snow Globe",
+        "giftLink": "",
+        "source": ""
+    },
+    "ladder": {
+        "imageName": "",
+        "giftName": "House Ladder",
+        "giftLink": "",
+        "source": ""
+    },
+    "stairs": {
+        "imageName": "",
+        "giftName": "House Stairs",
+        "giftLink": "",
+        "source": ""
+    },
+    "teleportation_pad": {
+        "imageName": "",
+        "giftName": "Teleportation Circle",
+        "giftLink": "",
+        "source": ""
+    },
+    "crop_faux_mystery_bag": {
+        "imageName": "",
+        "giftName": "Faux Magic Seed Plant",
+        "giftLink": "",
+        "source": ""
+    },
+    "crop_sign_mystery_bag": {
+        "imageName": "",
+        "giftName": "Magic Seed Plant Sign",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_scale_yellow": {
+        "imageName": "",
+        "giftName": "Kitchen Scale",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_scale_pink": {
+        "imageName": "",
+        "giftName": "Kitchen Scale",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_scale_orange": {
+        "imageName": "",
+        "giftName": "Kitchen Scale",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_scale_blue": {
+        "imageName": "",
+        "giftName": "Kitchen Scale",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_utensil_holder_pink": {
+        "imageName": "",
+        "giftName": "Utensil Holder",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_utensil_holder_white": {
+        "imageName": "",
+        "giftName": "Utensil Holder",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_utensil_holder_green": {
+        "imageName": "",
+        "giftName": "Utensil Holder",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_utensil_holder_blue": {
+        "imageName": "",
+        "giftName": "Utensil Holder",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_salt_and_pepper_shakers": {
+        "imageName": "",
+        "giftName": "Salt & Pepper Shakers",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_herb_planter_v1": {
+        "imageName": "",
+        "giftName": "Herb Planter",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_herb_planter_v2": {
+        "imageName": "",
+        "giftName": "Herb Planter",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_oil_and_vinegar_basket_v1": {
+        "imageName": "",
+        "giftName": "Oil & Vinegar Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_oil_and_vinegar_basket_v2": {
+        "imageName": "",
+        "giftName": "Oil & Vinegar Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_mixing_bowls_v1": {
+        "imageName": "",
+        "giftName": "Mixing Bowls",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_mixing_bowls_v2": {
+        "imageName": "",
+        "giftName": "Mixing Bowls",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_mixing_bowls_v3": {
+        "imageName": "",
+        "giftName": "Mixing Bowls",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_mixing_bowls_v4": {
+        "imageName": "",
+        "giftName": "Mixing Bowls",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_garlic_braid": {
+        "imageName": "",
+        "giftName": "Garlic Braid",
+        "giftLink": "",
+        "source": ""
+    },
+    "kitchen_hanging_onion_basket": {
+        "imageName": "",
+        "giftName": "Hanging Onion Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "champions_kitchen_blue": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen",
+        "giftLink": "",
+        "source": ""
+    },
+    "champions_kitchen_pink": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen",
+        "giftLink": "",
+        "source": ""
+    },
+    "champions_kitchen_yellow": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen",
+        "giftLink": "",
+        "source": ""
+    },
+    "champions_kitchen_green": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen",
+        "giftLink": "",
+        "source": ""
+    },
+    "counter_kitchen_pink": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen Counter",
+        "giftLink": "",
+        "source": ""
+    },
+    "counter_kitchen_blue": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen Counter",
+        "giftLink": "",
+        "source": ""
+    },
+    "counter_kitchen_yellow": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen Counter",
+        "giftLink": "",
+        "source": ""
+    },
+    "counter_kitchen_green": {
+        "imageName": "",
+        "giftName": "Champion's Kitchen Counter",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_rug_v1": {
+        "imageName": "",
+        "giftName": "Craft Crochet Rug",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_rug_v2": {
+        "imageName": "",
+        "giftName": "Craft Crochet Rug",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_rug_v3": {
+        "imageName": "",
+        "giftName": "Craft Crochet Rug",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_yarn_basket_v1": {
+        "imageName": "",
+        "giftName": "Craft Yarn Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_yarn_basket_v2": {
+        "imageName": "",
+        "giftName": "Craft Yarn Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_yarn_basket_v3": {
+        "imageName": "",
+        "giftName": "Craft Yarn Basket",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_fabric_rack_v1": {
+        "imageName": "",
+        "giftName": "Craft Fabric Rack",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_fabric_rack_v2": {
+        "imageName": "",
+        "giftName": "Craft Fabric Rack",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_fabric_rack_v3": {
+        "imageName": "",
+        "giftName": "Craft Fabric Rack",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_closed_sewing_tin_v1": {
+        "imageName": "",
+        "giftName": "Craft Sewing Tin",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_closed_sewing_tin_v2": {
+        "imageName": "",
+        "giftName": "Craft Sewing Tin",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_closed_sewing_tin_v3": {
+        "imageName": "",
+        "giftName": "Craft Sewing Tin",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_open_sewing_tin_v1": {
+        "imageName": "",
+        "giftName": "Craft Sewing Tin",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_open_sewing_tin_v2": {
+        "imageName": "",
+        "giftName": "Craft Sewing Tin",
+        "giftLink": "",
+        "source": ""
+    },
+    "craft_open_sewing_tin_v3": {
+        "imageName": "",
+        "giftName": "Craft Sewing Tin",
+        "giftLink": "",
+        "source": ""
+    },
+    "cottage_fridge_oak": {
+        "imageName": "",
+        "giftName": "Lovely Cottage Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "cottage_fridge_ash": {
+        "imageName": "",
+        "giftName": "Lovely Cottage Icebox",
+        "giftLink": "",
+        "source": ""
+    },
+    "cottage_potted_flowers_oak": {
+        "imageName": "",
+        "giftName": "Lovely Cottage Potted Flowers",
+        "giftLink": "",
+        "source": ""
+    },
+    "cottage_potted_flowers_ash": {
+        "imageName": "",
+        "giftName": "Lovely Cottage Potted Flowers",
+        "giftLink": "",
+        "source": ""
     }
 }

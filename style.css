@@ -118,6 +118,15 @@ body {
     transition: margin 0.3s ease;
 }
 
+#header #title .version {
+    font-size: 12px;
+    opacity: 0.3;
+    margin-left: 5px;
+}
+#page:not(.mode_collapse) #header #title .version  {
+    opacity: 0;
+}
+
 @media only screen and (min-width: 550px) {
 
     #side_menu {
@@ -133,6 +142,9 @@ body {
 
     #page:not(.mode_collapse) #header #title {
         margin-left: 225px;
+    }
+    #page:not(.mode_collapse) #header #title .version  {
+        opacity: 0.3;
     }
 }
 
