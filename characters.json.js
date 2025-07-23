@@ -23,7 +23,6 @@ var objCharacters =
             "morel_mushroom"
         ],
         "spoiler": 1,
-        "mini": 1
     },
     "seridia": {
         "name": "Seridia",
@@ -47,6 +46,7 @@ var objCharacters =
             "night_queen",
             "fog_orchid"
         ],
+        "spoiler": 1,
     },
     "henrietta": {
         "name": "Henrietta",
@@ -84,7 +84,6 @@ var objCharacters =
             "deluxe_small_animal_feed",
             "ultimate_small_animal_feed"
         ],
-        "mini": 1
     },
     "hemlock": {
         "name": "Hemlock",
@@ -122,7 +121,6 @@ var objCharacters =
             "wild_grapes",
             "spicy_corn"
         ],
-        "mini": 1
     },
     "olric": {
         "name": "Olric",
@@ -160,7 +158,6 @@ var objCharacters =
             "perfect_sapphire",
             "perfect_silver_ore"
         ],
-        "mini": 1
     },
     "valen": {
         "name": "Valen",
@@ -198,7 +195,6 @@ var objCharacters =
             "sushi_platter",
             "vegetable_soup"
         ],
-        "mini": 1
     },
     "hayden": {
         "name": "Hayden",
@@ -236,7 +232,6 @@ var objCharacters =
             "stone_horse",
             "vegetable_quiche"
         ],
-        "mini": 1
     },
     "maple": {
         "name": "Maple",
@@ -274,7 +269,6 @@ var objCharacters =
             "mont_blanc",
             "stone_shell"
         ],
-        "mini": 1
     },
     "vera": {
         "name": "Vera",
@@ -312,7 +306,6 @@ var objCharacters =
             "vegetable_pot_pie",
             "winter_stew"
         ],
-        "mini": 1
     },
     "march": {
         "name": "March",
@@ -350,7 +343,6 @@ var objCharacters =
             "perfect_silver_ore",
             "sushi_platter"
         ],
-        "mini": 1
     },
     "terithia": {
         "name": "Terithia",
@@ -388,7 +380,6 @@ var objCharacters =
             "seafood_snow_pea_noodles",
             "sushi_platter"
         ],
-        "mini": 1
     },
     "eiland": {
         "name": "Eiland",
@@ -426,7 +417,6 @@ var objCharacters =
             "spell_fruit_parfait",
             "strawberry_shortcake"
         ],
-        "mini": 1
     },
     "darcy": {
         "name": "Darcy",
@@ -464,7 +454,6 @@ var objCharacters =
             "spell_fruit",
             "sugar"
         ],
-        "mini": 1
     },
     "nora": {
         "name": "Nora",
@@ -502,7 +491,6 @@ var objCharacters =
             "sauteed_snow_peas",
             "toasted_sunflower_seeds"
         ],
-        "mini": 1
     },
     "juniper": {
         "name": "Juniper",
@@ -540,7 +528,6 @@ var objCharacters =
             "pizza",
             "spell_fruit_parfait"
         ],
-        "mini": 1
     },
     "stillwell": {
         "name": "Stillwell",
@@ -565,7 +552,6 @@ var objCharacters =
             "red_wine"
         ],
         "spoiler": 1,
-        "mini": 1
     },
     "errol": {
         "name": "Errol",
@@ -603,7 +589,6 @@ var objCharacters =
             "shard_mass",
             "white_wine"
         ],
-        "mini": 1
     },
     "luc": {
         "name": "Luc",
@@ -641,7 +626,6 @@ var objCharacters =
             "sea_scarab",
             "strobe_firefly"
         ],
-        "mini": 1
     },
     "caldarus": {
         "name": "Caldarus",
@@ -678,7 +662,7 @@ var objCharacters =
             "statuette_of_caldarus",
             "sushi_platter",
             "veggie_sub_sandwich"
-        ]
+        ],
     },
     "celine": {
         "name": "Celine",
@@ -716,7 +700,6 @@ var objCharacters =
             "snowdrop_anemone",
             "temple_flower"
         ],
-        "mini": 1
     },
     "landen": {
         "name": "Landen",
@@ -754,7 +737,6 @@ var objCharacters =
             "hard_wood",
             "shard_mass"
         ],
-        "mini": 1
     },
     "taliferro": {
         "name": "Taliferro",
@@ -792,8 +774,6 @@ var objCharacters =
             "spring_galette",
             "sushi_platter"
         ],
-        "spoiler": 1,
-        "mini": 1
     },
     "wheedle": {
         "name": "Wheedle",
@@ -831,8 +811,6 @@ var objCharacters =
             "perfect_sapphire",
             "ore_pink_diamond"
         ],
-        "spoiler": 1,
-        "mini": 1
     },
     "holt": {
         "name": "Holt",
@@ -870,7 +848,6 @@ var objCharacters =
             "watermelon",
             "wheat"
         ],
-        "mini": 1
     },
     "josephine": {
         "name": "Josephine",
@@ -908,7 +885,6 @@ var objCharacters =
             "chili_coconut_curry",
             "crayfish_etouffee"
         ],
-        "mini": 1
     },
     "dozy": {
         "name": "Dozy",
@@ -946,7 +922,6 @@ var objCharacters =
             "petrified_wood",
             "tiny_dinosaur_skeleton"
         ],
-        "mini": 1
     },
     "louis": {
         "name": "Louis",
@@ -984,7 +959,6 @@ var objCharacters =
             "red_wine",
             "white_wine"
         ],
-        "mini": 1
     },
     "dell": {
         "name": "Dell",
@@ -1022,7 +996,6 @@ var objCharacters =
             "ice_cream_sundae",
             "jam_sandwich"
         ],
-        "mini": 1
     },
     "elsie": {
         "name": "Elsie",
@@ -1060,7 +1033,6 @@ var objCharacters =
             "rose",
             "wildberry_scone"
         ],
-        "mini": 1
     },
     "balor": {
         "name": "Balor",
@@ -1098,7 +1070,6 @@ var objCharacters =
             "perfect_ruby",
             "perfect_sapphire"
         ],
-        "mini": 1
     },
     "reina": {
         "name": "Reina",
@@ -1136,7 +1107,6 @@ var objCharacters =
             "spell_fruit_parfait",
             "sushi_platter"
         ],
-        "mini": 1
     },
     "adeline": {
         "name": "Adeline",
@@ -1174,7 +1144,6 @@ var objCharacters =
             "pumpkin_pie",
             "cup_of_tea"
         ],
-        "mini": 1
     },
     "ryis": {
         "name": "Ryis",
@@ -1212,7 +1181,6 @@ var objCharacters =
             "lobster_roll",
             "veggie_sub_sandwich"
         ],
-        "mini": 1
     },
     "merri": {
         "name": "Merri",
@@ -1250,6 +1218,5 @@ var objCharacters =
             "perfect_diamond",
             "perfect_pink_diamond"
         ],
-        "mini": 1
     }
 }

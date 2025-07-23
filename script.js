@@ -253,7 +253,7 @@ $(function () {
 
         $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
                                 <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
-                                    ${objCharacter['mini'] ? '<img class="char_img_mini" src="images/mini_profiles/' + objCharacter['name'] + '.png">' : ''}
+                                    <img class="char_img_mini" src="images/mini_profiles/${objCharacter['name']}.png">
                                     ${objCharacter['name']}
                                 </a>
                             ` );
