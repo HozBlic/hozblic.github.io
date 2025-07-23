@@ -46,6 +46,7 @@
 }
 
 #page.mode_mini .char_name,
+#page.mode_mini .char_name .char_img_mini,
 #page.mode_name .char_name {
     display: flex;
 }
@@ -368,6 +369,8 @@ body {
     image-rendering: pixelated;
     margin-top: 2px;
     object-fit: contain;
+    margin-right: 5px;
+    display: none;
 }
 
 .char_name {
@@ -376,7 +379,6 @@ body {
     display: none;
     color: var(--color-txt);
     text-decoration: unset;
-    gap: 5px;
     align-items: center;
     height: 42px;
 }
