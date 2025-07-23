@@ -863,7 +863,6 @@ var objGifts =
         "giftName": "Obsidian",
         "giftLink": "Obsidian",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\"><img alt=\"Almanac icon forageables.png\" data-file-height=\"52\" data-file-width=\"56\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_forageables.png?d97fd0\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Forageables\" title=\"Forageables\">Foraging</a> in the <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#Lava_Caves\" title=\"Mines\">The Lava Caves</a>",
-        "spoiler": 1
     },
     "lava_piranha": {
         "imageName": "",
@@ -6584,7 +6583,7 @@ var objGifts =
     "dragon_forged_bracelet": {
         "imageName": "Dragon_forged_bracelet.png",
         "giftName": "Dragon-Forged Bracelet",
-        "giftLink": "Dragon-Forged_Bracelet",
+        "giftLink": "Dragon_Forged_Bracelet",
         "source": "",
         "spoiler": 1
     },
@@ -7958,7 +7957,6 @@ var objGifts =
         "giftName": "Crystal Berry Pie",
         "giftLink": "Crystal_Berry_Pie",
         "source": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\"><img alt=\"Almanac icon cooked dishes.png\" data-file-height=\"52\" data-file-width=\"56\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_cooked_dishes.png?176a1c\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Cooking\" title=\"Cooking\">Cooking</a>",
-        "spoiler": 1
     },
     "sour_lemon_cake": {
         "imageName": "Lemon_cake.png",
