@@ -40,16 +40,20 @@
 #triangle img:hover {
     transform: scale(1.1);
 }
+
 #page.mode_mini .char_img {
     display: none;
 }
+
 #page.mode_mini .char_name,
 #page.mode_name .char_name {
     display: flex;
 }
+
 #page.mode_name .has_tip .name {
     display: block;
 }
+
 #page:not(.mode_spoilers) .spoiler {
     display: none;
 }
@@ -127,7 +131,8 @@ body {
     opacity: 0.3;
     margin-left: 5px;
 }
-#page:not(.mode_collapse) #header #title .version  {
+
+#page:not(.mode_collapse) #header #title .version {
     opacity: 0;
 }
 
@@ -147,7 +152,8 @@ body {
     #page:not(.mode_collapse) #header #title {
         margin-left: 225px;
     }
-    #page:not(.mode_collapse) #header #title .version  {
+
+    #page:not(.mode_collapse) #header #title .version {
         opacity: 0.3;
     }
 }
@@ -272,20 +278,51 @@ body {
     z-index: 3;
 }
 
-#owner {
-    color: var(--color-txt);
+#suggestion {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
     text-decoration: unset;
+    color: var(--color-txt);
+}
+
+#suggestion_question {
+    font-size: 10px;
+    line-height: 10px;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+#suggestion:hover #suggestion_question {
+    opacity: 0.5;
+}
+
+#suggestion_question p {
+    margin: 0;
+}
+#suggestion_question svg {
+    height: 100%;
+    width: 7px;
+    margin-left: 2px;
+}
+
+#suggestion_question svg * {
+    fill: var(--color-txt);
+}
+
+#owner {
     font-size: 14px;
+    line-height: 14px;
     display: flex;
     align-items: center;
     gap: 7px;
     opacity: 0.3;
-    margin-left: auto;
-    margin-top: auto;
     transition: opacity 0.3s ease;
 }
 
-#owner:hover {
+#suggestion:hover #owner {
     opacity: 1;
 }
 
