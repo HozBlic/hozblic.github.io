@@ -328,7 +328,7 @@ body {
 .char_img_mini {
     width: 40px;
     height: 40px;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
     margin-top: 2px;
     object-fit: contain;
 }
@@ -433,7 +433,7 @@ body {
     height: 50px;
     cursor: pointer;
     background-size: contain;
-    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .gift label .image.nodata {
@@ -450,7 +450,6 @@ body {
     display: block;
     position: relative;
     width: 10px;
-    /* height: 100%; */
     line-height: 20px;
     font-size: 20px;
     text-align: center;
