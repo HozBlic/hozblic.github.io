@@ -84,36 +84,36 @@ const arrObtainEasy = [
 ]
 
 const objCharOrder = {
-    "celine": 0,
-    "juniper": 1,
-    "reina": 2,
-    "valen": 3,
-    "adeline": 4,
-    "balor": 5,
-    "march": 6,
-    "hayden": 7,
-    "ryis": 8,
-    "eiland": 9,
-    "dell": 10,
-    "dozy": 11,
-    "elsie": 12,
-    "errol": 13,
-    "hemlock": 14,
-    "holt": 15,
-    "henrietta": 16,
-    "josephine": 17,
-    "landen": 18,
-    "luc": 19,
-    "maple": 20,
-    "nora": 21,
-    "olric": 22,
-    "terithia": 23,
-    "darcy": 24,
-    "louis": 25,
-    "merri": 26,
-    "vera": 27,
-    "caldarus": 28,
-    "seridia": 29
+    'celine': 0,
+    'juniper': 1,
+    'reina': 2,
+    'valen': 3,
+    'adeline': 4,
+    'balor': 5,
+    'march': 6,
+    'hayden': 7,
+    'ryis': 8,
+    'eiland': 9,
+    'dell': 10,
+    'dozy': 11,
+    'elsie': 12,
+    'errol': 13,
+    'hemlock': 14,
+    'holt': 15,
+    'henrietta': 16,
+    'josephine': 17,
+    'landen': 18,
+    'luc': 19,
+    'maple': 20,
+    'nora': 21,
+    'olric': 22,
+    'terithia': 23,
+    'darcy': 24,
+    'louis': 25,
+    'merri': 26,
+    'vera': 27,
+    'caldarus': 28,
+    'seridia': 29
 }
 
 
@@ -125,7 +125,7 @@ $('.gift').each(function () {
 });
 
 //get rid of old checkbox system
-var arrOldCheckboxes = localStorage.getItem("mistria");
+var arrOldCheckboxes = localStorage.getItem('mistria');
 if (arrOldCheckboxes !== null) {
     arrOldCheckboxes = JSON.parse(arrOldCheckboxes);
     var setOldCheckboxes = new Set(arrOldCheckboxes);
@@ -135,11 +135,11 @@ if (arrOldCheckboxes !== null) {
         setCheckboxes.add(objOldIDs[strID]);
     });
 
-    localStorage.setItem("mistria_chb", JSON.stringify([...setCheckboxes]));
-    localStorage.removeItem("mistria");
+    localStorage.setItem('mistria_chb', JSON.stringify([...setCheckboxes]));
+    localStorage.removeItem('mistria');
 }
 
-var arrCheckboxes = localStorage.getItem("mistria_chb");
+var arrCheckboxes = localStorage.getItem('mistria_chb');
 if (arrCheckboxes === null) {
     var setCheckboxes = new Set();
 } else {
@@ -147,13 +147,15 @@ if (arrCheckboxes === null) {
     var setCheckboxes = new Set(arrCheckboxes);
 }
 
-var arrOptions = localStorage.getItem("mistria_options");
+var arrOptions = localStorage.getItem('mistria_options');
 if (arrOptions === null) {
     var setOptions = new Set();
 } else {
     arrOptions = JSON.parse(arrOptions);
     var setOptions = new Set(arrOptions);
 }
+
+var strSort = localStorage.getItem('mistria_sort');
 
 function createGiftItem(arrGifts, strCharacterKey, $objParent) {
     arrGifts.forEach(function (strGiftKey) {
@@ -192,14 +194,59 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
     });
 }
 
+function changeSort(objElem) {
+    if ($(objElem).hasClass('selected')) return;
+
+    strSort = $(objElem).attr('data-value');
+
+    if (strSort !== 'default') {
+        localStorage.setItem('mistria_sort', strSort);
+    }
+    else {
+        localStorage.removeItem('mistria_sort');
+        strSort = null;
+    }
+
+    $('.dropdown-item.sort').removeClass('selected');
+    $(`.dropdown-item.sort[data-value="${strSort ? strSort : 'default'}"]`).addClass('selected');
+
+    $('.character').css('order', '');
+
+    let sortedEntries = Object.entries(objCharacters);
+    if (strSort === 'az') {
+        sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
+    } else if (strSort === 'za') {
+        sortedEntries.sort((a, b) => b[1].name.localeCompare(a[1].name));
+    }
+
+    var intIndex = 0;
+
+    sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
+        $divCharacter = $(`#character_${strCharacterKey}`);
+
+        if (strSort === null) {
+            if (strCharacterKey in objCharOrder) {
+                $divCharacter.css('order', objCharOrder[strCharacterKey]);
+            }
+            else {
+                $divCharacter.css('order', 99);
+            }
+        }
+        else {
+            $divCharacter.css('order', intIndex);
+            intIndex++;
+        }
+    });
+}
+
 $(function () {
 
-    tippy("#triangle img", {
-        content: "Red bull, please?",
+    tippy('#triangle img', {
+        content: 'Red bull, please?',
     });
 
-    tippy("#older_browsers", {
-        content: "Does not work in older browsers",
+    tippy('#older_browsers', {
+        content: 'Does not work in older browsers',
     });
 
     arrObtain.forEach(function (strObtain, i) {
@@ -211,6 +258,20 @@ $(function () {
         }
 
     });
+
+    $(document).on('click', function (e) {
+        var jqTarget = $(e.target);
+
+        if (
+            jqTarget.parents('#sort_button').length == 0 &&
+            jqTarget.attr('id') != 'sort_button'
+        ) {
+            $('#sort_button').parent().removeClass('open');
+        }
+    });
+
+    $('.dropdown-item.sort').removeClass('selected');
+    $(`.dropdown-item.sort[data-value="${strSort ? strSort : 'default'}"]`).addClass('selected');
 
     $('input.obtain_cbx').change(function () {
         $('#characters .character').css('display', '');
@@ -237,18 +298,27 @@ $(function () {
         });
     });
 
-    Object.entries(objCharacters).forEach(([strCharacterKey, objCharacter]) => {
-        var $divCharacter = $("<div>", { "class": "character" });
+    let sortedEntries = Object.entries(objCharacters);
+    if (strSort === 'az') {
+        sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
+    } else if (strSort === 'za') {
+        sortedEntries.sort((a, b) => b[1].name.localeCompare(a[1].name));
+    }
+
+    sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
+        var $divCharacter = $('<div>', { 'class': 'character', 'id': `character_${strCharacterKey}` });
 
         if (objCharacter['spoiler']) {
             $divCharacter.addClass('spoiler');
         }
 
-        if(strCharacterKey in objCharOrder) {
-            $divCharacter.css('order', objCharOrder[strCharacterKey]);
-        }
-        else{
-            $divCharacter.css('order', 99);
+        if (strSort === null) {
+            if (strCharacterKey in objCharOrder) {
+                $divCharacter.css('order', objCharOrder[strCharacterKey]);
+            }
+            else {
+                $divCharacter.css('order', 99);
+            }
         }
 
         $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
@@ -257,14 +327,14 @@ $(function () {
                                     ${objCharacter['name']}
                                 </a>
                             ` );
-        $("#characters").append($divCharacter);
+        $('#characters').append($divCharacter);
 
-        var $divLoved = $("<div>", { "class": "loved_gifts" });
+        var $divLoved = $('<div>', { 'class': 'loved_gifts' });
         $divLoved.append('<div class="giftset">Loved</div>');
         $divCharacter.append($divLoved);
         createGiftItem(objCharacter['loved'], strCharacterKey, $divLoved)
 
-        var $divLiked = $("<div>", { "class": "liked_gifts" });
+        var $divLiked = $('<div>', { 'class': 'liked_gifts' });
         $divLiked.append('<div class="giftset">Liked</div>');
         $divCharacter.append($divLiked);
         createGiftItem(objCharacter['liked'], strCharacterKey, $divLiked)
@@ -276,12 +346,12 @@ $(function () {
         } else {
             setCheckboxes.delete($(this).val())
         }
-        localStorage.setItem("mistria_chb", JSON.stringify([...setCheckboxes]));
+        localStorage.setItem('mistria_chb', JSON.stringify([...setCheckboxes]));
     });
 
     var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini'];
     arrModes.forEach(function (strMode) {
-        $(`#${strMode}`).prop("checked", false);
+        $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
             if ($(this).is(':checked')) {
                 $('#page').addClass(strMode);
@@ -290,7 +360,7 @@ $(function () {
                 $('#page').removeClass(strMode);
                 setOptions.delete(strMode);
             }
-            localStorage.setItem("mistria_options", JSON.stringify([...setOptions]));
+            localStorage.setItem('mistria_options', JSON.stringify([...setOptions]));
 
             if (strMode === 'mode_spoilers') {
                 $('#characters .character').each(function () {
@@ -306,17 +376,17 @@ $(function () {
     })
 
     setOptions.forEach(key => {
-        $(`#${key}`).prop("checked", true);
-        $("#page").addClass(key);
+        $(`#${key}`).prop('checked', true);
+        $('#page').addClass(key);
     })
 
-    $("#search_items").on("keyup", function () {
+    $('#search_items').on('keyup', function () {
         $('#characters').removeHighlight();
         $('#characters .character').removeClass('hide_search');
         $('#characters .character').css('display', '');
         var value = $(this).val().toLowerCase();
 
-        $("#characters .gift").filter(function () {
+        $('#characters .gift').filter(function () {
             if ($(this).text().toLowerCase().indexOf(value) > -1) {
                 $(this).removeClass('hide_search');
             } else {
@@ -341,8 +411,8 @@ $(function () {
 
     });
 
-    if($('#search_items').val() != '') {
-        $("#search_items").keyup();
+    if ($('#search_items').val() != '') {
+        $('#search_items').keyup();
     }
 
     $('#characters .character').each(function () {
