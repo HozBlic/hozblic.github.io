@@ -35,7 +35,6 @@
     right: 0;
     width: 0;
     height: 0;
-    z-index: 0;
     z-index: 4;
 }
 
@@ -337,9 +336,6 @@ body {
     background: rgba(0, 0, 0, 0.55);
 }
 
-#json_button_popup .button_item .icon {}
-
-#json_button_popup .button_item .icon svg {}
 
 .popup_wrapper {
     position: fixed;
@@ -348,14 +344,14 @@ body {
     right: 0;
     bottom: 0;
     display: none;
-    z-index: 10009999;
+    z-index: 109;
     --popup-width: 575px;
 }
 
 .popup_inner {
     position: absolute;
     background: var(--color-bg);
-    z-index: 10000003;
+    z-index: 103;
     overflow: auto;
     top: 30px;
     border-radius: 8px;
@@ -384,7 +380,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10000001;
+    z-index: 101;
     display: block;
     cursor: default;
     display: block;
@@ -396,7 +392,7 @@ body {
 .popup_close:after {
     position: absolute;
     content: '';
-    z-index: 10000002;
+    z-index: 102;
     line-height: 25px;
     border: 0;
     cursor: pointer;
@@ -414,7 +410,7 @@ body {
     .popup_inner {
         padding-top: 0;
         left: 50%;
-        z-index: 10000003;
+        z-index: 103;
         overflow: auto;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
@@ -449,6 +445,12 @@ body {
     }
 }
 
+.inner_divider+.inner_divider {
+    border-top: 1px solid var(--color-bg-darkest);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
 .popup_header {
     background: var(--color-bg);
     padding: 30px 16px;
@@ -481,15 +483,32 @@ body {
     width: 21px;
 }
 
-.popup_header_desc {
+.popup_header_desc,
+.popup_subdesc {
     font-size: 12px;
     line-height: 15px;
     opacity: 0.5;
     width: 100%;
 }
 
-.popup_header_desc p {
+.popup_subdesc {
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    opacity: 1;
+}
+
+.popup_header_desc p,
+.popup_subdesc p {
     margin: 0;
+}
+
+.popup_subdesc p {
+    opacity: 0.5;
+}
+
+.popup_subdesc pre {
+    opacity: 0.7;
 }
 
 .popup_content {
@@ -497,6 +516,20 @@ body {
     flex-direction: column;
     min-height: min-content;
     padding: 0 16px 16px 16px;
+}
+
+.popup_subtitle {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.popup_subtitle svg {
+    color: var(--color-txt);
+    width: 14px;
+    height: 14px;
 }
 
 .popup_inner .button_set {
@@ -955,13 +988,14 @@ input[type="checkbox"].styled:checked+label {
     user-select: none;
     /* Standard syntax */
     border-radius: 5px;
-    height: 32px;
+    min-height: 32px;
     cursor: pointer;
     display: flex;
     text-align: center;
     align-items: center;
     overflow: hidden;
     flex-direction: row;
+    padding: 5px 12px 5px 0;
     padding-right: 12px;
     font-size: 12px;
     background-color: var(--color-bg-darker);
@@ -1027,7 +1061,7 @@ input[type="checkbox"].styled:checked+label {
 
 .icon {
     width: 32px;
-    height: 32px;
+    height: 100%;
     min-width: 32px;
     display: flex;
     align-items: center;
@@ -1070,7 +1104,7 @@ input[type="checkbox"].styled:checked+label {
     max-width: calc(100vw - 30px);
     border: 1px solid var(--color-bg-darker);
     left: 0;
-    z-index: 999999;
+    z-index: 6;
     min-width: 100%;
     background-color: rgba(var(--color-bg-darkest-solid-rgb), 0.5);
     backdrop-filter: blur(8px);
@@ -1130,10 +1164,10 @@ textarea {
     text-align: left;
     background: transparent;
     outline: none;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 15px;
     resize: vertical;
-    height: 180px;
+    height: 162px;
 }
 
 .input-label {
@@ -1151,13 +1185,13 @@ textarea {
     padding: 0 7px;
     color: var(--color-txt);
     line-height: 16px;
-    font-size: 12px;
+    font-size: 11px;
     z-index: 1;
 }
 
 .input-label textarea {
     margin-top: 8px;
-    padding-top: 3px;
+    padding-top: 7px;
 }
 
 ul {
@@ -1222,4 +1256,23 @@ ul {
 
 .alert .info {
     padding: 10px 10px 10px 0;
+}
+
+pre {
+    border: 1px solid var(--color-bg-darkest);
+    border-left: 3px solid var(--color-btn);
+    page-break-inside: avoid;
+    font-family: monospace;
+    max-width: 100%;
+    overflow: auto;
+    padding: 10px;
+    display: block;
+    word-wrap: break-word;
+    background-color: var(--color-bg-darker);
+    font-size: 11px;
+    max-height: 100px;
+}
+
+#save_input {
+    display: none;
 }
