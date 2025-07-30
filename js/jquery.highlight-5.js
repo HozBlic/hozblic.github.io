@@ -43,12 +43,18 @@ jQuery.fn.highlight = function(pat) {
     }) : this;
    };
    
-   jQuery.fn.removeHighlight = function() {
-    return this.find("span.highlight").each(function() {
-     this.parentNode.firstChild.nodeName;
-     with (this.parentNode) {
-      replaceChild(this.firstChild, this);
-      normalize();
-     }
-    }).end();
-   };
+  jQuery.fn.removeHighlight = function () {
+    this.find('span.highlight').sort(function(a, b) {
+        // Unwrap deepest highlights first
+        return $(b).parents().length - $(a).parents().length;
+    }).each(function () {
+        $(this).replaceWith($(this).text());
+    });
+
+    // Normalize each top-level element to merge text nodes
+    this.each(function () {
+        this.normalize(); // Native DOM method
+    });
+
+    return this;
+};

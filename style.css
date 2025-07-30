@@ -210,6 +210,10 @@ body {
     height: 100%;
 }
 
+#filter_content .input-label label {
+    background-color: rgba(var(--color-bg-darkest-solid-rgb));
+}
+
 #content .side_menu_btn {
     margin-left: -15px;
 }
@@ -1189,7 +1193,8 @@ textarea {
     z-index: 1;
 }
 
-.input-label textarea {
+.input-label textarea,
+.input-label input {
     margin-top: 8px;
     padding-top: 7px;
 }

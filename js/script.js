@@ -579,21 +579,32 @@ $(function () {
         $('#page').addClass(key);
     })
 
-    $('#search_items').on('keyup', function () {
+    $('#search_items').off('keyup').on('keyup', function () {
         $('#characters').removeHighlight();
         $('#characters .character').removeClass('hide_search');
+        $('#characters .gift').removeClass('hide_search');
         $('#characters .character').css('display', '');
-        var value = $(this).val().toLowerCase();
+        const value = $(this).val().toLowerCase();
 
-        $('#characters .gift').filter(function () {
-            if ($(this).text().toLowerCase().indexOf(value) > -1) {
-                $(this).removeClass('hide_search');
-            } else {
-                $(this).addClass('hide_search');
-            }
-        });
+        if (value !== '') {
+            const keywords = value.split('+').map(s => s.trim()).filter(Boolean);
 
-        $('#characters').highlight(value);
+            $('#characters .gift').filter(function () {
+                const text = $(this).text().trim().toLowerCase();
+                const matchesAll = keywords.some(word => text.includes(word));
+
+                if (matchesAll) {
+                    $(this).removeClass('hide_search');
+                } else {
+                    $(this).addClass('hide_search');
+                }
+            });
+
+            keywords.forEach(word => {
+                $('#characters').highlight(word);
+            });
+
+        }
 
 
         $('#characters .character').each(function () {
