@@ -28,7 +28,7 @@ function extractJsonBlocksFromMixedText(input) {
         try {
             result[label] = JSON.parse(jsonString);
         } catch (e) {
-            console.warn(`Failed to parse JSON for label: ${label}`, e);
+            $output.text(`Failed to parse JSON for label: ${label}`, e);
         }
 
         regex.lastIndex = endIdx; // Move regex search forward
@@ -83,15 +83,9 @@ $(function () {
 
                         if (objOldData === null) {
                             objOldData = JSON.parse(JSON.stringify(objMistriaDataDefault));
-                            console.log("hi")
                         }
-
-                        console.log(objOldData);
-                        console.log(objMistriaDataDefault);
-
                         objOldData.gifts = [...new Set(arrGivenGifts)];
 
-                        console.log(objOldData);
                         $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
                         $('#json_alert').addClass('show').addClass('yellow');
