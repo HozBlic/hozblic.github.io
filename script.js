@@ -116,6 +116,8 @@ const objCharOrder = {
     'seridia': 29
 }
 
+var objMistriaData;
+
 
 $('.gift').each(function () {
     var strObtainAll = $(this).attr('data-cbx');
@@ -124,38 +126,27 @@ $('.gift').each(function () {
     }
 });
 
-//get rid of old checkbox system
-var arrOldCheckboxes = localStorage.getItem('mistria');
-if (arrOldCheckboxes !== null) {
-    arrOldCheckboxes = JSON.parse(arrOldCheckboxes);
-    var setOldCheckboxes = new Set(arrOldCheckboxes);
-    var setCheckboxes = new Set();
-
-    setOldCheckboxes.forEach(function (strID) {
-        setCheckboxes.add(objOldIDs[strID]);
-    });
-
-    localStorage.setItem('mistria_chb', JSON.stringify([...setCheckboxes]));
-    localStorage.removeItem('mistria');
-}
-
+//get rid of old data storing system
 var arrCheckboxes = localStorage.getItem('mistria_chb');
-if (arrCheckboxes === null) {
-    var setCheckboxes = new Set();
-} else {
-    arrCheckboxes = JSON.parse(arrCheckboxes);
-    var setCheckboxes = new Set(arrCheckboxes);
-}
-
 var arrOptions = localStorage.getItem('mistria_options');
-if (arrOptions === null) {
-    var setOptions = new Set();
-} else {
-    arrOptions = JSON.parse(arrOptions);
-    var setOptions = new Set(arrOptions);
-}
-
 var strSort = localStorage.getItem('mistria_sort');
+if (arrCheckboxes !== null || arrOptions !== null || strSort !== null) {
+    var objMistriaDataTemp = {};
+
+    if (arrCheckboxes !== null) {
+        objMistriaDataTemp.gifts = [...new Set(JSON.parse(arrCheckboxes))];
+        localStorage.removeItem("mistria_chb");
+    }
+    if (arrOptions !== null) {
+        objMistriaDataTemp.options = [...new Set(JSON.parse(arrOptions))];
+        localStorage.removeItem('mistria_options');
+    }
+    if (strSort !== null) {
+        objMistriaDataTemp.sort = strSort;
+        localStorage.removeItem('mistria_sort');
+    }
+    localStorage.setItem('mistria_data', JSON.stringify(objMistriaDataTemp));
+}
 
 function createGiftItem(arrGifts, strCharacterKey, $objParent) {
     arrGifts.forEach(function (strGiftKey) {
@@ -163,7 +154,7 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
         strDataCbx = $($.parseHTML(objGifts[strGiftKey]['source'])).text().trim();
 
         $objParent.append(`<div class="gift ${objGifts[strGiftKey]['spoiler'] || objGifts[strGiftKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="gift_chb" ${setCheckboxes.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="gifts" value="${strID}">
+                                <input class="gift_chb" ${objMistriaData.gifts.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="gifts" value="${strID}">
                                 <label for="${strID}" class="has_tip" id="label_${strID}">
                                     <div class="image ${objGifts[strGiftKey]['imageName'] == '' && objGifts[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objGifts[strGiftKey]['imageName']})"></div>
                                     <div class="name">${objGifts[strGiftKey]['giftName']}</div>
@@ -197,25 +188,23 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
 function changeSort(objElem) {
     if ($(objElem).hasClass('selected')) return;
 
-    strSort = $(objElem).attr('data-value');
+    if ($(objElem).attr('data-value') !== 'default') {
+        objMistriaData.sort = $(objElem).attr('data-value');
+    } else {
+        delete objMistriaData.sort;
+    }
 
-    if (strSort !== 'default') {
-        localStorage.setItem('mistria_sort', strSort);
-    }
-    else {
-        localStorage.removeItem('mistria_sort');
-        strSort = null;
-    }
+    saveData();
 
     $('.dropdown-item.sort').removeClass('selected');
-    $(`.dropdown-item.sort[data-value="${strSort ? strSort : 'default'}"]`).addClass('selected');
+    $(`.dropdown-item.sort[data-value="${objMistriaData.sort ? objMistriaData.sort : 'default'}"]`).addClass('selected');
 
     $('.character').css('order', '');
 
     let sortedEntries = Object.entries(objCharacters);
-    if (strSort === 'az') {
+    if (objMistriaData.sort === 'az') {
         sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    } else if (strSort === 'za') {
+    } else if (objMistriaData.sort === 'za') {
         sortedEntries.sort((a, b) => b[1].name.localeCompare(a[1].name));
     }
 
@@ -224,7 +213,7 @@ function changeSort(objElem) {
     sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
         $divCharacter = $(`#character_${strCharacterKey}`);
 
-        if (strSort === null) {
+        if (!('sort' in objMistriaData)) {
             if (strCharacterKey in objCharOrder) {
                 $divCharacter.css('order', objCharOrder[strCharacterKey]);
             }
@@ -239,7 +228,209 @@ function changeSort(objElem) {
     });
 }
 
+function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+function compareData(strJson) {
+
+    var objNewData = JSON.parse(strJson);
+    var objOldData = JSON.parse(localStorage.getItem('mistria_data')) || {};
+
+    // remove duplicates
+    objOldData.gifts = [...new Set(objOldData.gifts)];
+    objNewData.gifts = [...new Set(objNewData.gifts)];
+    objOldData.options = [...new Set(objOldData.options)];
+    objNewData.options = [...new Set(objNewData.options)];
+
+    // Compare old and new data
+    const intOldGiftCount = Array.isArray(objOldData.gifts) ? objOldData.gifts.length : 0;
+    const intNewGiftCount = Array.isArray(objNewData.gifts) ? objNewData.gifts.length : 0;
+    const intOldToggleCount = Array.isArray(objOldData.options) ? objOldData.options.length : 0;
+    const intNewToggleCount = Array.isArray(objNewData.options) ? objNewData.options.length : 0;
+
+    var strOldSort = '';
+    var strNewSort = '';
+    switch (objOldData.sort) {
+        case 'az':
+            strOldSort = 'Alphabetical (A-Z)';
+            break;
+        case 'za':
+            strOldSort = 'Alphabetical (Z-A)';
+            break;
+        default:
+            strOldSort = 'In game';
+    }
+
+    switch (objNewData.sort) {
+        case 'az':
+            strNewSort = 'Alphabetical (A-Z)';
+            break;
+        case 'za':
+            strNewSort = 'Alphabetical (Z-A)';
+            break;
+        default:
+            strNewSort = 'In game';
+    }
+
+    var bolChangesDetected = false;
+    let arrChanges = [];
+
+    if (JSON.stringify(objOldData.gifts) !== JSON.stringify(objNewData.gifts)) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Given gifts: ${intOldGiftCount} -> ${intNewGiftCount}</b>`);
+    } else {
+        arrChanges.push(`Given gifts: ${intOldGiftCount} -> ${intNewGiftCount}`);
+    }
+    if (JSON.stringify(objOldData.options) !== JSON.stringify(objNewData.options)) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Layout toggles: ${intOldToggleCount} -> ${intNewToggleCount}</b>`);
+    } else {
+        arrChanges.push(`Layout toggles: ${intOldToggleCount} -> ${intNewToggleCount}`);
+    }
+    if (strOldSort !== strNewSort) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Sort settings: ${strOldSort} -> ${strNewSort}</b>`);
+    } else {
+        arrChanges.push(`Sort settings: ${strOldSort} -> ${strNewSort}`);
+    }
+
+    if (!bolChangesDetected) {
+        return [false, [], []];
+    } else {
+        return [true, arrChanges, objNewData];
+    }
+}
+function saveJson() {
+    var strJson = $('#settings_json').val();
+    if (isJsonString(strJson)) {
+        const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson);
+
+        if (bolChangesDetected) {
+            $('#accept_changes').show();
+
+            $('#changes').html(
+                arrChanges.map(c => `<li>${c}</li>`).join('')
+            );
+
+            $('#popup-accept').off('click').on('click', function () {
+                objMistriaData = objNewData;
+                objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
+                objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
+                saveData();
+                window.location.reload();
+            });
+
+        } else {
+            $('#json_alert').addClass('show').addClass('yellow');
+            $('#json_alert .info').html('No changes detected');
+        }
+    } else {
+        $('#json_alert').addClass('show');
+        $('#json_alert .info').html('JSON code is invalid');
+    }
+}
+
+function saveAsJsonFile() {
+
+    var strJson = $('#settings_json').val();
+    if (isJsonString(strJson)) {
+        const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson);
+
+        if (bolChangesDetected) {
+            $('#json_alert').addClass('show').addClass('yellow');
+            $('#json_alert .info').html('You have saved JSON file that contains unsaved changes');
+        }
+
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(objNewData, undefined, 4)));
+        element.setAttribute('download', 'mistria_data.json');
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+
+    } else {
+        $('#json_alert').addClass('show');
+        $('#json_alert .info').html('JSON code is invalid');
+    }
+}
+
+function copyClipboard(objElem) {
+    var strJson = $('#settings_json').val();
+    if (isJsonString(strJson)) {
+
+        const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson);
+
+        if (bolChangesDetected) {
+            $('#json_alert').addClass('show').addClass('yellow');
+            $('#json_alert .info').html('You have copied JSON code that contains unsaved changes');
+        }
+
+        var el = document.createElement('textarea');
+        el.value = strJson;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        $(objElem).addClass('copied').delay(3000).queue(function (next) {
+            $(this).removeClass('copied');
+        });
+
+    } else {
+        $('#json_alert').addClass('show');
+        $('#json_alert .info').html('JSON code is invalid');
+    }
+}
+
+function loadData() {
+    objMistriaData = JSON.parse(localStorage.getItem('mistria_data'));
+
+    if (objMistriaData === null) {
+        objMistriaData = {
+            gifts: new Set(),
+            options: new Set()
+        };
+        objMistriaData.options.add('mode_dark');
+        $('#settings_json').val(JSON.stringify(objMistriaData, undefined, 4));
+    } else {
+        $('#settings_json').val(JSON.stringify(objMistriaData, undefined, 4));
+        objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
+        objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
+    }
+}
+
+function saveData() {
+    // convert to array since JSON.stringify does not work on sets
+    if ('gifts' in objMistriaData) {
+        objMistriaData.gifts = [...objMistriaData.gifts];
+    }
+    if ('options' in objMistriaData) {
+        objMistriaData.options = [...objMistriaData.options];
+    }
+
+    localStorage.setItem('mistria_data', JSON.stringify(objMistriaData));
+    loadData();
+}
+
+function openJsonPopup() {
+    $('#json_alert').removeClass('show').removeClass('green').removeClass('yellow');
+    $('#json_button_popup').show();
+}
+
+
 $(function () {
+
+    loadData();
 
     tippy('#triangle img', {
         content: 'Red bull, please?',
@@ -270,8 +461,12 @@ $(function () {
         }
     });
 
+    $('#settings_json').on('input change', function () {
+        $('#json_alert').removeClass('show').removeClass('green').removeClass('yellow');
+    });
+
     $('.dropdown-item.sort').removeClass('selected');
-    $(`.dropdown-item.sort[data-value="${strSort ? strSort : 'default'}"]`).addClass('selected');
+    $(`.dropdown-item.sort[data-value="${objMistriaData.sort ? objMistriaData.sort : 'default'}"]`).addClass('selected');
 
     $('input.obtain_cbx').change(function () {
         $('#characters .character').css('display', '');
@@ -299,9 +494,9 @@ $(function () {
     });
 
     let sortedEntries = Object.entries(objCharacters);
-    if (strSort === 'az') {
+    if (objMistriaData.sort === 'az') {
         sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    } else if (strSort === 'za') {
+    } else if (objMistriaData.sort === 'za') {
         sortedEntries.sort((a, b) => b[1].name.localeCompare(a[1].name));
     }
 
@@ -312,7 +507,7 @@ $(function () {
             $divCharacter.addClass('spoiler');
         }
 
-        if (strSort === null) {
+        if (!('sort' in objMistriaData)) {
             if (strCharacterKey in objCharOrder) {
                 $divCharacter.css('order', objCharOrder[strCharacterKey]);
             }
@@ -324,7 +519,7 @@ $(function () {
         $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
                                 <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
                                     <img class="char_img_mini" src="images/mini_profiles/${objCharacter['name']}.png">
-                                    ${objCharacter['name']}
+                                   ${objCharacter['name']}
                                 </a>
                             ` );
         $('#characters').append($divCharacter);
@@ -342,11 +537,11 @@ $(function () {
 
     $('.gift_chb:checkbox').change(function () {
         if ($(this).is(':checked')) {
-            setCheckboxes.add($(this).val())
+            objMistriaData.gifts.add($(this).val())
         } else {
-            setCheckboxes.delete($(this).val())
+            objMistriaData.gifts.delete($(this).val())
         }
-        localStorage.setItem('mistria_chb', JSON.stringify([...setCheckboxes]));
+        saveData();
     });
 
     var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini'];
@@ -355,12 +550,12 @@ $(function () {
         $(`#${strMode}`).change(function () {
             if ($(this).is(':checked')) {
                 $('#page').addClass(strMode);
-                setOptions.add(strMode);
+                objMistriaData.options.add(strMode);
             } else {
                 $('#page').removeClass(strMode);
-                setOptions.delete(strMode);
+                objMistriaData.options.delete(strMode);
             }
-            localStorage.setItem('mistria_options', JSON.stringify([...setOptions]));
+            saveData();
 
             if (strMode === 'mode_spoilers') {
                 $('#characters .character').each(function () {
@@ -375,7 +570,7 @@ $(function () {
 
     })
 
-    setOptions.forEach(key => {
+    objMistriaData.options.forEach(key => {
         $(`#${key}`).prop('checked', true);
         $('#page').addClass(key);
     })

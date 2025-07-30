@@ -12,7 +12,7 @@
         content="Fields of Mistria, gift guide, visual, interactive, gifting, marriage, hearts, romance, Celine, March, Juniper, Adeline">
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
 
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=12">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -21,13 +21,11 @@
     <script type="text/javascript" src="js/jquery.highlight-5.js"></script>
 
     <script type="text/javascript" src="gifts.json.js?v=5"></script>
-    <script type="text/javascript" src="oldIDs.json.js"></script>
     <script type="text/javascript" src="characters.json.js?v=3"></script>
-    <script type="text/javascript" src="script.js?v=8"></script>
+    <script type="text/javascript" src="script.js?v=9"></script>
 </head>
 
 <body>
-
     <div id="page">
         <div id="triangle">
             <a href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US"><img src="images/items/Rose_tea.png"></a>
@@ -62,7 +60,8 @@
                 </div>
 
                 <div class="dropdown_wrap">
-                    <div class="button_item dropdown_button" id="sort_button" onclick="$(this).parent().toggleClass('open')">
+                    <div class="button_item dropdown_button" id="sort_button"
+                        onclick="$(this).parent().toggleClass('open')">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12.424" height="13.449"
                                 viewBox="0 0 12.424 13.449">
@@ -95,8 +94,7 @@
                     <div class="dropdown">
                         <div class="dropdown-item sort selected" data-value="default" onclick="changeSort(this)">
                             <div class="icon">
-                                <?xml version="1.0"?><svg height="512" viewBox="0 0 512 512" width="512"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                <svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
                                     <title />
                                     <path stroke="#ff0000"
                                         d="M467.51,248.83c-18.4-83.18-45.69-136.24-89.43-149.17A91.5,91.5,0,0,0,352,96c-26.89,0-48.11,16-96,16s-69.15-16-96-16a99.09,99.09,0,0,0-27.2,3.66C89,112.59,61.94,165.7,43.33,248.83c-19,84.91-15.56,152,21.58,164.88,26,9,49.25-9.61,71.27-37,25-31.2,55.79-40.8,119.82-40.8s93.62,9.6,118.66,40.8c22,27.41,46.11,45.79,71.42,37.16C487.1,399.86,486.52,334.74,467.51,248.83Z"
@@ -117,8 +115,7 @@
                         </div>
                         <div class="dropdown-item sort" data-value="az" onclick="changeSort(this)">
                             <div class="icon">
-                                <?xml version="1.0" encoding="utf-8"?>
-                                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
                                     height="24px" viewBox="-408 286.3 24 24"
@@ -137,7 +134,7 @@
                         </div>
                         <div class="dropdown-item sort" data-value="za" onclick="changeSort(this)">
                             <div class="icon">
-                                <?xml version="1.0" encoding="utf-8"?>
+
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
                                     height="24px" viewBox="-408 286.3 24 24"
@@ -212,39 +209,53 @@
                     </div>
                 </div>
 
-                <a id="suggestion"
-                    href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1hoa4qm/visual_gift_guide/">
-                    <div id="suggestion_question">
-                        <p>Have a suggestion or feedback?</p>
-                        <p>Leave a comment! <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
-                                viewBox="0 0 16 15.9">
-                                <path id="arrow_right"
-                                    d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
-                                    transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
-                            </svg>
-                        </p>
-                    </div>
-                    <div id="owner">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                            width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                <div class="bottom_buttons">
 
-                            <defs>
-                            </defs>
-                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                                transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                    <div id="json_button" onclick="openJsonPopup();">
+                        <div class="icon">
+                            <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M 74.298 90 H 15.702 C 7.03 90 0 82.97 0 74.298 V 15.702 C 0 7.03 7.03 0 15.702 0 h 58.596 C 82.97 0 90 7.03 90 15.702 v 58.596 C 90 82.97 82.97 90 74.298 90 z"
-                                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;"
-                                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                <path
-                                    d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 s 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"
-                                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            </g>
-                        </svg>
-                        HozBlic
+                                    d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z" />
+                            </svg>
+                        </div>
+                        <div class="text">Export / Import data</div>
                     </div>
-                </a>
+
+                    <a id="suggestion"
+                        href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1hoa4qm/visual_gift_guide/">
+                        <div id="suggestion_question">
+                            <p>Have a suggestion or feedback?</p>
+                            <p>Leave a comment! <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                            </p>
+                        </div>
+                        <div id="owner">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+                                <defs>
+                                </defs>
+                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                                    transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                    <path
+                                        d="M 74.298 90 H 15.702 C 7.03 90 0 82.97 0 74.298 V 15.702 C 0 7.03 7.03 0 15.702 0 h 58.596 C 82.97 0 90 7.03 90 15.702 v 58.596 C 90 82.97 82.97 90 74.298 90 z"
+                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;"
+                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                    <path
+                                        d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 s 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"
+                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                </g>
+                            </svg>
+                            HozBlic
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
         <div id="content">
@@ -263,6 +274,148 @@
 
             <div id="title">Fields of Mistria gift guide <span class="version">v.0.14.0</span></div>
 
+        </div>
+
+        <div id="json_button_popup" class="popup_wrapper">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        <div class="icon">
+                            <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z" />
+                            </svg>
+                        </div>
+                        Export / Import data
+                    </div>
+
+                    <div class="button_item accent" onclick="saveJson()">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
+                                viewBox="0 0 20 14.738">
+                                <path id="check"
+                                    d="M4974.754-7257.7l-5.321-5.341a1.5,1.5,0,0,1,0-2.108,1.477,1.477,0,0,1,1.053-.436,1.474,1.474,0,0,1,1.051.436l4.27,4.285,10.653-10.7a1.481,1.481,0,0,1,1.051-.437,1.482,1.482,0,0,1,1.053.438,1.5,1.5,0,0,1,0,2.108l-11.7,11.752a1.482,1.482,0,0,1-1.054.44A1.473,1.473,0,0,1,4974.754-7257.7Z"
+                                    transform="translate(-4968.999 7272)" fill="#FFFFFF" />
+                            </svg>
+                        </div>
+                        <div class="text">Save</div>
+                    </div>
+                    <div class="popup_header_desc">
+                        <p>All of your settings - given gifts, layout choices, and sort order - are saved locally in
+                            your browser.</p>
+                        <p>If you decide to clear your browser storage or use a different device or browser, you can
+                            restore your settings by pasting your saved JSON here.</p>
+                    </div>
+
+                    <div class="alerts">
+                        <div id="json_alert" class="alert">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="icon green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.001" stroke="none"
+                                    viewBox="0 0 24 24.001">
+                                    <path id="info"
+                                        d="M4969-7260a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1,4969-7260Zm12,9.5a9.51,9.51,0,0,0,9.5-9.5,9.512,9.512,0,0,0-9.5-9.5,9.513,9.513,0,0,0-9.5,9.5A9.512,9.512,0,0,0,4981-7250.5Zm-.773-3.96a1.421,1.421,0,0,1-.292-.961v-5.043a1.369,1.369,0,0,1,.292-.953.983.983,0,0,1,.761-.319,1.019,1.019,0,0,1,.774.319,1.236,1.236,0,0,1,.3.891v5.1a1.37,1.37,0,0,1-.3.969,1.006,1.006,0,0,1-.774.329A.966.966,0,0,1,4980.227-7254.46Zm.023-9.6a.964.964,0,0,1-.315-.773.962.962,0,0,1,.323-.747,1.092,1.092,0,0,1,.754-.294,1.121,1.121,0,0,1,.735.267.946.946,0,0,1,.319.774.972.972,0,0,1-.312.768,1.076,1.076,0,0,1-.743.277A1.131,1.131,0,0,1,4980.25-7264.062Z"
+                                        transform="translate(-4969 7272)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="icon yellow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                                    viewBox="0 0 24.002 24">
+                                    <path id="notice"
+                                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                                        transform="translate(1990.001 7446)" fill="#242424" />
+                                </svg>
+                            </div>
+
+
+
+                            <div class="info"> There seems to be an issue with the JSON code. Please check and try
+                                again.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="popup_content">
+
+                    <div class="input-label">
+                        <label for="settings_json">JSON code</label>
+                        <textarea id="settings_json"></textarea>
+                    </div>
+
+                    <div class="button_set">
+                        <div class="button_item" id="save_file" onclick="saveAsJsonFile()">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19.421" height="24.002" stroke="none"
+                                    viewBox="0 0 19.421 24.002">
+                                    <path id="download"
+                                        d="M4970.245-7247.994a1.245,1.245,0,0,1-1.247-1.247,1.245,1.245,0,0,1,1.247-1.243h16.928a1.245,1.245,0,0,1,1.247,1.243,1.245,1.245,0,0,1-1.247,1.247Zm8.584-6.367h-.125a.1.1,0,0,1-.033,0h-.025a.2.2,0,0,1-.043-.007h-.015a.331.331,0,0,0-.048-.007s-.008,0-.012,0l-.054-.011h0a.235.235,0,0,0-.056-.015s0,0-.007,0-.029-.011-.043-.015-.012,0-.015,0a.162.162,0,0,0-.037-.015l-.022-.011-.025-.012a.1.1,0,0,1-.033-.015s-.011,0-.015,0a1.221,1.221,0,0,1-.315-.227l-.012-.011h0s0,0,0,0l-7.522-7.606a1.248,1.248,0,0,1,.012-1.76,1.245,1.245,0,0,1,1.759.011l5.392,5.45v-12.122a1.244,1.244,0,0,1,1.243-1.243,1.245,1.245,0,0,1,1.247,1.243v12.119l5.389-5.447a1.245,1.245,0,0,1,1.759-.011,1.245,1.245,0,0,1,.011,1.76l-7.519,7.606a1.442,1.442,0,0,1-.187.149l0,0a.106.106,0,0,1-.036.022s-.012.007-.015.015a.063.063,0,0,0-.03.015.2.2,0,0,0-.025.015l-.025.011a.34.34,0,0,1-.033.018s0,0-.008,0-.007,0-.015.007a.192.192,0,0,0-.033.015h-.007a.029.029,0,0,1-.018.008l-.033.015h0c-.007,0-.015,0-.021.008l-.033.011a.131.131,0,0,1-.026.007c-.007,0-.021,0-.033.008a.245.245,0,0,1-.025.007c-.011,0-.022,0-.033.008a.059.059,0,0,1-.025,0c-.012,0-.022,0-.033.007h0a.063.063,0,0,0-.025,0c-.012,0-.022,0-.033,0a.091.091,0,0,0-.033,0Z"
+                                        transform="translate(-4968.999 7271.996)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="text">Save as JSON file</div>
+                        </div>
+
+                        <div class="button_item copy_button" id="copy_json" onclick="copyClipboard(this)">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
+                                    viewBox="0 0 20.278 24" stroke="none">
+                                    <path id="copy"
+                                        d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                        transform="translate(-4969 7272.001)" fill="#FFFFFF" />
+                                </svg>
+                            </div>
+                            <div class="text">
+                                <span class="default">Copy to clipboard</span>
+                                <span class="copied">Copied</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
+        </div>
+
+        <div id="accept_changes" class="popup_wrapper">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        Confirm Changes
+                    </div>
+                    <div class="popup_header_desc">
+                        After saving page will be reloaded
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="popup_content">
+                    <ul id="changes"></ul>
+                    <div class="button_set">
+                        <div id="popup-cancel" onclick="$('#accept_changes').hide();" class="button_item no_icon">Cancel
+                        </div>
+                        <div id="popup-accept" class="button_item accent">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
+                                    viewBox="0 0 20 14.738">
+                                    <path id="check"
+                                        d="M4974.754-7257.7l-5.321-5.341a1.5,1.5,0,0,1,0-2.108,1.477,1.477,0,0,1,1.053-.436,1.474,1.474,0,0,1,1.051.436l4.27,4.285,10.653-10.7a1.481,1.481,0,0,1,1.051-.437,1.482,1.482,0,0,1,1.053.438,1.5,1.5,0,0,1,0,2.108l-11.7,11.752a1.482,1.482,0,0,1-1.054.44A1.473,1.473,0,0,1,4974.754-7257.7Z"
+                                        transform="translate(-4968.999 7272)" fill="#FFFFFF" />
+                                </svg>
+                            </div>
+                            <div class="text">Save</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
         </div>
     </div>
 </body>
