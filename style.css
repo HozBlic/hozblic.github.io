@@ -223,7 +223,13 @@ body {
     flex-direction: column;
     gap: 3px;
     overflow: hidden;
-    max-height: 280px;
+    max-height: 125px;
+}
+
+@media screen and (min-width: 575px) {
+    #checkbox_filter_items {
+        max-height: 280px;
+    }
 }
 
 #checkbox_filter_items .spacing {
@@ -423,7 +429,7 @@ body {
         margin-left: calc((var(--popup-width) / 2 * -1));
         height: unset;
         max-height: 845px;
-        top: 60px;
+        top: 80px;
     }
 
     .popup_close {}
@@ -432,12 +438,12 @@ body {
 
     .popup_close:after {
         margin-left: calc((var(--popup-width) / 2 - 18px));
-        top: 32px;
+        top: calc(80px - 28px);
         left: 50%;
     }
 }
 
-@media screen and (min-width: 575px) and (min-height: 840px) {
+@media screen and (min-width: 575px) and (min-height: 940px) {
     .popup_inner {
         min-height: 150px;
         max-height: calc(100% - 400px);
@@ -445,7 +451,7 @@ body {
     }
 
     .popup_close:after {
-        top: 92px;
+        top: calc(120px - 28px);
     }
 }
 

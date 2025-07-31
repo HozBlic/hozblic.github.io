@@ -37,6 +37,21 @@ function extractJsonBlocksFromMixedText(input) {
     return result;
 }
 
+// Recursively search for 'gifts_given' key in the object
+function npcObject(obj) {
+    if (obj && typeof obj === 'object') {
+        if ('adeline' in obj && typeof obj['adeline'] === 'object' && 'gifts_given' in obj['adeline']) {
+            return obj;
+        }
+        for (const key in obj) {
+            if (npcObject(obj[key])) {
+                return obj[key];
+            }
+        }
+    }
+    return false;
+}
+
 $(function () {
     $("#save_input").on("change", function (event) {
         var file = event.target.files[0];
@@ -69,12 +84,15 @@ $(function () {
                 if (cleaned) {
                     var jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
 
-                    if ('npcs' in jsonBlocks) {
-                        $output.text(JSON.stringify(jsonBlocks['npcs'], null, 2));
+                    var objNpcs = npcObject(jsonBlocks);
+
+                    if (typeof objNpcs === 'object') {
+
+                        $output.text(JSON.stringify(objNpcs, null, 2));
 
                         var arrGivenGifts = [];
-                        for (const [npcname, value] of Object.entries(jsonBlocks['npcs'])) {
-                            for (const [key, value] of Object.entries(jsonBlocks['npcs'][npcname]['gifts_given'])) {
+                        for (const [npcname, value] of Object.entries(objNpcs)) {
+                            for (const [key, value] of Object.entries(objNpcs[npcname]['gifts_given'])) {
                                 arrGivenGifts.push(`${npcname}_${value}`);
                             }
                         }
