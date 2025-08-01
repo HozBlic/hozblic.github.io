@@ -28,7 +28,7 @@ function extractJsonBlocksFromMixedText(input) {
         try {
             result[label] = JSON.parse(jsonString);
         } catch (e) {
-            $output.text(`Failed to parse JSON for label: ${label}`, e);
+            $("#output").text(`Failed to parse JSON for label: ${label}`, e);
         }
 
         regex.lastIndex = endIdx; // Move regex search forward
@@ -54,23 +54,22 @@ function npcObject(obj) {
 
 $(function () {
     $("#save_input").on("change", function (event) {
-        var file = event.target.files[0];
+        let file = event.target.files[0];
         if (!file) return;
 
-        var $output = $("#output");
-        $output.text("Reading file...");
+        $("#output").text("Reading file...");
 
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function (e) {
             try {
-                var arrayBuffer = e.target.result;
-                var byteArray = new Uint8Array(arrayBuffer);
+                let arrayBuffer = e.target.result;
+                let byteArray = new Uint8Array(arrayBuffer);
 
                 // Try to decompress
-                var inflated = pako.inflate(byteArray);
+                let inflated = pako.inflate(byteArray);
 
                 // Decode as UTF-8 first
-                var decodedText;
+                let decodedText;
                 try {
                     decodedText = new TextDecoder("utf-8", { fatal: false }).decode(inflated);
                 } catch (utf8Error) {
@@ -79,25 +78,25 @@ $(function () {
                 }
 
                 // Remove unprintable characters (except \n and \t)
-                var cleaned = decodedText.replace(/[^\x20-\x7E\n\t]/g, "");
+                let cleaned = decodedText.replace(/[^\x20-\x7E\n\t]/g, "");
 
                 if (cleaned) {
-                    var jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
+                    let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
 
-                    var objNpcs = npcObject(jsonBlocks);
+                    let objNpcs = npcObject(jsonBlocks);
 
                     if (typeof objNpcs === 'object') {
 
-                        $output.text(JSON.stringify(objNpcs, null, 2));
+                        $("#output").text(JSON.stringify(objNpcs, null, 2));
 
-                        var arrGivenGifts = [];
+                        let arrGivenGifts = [];
                         for (const [npcname, value] of Object.entries(objNpcs)) {
                             for (const [key, value] of Object.entries(objNpcs[npcname]['gifts_given'])) {
                                 arrGivenGifts.push(`${npcname}_${value}`);
                             }
                         }
 
-                        var objOldData = JSON.parse(localStorage.getItem('mistria_data'));
+                        let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
 
                         if (objOldData === null) {
                             objOldData = JSON.parse(JSON.stringify(objMistriaDataDefault));
@@ -112,14 +111,14 @@ $(function () {
                         );
 
                     } else {
-                        $output.text("Couldn't find gift data");
+                        $("#output").text("Couldn't find gift data");
                     }
                 } else {
-                    $output.text("Failed to decode file");
+                    $("#output").text("Failed to decode file");
                 }
 
             } catch (err) {
-                $output.text("Failed to decode file:\n" + err);
+                $("#output").text("Failed to decode file:\n" + err);
             }
         };
 
