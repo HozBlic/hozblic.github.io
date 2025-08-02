@@ -38,14 +38,28 @@ function extractJsonBlocksFromMixedText(input) {
 }
 
 // Recursively search for 'gifts_given' key in the object
-function npcObject(obj) {
+function objNPC(obj) {
     if (obj && typeof obj === 'object') {
         if ('adeline' in obj && typeof obj['adeline'] === 'object' && 'gifts_given' in obj['adeline']) {
             return obj;
         }
         for (const key in obj) {
-            if (npcObject(obj[key])) {
+            if (objNPC(obj[key])) {
                 return obj[key];
+            }
+        }
+    }
+    return false;
+}
+
+function objMUSEUM(obj) {
+    if (obj && typeof obj === 'object') {
+        if ('museum_progress' in obj && typeof obj['museum_progress'] === 'object') {
+            return obj['museum_progress'];
+        }
+        for (const key in obj) {
+            if (objMUSEUM(obj[key])) {
+                return obj[key]['museum_progress'];
             }
         }
     }
@@ -82,8 +96,14 @@ $(function () {
 
                 if (cleaned) {
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
+                    let objNpcs = objNPC(jsonBlocks);
+                    let objMuseumData = objMUSEUM(jsonBlocks);
+                    let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
+                    let arrFound = [];
 
-                    let objNpcs = npcObject(jsonBlocks);
+                    if (objOldData === null) {
+                        objOldData = JSON.parse(JSON.stringify(objMistriaDataDefault));
+                    }
 
                     if (typeof objNpcs === 'object') {
 
@@ -96,22 +116,41 @@ $(function () {
                             }
                         }
 
-                        let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
-
-                        if (objOldData === null) {
-                            objOldData = JSON.parse(JSON.stringify(objMistriaDataDefault));
-                        }
                         objOldData.gifts = [...new Set(arrGivenGifts)];
 
                         $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
-                        $('#json_alert').addClass('show').addClass('yellow');
-                        $('#json_alert .info').html(`Data extraction was succesful. ${arrGivenGifts.length} gifts were found </br>
-                            Click "Save" to store changes`
-                        );
+                        arrFound.push(`${arrGivenGifts.length} gifts were found`);
 
                     } else {
                         $("#output").text("Couldn't find gift data");
+                    }
+
+                    if (typeof objMuseumData === 'object') {
+
+                        $("#output").text($("#output").text() + '\n' + JSON.stringify(objMuseumData, null, 2));
+
+                        let arrDonatedItems = [];
+                        for (const key in objMuseumData) {
+                            arrDonatedItems.push(objMuseumData[key]);
+                        }
+
+                        objOldData.museum = [...new Set(arrDonatedItems)];
+
+                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+
+                        arrFound.push(`${arrDonatedItems.length} donated items were found `);
+
+                    } else {
+                        $("#output").text($("#output").text() + '\n' + "Couldn't find musuem data");
+                    }
+
+                    if (arrFound.length) {
+                        $('#json_alert .info').html(`Data extraction was ${arrFound.length == 2 ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
+                            ${arrFound.join('</br>')}`
+                        );
+                        $('#json_alert').addClass('show').addClass('yellow');
                     }
                 } else {
                     $("#output").text("Failed to decode file");
