@@ -152,6 +152,10 @@ $(function () {
                         );
                         $('#json_alert').addClass('show').addClass('yellow');
                     }
+                    else {
+                        $('#json_alert .info').html('Couldn\'t retrieve data')
+                        $('#json_alert').addClass('show')
+                    }
                 } else {
                     $("#output").text("Failed to decode file");
                 }
