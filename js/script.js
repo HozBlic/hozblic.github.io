@@ -572,7 +572,6 @@ function loadMenuItems() {
 
     //checkbox functionality
     $('input.obtain_cbx').change(function () {
-        $('#characters .character').css('display', '');
         $('.hide_checkbox').removeClass('hide_checkbox');
 
         if ($('input.obtain_cbx:checked').length) {
@@ -596,10 +595,6 @@ function loadMenuItems() {
     $('#search_items').on('keyup', function () {
         $('#page').removeHighlight();
         $('.hide_search').removeClass('hide_search');
-
-        $('#characters .character').css('display', '');
-        $('#museum .wing').css('display', '');
-        $('#museum .set').css('display', '');
 
         const value = $(this).val().toLowerCase();
 
@@ -633,7 +628,6 @@ function loadMenuItems() {
             });
 
         }
-
 
         $('#characters .character').each(function () {
             if (value !== '') {
