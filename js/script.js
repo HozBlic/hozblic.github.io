@@ -12,6 +12,8 @@ const arrObtain = [
     "Quest",
     "Request",
     "Spring Festival",
+    "Pet Job",
+    "Date Reward",
     "spacing",
 
     "Balor's Wagon",
@@ -81,6 +83,7 @@ const arrObtainEasy = [
     "Slaying",
     "Tackle Shop",
     "The Inn",
+    "Pet Job"
 ]
 
 const objCharOrder = {
@@ -158,24 +161,63 @@ if (arrCheckboxes !== null || arrOptions !== null || strSort !== null) {
     localStorage.setItem('mistria_data', JSON.stringify(objMistriaDataTemp));
 }
 
+var objTips = {
+    'museumSet': 'Museum Set',
+    'recipeSource': 'Recipe Source',
+    'ingredients': 'Ingredients',
+    'size': 'Size',
+    'rarity': 'Rarity',
+    'location': 'Location',
+    'season': 'Season',
+    'weather': 'Weather',
+    'time': 'Time',
+    'fishing': 'Fishing pole',
+    'diving': 'Diveable'
+}
+
+function createTip(strID, objInfo, bolMuseum = false) {
+    var strTableHTML = '';
+    var bolDonatable = false;
+    if ('tip_extra' in objInfo) {
+
+        strTableHTML = '<table>';
+        Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
+            if (strTipKey == 'museumSet') {
+                bolDonatable = true;
+                if (bolMuseum) {
+                    return;
+                }
+            }
+
+            if (strTipKey in objInfo['tip_extra']) {
+                strTableHTML += `<tr><td>${strTipValue}</td><td>${objInfo['tip_extra'][strTipKey]}</td></tr>`;
+            }
+        });
+        strTableHTML += '</table>';
+    }
+
+    var strTipHTML = `<div id="tip_${strID}" class="tip_wrap">
+                        <div class="tip">
+                            <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objInfo['url']}" class="tip_name">${objInfo['name']} ${bolDonatable ? '<img src="images/museum.png">' : ''}</a>
+                            <div class="tip_info">${objInfo['tip']}</div>
+                            ${objInfo['nodata'] ? 'No data available' : ''}
+                            ${strTableHTML}
+                        </div>
+                    </div>`;
+    return strTipHTML;
+}
 function createGiftItem(arrGifts, strCharacterKey, $objParent) {
     arrGifts.forEach(function (strGiftKey) {
         strID = strCharacterKey + '_' + strGiftKey;
-        strDataCbx = $($.parseHTML(objItems[strGiftKey]['source'])).text().trim();
+        strDataCbx = $($.parseHTML(objItems[strGiftKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
 
         $objParent.append(`<div class="item ${objItems[strGiftKey]['spoiler'] || objItems[strGiftKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
                                 <input class="gift_chb" ${objMistriaData.gifts.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="gifts" value="${strID}">
                                 <label for="${strID}" class="has_tip" id="label_${strID}">
-                                    <div class="image ${objItems[strGiftKey]['imageName'] == '' && objItems[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[strGiftKey]['imageName']})"></div>
+                                    <div class="image ${objItems[strGiftKey]['url_image'] == '' && objItems[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[strGiftKey]['url_image']})"></div>
                                     <div class="name">${objItems[strGiftKey]['name']}</div>
                                 </label>
-                                <div id="tip_${strID}" class="tip_wrap">
-                                    <div class="tip">
-                                        <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objItems[strGiftKey]['link']}" class="tip_name">${objItems[strGiftKey]['name']}</a>
-                                        <div class="tip_info"><div>${objItems[strGiftKey]['source']}</div></div>
-                                        ${objItems[strGiftKey]['nodata'] ? 'No data available' : ''}
-                                    </div>
-                                </div>
+                                ${createTip(strID, objItems[strGiftKey])}
                             </div>`);
 
         $(`#tip_${strID} .no-wrap`).each(function () {
@@ -632,7 +674,7 @@ function loadMenuItems() {
         checkMuseumVisibility();
     });
 
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini'];
+    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -774,17 +816,17 @@ function loadMuseumTab() {
         sortedEntriesSets.forEach(([strSetKey, objSet]) => {
             strID = strWingKey + '_' + strSetKey;
 
-            var strCleanedName = objSet['name']
-                .replace('Artifact Set', '')
-                .replace('Fish Set', '')
-                .replace('Material Set', '')
-                .replace('Flower Set', '')
-                .replace('Forage Set', '')
-                .replace('Crop Set', '')
-                .replace('Insect Set', '')
-                .replace('Set', '')
+            var strCleanedName = objSet['name'].replace('Set', '');
 
-            var strLinkHash = strCleanedName.trim().replaceAll(' ', '_');;
+            var strLinkHash = strCleanedName
+                .replace('Artifact', '')
+                .replace('Fish', '')
+                .replace('Material', '')
+                .replace('Flower', '')
+                .replace('Forage', '')
+                .replace('Crop', '')
+                .replace('Insect', '')
+                .trim().replaceAll(' ', '_');
 
             var $divSet = $('<div>', { 'class': 'set', 'id': `set_${strWingKey}_${strSetKey}` });
 
@@ -806,21 +848,16 @@ function loadMuseumTab() {
 
             objSet['items'].forEach((item) => {
                 strID = item;
-                strDataCbx = $($.parseHTML(objItems[item]['source'])).text().trim();
+                strDataCbx = $($.parseHTML(objItems[item]['tip'])).text().replace(/["'&<>]/g, '').trim();
 
                 $divitems.append(`<div class="item ${objItems[item]['spoiler'] || objItems[item]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="museum_chb" ${objMistriaData.museum.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="museum" value="${strID}">
-                                <label for="${strID}" class="has_tip" id="label_${strID}">
-                                    <div class="image ${objItems[item]['imageName'] == '' && objItems[item]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[item]['imageName']})"></div>
+                                <input class="museum_chb" ${objMistriaData.museum.has(strID) ? 'checked' : ''} type="checkbox" id="set_${strID}" name="museum" value="${strID}">
+                                <label for="set_${strID}" class="has_tip" id="label_${strID}">
+                                    <div class="image ${objItems[item]['url_image'] == '' && objItems[item]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[item]['url_image']})"></div>
                                     <div class="name">${objItems[item]['name']}</div>
                                 </label>
-                                <div id="tip_${strID}" class="tip_wrap">
-                                    <div class="tip">
-                                        <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objItems[item]['link']}" class="tip_name">${objItems[item]['name']}</a>
-                                        <div class="tip_info"><div>${objItems[item]['source']}</div></div>
-                                        ${objItems[item]['nodata'] ? 'No data available' : ''}
-                                    </div>
-                                </div>
+                                ${createTip(strID, objItems[item], true)}
+                               
                             </div>`);
 
                 $(`#tip_${strID} .no-wrap`).each(function () {
@@ -883,6 +920,7 @@ function checkMuseumVisibility() {
 
 
 $(function () {
+    let start = Date.now();
     loadData();
     loadMenuItems();
 
@@ -929,4 +967,8 @@ $(function () {
         objMistriaData.tab = strTabKey;
         saveData();
     });
+
+    let timeTaken = Date.now() - start;
+
+    console.log("Total time taken : " + timeTaken + " milliseconds");
 });

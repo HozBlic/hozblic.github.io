@@ -12,11 +12,11 @@
         content="Fields of Mistria, gift guide, visual, interactive, gifting, marriage, hearts, romance, Celine, March, Juniper, Adeline">
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
 
-    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="style.css?v=16">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-    <script type="text/javascript" src="json/items.json.js?v=5"></script>
-    <script type="text/javascript" src="json/characters.json.js?v=3"></script>
+    <script type="text/javascript" src="json/items.json.js?v=6"></script>
+    <script type="text/javascript" src="json/characters.json.js?v=4"></script>
     <script type="text/javascript" src="json/museum.json.js?v=3"></script>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="js/jquery.highlight-5.js?v=1"></script>
     <script type="text/javascript" src="js/pako.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=12"></script>
+    <script type="text/javascript" src="js/script.js?v=13"></script>
     <script type="text/javascript" src="js/save_file.js?v=4"></script>
 </head>
 
@@ -124,7 +124,7 @@
                         <div class="dropdown-item sort" data-value="az" onclick="changeSort(this)">
                             <div class="icon">
 
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
                                     height="24px" viewBox="-408 286.3 24 24"
                                     style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
@@ -143,7 +143,7 @@
                         <div class="dropdown-item sort" data-value="za" onclick="changeSort(this)">
                             <div class="icon">
 
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
                                     height="24px" viewBox="-408 286.3 24 24"
                                     style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
@@ -180,7 +180,22 @@
                         </label>
                         Show names
                     </div>
-
+                    <div class="switch_wrap">
+                        <label class="switch mode_mini">
+                            <input type='checkbox' id="mode_mini"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Minimize portraits
+                    </div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_mini_tooltip">
+                            <input type='checkbox' id="mode_mini_tooltip"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Minimize tooltips
+                    </div>
                     <div class="switch_wrap">
                         <label class="switch mode_spoilers">
                             <input type='checkbox' id="mode_spoilers"></input>
@@ -198,7 +213,7 @@
                         </label>
                         <span class="gift_show">Hide gifted items</span>
                         <span class="museum_show">Hide donated items</span>
-                        
+
                         <svg id="older_browsers" class="feather feather-alert-triangle" fill="none" height="24"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -207,15 +222,6 @@
                             <line x1="12" x2="12" y1="9" y2="13" />
                             <line x1="12" x2="12.01" y1="17" y2="17" />
                         </svg>
-                    </div>
-
-                    <div class="switch_wrap">
-                        <label class="switch mode_mini">
-                            <input type='checkbox' id="mode_mini"></input>
-                            <div class='toggler'>
-                            </div>
-                        </label>
-                        Minimize portraits
                     </div>
                 </div>
 
@@ -316,7 +322,7 @@
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
                                 viewBox="0 0 20 14.738">
-                                <path id="check"
+                                <path
                                     d="M4974.754-7257.7l-5.321-5.341a1.5,1.5,0,0,1,0-2.108,1.477,1.477,0,0,1,1.053-.436,1.474,1.474,0,0,1,1.051.436l4.27,4.285,10.653-10.7a1.481,1.481,0,0,1,1.051-.437,1.482,1.482,0,0,1,1.053.438,1.5,1.5,0,0,1,0,2.108l-11.7,11.752a1.482,1.482,0,0,1-1.054.44A1.473,1.473,0,0,1,4974.754-7257.7Z"
                                     transform="translate(-4968.999 7272)" fill="#FFFFFF" />
                             </svg>
@@ -367,7 +373,8 @@
                     <div class="inner_divider">
                         <div class="popup_subtitle">Edit saved data</div>
                         <div class="popup_subdesc">
-                            <p>All of your settings - given gifts, donated items, layout choices, and sort order - are saved locally in
+                            <p>All of your settings - given gifts, donated items, layout choices, and sort order - are
+                                saved locally in
                                 your browser.</p>
                             <p>If you decide to clear your browser storage or use a different device or browser, you can
                                 restore your settings by pasting your saved JSON here.</p>
@@ -422,7 +429,8 @@
                             </svg>
                         </div>
                         <div class="popup_subdesc">
-                            <p>You can upload your save file here to extract information about given gifts and donated items. For Windows,
+                            <p>You can upload your save file here to extract information about given gifts and donated
+                                items. For Windows,
                                 usually it's located in this folder:</p>
                             <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
                             <p>AppData is a hidden folder, you must turn on "show hidden files" manually, if you haven't
@@ -473,7 +481,7 @@
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
                                     viewBox="0 0 20 14.738">
-                                    <path id="check"
+                                    <path
                                         d="M4974.754-7257.7l-5.321-5.341a1.5,1.5,0,0,1,0-2.108,1.477,1.477,0,0,1,1.053-.436,1.474,1.474,0,0,1,1.051.436l4.27,4.285,10.653-10.7a1.481,1.481,0,0,1,1.051-.437,1.482,1.482,0,0,1,1.053.438,1.5,1.5,0,0,1,0,2.108l-11.7,11.752a1.482,1.482,0,0,1-1.054.44A1.473,1.473,0,0,1,4974.754-7257.7Z"
                                         transform="translate(-4968.999 7272)" fill="#FFFFFF" />
                                 </svg>
