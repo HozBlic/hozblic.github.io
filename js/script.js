@@ -590,6 +590,7 @@ function loadMenuItems() {
         }
 
         checkGiftVisibility();
+        checkMuseumVisibility();
     });
 
     $('#search_items').on('keyup', function () {
