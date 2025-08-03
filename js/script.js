@@ -895,8 +895,8 @@ function loadMuseumTab() {
     checkMuseumVisibility();
 }
 function checkGiftVisibility() {
+    $('#characters .character').css('display', '');
     $('#characters .character').each(function () {
-        $(this).css('display', '');
         if (!$(this).find('.item:visible').length) {
             $(this).hide()
         }
@@ -904,17 +904,19 @@ function checkGiftVisibility() {
 }
 
 function checkMuseumVisibility() {
+
+    $('#museum .wing .set').css('display', '');
+    $('#museum .wing').css('display', '');
+
     $('#museum .wing .set').each(function () {
-        $(this).css('display', '');
         if (!$(this).find('.item:visible').length) {
-            $(this).hide()
+            $(this).hide();
         }
     });
 
     $('#museum .wing').each(function () {
-        $(this).css('display', '');
         if (!$(this).find('.set:visible').length) {
-            $(this).hide()
+            $(this).hide();
         }
     });
 }
