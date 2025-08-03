@@ -824,6 +824,7 @@ body {
     flex-direction: column;
     gap: 5px;
     min-width: 160px;
+    align-items: center;
 }
 
 .tip .tip_name {
@@ -832,10 +833,37 @@ body {
     text-decoration: unset;
     color: white;
     margin-bottom: 5px;
+    position: relative;
+    display: inline-flex;
+    gap: 5px;
 }
 
-.tip .tip_name img {
-    margin-left: 3px;
+.tip .tip_name.donatable {
+    padding-left: 10px;
+}
+
+.tip .tip_name.checked:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    text-align: center;
+    background-image: url(images/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+    opacity: 0.7;
+}
+
+.tip .tip_name.checked img {
+    opacity: 0.6;
+}
+
+.tip .tip_info {
+    width: 100%;
 }
 
 .tip .tip_info p {
@@ -893,6 +921,7 @@ body {
     line-height: 19px;
     border-collapse: collapse;
     margin-top: 5px;
+    width: 100%;
 }
 
 #page.mode_mini_tooltip .tip table {

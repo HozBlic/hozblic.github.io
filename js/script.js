@@ -175,36 +175,57 @@ var objTips = {
     'diving': 'Diveable'
 }
 
-function createTip(strID, objInfo, bolMuseum = false) {
+function createTip(strID, objInfo, bolMuseum = false, strItemKey) {
     var strTableHTML = '';
     var bolDonatable = false;
     if ('tip_extra' in objInfo) {
 
         strTableHTML = '<table>';
         Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
-            if (strTipKey == 'museumSet') {
-                bolDonatable = true;
-                if (bolMuseum) {
-                    return;
-                }
-            }
+
 
             if (strTipKey in objInfo['tip_extra']) {
+                if (strTipKey == 'museumSet') {
+                    bolDonatable = true;
+                    if (bolMuseum) {
+                        return;
+                    }
+                }
                 strTableHTML += `<tr><td>${strTipValue}</td><td>${objInfo['tip_extra'][strTipKey]}</td></tr>`;
             }
         });
         strTableHTML += '</table>';
     }
 
-    var strTipHTML = `<div id="tip_${strID}" class="tip_wrap">
+    var strChecked = '';
+    if (objMistriaData.museum.has(strItemKey)) {
+        strChecked = 'checked';
+    }
+
+    var strTipHTML = $(`<div id="tip_${strID}" class="tip_wrap">
                         <div class="tip">
-                            <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objInfo['url']}" class="tip_name">${objInfo['name']} ${bolDonatable ? '<img src="images/museum.png">' : ''}</a>
+                            <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
+                                <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objInfo['url']}">${objInfo['name']}</a>
+                                ${bolDonatable ? '<img src="images/museum.png">' : ''}
+                            </div>
                             <div class="tip_info">${objInfo['tip']}</div>
                             ${objInfo['nodata'] ? 'No data available' : ''}
                             ${strTableHTML}
                         </div>
-                    </div>`;
-    return strTipHTML;
+                    </div>`);
+
+
+    var $objTip = $(strTipHTML);
+
+    $objTip.find('.no-wrap').each(function () {
+        $(this).html($(this).html().replaceAll(',', 'comma'))
+    });
+    $objTip.html($objTip.html().replaceAll(',', '<br>'))
+    $objTip.find('.no-wrap').each(function () {
+        $(this).html($(this).html().replaceAll('comma', ','))
+    });
+
+    return $objTip.prop('outerHTML');
 }
 function createGiftItem(arrGifts, strCharacterKey, $objParent) {
     arrGifts.forEach(function (strGiftKey) {
@@ -217,19 +238,13 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
                                     <div class="image ${objItems[strGiftKey]['url_image'] == '' && objItems[strGiftKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[strGiftKey]['url_image']})"></div>
                                     <div class="name">${objItems[strGiftKey]['name']}</div>
                                 </label>
-                                ${createTip(strID, objItems[strGiftKey])}
+                                ${createTip(strID, objItems[strGiftKey], false, strGiftKey)}
                             </div>`);
 
-        $(`#tip_${strID} .no-wrap`).each(function () {
-            $(this).html($(this).html().replaceAll(',', 'comma'))
-        });
-        $(`#tip_${strID}`).html($(`#tip_${strID}`).html().replaceAll(',', '<br>'))
-        $(`#tip_${strID} .no-wrap`).each(function () {
-            $(this).html($(this).html().replaceAll('comma', ','))
-        });
 
         const template = $(`#tip_${strID}`)[0];
         template.style.display = 'block';
+
         tippy(`#label_${strID}`, {
             content: template,
             interactive: true,
@@ -851,17 +866,11 @@ function loadMuseumTab() {
                                     <div class="image ${objItems[item]['url_image'] == '' && objItems[item]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[item]['url_image']})"></div>
                                     <div class="name">${objItems[item]['name']}</div>
                                 </label>
-                                ${createTip(strID, objItems[item], true)}
+                                ${createTip(strID, objItems[item], true, strID)}
                                
                             </div>`);
 
-                $(`#tip_${strID} .no-wrap`).each(function () {
-                    $(this).html($(this).html().replaceAll(',', 'comma'))
-                });
-                $(`#tip_${strID}`).html($(`#tip_${strID}`).html().replaceAll(',', '<br>'))
-                $(`#tip_${strID} .no-wrap`).each(function () {
-                    $(this).html($(this).html().replaceAll('comma', ','))
-                });
+
 
                 const template = $(`#tip_${strID}`)[0];
                 template.style.display = 'block';
@@ -874,11 +883,26 @@ function loadMuseumTab() {
     });
 
     $('.museum_chb:checkbox').change(function () {
+        var bolAdd = true;
         if ($(this).is(':checked')) {
-            objMistriaData.museum.add($(this).val())
+            objMistriaData.museum.add($(this).val());
         } else {
-            objMistriaData.museum.delete($(this).val())
+            objMistriaData.museum.delete($(this).val());
+            bolAdd = false;
         }
+
+        strItemKey = $(this).val();
+        $(`[id^="label_"][id$="_${strItemKey}"]`).each(function (index) {
+            var objLabel = $(this)[0];
+            var objTippy = objLabel._tippy;
+            if (bolAdd) {
+                $(objTippy.props.content).find('.tip_name').addClass('checked');
+            } else {
+                $(objTippy.props.content).find('.tip_name').removeClass('checked');
+            }
+            objTippy.setContent($(objTippy.props.content)[0]);
+        });
+
         saveData();
     });
 
