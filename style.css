@@ -303,15 +303,14 @@ body {
     -ms-user-select: none;
     user-select: none;
     border-radius: 5px;
-    min-height: 34px;
+    min-height: 40px;
     cursor: pointer;
     display: flex;
     text-align: center;
     align-items: center;
     overflow: hidden;
     flex-direction: row;
-    padding: 5px 10px;
-
+    padding: 5px 7px;
     font-size: 12px;
     background-color: var(--color-bg-darker);
     transition: fill 0.3s ease, color 0.3s ease, background-color 0.3s ease;
@@ -325,14 +324,6 @@ body {
 #page.museum #tab_museum,
 #page.animal #tab_animal {
     background-color: rgba(var(--color-btn-rgb), 0.6);
-}
-
-@media only screen and (min-width: 550px) {
-    .tab {
-        font-size: 12px;
-        gap: 5px;
-        padding-right: 12px;
-    }
 }
 
 .tab_window {
@@ -356,8 +347,8 @@ body {
 
 .tab img {
     image-rendering: pixelated;
-    width: 16px;
-    height: 16px;
+    width: 26px;
+    height: 25px;
     object-fit: contain;
 }
 
@@ -367,6 +358,18 @@ body {
 }
 
 @media only screen and (min-width: 550px) {
+    .tab {
+        font-size: 12px;
+        gap: 5px;
+        padding-right: 12px;
+        min-height: 34px;
+    }
+
+    .tab img {
+        width: 20px;
+        height: 20px;
+    }
+
     #page:not(.mode_collapse) #header #tabs {
         margin-left: calc(260px - 50px + 8px);
     }
@@ -1021,11 +1024,23 @@ body {
 
 /*** switch checkbox ***/
 .switch {
+    --switch-width: calc(50px);
+    /* 50 */
+    --switch-height: calc(50px / 2);
+    /* 25 */
+    --switch-toggler-height: calc(var(--switch-height) * 0.74);
+    /* 19 */
+    --switch-toggler-left: calc(var(--switch-height) * 0.13);
+    /* 3 */
+    --switch-toggler-right: calc(var(--switch-width) - var(--switch-toggler-height) - var(--switch-toggler-left) *2);
+    /* 25 */
+
     position: relative;
     display: inline-block;
-    width: 50px;
-    height: 26px;
-    min-width: 50px;
+    width: var(--switch-width);
+    min-width: var(--switch-width);
+    height: var(--switch-height);
+
 }
 
 .switch input {
@@ -1040,17 +1055,16 @@ body {
     right: 0;
     bottom: 0;
     background-color: #c8c8c8;
-    border-radius: 13px;
-    border: 1px solid transparent;
+    border-radius: calc(var(--switch-height) / 2)
 }
 
 .switch .toggler:before {
     position: absolute;
     content: "";
-    height: 19px;
-    width: 19px;
-    left: 3px;
-    bottom: 3px;
+    height: var(--switch-toggler-height);
+    width: var(--switch-toggler-height);
+    left: var(--switch-toggler-left);
+    bottom: var(--switch-toggler-left);
     background-color: white;
     -webkit-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
@@ -1063,13 +1077,26 @@ body {
 }
 
 .switch input:checked+.toggler:before {
-    -webkit-transform: translateX(24px);
-    -ms-transform: translateX(24px);
-    transform: translateX(24px);
+    -webkit-transform: translateX(var(--switch-toggler-right));
+    -ms-transform: translateX(var(--switch-toggler-right));
+    transform: translateX(var(--switch-toggler-right));
+}
+
+@media only screen and (min-width: 550px) {
+    .switch {
+        --switch-width: calc(38px);
+        /* 50 */
+        --switch-height: calc(40px / 2);
+        /* 25 */
+    }
 }
 
 /*** END: switch checkbox ***/
 /*** dark mode switch checkbox ***/
+.switch {
+    --switch-toggler-offset: calc(var(--switch-toggler-left)*2);
+}
+
 .switch.mode_dark input+.toggler {
     background-color: white;
     border-color: var(--color-bg-darkest);
@@ -1091,43 +1118,41 @@ body {
 
 .switch.mode_dark .moon-icon, .switch.mode_dark .sun-icon {
     position: absolute;
-    height: 17px;
-    width: 17px;
+    height: var(--switch-toggler-height);
+    width: var(--switch-toggler-height);
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(images/moon.svg);
-    background-size: 13px;
+    background-size: 75%;
 }
 
 .switch.mode_dark .sun-icon {
-    height: 16px;
-    width: 16px;
     background-image: url(images/sun.svg);
-    background-size: contain;
+    background-size: 90%;
 }
 
 .switch.mode_dark .sun-icon {
     opacity: 1;
-    transform: translate(29px, 5px) rotate(-15deg);
-    transform-origin: 50% 50%;
-    transition: opacity 150ms, transform 500ms ease;
-}
-
-.switch.mode_dark input:checked~.toggler .sun-icon {
-    opacity: 0;
-    transform: translate(25px, 5px) rotate(0deg);
-}
-
-.switch.mode_dark .moon-icon {
-    opacity: 0;
-    transform: translate(10px, 4px) rotate(0deg);
+    transform: translate(calc(var(--switch-toggler-right) + var(--switch-toggler-left)), var(--switch-toggler-left)) rotate(-15deg);
     transform-origin: 50% 50%;
     transition: opacity 150ms, transform 500ms ease;
 }
 
 .switch.mode_dark input:checked~.toggler .moon-icon {
     opacity: 1;
-    transform: translate(5px, 4px) rotate(15deg);
+    transform: translate(var(--switch-toggler-left), calc(var(--switch-toggler-left) * 1.2)) rotate(15deg);
+}
+
+.switch.mode_dark input:checked~.toggler .sun-icon {
+    opacity: 0;
+    transform: translate(var(--switch-toggler-right), var(--switch-toggler-offset)) rotate(10deg);
+}
+
+.switch.mode_dark .moon-icon {
+    opacity: 0;
+    transform: translate(calc(var(--switch-toggler-left) + var(--switch-toggler-left)), var(--switch-toggler-offset)) rotate(-10deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms ease;
 }
 
 /*** END: dark mode switch checkbox ***/
