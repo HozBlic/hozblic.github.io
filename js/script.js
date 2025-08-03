@@ -700,6 +700,10 @@ function loadMenuItems() {
             if (strMode === 'mode_spoilers' || strMode === 'mode_gift') {
                 checkGiftVisibility();
                 checkMuseumVisibility();
+                if (strMode === 'mode_spoilers') {
+                    updateStatistics();
+                }
+
             }
         });
     })
@@ -774,6 +778,7 @@ function loadGiftTab() {
         } else {
             objMistriaData.gifts.delete($(this).val())
         }
+        updateStatistics();
         saveData();
     });
 
@@ -903,6 +908,7 @@ function loadMuseumTab() {
             objTippy.setContent($(objTippy.props.content)[0]);
         });
 
+        updateStatistics();
         saveData();
     });
 
@@ -912,6 +918,7 @@ function loadMuseumTab() {
 
     checkMuseumVisibility();
 }
+
 function checkGiftVisibility() {
     $('#characters .character').css('display', '');
     $('#characters .character').each(function () {
@@ -939,6 +946,104 @@ function checkMuseumVisibility() {
     });
 }
 
+function updateStatistics() {
+
+    var intItemsGiftable = 0;
+    var intItemsGifted = 0;
+    var intItemsDonatable = 0;
+    var intItemsDonated = 0;
+
+    let sortedEntries = Object.entries(objCharacters);
+    sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
+        if (objCharacter['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+            return;
+        }
+
+        objCharacter['loved'].forEach(function (strGiftKey) {
+            strID = strCharacterKey + '_' + strGiftKey;
+
+            if (objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                return;
+            }
+            intItemsGiftable++;
+            if (objMistriaData.gifts.has(strID)) {
+                intItemsGifted++;
+            }
+        });
+
+        objCharacter['liked'].forEach(function (strGiftKey) {
+            strID = strCharacterKey + '_' + strGiftKey;
+
+            if (objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                return;
+            }
+            intItemsGiftable++;
+            if (objMistriaData.gifts.has(strID)) {
+                intItemsGifted++;
+            }
+        });
+    });
+
+
+    var intItemsDonatable = 0;
+    var intItemsDonated = 0;
+
+    let sortedEntriesWings = Object.entries(objMuseum);
+    sortedEntriesWings.forEach(([strWingKey, objWing]) => {
+        let sortedEntriesSets = Object.entries(objWing['sets']);
+
+        sortedEntriesSets.forEach(([strSetKey, objSet]) => {
+
+            if (objSet['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                return;
+            }
+            strID = strWingKey + '_' + strSetKey;
+
+            objSet['items'].forEach((item) => {
+                if (objItems[item]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                    return;
+                }
+                intItemsDonatable++;
+                if (objMistriaData.museum.has(item)) {
+                    intItemsDonated++;
+                }
+            });
+        });
+    });
+
+    var strGiftedPercent = Math.floor(intItemsGifted / intItemsGiftable * 100) + '%';
+    var strGiftedTippy = `${intItemsGifted} / ${intItemsGiftable}`;
+    $('#gift_statistics div').css('width', strGiftedPercent);
+    $('#gift_statistics span').html(strGiftedPercent)
+
+    var objLabel = $('#gift_statistics')[0];
+    var objTippy = objLabel._tippy;
+
+    if (typeof objTippy === 'undefined') {
+        tippy('#gift_statistics', {
+            content: strGiftedTippy,
+        });
+    } else {
+        objTippy.setContent(strGiftedTippy);
+    }
+
+    var strDonatedPercent = Math.floor(intItemsDonated / intItemsDonatable * 100) + '%';
+    var strDonatedTippy = `${intItemsDonated} / ${intItemsDonatable}`;
+    $('#museum_statistics div').css('width', strDonatedPercent);
+    $('#museum_statistics span').html(strDonatedPercent);
+
+    objLabel = $('#museum_statistics')[0];
+    objTippy = objLabel._tippy;
+
+    if (typeof objTippy === 'undefined') {
+        tippy('#museum_statistics', {
+            content: strDonatedTippy,
+        });
+    } else {
+        objTippy.setContent(strDonatedTippy);
+    }
+}
+
 
 $(function () {
     let start = Date.now();
@@ -948,6 +1053,8 @@ $(function () {
     tippy('#triangle img', {
         content: 'Red bull, please?',
     });
+
+    updateStatistics();
 
     var strTabKey = objMistriaData.tab ? objMistriaData.tab : 'gift';
     $('#page').addClass(strTabKey)

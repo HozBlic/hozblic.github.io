@@ -12,7 +12,7 @@
         content="Fields of Mistria, gift guide, visual, interactive, gifting, marriage, hearts, romance, Celine, March, Juniper, Adeline">
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
 
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <script type="text/javascript" src="json/items.json.js?v=6"></script>
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="js/jquery.highlight-5.js?v=1"></script>
     <script type="text/javascript" src="js/pako.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=17"></script>
+    <script type="text/javascript" src="js/script.js?v=18"></script>
     <script type="text/javascript" src="js/save_file.js?v=4"></script>
 </head>
 
@@ -161,7 +161,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="switches">
                     <div class="switch_wrap">
                         <label class="switch mode_dark">
                             <input type='checkbox' id="mode_dark"></input>
@@ -225,8 +225,7 @@
                     </div>
                 </div>
 
-                <div class="bottom_buttons">
-
+                <div class="bottom_info">
                     <div id="json_button" onclick="openJsonPopup();">
                         <div class="icon">
                             <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
@@ -235,6 +234,25 @@
                             </svg>
                         </div>
                         <div class="text">Export / Import data</div>
+                    </div>
+
+                    <div class="statistics">
+                        <div class="meter_label_wrapper">
+                            <div class="statistics_label">Given gifts</div>
+                            <div class="meter_wrapper">
+                                <div id="gift_statistics" class="meter">
+                                    <div><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="meter_label_wrapper">
+                            <div class="statistics_label">Donated items</div>
+                            <div class="meter_wrapper">
+                                <div id="museum_statistics" class="meter">
+                                    <div><span></span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <a id="suggestion"
@@ -271,7 +289,6 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
         <div id="content">

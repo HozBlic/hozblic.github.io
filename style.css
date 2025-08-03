@@ -379,8 +379,7 @@ body {
     }
 }
 
-.bottom_buttons {
-    margin-top: auto;
+.bottom_info {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -395,28 +394,29 @@ body {
     overflow: hidden;
     flex-direction: row;
     padding-right: 8px;
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 11px;
     transition: opacity 0.3s ease;
     color: var(--color-txt);
     fill: var(--color-txt);
     stroke: var(--color-txt);
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 #json_button:hover {
-    opacity: 0.5;
+    opacity: 01;
 }
 
 #json_button .icon {
     justify-content: flex-start;
-    width: 20px;
-    min-width: 20px;
+    width: 17px;
+    min-width: 17px;
     height: 20px;
 }
 
 #json_button .icon svg {
-    height: 13px;
-    width: 13px;
+    height: 11px;
+    width: 11px;
 }
 
 #json_button_popup *::-webkit-scrollbar {
@@ -677,6 +677,7 @@ body {
     align-content: center;
     text-decoration: unset;
     color: var(--color-txt);
+    margin-top: 5px;
 }
 
 #suggestion_question {
@@ -1037,11 +1038,17 @@ body {
     font-size: 16px;
 }
 
+.switches {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: auto;
+}
+
 .switch_wrap {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
     white-space: nowrap;
 }
 
@@ -1112,6 +1119,10 @@ body {
 }
 
 @media only screen and (min-width: 550px) {
+    .switches {
+        gap: 7px;
+    }
+
     .switch {
         --switch-width: calc(38px);
         /* 50 */
@@ -1289,6 +1300,7 @@ input[type="checkbox"].styled:checked+label {
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
     background-size: 8px 8px;
+    white-space: nowrap;
 }
 
 .dropdown_button:hover {
@@ -1430,6 +1442,7 @@ textarea {
     color: var(--color-txt);
     line-height: 16px;
     font-size: 11px;
+    white-space: nowrap;
     z-index: 1;
 }
 
@@ -1519,4 +1532,67 @@ pre {
 
 #save_input {
     display: none;
+}
+
+.statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.statistics:hover {
+    opacity: 1;
+}
+
+.statistics_label {
+    white-space: nowrap;
+    font-size: 11px;
+    padding-right: 5px;
+    min-width: 84px;
+}
+
+.meter_label_wrapper {
+    display: flex;
+    align-items: center;
+
+}
+
+.meter_wrapper {
+    --statistics-height: 15px;
+    border-radius: calc(var(--statistics-height) / 5);
+    overflow: hidden;
+    margin-left: auto;
+    flex: 1;
+}
+
+.meter {
+    height: var(--statistics-height);
+    position: relative;
+    background: var(--color-bg-darker);
+    border-radius: calc(var(--statistics-height) / 5);
+    padding: 0;
+    border: 1px solid rgba(var(--color-btn-rgb), 0.4);
+}
+
+.meter>div {
+    display: flex;
+    height: 100%;
+    margin-top: -1px;
+    margin-left: -1px;
+    border-radius: calc(var(--statistics-height) / 5);
+    background-color: var(--color-btn);
+    box-sizing: content-box !important;
+    padding: 1px;
+    font-size: calc(var(--statistics-height) / 1.5);
+    color: var(--color-txt);
+    align-items: center;
+}
+
+.meter>div span {
+    display: block;
+    padding: 0 6px;
+    text-align: center;
+    width: 100%;
 }
