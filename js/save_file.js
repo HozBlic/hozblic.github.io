@@ -1,37 +1,14 @@
 function extractJsonBlocksFromMixedText(input) {
     const result = {};
-    const regex = /([a-zA-Z0-9_]+)\s*({)/g;
-
+    const regex = /([a-zA-Z0-9_]+).*?({[^\u1337]*})/g;
     let match;
-    let lastIndex = 0;
 
     while ((match = regex.exec(input)) !== null) {
-        const label = match[1];
-        const startIdx = match.index + label.length;
-        const jsonStart = input.indexOf('{', startIdx);
-
-        // Find the full JSON object using brace counting
-        let braceCount = 0;
-        let endIdx = jsonStart;
-
-        while (endIdx < input.length) {
-            const char = input[endIdx];
-            if (char === '{') braceCount++;
-            else if (char === '}') braceCount--;
-
-            endIdx++;
-
-            if (braceCount === 0) break;
-        }
-
-        const jsonString = input.slice(jsonStart, endIdx);
         try {
-            result[label] = JSON.parse(jsonString);
+            result[match[1]] = JSON.parse(match[2]);
         } catch (e) {
-            $("#output").text(`Failed to parse JSON for label: ${label}`, e);
+            $("#output").text(`Failed to parse JSON for label: ${match[1]}`, e);
         }
-
-        regex.lastIndex = endIdx; // Move regex search forward
     }
 
     return result;
@@ -85,14 +62,13 @@ $(function () {
                 // Decode as UTF-8 first
                 let decodedText;
                 try {
-                    decodedText = new TextDecoder("utf-8", { fatal: false }).decode(inflated);
-                } catch (utf8Error) {
-                    // Fallback to Latin-1
                     decodedText = new TextDecoder("iso-8859-1").decode(inflated);
+                } catch (utf8Error) {
+                    $("#output").text(utf8Error.message);
                 }
 
-                // Remove unprintable characters (except \n and \t)
-                let cleaned = decodedText.replace(/[^\x20-\x7E\n\t]/g, "");
+                // Remove unprintable characters
+                let cleaned = decodedText.replaceAll(/[^\x20-\x7E]/g, "\u1337");
 
                 if (cleaned) {
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
@@ -111,8 +87,10 @@ $(function () {
 
                         let arrGivenGifts = [];
                         for (const [npcname, value] of Object.entries(objNpcs)) {
-                            for (const [key, value] of Object.entries(objNpcs[npcname]['gifts_given'])) {
-                                arrGivenGifts.push(`${npcname}_${value}`);
+                            for (const [key, strItemKey] of Object.entries(objNpcs[npcname]['gifts_given'])) {
+                                if (objCharacters[npcname]['liked'].includes(strItemKey) || objCharacters[npcname]['loved'].includes(strItemKey)) {
+                                    arrGivenGifts.push(`${npcname}_${strItemKey}`);
+                                }
                             }
                         }
 
