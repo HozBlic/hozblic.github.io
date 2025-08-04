@@ -735,7 +735,10 @@ body {
     overflow: auto;
 }
 
-.sets {}
+.sets {
+    display: flex;
+    flex-direction: column;
+}
 
 .wing,
 .character {
