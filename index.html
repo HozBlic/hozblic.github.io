@@ -12,7 +12,7 @@
         content="Fields of Mistria, gift guide, visual, interactive, gifting, museum, tracker, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
 
-    <link rel="stylesheet" href="style.css?v=20">
+    <link rel="stylesheet" href="style.css?v=21">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <script type="text/javascript" src="json/items.json.js?v=6"></script>
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="js/jquery.highlight-5.js?v=1"></script>
     <script type="text/javascript" src="js/pako.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=19"></script>
+    <script type="text/javascript" src="js/script.js?v=20"></script>
     <script type="text/javascript" src="js/save_file.js?v=5"></script>
 </head>
 
@@ -213,6 +213,8 @@
                         </label>
                         <span class="gift_show">Hide gifted items</span>
                         <span class="museum_show">Hide donated items</span>
+                        <span class="cooking_show woodworking_show">Hide obtained recipes</span>
+                        <span class="animal_show">Hide obtained animals</span>
 
                         <svg id="older_browsers" class="feather feather-alert-triangle" fill="none" height="24"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -294,15 +296,19 @@
         <div id="content">
 
             <div class="tab_window gift_show">
-                <div id="characters"></div>
+                <div id="characters" class="tab_content"></div>
             </div>
             <div class="tab_window museum_show">
-                <div id="museum"></div>
+                <div id="museum" class="tab_content"></div>
             </div>
             <div class="tab_window animal_show">
-                <div id="animals">
-                    Nothing here yet..
-                </div>
+                <div id="animals" class="tab_content soon"></div>
+            </div>
+            <div class="tab_window cooking_show">
+                <div id="cooking" class="tab_content soon"></div>
+            </div>
+            <div class="tab_window woodworking_show">
+                <div id="woodworking" class="tab_content soon"></div>
             </div>
         </div>
         <div id="header">
@@ -318,7 +324,9 @@
             <div id="tabs">
                 <div class="tab" id="tab_gift" data-tab="gift"><img src="images/gift.png">Gift guide</div>
                 <div class="tab" id="tab_museum" data-tab="museum"><img src="images/museum.png">Museum</div>
-                <!-- <div class="tab" id="tab_animal" data-tab="animal"><img src="images/rabbit.png">Animals</div> -->
+                <div class="tab" id="tab_animal" data-tab="animal"><img src="images/rabbit.png">Animals</div>
+                <div class="tab" id="tab_cooking" data-tab="cooking"><img src="images/items/Fish_stew.png">Cooking</div>
+                <div class="tab" id="tab_woodworking" data-tab="woodworking"><img src="images/tooltip/30px-Crafting_table.png">Woodworking</div>
             </div>
         </div>
 

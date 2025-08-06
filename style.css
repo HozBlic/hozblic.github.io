@@ -24,6 +24,8 @@
 
 #page * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 #triangle {
@@ -78,6 +80,10 @@ html {}
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
+}
+
+svg:focus {
+    outline: none;
 }
 
 #page {
@@ -322,6 +328,8 @@ body {
 .tab:hover,
 #page.gift #tab_gift,
 #page.museum #tab_museum,
+#page.woodworking #tab_woodworking,
+#page.cooking #tab_cooking,
 #page.animal #tab_animal {
     background-color: rgba(var(--color-btn-rgb), 0.6);
 }
@@ -334,12 +342,16 @@ body {
 
 .gift_show,
 .museum_show,
+.cooking_show,
+.woodworking_show,
 .animal_show {
     display: none;
 }
 
 #page.gift .gift_show,
 #page.museum .museum_show,
+#page.cooking .cooking_show,
+#page.woodworking .woodworking_show,
 #page.animal .animal_show {
     display: block;
 }
@@ -724,20 +736,54 @@ body {
     width: 16px;
 }
 
-#animals,
+.tab_content {
+    padding: 8px;
+    min-height: 100%;
+}
+
+.tab_content.soon,
+.tab_content:empty {
+    position: relative;
+}
+
+.tab_content:empty:after {
+    --loader-height: 70px;
+    content: '';
+    background-image: url(images/loader.gif), url(images/loader.gif), url(images/loader.gif);
+    height: var(--loader-height);
+    width: calc(var(--loader-height) * 2);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-position: left, center, right;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+.tab_content.soon:empty:after {
+    content: 'Nothing here yet..';
+    background-image: url("images/spr_ui_generic_lock_icon.png");
+    height: unset;
+    width: unset;
+    padding-left: 22px;
+    background-size: calc(10px * 1.3) calc(12px * 1.3);
+}
+
 #museum,
 .sets,
 #characters {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 10px;
-    padding: 8px;
     overflow: auto;
 }
 
 .sets {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .wing,
@@ -962,6 +1008,7 @@ body {
 
 .wing_name {
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .set_name {

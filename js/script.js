@@ -126,11 +126,13 @@ var objMistriaDataDefault = {
     options: ['mode_dark']
 };
 
-var objTabs = {
-    'gift': false,
-    'museum': false,
-    'animal': false
-}
+var arrTabs = [
+    'gift',
+    'museum',
+    'cooking',
+    'woodworking',
+    'animal'
+];
 
 $('.item').each(function () {
     var strObtainAll = $(this).attr('data-cbx');
@@ -248,6 +250,7 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
         tippy(`#label_${strID}`, {
             content: template,
             interactive: true,
+            maxWidth: 370
         });
     });
 }
@@ -603,8 +606,7 @@ function loadMenuItems() {
             });
         }
 
-        checkGiftVisibility();
-        checkMuseumVisibility();
+        checkAllVisibility();
     });
 
     $('#search_items').on('keyup', function () {
@@ -639,7 +641,7 @@ function loadMenuItems() {
             });
 
             keywords.forEach(word => {
-                $('#page').highlight(word);
+                $('.tab_content').highlight(word);
             });
 
         }
@@ -680,8 +682,7 @@ function loadMenuItems() {
             }
         });
 
-        checkGiftVisibility();
-        checkMuseumVisibility();
+        checkAllVisibility();
     });
 
     var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_mini_tooltip'];
@@ -698,8 +699,7 @@ function loadMenuItems() {
             saveData();
 
             if (strMode === 'mode_spoilers' || strMode === 'mode_gift') {
-                checkGiftVisibility();
-                checkMuseumVisibility();
+                checkAllVisibility();
                 if (strMode === 'mode_spoilers') {
                     updateStatistics();
                 }
@@ -723,13 +723,6 @@ function loadMenuItems() {
 }
 
 function loadGiftTab() {
-    if (objTabs.gift) {
-        if ($('#search_items').val() != '') {
-            $('#search_items').keyup();
-        }
-        return;
-    }
-    objTabs.gift = true;
     let sortedEntries = Object.entries(objCharacters);
     if (objMistriaData.sort === 'az') {
         sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
@@ -790,13 +783,6 @@ function loadGiftTab() {
 }
 
 function loadMuseumTab() {
-    if (objTabs.museum) {
-        if ($('#search_items').val() != '') {
-            $('#search_items').keyup();
-        }
-        return;
-    }
-    objTabs.museum = true;
     let sortedEntriesWings = Object.entries(objMuseum);
     if (objMistriaData.sort === 'az') {
         sortedEntriesWings.sort((a, b) => a[1].name.localeCompare(b[1].name));
@@ -882,6 +868,7 @@ function loadMuseumTab() {
                 tippy(`#label_${strID}`, {
                     content: template,
                     interactive: true,
+                    maxWidth: 370
                 });
             });
         });
@@ -919,6 +906,13 @@ function loadMuseumTab() {
     checkMuseumVisibility();
 }
 
+function loadCookingTab() {
+
+}
+function loadWoodworkingTab() {
+
+}
+
 function checkGiftVisibility() {
     $('#characters .character').css('display', '');
     $('#characters .character').each(function () {
@@ -944,6 +938,11 @@ function checkMuseumVisibility() {
             $(this).hide();
         }
     });
+}
+
+function checkCookingVisibility() {
+}
+function checkWoodworkingVisibility() {
 }
 
 function updateStatistics() {
@@ -1046,7 +1045,7 @@ function updateStatistics() {
 
 
 $(function () {
-    let start = Date.now();
+
     loadData();
     loadMenuItems();
 
@@ -1056,37 +1055,45 @@ $(function () {
 
     updateStatistics();
 
-    var strTabKey = objMistriaData.tab ? objMistriaData.tab : 'gift';
-    $('#page').addClass(strTabKey)
-
-    switch (strTabKey) {
-        case "gift":
-            loadGiftTab();
-            checkGiftVisibility();
-            break;
-        case "museum":
-            loadMuseumTab();
-            checkMuseumVisibility();
-            break;
-        case "animals":
-
-        default:
-    }
+    loadTab(objMistriaData.tab ? objMistriaData.tab : 'gift');
 
     $('.tab').on('click', function () {
-        var strTabKey = $(this).attr('data-tab')
+        loadTab($(this).attr('data-tab'));
+    });
 
-        $('#page').removeClass(Object.keys(objTabs).join(' '))
-        $('#page').addClass(strTabKey)
+});
 
+function loadTab(strTabKey) {
+    if ($('#page').hasClass(strTabKey)) {
+        return;
+    }
+    if (!arrTabs.includes(strTabKey)) {
+        return;
+    }
+
+    let start = Date.now();
+
+    if (!['animal', 'cooking', 'woodworking'].includes(strTabKey)) {
+        $(`.tab_window.${strTabKey}_show .tab_content`).html('');
+    }
+
+    $('#page').removeClass(arrTabs.join(' '));
+    $('#page').addClass(strTabKey);
+
+    //break up execution stack
+    setTimeout(() => {
         switch (strTabKey) {
             case "gift":
                 loadGiftTab();
-                checkGiftVisibility();
                 break;
             case "museum":
                 loadMuseumTab();
-                checkMuseumVisibility();
+                break;
+            case "cooking":
+                loadCookingTab();
+                break;
+            case "woodworking":
+                loadWoodworkingTab();
                 break;
             case "animals":
             default:
@@ -1094,9 +1101,22 @@ $(function () {
 
         objMistriaData.tab = strTabKey;
         saveData();
-    });
 
-    let timeTaken = Date.now() - start;
+        if ($('#search_items').val() != '') {
+            $('#search_items').keyup();
+        }
+        checkAllVisibility();
 
-    console.log("Total time taken : " + timeTaken + " milliseconds");
-});
+        let timeTaken = Date.now() - start;
+        console.log(`Loaded ${strTabKey} tab in ${timeTaken} milliseconds`);
+
+    }, 50);
+}
+
+function checkAllVisibility() {
+    /* TODO: check only open tab visibility */
+    checkGiftVisibility();
+    checkMuseumVisibility();
+    checkCookingVisibility();
+    checkWoodworkingVisibility();
+}
