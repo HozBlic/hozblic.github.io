@@ -43,6 +43,37 @@ function objMUSEUM(obj) {
     return false;
 }
 
+
+function objAQUIRED(obj) {
+    if (obj && typeof obj === 'object') {
+        if ('player' in obj && typeof obj['player'] === 'object' && 'items_acquired' in obj['player']) {
+            return obj['player']['items_acquired'];
+        }
+        for (const key in obj) {
+            if (objAQUIRED(obj[key])) {
+                return obj[key]['player']['items_acquired'];
+            }
+        }
+    }
+    return false;
+}
+
+function removeNonAlmanacKeys(arrKeys) {
+    var arrAlmanacTags = Object.values(objAlmanac).map(item => item['tags'][0]);
+    arrKeys = arrKeys.filter(strItemKey => {
+        if (strItemKey in objItems) {
+            if ('tags' in objItems[strItemKey]) {
+                if (objItems[strItemKey]['tags'].includes('furniture')) {
+                    if (objTagItems.furniture.includes(strItemKey)) { return true; }
+                } else {
+                    return arrAlmanacTags.some(r => objItems[strItemKey]['tags'].includes(r));
+                }
+            }
+        };
+    });
+    return arrKeys;
+}
+
 $(function () {
     $("#save_input").on("change", function (event) {
         let file = event.target.files[0];
@@ -74,6 +105,7 @@ $(function () {
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
                     let objNpcs = objNPC(jsonBlocks);
                     let objMuseumData = objMUSEUM(jsonBlocks);
+                    let objAquiredData = removeNonAlmanacKeys(objAQUIRED(jsonBlocks));
                     let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
                     let arrFound = [];
 
@@ -83,7 +115,7 @@ $(function () {
 
                     if (typeof objNpcs === 'object') {
 
-                        $("#output").text(JSON.stringify(objNpcs, null, 2));
+
 
                         let arrGivenGifts = [];
                         for (const [npcname, value] of Object.entries(objNpcs)) {
@@ -106,7 +138,6 @@ $(function () {
 
                     if (typeof objMuseumData === 'object') {
 
-                        $("#output").text($("#output").text() + '\n' + JSON.stringify(objMuseumData, null, 2));
 
                         let arrDonatedItems = [];
                         for (const key in objMuseumData) {
@@ -122,6 +153,22 @@ $(function () {
 
                     } else {
                         $("#output").text($("#output").text() + '\n' + "Couldn't find musuem data");
+                    }
+
+                    if (typeof objAquiredData === 'object') {
+
+                        objOldData.almanac = [...new Set(objAquiredData)];
+
+                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+                        arrFound.push(`${objAquiredData.length} almanac items were found `);
+
+                    } else {
+                        $("#output").text($("#output").text() + '\n' + "Couldn't find almanac data");
+                    }
+
+                    if (typeof jsonBlocks === 'object') {
+                        $("#output").text($("#output").text() + '\n' + JSON.stringify(jsonBlocks, null, 2));
                     }
 
                     if (arrFound.length) {

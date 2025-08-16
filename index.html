@@ -8,9 +8,10 @@
     <meta name="theme-color" content="#ffffff">
 
     <title>Fields of Mistria gift guide</title>
-    <meta name="description" content="Interactive visual gift guide and museum tracker for Fields of Mistria" />
+    <meta name="description"
+        content="Interactive visual gift guide, museum and progress tracker for Fields of Mistria" />
     <meta name="keywords"
-        content="Fields of Mistria, gift guide, visual, interactive, gifting, museum, tracker, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
+        content="Fields of Mistria, gift guide, visual, almanac, interactive, gifting, museum, tracker, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Fields of Mistria gift guide" />
@@ -29,7 +30,7 @@
     <meta name="twitter:title" content="Fields of Mistria gift guide" />
     <meta name="twitter:description" content="Interactive visual gift guide and museum tracker for Fields of Mistria" />
     <meta name="twitter:image" content="https://hozblic.github.io/images/meta.png" />
-    
+
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
 
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png" sizes="96x96" />
@@ -38,11 +39,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="style.css?v=21">
-   
-    <script type="text/javascript" src="json/items.json.js?v=6"></script>
+    <link rel="stylesheet" href="style.css?v=22">
+
+    <script type="text/javascript" src="json/items.json.js?v=7"></script>
     <script type="text/javascript" src="json/characters.json.js?v=4"></script>
     <script type="text/javascript" src="json/museum.json.js?v=3"></script>
+    <script type="text/javascript" src="json/almanac.json.js"></script>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -50,8 +52,8 @@
     <script type="text/javascript" src="js/jquery.highlight-5.js?v=1"></script>
     <script type="text/javascript" src="js/pako.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=20"></script>
-    <script type="text/javascript" src="js/save_file.js?v=5"></script>
+    <script type="text/javascript" src="js/script.js?v=21"></script>
+    <script type="text/javascript" src="js/save_file.js?v=6"></script>
 </head>
 
 <body>
@@ -238,6 +240,7 @@
                         </label>
                         <span class="gift_show">Hide gifted items</span>
                         <span class="museum_show">Hide donated items</span>
+                        <span class="almanac_show">Hide revealed items</span>
                         <span class="cooking_show woodworking_show">Hide obtained recipes</span>
                         <span class="animal_show">Hide obtained animals</span>
 
@@ -276,6 +279,14 @@
                             <div class="statistics_label">Donated items</div>
                             <div class="meter_wrapper">
                                 <div id="museum_statistics" class="meter">
+                                    <div><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="meter_label_wrapper">
+                            <div class="statistics_label">Completion</div>
+                            <div class="meter_wrapper">
+                                <div id="almanac_statistics" class="meter">
                                     <div><span></span></div>
                                 </div>
                             </div>
@@ -326,6 +337,9 @@
             <div class="tab_window museum_show">
                 <div id="museum" class="tab_content"></div>
             </div>
+            <div class="tab_window almanac_show">
+                <div id="almanac" class="tab_content"></div>
+            </div>
             <div class="tab_window animal_show">
                 <div id="animals" class="tab_content soon"></div>
             </div>
@@ -349,10 +363,10 @@
             <div id="tabs">
                 <div class="tab" id="tab_gift" data-tab="gift"><img src="images/gift.png">Gift guide</div>
                 <div class="tab" id="tab_museum" data-tab="museum"><img src="images/museum.png">Museum</div>
-                <div class="tab" id="tab_animal" data-tab="animal"><img src="images/rabbit.png">Animals</div>
-                <div class="tab" id="tab_cooking" data-tab="cooking"><img src="images/items/Fish_stew.png">Cooking</div>
-                <div class="tab" id="tab_woodworking" data-tab="woodworking"><img
-                        src="images/tooltip/30px-Crafting_table.png">Woodworking</div>
+                <div class="tab" id="tab_almanac" data-tab="almanac"><img src="images/almanac.png">Almanac</div>
+                <!-- <div class="tab" id="tab_animal" data-tab="animal"><img src="images/rabbit.png">Animals</div> -->
+                <!-- <div class="tab" id="tab_cooking" data-tab="cooking"><img src="images/items/Fish_stew.png">Cooking</div> -->
+                <!-- <div class="tab" id="tab_woodworking" data-tab="woodworking"><img src="images/tooltip/30px-Crafting_table.png">Woodworking</div> -->
             </div>
         </div>
 

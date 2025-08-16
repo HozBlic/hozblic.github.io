@@ -83,7 +83,13 @@ const arrObtainEasy = [
     "Slaying",
     "Tackle Shop",
     "The Inn",
-    "Pet Job"
+    "Pet Job",
+    "Breaking",
+    "Dig Spots",
+    "Shaking",
+    "Refining",
+    "Furniture",
+    "Cutting"
 ]
 
 const objCharOrder = {
@@ -119,16 +125,30 @@ const objCharOrder = {
     'seridia': 29
 }
 
+var objTagItems = {}
+Object.entries(objItems).forEach(([key, value]) => {
+    tags = value.tags ?? ['notag']
+    tags.forEach(tag => {
+        objTagItems[tag] = [...(objTagItems[tag] ?? []), key]
+    })
+})
+Object.entries(objTagItems).forEach(([tag, keys]) => { objTagItems[tag] = keys.sort((a, b) => objItems[a].name.localeCompare(objItems[b].name)) })
+names = []
+objTagItems.furniture = objTagItems.furniture.filter(key => { const includes = names.includes(objItems[key].name); if (includes) { return false } names.push(objItems[key].name); return true })
+
+
 var objMistriaData;
 var objMistriaDataDefault = {
     gifts: [],
     museum: [],
+    almanac: [],
     options: ['mode_dark']
 };
 
 var arrTabs = [
     'gift',
     'museum',
+    'almanac',
     'cooking',
     'woodworking',
     'animal'
@@ -269,9 +289,18 @@ function changeSort(objElem) {
     $('.dropdown-item.sort').removeClass('selected');
     $(`.dropdown-item.sort[data-value="${objMistriaData.sort ? objMistriaData.sort : 'default'}"]`).addClass('selected');
 
-    $('.character').css('order', '');
+    changeSortForObject(objMistriaData, objCharacters, '.character', '#character_', objCharOrder);
+    changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
+    changeSortForObject(objMistriaData, objMuseum, '.wing', '#wing_');
+    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
+        changeSortForObject(objMistriaData, objWing['sets'], `.wing_${strWingKey} .set`, `#set_${strWingKey}_`);
+    });
+}
 
-    var sortedEntries = Object.entries(objCharacters);
+function changeSortForObject(objMistriaData, objForSort, strElemClass, strElemID, objDefaultOrder = false) {
+    $(strElemClass).css('order', '');
+
+    var sortedEntries = Object.entries(objForSort);
     if (objMistriaData.sort === 'az') {
         sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
     } else if (objMistriaData.sort === 'za') {
@@ -279,67 +308,27 @@ function changeSort(objElem) {
     }
 
     var intIndex = 0;
-
-    sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
-        $divCharacter = $(`#character_${strCharacterKey}`);
+    sortedEntries.forEach(([strItemKey, objCharacter]) => {
+        $divItem = $(strElemID + strItemKey);
 
         if (!('sort' in objMistriaData)) {
-            if (strCharacterKey in objCharOrder) {
-                $divCharacter.css('order', objCharOrder[strCharacterKey]);
+            if (objDefaultOrder) {
+                if (strItemKey in objDefaultOrder) {
+                    $divItem.css('order', objDefaultOrder[strItemKey]);
+                }
+                else {
+                    $divItem.css('order', 99);
+                }
             }
             else {
-                $divCharacter.css('order', 99);
+                $divItem.css('order', '');
             }
         }
         else {
-            $divCharacter.css('order', intIndex);
+            $divItem.css('order', intIndex);
             intIndex++;
         }
     });
-
-
-    var sortedEntriesWings = Object.entries(objMuseum);
-    if (objMistriaData.sort === 'az') {
-        sortedEntriesWings.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    } else if (objMistriaData.sort === 'za') {
-        sortedEntriesWings.sort((a, b) => b[1].name.localeCompare(a[1].name));
-    }
-
-    var intIndex = 0;
-
-    sortedEntriesWings.forEach(([strWingKey, objWing]) => {
-
-        $divWing = $(`#wing_${strWingKey}`);
-
-        if (!('sort' in objMistriaData)) {
-            $divWing.css('order', '');
-        }
-        else {
-            $divWing.css('order', intIndex);
-            intIndex++;
-        }
-
-        var sortedEntriesSets = Object.entries(objWing['sets']);
-        if (objMistriaData.sort === 'az') {
-            sortedEntriesSets.sort((a, b) => a[1].name.localeCompare(b[1].name));
-        } else if (objMistriaData.sort === 'za') {
-            sortedEntriesSets.sort((a, b) => b[1].name.localeCompare(a[1].name));
-        }
-
-        var intIndexInner = 0;
-        sortedEntriesSets.forEach(([strSetKey, objSet]) => {
-            $divSet = $(`#set_${strWingKey}_${strSetKey}`);
-
-            if (!('sort' in objMistriaData)) {
-                $divSet.css('order', '');
-            }
-            else {
-                $divSet.css('order', intIndexInner);
-                intIndexInner++;
-            }
-        });
-    });
-
 }
 
 function isJsonString(str) {
@@ -359,12 +348,17 @@ function compareData(strJson) {
     if (! 'museum' in objOldData) {
         objOldData.museum = [];
     }
+    if (! 'almanac' in objOldData) {
+        objOldData.almanac = [];
+    }
 
     // remove duplicates
     objOldData.gifts = [...new Set(objOldData.gifts)];
     objNewData.gifts = [...new Set(objNewData.gifts)];
     objOldData.museum = [...new Set(objOldData.museum)];
     objNewData.museum = [...new Set(objNewData.museum)];
+    objOldData.almanac = [...new Set(objOldData.almanac)];
+    objNewData.almanac = [...new Set(objNewData.almanac)];
     objOldData.options = [...new Set(objOldData.options)];
     objNewData.options = [...new Set(objNewData.options)];
 
@@ -373,6 +367,8 @@ function compareData(strJson) {
     const intNewGiftCount = Array.isArray(objNewData.gifts) ? objNewData.gifts.length : 0;
     const intOldMuseumCount = Array.isArray(objOldData.museum) ? objOldData.museum.length : 0;
     const intNewMuseumCount = Array.isArray(objNewData.museum) ? objNewData.museum.length : 0;
+    const intOldAlmanacCount = Array.isArray(objOldData.almanac) ? objOldData.almanac.length : 0;
+    const intNewAlmanacCount = Array.isArray(objNewData.almanac) ? objNewData.almanac.length : 0;
     const intOldToggleCount = Array.isArray(objOldData.options) ? objOldData.options.length : 0;
     const intNewToggleCount = Array.isArray(objNewData.options) ? objNewData.options.length : 0;
 
@@ -415,6 +411,12 @@ function compareData(strJson) {
     } else {
         arrChanges.push(`Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}`);
     }
+    if (JSON.stringify(objOldData.almanac) !== JSON.stringify(objNewData.almanac)) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Obtained almanac items: ${intOldAlmanacCount} -> ${intNewAlmanacCount}</b>`);
+    } else {
+        arrChanges.push(`Obtained almanac items: ${intOldAlmanacCount} -> ${intNewAlmanacCount}`);
+    }
     if (JSON.stringify(objOldData.options) !== JSON.stringify(objNewData.options)) {
         bolChangesDetected = true;
         arrChanges.push(`<b>Layout toggles: ${intOldToggleCount} -> ${intNewToggleCount}</b>`);
@@ -452,6 +454,7 @@ function saveJson() {
                 objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
                 objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
                 objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
+                objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
                 saveData();
                 window.location.reload();
             });
@@ -533,6 +536,7 @@ function loadData() {
     objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
     objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
     objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
+    objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
 }
 
 function saveData() {
@@ -545,6 +549,9 @@ function saveData() {
     }
     if ('museum' in objMistriaData) {
         objMistriaData.museum = [...objMistriaData.museum];
+    }
+    if ('almanac' in objMistriaData) {
+        objMistriaData.almanac = [...objMistriaData.almanac];
     }
 
     localStorage.setItem('mistria_data', JSON.stringify(objMistriaData));
@@ -629,6 +636,17 @@ function loadMenuItems() {
                 }
             });
 
+            $('#almanac .item').filter(function () {
+                const text = $(this).text().trim().toLowerCase();
+                const matchesAll = keywords.some(word => text.includes(word));
+
+                if (matchesAll) {
+                    $(this).removeClass('hide_search');
+                } else {
+                    $(this).addClass('hide_search');
+                }
+            });
+
             $('#museum .item').filter(function () {
                 const text = $(this).text().trim().toLowerCase();
                 const matchesAll = keywords.some(word => text.includes(word));
@@ -649,6 +667,18 @@ function loadMenuItems() {
         $('#characters .character').each(function () {
             if (value !== '') {
                 if ($(this).find('.char_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:visible').length) {
+                $(this).hide()
+            }
+        });
+
+        $('#almanac .section').each(function () {
+            if (value !== '') {
+                if ($(this).find('.section_name').html().includes('highlight')) {
                     $(this).find('.item').removeClass('hide_search');
                 }
             }
@@ -723,14 +753,7 @@ function loadMenuItems() {
 }
 
 function loadGiftTab() {
-    let sortedEntries = Object.entries(objCharacters);
-    if (objMistriaData.sort === 'az') {
-        sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    } else if (objMistriaData.sort === 'za') {
-        sortedEntries.sort((a, b) => b[1].name.localeCompare(a[1].name));
-    }
-
-    sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
+    Object.entries(objCharacters).forEach(([strCharacterKey, objCharacter]) => {
         var $divCharacter = $('<div>', { 'class': 'character', 'id': `character_${strCharacterKey}` });
 
         if (objCharacter['spoiler']) {
@@ -779,18 +802,12 @@ function loadGiftTab() {
         $('#search_items').keyup();
     }
 
+    changeSortForObject(objMistriaData, objCharacters, '.character', '#character_', objCharOrder);
     checkGiftVisibility();
 }
 
 function loadMuseumTab() {
-    let sortedEntriesWings = Object.entries(objMuseum);
-    if (objMistriaData.sort === 'az') {
-        sortedEntriesWings.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    } else if (objMistriaData.sort === 'za') {
-        sortedEntriesWings.sort((a, b) => b[1].name.localeCompare(a[1].name));
-    }
-
-    sortedEntriesWings.forEach(([strWingKey, objWing]) => {
+    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
 
         var $divWing = $('<div>', { 'class': 'wing', 'id': `wing_${strWingKey}` });
 
@@ -903,9 +920,111 @@ function loadMuseumTab() {
         $('#search_items').keyup();
     }
 
+    changeSortForObject(objMistriaData, objMuseum, '.wing', '#wing_');
+    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
+        changeSortForObject(objMistriaData, objWing['sets'], `.wing_${strWingKey} .set`, `#set_${strWingKey}_`);
+    });
     checkMuseumVisibility();
 }
 
+function loadAlmanacTab() {
+
+    var strAlert = `
+        <div class="alert show yellow" style="grid-column: 1/-1; height: min-content;">
+            <div class="icon yellow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                    viewBox="0 0 24.002 24">
+                    <path id="notice"
+                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                        transform="translate(1990.001 7446)" fill="#242424"></path>
+                </svg>
+            </div>
+            <div class="info" style="line-height: 18px;">
+                <b>Try importing save file to get aquired items!</b> </br>
+                <div style="font-size: 12px; line-height: 12px; padding-top: 2px;">
+                    Data for Furniture section is incomplete, missing some items and images. All other sections should have correct data. </br> 
+                    If you catch any other errors, feel free to <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1mdf17v/interactive_gift_guide_v0140/">contact me</a>!
+                </div>
+            </div>
+        </div>`;
+
+    // $(strAlert).insertBefore('#almanac');
+    $('#almanac').append(strAlert);
+
+
+    Object.entries(objAlmanac).forEach(([strSectionKey, objSection]) => {
+        strUsedTag = objSection['tags'][0];
+
+        var $divSection = $('<div>', { 'class': 'section', 'id': `section_${strSectionKey}` });
+
+        $divSection.append(` 
+           
+                <a class="section_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(objSection['name'])}" target="_blank">
+                    <img class="section_img_mini" src="images/almanac/${strSectionKey}.png">          
+                    ${objSection['name']}
+                </a>
+            ` );
+        $('#almanac').append($divSection);
+
+        var $divitems = $('<div>', { 'class': 'set_items' });
+        $divSection.append($divitems);
+
+        objTagItems[strUsedTag].forEach((strItemKey) => {
+            strID = strItemKey;
+            strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
+
+
+            if ('tags' in objItems[strItemKey]) {
+                if (objItems[strItemKey]['tags'].includes('furniture')) {
+                    strDataCbx = strDataCbx + ' ' + 'Furniture';
+                }
+            }
+
+            $divitems.append(`<div class="item ${objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
+                                <input class="almanac_chb" ${objMistriaData.almanac.has(strID) ? 'checked' : ''} type="checkbox" id="set_${strID}" name="almanac" value="${strID}">
+                                <label for="set_${strID}" class="has_tip" id="label_${strID}">
+                                    <div class="image ${objItems[strItemKey]['url_image'] == '' || objItems[strItemKey]['nodata'] ? 'nodata' : ''}" style="background-image: url(images/items/${objItems[strItemKey]['url_image']})"></div>
+                                    <div class="name">${objItems[strItemKey]['name']}</div>
+                                </label>
+                                ${createTip(strID, objItems[strItemKey], true, strID)}
+                               
+                            </div>`);
+
+            if (objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata']) {
+                $divitems.append(`<div class="item spoiler_placeholder" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}"></div>`);
+            }
+
+            const template = $(`#tip_${strID}`)[0];
+            template.style.display = 'block';
+            tippy(`#label_${strID}`, {
+                content: template,
+                interactive: true,
+                maxWidth: 370
+            });
+        });
+    });
+
+
+    $('.almanac_chb:checkbox').change(function () {
+        var bolAdd = true;
+        if ($(this).is(':checked')) {
+            objMistriaData.almanac.add($(this).val());
+        } else {
+            objMistriaData.almanac.delete($(this).val());
+            bolAdd = false;
+        }
+
+        updateStatistics();
+        saveData();
+    });
+
+    if ($('#search_items').val() != '') {
+        $('#search_items').keyup();
+    }
+
+    changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
+    checkAlmanacVisibility();
+}
 function loadCookingTab() {
 
 }
@@ -917,7 +1036,7 @@ function checkGiftVisibility() {
     $('#characters .character').css('display', '');
     $('#characters .character').each(function () {
         if (!$(this).find('.item:visible').length) {
-            $(this).hide()
+            $(this).hide();
         }
     });
 }
@@ -940,6 +1059,14 @@ function checkMuseumVisibility() {
     });
 }
 
+function checkAlmanacVisibility() {
+    $('#almanac .section').css('display', '');
+    $('#almanac .section').each(function () {
+        if (!$(this).find('.item:visible').length) {
+            $(this).hide();
+        }
+    });
+}
 function checkCookingVisibility() {
 }
 function checkWoodworkingVisibility() {
@@ -949,8 +1076,6 @@ function updateStatistics() {
 
     var intItemsGiftable = 0;
     var intItemsGifted = 0;
-    var intItemsDonatable = 0;
-    var intItemsDonated = 0;
 
     let sortedEntries = Object.entries(objCharacters);
     sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
@@ -996,7 +1121,6 @@ function updateStatistics() {
             if (objSet['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
                 return;
             }
-            strID = strWingKey + '_' + strSetKey;
 
             objSet['items'].forEach((item) => {
                 if (objItems[item]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
@@ -1007,6 +1131,27 @@ function updateStatistics() {
                     intItemsDonated++;
                 }
             });
+        });
+    });
+
+    var objItemsAlmanacable = {};
+    var objItemsAlmanaced = {};
+
+    let sortedEntriesSections = Object.entries(objAlmanac);
+    sortedEntriesSections.forEach(([strSectionKey, objSection]) => {
+        strUsedTag = objSection['tags'][0];
+        objItemsAlmanacable[strSectionKey] = 0;
+        objItemsAlmanaced[strSectionKey] = 0;
+        objTagItems[strUsedTag].forEach((strItemKey) => {
+            if (objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                return;
+            }
+
+            objItemsAlmanacable[strSectionKey] = objItemsAlmanacable[strSectionKey] + 1;
+            if (objMistriaData.almanac.has(strItemKey)) {
+
+                objItemsAlmanaced[strSectionKey] = objItemsAlmanaced[strSectionKey] + 1;
+            }
         });
     });
 
@@ -1041,6 +1186,47 @@ function updateStatistics() {
     } else {
         objTippy.setContent(strDonatedTippy);
     }
+
+
+    var intItemsAlmanaced = Object.values(objItemsAlmanaced).reduce((a, b) => a + b, 0);
+    var intItemsAlmanacable = Object.values(objItemsAlmanacable).reduce((a, b) => a + b, 0);
+    var strAlmanacedPercent = Math.floor(intItemsAlmanaced / intItemsAlmanacable * 100) + '%';
+
+    var strAlmanacedTippy = `<div class="statistics_header">${intItemsAlmanaced} / ${intItemsAlmanacable}</div>`;
+    strAlmanacedTippy += '<table class="statistics_table">';
+
+
+
+
+    Object.entries(objItemsAlmanacable).forEach(([strSectionKey, intValue]) => {
+
+        strAlmanacedTippy += `<tr><td>${objAlmanac[strSectionKey]['name']}:</td><td>${objItemsAlmanaced[strSectionKey]} / ${intValue}</td></tr>`;
+
+    });
+
+    strAlmanacedTippy += '</table>';
+
+    //  $(strAlmanacedTippy).prop('outerHTML');
+
+    $('#almanac_statistics div').css('width', strAlmanacedPercent);
+    $('#almanac_statistics span').html(strAlmanacedPercent);
+
+    objLabel = $('#almanac_statistics')[0];
+    objTippy = objLabel._tippy;
+
+    if (typeof objTippy === 'undefined') {
+        tippy('#almanac_statistics', {
+            content: strAlmanacedTippy,
+            allowHTML: true,
+        });
+    } else {
+        objTippy.setContent(strAlmanacedTippy);
+    }
+
+}
+
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1).toLowerCase();
 }
 
 
@@ -1089,6 +1275,9 @@ function loadTab(strTabKey) {
             case "museum":
                 loadMuseumTab();
                 break;
+            case "almanac":
+                loadAlmanacTab();
+                break;
             case "cooking":
                 loadCookingTab();
                 break;
@@ -1117,6 +1306,7 @@ function checkAllVisibility() {
     /* TODO: check only open tab visibility */
     checkGiftVisibility();
     checkMuseumVisibility();
+    checkAlmanacVisibility();
     checkCookingVisibility();
     checkWoodworkingVisibility();
 }
