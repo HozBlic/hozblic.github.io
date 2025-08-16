@@ -11,7 +11,7 @@
     <meta name="description"
         content="Interactive visual gift guide, museum and progress tracker for Fields of Mistria" />
     <meta name="keywords"
-        content="Fields of Mistria, gift guide, visual, almanac, interactive, gifting, museum, tracker, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
+        content="Fields of Mistria, gift guide, visual, almanac, interactive, gifting, museum, tracker, completion, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Fields of Mistria gift guide" />
@@ -39,21 +39,26 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="style.css?v=22">
+    <link rel="stylesheet" href="css/style.css?v=22">
+    <link rel="stylesheet" href="css/wrapped.css">
 
-    <script type="text/javascript" src="json/items.json.js?v=7"></script>
+    <script type="text/javascript" src="json/items.json.js?v=8"></script>
     <script type="text/javascript" src="json/characters.json.js?v=4"></script>
     <script type="text/javascript" src="json/museum.json.js?v=3"></script>
     <script type="text/javascript" src="json/almanac.json.js"></script>
+    <script type="text/javascript" src="json/wrapped_dummy.json.js"></script>
+
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/tippy-bundle.umd.min.js?v=2"></script>
     <script type="text/javascript" src="js/jquery.highlight-5.js?v=1"></script>
     <script type="text/javascript" src="js/pako.min.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=22"></script>
-    <script type="text/javascript" src="js/save_file.js?v=7"></script>
+    <script type="text/javascript" src="js/script.js?v=23"></script>
+    <script type="text/javascript" src="js/save_file.js?v=8"></script>
 </head>
 
 <body>
@@ -189,7 +194,7 @@
                 </div>
 
                 <div class="switches">
-                    <div class="switch_wrap">
+                    <div class="switch_wrap switch_wrap_dark">
                         <label class="switch mode_dark">
                             <input type='checkbox' id="mode_dark"></input>
                             <div class='toggler'>
@@ -340,6 +345,9 @@
             <div class="tab_window almanac_show">
                 <div id="almanac" class="tab_content"></div>
             </div>
+            <div class="tab_window wrapped_show">
+                <div id="wrapped" class="tab_content"></div>
+            </div>
             <div class="tab_window animal_show">
                 <div id="animals" class="tab_content soon"></div>
             </div>
@@ -364,6 +372,17 @@
                 <div class="tab" id="tab_gift" data-tab="gift"><img src="images/gift.png">Gift guide</div>
                 <div class="tab" id="tab_museum" data-tab="museum"><img src="images/museum.png">Museum</div>
                 <div class="tab" id="tab_almanac" data-tab="almanac"><img src="images/almanac.png">Almanac</div>
+                <div class="tab" id="tab_wrapped" data-tab="wrapped">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20,7H18a2,2,0,0,0-2,2V20H15V12a2,2,0,0,0-2-2H11a2,2,0,0,0-2,2v8H8V16a2,2,0,0,0-2-2H4a2,2,0,0,0-2,2v5a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V9A2,2,0,0,0,20,7ZM4,20V16H6v4Zm7,0V12h2v8Zm7,0V9h2V20Z" />
+                            <path
+                                d="M3.81,12.58l4.57-6.4L13.68,8a1,1,0,0,0,.82-.08l7-4a1,1,0,0,0-1-1.74L13.89,5.91,8.32,4.05a1,1,0,0,0-1.13.37l-5,7a1,1,0,0,0,.23,1.39A1,1,0,0,0,3,13,1,1,0,0,0,3.81,12.58Z" />
+                        </svg>
+                    </div>
+                    Mistria Wrapped
+                </div>
                 <!-- <div class="tab" id="tab_animal" data-tab="animal"><img src="images/rabbit.png">Animals</div> -->
                 <!-- <div class="tab" id="tab_cooking" data-tab="cooking"><img src="images/items/Fish_stew.png">Cooking</div> -->
                 <!-- <div class="tab" id="tab_woodworking" data-tab="woodworking"><img src="images/tooltip/30px-Crafting_table.png">Woodworking</div> -->
@@ -422,12 +441,38 @@
                                         transform="translate(1990.001 7446)" fill="#242424" />
                                 </svg>
                             </div>
-
-
-
                             <div class="info"> There seems to be an issue with the JSON code. Please check and try
                                 again.
                             </div>
+                        </div>
+
+                        <div id="extracting_alert" class="alert">
+                             <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="icon green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.001" stroke="none"
+                                    viewBox="0 0 24 24.001">
+                                    <path id="info"
+                                        d="M4969-7260a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1,4969-7260Zm12,9.5a9.51,9.51,0,0,0,9.5-9.5,9.512,9.512,0,0,0-9.5-9.5,9.513,9.513,0,0,0-9.5,9.5A9.512,9.512,0,0,0,4981-7250.5Zm-.773-3.96a1.421,1.421,0,0,1-.292-.961v-5.043a1.369,1.369,0,0,1,.292-.953.983.983,0,0,1,.761-.319,1.019,1.019,0,0,1,.774.319,1.236,1.236,0,0,1,.3.891v5.1a1.37,1.37,0,0,1-.3.969,1.006,1.006,0,0,1-.774.329A.966.966,0,0,1,4980.227-7254.46Zm.023-9.6a.964.964,0,0,1-.315-.773.962.962,0,0,1,.323-.747,1.092,1.092,0,0,1,.754-.294,1.121,1.121,0,0,1,.735.267.946.946,0,0,1,.319.774.972.972,0,0,1-.312.768,1.076,1.076,0,0,1-.743.277A1.131,1.131,0,0,1,4980.25-7264.062Z"
+                                        transform="translate(-4969 7272)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="icon yellow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                                    viewBox="0 0 24.002 24">
+                                    <path id="notice"
+                                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                                        transform="translate(1990.001 7446)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="info"></div>
                         </div>
 
                     </div>
@@ -451,7 +496,7 @@
                         </div>
 
                         <div class="button_set">
-                            <div class="button_item" id="save_file" onclick="saveAsJsonFile()">
+                            <div class="button_item" id="save_file" onclick="saveAsJsonFile(save_file)">
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19.421" height="24.002" stroke="none"
                                         viewBox="0 0 19.421 24.002">
@@ -525,6 +570,7 @@
             </div>
             <div class="popup_close" onclick="$(this).parent().hide();"></div>
         </div>
+
 
         <div id="accept_changes" class="popup_wrapper">
             <div class="popup_inner">
