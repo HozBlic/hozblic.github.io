@@ -940,7 +940,7 @@ function loadAlmanacTab() {
                 </svg>
             </div>
             <div class="info" style="line-height: 18px;">
-                <b>Try importing save file to get aquired items!</b> </br>
+                Try <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>importing save file</b></a> to get aquired items! </br>
                 <div style="font-size: 12px; line-height: 12px; padding-top: 2px;">
                     Data for Furniture section is incomplete, missing some items and images. All other sections should have correct data. </br> 
                     If you catch any other errors, feel free to <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1mdf17v/interactive_gift_guide_v0140/">contact me</a>!
