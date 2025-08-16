@@ -114,9 +114,6 @@ $(function () {
                     }
 
                     if (typeof objNpcs === 'object') {
-
-
-
                         let arrGivenGifts = [];
                         for (const [npcname, value] of Object.entries(objNpcs)) {
                             for (const [key, strItemKey] of Object.entries(objNpcs[npcname]['gifts_given'])) {
@@ -168,7 +165,11 @@ $(function () {
                     }
 
                     if (typeof jsonBlocks === 'object') {
-                        $("#output").text($("#output").text() + '\n' + JSON.stringify(jsonBlocks, null, 2));
+                        if ($("#output").text() == "Reading file...") {
+                            $("#output").text(JSON.stringify(jsonBlocks, null, 2));
+                        } else {
+                            $("#output").text($("#output").text() + '\n' + JSON.stringify(jsonBlocks, null, 2));
+                        }
                     }
 
                     if (arrFound.length) {
