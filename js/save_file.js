@@ -60,6 +60,7 @@ function objAQUIRED(obj) {
 
 function removeNonAlmanacKeys(arrKeys) {
     var arrAlmanacTags = Object.values(objAlmanac).map(item => item['tags'][0]);
+    if (!arrKeys) return false;
     arrKeys = arrKeys.filter(strItemKey => {
         if (strItemKey in objItems) {
             if ('tags' in objItems[strItemKey]) {
