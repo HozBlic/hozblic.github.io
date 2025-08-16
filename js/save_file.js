@@ -43,23 +43,102 @@ function objMUSEUM(obj) {
     return false;
 }
 
-
-function objAQUIRED(obj) {
+function objPLAYER(obj) {
     if (obj && typeof obj === 'object') {
-        if ('player' in obj && typeof obj['player'] === 'object' && 'items_acquired' in obj['player']) {
-            return obj['player']['items_acquired'];
+        if ('skill_xp' in obj && typeof obj['skill_xp'] === 'object') {
+            return obj;
         }
         for (const key in obj) {
-            if (objAQUIRED(obj[key])) {
-                return obj[key]['player']['items_acquired'];
+            if (objPLAYER(obj[key])) {
+                return obj[key];
+            }
+        }
+    }
+    return false;
+}
+function objGAMEDATA(obj) {
+
+    if (obj && typeof obj === 'object') {
+        if ('t2_world_facts' in obj && typeof obj['t2_world_facts'] === 'object') {
+            return obj;
+        }
+        for (const key in obj) {
+            if (objGAMEDATA(obj[key])) {
+                return obj[key];
+            }
+        }
+    }
+    return false;
+}
+function objGAMESTATS(obj) {
+    if (obj && typeof obj === 'object') {
+        if ('cosmetic_worn' in obj && typeof obj['cosmetic_worn'] === 'object') {
+            return obj;
+        }
+        for (const key in obj) {
+            if (objGAMESTATS(obj[key])) {
+                return obj[key];
             }
         }
     }
     return false;
 }
 
+function cleanForWrapped(jsonBlocks) {
+
+    var objInfoPlayer = objPLAYER(jsonBlocks);
+    var objInfoGameData = objGAMEDATA(jsonBlocks);
+    var objInfoGameStats = objGAMESTATS(jsonBlocks);
+
+    var arrPlayerKeys = ['birthday', 'name', 'farm_name', 'inbox', 'recipe_unlocks', 'recipes_created', 'skill_xp', 'items_sold', 'stats'];
+    var arrPlayerStatsKeys = ['base_stamina', 'free_baths', 'perks_active'];
+    var arrGamedataKeys = ['playtime', 'lost_items', 't2_world_facts'];
+    var arrGamestatsKeys = ['animal_eod_statuses', 'chicken_statue_uses', 'bugs_missed', 'bugs_caught', 'cutscenes_skipped', 'enemies_killed', 'dives', 'fish_caught', 'fish_missed', 'forageable_harvests', 'furniture_placed', 'gifts_given', 'items_eaten', 'manual_saves', 'menu_opens', 'perk_acquirements', 'purchases', 'tree_harvests', 'wishing_well_uses', 'set_completions', 'renown_level_ups', 'faints', 'deaths', 'npcs_spoken_to', 'end_of_day_balance', 'end_of_day_stats', 'bedtimes', 'perks', 'items_sold_each_day', 'location_visits'];
+
+    for (let key in objInfoPlayer) {
+        if (!arrPlayerKeys.includes(key)) {
+            delete objInfoPlayer[key];
+        }
+        if (key == 'stats') {
+            for (let keyStats in objInfoPlayer[key]) {
+                if (!arrPlayerStatsKeys.includes(keyStats)) {
+                    delete objInfoPlayer[key][keyStats];
+                }
+            }
+        }
+    }
+
+    for (let key in objInfoGameData) {
+        if (!arrGamedataKeys.includes(key)) {
+            delete objInfoGameData[key];
+        }
+        if (key == 't2_world_facts') {
+            for (let keyFacts in objInfoGameData[key]) {
+                if (!(keyFacts.endsWith("_level") || keyFacts.endsWith("_was_last_spoken_to") || keyFacts === 'date_time')) {
+                    delete objInfoGameData[key][keyFacts];
+                }
+            }
+        }
+    }
+
+    for (let key in objInfoGameStats) {
+        if (!arrGamestatsKeys.includes(key)) {
+            delete objInfoGameStats[key];
+        }
+    }
+
+
+    var jsonWrapped = {
+        'player': objInfoPlayer,
+        'gamedata': objInfoGameData,
+        'game_stats': objInfoGameStats,
+    }
+
+    localStorage.setItem('mistria_wrapped', JSON.stringify(jsonWrapped));
+}
 function removeNonAlmanacKeys(arrKeys) {
     var arrAlmanacTags = Object.values(objAlmanac).map(item => item['tags'][0]);
+    if (!arrKeys) return false;
     arrKeys = arrKeys.filter(strItemKey => {
         if (strItemKey in objItems) {
             if ('tags' in objItems[strItemKey]) {
@@ -76,6 +155,9 @@ function removeNonAlmanacKeys(arrKeys) {
 
 $(function () {
     $("#save_input").on("change", function (event) {
+
+        $('#extracting_alert').removeClass('show').removeClass('green').removeClass('yellow');
+
         let file = event.target.files[0];
         if (!file) return;
 
@@ -95,7 +177,9 @@ $(function () {
                 try {
                     decodedText = new TextDecoder("iso-8859-1").decode(inflated);
                 } catch (utf8Error) {
-                    $("#output").text(utf8Error.message);
+                    $('#extracting_alert').addClass('show');
+                    $('#extracting_alert .info').html(utf8Error.message);
+                    return;
                 }
 
                 // Remove unprintable characters
@@ -105,7 +189,7 @@ $(function () {
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
                     let objNpcs = objNPC(jsonBlocks);
                     let objMuseumData = objMUSEUM(jsonBlocks);
-                    let objAquiredData = removeNonAlmanacKeys(objAQUIRED(jsonBlocks));
+                    let objAquiredData = removeNonAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']);
                     let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
                     let arrFound = [];
 
@@ -130,12 +214,12 @@ $(function () {
                         arrFound.push(`${arrGivenGifts.length} gifts were found`);
 
                     } else {
-                        $("#output").text("Couldn't find gift data");
+                        $('#extracting_alert').addClass('show');
+                        $('#extracting_alert .info').append("Couldn't find gift data");
+                        $('#extracting_alert .info').append("</br>");
                     }
 
                     if (typeof objMuseumData === 'object') {
-
-
                         let arrDonatedItems = [];
                         for (const key in objMuseumData) {
                             arrDonatedItems.push(objMuseumData[key]);
@@ -145,11 +229,12 @@ $(function () {
 
                         $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
-
                         arrFound.push(`${arrDonatedItems.length} donated items were found `);
 
                     } else {
-                        $("#output").text($("#output").text() + '\n' + "Couldn't find musuem data");
+                        $('#extracting_alert').addClass('show');
+                        $('#extracting_alert .info').append("Couldn't find musuem data");
+                        $('#extracting_alert .info').append("</br>");
                     }
 
                     if (typeof objAquiredData === 'object') {
@@ -161,19 +246,17 @@ $(function () {
                         arrFound.push(`${objAquiredData.length} almanac items were found `);
 
                     } else {
-                        $("#output").text($("#output").text() + '\n' + "Couldn't find almanac data");
+                        $('#extracting_alert').addClass('show');
+                        $('#extracting_alert .info').append("Couldn't find almanac data");
+                        $('#extracting_alert .info').append("</br>");
                     }
 
                     if (typeof jsonBlocks === 'object') {
-                        if ($("#output").text() == "Reading file...") {
-                            $("#output").text(JSON.stringify(jsonBlocks, null, 2));
-                        } else {
-                            $("#output").text($("#output").text() + '\n' + JSON.stringify(jsonBlocks, null, 2));
-                        }
+                        $("#output").text(JSON.stringify(jsonBlocks, null, 2));
                     }
 
                     if (arrFound.length) {
-                        $('#json_alert .info').html(`Data extraction was ${arrFound.length == 2 ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
+                        $('#json_alert .info').html(`Data extraction was ${arrFound.length == 3 ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
                             ${arrFound.join('</br>')}`
                         );
                         $('#json_alert').addClass('show').addClass('yellow');
@@ -183,14 +266,17 @@ $(function () {
                         $('#json_alert').addClass('show')
                     }
                 } else {
-                    $("#output").text("Failed to decode file");
+                    $('#extracting_alert').addClass('show');
+                    $('#extracting_alert .info').html("Failed to decode file");
                 }
 
             } catch (err) {
-                $("#output").text("Failed to decode file:\n" + err);
+                $('#extracting_alert').addClass('show');
+                $('#extracting_alert .info').html("Failed to decode file:\n" + err);
             }
         };
 
         reader.readAsArrayBuffer(file);
     });
+
 });
