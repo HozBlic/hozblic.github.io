@@ -210,15 +210,30 @@ Object.entries(objItems).forEach(([key, value]) => {
         objTagItems[tag] = [...(objTagItems[tag] ?? []), key]
     })
 })
-Object.entries(objTagItems).forEach(([tag, keys]) => { objTagItems[tag] = keys.sort((a, b) => objItems[a].name.localeCompare(objItems[b].name)) })
-names = []
-objTagItems.furniture = objTagItems.furniture.filter(key => { const includes = names.includes(objItems[key].name); if (includes) { return false } names.push(objItems[key].name); return true })
+Object.entries(objTagItems).forEach(([tag, keys]) => {
+    objTagItems[tag] = keys.sort((a, b) => {
+        const comp = objItems[a].name.localeCompare(objItems[b].name);
+        return comp === 0 ? a.localeCompare(b) : comp;
+    })
 
+    recipes = []
+    objTagItems[tag] = objTagItems[tag].filter(key => {
+        if (objItems[key].recipe !== '') {
+            const includes = recipes.includes(objItems[key].recipe);
+            if (includes) {
+                return false
+            }
+            recipes.push(objItems[key].recipe);
+        }
+        return true
+    })
+})
 
 Object.filter = (obj, predicate) =>
     Object.keys(obj)
         .filter(key => predicate(obj[key]))
         .reduce((res, key) => (res[key] = obj[key], res), {});
+
 
 var objMistriaData;
 var objMistriaDataDefault = {
@@ -865,8 +880,8 @@ function loadMenuItems() {
     tippy('#older_browsers', {
         content: 'Does not work in older browsers',
     });
-    tippy('#beta_version', {
-        content: 'Beta version, may not work correctly',
+    tippy('#version_control', {
+        content: 'Tested and should work on v.0.14.0 save files',
     });
 }
 
@@ -1047,7 +1062,8 @@ function loadMuseumTab() {
 
 function loadAlmanacTab() {
 
-    var strAlert = `
+    if (objMistriaData.almanac.size === 0) {
+        var strAlert = `
         <div class="alert show yellow" style="grid-column: 1/-1; height: min-content;">
             <div class="icon yellow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
@@ -1058,16 +1074,12 @@ function loadAlmanacTab() {
                 </svg>
             </div>
             <div class="info" style="line-height: 18px;">
-                Try <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>importing save file</b></a> to get aquired items! </br>
-                <div style="font-size: 12px; line-height: 12px; padding-top: 2px;">
-                    Data for Furniture section is incomplete, missing some items and images. All other sections should have correct data. </br> 
-                    If you catch any other errors, feel free to <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1mdf17v/interactive_gift_guide_v0140/">contact me</a>!
-                </div>
+                <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a> to get aquired items! </br>
             </div>
         </div>`;
 
-    $('#almanac').append(strAlert);
-
+        $('#almanac').append(strAlert);
+    }
 
     Object.entries(objAlmanac).forEach(([strSectionKey, objSection]) => {
         strUsedTag = objSection['tags'][0];
@@ -1075,7 +1087,6 @@ function loadAlmanacTab() {
         var $divSection = $('<div>', { 'class': 'section', 'id': `section_${strSectionKey}` });
 
         $divSection.append(` 
-           
                 <a class="section_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(objSection['name'])}" target="_blank">
                     <img class="section_img_mini" src="images/almanac/${strSectionKey}.png">          
                     ${objSection['name']}
@@ -1198,10 +1209,6 @@ function loadWrappedTab() {
 
         $('.tab_window.wrapped_show').css('overflow', 'hidden');
         $('#wrapped').append('<div id="wrapped_charts"></div>');
-
-        tippy('#beta_version_wrapped', {
-            content: 'Beta version, may not work correctly',
-        });
 
     } else {
         $('#wrapped').append('<div id="wrapped_charts"></div>');
@@ -2965,10 +2972,6 @@ function loadWrappedTab() {
         }
 
         strDay = objSetCompletion['day'];
-
-        // if (!(strDay in objSetsCompletedCleaned)) {
-        //     objSetsCompletedCleaned[strDay] = [];
-        // }
 
         var strWingKey = objSetCompletion['wing'];
         var strSetKey = objSetCompletion['set'];

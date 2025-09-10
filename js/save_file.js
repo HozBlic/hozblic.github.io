@@ -161,8 +161,8 @@ $(function () {
         let file = event.target.files[0];
         if (!file) return;
 
-        $("#output").text("Reading file...");
-
+        $("#json_button_popup").addClass("loading");
+        
         let reader = new FileReader();
         reader.onload = function (e) {
             try {
@@ -184,6 +184,8 @@ $(function () {
 
                 // Remove unprintable characters
                 let cleaned = decodedText.replaceAll(/[^\x20-\x7E]/g, "\u1337");
+
+                $("#json_button_popup").removeClass("loading");
 
                 if (cleaned) {
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);

@@ -518,6 +518,40 @@ svg:focus {
     --popup-width: 575px;
 }
 
+.popup_wrapper.loading .popup_inner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    display: block;
+    cursor: default;
+    display: block;
+    background-color: rgba(51, 51, 51, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.popup_wrapper.loading .popup_inner:after {
+    --loader-height: 70px;
+    content: '';
+    background-image: url(../images/loader.gif), url(../images/loader.gif), url(../images/loader.gif);
+    height: var(--loader-height);
+    width: calc(var(--loader-height) * 2);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-position: left, center, right;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    z-index: 3;
+}
+
 .popup_inner {
     position: absolute;
     background: var(--color-bg);
@@ -1763,7 +1797,6 @@ pre {
 .meter_label_wrapper {
     display: flex;
     align-items: center;
-
 }
 
 .meter_wrapper {
