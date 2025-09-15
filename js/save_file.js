@@ -157,12 +157,13 @@ $(function () {
     $("#save_input").on("change", function (event) {
 
         $('#extracting_alert').removeClass('show').removeClass('green').removeClass('yellow');
+        $("#output").hide();
 
         let file = event.target.files[0];
         if (!file) return;
 
         $("#json_button_popup").addClass("loading");
-        
+
         let reader = new FileReader();
         reader.onload = function (e) {
             try {
@@ -254,7 +255,7 @@ $(function () {
                     }
 
                     if (typeof jsonBlocks === 'object') {
-                        $("#output").text(JSON.stringify(jsonBlocks, null, 2));
+                        $("#output").show().text(JSON.stringify(jsonBlocks, null, 2));
                     }
 
                     if (arrFound.length) {

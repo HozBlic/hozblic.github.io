@@ -39,7 +39,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="css/style.css?v=23">
+    <link rel="stylesheet" href="css/style.css?v=24">
     <link rel="stylesheet" href="css/wrapped.css">
 
     <script type="text/javascript" src="json/items.json.js?v=10"></script>
@@ -57,8 +57,8 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=25"></script>
-    <script type="text/javascript" src="js/save_file.js?v=9"></script>
+    <script type="text/javascript" src="js/script.js?v=26"></script>
+    <script type="text/javascript" src="js/save_file.js?v=6"></script>
 </head>
 
 <body>
@@ -268,7 +268,7 @@
                                     d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z" />
                             </svg>
                         </div>
-                        <div class="text">Export / Import data</div>
+                        <div class="text">Import / Export data</div>
                     </div>
 
                     <div class="statistics">
@@ -399,7 +399,7 @@
                                     d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z" />
                             </svg>
                         </div>
-                        Export / Import data
+                        Import / Export data
                     </div>
 
                     <div class="button_item accent" onclick="saveJson()">
@@ -479,6 +479,61 @@
 
                 </div>
                 <div class="popup_content">
+                    <div class="inner_divider">
+                        <div class="popup_subtitle">
+                            Upload save file
+                        </div>
+                        <div class="popup_subdesc">
+                            <p>You can upload your save file here to extract information about given gifts and donated
+                                items.</p>
+                            <p>
+                                For Windows, usually it's located in this folder:
+                                <svg id="save_file" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </p>
+                            <div id="location_info">
+                                <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
+                                <div class="button_item copy_button"
+                                    onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Loca\\FieldsOfMistria\\saves`)">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
+                                            viewBox="0 0 20.278 24" stroke="none">
+                                            <path id="copy"
+                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                transform="translate(-4969 7272.001)" fill="#FFFFFF" />
+                                        </svg>
+                                    </div>
+                                    <div class="text">
+                                        <span class="default"></span>
+                                        <span class="hover">Copy</span>
+                                        <span class="copied">Copied</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre id="output" style="display: none"></pre>
+                        <div class="button_set">
+                            <label for="save_input" class="button_item">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22.499" height="24.004" stroke="none"
+                                        viewBox="0 0 22.499 24.004">
+                                        <path id="upload"
+                                            d="M4974.038-7248a5.05,5.05,0,0,1-5.037-5.037v-4.214a1.252,1.252,0,0,1,1.25-1.25,1.251,1.251,0,0,1,1.248,1.25v4.214a2.546,2.546,0,0,0,2.539,2.537h12.425a2.544,2.544,0,0,0,2.537-2.537v-4.214a1.253,1.253,0,0,1,1.25-1.25,1.252,1.252,0,0,1,1.25,1.25v4.214a5.049,5.049,0,0,1-5.037,5.037Zm5.022-7.539v-12.173l-5.415,5.469a1.247,1.247,0,0,1-1.767.011,1.253,1.253,0,0,1-.011-1.767l7.552-7.634s0,0,0,0,0,0,.005,0a.028.028,0,0,1,.009-.009,1.258,1.258,0,0,1,.319-.228l.013-.005a.246.246,0,0,1,.035-.015l.024-.011c.007,0,.017-.006.023-.009l.037-.015.015-.005.046-.015a.007.007,0,0,0,.005,0h0a.4.4,0,0,0,.051-.015h.005s0,0,0,0l.053-.011h0l.009,0a.385.385,0,0,0,.047-.009h0a.034.034,0,0,0,.015,0,.332.332,0,0,1,.043,0h0a.1.1,0,0,1,.024,0,.2.2,0,0,1,.035,0h.06c.02,0,.042,0,.061,0h0l.027,0,.033,0h0a.17.17,0,0,1,.031,0l.027,0h0v0a.1.1,0,0,1,.033.005l.029,0,.031.007a.152.152,0,0,0,.027.007.211.211,0,0,1,.033.009l.025.005a.213.213,0,0,0,.033.011.078.078,0,0,0,.022.007l0,0,.033.013.018.007.005,0c.013.005.024.011.037.015s.007,0,.013.007.006,0,.007,0l.035.017.022.013a.211.211,0,0,1,.027.015l.027.017.02.011a.352.352,0,0,1,.033.024.014.014,0,0,1,.007,0,1.347,1.347,0,0,1,.186.153l7.548,7.634a1.248,1.248,0,0,1-.011,1.767,1.247,1.247,0,0,1-1.767-.011l-5.411-5.469v12.173a1.248,1.248,0,0,1-1.252,1.247A1.248,1.248,0,0,1,4979.06-7255.535Z"
+                                            transform="translate(-4969 7272)" fill="#242424" />
+                                    </svg>
+
+                                </div>
+                                <div class="text"> Upload .sav file</div>
+                            </label>
+                            <input type="file" id="save_input" accept=".sav" />
+                        </div>
+                    </div>
 
                     <div class="inner_divider">
                         <div class="popup_subtitle">Edit saved data</div>
@@ -507,7 +562,7 @@
                                 <div class="text">Save as JSON file</div>
                             </div>
 
-                            <div class="button_item copy_button" id="copy_json" onclick="copyClipboard(this)">
+                            <div class="button_item copy_button" id="copy_json" onclick="copyClipboardJSON(this)">
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
                                         viewBox="0 0 20.278 24" stroke="none">
@@ -523,47 +578,6 @@
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="inner_divider">
-                        <div class="popup_subtitle">
-                            Upload save file
-                            <svg id="version_control" class="feather feather-alert-triangle" fill="none" height="24"
-                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                                <line x1="12" x2="12" y1="9" y2="13" />
-                                <line x1="12" x2="12.01" y1="17" y2="17" />
-                            </svg>
-                        </div>
-                        <div class="popup_subdesc">
-                            <p>You can upload your save file here to extract information about given gifts and donated
-                                items. For Windows,
-                                usually it's located in this folder:</p>
-                            <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
-                            <p>AppData is a hidden folder, you must turn on "show hidden files" manually, if you haven't
-                                already done so.</p>
-                            <p>Your save file is processed only in your browser and is never uploaded or sent anywhere
-                                else.</p>
-                        </div>
-
-                        <pre id="output">Upload a .sav file to see decoded output here...</pre>
-                        <div class="button_set">
-                            <label for="save_input" class="button_item">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22.499" height="24.004" stroke="none"
-                                        viewBox="0 0 22.499 24.004">
-                                        <path id="upload"
-                                            d="M4974.038-7248a5.05,5.05,0,0,1-5.037-5.037v-4.214a1.252,1.252,0,0,1,1.25-1.25,1.251,1.251,0,0,1,1.248,1.25v4.214a2.546,2.546,0,0,0,2.539,2.537h12.425a2.544,2.544,0,0,0,2.537-2.537v-4.214a1.253,1.253,0,0,1,1.25-1.25,1.252,1.252,0,0,1,1.25,1.25v4.214a5.049,5.049,0,0,1-5.037,5.037Zm5.022-7.539v-12.173l-5.415,5.469a1.247,1.247,0,0,1-1.767.011,1.253,1.253,0,0,1-.011-1.767l7.552-7.634s0,0,0,0,0,0,.005,0a.028.028,0,0,1,.009-.009,1.258,1.258,0,0,1,.319-.228l.013-.005a.246.246,0,0,1,.035-.015l.024-.011c.007,0,.017-.006.023-.009l.037-.015.015-.005.046-.015a.007.007,0,0,0,.005,0h0a.4.4,0,0,0,.051-.015h.005s0,0,0,0l.053-.011h0l.009,0a.385.385,0,0,0,.047-.009h0a.034.034,0,0,0,.015,0,.332.332,0,0,1,.043,0h0a.1.1,0,0,1,.024,0,.2.2,0,0,1,.035,0h.06c.02,0,.042,0,.061,0h0l.027,0,.033,0h0a.17.17,0,0,1,.031,0l.027,0h0v0a.1.1,0,0,1,.033.005l.029,0,.031.007a.152.152,0,0,0,.027.007.211.211,0,0,1,.033.009l.025.005a.213.213,0,0,0,.033.011.078.078,0,0,0,.022.007l0,0,.033.013.018.007.005,0c.013.005.024.011.037.015s.007,0,.013.007.006,0,.007,0l.035.017.022.013a.211.211,0,0,1,.027.015l.027.017.02.011a.352.352,0,0,1,.033.024.014.014,0,0,1,.007,0,1.347,1.347,0,0,1,.186.153l7.548,7.634a1.248,1.248,0,0,1-.011,1.767,1.247,1.247,0,0,1-1.767-.011l-5.411-5.469v12.173a1.248,1.248,0,0,1-1.252,1.247A1.248,1.248,0,0,1,4979.06-7255.535Z"
-                                            transform="translate(-4969 7272)" fill="#242424" />
-                                    </svg>
-
-                                </div>
-                                <div class="text"> Upload .sav file</div>
-                            </label>
-                            <input type="file" id="save_input" accept=".sav" />
-                        </div>
                     </div>
                 </div>
             </div>

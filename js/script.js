@@ -148,7 +148,7 @@ var objLocations = {
     'clinic_f2': { x: 88, y: 45 },
     'deep_woods': { x: 117, y: 56 },
     'dells_bedroom': { x: 86, y: 42 },
-    // 'dragonsworn_glade': { x: 0, y: 0 },
+    'dragonsworn_glade': { x: 112, y: 70 },
     'dungeon': { x: 49, y: 50 },
     'earth_seal': { x: 48, y: 49 },
     'eastern_road': { x: 112, y: 47 },
@@ -311,8 +311,6 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false) {
     if ('tip_extra' in objInfo) {
         strTableHTML = '<table>';
         Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
-
-
             if (strTipKey in objInfo['tip_extra']) {
                 if (strTipKey == 'museumSet') {
                     bolDonatable = true;
@@ -604,7 +602,20 @@ function saveAsJsonFile(strElemID) {
     }
 }
 
-function copyClipboard(objElem) {
+function copyClipboard(objElem, strText) {
+    var el = document.createElement('textarea');
+    el.value = strText;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    $(objElem).addClass('copied').delay(3000).queue(function (next) {
+        $(this).removeClass('copied');
+    });
+}
+
+function copyClipboardJSON(objElem) {
     var strJson = $('#settings_json').val();
     if (isJsonString(strJson)) {
 
@@ -880,8 +891,11 @@ function loadMenuItems() {
     tippy('#older_browsers', {
         content: 'Does not work in older browsers',
     });
-    tippy('#version_control', {
-        content: 'Tested and should work on v.0.14.0 save files',
+    tippy('#save_file', {
+        content: `<p class="save_file">AppData is a hidden folder, you must turn on "show hidden files" manually, if you haven't already done so.</p>
+                  <p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>
+                  <p class="save_file">Tested and should work on v.0.14.0 save files</p>`,
+        allowHTML: true,
     });
 }
 
@@ -1811,9 +1825,9 @@ function loadWrappedTab() {
 
         objCharacetsGivenGiftCount[strNPCKey]++;
 
-        if (objGiftsGiven['gift'].includes('<loveable>')) {
+        if (objGiftsGiven['gift'].includes('&lt;loveable&gt;')) {
             objCharacetsGivenGiftCleaned[strNPCKey]['loved_buff']++;
-        } else if (objGiftsGiven['gift'].includes('<likable>')) {
+        } else if (objGiftsGiven['gift'].includes('&lt;likable&gt;')) {
             objCharacetsGivenGiftCleaned[strNPCKey]['liked_buff']++;
         } else {
             objCharacetsGivenGiftCleaned[strNPCKey][objGiftsGiven['desire']]++;
@@ -3984,7 +3998,7 @@ function createTestMap() {
         }
     }
 
-    $($divInfoBlockWrap).append($divInfoBlock);
+    $('#wrapped').prepend($divInfoBlock);
 }
 function loadCookingTab() {
 
@@ -4216,6 +4230,7 @@ function getCellWidth() {
 
 $(function () {
 
+
     loadData();
     loadMenuItems();
 
@@ -4253,6 +4268,7 @@ $(function () {
         handleResizeThrottled();
     });
     resizeObserver.observe(document.getElementById("wrapped"));
+
 });
 
 function throttle(fn, time) {
