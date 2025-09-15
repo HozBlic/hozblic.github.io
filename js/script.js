@@ -3706,7 +3706,9 @@ function generateMapChartData() {
                     y: objLocations[strLocationKey]['y'],
                     r: getRadius(intVisits)
                 }],
-                backgroundColor: `rgba(${parseInt(strColor.slice(1, 3), 16)}, ${parseInt(strColor.slice(3, 5), 16)}, ${parseInt(strColor.slice(5, 7), 16)}, ${getOpacity(intVisits)})`
+                backgroundColor: `rgba(${parseInt(strColor.slice(1, 3), 16)}, ${parseInt(strColor.slice(3, 5), 16)}, ${parseInt(strColor.slice(5, 7), 16)}, ${getOpacity(intVisits)})`,
+                borderColor: objMistriaData.options.has('mode_dark') ? '#ffffff' : strColor,
+                borderWidth: 0.3
             })
         }
     });
