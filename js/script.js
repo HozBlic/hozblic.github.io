@@ -555,9 +555,12 @@ function saveJson() {
         );
 
         $('#popup-accept').off('click').on('click', function () {
-            var jsonBlocks = JSON.parse($('#output').html());
-            cleanForWrapped(jsonBlocks);
-
+            if (isJsonString($('#output').html()))
+            {
+                var jsonBlocks = JSON.parse($('#output').html());
+                cleanForWrapped(jsonBlocks);
+            }
+           
             objMistriaData = objNewData;
             objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
             objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
