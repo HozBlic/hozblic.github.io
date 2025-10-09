@@ -46,7 +46,7 @@
     <script type="text/javascript" src="json/characters.json.js?v=4"></script>
     <script type="text/javascript" src="json/museum.json.js?v=3"></script>
     <script type="text/javascript" src="json/almanac.json.js"></script>
-    <script type="text/javascript" src="json/wrapped_dummy.json.js"></script>
+    <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -58,7 +58,7 @@
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
     <script type="text/javascript" src="js/script.js?v=28"></script>
-    <script type="text/javascript" src="js/save_file.js?v=6"></script>
+    <script type="text/javascript" src="js/save_file.js?v=7"></script>
 </head>
 
 <body>
@@ -289,7 +289,7 @@
                             </div>
                         </div>
                         <div class="meter_label_wrapper">
-                            <div class="statistics_label">Completion</div>
+                            <div class="statistics_label">Almanac</div>
                             <div class="meter_wrapper">
                                 <div id="almanac_statistics" class="meter">
                                     <div><span></span></div>
@@ -486,6 +486,8 @@
                         <div class="popup_subdesc">
                             <p>You can upload your save file here to extract information about given gifts and donated
                                 items.</p>
+                            <p style="opacity: 0.8;">Please, use your <b>auto save</b> file</p>
+                            </br>
                             <p>
                                 For Windows, usually it's located in this folder:
                                 <svg id="save_file" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -499,7 +501,7 @@
                             <div id="location_info">
                                 <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
                                 <div class="button_item copy_button"
-                                    onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Loca\\FieldsOfMistria\\saves`)">
+                                    onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Local\\FieldsOfMistria\\saves`)">
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
                                             viewBox="0 0 20.278 24" stroke="none">

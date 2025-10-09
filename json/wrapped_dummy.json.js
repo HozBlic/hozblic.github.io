@@ -1,14 +1,14 @@
 var objDataWrappedDummy = {
     "player": {
         "skill_xp": {
-            "fishing": 18360,
-            "archaeology": 1185,
+            "fishing": 19150,
+            "archaeology": 1464,
             "cooking": 2787,
-            "mining": 20064,
-            "combat": 4529,
-            "blacksmithing": 793,
+            "mining": 21940,
+            "combat": 5189,
+            "blacksmithing": 1015,
             "farming": 20082,
-            "woodcrafting": 2156,
+            "woodcrafting": 2907,
             "ranching": 8415
         },
         "items_sold": {
@@ -32,13 +32,13 @@ var objDataWrappedDummy = {
             "coconut": 2,
             "acorn": 1,
             "ore_iron": 0,
-            "grilled_corn": 17,
+            "grilled_corn": 73,
             "ore_silver": 0,
             "dill": 1,
             "ore_gold": 0,
             "chocolate": 1,
             "seaweed": 0,
-            "clay": 0,
+            "clay": 1,
             "rusted_shield": 0,
             "rock_with_a_hole": 0,
             "aldarian_sword": 0,
@@ -54,7 +54,7 @@ var objDataWrappedDummy = {
             "trilobite_fossil": 0,
             "amber_trapped_insect": 0,
             "coin_lump": 1,
-            "peas": 406,
+            "peas": 702,
             "water_sphere": 0,
             "rainbow_seaweed": 0,
             "criminal_confession": 0,
@@ -161,18 +161,18 @@ var objDataWrappedDummy = {
             "ladder": 0,
             "stairs": 0,
             "teleportation_pad": 0,
-            "bakery_bread_basket_pastel": 0,
+            "bakery_bread_basket_pastel": 1,
             "bakery_bread_basket_coffee": 0,
             "bakery_cake_case_pastel": 0,
             "bakery_cake_case_coffee": 0,
             "bakery_cake_slice_pastel": 0,
-            "bakery_cake_slice_coffee": 0,
-            "bakery_cake_pastel": 0,
+            "bakery_cake_slice_coffee": 1,
+            "bakery_cake_pastel": 1,
             "bakery_cake_coffee": 0,
-            "bakery_cookie_jar_pastel": 0,
+            "bakery_cookie_jar_pastel": 1,
             "bakery_cookie_jar_coffee": 0,
             "bakery_cutting_board_pastel": 0,
-            "bakery_cutting_board_coffee": 0,
+            "bakery_cutting_board_coffee": 1,
             "pink_pet_bed": 0,
             "blue_pet_bed": 0,
             "cream_pet_bed": 0,
@@ -207,32 +207,32 @@ var objDataWrappedDummy = {
             "cottage_garden_shed_v1": 0,
             "coral": 9,
             "cottage_garden_shed_v2": 1,
-            "fishing_flooring_blue": 1,
+            "fishing_flooring_blue": 2,
             "fishing_flooring_red": 0,
             "fishing_wallpaper_blue": 1,
             "fishing_wallpaper_red": 0,
-            "fishing_bed_blue": 1,
+            "fishing_bed_blue": 2,
             "fishing_bed_red": 0,
-            "fishing_double_bed_blue": 1,
+            "fishing_double_bed_blue": 2,
             "fishing_double_bed_red": 0,
-            "fishing_table_blue": 1,
+            "fishing_table_blue": 2,
             "fishing_table_red": 0,
-            "fishing_chair_blue": 1,
+            "fishing_chair_blue": 2,
             "fishing_chair_red": 0,
             "fishing_rug_blue": 1,
-            "fishing_rug_red": 0,
-            "fishing_lamp_blue": 1,
+            "fishing_rug_red": 1,
+            "fishing_lamp_blue": 2,
             "fishing_lamp_red": 0,
-            "fishing_oar_wall_decor_blue": 1,
+            "fishing_oar_wall_decor_blue": 2,
             "fishing_oar_wall_decor_red": 0,
             "fishing_window_silver": 1,
-            "fishing_window_gold": 0,
-            "fishing_plaque_blue": 1,
+            "fishing_window_gold": 1,
+            "fishing_plaque_blue": 2,
             "fishing_plaque_red": 0,
-            "fishing_trophy_shelf_blue": 1,
+            "fishing_trophy_shelf_blue": 2,
             "fishing_trophy_shelf_red": 0,
             "fishing_tank_silver": 1,
-            "fishing_tank_gold": 0,
+            "fishing_tank_gold": 1,
             "octopus_plushie": 0,
             "fish_plush_toy": 0,
             "chess_scroll_bundle": 0,
@@ -272,35 +272,35 @@ var objDataWrappedDummy = {
             "obelisk_plum": 0,
             "lovely_cottage_scroll_bundle": 0,
             "cottage_bed_oak": 0,
-            "cottage_bed_ash": 0,
+            "cottage_bed_ash": 1,
             "cottage_chair_oak": 0,
-            "cottage_chair_ash": 0,
+            "cottage_chair_ash": 1,
             "cottage_bed_double_oak": 0,
-            "cottage_bed_double_ash": 0,
+            "cottage_bed_double_ash": 1,
             "cottage_dresser_oak": 0,
-            "cottage_dresser_ash": 0,
+            "cottage_dresser_ash": 1,
             "cottage_flooring_oak": 0,
-            "cottage_flooring_ash": 0,
+            "cottage_flooring_ash": 1,
             "cottage_nightstand_oak": 0,
-            "cottage_nightstand_ash": 0,
+            "cottage_nightstand_ash": 1,
             "cottage_plant_shelf_oak": 0,
-            "cottage_plant_shelf_ash": 0,
+            "cottage_plant_shelf_ash": 1,
             "cottage_potted_fig_oak": 0,
-            "cottage_potted_fig_ash": 0,
+            "cottage_potted_fig_ash": 1,
             "cottage_rug_oak": 0,
-            "cottage_rug_ash": 0,
+            "cottage_rug_ash": 1,
             "cottage_table_oak": 0,
-            "cottage_table_ash": 0,
+            "cottage_table_ash": 1,
             "cottage_wall_flowers_oak": 0,
-            "cottage_wall_flowers_ash": 0,
+            "cottage_wall_flowers_ash": 1,
             "cottage_wall_window_oak": 0,
-            "cottage_wall_window_ash": 0,
+            "cottage_wall_window_ash": 3,
             "cottage_wallpaper_oak": 0,
-            "cottage_wallpaper_ash": 0,
+            "cottage_wallpaper_ash": 1,
             "cottage_fridge_oak": 0,
-            "cottage_fridge_ash": 0,
+            "cottage_fridge_ash": 1,
             "cottage_potted_flowers_oak": 0,
-            "cottage_potted_flowers_ash": 0,
+            "cottage_potted_flowers_ash": 1,
             "deluxe_storage_chest_red": 0,
             "deluxe_storage_chest_orange": 0,
             "deluxe_storage_chest_gold": 0,
@@ -341,63 +341,63 @@ var objDataWrappedDummy = {
             "spring_festival_wreath": 0,
             "spring_festival_breath_of_spring_wreath": 1,
             "rustic_cabin_scroll_bundle": 0,
-            "cabin_bed_cherry": 0,
+            "cabin_bed_cherry": 1,
             "cabin_bed_walnut": 0,
             "tomato": 228,
             "cabin_bed_oak": 0,
-            "cabin_bookshelf_cherry": 0,
+            "cabin_bookshelf_cherry": 1,
             "cabin_bookshelf_walnut": 0,
             "cabin_bookshelf_oak": 0,
-            "cabin_chair_cherry": 0,
+            "cabin_chair_cherry": 1,
             "cabin_chair_walnut": 0,
             "cabin_chair_oak": 0,
             "cabin_bed_double_cherry": 0,
             "cabin_bed_double_walnut": 0,
-            "cabin_bed_double_oak": 0,
-            "cabin_dresser_cherry": 0,
+            "cabin_bed_double_oak": 1,
+            "cabin_dresser_cherry": 1,
             "cabin_dresser_walnut": 0,
             "cabin_dresser_oak": 0,
-            "cabin_firewood_cherry": 0,
+            "cabin_firewood_cherry": 1,
             "cabin_firewood_walnut": 0,
             "cabin_firewood_oak": 0,
-            "cabin_flooring_cherry": 0,
+            "cabin_flooring_cherry": 1,
             "cabin_flooring_walnut": 0,
             "cabin_flooring_oak": 0,
-            "cabin_lamp_cherry": 0,
+            "cabin_lamp_cherry": 1,
             "cabin_lamp_walnut": 0,
             "cabin_lamp_oak": 0,
-            "cabin_nightstand_cherry": 0,
+            "cabin_nightstand_cherry": 1,
             "cabin_nightstand_walnut": 0,
             "cabin_nightstand_oak": 0,
-            "cabin_stove_cherry": 0,
+            "cabin_stove_cherry": 1,
             "cabin_stove_walnut": 0,
-            "cabin_table_cherry": 0,
+            "cabin_table_cherry": 2,
             "cabin_table_walnut": 0,
             "cabin_table_oak": 0,
-            "cabin_wall_shelf_cherry": 0,
+            "cabin_wall_shelf_cherry": 1,
             "cabin_wall_shelf_walnut": 0,
             "cabin_wall_shelf_oak": 0,
-            "cabin_wall_window_cherry": 0,
+            "cabin_wall_window_cherry": 2,
             "cabin_wall_window_walnut": 0,
             "cabin_wall_window_oak": 0,
-            "cabin_wallpaper_cherry": 0,
-            "cabin_wallpaper_walnut": 1,
+            "cabin_wallpaper_cherry": 1,
+            "cabin_wallpaper_walnut": 2,
             "cabin_wallpaper_oak": 0,
             "spring_bed_orange": 1,
             "spring_double_bed_orange": 1,
             "spring_flooring_orange": 1,
-            "spring_lamp_orange": 1,
+            "spring_lamp_orange": 2,
             "spring_potted_tree_orange": 1,
-            "spring_rug_orange": 1,
+            "spring_rug_orange": 2,
             "spring_sofa_orange": 1,
-            "spring_wallpaper_orange": 1,
-            "spring_bed_pink": 0,
-            "spring_double_bed_pink": 0,
-            "spring_flooring_pink": 0,
+            "spring_wallpaper_orange": 2,
+            "spring_bed_pink": 1,
+            "spring_double_bed_pink": 1,
+            "spring_flooring_pink": 1,
             "spring_lamp_pink": 0,
             "spring_potted_tree_pink": 0,
             "spring_rug_pink": 0,
-            "spring_sofa_pink": 0,
+            "spring_sofa_pink": 1,
             "spring_wallpaper_pink": 0,
             "spring_bed_purple": 0,
             "spring_double_bed_purple": 0,
@@ -407,27 +407,27 @@ var objDataWrappedDummy = {
             "spring_rug_purple": 0,
             "spring_sofa_purple": 0,
             "spring_wallpaper_purple": 0,
-            "worn_bed": 1,
-            "worn_chair": 19,
-            "worn_fireplace": 1,
-            "worn_nightstand": 0,
-            "worn_table": 7,
+            "worn_bed": 2,
+            "worn_chair": 20,
+            "worn_fireplace": 2,
+            "worn_nightstand": 1,
+            "worn_table": 9,
             "worn_window": 1,
             "worn_wallpaper": 1,
-            "worn_flooring": 1,
-            "worn_well": 1,
+            "worn_flooring": 2,
+            "worn_well": 2,
             "worn_garden_lamp": 0,
-            "worn_rug": 0,
+            "worn_rug": 1,
             "fall_bed_red": 0,
             "big_bell": 0,
             "fall_bed_orange": 1,
             "fall_bed_yellow": 0,
-            "fall_bed_cream": 0,
+            "fall_bed_cream": 1,
             "fall_double_bed_red": 0,
             "fall_double_bed_orange": 1,
             "fall_double_bed_yellow": 0,
-            "fall_double_bed_cream": 0,
-            "fall_table_orange": 1,
+            "fall_double_bed_cream": 1,
+            "fall_table_orange": 2,
             "fall_table_red": 0,
             "fall_table_yellow": 0,
             "fall_table_cream": 0,
@@ -436,18 +436,18 @@ var objDataWrappedDummy = {
             "dragon_altar_fire": 0,
             "dragon_altar_ruins": 0,
             "lava_caves_diamond_rock": 0,
-            "lava_caves_gold_node": 1,
+            "lava_caves_gold_node": 3,
             "lava_caves_stone_arch": 0,
-            "lava_caves_wallpaper": 1,
+            "lava_caves_wallpaper": 2,
             "lava_caves_flooring": 0,
-            "lava_caves_obsidian_fence_purple": 1,
+            "lava_caves_obsidian_fence_purple": 2,
             "lava_caves_obsidian_fence_blue": 1,
             "lava_caves_obsidian_bed_blue": 0,
-            "lava_caves_obsidian_bed_purple": 2,
+            "lava_caves_obsidian_bed_purple": 3,
             "lava_caves_obsidian_double_bed_blue": 1,
-            "lava_caves_obsidian_double_bed_purple": 0,
+            "lava_caves_obsidian_double_bed_purple": 1,
             "lava_caves_obsidian_chair_blue": 0,
-            "lava_caves_obsidian_chair_purple": 0,
+            "lava_caves_obsidian_chair_purple": 1,
             "lava_caves_obsidian_table_blue": 0,
             "lava_caves_obsidian_table_purple": 1,
             "lava_caves_obsidian_storage_chest_blue": 0,
@@ -455,37 +455,37 @@ var objDataWrappedDummy = {
             "lava_caves_obsidian_floor_lamp_blue": 0,
             "lava_caves_obsidian_floor_lamp_purple": 0,
             "haunted_attic_armoire_dusty": 0,
-            "haunted_attic_armoire_dark": 0,
+            "haunted_attic_armoire_dark": 1,
             "haunted_attic_bed_dusty": 0,
             "haunted_attic_bed_dark": 0,
-            "haunted_attic_candle_single": 0,
+            "haunted_attic_candle_single": 1,
             "haunted_attic_candle_single_dark": 0,
-            "haunted_attic_candle_cluster": 0,
+            "haunted_attic_candle_cluster": 2,
             "haunted_attic_candle_cluster_dark": 0,
             "haunted_attic_chair_dusty": 0,
-            "haunted_attic_chair_dark": 0,
+            "haunted_attic_chair_dark": 1,
             "haunted_attic_double_bed_dusty": 0,
             "haunted_attic_double_bed_dark": 0,
             "haunted_attic_dress_form_dusty": 0,
-            "haunted_attic_dress_form_dark": 0,
+            "haunted_attic_dress_form_dark": 1,
             "haunted_attic_nightstand_dusty": 0,
-            "haunted_attic_nightstand_dark": 0,
-            "haunted_attic_rocking_chair_dusty": 0,
+            "haunted_attic_nightstand_dark": 1,
+            "haunted_attic_rocking_chair_dusty": 1,
             "haunted_attic_rocking_chair_dark": 0,
             "haunted_attic_table_dusty": 0,
-            "haunted_attic_table_dark": 0,
-            "haunted_attic_wall_cobweb_left": 0,
+            "haunted_attic_table_dark": 1,
+            "haunted_attic_wall_cobweb_left": 1,
             "haunted_attic_wall_cobweb_left_dark": 0,
-            "haunted_attic_wall_cobweb_right": 0,
+            "haunted_attic_wall_cobweb_right": 1,
             "haunted_attic_wall_cobweb_right_dark": 0,
             "haunted_attic_wall_shelf_dusty": 0,
-            "haunted_attic_wall_shelf_dark": 0,
-            "haunted_attic_wall_window_dusty": 0,
+            "haunted_attic_wall_shelf_dark": 1,
+            "haunted_attic_wall_window_dusty": 2,
             "haunted_attic_wall_window_dark": 0,
-            "haunted_attic_wallpaper_dusty": 0,
+            "haunted_attic_wallpaper_dusty": 1,
             "haunted_attic_wallpaper_dark": 0,
             "haunted_attic_flooring_dusty": 0,
-            "haunted_attic_flooring_dark": 0,
+            "haunted_attic_flooring_dark": 1,
             "stone_table_v1": 0,
             "stone_lamp_v1": 0,
             "stone_bench_v1": 0,
@@ -509,7 +509,7 @@ var objDataWrappedDummy = {
             "ornate_flagstone_v2": 1,
             "dragon_priestess_fountain_v2": 1,
             "stone_dragon_figure_v2": 1,
-            "ornate_flagstone_v3": 0,
+            "ornate_flagstone_v3": 8,
             "dragon_priestess_fountain_v3": 0,
             "stone_dragon_figure_v3": 0,
             "dragon_statue_replica_v1": 0,
@@ -526,17 +526,17 @@ var objDataWrappedDummy = {
             "coral_lamp_blue": 0,
             "coral_chair_blue": 0,
             "coral_table_blue": 1,
-            "coral_storage_chest_blue": 0,
+            "coral_storage_chest_blue": 1,
             "coral_lamp_purple": 0,
-            "coral_chair_purple": 0,
+            "coral_chair_purple": 2,
             "coral_table_purple": 0,
             "coral_storage_chest_purple": 0,
             "sand_rug": 2,
-            "low_tide_flooring": 2,
+            "low_tide_flooring": 3,
             "tide_touched_cavern_wall": 2,
-            "ornamental_iron_node": 1,
-            "ornamental_sapphire_rock": 0,
-            "coral_stone_archway": 1,
+            "ornamental_iron_node": 3,
+            "ornamental_sapphire_rock": 1,
+            "coral_stone_archway": 2,
             "witch_queen_flooring": 0,
             "witch_queen_wallpaper": 0,
             "witch_queen_bed": 0,
@@ -553,57 +553,57 @@ var objDataWrappedDummy = {
             "kitchen_scale_yellow": 0,
             "kitchen_scale_pink": 0,
             "kitchen_scale_orange": 0,
-            "kitchen_scale_blue": 0,
+            "kitchen_scale_blue": 1,
             "kitchen_utensil_holder_pink": 0,
             "kitchen_utensil_holder_white": 0,
             "kitchen_utensil_holder_green": 0,
-            "kitchen_utensil_holder_blue": 0,
+            "kitchen_utensil_holder_blue": 1,
             "kitchen_salt_and_pepper_shakers": 0,
             "kitchen_herb_planter_v1": 1,
             "kitchen_herb_planter_v2": 0,
             "kitchen_oil_and_vinegar_basket_v1": 1,
             "kitchen_oil_and_vinegar_basket_v2": 0,
-            "kitchen_mixing_bowls_v1": 0,
+            "kitchen_mixing_bowls_v1": 1,
             "kitchen_mixing_bowls_v2": 0,
             "kitchen_mixing_bowls_v3": 0,
             "kitchen_mixing_bowls_v4": 0,
             "kitchen_garlic_braid": 1,
             "kitchen_hanging_onion_basket": 1,
-            "champions_kitchen_blue": 0,
+            "champions_kitchen_blue": 1,
             "champions_kitchen_pink": 0,
             "champions_kitchen_yellow": 0,
             "champions_kitchen_green": 0,
             "counter_kitchen_pink": 0,
-            "counter_kitchen_blue": 0,
+            "counter_kitchen_blue": 1,
             "counter_kitchen_yellow": 0,
             "counter_kitchen_green": 0,
             "basic_area_rug_yellow": 0,
-            "basic_area_rug_green": 6,
-            "basic_bed_oak": 0,
+            "basic_area_rug_green": 7,
+            "basic_bed_oak": 1,
             "basic_bed_walnut": 0,
-            "basic_bookshelf_oak": 0,
+            "basic_bookshelf_oak": 1,
             "basic_bookshelf_walnut": 0,
-            "basic_chair_oak": 0,
+            "basic_chair_oak": 1,
             "basic_chair_walnut": 0,
             "basic_doormat_yellow": 0,
-            "basic_doormat_green": 0,
-            "basic_bed_double_oak": 0,
+            "basic_doormat_green": 1,
+            "basic_bed_double_oak": 1,
             "basic_bed_double_walnut": 0,
-            "basic_dresser_oak": 0,
+            "basic_dresser_oak": 1,
             "basic_dresser_walnut": 0,
-            "basic_flooring_oak": 0,
+            "basic_flooring_oak": 3,
             "basic_flooring_walnut": 0,
-            "basic_flower_pot_orange": 0,
+            "basic_flower_pot_orange": 2,
             "basic_flower_pot_white": 0,
-            "basic_nightstand_oak": 0,
+            "basic_nightstand_oak": 2,
             "basic_nightstand_walnut": 0,
-            "basic_oil_lamp_grey": 0,
+            "basic_oil_lamp_grey": 1,
             "basic_oil_lamp_yellow": 0,
-            "basic_table_oak": 0,
+            "basic_table_oak": 1,
             "basic_table_walnut": 0,
-            "basic_wall_window_oak": 0,
+            "basic_wall_window_oak": 1,
             "basic_wall_window_walnut": 0,
-            "basic_wallpaper_oak": 0,
+            "basic_wallpaper_oak": 1,
             "basic_wallpaper_walnut": 0,
             "insect_flooring_v1": 1,
             "insect_wallpaper_v1": 1,
@@ -639,7 +639,7 @@ var objDataWrappedDummy = {
             "butterfly_wall_lamp_bronze": 0,
             "bumblebee_plushie": 0,
             "cavern_crystal_lamp_green": 0,
-            "cavern_mushroom_stool_green": 0,
+            "cavern_mushroom_stool_green": 1,
             "cavern_crystal_lamp_pink": 1,
             "cavern_mushroom_stool_pink": 1,
             "cavern_crystal_lamp_purple": 0,
@@ -647,7 +647,7 @@ var objDataWrappedDummy = {
             "cavern_emerald_rock": 1,
             "cavern_silver_node": 0,
             "cavern_hewn_rock_bookshelf": 2,
-            "cavern_hewn_rock_table": 0,
+            "cavern_hewn_rock_table": 1,
             "cavern_stone_arch": 2,
             "cavern_wall_brazier_purple": 0,
             "cavern_wall_brazier_orange": 0,
@@ -655,7 +655,7 @@ var objDataWrappedDummy = {
             "cavern_floor_brazier_purple": 1,
             "cavern_floor_brazier_blue": 0,
             "cavern_floor_brazier_orange": 1,
-            "cavern_mossy_rug_v1": 2,
+            "cavern_mossy_rug_v1": 3,
             "cavern_mossy_rug_v2": 1,
             "cavern_rock_wallpaper": 3,
             "cavern_rock_flooring": 2,
@@ -671,29 +671,29 @@ var objDataWrappedDummy = {
             "cooking_hanging_pans_v1": 1,
             "cooking_hanging_pans_v2": 0,
             "ocarina_sprite_statue": 0,
-            "campfire": 0,
-            "starter_potted_plant": 1,
-            "starter_scarecrow": 2,
-            "starter_bird_house_red": 0,
+            "campfire": 1,
+            "starter_potted_plant": 3,
+            "starter_scarecrow": 3,
+            "starter_bird_house_red": 1,
             "starter_stone_path": 2,
             "starter_stone_path_double": 924,
-            "starter_well": 0,
-            "starter_wheelbarrow": 1,
+            "starter_well": 1,
+            "starter_wheelbarrow": 2,
             "starter_shipping_box": 0,
-            "spooky_haybale": 0,
-            "dirt_clear": 5,
-            "dirt_dot_one": 0,
-            "dirt_dot_two": 0,
-            "dirt_dot_three": 0,
+            "spooky_haybale": 1,
+            "dirt_clear": 6,
+            "dirt_dot_one": 1,
+            "dirt_dot_two": 1,
+            "dirt_dot_three": 1,
             "field_clear": 0,
             "rabbit_wool": 1,
-            "field_flower": 0,
-            "field_flower_two": 0,
-            "field_grass": 0,
-            "field_grass_two": 5,
+            "field_flower": 1,
+            "field_flower_two": 1,
+            "field_grass": 1,
+            "field_grass_two": 6,
             "farm_bridge": 0,
-            "picket_fence": 20,
-            "stone_wall": 0,
+            "picket_fence": 21,
+            "stone_wall": 1,
             "farm_house_calendar": 0,
             "emerald_bed_v1": 1,
             "emerald_bed_v2": 0,
@@ -707,12 +707,12 @@ var objDataWrappedDummy = {
             "emerald_rug_v2": 0,
             "emerald_wallpaper_v1": 1,
             "emerald_wallpaper_v2": 0,
-            "mines_wooden_arch": 0,
+            "mines_wooden_arch": 1,
             "miners_copper_node": 0,
-            "miners_ruby_rock": 1,
-            "miners_minecart_v1": 1,
+            "miners_ruby_rock": 2,
+            "miners_minecart_v1": 2,
             "miners_minecart_v2": 1,
-            "miners_crate_chair_v1": 2,
+            "miners_crate_chair_v1": 3,
             "miners_crate_chair_v2": 0,
             "miners_crate_chest_v1": 1,
             "miners_crate_chest_v2": 0,
@@ -721,8 +721,8 @@ var objDataWrappedDummy = {
             "miners_wall_lamp_v1": 1,
             "miners_wall_lamp_v2": 0,
             "miners_shelves_v1": 1,
-            "miners_shelves_v2": 2,
-            "miners_flooring": 1,
+            "miners_shelves_v2": 3,
+            "miners_flooring": 2,
             "miners_wallpaper": 1,
             "spring_crop_sign_scroll_bundle": 0,
             "summer_crop_sign_scroll_bundle": 0,
@@ -784,7 +784,7 @@ var objDataWrappedDummy = {
             "crop_sign_viola": 0,
             "crop_sign_wheat": 0,
             "crop_sign_beet": 0,
-            "green_tea": 195,
+            "green_tea": 485,
             "crop_sign_burdock_root": 0,
             "crop_sign_daikon_radish": 0,
             "white_wine": 0,
@@ -812,7 +812,7 @@ var objDataWrappedDummy = {
             "butterfly": 0,
             "counter_cottage_v2": 0,
             "caterpillar": 1,
-            "picnic_basket_pink": 0,
+            "picnic_basket_pink": 1,
             "flower_crown_beetle": 0,
             "picnic_basket_yellow": 0,
             "petalhopper": 0,
@@ -820,7 +820,7 @@ var objDataWrappedDummy = {
             "picnic_basket_red": 0,
             "picnic_pie_plate_pink": 0,
             "luna_moth": 0,
-            "picnic_pie_plate_red": 0,
+            "picnic_pie_plate_red": 1,
             "orchid_mantis": 0,
             "roly_poly": 0,
             "picnic_pie_plate_yellow": 0,
@@ -829,20 +829,20 @@ var objDataWrappedDummy = {
             "waterbug": 0,
             "picnic_place_setting_yellow": 0,
             "cicada": 0,
-            "picnic_place_setting_pink": 0,
+            "picnic_place_setting_pink": 1,
             "cricket": 1,
-            "picnic_rug_red": 0,
+            "picnic_rug_red": 1,
             "dragonfly": 1,
             "picnic_rug_yellow": 0,
             "firefly": 0,
             "picnic_rug_pink": 0,
-            "picnic_donut_plate": 0,
+            "picnic_donut_plate": 1,
             "jewel_beetle": 0,
             "picnic_hamburger_plate": 0,
             "magma_beetle": 0,
-            "picnic_sandwich_plate": 0,
+            "picnic_sandwich_plate": 1,
             "strawhopper": 0,
-            "picnic_sunflower_vase_pink": 0,
+            "picnic_sunflower_vase_pink": 1,
             "strobe_firefly": 0,
             "sand_bug": 0,
             "picnic_sunflower_vase_red": 0,
@@ -1091,7 +1091,7 @@ var objDataWrappedDummy = {
             "color_paving_stone_v17": 0,
             "color_paving_stone_v18": 0,
             "color_paving_stone_v19": 0,
-            "color_paving_stone_v20": 0,
+            "color_paving_stone_v20": 1,
             "color_paving_stone_v21": 0,
             "color_paving_stone_v22": 0,
             "color_paving_stone_v23": 0,
@@ -1114,24 +1114,24 @@ var objDataWrappedDummy = {
             "color_paving_stone_v40": 0,
             "color_paving_stone_v41": 0,
             "color_paving_stone_v42": 0,
-            "summer_bed_yellow": 0,
-            "summer_chair_yellow": 0,
+            "summer_bed_yellow": 1,
+            "summer_chair_yellow": 1,
             "summer_double_bed_yellow": 4,
-            "summer_flooring_yellow": 0,
+            "summer_flooring_yellow": 1,
             "summer_jar_lamp_yellow": 0,
             "summer_rug_yellow": 0,
             "summer_table_yellow": 0,
             "summer_wallpaper_yellow": 0,
             "summer_bed_red": 1,
             "summer_chair_red": 1,
-            "summer_double_bed_red": 1,
+            "summer_double_bed_red": 3,
             "ore_ruby": 0,
             "ore_sapphire": 0,
             "summer_flooring_red": 1,
-            "summer_jar_lamp_red": 1,
+            "summer_jar_lamp_red": 2,
             "ore_emerald": 0,
-            "summer_rug_red": 1,
-            "summer_table_red": 1,
+            "summer_rug_red": 3,
+            "summer_table_red": 2,
             "summer_wallpaper_red": 1,
             "bathroom_sink_black": 0,
             "bathroom_sink_white": 0,
@@ -1202,32 +1202,32 @@ var objDataWrappedDummy = {
             "ornate_rug_large_round_red": 0,
             "ornate_rug_large_square_red": 0,
             "ornate_rug_large_rectangle_red": 0,
-            "ornate_rug_small_blue": 0,
-            "ornate_rug_medium_round_blue": 0,
-            "ornate_rug_medium_square_blue": 0,
-            "ornate_rug_large_round_blue": 0,
-            "ornate_rug_large_square_blue": 0,
-            "ornate_rug_large_rectangle_blue": 0,
+            "ornate_rug_small_blue": 1,
+            "ornate_rug_medium_round_blue": 2,
+            "ornate_rug_medium_square_blue": 2,
+            "ornate_rug_large_round_blue": 1,
+            "ornate_rug_large_square_blue": 1,
+            "ornate_rug_large_rectangle_blue": 1,
             "ornate_rug_small_cream": 0,
             "ornate_rug_medium_round_cream": 0,
             "ornate_rug_medium_square_cream": 0,
             "ornate_rug_large_round_cream": 0,
             "ornate_rug_large_square_cream": 0,
             "ornate_rug_large_rectangle_cream": 0,
-            "explorer_flooring_beige": 1,
+            "explorer_flooring_beige": 2,
             "explorer_flooring_brown": 0,
             "explorer_flooring_green": 0,
-            "explorer_wallpaper_beige": 1,
+            "explorer_wallpaper_beige": 2,
             "explorer_wallpaper_brown": 0,
             "explorer_wallpaper_green": 0,
             "explorer_bed_beige": 1,
             "explorer_double_bed_beige": 1,
-            "explorer_chair_beige": 1,
-            "explorer_globe_beige": 1,
-            "explorer_lamp_beige": 1,
-            "explorer_rug_beige": 1,
-            "explorer_trunk_table_beige": 1,
-            "explorer_bed_brown": 0,
+            "explorer_chair_beige": 2,
+            "explorer_globe_beige": 2,
+            "explorer_lamp_beige": 2,
+            "explorer_rug_beige": 2,
+            "explorer_trunk_table_beige": 2,
+            "explorer_bed_brown": 1,
             "explorer_double_bed_brown": 0,
             "explorer_chair_brown": 0,
             "explorer_globe_brown": 0,
@@ -1235,7 +1235,7 @@ var objDataWrappedDummy = {
             "explorer_rug_brown": 0,
             "explorer_trunk_table_brown": 0,
             "explorer_bed_green": 0,
-            "explorer_double_bed_green": 0,
+            "explorer_double_bed_green": 1,
             "explorer_chair_green": 0,
             "explorer_globe_green": 0,
             "explorer_lamp_green": 0,
@@ -1430,8 +1430,8 @@ var objDataWrappedDummy = {
             "quality_hay": 0,
             "deluxe_hay": 0,
             "ultimate_hay": 0,
-            "sapling_oak": 0,
-            "sapling_pine": 0,
+            "sapling_oak": 1,
+            "sapling_pine": 1,
             "mistril_ingot": 0,
             "axe_worn": 1,
             "fishing_rod_worn": 1,
@@ -1520,7 +1520,7 @@ var objDataWrappedDummy = {
             "earth_tablet_rubbing": 0,
             "fire_tablet_rubbing": 0,
             "heart_crystal": 0,
-            "carrot": 36,
+            "carrot": 67,
             "stamina_up": 0,
             "fairy_syrup": 0,
             "restorative_syrup": 0,
@@ -1563,7 +1563,7 @@ var objDataWrappedDummy = {
             "small_greenhouse_wood_blueprint": 0,
             "large_greenhouse_white_blueprint": 0,
             "large_greenhouse_wood_blueprint": 0,
-            "hero_shield_bronze": 0,
+            "hero_shield_bronze": 1,
             "hero_shield_gold": 0,
             "hero_shield_silver": 0,
             "royal_chest_wood": 0,
@@ -1596,7 +1596,7 @@ var objDataWrappedDummy = {
             "crunchy_chickpeas": 0,
             "deviled_eggs": 0,
             "dried_squid": 0,
-            "hard_boiled_egg": 149,
+            "hard_boiled_egg": 224,
             "pineshroom_toast": 0,
             "roasted_chestnuts": 27,
             "spicy_cheddar_biscuit": 2,
@@ -1650,7 +1650,7 @@ var objDataWrappedDummy = {
             "quiche": 0,
             "red_snapper_sushi": 0,
             "riceball": 2,
-            "roasted_cauliflower": 0,
+            "roasted_cauliflower": 40,
             "roasted_sweet_potato": 0,
             "rosemary_garlic_noodles": 0,
             "salmon_sashimi": 0,
@@ -1732,14 +1732,14 @@ var objDataWrappedDummy = {
             "bell_berry_bakewell_tart": 0,
             "apple_juice": 18,
             "cherry_smoothie": 0,
-            "coconut_milk": 57,
+            "coconut_milk": 101,
             "cranberry_juice": 55,
             "grape_juice": 31,
             "hot_cocoa": 0,
             "jasmine_tea": 0,
             "mocha": 2,
             "orange_juice": 12,
-            "pomegranate_juice": 57,
+            "pomegranate_juice": 107,
             "roasted_rice_tea": 0,
             "rose_tea": 0,
             "cup_of_tea": 0,
@@ -1799,19 +1799,19 @@ var objDataWrappedDummy = {
             "tarnished_gold_helmet": 1,
             "tarnished_gold_armor": 1,
             "tarnished_gold_legplates": 0,
-            "tarnished_gold_boots": 2,
+            "tarnished_gold_boots": 3,
             "tarnished_gold_ring": 2,
-            "sword_tarnished_gold": 3,
+            "sword_tarnished_gold": 4,
             "gold_armor": 3,
-            "gold_ring": 0,
+            "gold_ring": 1,
             "gold_greaves": 0,
             "gold_helmet": 0,
             "gold_legplates": 0,
             "stinky_stamina_potion": 0,
-            "turnip": 98,
-            "potato": 55,
-            "cabbage": 42,
-            "strawberry": 425,
+            "turnip": 137,
+            "potato": 98,
+            "cabbage": 82,
+            "strawberry": 725,
             "cherry": 2,
             "chickpea": 2,
             "wild_leek": 2,
@@ -2066,9 +2066,9 @@ var objDataWrappedDummy = {
             "pond_snail": 0,
             "river_snail": 0,
             "newt": 0,
-            "bull_horn": 1,
+            "bull_horn": 2,
             "basket": 0,
-            "starter_wood_fence": 65,
+            "starter_wood_fence": 67,
             "pet_cosmetic": 0,
             "sod": 0,
             "bomb": 0,
@@ -2080,7 +2080,7 @@ var objDataWrappedDummy = {
             "chili_pepper": 2
         },
         "birthday": 1209600,
-        "farm_name": "Farm name",
+        "farm_name": "Farm Name",
         "name": "Farmer",
         "inbox": [
             {
@@ -2697,6 +2697,96 @@ var objDataWrappedDummy = {
                 "read": true,
                 "items_taken": true,
                 "path": "gold_star_rank_letter"
+            },
+            {
+                "read": true,
+                "items_taken": false,
+                "path": "real_fine_day"
+            },
+            {
+                "read": true,
+                "items_taken": false,
+                "path": "life_in_this_form"
+            },
+            {
+                "read": true,
+                "items_taken": false,
+                "path": "the_glade"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_adeline"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_balor"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_caldarus"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_celine"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_eiland"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_hayden"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_juniper"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_march"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_reina"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_ryis"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "ari_birthday_valen"
+            },
+            {
+                "read": true,
+                "items_taken": false,
+                "path": "for_good_ssa"
+            },
+            {
+                "read": true,
+                "items_taken": true,
+                "path": "diamond_star_rank_letter"
+            },
+            {
+                "read": true,
+                "items_taken": false,
+                "path": "a_lost_flower"
+            },
+            {
+                "read": true,
+                "items_taken": false,
+                "path": "lost_track_of_time_ssna"
             }
         ],
         "stats": {
@@ -2735,8 +2825,8 @@ var objDataWrappedDummy = {
                 "weedline_watcher": true,
                 "unexpected_haul": true,
                 "speedy_cooking": false,
-                "loveable_cooking": false,
-                "fairy_cooking": true,
+                "loveable_cooking": true,
+                "fairy_cooking": false,
                 "hasty_blacksmithing": true,
                 "tireless_blacksmithing": true,
                 "silver_expert": true,
@@ -2796,7 +2886,7 @@ var objDataWrappedDummy = {
                 "museum_quality_three": true,
                 "sonic_boom": true,
                 "gift_exchange": true,
-                "mist_sight": null,
+                "mist_sight": true,
                 "earthly_essence": true,
                 "taste_maker": true,
                 "abyssal_ascendence": null,
@@ -3057,6 +3147,10 @@ var objDataWrappedDummy = {
             "cavern_wall_brazier_blue",
             "cavern_wall_brazier_orange",
             "cavern_wall_brazier_purple",
+            "champions_kitchen_blue",
+            "champions_kitchen_green",
+            "champions_kitchen_pink",
+            "champions_kitchen_yellow",
             "cheese",
             "cherry_smoothie",
             "cherry_tart",
@@ -3096,6 +3190,48 @@ var objDataWrappedDummy = {
             "coffee_mug_v1",
             "coffee_mug_v2",
             "coffee_mug_v3",
+            "color_paving_stone_v01",
+            "color_paving_stone_v02",
+            "color_paving_stone_v03",
+            "color_paving_stone_v04",
+            "color_paving_stone_v05",
+            "color_paving_stone_v06",
+            "color_paving_stone_v07",
+            "color_paving_stone_v08",
+            "color_paving_stone_v09",
+            "color_paving_stone_v10",
+            "color_paving_stone_v11",
+            "color_paving_stone_v12",
+            "color_paving_stone_v13",
+            "color_paving_stone_v14",
+            "color_paving_stone_v15",
+            "color_paving_stone_v16",
+            "color_paving_stone_v17",
+            "color_paving_stone_v18",
+            "color_paving_stone_v19",
+            "color_paving_stone_v20",
+            "color_paving_stone_v21",
+            "color_paving_stone_v22",
+            "color_paving_stone_v23",
+            "color_paving_stone_v24",
+            "color_paving_stone_v25",
+            "color_paving_stone_v26",
+            "color_paving_stone_v27",
+            "color_paving_stone_v28",
+            "color_paving_stone_v29",
+            "color_paving_stone_v30",
+            "color_paving_stone_v31",
+            "color_paving_stone_v32",
+            "color_paving_stone_v33",
+            "color_paving_stone_v34",
+            "color_paving_stone_v35",
+            "color_paving_stone_v36",
+            "color_paving_stone_v37",
+            "color_paving_stone_v38",
+            "color_paving_stone_v39",
+            "color_paving_stone_v40",
+            "color_paving_stone_v41",
+            "color_paving_stone_v42",
             "cooking_frying_pan_v1",
             "cooking_frying_pan_v2",
             "cooking_frying_pan_v3",
@@ -3175,6 +3311,10 @@ var objDataWrappedDummy = {
             "counter_cake_strawberry",
             "counter_cottage_v1",
             "counter_cottage_v2",
+            "counter_kitchen_blue",
+            "counter_kitchen_green",
+            "counter_kitchen_pink",
+            "counter_kitchen_yellow",
             "crab_cakes",
             "craft_closed_sewing_tin_v1",
             "craft_closed_sewing_tin_v2",
@@ -3195,6 +3335,7 @@ var objDataWrappedDummy = {
             "cranberry_orange_scone",
             "crayfish_etouffee",
             "crispy_fried_earthshroom",
+            "crop_faux_ash_mushroom",
             "crop_faux_basil",
             "crop_faux_beet",
             "crop_faux_blue_conch_shell",
@@ -3241,8 +3382,10 @@ var objDataWrappedDummy = {
             "crop_faux_moon_fruit",
             "crop_faux_morel_mushroom",
             "crop_faux_narrows_moss",
+            "crop_faux_nettle",
             "crop_faux_night_queen",
             "crop_faux_onion",
+            "crop_faux_oregano",
             "crop_faux_oyster_mushroom",
             "crop_faux_peas",
             "crop_faux_pineshroom",
@@ -3253,6 +3396,7 @@ var objDataWrappedDummy = {
             "crop_faux_rice",
             "crop_faux_rockroot",
             "crop_faux_rosemary",
+            "crop_faux_sage",
             "crop_faux_sand_dollar",
             "crop_faux_sea_grapes",
             "crop_faux_sesame",
@@ -3530,6 +3674,9 @@ var objDataWrappedDummy = {
             "haunted_attic_wallpaper_dark",
             "haunted_attic_wallpaper_dusty",
             "hay",
+            "hero_shield_bronze",
+            "hero_shield_gold",
+            "hero_shield_silver",
             "herringbone_tile_floor_blue",
             "herringbone_tile_floor_green",
             "herringbone_tile_floor_white",
@@ -3569,8 +3716,20 @@ var objDataWrappedDummy = {
             "kitchen_hanging_onion_basket",
             "kitchen_herb_planter_v1",
             "kitchen_herb_planter_v2",
+            "kitchen_mixing_bowls_v1",
+            "kitchen_mixing_bowls_v2",
+            "kitchen_mixing_bowls_v3",
+            "kitchen_mixing_bowls_v4",
             "kitchen_oil_and_vinegar_basket_v1",
             "kitchen_oil_and_vinegar_basket_v2",
+            "kitchen_scale_blue",
+            "kitchen_scale_orange",
+            "kitchen_scale_pink",
+            "kitchen_scale_yellow",
+            "kitchen_utensil_holder_blue",
+            "kitchen_utensil_holder_green",
+            "kitchen_utensil_holder_pink",
+            "kitchen_utensil_holder_white",
             "ladybug_table_v1",
             "ladybug_table_v2",
             "ladybug_table_v3",
@@ -3586,6 +3745,7 @@ var objDataWrappedDummy = {
             "large_paving_stone_v2",
             "large_paving_stone_v3",
             "latte",
+            "lava_caves_diamond_rock",
             "lava_caves_flooring",
             "lava_caves_gold_node",
             "lava_caves_obsidian_bed_blue",
@@ -3596,6 +3756,8 @@ var objDataWrappedDummy = {
             "lava_caves_obsidian_double_bed_purple",
             "lava_caves_obsidian_fence_blue",
             "lava_caves_obsidian_fence_purple",
+            "lava_caves_obsidian_floor_lamp_blue",
+            "lava_caves_obsidian_floor_lamp_purple",
             "lava_caves_obsidian_storage_chest_blue",
             "lava_caves_obsidian_storage_chest_purple",
             "lava_caves_obsidian_table_blue",
@@ -4886,44 +5048,455 @@ var objDataWrappedDummy = {
     },
     "gamedata": {
         "lost_items": {
+            "dynamic_lost_items": [
+                null,
+                null,
+                null,
+                null,
+                [
+                    {
+                        "x": 824,
+                        "y": 366,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "animal_currency",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "animal_currency",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "animal_currency",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    },
+                    {
+                        "x": 85,
+                        "y": 256,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "horse_hair",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "horse_hair",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    },
+                    {
+                        "x": 85,
+                        "y": 253,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "golden_horse_hair",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    },
+                    {
+                        "x": 310,
+                        "y": 242,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "horse_hair",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "horse_hair",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    },
+                    {
+                        "x": 307,
+                        "y": 214,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "cow_milk",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "cow_milk",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "x": 125,
+                        "y": 255,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "bristle",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "bristle",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    },
+                    {
+                        "x": 274,
+                        "y": 215,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "duck_egg",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "duck_egg",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "duck_egg",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    },
+                    {
+                        "x": 263,
+                        "y": 182,
+                        "items": [
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "egg",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            },
+                            {
+                                "cosmetic": null,
+                                "date_photo": null,
+                                "item_id": "egg",
+                                "auto_use": false,
+                                "infusion": null,
+                                "inner_item": null,
+                                "gold_to_gain": null,
+                                "pet_cosmetic_set_name": null,
+                                "animal_cosmetic": null
+                            }
+                        ]
+                    }
+                ],
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                []
+            ],
+            "beach": [
+                {
+                    "x": 2001,
+                    "y": 473,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "coconut",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                }
+            ],
+            "deep_woods": [
+                {
+                    "x": 2183,
+                    "y": 1301,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "mist_crystal",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 1130,
+                    "y": 1235,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "basic_wood",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 715,
+                    "y": 1053,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "spirit_mushroom",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 2231,
+                    "y": 1342,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "walnut",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 2306,
+                    "y": 1105,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "fennel",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 2245,
+                    "y": 1318,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "walnut",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                }
+            ],
             "farm": [
                 {
-                    "x": 1288,
-                    "y": 641,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "ore_stone",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 1263,
-                    "y": 568,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "ore_stone",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 5070,
-                    "y": 3424,
+                    "x": 2465,
+                    "y": 3282,
                     "items": [
                         {
                             "cosmetic": null,
@@ -4961,220 +5534,8 @@ var objDataWrappedDummy = {
                     ]
                 },
                 {
-                    "x": 2467,
-                    "y": 3158,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 5495,
-                    "y": 3672,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2520,
-                    "y": 3539,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 1533,
-                    "y": 509,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "hay",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 5155,
-                    "y": 3160,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2082,
-                    "y": 3287,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        },
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "animal_currency",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2312,
-                    "y": 3792,
+                    "x": 5641,
+                    "y": 3429,
                     "items": [
                         {
                             "cosmetic": null,
@@ -5251,8 +5612,259 @@ var objDataWrappedDummy = {
                     ]
                 },
                 {
-                    "x": 5641,
-                    "y": 3429,
+                    "x": 2312,
+                    "y": 3792,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 2082,
+                    "y": 3287,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 5155,
+                    "y": 3160,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 1533,
+                    "y": 509,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "hay",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 2520,
+                    "y": 3539,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 5495,
+                    "y": 3672,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 2467,
+                    "y": 3158,
+                    "items": [
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        },
+                        {
+                            "cosmetic": null,
+                            "date_photo": null,
+                            "item_id": "animal_currency",
+                            "auto_use": false,
+                            "infusion": null,
+                            "inner_item": null,
+                            "gold_to_gain": null,
+                            "pet_cosmetic_set_name": null,
+                            "animal_cosmetic": null
+                        }
+                    ]
+                },
+                {
+                    "x": 5070,
+                    "y": 3424,
                     "items": [
                         {
                             "cosmetic": null,
@@ -5290,1781 +5902,15 @@ var objDataWrappedDummy = {
                     ]
                 }
             ],
-            "dynamic_lost_items": [
-                null,
-                null,
-                null,
-                null,
-                [
-                    {
-                        "x": 824,
-                        "y": 366,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 312,
-                        "y": 200,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 302,
-                        "y": 202,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 303,
-                        "y": 166,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 75,
-                        "y": 281,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "golden_sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "golden_sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 309,
-                        "y": 283,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 311,
-                        "y": 293,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 84,
-                        "y": 253,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 298,
-                        "y": 247,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 79,
-                        "y": 203,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bull_horn",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bull_horn",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 296,
-                        "y": 209,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 303,
-                        "y": 205,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 88,
-                        "y": 170,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 302,
-                        "y": 203,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 307,
-                        "y": 208,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 301,
-                        "y": 175,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 83,
-                        "y": 295,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "golden_sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 303,
-                        "y": 292,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "sheep_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 87,
-                        "y": 246,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 301,
-                        "y": 253,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "horse_hair",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 84,
-                        "y": 202,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bull_horn",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bull_horn",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 308,
-                        "y": 214,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 301,
-                        "y": 210,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "cow_milk",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 82,
-                        "y": 175,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "alpaca_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    }
-                ],
-                [
-                    {
-                        "x": 109,
-                        "y": 131,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "rabbit_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "rabbit_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 255,
-                        "y": 181,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 256,
-                        "y": 173,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 287,
-                        "y": 218,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 132,
-                        "y": 252,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 282,
-                        "y": 128,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 287,
-                        "y": 141,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "rabbit_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "rabbit_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 258,
-                        "y": 180,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 284,
-                        "y": 220,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 286,
-                        "y": 224,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 102,
-                        "y": 213,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 256,
-                        "y": 181,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 129,
-                        "y": 180,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 276,
-                        "y": 223,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 255,
-                        "y": 252,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 259,
-                        "y": 249,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 255,
-                        "y": 260,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 288,
-                        "y": 224,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 283,
-                        "y": 223,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 120,
-                        "y": 169,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 128,
-                        "y": 171,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "animal_currency",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 264,
-                        "y": 178,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 112,
-                        "y": 224,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_feather",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 274,
-                        "y": 223,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 123,
-                        "y": 264,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 255,
-                        "y": 256,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "bristle",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 287,
-                        "y": 222,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "duck_egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 261,
-                        "y": 172,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "egg",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    },
-                    {
-                        "x": 273,
-                        "y": 139,
-                        "items": [
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "rabbit_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            },
-                            {
-                                "cosmetic": null,
-                                "date_photo": null,
-                                "item_id": "rabbit_wool",
-                                "auto_use": false,
-                                "infusion": null,
-                                "inner_item": null,
-                                "gold_to_gain": null,
-                                "pet_cosmetic_set_name": null,
-                                "animal_cosmetic": null
-                            }
-                        ]
-                    }
-                ],
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                [],
-                []
-            ],
-            "beach": [
+            "museum_entry": [
                 {
-                    "x": 1488,
-                    "y": 294,
+                    "x": 228,
+                    "y": 250,
                     "items": [
                         {
                             "cosmetic": null,
                             "date_photo": null,
-                            "item_id": "iris",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 950,
-                    "y": 186,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "sage",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 535,
-                    "y": 260,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 558,
-                    "y": 240,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 531,
-                    "y": 254,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 1549,
-                    "y": 534,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 1553,
-                    "y": 540,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 1543,
-                    "y": 523,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2026,
-                    "y": 449,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2018,
-                    "y": 458,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2021,
-                    "y": 456,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2541,
-                    "y": 381,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2547,
-                    "y": 378,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2510,
-                    "y": 354,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2098,
-                    "y": 258,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2097,
-                    "y": 253,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 2091,
-                    "y": 259,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "coconut",
+                            "item_id": "marigold",
                             "auto_use": false,
                             "infusion": null,
                             "inner_item": null,
@@ -7076,23 +5922,6 @@ var objDataWrappedDummy = {
                 }
             ],
             "haydens_farm": [
-                {
-                    "x": 1541,
-                    "y": 965,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "daisy",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
                 {
                     "x": 279,
                     "y": 437,
@@ -7172,32 +6001,15 @@ var objDataWrappedDummy = {
                     ]
                 }
             ],
-            "deep_woods": [
+            "town": [
                 {
-                    "x": 1079.299072265625,
-                    "y": 353.3687744140625,
+                    "x": 641,
+                    "y": 2456,
                     "items": [
                         {
                             "cosmetic": null,
                             "date_photo": null,
-                            "item_id": "fiber",
-                            "auto_use": false,
-                            "infusion": null,
-                            "inner_item": null,
-                            "gold_to_gain": null,
-                            "pet_cosmetic_set_name": null,
-                            "animal_cosmetic": null
-                        }
-                    ]
-                },
-                {
-                    "x": 1053,
-                    "y": 381,
-                    "items": [
-                        {
-                            "cosmetic": null,
-                            "date_photo": null,
-                            "item_id": "fiber",
+                            "item_id": "shards",
                             "auto_use": false,
                             "infusion": null,
                             "inner_item": null,
@@ -7209,120 +6021,120 @@ var objDataWrappedDummy = {
                 }
             ]
         },
-        "playtime": 589619.8440000003,
+        "playtime": 636348.3800000006,
         "t2_world_facts": {
             "cooking_level": 60,
-            "date_time": 38037600,
-            "celine_was_last_spoken_to": 37103470,
+            "date_time": 41320800,
+            "celine_was_last_spoken_to": 41073964,
             "darcy_heart_level": 4,
-            "ryis_was_last_spoken_to": 34698828,
+            "ryis_was_last_spoken_to": 41000532,
             "zorel_was_last_spoken_to": 0,
-            "dozy_heart_level": 4,
-            "elsie_heart_level": 5,
-            "eiland_heart_level": 6,
-            "dell_was_last_spoken_to": 37363950,
+            "dozy_heart_level": 5,
+            "elsie_heart_level": 7,
+            "eiland_heart_level": 8,
+            "dell_was_last_spoken_to": 40997916,
             "seridia_heart_level": 4,
-            "eiland_was_last_spoken_to": 34280304,
-            "dozy_was_last_spoken_to": 33472128,
-            "reina_was_last_spoken_to": 34703396,
-            "olric_heart_level": 5,
-            "hayden_heart_level": 5,
-            "valen_heart_level": 6,
-            "terithia_was_last_spoken_to": 37106860,
-            "louis_was_last_spoken_to": 37370660,
-            "ryis_heart_level": 6,
-            "juniper_was_last_spoken_to": 37106470,
-            "archaeology_level": 50,
+            "eiland_was_last_spoken_to": 40995616,
+            "dozy_was_last_spoken_to": 40952244,
+            "reina_was_last_spoken_to": 40996316,
+            "olric_heart_level": 6,
+            "hayden_heart_level": 6,
+            "valen_heart_level": 7,
+            "terithia_was_last_spoken_to": 40998844,
+            "louis_was_last_spoken_to": 40999270,
+            "ryis_heart_level": 7,
+            "juniper_was_last_spoken_to": 40999110,
+            "archaeology_level": 60,
             "errol_heart_level": 6,
-            "josephine_was_last_spoken_to": 37105016,
-            "henrietta_heart_level": 2,
-            "merri_was_last_spoken_to": 37355364,
-            "celine_heart_level": 6,
-            "holt_was_last_spoken_to": 37364467,
-            "landen_heart_level": 3,
+            "josephine_was_last_spoken_to": 40999384,
+            "henrietta_heart_level": 4,
+            "merri_was_last_spoken_to": 40989444,
+            "celine_heart_level": 8,
+            "holt_was_last_spoken_to": 41000324,
+            "landen_heart_level": 5,
             "seridia_was_last_spoken_to": 2329736,
-            "nora_heart_level": 5,
-            "merri_heart_level": 4,
-            "errol_was_last_spoken_to": 37102430,
+            "nora_heart_level": 6,
+            "merri_heart_level": 5,
+            "errol_was_last_spoken_to": 41000616,
             "ranching_level": 60,
-            "luc_heart_level": 3,
-            "dell_heart_level": 5,
-            "balor_was_last_spoken_to": 37106564,
-            "hemlock_heart_level": 6,
-            "adeline_was_last_spoken_to": 37789380,
+            "luc_heart_level": 5,
+            "dell_heart_level": 6,
+            "balor_was_last_spoken_to": 40995680,
+            "hemlock_heart_level": 7,
+            "adeline_was_last_spoken_to": 41274828,
             "louis_heart_level": 4,
             "louis_day_start_heart_level": 4,
             "errol_day_start_heart_level": 6,
-            "taliferro_was_last_spoken_to": 37959257,
-            "merri_day_start_heart_level": 4,
-            "terithia_day_start_heart_level": 4,
-            "adeline_day_start_heart_level": 6,
+            "taliferro_was_last_spoken_to": 40995450,
+            "merri_day_start_heart_level": 5,
+            "terithia_day_start_heart_level": 6,
+            "adeline_day_start_heart_level": 8,
             "zorel_day_start_heart_level": 0,
-            "juniper_day_start_heart_level": 6,
+            "juniper_day_start_heart_level": 7,
             "stillwell_day_start_heart_level": 0,
-            "landen_day_start_heart_level": 3,
-            "caldarus_day_start_heart_level": 6,
-            "march_day_start_heart_level": 6,
-            "reina_day_start_heart_level": 6,
+            "landen_day_start_heart_level": 5,
+            "caldarus_day_start_heart_level": 8,
+            "march_day_start_heart_level": 7,
+            "reina_day_start_heart_level": 7,
             "darcy_day_start_heart_level": 4,
-            "eiland_day_start_heart_level": 6,
-            "hayden_day_start_heart_level": 5,
-            "henrietta_day_start_heart_level": 2,
+            "eiland_day_start_heart_level": 8,
+            "hayden_day_start_heart_level": 6,
+            "henrietta_day_start_heart_level": 4,
             "stillwell_heart_level": 0,
             "seridia_day_start_heart_level": 4,
-            "dell_day_start_heart_level": 5,
-            "josephine_day_start_heart_level": 4,
-            "ryis_day_start_heart_level": 6,
-            "hemlock_day_start_heart_level": 6,
-            "landen_was_last_spoken_to": 34699824,
-            "olric_day_start_heart_level": 5,
-            "maple_day_start_heart_level": 3,
-            "holt_day_start_heart_level": 4,
-            "dozy_day_start_heart_level": 4,
-            "elsie_day_start_heart_level": 5,
-            "taliferro_day_start_heart_level": 0,
-            "celine_day_start_heart_level": 6,
-            "vera_day_start_heart_level": 4,
-            "balor_day_start_heart_level": 6,
-            "march_was_last_spoken_to": 37094476,
-            "luc_day_start_heart_level": 3,
-            "wheedle_day_start_heart_level": 0,
-            "nora_day_start_heart_level": 5,
-            "valen_day_start_heart_level": 6,
-            "fishing_level": 46,
-            "march_heart_level": 6,
-            "balor_heart_level": 6,
-            "reina_heart_level": 6,
-            "mining_level": 54,
-            "olric_was_last_spoken_to": 36446308,
-            "combat_level": 50,
-            "maple_was_last_spoken_to": 35128588,
-            "elsie_was_last_spoken_to": 34697664,
-            "josephine_heart_level": 4,
-            "holt_heart_level": 4,
-            "juniper_heart_level": 6,
-            "blacksmithing_level": 49,
-            "darcy_was_last_spoken_to": 37363220,
-            "vera_was_last_spoken_to": 33752540,
-            "terithia_heart_level": 4,
-            "adeline_heart_level": 6,
-            "woodcrafting_level": 45,
+            "dell_day_start_heart_level": 6,
+            "josephine_day_start_heart_level": 6,
+            "ryis_day_start_heart_level": 7,
+            "hemlock_day_start_heart_level": 7,
+            "landen_was_last_spoken_to": 40995576,
+            "olric_day_start_heart_level": 6,
+            "maple_day_start_heart_level": 5,
+            "holt_day_start_heart_level": 5,
+            "dozy_day_start_heart_level": 5,
+            "elsie_day_start_heart_level": 7,
+            "taliferro_day_start_heart_level": 1,
+            "celine_day_start_heart_level": 8,
+            "vera_day_start_heart_level": 5,
+            "balor_day_start_heart_level": 8,
+            "march_was_last_spoken_to": 40990040,
+            "luc_day_start_heart_level": 5,
+            "wheedle_day_start_heart_level": 1,
+            "nora_day_start_heart_level": 6,
+            "valen_day_start_heart_level": 7,
+            "fishing_level": 47,
+            "march_heart_level": 7,
+            "balor_heart_level": 8,
+            "reina_heart_level": 7,
+            "mining_level": 59,
+            "olric_was_last_spoken_to": 41000010,
+            "combat_level": 54,
+            "maple_was_last_spoken_to": 40995504,
+            "elsie_was_last_spoken_to": 40996590,
+            "josephine_heart_level": 6,
+            "holt_heart_level": 5,
+            "juniper_heart_level": 7,
+            "blacksmithing_level": 55,
+            "darcy_was_last_spoken_to": 41000180,
+            "vera_was_last_spoken_to": 41000936,
+            "terithia_heart_level": 6,
+            "adeline_heart_level": 8,
+            "woodcrafting_level": 52,
             "zorel_heart_level": 0,
-            "caldarus_heart_level": 6,
-            "valen_was_last_spoken_to": 37102684,
-            "taliferro_heart_level": 0,
-            "henrietta_was_last_spoken_to": 37104676,
-            "wheedle_was_last_spoken_to": 36152736,
+            "caldarus_heart_level": 8,
+            "valen_was_last_spoken_to": 40998950,
+            "taliferro_heart_level": 1,
+            "henrietta_was_last_spoken_to": 41042150,
+            "wheedle_was_last_spoken_to": 40996500,
             "stillwell_was_last_spoken_to": 0,
-            "vera_heart_level": 4,
-            "hemlock_was_last_spoken_to": 37094750,
+            "vera_heart_level": 5,
+            "hemlock_was_last_spoken_to": 40947000,
             "farming_level": 60,
-            "hayden_was_last_spoken_to": 35544796,
-            "nora_was_last_spoken_to": 34937748,
-            "luc_was_last_spoken_to": 37982547,
-            "wheedle_heart_level": 0,
-            "maple_heart_level": 3,
-            "caldarus_was_last_spoken_to": 37788384
+            "hayden_was_last_spoken_to": 40999900,
+            "nora_was_last_spoken_to": 40988644,
+            "luc_was_last_spoken_to": 40995756,
+            "wheedle_heart_level": 1,
+            "maple_heart_level": 5,
+            "caldarus_was_last_spoken_to": 41089576
         }
     },
     "game_stats": {
@@ -7482,14 +6294,169 @@ var objDataWrappedDummy = {
                 "hour": 15,
                 "minute": 50,
                 "item": "coconut_milk"
+            },
+            {
+                "day": 442,
+                "hour": 7,
+                "minute": 48,
+                "item": "soup_of_the_day_gold"
+            },
+            {
+                "day": 442,
+                "hour": 11,
+                "minute": 54,
+                "item": "dungeon_fountain_health"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 28,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 32,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 38,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 41,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 43,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 45,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 50,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 449,
+                "hour": 10,
+                "minute": 52,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 463,
+                "hour": 15,
+                "minute": 7,
+                "item": "dungeon_fountain_health"
+            },
+            {
+                "day": 464,
+                "hour": 18,
+                "minute": 10,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 464,
+                "hour": 18,
+                "minute": 13,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 464,
+                "hour": 18,
+                "minute": 15,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 464,
+                "hour": 18,
+                "minute": 18,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 464,
+                "hour": 18,
+                "minute": 20,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 11,
+                "minute": 58,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 12,
+                "minute": 0,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 12,
+                "minute": 2,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 14,
+                "minute": 40,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 14,
+                "minute": 42,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 15,
+                "minute": 28,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 15,
+                "minute": 43,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 16,
+                "minute": 19,
+                "item": "coconut_milk"
+            },
+            {
+                "day": 477,
+                "hour": 16,
+                "minute": 38,
+                "item": "coconut_milk"
             }
         ],
-        "faints": 2,
+        "faints": 3,
         "set_completions": [
             {
                 "day": 435,
                 "wing": "insect",
                 "set": "deep_woods"
+            },
+            {
+                "day": 478,
+                "wing": "archaeology",
+                "set": "mist"
             }
         ],
         "items_sold_each_day": [
@@ -7527,27 +6494,27 @@ var objDataWrappedDummy = {
                 {
                     "income": 970,
                     "count": 1,
-                    "item": "sword_silver<sharp>"
+                    "item": "sword_silver&lt;sharp&gt;"
                 },
                 {
                     "income": 970,
                     "count": 1,
-                    "item": "hoe_silver<lightweight>"
+                    "item": "hoe_silver&lt;lightweight&gt;"
                 },
                 {
                     "income": 970,
                     "count": 1,
-                    "item": "pick_axe_silver<lightweight>"
+                    "item": "pick_axe_silver&lt;lightweight&gt;"
                 },
                 {
                     "income": 970,
                     "count": 1,
-                    "item": "shovel_silver<lightweight>"
+                    "item": "shovel_silver&lt;lightweight&gt;"
                 },
                 {
                     "income": 970,
                     "count": 1,
-                    "item": "axe_silver<lightweight>"
+                    "item": "axe_silver&lt;lightweight&gt;"
                 },
                 {
                     "income": 3080,
@@ -7557,12 +6524,12 @@ var objDataWrappedDummy = {
                 {
                     "income": 970,
                     "count": 1,
-                    "item": "watering_can_silver<lightweight>"
+                    "item": "watering_can_silver&lt;lightweight&gt;"
                 },
                 {
                     "income": 71,
                     "count": 1,
-                    "item": "basic_wood_chest_blue<quality>"
+                    "item": "basic_wood_chest_blue&lt;quality&gt;"
                 },
                 {
                     "income": 2400,
@@ -7926,48 +6893,1093 @@ var objDataWrappedDummy = {
                     "count": 19,
                     "item": "snow_peas"
                 }
+            ],
+            [],
+            [
+                {
+                    "income": 1540,
+                    "count": 1,
+                    "item": "lava_caves_obsidian_bed_purple"
+                },
+                {
+                    "income": 420,
+                    "count": 1,
+                    "item": "lava_caves_gold_node"
+                }
+            ],
+            [
+                {
+                    "income": 260,
+                    "count": 1,
+                    "item": "lava_caves_wallpaper"
+                },
+                {
+                    "income": 420,
+                    "count": 1,
+                    "item": "lava_caves_gold_node"
+                },
+                {
+                    "income": 2220,
+                    "count": 1,
+                    "item": "lava_caves_obsidian_double_bed_purple"
+                }
+            ],
+            [],
+            [],
+            [],
+            [
+                {
+                    "income": 350,
+                    "count": 1,
+                    "item": "kitchen_scale_blue"
+                }
+            ],
+            [],
+            [],
+            [],
+            [
+                {
+                    "income": 50,
+                    "count": 1,
+                    "item": "worn_rug"
+                }
+            ],
+            [],
+            [],
+            [
+                {
+                    "income": 110,
+                    "count": 1,
+                    "item": "kitchen_mixing_bowls_v1"
+                }
+            ],
+            [
+                {
+                    "income": 42050,
+                    "count": 290,
+                    "item": "green_tea"
+                }
+            ],
+            [
+                {
+                    "income": 320,
+                    "count": 8,
+                    "item": "ornate_flagstone_v3"
+                },
+                {
+                    "income": 9375,
+                    "count": 75,
+                    "item": "strawberry"
+                },
+                {
+                    "income": 10935,
+                    "count": 81,
+                    "item": "peas"
+                }
+            ],
+            [],
+            [],
+            [],
+            [
+                {
+                    "income": 400,
+                    "count": 1,
+                    "item": "tarnished_gold_boots"
+                },
+                {
+                    "income": 1100,
+                    "count": 1,
+                    "item": "sword_tarnished_gold"
+                },
+                {
+                    "income": 2500,
+                    "count": 50,
+                    "item": "pomegranate_juice"
+                }
+            ],
+            [
+                {
+                    "income": 1650,
+                    "count": 75,
+                    "item": "hard_boiled_egg"
+                },
+                {
+                    "income": 110,
+                    "count": 1,
+                    "item": "kitchen_utensil_holder_blue"
+                }
+            ],
+            [],
+            [
+                {
+                    "income": 710,
+                    "count": 1,
+                    "item": "lava_caves_obsidian_chair_purple"
+                },
+                {
+                    "income": 35,
+                    "count": 1,
+                    "item": "lava_caves_obsidian_fence_purple"
+                }
+            ],
+            [],
+            [],
+            [
+                {
+                    "income": 7560,
+                    "count": 56,
+                    "item": "grilled_corn"
+                }
+            ],
+            [],
+            [
+                {
+                    "income": 12555,
+                    "count": 93,
+                    "item": "peas"
+                },
+                {
+                    "income": 1560,
+                    "count": 39,
+                    "item": "turnip"
+                },
+                {
+                    "income": 3225,
+                    "count": 43,
+                    "item": "potato"
+                },
+                {
+                    "income": 7200,
+                    "count": 40,
+                    "item": "cabbage"
+                },
+                {
+                    "income": 1660,
+                    "count": 1,
+                    "item": "champions_kitchen_blue"
+                },
+                {
+                    "income": 12875,
+                    "count": 103,
+                    "item": "strawberry"
+                },
+                {
+                    "income": 1320,
+                    "count": 44,
+                    "item": "coconut_milk"
+                },
+                {
+                    "income": 2480,
+                    "count": 31,
+                    "item": "carrot"
+                },
+                {
+                    "income": 185,
+                    "count": 1,
+                    "item": "counter_kitchen_blue"
+                }
+            ],
+            [],
+            [],
+            [
+                {
+                    "income": 80,
+                    "count": 2,
+                    "item": "basic_flooring_oak"
+                },
+                {
+                    "income": 11,
+                    "count": 1,
+                    "item": "basic_flower_pot_orange"
+                },
+                {
+                    "income": 150,
+                    "count": 2,
+                    "item": "basic_nightstand_oak"
+                },
+                {
+                    "income": 10,
+                    "count": 1,
+                    "item": "sapling_oak"
+                },
+                {
+                    "income": 10,
+                    "count": 1,
+                    "item": "sapling_pine"
+                },
+                {
+                    "income": 170,
+                    "count": 1,
+                    "item": "basic_oil_lamp_grey"
+                },
+                {
+                    "income": 160,
+                    "count": 1,
+                    "item": "basic_table_oak"
+                },
+                {
+                    "income": 7,
+                    "count": 1,
+                    "item": "field_grass_two&lt;quality&gt;"
+                },
+                {
+                    "income": 110,
+                    "count": 1,
+                    "item": "basic_wallpaper_oak"
+                },
+                {
+                    "income": 149,
+                    "count": 1,
+                    "item": "starter_wheelbarrow&lt;quality&gt;"
+                },
+                {
+                    "income": 44,
+                    "count": 1,
+                    "item": "worn_table&lt;quality&gt;"
+                },
+                {
+                    "income": 83,
+                    "count": 1,
+                    "item": "basic_area_rug_green&lt;quality&gt;"
+                },
+                {
+                    "income": 27,
+                    "count": 1,
+                    "item": "basic_doormat_green&lt;quality&gt;"
+                },
+                {
+                    "income": 308,
+                    "count": 1,
+                    "item": "basic_bed_double_oak&lt;quality&gt;"
+                },
+                {
+                    "income": 12,
+                    "count": 1,
+                    "item": "basic_flower_pot_orange&lt;quality&gt;"
+                },
+                {
+                    "income": 44,
+                    "count": 1,
+                    "item": "basic_flooring_oak&lt;quality&gt;"
+                },
+                {
+                    "income": 127,
+                    "count": 1,
+                    "item": "basic_wall_window_oak&lt;quality&gt;"
+                },
+                {
+                    "income": 105,
+                    "count": 1,
+                    "item": "cottage_chair_ash&lt;quality&gt;"
+                },
+                {
+                    "income": 83,
+                    "count": 1,
+                    "item": "cottage_rug_ash&lt;quality&gt;"
+                },
+                {
+                    "income": 308,
+                    "count": 1,
+                    "item": "cottage_fridge_ash&lt;quality&gt;"
+                },
+                {
+                    "income": 154,
+                    "count": 1,
+                    "item": "cottage_wallpaper_ash&lt;quality&gt;"
+                },
+                {
+                    "income": 71,
+                    "count": 1,
+                    "item": "cottage_wall_flowers_ash&lt;quality&gt;"
+                },
+                {
+                    "income": 5,
+                    "count": 1,
+                    "item": "clay"
+                },
+                {
+                    "income": 460,
+                    "count": 1,
+                    "item": "cottage_bed_ash"
+                },
+                {
+                    "income": 610,
+                    "count": 1,
+                    "item": "cottage_bed_double_ash"
+                },
+                {
+                    "income": 105,
+                    "count": 1,
+                    "item": "cottage_dresser_ash"
+                },
+                {
+                    "income": 55,
+                    "count": 1,
+                    "item": "cottage_flooring_ash"
+                },
+                {
+                    "income": 105,
+                    "count": 1,
+                    "item": "cottage_nightstand_ash"
+                },
+                {
+                    "income": 90,
+                    "count": 1,
+                    "item": "worn_bed"
+                },
+                {
+                    "income": 40,
+                    "count": 1,
+                    "item": "worn_chair"
+                },
+                {
+                    "income": 110,
+                    "count": 1,
+                    "item": "cottage_plant_shelf_ash"
+                },
+                {
+                    "income": 85,
+                    "count": 1,
+                    "item": "worn_fireplace"
+                },
+                {
+                    "income": 30,
+                    "count": 1,
+                    "item": "worn_nightstand"
+                },
+                {
+                    "income": 40,
+                    "count": 1,
+                    "item": "cottage_potted_fig_ash"
+                },
+                {
+                    "income": 40,
+                    "count": 1,
+                    "item": "worn_table"
+                },
+                {
+                    "income": 22,
+                    "count": 1,
+                    "item": "worn_flooring"
+                },
+                {
+                    "income": 280,
+                    "count": 1,
+                    "item": "cottage_table_ash"
+                },
+                {
+                    "income": 65,
+                    "count": 1,
+                    "item": "worn_well"
+                },
+                {
+                    "income": 690,
+                    "count": 3,
+                    "item": "cottage_wall_window_ash"
+                },
+                {
+                    "income": 40,
+                    "count": 1,
+                    "item": "cottage_potted_flowers_ash"
+                },
+                {
+                    "income": 190,
+                    "count": 1,
+                    "item": "campfire"
+                },
+                {
+                    "income": 60,
+                    "count": 2,
+                    "item": "starter_potted_plant"
+                },
+                {
+                    "income": 135,
+                    "count": 1,
+                    "item": "starter_scarecrow"
+                },
+                {
+                    "income": 120,
+                    "count": 1,
+                    "item": "starter_bird_house_red"
+                },
+                {
+                    "income": 150,
+                    "count": 1,
+                    "item": "starter_well"
+                },
+                {
+                    "income": 55,
+                    "count": 1,
+                    "item": "spooky_haybale"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "dirt_clear"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "dirt_dot_one"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "dirt_dot_two"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "dirt_dot_three"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "field_flower"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "field_flower_two"
+                },
+                {
+                    "income": 6,
+                    "count": 1,
+                    "item": "field_grass"
+                },
+                {
+                    "income": 8,
+                    "count": 2,
+                    "item": "starter_wood_fence"
+                },
+                {
+                    "income": 16,
+                    "count": 1,
+                    "item": "picket_fence"
+                },
+                {
+                    "income": 11,
+                    "count": 1,
+                    "item": "stone_wall"
+                },
+                {
+                    "income": 140,
+                    "count": 1,
+                    "item": "basic_bed_oak"
+                },
+                {
+                    "income": 180,
+                    "count": 1,
+                    "item": "basic_bookshelf_oak"
+                },
+                {
+                    "income": 75,
+                    "count": 1,
+                    "item": "basic_chair_oak"
+                },
+                {
+                    "income": 75,
+                    "count": 1,
+                    "item": "basic_dresser_oak"
+                }
+            ],
+            [
+                {
+                    "income": 95,
+                    "count": 1,
+                    "item": "cabin_chair_cherry"
+                },
+                {
+                    "income": 140,
+                    "count": 1,
+                    "item": "cabin_wallpaper_cherry"
+                },
+                {
+                    "income": 580,
+                    "count": 1,
+                    "item": "cabin_bed_double_oak"
+                },
+                {
+                    "income": 105,
+                    "count": 1,
+                    "item": "cabin_dresser_cherry"
+                },
+                {
+                    "income": 115,
+                    "count": 1,
+                    "item": "cabin_nightstand_cherry&lt;quality&gt;"
+                },
+                {
+                    "income": 253,
+                    "count": 1,
+                    "item": "cabin_wall_window_cherry&lt;quality&gt;"
+                },
+                {
+                    "income": 65,
+                    "count": 1,
+                    "item": "cabin_firewood_cherry"
+                },
+                {
+                    "income": 55,
+                    "count": 1,
+                    "item": "cabin_flooring_cherry"
+                },
+                {
+                    "income": 175,
+                    "count": 1,
+                    "item": "cabin_lamp_cherry"
+                },
+                {
+                    "income": 16470,
+                    "count": 122,
+                    "item": "peas"
+                },
+                {
+                    "income": 230,
+                    "count": 1,
+                    "item": "cabin_stove_cherry"
+                },
+                {
+                    "income": 210,
+                    "count": 2,
+                    "item": "cabin_table_cherry"
+                },
+                {
+                    "income": 15250,
+                    "count": 122,
+                    "item": "strawberry"
+                },
+                {
+                    "income": 260,
+                    "count": 1,
+                    "item": "cabin_bed_cherry"
+                },
+                {
+                    "income": 75,
+                    "count": 1,
+                    "item": "cabin_wall_shelf_cherry"
+                },
+                {
+                    "income": 190,
+                    "count": 1,
+                    "item": "cabin_bookshelf_cherry"
+                }
+            ],
+            [
+                {
+                    "income": 80,
+                    "count": 1,
+                    "item": "fishing_oar_wall_decor_blue"
+                },
+                {
+                    "income": 230,
+                    "count": 1,
+                    "item": "haunted_attic_nightstand_dark"
+                },
+                {
+                    "income": 490,
+                    "count": 1,
+                    "item": "haunted_attic_rocking_chair_dusty"
+                },
+                {
+                    "income": 130,
+                    "count": 1,
+                    "item": "fishing_window_gold"
+                },
+                {
+                    "income": 220,
+                    "count": 1,
+                    "item": "fishing_plaque_blue"
+                },
+                {
+                    "income": 195,
+                    "count": 1,
+                    "item": "fishing_trophy_shelf_blue"
+                },
+                {
+                    "income": 40,
+                    "count": 1,
+                    "item": "haunted_attic_wall_cobweb_right"
+                },
+                {
+                    "income": 240,
+                    "count": 1,
+                    "item": "fishing_tank_gold"
+                },
+                {
+                    "income": 630,
+                    "count": 1,
+                    "item": "hero_shield_bronze"
+                },
+                {
+                    "income": 105,
+                    "count": 1,
+                    "item": "haunted_attic_wall_shelf_dark"
+                },
+                {
+                    "income": 500,
+                    "count": 2,
+                    "item": "haunted_attic_wall_window_dusty"
+                },
+                {
+                    "income": 230,
+                    "count": 1,
+                    "item": "cabin_wall_window_cherry"
+                },
+                {
+                    "income": 140,
+                    "count": 1,
+                    "item": "cabin_wallpaper_walnut"
+                },
+                {
+                    "income": 55,
+                    "count": 1,
+                    "item": "explorer_flooring_beige"
+                },
+                {
+                    "income": 240,
+                    "count": 1,
+                    "item": "explorer_wallpaper_beige"
+                },
+                {
+                    "income": 165,
+                    "count": 1,
+                    "item": "spring_bed_pink"
+                },
+                {
+                    "income": 320,
+                    "count": 1,
+                    "item": "spring_double_bed_pink"
+                },
+                {
+                    "income": 350,
+                    "count": 1,
+                    "item": "explorer_chair_beige"
+                },
+                {
+                    "income": 75,
+                    "count": 1,
+                    "item": "explorer_globe_beige"
+                },
+                {
+                    "income": 60,
+                    "count": 1,
+                    "item": "explorer_lamp_beige"
+                },
+                {
+                    "income": 145,
+                    "count": 1,
+                    "item": "spring_sofa_pink"
+                },
+                {
+                    "income": 340,
+                    "count": 1,
+                    "item": "explorer_trunk_table_beige"
+                },
+                {
+                    "income": 690,
+                    "count": 1,
+                    "item": "explorer_double_bed_green"
+                },
+                {
+                    "income": 240,
+                    "count": 1,
+                    "item": "bakery_bread_basket_pastel"
+                },
+                {
+                    "income": 120,
+                    "count": 1,
+                    "item": "bull_horn"
+                },
+                {
+                    "income": 440,
+                    "count": 1,
+                    "item": "fishing_double_bed_blue&lt;quality&gt;"
+                },
+                {
+                    "income": 61,
+                    "count": 1,
+                    "item": "fishing_rug_red&lt;quality&gt;"
+                },
+                {
+                    "income": 93,
+                    "count": 1,
+                    "item": "spring_lamp_orange&lt;quality&gt;"
+                },
+                {
+                    "income": 198,
+                    "count": 1,
+                    "item": "spring_rug_orange&lt;quality&gt;"
+                },
+                {
+                    "income": 115,
+                    "count": 1,
+                    "item": "summer_flooring_yellow"
+                },
+                {
+                    "income": 190,
+                    "count": 1,
+                    "item": "bakery_cookie_jar_pastel"
+                },
+                {
+                    "income": 99,
+                    "count": 1,
+                    "item": "spring_flooring_pink&lt;quality&gt;"
+                },
+                {
+                    "income": 209,
+                    "count": 1,
+                    "item": "spring_wallpaper_orange&lt;quality&gt;"
+                },
+                {
+                    "income": 200,
+                    "count": 1,
+                    "item": "bakery_cutting_board_coffee"
+                },
+                {
+                    "income": 286,
+                    "count": 1,
+                    "item": "summer_chair_yellow&lt;quality&gt;"
+                },
+                {
+                    "income": 1342,
+                    "count": 1,
+                    "item": "fall_bed_cream&lt;quality&gt;"
+                },
+                {
+                    "income": 737,
+                    "count": 1,
+                    "item": "fall_table_orange&lt;quality&gt;"
+                },
+                {
+                    "income": 341,
+                    "count": 1,
+                    "item": "summer_bed_yellow&lt;quality&gt;"
+                },
+                {
+                    "income": 253,
+                    "count": 1,
+                    "item": "haunted_attic_armoire_dark&lt;quality&gt;"
+                },
+                {
+                    "income": 1380,
+                    "count": 2,
+                    "item": "summer_double_bed_red"
+                },
+                {
+                    "income": 44,
+                    "count": 1,
+                    "item": "haunted_attic_wall_cobweb_left&lt;quality&gt;"
+                },
+                {
+                    "income": 286,
+                    "count": 1,
+                    "item": "haunted_attic_dress_form_dark&lt;quality&gt;"
+                },
+                {
+                    "income": 60,
+                    "count": 1,
+                    "item": "summer_jar_lamp_red"
+                },
+                {
+                    "income": 363,
+                    "count": 1,
+                    "item": "haunted_attic_table_dark&lt;quality&gt;"
+                },
+                {
+                    "income": 110,
+                    "count": 2,
+                    "item": "summer_rug_red"
+                },
+                {
+                    "income": 320,
+                    "count": 1,
+                    "item": "summer_table_red"
+                },
+                {
+                    "income": 1980,
+                    "count": 1,
+                    "item": "fall_double_bed_cream"
+                },
+                {
+                    "income": 61,
+                    "count": 1,
+                    "item": "haunted_attic_flooring_dark&lt;quality&gt;"
+                },
+                {
+                    "income": 154,
+                    "count": 1,
+                    "item": "haunted_attic_wallpaper_dusty&lt;quality&gt;"
+                },
+                {
+                    "income": 473,
+                    "count": 1,
+                    "item": "explorer_bed_brown&lt;quality&gt;"
+                },
+                {
+                    "income": 181,
+                    "count": 1,
+                    "item": "explorer_rug_beige&lt;quality&gt;"
+                },
+                {
+                    "income": 55,
+                    "count": 1,
+                    "item": "fishing_flooring_blue"
+                },
+                {
+                    "income": 280,
+                    "count": 1,
+                    "item": "fishing_bed_blue"
+                },
+                {
+                    "income": 35,
+                    "count": 1,
+                    "item": "haunted_attic_candle_single"
+                },
+                {
+                    "income": 80,
+                    "count": 2,
+                    "item": "haunted_attic_candle_cluster"
+                },
+                {
+                    "income": 105,
+                    "count": 1,
+                    "item": "fishing_table_blue"
+                },
+                {
+                    "income": 95,
+                    "count": 1,
+                    "item": "fishing_chair_blue"
+                },
+                {
+                    "income": 80,
+                    "count": 1,
+                    "item": "haunted_attic_chair_dark"
+                },
+                {
+                    "income": 85,
+                    "count": 1,
+                    "item": "fishing_lamp_blue"
+                }
+            ],
+            [
+                {
+                    "income": 115,
+                    "count": 1,
+                    "item": "miners_minecart_v1"
+                },
+                {
+                    "income": 120,
+                    "count": 1,
+                    "item": "miners_crate_chair_v1"
+                },
+                {
+                    "income": 340,
+                    "count": 1,
+                    "item": "cavern_mossy_rug_v1"
+                },
+                {
+                    "income": 310,
+                    "count": 1,
+                    "item": "bakery_cake_slice_coffee"
+                },
+                {
+                    "income": 460,
+                    "count": 2,
+                    "item": "ornamental_iron_node"
+                },
+                {
+                    "income": 310,
+                    "count": 1,
+                    "item": "bakery_cake_pastel"
+                },
+                {
+                    "income": 250,
+                    "count": 1,
+                    "item": "coral_stone_archway"
+                },
+                {
+                    "income": 135,
+                    "count": 1,
+                    "item": "miners_shelves_v2"
+                },
+                {
+                    "income": 165,
+                    "count": 1,
+                    "item": "picnic_place_setting_pink&lt;quality&gt;"
+                },
+                {
+                    "income": 616,
+                    "count": 1,
+                    "item": "ornate_rug_large_rectangle_blue&lt;quality&gt;"
+                },
+                {
+                    "income": 150,
+                    "count": 1,
+                    "item": "ornate_rug_small_blue"
+                },
+                {
+                    "income": 600,
+                    "count": 2,
+                    "item": "ornate_rug_medium_round_blue"
+                },
+                {
+                    "income": 198,
+                    "count": 1,
+                    "item": "miners_flooring&lt;quality&gt;"
+                },
+                {
+                    "income": 600,
+                    "count": 2,
+                    "item": "ornate_rug_medium_square_blue"
+                },
+                {
+                    "income": 75,
+                    "count": 1,
+                    "item": "picnic_basket_pink"
+                },
+                {
+                    "income": 253,
+                    "count": 1,
+                    "item": "ornamental_sapphire_rock&lt;quality&gt;"
+                },
+                {
+                    "income": 560,
+                    "count": 1,
+                    "item": "ornate_rug_large_round_blue"
+                },
+                {
+                    "income": 3200,
+                    "count": 40,
+                    "item": "roasted_cauliflower"
+                },
+                {
+                    "income": 253,
+                    "count": 1,
+                    "item": "coral_storage_chest_blue&lt;quality&gt;"
+                },
+                {
+                    "income": 560,
+                    "count": 1,
+                    "item": "ornate_rug_large_square_blue"
+                },
+                {
+                    "income": 220,
+                    "count": 1,
+                    "item": "low_tide_flooring&lt;quality&gt;"
+                },
+                {
+                    "income": 154,
+                    "count": 1,
+                    "item": "cavern_mushroom_stool_green&lt;quality&gt;"
+                },
+                {
+                    "income": 310,
+                    "count": 1,
+                    "item": "picnic_pie_plate_red"
+                },
+                {
+                    "income": 35,
+                    "count": 1,
+                    "item": "picnic_rug_red"
+                },
+                {
+                    "income": 200,
+                    "count": 1,
+                    "item": "picnic_donut_plate"
+                },
+                {
+                    "income": 200,
+                    "count": 1,
+                    "item": "picnic_sandwich_plate"
+                },
+                {
+                    "income": 115,
+                    "count": 1,
+                    "item": "picnic_sunflower_vase_pink"
+                },
+                {
+                    "income": 230,
+                    "count": 1,
+                    "item": "cavern_hewn_rock_table"
+                },
+                {
+                    "income": 135,
+                    "count": 1,
+                    "item": "mines_wooden_arch"
+                },
+                {
+                    "income": 220,
+                    "count": 1,
+                    "item": "miners_ruby_rock"
+                },
+                {
+                    "income": 640,
+                    "count": 2,
+                    "item": "coral_chair_purple"
+                }
+            ],
+            [],
+            [
+                {
+                    "income": 1215,
+                    "count": 1,
+                    "item": "gold_ring"
+                }
+            ],
+            [],
+            [
+                {
+                    "income": 22,
+                    "count": 1,
+                    "item": "color_paving_stone_v20"
+                }
             ]
         ],
         "npcs_spoken_to": {
-            "henrietta": 1,
-            "landen": 3,
-            "dell": 2,
-            "nora": 2,
-            "reina": 3,
-            "terithia": 4,
+            "henrietta": 9,
+            "landen": 13,
+            "dell": 15,
+            "nora": 12,
+            "reina": 16,
+            "terithia": 17,
             "seridia": 0,
-            "louis": 3,
-            "vera": 0,
-            "darcy": 0,
-            "merri": 3,
-            "balor": 9,
-            "taliferro": 3,
-            "hemlock": 5,
-            "wheedle": 0,
-            "adeline": 6,
-            "olric": 4,
-            "josephine": 4,
-            "hayden": 4,
+            "louis": 5,
+            "vera": 4,
+            "darcy": 4,
+            "merri": 6,
+            "balor": 26,
+            "taliferro": 7,
+            "hemlock": 19,
+            "wheedle": 5,
+            "adeline": 27,
+            "olric": 19,
+            "josephine": 18,
+            "hayden": 15,
             "stillwell": 0,
-            "juniper": 4,
-            "dozy": 2,
-            "celine": 6,
-            "caldarus": 12,
-            "maple": 3,
+            "juniper": 18,
+            "dozy": 8,
+            "celine": 24,
+            "caldarus": 30,
+            "maple": 19,
             "zorel": 0,
-            "errol": 4,
-            "ryis": 3,
-            "march": 4,
-            "luc": 2,
-            "holt": 3,
-            "valen": 4,
-            "eiland": 2,
-            "elsie": 3
+            "errol": 12,
+            "ryis": 13,
+            "march": 20,
+            "luc": 16,
+            "holt": 16,
+            "valen": 13,
+            "eiland": 26,
+            "elsie": 15
         },
         "dives": [
             {
                 "day": 387,
                 "item": "freshwater_oyster"
+            },
+            {
+                "day": 470,
+                "item": "smallmouth_bass"
             }
         ],
         "gifts_given": [
@@ -7982,6 +7994,1998 @@ var objDataWrappedDummy = {
                 "day": 438,
                 "gift": "plum_blossom",
                 "npc": "adeline"
+            },
+            {
+                "desire": "liked",
+                "day": 443,
+                "gift": "caldosian_chocolate_cake",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "liked",
+                "day": 443,
+                "gift": "ore_diamond",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 443,
+                "gift": "ore_diamond",
+                "npc": "adeline"
+            },
+            {
+                "desire": "liked",
+                "day": 443,
+                "gift": "chocolate",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 443,
+                "gift": "petrified_wood",
+                "npc": "dozy"
+            },
+            {
+                "desire": "loved",
+                "day": 443,
+                "gift": "incredibly_hot_pot",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 443,
+                "gift": "baked_sweetroot",
+                "npc": "errol"
+            },
+            {
+                "desire": "liked",
+                "day": 443,
+                "gift": "apple",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "liked",
+                "day": 443,
+                "gift": "crystal_berry_pie",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 444,
+                "gift": "breath_of_fire",
+                "npc": "celine"
+            },
+            {
+                "desire": "liked",
+                "day": 444,
+                "gift": "tea",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 444,
+                "gift": "ore_gold",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 444,
+                "gift": "breath_of_fire",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 444,
+                "gift": "wheat",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 444,
+                "gift": "crystal_berry_pie",
+                "npc": "eiland"
+            },
+            {
+                "desire": "liked",
+                "day": 444,
+                "gift": "cherry",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 444,
+                "gift": "dog_treat",
+                "npc": "dozy"
+            },
+            {
+                "desire": "liked",
+                "day": 444,
+                "gift": "ore_diamond",
+                "npc": "elsie"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "chocolate",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 445,
+                "gift": "chocolate",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "chocolate",
+                "npc": "dell"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "roasted_sweet_potato",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "roasted_rice_tea",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 445,
+                "gift": "peas",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 445,
+                "gift": "gold_ingot",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 445,
+                "gift": "roasted_rice_tea",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "gold_ingot",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 445,
+                "gift": "ore_diamond",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "sushi_platter",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "plum_blossom",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "cranberry_orange_scone",
+                "npc": "elsie"
+            },
+            {
+                "desire": "loved",
+                "day": 445,
+                "gift": "incredibly_hot_pot",
+                "npc": "reina"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "blueberry",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "ant",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 446,
+                "gift": "stone_shell",
+                "npc": "maple"
+            },
+            {
+                "desire": "loved",
+                "day": 446,
+                "gift": "temple_flower",
+                "npc": "celine"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "potato",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "perfect_gold_ore",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 446,
+                "gift": "veggie_sub_sandwich",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "ore_gold",
+                "npc": "errol"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "breath_of_fire",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "obsidian",
+                "npc": "landen"
+            },
+            {
+                "desire": "loved",
+                "day": 446,
+                "gift": "perfect_gold_ore",
+                "npc": "march"
+            },
+            {
+                "desire": "loved",
+                "day": 446,
+                "gift": "sauteed_snow_peas",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "ore_gold",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "crystal_berry_pie",
+                "npc": "reina"
+            },
+            {
+                "desire": "liked",
+                "day": 446,
+                "gift": "obsidian",
+                "npc": "ryis"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "flour",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "baked_potato",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "chocolate",
+                "npc": "darcy"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "beet_soup",
+                "npc": "vera"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "basic_wood",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "broccoli",
+                "npc": "holt"
+            },
+            {
+                "desire": "neutral",
+                "day": 447,
+                "gift": "breath_of_fire",
+                "npc": "wheedle"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "puddle_spider",
+                "npc": "luc"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "blackberry",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "chocolate",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "obsidian",
+                "npc": "merri"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "ore_iron",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "beet_soup",
+                "npc": "taliferro"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "seafood_snow_pea_noodles",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 447,
+                "gift": "blackberry",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "seafood_snow_pea_noodles",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "coconut_milk&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "coconut_milk&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "coconut_milk&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 447,
+                "gift": "coconut_milk&lt;loveable&gt;",
+                "npc": "dell"
+            },
+            {
+                "desire": "loved",
+                "day": 448,
+                "gift": "apple_honey_curry",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 448,
+                "gift": "golden_horse_hair",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 448,
+                "gift": "apple_honey_curry",
+                "npc": "reina"
+            },
+            {
+                "desire": "liked",
+                "day": 448,
+                "gift": "sweet_sesame_balls",
+                "npc": "eiland"
+            },
+            {
+                "desire": "liked",
+                "day": 448,
+                "gift": "crystal_berry_pie",
+                "npc": "elsie"
+            },
+            {
+                "desire": "liked",
+                "day": 449,
+                "gift": "cucumber",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "josephine"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "terithia"
+            },
+            {
+                "desire": "loved",
+                "day": 449,
+                "gift": "fried_rice",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "ultimate_small_animal_feed",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "harvest_plate",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "holt"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 450,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 451,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 451,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 451,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "loved",
+                "day": 451,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 452,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 452,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 452,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 452,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 452,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 452,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "broccoli",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "statuette_of_caldarus",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "elsie"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "dried_squid",
+                "npc": "terithia"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "oil",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "onion",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "vegetable_pot_pie",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "praying_mantis",
+                "npc": "luc"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "pink_scallop_shell",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "butter",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 453,
+                "gift": "ore_sapphire",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "valen"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 453,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "errol"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "peas",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "simmered_daikon",
+                "npc": "vera"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "caldosian_chocolate_cake",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "strawberries_and_cream",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "coin_lump",
+                "npc": "wheedle"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "deep_sea_soup",
+                "npc": "terithia"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "sushi_platter",
+                "npc": "taliferro"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "obsidian",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "daisy",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "inchworm",
+                "npc": "luc"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "breath_of_fire",
+                "npc": "louis"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "glass",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "soy_sauce",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "carrot",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "wild_berries",
+                "npc": "darcy"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "golden_sheep_wool",
+                "npc": "merri"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "valen"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "elsie"
+            },
+            {
+                "desire": "loved",
+                "day": 454,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "liked",
+                "day": 454,
+                "gift": "marigold",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 455,
+                "gift": "spring_galette",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 455,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 455,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 455,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 455,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "loved",
+                "day": 456,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 456,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "mont_blanc",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "toasted_sunflower_seeds",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "canned_sardines&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 457,
+                "gift": "canned_sardines",
+                "npc": "terithia"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "lost_crown_of_aldaria",
+                "npc": "maple"
+            },
+            {
+                "desire": "loved",
+                "day": 457,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 458,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "wild_grapes",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "dog_treat",
+                "npc": "dozy"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "golden_cookies",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "red_snapper_sushi",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "rock_with_a_hole",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "braised_burdock",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "coffee&lt;speedy&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "golden_cookies",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "jam_sandwich",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "golden_bull_horn",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "rose",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 460,
+                "gift": "turnip",
+                "npc": "holt"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "errol"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "elsie"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "valen"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 460,
+                "gift": "green_tea&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "tea",
+                "npc": "darcy"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "salmon_sashimi",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "crispy_fried_earthshroom",
+                "npc": "vera"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "ancient_gold_coin",
+                "npc": "wheedle"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "golden_cookies",
+                "npc": "taliferro"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "rockroot",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "coconut_milk",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "golden_rabbit_wool",
+                "npc": "merri"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "copper_ingot",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "jam_sandwich",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "river_snail",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "golden_rabbit_wool",
+                "npc": "louis"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "golden_horse_hair",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "rice",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "beet",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "wintergreen_berry",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "dog_treat",
+                "npc": "dozy"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "elsie"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "valen"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "loved",
+                "day": 461,
+                "gift": "pomegranate_juice&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "liked",
+                "day": 461,
+                "gift": "ice_cream_sundae",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 462,
+                "gift": "hard_boiled_egg&lt;loveable&gt;",
+                "npc": "balor"
+            },
+            {
+                "desire": "liked",
+                "day": 464,
+                "gift": "ore_copper",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "clam_chowder",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "ore_ruby",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "candied_lemon_peel",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "ore_gold",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "tulip",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "butterfly",
+                "npc": "luc"
+            },
+            {
+                "desire": "neutral",
+                "day": 465,
+                "gift": "coconut_milk",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "sunflower",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "cucumber",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "lobster_roll",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "liked",
+                "day": 465,
+                "gift": "pumpkin",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "josephine"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "maple"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 466,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "golden_cheesecake",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "latte&lt;speedy&gt;",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "strawberry_shortcake",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "cricket",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "dell"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "orange",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "dog_treat",
+                "npc": "dozy"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "elsie"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "corn",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "ore_iron",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "tuna_sashimi",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "ore_silver",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "errol"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "shard_mass",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 467,
+                "gift": "sugar",
+                "npc": "josephine"
+            },
+            {
+                "desire": "loved",
+                "day": 467,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "valen"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "fiber",
+                "npc": "wheedle"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "cucumber_salad",
+                "npc": "vera"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "sesame_tuna_bowl",
+                "npc": "terithia"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "fried_rice",
+                "npc": "taliferro"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "ore_stone",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "salted_watermelon",
+                "npc": "nora"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "golden_horse_hair",
+                "npc": "merri"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "iron_ingot",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "ice_cream_sundae",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "hummingbird_hawk_moth",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "golden_sheep_wool",
+                "npc": "louis"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "paper",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "spicy_crab_sushi",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "sugar_cane",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "moon_fruit",
+                "npc": "darcy"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "moon_fruit",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "liked",
+                "day": 468,
+                "gift": "beet_soup",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "dell"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "errol"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 468,
+                "gift": "grilled_corn&lt;loveable&gt;",
+                "npc": "elsie"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "pomegranate",
+                "npc": "henrietta"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "pumpkin_pie",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "mackerel_sashimi",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "tomato_soup",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "sesame_tuna_bowl",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "sand_dollar",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "cave_shrimp",
+                "npc": "luc"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "coconut_milk",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "jasmine",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 474,
+                "gift": "pumpkin",
+                "npc": "holt"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "celine"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "eiland"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "adeline"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "olric"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "hayden"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "juniper"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "valen"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "ryis"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "errol"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "hemlock"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "dell"
+            },
+            {
+                "desire": "loved",
+                "day": 474,
+                "gift": "dog_treat",
+                "npc": "dozy"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "golden_rabbit_wool",
+                "npc": "wheedle"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "roasted_cauliflower",
+                "npc": "vera"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "crayfish_etouffee",
+                "npc": "terithia"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "lobster_roll",
+                "npc": "taliferro"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "weightless_stone",
+                "npc": "olric"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "simmered_daikon",
+                "npc": "nora"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "feather",
+                "npc": "merri"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "mocha&lt;speedy&gt;",
+                "npc": "march"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "trail_mix",
+                "npc": "maple"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "fuzzy_moth",
+                "npc": "luc"
+            },
+            {
+                "desire": "loved",
+                "day": 475,
+                "gift": "golden_bristle",
+                "npc": "louis"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "crystal",
+                "npc": "landen"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "honey",
+                "npc": "josephine"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "cranberry",
+                "npc": "holt"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "pomegranate",
+                "npc": "darcy"
+            },
+            {
+                "desire": "loved",
+                "day": 475,
+                "gift": "roasted_cauliflower&lt;loveable&gt;",
+                "npc": "reina"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "vegetable_pot_pie",
+                "npc": "caldarus"
+            },
+            {
+                "desire": "liked",
+                "day": 475,
+                "gift": "cranberry",
+                "npc": "henrietta"
             }
         ],
         "fish_caught": [
@@ -8144,6 +10148,162 @@ var objDataWrappedDummy = {
             {
                 "day": 439,
                 "fish": "alligator_gar"
+            },
+            {
+                "day": 441,
+                "fish": "sulfur_crab"
+            },
+            {
+                "day": 441,
+                "fish": "sulfur_crab"
+            },
+            {
+                "day": 451,
+                "fish": "koi"
+            },
+            {
+                "day": 451,
+                "fish": "tetra"
+            },
+            {
+                "day": 451,
+                "fish": "turtle"
+            },
+            {
+                "day": 451,
+                "fish": "paddlefish"
+            },
+            {
+                "day": 463,
+                "fish": "sulfur_crab"
+            },
+            {
+                "day": 464,
+                "fish": "armored_bass"
+            },
+            {
+                "day": 464,
+                "fish": "lava_piranha"
+            },
+            {
+                "day": 469,
+                "fish": "treasure_box_silver"
+            },
+            {
+                "day": 469,
+                "fish": "rock_bass"
+            },
+            {
+                "day": 469,
+                "fish": "catfish"
+            },
+            {
+                "day": 469,
+                "fish": "turtle"
+            },
+            {
+                "day": 469,
+                "fish": "treasure_box_copper"
+            },
+            {
+                "day": 469,
+                "fish": "catfish"
+            },
+            {
+                "day": 469,
+                "fish": "turtle"
+            },
+            {
+                "day": 469,
+                "fish": "roach"
+            },
+            {
+                "day": 469,
+                "fish": "bluegill"
+            },
+            {
+                "day": 469,
+                "fish": "pike"
+            },
+            {
+                "day": 469,
+                "fish": "goby"
+            },
+            {
+                "day": 469,
+                "fish": "smallmouth_bass"
+            },
+            {
+                "day": 469,
+                "fish": "pike"
+            },
+            {
+                "day": 469,
+                "fish": "carp"
+            },
+            {
+                "day": 470,
+                "fish": "sea_bream"
+            },
+            {
+                "day": 470,
+                "fish": "bluegill"
+            },
+            {
+                "day": 470,
+                "fish": "bluegill"
+            },
+            {
+                "day": 470,
+                "fish": "chub"
+            },
+            {
+                "day": 470,
+                "fish": "rock_bass"
+            },
+            {
+                "day": 470,
+                "fish": "salmon"
+            },
+            {
+                "day": 470,
+                "fish": "trout"
+            },
+            {
+                "day": 470,
+                "fish": "smallmouth_bass"
+            },
+            {
+                "day": 470,
+                "fish": "brown_trout"
+            },
+            {
+                "day": 470,
+                "fish": "snakehead"
+            },
+            {
+                "day": 470,
+                "fish": "goldfish"
+            },
+            {
+                "day": 470,
+                "fish": "treasure_box_gold"
+            },
+            {
+                "day": 470,
+                "fish": "brown_trout"
+            },
+            {
+                "day": 478,
+                "fish": "tarpon"
+            },
+            {
+                "day": 478,
+                "fish": "fiber"
+            },
+            {
+                "day": 478,
+                "fish": "bream"
             }
         ],
         "animal_eod_statuses": [
@@ -8632,9 +10792,351 @@ var objDataWrappedDummy = {
                 "outside": 0,
                 "day": 441,
                 "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 12,
+                "not_fed": 6,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 442,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 18,
+                "not_fed": 0,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 443,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 18,
+                "not_fed": 0,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 444,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 2,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 445,
+                "inside": 18
+            },
+            {
+                "pet": 8,
+                "fed": 11,
+                "not_fed": 7,
+                "not_pet": 10,
+                "outside": 0,
+                "day": 446,
+                "inside": 18
+            },
+            {
+                "pet": 8,
+                "fed": 13,
+                "not_fed": 5,
+                "not_pet": 10,
+                "outside": 0,
+                "day": 447,
+                "inside": 18
+            },
+            {
+                "pet": 0,
+                "fed": 15,
+                "not_fed": 3,
+                "not_pet": 18,
+                "outside": 0,
+                "day": 448,
+                "inside": 18
+            },
+            {
+                "pet": 17,
+                "fed": 18,
+                "not_fed": 0,
+                "not_pet": 1,
+                "outside": 0,
+                "day": 449,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 18,
+                "not_fed": 0,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 450,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 18,
+                "not_fed": 0,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 451,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 2,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 452,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 18,
+                "not_fed": 0,
+                "not_pet": 2,
+                "outside": 0,
+                "day": 453,
+                "inside": 18
+            },
+            {
+                "pet": 16,
+                "fed": 19,
+                "not_fed": 0,
+                "not_pet": 3,
+                "outside": 0,
+                "day": 454,
+                "inside": 19
+            },
+            {
+                "pet": 16,
+                "fed": 19,
+                "not_fed": 0,
+                "not_pet": 3,
+                "outside": 0,
+                "day": 455,
+                "inside": 19
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 456,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 457,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 458,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 459,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 460,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 461,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 462,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 463,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 8,
+                "not_fed": 8,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 464,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 465,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 466,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 467,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 468,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 469,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 470,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 471,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 472,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 473,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 6,
+                "not_fed": 10,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 474,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 16,
+                "day": 475,
+                "inside": 0
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 16,
+                "day": 476,
+                "inside": 0
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 477,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 15,
+                "not_fed": 1,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 478,
+                "inside": 16
+            },
+            {
+                "pet": 16,
+                "fed": 16,
+                "not_fed": 0,
+                "not_pet": 0,
+                "outside": 0,
+                "day": 479,
+                "inside": 16
             }
         ],
-        "fish_missed": 3,
+        "fish_missed": 13,
         "bugs_caught": [
             {
                 "day": 388,
@@ -8883,55 +11385,179 @@ var objDataWrappedDummy = {
             {
                 "day": 440,
                 "bug": "singing_katydid"
+            },
+            {
+                "day": 441,
+                "bug": "fire_wasp"
+            },
+            {
+                "day": 441,
+                "bug": "brightbulb_moth"
+            },
+            {
+                "day": 442,
+                "bug": "smoke_moth"
+            },
+            {
+                "day": 443,
+                "bug": "fuzzy_moth"
+            },
+            {
+                "day": 451,
+                "bug": "hermit_crab"
+            },
+            {
+                "day": 452,
+                "bug": "ant"
+            },
+            {
+                "day": 453,
+                "bug": "rhinoceros_beetle"
+            },
+            {
+                "day": 454,
+                "bug": "butterfly"
+            },
+            {
+                "day": 456,
+                "bug": "rhinoceros_beetle"
+            },
+            {
+                "day": 459,
+                "bug": "fire_wasp"
+            },
+            {
+                "day": 460,
+                "bug": "fuzzy_moth"
+            },
+            {
+                "day": 461,
+                "bug": "rhinoceros_beetle"
+            },
+            {
+                "day": 461,
+                "bug": "ladybug"
+            },
+            {
+                "day": 463,
+                "bug": "diamond_beetle"
+            },
+            {
+                "day": 463,
+                "bug": "cooktop_beetle"
+            },
+            {
+                "day": 464,
+                "bug": "smoke_moth"
+            },
+            {
+                "day": 465,
+                "bug": "orchid_mantis"
+            },
+            {
+                "day": 465,
+                "bug": "snail"
+            },
+            {
+                "day": 466,
+                "bug": "butterfly"
+            },
+            {
+                "day": 467,
+                "bug": "speedy_snail"
+            },
+            {
+                "day": 468,
+                "bug": "hummingbird_hawk_moth"
+            },
+            {
+                "day": 470,
+                "bug": "surf_beetle"
+            },
+            {
+                "day": 471,
+                "bug": "hummingbird_hawk_moth"
+            },
+            {
+                "day": 472,
+                "bug": "relic_crab"
+            },
+            {
+                "day": 472,
+                "bug": "sand_bug"
+            },
+            {
+                "day": 474,
+                "bug": "waterbug"
+            },
+            {
+                "day": 475,
+                "bug": "sand_bug"
+            },
+            {
+                "day": 475,
+                "bug": "beach_hopper"
+            },
+            {
+                "day": 477,
+                "bug": "dragonfly"
+            },
+            {
+                "day": 478,
+                "bug": "cicada"
+            },
+            {
+                "day": 478,
+                "bug": "surf_beetle"
             }
         ],
-        "bugs_missed": 23,
+        "bugs_missed": 32,
         "cutscenes_skipped": 1,
         "menu_opens": {
-            "animal": 26,
-            "baby_journal": 33,
-            "dragon_shrine": 7,
-            "renown_chest": 8,
-            "elevator": 35,
-            "store": 124,
+            "animal": 41,
+            "baby_journal": 48,
+            "dragon_shrine": 24,
+            "renown_chest": 17,
+            "elevator": 41,
+            "store": 186,
             "title": 0,
-            "spellcasting": 7,
+            "spellcasting": 9,
             "adoption": 5,
-            "sell_animals": 2,
+            "sell_animals": 3,
             "load": 0,
-            "relationships": 30,
-            "journal": 206,
-            "almanac": 10,
-            "quest_log": 91,
-            "popup": 2321,
-            "customization": 1,
-            "textbox": 287,
+            "relationships": 77,
+            "journal": 450,
+            "almanac": 13,
+            "quest_log": 123,
+            "popup": 4070,
+            "customization": 2,
+            "textbox": 1179,
             "mines": 0,
             "museum": 1,
-            "crafting": 44,
-            "storage": 793,
+            "crafting": 134,
+            "storage": 1704,
             "screen_fader": 0,
             "bugger": 0,
             "farm_building_selection": 3,
-            "fishing_indicator": 104,
-            "crafting_sequence": 34,
+            "fishing_indicator": 222,
+            "crafting_sequence": 261,
             "fps_indicator": 0,
             "credits": 0,
             "caldarus_statue_overlay": 0,
-            "dingaling": 7,
-            "eod": 54,
-            "renown_sequence": 34,
+            "dingaling": 19,
+            "eod": 92,
+            "renown_sequence": 56,
             "gossip": 0,
-            "map": 18,
-            "settings": 11,
+            "map": 44,
+            "settings": 14,
             "daycare": 0,
-            "player": 200,
-            "inbox": 5,
-            "calendar": 5,
-            "time": 34,
+            "player": 419,
+            "inbox": 13,
+            "calendar": 7,
+            "time": 261,
             "info_hud": 0,
-            "info_toasts": 7,
-            "item_toasts": 7,
+            "info_toasts": 19,
+            "item_toasts": 19,
             "toolbar": 0,
             "vitals": 0,
             "glyph_guide": 0
@@ -8939,14 +11565,21 @@ var objDataWrappedDummy = {
         "furniture_placed": {
             "blue_duck_wall_ribbon": 1,
             "worn_nightstand": 2,
+            "worn_window": 1,
             "woodcrafting_station": 1,
+            "worn_garden_lamp": 1,
             "deluxe_storage_chest_red": 2,
             "alpaca_plushie": 1,
             "deluxe_storage_chest_aqua": 4,
             "deluxe_storage_chest_blue": 3,
             "deluxe_storage_chest_purple": 4,
+            "date_photo_beach": 1,
+            "date_photo_bath": 2,
+            "date_photo_deep_woods": 5,
             "deluxe_storage_chest_black": 2,
+            "date_photo_inn": 2,
             "sheep_plushie": 1,
+            "starter_shipping_box": 1,
             "deluxe_icebox_white": 1,
             "deluxe_icebox_pink": 1,
             "farm_bridge": 1,
@@ -8956,10 +11589,12 @@ var objDataWrappedDummy = {
             "journal": 2,
             "basic_wood_chest_dark": 1,
             "basic_wood_chest_medium": 1,
+            "spring_potted_tree_pink": 1,
             "cavern_crystal_lamp_pink": 3,
             "haunted_attic_bed_dark": 2,
             "cavern_crystal_lamp_purple": 3,
-            "spring_festival_flower_chest": 2,
+            "spring_festival_flower_chest": 3,
+            "large_fluffy_rug_black": 1,
             "basic_wood_chest_green": 5,
             "basic_wood_chest_blue": 1,
             "basic_wood_chest_purple": 1,
@@ -9015,10 +11650,63 @@ var objDataWrappedDummy = {
             {
                 "level": 85,
                 "day": 441
+            },
+            {
+                "level": 86,
+                "day": 455
+            },
+            {
+                "level": 87,
+                "day": 456
+            },
+            {
+                "level": 88,
+                "day": 457
+            },
+            {
+                "level": 89,
+                "day": 462
+            },
+            {
+                "level": 90,
+                "day": 469
+            },
+            {
+                "level": 91,
+                "day": 469
+            },
+            {
+                "level": 92,
+                "day": 473
+            },
+            {
+                "level": 93,
+                "day": 475
             }
         ],
-        "wishing_well_uses": [],
-        "manual_saves": 5,
+        "wishing_well_uses": [
+            {
+                "day": 469,
+                "cost": 500,
+                "prize": "berry_bowl"
+            },
+            {
+                "day": 472,
+                "cost": 500,
+                "prize": "berry_bowl"
+            },
+            {
+                "day": 475,
+                "cost": 500,
+                "prize": "silver_ingot"
+            },
+            {
+                "day": 476,
+                "cost": 500,
+                "prize": "spicy_cheddar_biscuit"
+            }
+        ],
+        "manual_saves": 7,
         "end_of_day_balance": [
             {
                 "day": 387,
@@ -9235,6 +11923,158 @@ var objDataWrappedDummy = {
             {
                 "day": 440,
                 "balance": 133370
+            },
+            {
+                "day": 441,
+                "balance": 133869
+            },
+            {
+                "day": 442,
+                "balance": 135948
+            },
+            {
+                "day": 443,
+                "balance": 138862
+            },
+            {
+                "day": 444,
+                "balance": 138762
+            },
+            {
+                "day": 445,
+                "balance": 138762
+            },
+            {
+                "day": 446,
+                "balance": 138769
+            },
+            {
+                "day": 447,
+                "balance": 139119
+            },
+            {
+                "day": 448,
+                "balance": 129119
+            },
+            {
+                "day": 449,
+                "balance": 104099
+            },
+            {
+                "day": 450,
+                "balance": 104099
+            },
+            {
+                "day": 451,
+                "balance": 99158
+            },
+            {
+                "day": 452,
+                "balance": 95558
+            },
+            {
+                "day": 453,
+                "balance": 95564
+            },
+            {
+                "day": 454,
+                "balance": 91975
+            },
+            {
+                "day": 455,
+                "balance": 140529
+            },
+            {
+                "day": 456,
+                "balance": 158559
+            },
+            {
+                "day": 457,
+                "balance": 158598
+            },
+            {
+                "day": 458,
+                "balance": 155898
+            },
+            {
+                "day": 459,
+                "balance": 155194
+            },
+            {
+                "day": 460,
+                "balance": 158236
+            },
+            {
+                "day": 461,
+                "balance": 159996
+            },
+            {
+                "day": 462,
+                "balance": 159996
+            },
+            {
+                "day": 463,
+                "balance": 160887
+            },
+            {
+                "day": 464,
+                "balance": 161001
+            },
+            {
+                "day": 465,
+                "balance": 156946
+            },
+            {
+                "day": 466,
+                "balance": 173041
+            },
+            {
+                "day": 467,
+                "balance": 173041
+            },
+            {
+                "day": 468,
+                "balance": 216101
+            },
+            {
+                "day": 469,
+                "balance": 216351
+            },
+            {
+                "day": 470,
+                "balance": 217026
+            },
+            {
+                "day": 471,
+                "balance": 223378
+            },
+            {
+                "day": 472,
+                "balance": 257624
+            },
+            {
+                "day": 473,
+                "balance": 274445
+            },
+            {
+                "day": 474,
+                "balance": 286674
+            },
+            {
+                "day": 475,
+                "balance": 181559
+            },
+            {
+                "day": 476,
+                "balance": 182274
+            },
+            {
+                "day": 477,
+                "balance": 171074
+            },
+            {
+                "day": 478,
+                "balance": 166496
             }
         ],
         "end_of_day_stats": [
@@ -9453,6 +12293,158 @@ var objDataWrappedDummy = {
             {
                 "stamina": 171,
                 "health": 164
+            },
+            {
+                "stamina": 42,
+                "health": 164
+            },
+            {
+                "stamina": 0,
+                "health": 161
+            },
+            {
+                "stamina": 133,
+                "health": 123
+            },
+            {
+                "stamina": 174,
+                "health": 164
+            },
+            {
+                "stamina": 182,
+                "health": 164
+            },
+            {
+                "stamina": 187,
+                "health": 164
+            },
+            {
+                "stamina": 238,
+                "health": 164
+            },
+            {
+                "stamina": 185,
+                "health": 164
+            },
+            {
+                "stamina": 61,
+                "health": 164
+            },
+            {
+                "stamina": 96,
+                "health": 164
+            },
+            {
+                "stamina": 179,
+                "health": 164
+            },
+            {
+                "stamina": 76,
+                "health": 164
+            },
+            {
+                "stamina": 73,
+                "health": 164
+            },
+            {
+                "stamina": 238,
+                "health": 164
+            },
+            {
+                "stamina": 75,
+                "health": 164
+            },
+            {
+                "stamina": 80,
+                "health": 164
+            },
+            {
+                "stamina": 216,
+                "health": 164
+            },
+            {
+                "stamina": 235,
+                "health": 164
+            },
+            {
+                "stamina": 0,
+                "health": 163
+            },
+            {
+                "stamina": 114,
+                "health": 164
+            },
+            {
+                "stamina": 124,
+                "health": 164
+            },
+            {
+                "stamina": 0,
+                "health": 164
+            },
+            {
+                "stamina": 0,
+                "health": 164
+            },
+            {
+                "stamina": 43,
+                "health": 164
+            },
+            {
+                "stamina": 153,
+                "health": 164
+            },
+            {
+                "stamina": 239,
+                "health": 164
+            },
+            {
+                "stamina": 238,
+                "health": 164
+            },
+            {
+                "stamina": 162,
+                "health": 164
+            },
+            {
+                "stamina": 87,
+                "health": 164
+            },
+            {
+                "stamina": 0,
+                "health": 164
+            },
+            {
+                "stamina": 161,
+                "health": 164
+            },
+            {
+                "stamina": 60,
+                "health": 164
+            },
+            {
+                "stamina": 239,
+                "health": 164
+            },
+            {
+                "stamina": 152,
+                "health": 164
+            },
+            {
+                "stamina": 229,
+                "health": 164
+            },
+            {
+                "stamina": 110,
+                "health": 164
+            },
+            {
+                "stamina": 26,
+                "health": 164
+            },
+            {
+                "stamina": 195,
+                "health": 164
             }
         ],
         "chicken_statue_uses": [
@@ -9570,6 +12562,76 @@ var objDataWrappedDummy = {
                 "currency": 10,
                 "day": 413,
                 "prize": "deluxe_hay"
+            },
+            {
+                "prize": "golden_cow_milk",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "golden_cheese",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "ultimate_small_animal_feed",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "ultimate_small_animal_feed",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "purse&lt;2000&gt;",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "golden_cheesecake",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "ultimate_small_animal_feed",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "golden_butter",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "golden_cheesecake",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "purse&lt;2000&gt;",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "purse&lt;2000&gt;",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "golden_mayonnaise",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "purse&lt;2000&gt;",
+                "day": 466,
+                "currency": 100
+            },
+            {
+                "prize": "cow_milk",
+                "day": 466,
+                "currency": 10
             }
         ],
         "bedtimes": [
@@ -9626,7 +12688,45 @@ var objDataWrappedDummy = {
             "11:03pm",
             "11:39pm",
             "12:20am",
-            "5:23pm"
+            "5:23pm",
+            "1:13am",
+            "2:00am",
+            "1:29am",
+            "11:48pm",
+            "10:39pm",
+            "12:39am",
+            "9:28pm",
+            "1:06am",
+            "11:46pm",
+            "6:07pm",
+            "8:29pm",
+            "8:11pm",
+            "10:46pm",
+            "12:45am",
+            "8:57pm",
+            "11:36pm",
+            "10:51pm",
+            "9:53pm",
+            "1:01am",
+            "12:21am",
+            "11:38pm",
+            "6:48pm",
+            "12:41am",
+            "12:07am",
+            "11:42pm",
+            "10:30pm",
+            "9:31pm",
+            "8:09pm",
+            "12:45am",
+            "8:33pm",
+            "7:30pm",
+            "11:21pm",
+            "4:04pm",
+            "2:01am",
+            "1:51am",
+            "9:17pm",
+            "11:29pm",
+            "7:57pm"
         ],
         "perk_acquirements": [
             {
@@ -9652,6 +12752,14 @@ var objDataWrappedDummy = {
             {
                 "day": 423,
                 "perk": "earthly_essence"
+            },
+            {
+                "day": 443,
+                "perk": "fairy_cooking"
+            },
+            {
+                "day": 468,
+                "perk": "mist_sight"
             }
         ],
         "forageable_harvests": [
@@ -10098,35 +13206,619 @@ var objDataWrappedDummy = {
             {
                 "day": 432,
                 "forageable": "bell_berry"
+            },
+            {
+                "day": 441,
+                "forageable": "burdock_root"
+            },
+            {
+                "day": 441,
+                "forageable": "ash_mushroom"
+            },
+            {
+                "day": 441,
+                "forageable": "breath_of_fire"
+            },
+            {
+                "day": 442,
+                "forageable": "lava_chestnuts"
+            },
+            {
+                "day": 442,
+                "forageable": "flame_pepper"
+            },
+            {
+                "day": 442,
+                "forageable": "ash_mushroom"
+            },
+            {
+                "day": 442,
+                "forageable": "hot_potato"
+            },
+            {
+                "day": 449,
+                "forageable": "fennel"
+            },
+            {
+                "day": 449,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 449,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 449,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 449,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 449,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 449,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 449,
+                "forageable": "nettle"
+            },
+            {
+                "day": 449,
+                "forageable": "morel_mushroom"
+            },
+            {
+                "day": 449,
+                "forageable": "wild_leek"
+            },
+            {
+                "day": 450,
+                "forageable": "fiddlehead"
+            },
+            {
+                "day": 451,
+                "forageable": "tulip"
+            },
+            {
+                "day": 451,
+                "forageable": "chickpea"
+            },
+            {
+                "day": 451,
+                "forageable": "tulip"
+            },
+            {
+                "day": 451,
+                "forageable": "tulip"
+            },
+            {
+                "day": 451,
+                "forageable": "wild_berries"
+            },
+            {
+                "day": 451,
+                "forageable": "wild_berries"
+            },
+            {
+                "day": 451,
+                "forageable": "wild_berries"
+            },
+            {
+                "day": 451,
+                "forageable": "sand_dollar"
+            },
+            {
+                "day": 451,
+                "forageable": "wild_leek"
+            },
+            {
+                "day": 452,
+                "forageable": "wild_leek"
+            },
+            {
+                "day": 452,
+                "forageable": "morel_mushroom"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 452,
+                "forageable": "fiddlehead"
+            },
+            {
+                "day": 453,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 453,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 453,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 453,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 453,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 453,
+                "forageable": "bell_berry"
+            },
+            {
+                "day": 453,
+                "forageable": "wild_berries"
+            },
+            {
+                "day": 453,
+                "forageable": "wild_berries"
+            },
+            {
+                "day": 453,
+                "forageable": "wild_berries"
+            },
+            {
+                "day": 453,
+                "forageable": "wild_leek"
+            },
+            {
+                "day": 455,
+                "forageable": "snowdrop_anemone"
+            },
+            {
+                "day": 455,
+                "forageable": "fiddlehead"
+            },
+            {
+                "day": 455,
+                "forageable": "cattail"
+            },
+            {
+                "day": 455,
+                "forageable": "cattail"
+            },
+            {
+                "day": 455,
+                "forageable": "cattail"
+            },
+            {
+                "day": 455,
+                "forageable": "cattail"
+            },
+            {
+                "day": 455,
+                "forageable": "wild_leek"
+            },
+            {
+                "day": 456,
+                "forageable": "morel_mushroom"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 456,
+                "forageable": "fennel"
+            },
+            {
+                "day": 456,
+                "forageable": "nettle"
+            },
+            {
+                "day": 456,
+                "forageable": "lilac"
+            },
+            {
+                "day": 456,
+                "forageable": "lilac"
+            },
+            {
+                "day": 457,
+                "forageable": "chickpea"
+            },
+            {
+                "day": 458,
+                "forageable": "fiddlehead"
+            },
+            {
+                "day": 459,
+                "forageable": "nettle"
+            },
+            {
+                "day": 459,
+                "forageable": "flame_pepper"
+            },
+            {
+                "day": 459,
+                "forageable": "breath_of_fire"
+            },
+            {
+                "day": 459,
+                "forageable": "hot_potato"
+            },
+            {
+                "day": 460,
+                "forageable": "chickpea"
+            },
+            {
+                "day": 463,
+                "forageable": "ash_mushroom"
+            },
+            {
+                "day": 463,
+                "forageable": "flame_pepper"
+            },
+            {
+                "day": 463,
+                "forageable": "breath_of_fire"
+            },
+            {
+                "day": 463,
+                "forageable": "breath_of_fire"
+            },
+            {
+                "day": 464,
+                "forageable": "flame_pepper"
+            },
+            {
+                "day": 464,
+                "forageable": "hot_potato"
+            },
+            {
+                "day": 464,
+                "forageable": "flame_pepper"
+            },
+            {
+                "day": 469,
+                "forageable": "fiddlehead"
+            },
+            {
+                "day": 469,
+                "forageable": "wild_leek"
+            },
+            {
+                "day": 469,
+                "forageable": "lilac"
+            },
+            {
+                "day": 470,
+                "forageable": "fennel"
+            },
+            {
+                "day": 471,
+                "forageable": "pink_scallop_shell"
+            },
+            {
+                "day": 471,
+                "forageable": "pink_scallop_shell"
+            },
+            {
+                "day": 472,
+                "forageable": "blue_conch_shell"
+            },
+            {
+                "day": 472,
+                "forageable": "sand_dollar"
+            },
+            {
+                "day": 472,
+                "forageable": "nettle"
+            },
+            {
+                "day": 474,
+                "forageable": "chickpea"
+            },
+            {
+                "day": 475,
+                "forageable": "pink_scallop_shell"
+            },
+            {
+                "day": 475,
+                "forageable": "spirula_shell"
+            },
+            {
+                "day": 475,
+                "forageable": "fennel"
+            },
+            {
+                "day": 476,
+                "forageable": "chickpea"
+            },
+            {
+                "day": 476,
+                "forageable": "chickpea"
+            },
+            {
+                "day": 476,
+                "forageable": "fennel"
+            },
+            {
+                "day": 477,
+                "forageable": "sage"
+            },
+            {
+                "day": 477,
+                "forageable": "catmint"
+            },
+            {
+                "day": 478,
+                "forageable": "oregano"
+            },
+            {
+                "day": 478,
+                "forageable": "oregano"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "water_chestnut"
+            },
+            {
+                "day": 478,
+                "forageable": "wild_grapes"
+            },
+            {
+                "day": 478,
+                "forageable": "wild_grapes"
+            },
+            {
+                "day": 478,
+                "forageable": "wild_grapes"
+            },
+            {
+                "day": 478,
+                "forageable": "wild_grapes"
+            },
+            {
+                "day": 478,
+                "forageable": "wild_grapes"
+            },
+            {
+                "day": 478,
+                "forageable": "wild_grapes"
+            },
+            {
+                "day": 478,
+                "forageable": "catmint"
+            },
+            {
+                "day": 478,
+                "forageable": "oregano"
+            },
+            {
+                "day": 478,
+                "forageable": "catmint"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
+            },
+            {
+                "day": 478,
+                "forageable": "rose"
             }
         ],
-        "enemies_killed": 126,
+        "enemies_killed": 233,
         "perks": {
-            "forager": 11,
-            "waste_not_want_not": 20,
-            "copper_expert": 8,
-            "iron_expert": 8,
-            "time_sensitive": 576,
-            "time_sensitive_two": 576,
+            "forager": 18,
+            "waste_not_want_not": 106,
+            "copper_expert": 10,
+            "iron_expert": 10,
+            "time_sensitive": 846,
+            "time_sensitive_two": 846,
             "sharp_blacksmithing": 0,
             "fortified_blacksmithing": 0,
-            "prepared_picker": 1,
+            "prepared_picker": 4,
             "aquatic_antiquities": 0,
-            "working_with_the_grain": 0,
-            "quality_crafting": 0,
-            "natural": 12,
+            "working_with_the_grain": 23,
+            "quality_crafting": 43,
+            "natural": 16,
             "leech_blacksmithing": 0,
             "lightweight_blacksmithing": 0,
-            "stoneturner": 13,
-            "eastern_road_scholar": 54,
+            "stoneturner": 17,
+            "eastern_road_scholar": 92,
             "iron_hound": 0,
             "true_blue": 0,
-            "treasured": 21,
+            "treasured": 36,
             "mine_time": 0,
             "quick_footed": 0,
-            "generous_in_defeat": 125,
+            "generous_in_defeat": 235,
             "shrine_savant": 1,
-            "feed_prepper": 509,
+            "feed_prepper": 998,
             "currency_of_care": 0,
             "gemini_season": 0,
             "museum_quality_one": 0,
@@ -10135,20 +13827,20 @@ var objDataWrappedDummy = {
             "weedline_watcher": 0,
             "unexpected_haul": 0,
             "speedy_cooking": 0,
-            "loveable_cooking": 0,
-            "fairy_cooking": 0,
+            "loveable_cooking": 161,
+            "fairy_cooking": 1,
             "hasty_blacksmithing": 0,
             "tireless_blacksmithing": 0,
-            "silver_expert": 8,
+            "silver_expert": 10,
             "back_in_vogue": 0,
-            "time_sensitive_three": 576,
-            "empowered": 822,
-            "empowered_two": 822,
-            "dinner_for_two": 15,
-            "a_way_to_the_heart": 0,
-            "full_class": 330,
-            "wind_down": 1363,
-            "time_to_eat_three": 5474,
+            "time_sensitive_three": 846,
+            "empowered": 2004,
+            "empowered_two": 2004,
+            "dinner_for_two": 46,
+            "a_way_to_the_heart": 151,
+            "full_class": 476,
+            "wind_down": 2524,
+            "time_to_eat_three": 25063,
             "resonance": 0,
             "natural_beauty": 0,
             "well_placed": 0,
@@ -10159,8 +13851,8 @@ var objDataWrappedDummy = {
             "out_of_juice": 0,
             "material_world": 0,
             "steady_supplies": 0,
-            "set_pieces": 0,
-            "hammer_timing_three": 3663,
+            "set_pieces": 14,
+            "hammer_timing_three": 173184,
             "living_off_the_land": 0,
             "superb_sower": 0,
             "harvest_time": 0,
@@ -10170,67 +13862,67 @@ var objDataWrappedDummy = {
             "earth_breaker_two": 0,
             "silver_seeker": 0,
             "fantastic_finds": 0,
-            "currency_of_care_two": 46,
+            "currency_of_care_two": 85,
             "currency_of_care_three": 0,
             "discount_treats": 0,
-            "barnyard_bounty_two": 83,
+            "barnyard_bounty_two": 147,
             "ancient_inspiration": 0,
             "underground_inspiration": 0,
-            "deliberate_debris": 54,
+            "deliberate_debris": 92,
             "snacktime": 0,
             "caffeine_crimes": 0,
-            "appealing_reeling_two": 43,
-            "frenzy": 0,
-            "what_a_catch": 0,
+            "appealing_reeling_two": 92,
+            "frenzy": 1,
+            "what_a_catch": 3,
             "the_bell_tolls": 0,
-            "maximum_milling": 11,
-            "barnyard_bounty_three": 38,
-            "sickle_sword": 6,
-            "ornamental": 2,
+            "maximum_milling": 20,
+            "barnyard_bounty_three": 68,
+            "sickle_sword": 26,
+            "ornamental": 6,
             "perfect_pollinators": 0,
             "lost_to_history": 0,
-            "former_farmers": 54,
+            "former_farmers": 92,
             "horsepower": 0,
             "harvest_horse": 0,
             "nice_ride": 0,
             "museum_quality_three": 0,
             "sonic_boom": 0,
             "gift_exchange": 0,
-            "mist_sight": 0,
+            "mist_sight": 8,
             "taste_maker": 0,
-            "earthly_essence": 3,
+            "earthly_essence": 10,
             "abyssal_ascendence": 0,
             "playtime_one": 0,
-            "gold_expert": 172,
-            "time_sensitive_four": 576,
+            "gold_expert": 383,
+            "time_sensitive_four": 846,
             "back_in_vogue_two": 0,
-            "magical_meals": 0,
-            "good_as_gold": 7,
-            "refined_rockery": 1327,
-            "break_one_get_two": 10,
+            "magical_meals": 2,
+            "good_as_gold": 18,
+            "refined_rockery": 1638,
+            "break_one_get_two": 14,
             "lucky_haul_two": 0,
-            "lumberjack_two": 289,
+            "lumberjack_two": 411,
             "magic_design": 0,
             "natural_beauty_two": 0,
             "guardians_shield_two": 0,
             "true_strike_two": 0,
-            "working_with_the_grain_two": 0,
+            "working_with_the_grain_two": 23,
             "legendary": 0,
-            "a_day_well_spent": 9,
-            "feeding_frenzy": 4,
-            "barnyard_bounty": 104,
+            "a_day_well_spent": 14,
+            "feeding_frenzy": 11,
+            "barnyard_bounty": 185,
             "appealing_reeling": 0,
-            "catch_of_the_day": 4,
-            "close_bond": 666,
+            "catch_of_the_day": 8,
+            "close_bond": 1174,
             "welcome_home": 0,
             "welcome_home_two": 0,
-            "green_thumb": 107,
-            "nice_swing": 0,
-            "refreshing": 771,
+            "green_thumb": 200,
+            "nice_swing": 13,
+            "refreshing": 1234,
             "sunken_treasure": 0,
             "sunken_secrets": 0,
             "unpeatable": 0,
-            "western_ruins_scholar": 54,
+            "western_ruins_scholar": 92,
             "guardians_shield": 0,
             "jump_attack": 0,
             "dungeon_delicacies": 0,
@@ -10240,57 +13932,57 @@ var objDataWrappedDummy = {
             "well_armed": 0,
             "reclaimer": 0,
             "treasure_hunter": 0,
-            "bountiful": 164,
-            "heavy_duty": 0,
-            "well_watered": 1009,
-            "school_crasher": 0,
+            "bountiful": 270,
+            "heavy_duty": 4,
+            "well_watered": 1690,
+            "school_crasher": 9,
             "lucky_haul": 0,
             "restorative_cooking": 0,
             "seasoned": 0,
-            "time_to_eat": 5474,
-            "time_to_eat_two": 5474,
-            "award_winning": 0,
+            "time_to_eat": 25063,
+            "time_to_eat_two": 25063,
+            "award_winning": 51,
             "likable_cooking": 0,
-            "hammer_timing": 3663,
-            "hammer_timing_two": 3663,
-            "lumberjack": 7,
-            "masonry": 114
+            "hammer_timing": 173184,
+            "hammer_timing_two": 173184,
+            "lumberjack": 11,
+            "masonry": 168
         },
         "purchases": [
             {
                 "day": 387,
                 "type": "store",
-                "item": "RecipeLearner<craft_closed_sewing_tin_v1>",
+                "item": "RecipeLearner&lt;craft_closed_sewing_tin_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 387,
                 "type": "store",
-                "item": "RecipeLearner<craft_yarn_basket_v1>",
+                "item": "RecipeLearner&lt;craft_yarn_basket_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 387,
                 "type": "store",
-                "item": "RecipeLearner<craft_fabric_rack_v1>",
+                "item": "RecipeLearner&lt;craft_fabric_rack_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 387,
                 "type": "store",
-                "item": "RecipeLearner<craft_rug_v1>",
+                "item": "RecipeLearner&lt;craft_rug_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 387,
                 "type": "store",
-                "item": "RecipeLearner<spring_galette>",
+                "item": "RecipeLearner&lt;spring_galette&gt;",
                 "cost": 800
             },
             {
                 "day": 387,
                 "type": "store",
-                "item": "RecipeLearner<veggie_sub_sandwich>",
+                "item": "RecipeLearner&lt;veggie_sub_sandwich&gt;",
                 "cost": 800
             },
             {
@@ -10416,97 +14108,97 @@ var objDataWrappedDummy = {
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<roasted_rice_tea>",
+                "item": "RecipeLearner&lt;roasted_rice_tea&gt;",
                 "cost": 150
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<glass_lemonade>",
+                "item": "RecipeLearner&lt;glass_lemonade&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<notepad_white>",
+                "item": "RecipeLearner&lt;notepad_white&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<wine_glass_rose>",
+                "item": "RecipeLearner&lt;wine_glass_rose&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<paper_stack>",
+                "item": "RecipeLearner&lt;paper_stack&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<haunted_attic_table_dusty>",
+                "item": "RecipeLearner&lt;haunted_attic_table_dusty&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<jar_medium>",
+                "item": "RecipeLearner&lt;jar_medium&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<glass_whisky>",
+                "item": "RecipeLearner&lt;glass_whisky&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<box_small_v1>",
+                "item": "RecipeLearner&lt;box_small_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<counter_cottage_v1>",
+                "item": "RecipeLearner&lt;counter_cottage_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<bathroom_wall_towel_blue>",
+                "item": "RecipeLearner&lt;bathroom_wall_towel_blue&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<bakery_cutting_board_pastel>",
+                "item": "RecipeLearner&lt;bakery_cutting_board_pastel&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<haunted_attic_wall_shelf_dusty>",
+                "item": "RecipeLearner&lt;haunted_attic_wall_shelf_dusty&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<glass_water>",
+                "item": "RecipeLearner&lt;glass_water&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<candle_chamberstick>",
+                "item": "RecipeLearner&lt;candle_chamberstick&gt;",
                 "cost": 300
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "RecipeLearner<basket>",
+                "item": "RecipeLearner&lt;basket&gt;",
                 "cost": 300
             },
             {
@@ -10740,31 +14432,31 @@ var objDataWrappedDummy = {
             {
                 "day": 391,
                 "type": "store",
-                "item": "Cosmetic<head_crown>",
+                "item": "Cosmetic&lt;head_crown&gt;",
                 "cost": 10000
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "Cosmetic<back_gear_mini_wings>",
+                "item": "Cosmetic&lt;back_gear_mini_wings&gt;",
                 "cost": 30000
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "Cosmetic<back_gear_ornate_round_shield>",
+                "item": "Cosmetic&lt;back_gear_ornate_round_shield&gt;",
                 "cost": 10000
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "Cosmetic<back_gear_ornate_shield>",
+                "item": "Cosmetic&lt;back_gear_ornate_shield&gt;",
                 "cost": 10000
             },
             {
                 "day": 391,
                 "type": "store",
-                "item": "Cosmetic<back_gear_sheathed_sword>",
+                "item": "Cosmetic&lt;back_gear_sheathed_sword&gt;",
                 "cost": 20000
             },
             {
@@ -16848,37 +20540,37 @@ var objDataWrappedDummy = {
             {
                 "day": 402,
                 "type": "store",
-                "item": "RecipeLearner<apple_honey_curry>",
+                "item": "RecipeLearner&lt;apple_honey_curry&gt;",
                 "cost": 800
             },
             {
                 "day": 402,
                 "type": "store",
-                "item": "RecipeLearner<harvest_plate>",
+                "item": "RecipeLearner&lt;harvest_plate&gt;",
                 "cost": 800
             },
             {
                 "day": 402,
                 "type": "store",
-                "item": "Cosmetic<head_berry_crown>",
+                "item": "Cosmetic&lt;head_berry_crown&gt;",
                 "cost": 1000
             },
             {
                 "day": 402,
                 "type": "store",
-                "item": "Cosmetic<head_berry_hat>",
+                "item": "Cosmetic&lt;head_berry_hat&gt;",
                 "cost": 1000
             },
             {
                 "day": 402,
                 "type": "store",
-                "item": "Cosmetic<dress_berry>",
+                "item": "Cosmetic&lt;dress_berry&gt;",
                 "cost": 1000
             },
             {
                 "day": 402,
                 "type": "store",
-                "item": "Cosmetic<suit_berry>",
+                "item": "Cosmetic&lt;suit_berry&gt;",
                 "cost": 1000
             },
             {
@@ -16896,157 +20588,157 @@ var objDataWrappedDummy = {
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<tea_black>",
+                "item": "RecipeLearner&lt;tea_black&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<wine_glass_red>",
+                "item": "RecipeLearner&lt;wine_glass_red&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<green_bottle>",
+                "item": "RecipeLearner&lt;green_bottle&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<glass_cocktail>",
+                "item": "RecipeLearner&lt;glass_cocktail&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<jar_small>",
+                "item": "RecipeLearner&lt;jar_small&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<haunted_attic_armoire_dusty>",
+                "item": "RecipeLearner&lt;haunted_attic_armoire_dusty&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<haunted_attic_rocking_chair_dusty>",
+                "item": "RecipeLearner&lt;haunted_attic_rocking_chair_dusty&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<tea_green>",
+                "item": "RecipeLearner&lt;tea_green&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<beer_mug>",
+                "item": "RecipeLearner&lt;beer_mug&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<box_medium_v1>",
+                "item": "RecipeLearner&lt;box_medium_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<glass_absinthe>",
+                "item": "RecipeLearner&lt;glass_absinthe&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<counter_cottage_v2>",
+                "item": "RecipeLearner&lt;counter_cottage_v2&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<jar_pair>",
+                "item": "RecipeLearner&lt;jar_pair&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<counter_basic_v1>",
+                "item": "RecipeLearner&lt;counter_basic_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 405,
                 "type": "store",
-                "item": "RecipeLearner<counter_cabin_oak>",
+                "item": "RecipeLearner&lt;counter_cabin_oak&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<toilet_black>",
+                "item": "RecipeLearner&lt;toilet_black&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<counter_cake_chocolate>",
+                "item": "RecipeLearner&lt;counter_cake_chocolate&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<jar_large>",
+                "item": "RecipeLearner&lt;jar_large&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<counter_cake_double_chocolate>",
+                "item": "RecipeLearner&lt;counter_cake_double_chocolate&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<candle>",
+                "item": "RecipeLearner&lt;candle&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<wine_glass_white>",
+                "item": "RecipeLearner&lt;wine_glass_white&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<counter_cabin_cherry>",
+                "item": "RecipeLearner&lt;counter_cabin_cherry&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<large_fluffy_rug_blue>",
+                "item": "RecipeLearner&lt;large_fluffy_rug_blue&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<small_vase_v1>",
+                "item": "RecipeLearner&lt;small_vase_v1&gt;",
                 "cost": 300
             },
             {
                 "day": 412,
                 "type": "store",
-                "item": "RecipeLearner<glass_milk>",
+                "item": "RecipeLearner&lt;glass_milk&gt;",
                 "cost": 300
             },
             {
                 "day": 419,
                 "type": "store",
-                "item": "RecipeLearner<gold_floor_mirror>",
+                "item": "RecipeLearner&lt;gold_floor_mirror&gt;",
                 "cost": 300
             },
             {
@@ -18172,109 +21864,109 @@ var objDataWrappedDummy = {
             {
                 "day": 430,
                 "type": "store",
-                "item": "RecipeLearner<golden_cookies>",
+                "item": "RecipeLearner&lt;golden_cookies&gt;",
                 "cost": 800
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "RecipeLearner<golden_cheesecake>",
+                "item": "RecipeLearner&lt;golden_cheesecake&gt;",
                 "cost": 800
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<chicken/apple>",
+                "item": "AnimalCosmetic&lt;chicken/apple&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<chicken/baseball_cap>",
+                "item": "AnimalCosmetic&lt;chicken/baseball_cap&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<cow/bell_collar>",
+                "item": "AnimalCosmetic&lt;cow/bell_collar&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<cow/laurels>",
+                "item": "AnimalCosmetic&lt;cow/laurels&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<horse/monocle>",
+                "item": "AnimalCosmetic&lt;horse/monocle&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<horse/bandana>",
+                "item": "AnimalCosmetic&lt;horse/bandana&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<duck/backwards_cap>",
+                "item": "AnimalCosmetic&lt;duck/backwards_cap&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<rabbit/chef_hat>",
+                "item": "AnimalCosmetic&lt;rabbit/chef_hat&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<rabbit/cowboy_hat>",
+                "item": "AnimalCosmetic&lt;rabbit/cowboy_hat&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<sheep/green_visor>",
+                "item": "AnimalCosmetic&lt;sheep/green_visor&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<duck/strawberry_hat>",
+                "item": "AnimalCosmetic&lt;duck/strawberry_hat&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<sheep/hot_water_bottle>",
+                "item": "AnimalCosmetic&lt;sheep/hot_water_bottle&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<alpaca/beret>",
+                "item": "AnimalCosmetic&lt;alpaca/beret&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<capybara/bat_wings>",
+                "item": "AnimalCosmetic&lt;capybara/bat_wings&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<capybara/angel_wings>",
+                "item": "AnimalCosmetic&lt;capybara/angel_wings&gt;",
                 "cost": 500
             },
             {
                 "day": 430,
                 "type": "store",
-                "item": "AnimalCosmetic<alpaca/lacy_collar>",
+                "item": "AnimalCosmetic&lt;alpaca/lacy_collar&gt;",
                 "cost": 500
             },
             {
@@ -20076,83 +23768,3929 @@ var objDataWrappedDummy = {
                 "type": "store",
                 "item": "plum_blossom",
                 "cost": 120
+            },
+            {
+                "day": 444,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 448,
+                "type": "store",
+                "item": "sweet_sesame_balls",
+                "cost": 500
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_strawberry",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_turnip",
+                "cost": 25
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_potato",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_cabbage",
+                "cost": 70
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_carrot",
+                "cost": 40
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_peas",
+                "cost": 300
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_daffodil",
+                "cost": 15
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 449,
+                "type": "store",
+                "item": "seed_tulip",
+                "cost": 20
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "water_chestnut",
+                "cost": 25
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 451,
+                "type": "store",
+                "item": "spirit_mushroom",
+                "cost": 100
+            },
+            {
+                "day": 452,
+                "type": "store",
+                "item": "sushi_platter",
+                "cost": 1000
+            },
+            {
+                "day": 452,
+                "type": "store",
+                "item": "sushi_platter",
+                "cost": 1000
+            },
+            {
+                "day": 452,
+                "type": "store",
+                "item": "turnip_and_potato_gratin",
+                "cost": 600
+            },
+            {
+                "day": 452,
+                "type": "store",
+                "item": "turnip_and_potato_gratin",
+                "cost": 600
+            },
+            {
+                "day": 452,
+                "type": "store",
+                "item": "lavender_tea",
+                "cost": 200
+            },
+            {
+                "day": 452,
+                "type": "store",
+                "item": "lavender_tea",
+                "cost": 200
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "red_snapper_sushi",
+                "cost": 250
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "red_snapper_sushi",
+                "cost": 250
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "fish_stew",
+                "cost": 200
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "fish_stew",
+                "cost": 200
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "lemonade",
+                "cost": 200
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "lemonade",
+                "cost": 200
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "spicy_corn",
+                "cost": 340
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "spicy_corn",
+                "cost": 340
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "vegetable_pot_pie",
+                "cost": 1400
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "vegetable_pot_pie",
+                "cost": 1400
+            },
+            {
+                "day": 454,
+                "type": "store",
+                "item": "vegetable_pot_pie",
+                "cost": 1400
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 456,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 458,
+                "type": "store",
+                "item": "jam_sandwich",
+                "cost": 300
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 459,
+                "type": "store",
+                "item": "fennel",
+                "cost": 80
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 460,
+                "type": "store",
+                "item": "dog_treat",
+                "cost": 100
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "scent_of_spring&lt;loveable&gt;",
+                "cost": 800
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "spring_festival_planter",
+                "cost": 500
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "spring_festival_basket",
+                "cost": 500
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "spring_festival_wreath",
+                "cost": 200
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "spring_festival_large_planter",
+                "cost": 700
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "floral_tea&lt;likeable&gt;",
+                "cost": 400
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "coffee&lt;speedy&gt;",
+                "cost": 100
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "tulip_cake&lt;likeable&gt;",
+                "cost": 400
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "mocha&lt;speedy&gt;",
+                "cost": 275
+            },
+            {
+                "day": 465,
+                "type": "store",
+                "item": "rose_tea",
+                "cost": 180
+            },
+            {
+                "day": 475,
+                "type": "store",
+                "item": "bath_soap",
+                "cost": 100000
+            },
+            {
+                "day": 475,
+                "type": "store",
+                "item": "fast_food&lt;stacking_speed&gt;",
+                "cost": 5000
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "seed_tomato",
+                "cost": 300
+            },
+            {
+                "day": 477,
+                "type": "store",
+                "item": "hoe_gold",
+                "cost": 4000
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "grass_seed",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
+            },
+            {
+                "day": 478,
+                "type": "store",
+                "item": "hay",
+                "cost": 50
             }
         ],
         "deaths": 0,
         "location_visits": {
             "aldaria": 0,
             "bathhouse_bedroom": 1,
-            "bathhouse_bath": 0,
-            "dragonsworn_glade": 0,
+            "bathhouse_bath": 1,
+            "dragonsworn_glade": 6,
             "player_home_west": 1,
-            "player_home_east": 0,
+            "player_home_east": 6,
             "player_home_north": 0,
             "landens_house_f2": 0,
-            "mines_entry": 28,
+            "mines_entry": 40,
             "abandoned_mines": 0,
-            "blacksmith_room_left": 0,
+            "blacksmith_room_left": 1,
             "blacksmith_room_right": 0,
-            "jo_and_hemlocks_room": 0,
+            "jo_and_hemlocks_room": 1,
             "reinas_room": 0,
-            "balors_room": 0,
+            "balors_room": 3,
             "clinic_f2": 0,
             "clinic_b1": 0,
-            "farm": 379,
+            "farm": 801,
             "small_coop": 0,
             "medium_coop": 9,
-            "large_coop": 15,
+            "large_coop": 28,
             "small_barn": 0,
-            "small_greenhouse": 2,
-            "medium_barn": 8,
-            "large_barn": 22,
+            "small_greenhouse": 7,
+            "medium_barn": 10,
+            "large_barn": 43,
             "large_greenhouse": 0,
             "errols_bedroom": 0,
-            "haydens_bedroom": 0,
-            "inn": 5,
+            "haydens_bedroom": 1,
+            "inn": 46,
             "holt_and_noras_bedroom": 0,
             "seridias_chamber": 0,
-            "dungeon": 53,
+            "dungeon": 79,
             "water_seal": 0,
             "earth_seal": 0,
-            "fire_seal": 1,
+            "fire_seal": 3,
             "ruins_seal": 1,
             "narrows_secret": 1,
             "beach_secret": 0,
-            "mill": 4,
+            "mill": 10,
             "abandoned_pit": 0,
-            "adelines_bedroom": 0,
-            "adelines_office": 1,
-            "bathhouse": 2,
-            "bathhouse_change_room": 0,
-            "beach": 2,
-            "blacksmith_store": 3,
-            "caldarus_house": 15,
-            "celines_room": 2,
-            "clinic_f1": 0,
-            "western_ruins": 1,
-            "deep_woods": 863,
+            "adelines_bedroom": 2,
+            "adelines_office": 3,
+            "bathhouse": 15,
+            "bathhouse_change_room": 2,
+            "beach": 11,
+            "blacksmith_store": 8,
+            "caldarus_house": 33,
+            "celines_room": 4,
+            "clinic_f1": 1,
+            "western_ruins": 16,
+            "deep_woods": 904,
             "dells_bedroom": 0,
-            "town": 154,
-            "eastern_road": 880,
-            "eilands_bedroom": 0,
-            "eilands_office": 0,
-            "elsies_bedroom": 0,
+            "town": 417,
+            "eastern_road": 928,
+            "eilands_bedroom": 1,
+            "eilands_office": 1,
+            "elsies_bedroom": 1,
             "general_store_home": 0,
-            "summit": 2,
-            "general_store_store": 7,
-            "haydens_farm": 16,
-            "haydens_house": 8,
-            "landens_house_f1": 5,
-            "player_home": 216,
-            "lucs_room": 0,
-            "manor_house_dining_room": 1,
-            "manor_house_entry": 3,
+            "summit": 30,
+            "general_store_store": 19,
+            "haydens_farm": 88,
+            "haydens_house": 28,
+            "landens_house_f1": 6,
+            "player_home": 477,
+            "lucs_room": 1,
+            "manor_house_dining_room": 4,
+            "manor_house_entry": 14,
             "player_home_upper_central": 0,
-            "maples_room": 0,
+            "maples_room": 1,
             "player_home_upper_east": 0,
-            "museum_entry": 13,
+            "museum_entry": 21,
             "player_home_upper_west": 0,
-            "narrows": 59,
+            "narrows": 201,
             "terithias_house": 1
         },
         "tree_harvests": [
@@ -20387,6 +27925,290 @@ var objDataWrappedDummy = {
             {
                 "day": 427,
                 "item": "pinecone"
+            },
+            {
+                "day": 449,
+                "item": "acorn"
+            },
+            {
+                "day": 455,
+                "item": "acorn"
+            },
+            {
+                "day": 455,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "pinecone"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "acorn"
+            },
+            {
+                "day": 456,
+                "item": "cherry"
+            },
+            {
+                "day": 456,
+                "item": "cherry"
+            },
+            {
+                "day": 456,
+                "item": "cherry"
+            },
+            {
+                "day": 456,
+                "item": "lemon"
+            },
+            {
+                "day": 456,
+                "item": "lemon"
+            },
+            {
+                "day": 456,
+                "item": "lemon"
+            },
+            {
+                "day": 459,
+                "item": "cherry"
+            },
+            {
+                "day": 459,
+                "item": "cherry"
+            },
+            {
+                "day": 459,
+                "item": "cherry"
+            },
+            {
+                "day": 459,
+                "item": "lemon"
+            },
+            {
+                "day": 459,
+                "item": "lemon"
+            },
+            {
+                "day": 459,
+                "item": "lemon"
+            },
+            {
+                "day": 462,
+                "item": "acorn"
+            },
+            {
+                "day": 462,
+                "item": "pinecone"
+            },
+            {
+                "day": 462,
+                "item": "acorn"
+            },
+            {
+                "day": 462,
+                "item": "pinecone"
+            },
+            {
+                "day": 462,
+                "item": "pinecone"
+            },
+            {
+                "day": 462,
+                "item": "pinecone"
+            },
+            {
+                "day": 462,
+                "item": "acorn"
+            },
+            {
+                "day": 469,
+                "item": "lemon"
+            },
+            {
+                "day": 469,
+                "item": "lemon"
+            },
+            {
+                "day": 469,
+                "item": "lemon"
+            },
+            {
+                "day": 472,
+                "item": "lemon"
+            },
+            {
+                "day": 472,
+                "item": "lemon"
+            },
+            {
+                "day": 472,
+                "item": "lemon"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "coconut"
+            },
+            {
+                "day": 478,
+                "item": "peach"
+            },
+            {
+                "day": 478,
+                "item": "peach"
+            },
+            {
+                "day": 478,
+                "item": "peach"
             }
         ]
     }

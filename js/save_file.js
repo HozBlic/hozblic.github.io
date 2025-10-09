@@ -158,7 +158,6 @@ $(function () {
 
         $('#extracting_alert').removeClass('show').removeClass('green').removeClass('yellow');
         $("#output").hide();
-
         let file = event.target.files[0];
         if (!file) return;
 
@@ -178,6 +177,7 @@ $(function () {
                 try {
                     decodedText = new TextDecoder("iso-8859-1").decode(inflated);
                 } catch (utf8Error) {
+                    $('#json_button_popup').removeClass('loading');
                     $('#extracting_alert').addClass('show');
                     $('#extracting_alert .info').html(utf8Error.message);
                     return;
@@ -274,6 +274,7 @@ $(function () {
                 }
 
             } catch (err) {
+                $('#json_button_popup').removeClass('loading');
                 $('#extracting_alert').addClass('show');
                 $('#extracting_alert .info').html("Failed to decode file:\n" + err);
             }
