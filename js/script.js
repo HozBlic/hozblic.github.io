@@ -356,8 +356,12 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false) {
     return $objTip.prop('outerHTML');
 }
 function createGiftItem(arrGifts, strCharacterKey, $objParent) {
+
+    var arrAllGifts = [];
+
     arrGifts.forEach(function (strGiftKey) {
         strID = strCharacterKey + '_' + strGiftKey;
+        arrAllGifts.push(strID);
         strDataCbx = $($.parseHTML(objItems[strGiftKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
 
         $objParent.append(`<div class="item ${objItems[strGiftKey]['spoiler'] || objItems[strGiftKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
@@ -379,6 +383,8 @@ function createGiftItem(arrGifts, strCharacterKey, $objParent) {
             maxWidth: 370
         });
     });
+
+    return arrAllGifts;
 }
 
 function changeSort(objElem) {
@@ -555,12 +561,11 @@ function saveJson() {
         );
 
         $('#popup-accept').off('click').on('click', function () {
-            if (isJsonString($('#output').html()))
-            {
+            if (isJsonString($('#output').html())) {
                 var jsonBlocks = JSON.parse($('#output').html());
                 cleanForWrapped(jsonBlocks);
             }
-           
+
             objMistriaData = objNewData;
             objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
             objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
@@ -894,7 +899,7 @@ function loadMenuItems() {
     tippy('#older_browsers', {
         content: 'Does not work in older browsers',
     });
-    tippy('#save_file', {
+    tippy('#save_file_icon', {
         content: `<p class="save_file">AppData is a hidden folder, you must turn on "show hidden files" manually, if you haven't already done so.</p>
                   <p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>
                   <p class="save_file">Tested and should work on v.0.14.0 save files</p>`,
@@ -903,6 +908,9 @@ function loadMenuItems() {
 }
 
 function loadGiftTab() {
+
+    let arrAllItems = [];
+
     Object.entries(objCharacters).forEach(([strCharacterKey, objCharacter]) => {
         var $divCharacter = $('<div>', { 'class': 'character', 'id': `character_${strCharacterKey}` });
 
@@ -930,13 +938,17 @@ function loadGiftTab() {
         var $divLoved = $('<div>', { 'class': 'loved_gifts' });
         $divLoved.append('<div class="giftset">Loved</div>');
         $divCharacter.append($divLoved);
-        createGiftItem(objCharacter['loved'], strCharacterKey, $divLoved)
+        let arrLovedGifts = createGiftItem(objCharacter['loved'], strCharacterKey, $divLoved);
+        arrAllItems = arrAllItems.concat(arrLovedGifts);
 
         var $divLiked = $('<div>', { 'class': 'liked_gifts' });
         $divLiked.append('<div class="giftset">Liked</div>');
         $divCharacter.append($divLiked);
-        createGiftItem(objCharacter['liked'], strCharacterKey, $divLiked)
+        let arrLikedGifts = createGiftItem(objCharacter['liked'], strCharacterKey, $divLiked)
+        arrAllItems = arrAllItems.concat(arrLikedGifts);
     });
+
+    addSelectAllAndAlert('characters', 'gift_chb', arrAllItems);
 
     $('.gift_chb:checkbox').change(function () {
         if ($(this).is(':checked')) {
@@ -944,6 +956,15 @@ function loadGiftTab() {
         } else {
             objMistriaData.gifts.delete($(this).val())
         }
+         
+        if ($(`.gift_chb`).length == $(`.gift_chb:checked`).length) {
+            $('#selectAll').prop('checked', true);
+        } else {
+            $('#selectAll').prop('checked', false);
+        }
+
+        $('.alert_import').remove();
+
         updateStatistics();
         saveData();
     });
@@ -957,8 +978,10 @@ function loadGiftTab() {
 }
 
 function loadMuseumTab() {
-    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
 
+    let arrAllItems = [];
+
+    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
         var $divWing = $('<div>', { 'class': 'wing', 'id': `wing_${strWingKey}` });
 
         $divWing.append(` 
@@ -971,8 +994,6 @@ function loadMuseumTab() {
 
         var $divSets = $('<div>', { 'class': 'sets' });
         $divWing.append($divSets);
-
-
 
         let sortedEntriesSets = Object.entries(objWing['sets']);
         if (objMistriaData.sort === 'az') {
@@ -1016,6 +1037,7 @@ function loadMuseumTab() {
 
             objSet['items'].forEach((item) => {
                 strID = item;
+                arrAllItems.push(strID);
                 strDataCbx = $($.parseHTML(objItems[item]['tip'])).text().replace(/["'&<>]/g, '').trim();
 
                 $divitems.append(`<div class="item ${objItems[item]['spoiler'] || objItems[item]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
@@ -1028,8 +1050,6 @@ function loadMuseumTab() {
                                
                             </div>`);
 
-
-
                 const template = $(`#tip_${strID}`)[0];
                 template.style.display = 'block';
                 tippy(`#museum_label_${strID}`, {
@@ -1040,6 +1060,8 @@ function loadMuseumTab() {
             });
         });
     });
+
+    addSelectAllAndAlert('museum', 'museum_chb', arrAllItems);
 
     $('.museum_chb:checkbox').change(function () {
         var bolAdd = true;
@@ -1062,6 +1084,14 @@ function loadMuseumTab() {
             objTippy.setContent($(objTippy.props.content)[0]);
         });
 
+        if ($(`.museum_chb`).length == $(`.museum_chb:checked`).length) {
+            $('#selectAll').prop('checked', true);
+        } else {
+            $('#selectAll').prop('checked', false);
+        }
+
+        $('.alert_import').remove();
+
         updateStatistics();
         saveData();
     });
@@ -1079,25 +1109,7 @@ function loadMuseumTab() {
 
 function loadAlmanacTab() {
 
-    if (objMistriaData.almanac.size === 0) {
-        var strAlert = `
-        <div class="alert show yellow" style="grid-column: 1/-1; height: min-content;">
-            <div class="icon yellow">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
-                    viewBox="0 0 24.002 24">
-                    <path id="notice"
-                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
-                        transform="translate(1990.001 7446)" fill="#242424"></path>
-                </svg>
-            </div>
-            <div class="info" style="line-height: 18px;">
-                <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a> to get aquired items! </br>
-            </div>
-        </div>`;
-
-        $('#almanac').append(strAlert);
-    }
-
+    let arrAllItems = [];
     Object.entries(objAlmanac).forEach(([strSectionKey, objSection]) => {
         strUsedTag = objSection['tags'][0];
 
@@ -1116,8 +1128,8 @@ function loadAlmanacTab() {
 
         objTagItems[strUsedTag].forEach((strItemKey) => {
             strID = strItemKey;
+            arrAllItems.push(strID);
             strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-
 
             if ('tags' in objItems[strItemKey]) {
                 if (objItems[strItemKey]['tags'].includes('furniture')) {
@@ -1126,8 +1138,8 @@ function loadAlmanacTab() {
             }
 
             $divitems.append(`<div class="item ${objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="almanac_chb" ${objMistriaData.almanac.has(strID) ? 'checked' : ''} type="checkbox" id="set_${strID}" name="almanac" value="${strID}">
-                                <label for="set_${strID}" class="has_tip" id="almanac_label_${strID}">
+                                <input class="almanac_chb" ${objMistriaData.almanac.has(strID) ? 'checked' : ''} type="checkbox" id="set_${strSectionKey}_${strID}" name="almanac" value="${strID}">
+                                <label for="set_${strSectionKey}_${strID}" class="has_tip" id="almanac_label_set_${strSectionKey}_${strID}">
                                     <div class="image ${objItems[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strItemKey}.png)"></div>
                                     <div class="name">${objItems[strItemKey]['name']}</div>
                                 </label>
@@ -1141,7 +1153,7 @@ function loadAlmanacTab() {
 
             const template = $(`#tip_${strID}`)[0];
             template.style.display = 'block';
-            tippy(`#almanac_label_${strID}`, {
+            tippy(`#almanac_label_set_${strSectionKey}_${strID}`, {
                 content: template,
                 interactive: true,
                 maxWidth: 370
@@ -1149,15 +1161,26 @@ function loadAlmanacTab() {
         });
     });
 
+    addSelectAllAndAlert('almanac', 'almanac_chb', arrAllItems);
 
     $('.almanac_chb:checkbox').change(function () {
-        var bolAdd = true;
-        if ($(this).is(':checked')) {
+        let strItemKey = $(this).attr('value');
+        let bolChecked = $(this).is(':checked');
+        $(`.almanac_chb[value='${strItemKey}']`).prop('checked', bolChecked);
+
+        if (bolChecked) {
             objMistriaData.almanac.add($(this).val());
         } else {
             objMistriaData.almanac.delete($(this).val());
-            bolAdd = false;
         }
+
+        if ($(`.almanac_chb`).length == $(`.almanac_chb:checked`).length) {
+            $('#selectAll').prop('checked', true);
+        } else {
+            $('#selectAll').prop('checked', false);
+        }
+
+        $('.alert_import').remove();
 
         updateStatistics();
         saveData();
@@ -1169,6 +1192,65 @@ function loadAlmanacTab() {
 
     changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
     checkAlmanacVisibility();
+}
+
+function addSelectAllAndAlert(strSectionID, strChbClass, arrAllItems) {
+
+    let strStorageKey = strSectionID;
+    if (strSectionID === 'characters') {
+        strStorageKey = 'gifts';
+    }
+    var strSelectAll = `
+        <div id="selectAllWrapper">
+            <div class="choice">
+                <input value="selectAll" type="checkbox" class="styled" id="selectAll">
+                <label for="selectAll">Select all</label>
+            </div>
+            <div>|</div>
+            <div class="choice">
+                <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a>
+            </div>
+        </div>`;
+
+    $(`#${strSectionID}`).prepend(strSelectAll);
+
+    if (objMistriaData[strStorageKey].size === 0) {
+        var strAlert = `
+        <div class="alert show yellow alert_import" style="grid-column: 1/-1; height: min-content;">
+            <div class="icon yellow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                    viewBox="0 0 24.002 24">
+                    <path
+                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                        transform="translate(1990.001 7446)" fill="#242424"></path>
+                </svg>
+            </div>
+            <div class="info" style="line-height: 18px;">
+                <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a> to get aquired items! </br>
+            </div>
+        </div>`;
+
+        $(`#${strSectionID}`).prepend(strAlert);
+    }
+
+    if ($(`.${strChbClass}`).length == $(`.${strChbClass}:checked`).length) {
+        $('#selectAll').prop('checked', true);
+    }
+
+    $('#selectAll').off('change').change(function () {
+        $('.alert_import').remove();
+
+        let bolChecked = $(this).is(':checked');
+        $(`.${strChbClass}`).prop('checked', bolChecked);
+
+        if (bolChecked) {
+            arrAllItems.forEach(strItemKey => objMistriaData[strStorageKey].add(strItemKey))
+        } else {
+            arrAllItems.forEach(strItemKey => objMistriaData[strStorageKey].delete(strItemKey))
+        }
+        updateStatistics();
+        saveData();
+    });
 }
 
 var arrPalette = ["#4a4e69", "#726d81", "#b0a4ab", "#c6bbbe", "#e7dedb"];
@@ -1206,7 +1288,7 @@ function loadWrappedTab() {
                     <div class="icon yellow">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
                             viewBox="0 0 24.002 24">
-                            <path id="notice"
+                            <path
                                 d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
                                 transform="translate(1990.001 7446)" fill="#242424"></path>
                         </svg>
@@ -4301,9 +4383,7 @@ function loadTab(strTabKey) {
     allCharts = {};
     let start = Date.now();
 
-    if (!['animal', 'cooking', 'woodworking'].includes(strTabKey)) {
-        $(`.tab_window.${strTabKey}_show .tab_content`).html('');
-    }
+    $(`.tab_content`).html('');
 
     $('#page').removeClass(arrTabs.join(' '));
     $('#page').addClass(strTabKey);
