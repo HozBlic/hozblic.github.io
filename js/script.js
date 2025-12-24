@@ -1011,9 +1011,9 @@ function loadGiftTab() {
             }
         }
 
-        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${strCharacterKey}.png"></div>
+        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
                                 <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
-                                    <img class="char_img_mini" src="images/mini_profiles/${strCharacterKey}.png">
+                                    <img class="char_img_mini" src="images/mini_profiles/${objCharacter['name']}.png">
                                    ${objCharacter['name']}
                                 </a>
                             ` );
