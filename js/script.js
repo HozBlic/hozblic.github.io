@@ -1011,9 +1011,9 @@ function loadGiftTab() {
             }
         }
 
-        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
+        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${capitalizeFirstLetter(strCharacterKey)}.png"></div>
                                 <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
-                                    <img class="char_img_mini" src="images/mini_profiles/${objCharacter['name']}.png">
+                                    <img class="char_img_mini" src="images/mini_profiles/${capitalizeFirstLetter(strCharacterKey)}.png">
                                    ${objCharacter['name']}
                                 </a>
                             ` );
