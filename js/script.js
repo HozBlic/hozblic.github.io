@@ -19,6 +19,8 @@ const arrObtain = [
     "Balor's Wagon",
     "Blacksmith",
     "Carpenter",
+    "Vera's Stall",
+    "Wheedle's Stall",
     "Darcy's Stall",
     "General Store",
     "Hayden's Shop",
@@ -66,6 +68,8 @@ const arrObtainEasy = [
     "Cooking",
     "Cutting Grass",
     "Cutting trees/branches",
+    "Vera's Stall",
+    "Wheedle's Stall",
     "Darcy's Stall",
     "Destroying crystals",
     "Diving",
@@ -234,12 +238,18 @@ Object.filter = (obj, predicate) =>
         .filter(key => predicate(obj[key]))
         .reduce((res, key) => (res[key] = obj[key], res), {});
 
+const eqSet = (xs, ys) =>
+    xs.size === ys.size &&
+    [...xs].every((x) => ys.has(x));
 
 var objMistriaData;
+var arrCustomizationDefault = Object.keys(objAccessories).filter(item => objAccessories[item]['default_unlocked']);
+
 var objMistriaDataDefault = {
     gifts: [],
     museum: [],
     almanac: [],
+    customization: arrCustomizationDefault,
     options: ['mode_dark']
 };
 
@@ -247,6 +257,7 @@ var arrTabs = [
     'gift',
     'museum',
     'almanac',
+    'customization',
     'wrapped',
     'cooking',
     'woodworking',
@@ -290,6 +301,7 @@ if (objDataWrapped === null) {
 }
 
 var objTips = {
+    'price': 'Price',
     'museumSet': 'Museum Set',
     'recipeSource': 'Recipe Source',
     'ingredients': 'Ingredients',
@@ -299,19 +311,42 @@ var objTips = {
     'season': 'Season',
     'weather': 'Weather',
     'time': 'Time',
+    'spawnCondition': 'Spawn condition',
     'fishing': 'Fishing pole',
     'diving': 'Diveable'
 }
 
-function createTip(strID, strItemKey, bolMuseum = false, strBuff = false) {
+function createTip(strID, strItemKey, bolMuseum = false, strBuff = false, bolAccessories = false) {
 
     var strTableHTML = '';
     var bolDonatable = false;
-    var objInfo = objItems[strItemKey]
+    var objInfo = {}
+    if (bolAccessories) {
+        objInfo = objAccessories[strItemKey]
+    } else {
+        objInfo = objItems[strItemKey]
+    }
+
     if ('tip_extra' in objInfo) {
         strTableHTML = '<table>';
+
         Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
             if (strTipKey in objInfo['tip_extra']) {
+                if (strTipKey == 'ingredients') {
+                    strTableHTML += `<tr><td>${strTipValue}</td><td>`;
+                    objInfo['tip_extra'][strTipKey].forEach(function (objItem, index) {
+                        if ('item' in objItem) {
+                            intCount = objItem['count'];
+                            strItemKey = objItem['item'];
+                            strItemName = objItems[strItemKey]['name'];
+                            strItemUrl = objItems[strItemKey]['url'];
+                            strTableHTML += `<a href="${strItemUrl}" title="${strItemName}"><img alt="${strItemName}.png" src="images/items/${strItemKey}.png"></a><a href="${strItemUrl}" title="${strItemName}">${strItemName}</a> (${intCount})<br>`;
+                        }
+                    });
+                    strTableHTML = strTableHTML.substring(0, strTableHTML.length - 4); // remove last <br>
+                    strTableHTML += `</td></tr>`;
+                    return;
+                }
                 if (strTipKey == 'museumSet') {
                     bolDonatable = true;
                     if (bolMuseum) {
@@ -329,10 +364,11 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false) {
         strChecked = 'checked';
     }
 
+
     var strTipHTML = $(`<div id="tip_${strID}" class="tip_wrap">
                         <div class="tip">
                             <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
-                                <a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objInfo['url']}">${objInfo['name']}</a>
+                                ${bolAccessories ? objInfo['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objInfo['url']}">${objInfo['name']}</a>`}
                                 ${bolDonatable ? '<img src="images/museum.png">' : ''}
                             </div>
                             ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
@@ -342,16 +378,7 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false) {
                         </div>
                     </div>`);
 
-
     var $objTip = $(strTipHTML);
-
-    $objTip.find('.no-wrap').each(function () {
-        $(this).html($(this).html().replaceAll(',', 'comma'))
-    });
-    $objTip.html($objTip.html().replaceAll(',', '<br>'))
-    $objTip.find('.no-wrap').each(function () {
-        $(this).html($(this).html().replaceAll('comma', ','))
-    });
 
     return $objTip.prop('outerHTML');
 }
@@ -403,6 +430,10 @@ function changeSort(objElem) {
 
     changeSortForObject(objMistriaData, objCharacters, '.character', '#character_', objCharOrder);
     changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
+    changeSortForObject(objMistriaData, objCustomization, '.category', '#category_');
+    Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
+        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
+    });
     changeSortForObject(objMistriaData, objMuseum, '.wing', '#wing_');
     Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
         changeSortForObject(objMistriaData, objWing['sets'], `.wing_${strWingKey} .set`, `#set_${strWingKey}_`);
@@ -460,6 +491,9 @@ function compareData(strJson) {
     if (! 'museum' in objOldData) {
         objOldData.museum = [];
     }
+    if (! 'customization' in objOldData) {
+        objOldData.customization = objMistriaDataDefault.customization;
+    }
     if (! 'almanac' in objOldData) {
         objOldData.almanac = [];
     }
@@ -469,6 +503,8 @@ function compareData(strJson) {
     objNewData.gifts = [...new Set(objNewData.gifts)];
     objOldData.museum = [...new Set(objOldData.museum)];
     objNewData.museum = [...new Set(objNewData.museum)];
+    objOldData.customization = [...new Set(objOldData.customization)];
+    objNewData.customization = [...new Set(objNewData.customization)];
     objOldData.almanac = [...new Set(objOldData.almanac)];
     objNewData.almanac = [...new Set(objNewData.almanac)];
     objOldData.options = [...new Set(objOldData.options)];
@@ -479,6 +515,8 @@ function compareData(strJson) {
     const intNewGiftCount = Array.isArray(objNewData.gifts) ? objNewData.gifts.length : 0;
     const intOldMuseumCount = Array.isArray(objOldData.museum) ? objOldData.museum.length : 0;
     const intNewMuseumCount = Array.isArray(objNewData.museum) ? objNewData.museum.length : 0;
+    const intOldCustomizationCount = Array.isArray(objOldData.customization) ? objOldData.customization.length : 0;
+    const intNewCustomizationCount = Array.isArray(objNewData.customization) ? objNewData.customization.length : 0;
     const intOldAlmanacCount = Array.isArray(objOldData.almanac) ? objOldData.almanac.length : 0;
     const intNewAlmanacCount = Array.isArray(objNewData.almanac) ? objNewData.almanac.length : 0;
     const intOldToggleCount = Array.isArray(objOldData.options) ? objOldData.options.length : 0;
@@ -522,6 +560,12 @@ function compareData(strJson) {
         arrChanges.push(`<b>Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}</b>`);
     } else {
         arrChanges.push(`Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}`);
+    }
+    if (JSON.stringify(objOldData.customization) !== JSON.stringify(objNewData.customization)) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Obtained customization items: ${intOldCustomizationCount} -> ${intNewCustomizationCount}</b>`);
+    } else {
+        arrChanges.push(`Obtained customization items: ${intOldCustomizationCount} -> ${intNewCustomizationCount}`);
     }
     if (JSON.stringify(objOldData.almanac) !== JSON.stringify(objNewData.almanac)) {
         bolChangesDetected = true;
@@ -570,6 +614,7 @@ function saveJson() {
             objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
             objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
             objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
+            objMistriaData.customization = ('customization' in objMistriaData ? new Set(objMistriaData.customization) : new Set(objMistriaDataDefault.customization));
             objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
             saveData();
             window.location.reload();
@@ -662,6 +707,7 @@ function loadData() {
     objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
     objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
     objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
+    objMistriaData.customization = ('customization' in objMistriaData ? new Set(objMistriaData.customization) : new Set(objMistriaDataDefault.customization));
     objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
 }
 
@@ -675,6 +721,9 @@ function saveData() {
     }
     if ('museum' in objMistriaData) {
         objMistriaData.museum = [...objMistriaData.museum];
+    }
+    if ('customization' in objMistriaData) {
+        objMistriaData.customization = [...objMistriaData.customization];
     }
     if ('almanac' in objMistriaData) {
         objMistriaData.almanac = [...objMistriaData.almanac];
@@ -696,7 +745,7 @@ function loadMenuItems() {
         if (strObtain === 'spacing') {
             $('#checkbox_filter_items').append(`<div class="spacing"></div>`)
         } else {
-            $('#checkbox_filter_items').append(`<input value="${strObtain}" type='checkbox' class="styled obtain_cbx" id="chb_${i}"></input>
+            $('#checkbox_filter_items').append(`<input value="${strObtain.replace('\'', '')}" type='checkbox' class="styled obtain_cbx" id="chb_${i}"></input>
                 <label for="chb_${i}">${strObtain}</label>`);
         }
     });
@@ -786,6 +835,17 @@ function loadMenuItems() {
                 }
             });
 
+            $('#customization .item').filter(function () {
+                const text = $(this).text().trim().toLowerCase();
+                const matchesAll = keywords.some(word => text.includes(word));
+
+                if (matchesAll) {
+                    $(this).removeClass('hide_search');
+                } else {
+                    $(this).addClass('hide_search');
+                }
+            });
+
             keywords.forEach(word => {
                 $('.tab_content').highlight(word);
             });
@@ -807,6 +867,30 @@ function loadMenuItems() {
         $('#almanac .section').each(function () {
             if (value !== '') {
                 if ($(this).find('.section_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:visible').length) {
+                $(this).hide()
+            }
+        });
+
+        $('#customization .category .subcategory').each(function () {
+            if (value !== '') {
+                if ($(this).find('.subcategory_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:visible').length) {
+                $(this).hide()
+            }
+        });
+
+        $('#customization .category').each(function () {
+            if (value !== '') {
+                if ($(this).find('.category_name').html().includes('highlight')) {
                     $(this).find('.item').removeClass('hide_search');
                 }
             }
@@ -927,9 +1011,9 @@ function loadGiftTab() {
             }
         }
 
-        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${objCharacter['name']}.png"></div>
+        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${strCharacterKey}.png"></div>
                                 <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
-                                    <img class="char_img_mini" src="images/mini_profiles/${objCharacter['name']}.png">
+                                    <img class="char_img_mini" src="images/mini_profiles/${strCharacterKey}.png">
                                    ${objCharacter['name']}
                                 </a>
                             ` );
@@ -956,7 +1040,7 @@ function loadGiftTab() {
         } else {
             objMistriaData.gifts.delete($(this).val())
         }
-         
+
         if ($(`.gift_chb`).length == $(`.gift_chb:checked`).length) {
             $('#selectAll').prop('checked', true);
         } else {
@@ -971,6 +1055,9 @@ function loadGiftTab() {
 
     if ($('#search_items').val() != '') {
         $('#search_items').keyup();
+    }
+    if ($('input.obtain_cbx:checked').length) {
+        $('input.obtain_cbx').change()
     }
 
     changeSortForObject(objMistriaData, objCharacters, '.character', '#character_', objCharOrder);
@@ -1099,6 +1186,9 @@ function loadMuseumTab() {
     if ($('#search_items').val() != '') {
         $('#search_items').keyup();
     }
+    if ($('input.obtain_cbx:checked').length) {
+        $('input.obtain_cbx').change()
+    }
 
     changeSortForObject(objMistriaData, objMuseum, '.wing', '#wing_');
     Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
@@ -1107,6 +1197,126 @@ function loadMuseumTab() {
     checkMuseumVisibility();
 }
 
+function loadCustomizationTab() {
+
+    let arrAllItems = [];
+
+    Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
+
+        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCategoryKey}` });
+        var strCleanedName = capitalizeFirstLetter(strCategoryKey.replace('_', ' '));
+        $divCategory.append(` 
+            <div class="category_img"><img src="images/${objCategory['img']}.png"></div>
+                                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/Cosmetics" target="_blank">
+                                   ${strCleanedName}
+                                </a>
+                            ` );
+        $('#customization').append($divCategory);
+
+        var $divSubcategories = $('<div>', { 'class': 'subcategories' });
+        $divCategory.append($divSubcategories);
+
+        let sortedEntriesSubcategories = Object.entries(objCategory['subcategories']);
+        if (objMistriaData.sort === 'az') {
+            sortedEntriesSubcategories.sort((a, b) => a[1].name.localeCompare(b[1].name));
+        } else if (objMistriaData.sort === 'za') {
+            sortedEntriesSubcategories.sort((a, b) => b[1].name.localeCompare(a[1].name));
+        }
+
+        sortedEntriesSubcategories.forEach(([strSubcategoryKey, objSubcategory]) => {
+            strID = strCategoryKey + '_' + strSubcategoryKey;
+
+            var $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCategoryKey}_${strSubcategoryKey}` });
+
+            if (objSubcategory['spoiler'] || objSubcategory['nodata']) {
+                $divSubcategory.addClass('spoiler')
+            }
+
+            $divSubcategories.append($divSubcategory);
+
+            var $divitems = $('<div>', { 'class': 'subcategory_items' });
+            $divSubcategory.append($divitems);
+
+            $divitems.append(` 
+                                <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/Cosmetics"" target="_blank">
+                                   ${objSubcategory['name']}
+                                </a>
+                            ` );
+
+
+            objSubcategory['items'].forEach((item) => {
+                strID = item;
+                arrAllItems.push(strID);
+                strDataCbx = $($.parseHTML(objAccessories[item]['tip'])).text().replace(/["'&<>]/g, '').trim();
+                $divitems.append(`<div class="item ${objAccessories[item]['spoiler'] || objAccessories[item]['nodata'] ? 'spoiler' : ''}" data-cbx="${strDataCbx}">
+                                <input class="customization_chb" ${objMistriaData.customization.has(strID) ? 'checked' : ''} type="checkbox" id="subcategory_${strID}" name="customization" value="${strID}">
+                                <label for="subcategory_${strID}" class="has_tip" id="customization_label_${strID}">
+                                    <div class="image ${objAccessories[item]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/accessories/${item}.png)"></div>
+                                    <div class="name">${objAccessories[item]['name']}</div>
+                                </label>
+                                ${createTip(strID, item, false, false, true)}
+                               
+                            </div>`);
+
+                const template = $(`#tip_${strID}`)[0];
+                template.style.display = 'block';
+                tippy(`#customization_label_${strID}`, {
+                    content: template,
+                    interactive: true,
+                    maxWidth: 370
+                });
+            });
+        });
+    });
+
+    addSelectAllAndAlert('customization', 'customization_chb', arrAllItems);
+
+    $('.customization_chb:checkbox').change(function () {
+        var bolAdd = true;
+        if ($(this).is(':checked')) {
+            objMistriaData.customization.add($(this).val());
+        } else {
+            objMistriaData.customization.delete($(this).val());
+            bolAdd = false;
+        }
+
+        strItemKey = $(this).val();
+        $(`[id^="label_"][id$="_${strItemKey}"]`).each(function (index) {
+            var objLabel = $(this)[0];
+            var objTippy = objLabel._tippy;
+            if (bolAdd) {
+                $(objTippy.props.content).find('.tip_name').addClass('checked');
+            } else {
+                $(objTippy.props.content).find('.tip_name').removeClass('checked');
+            }
+            objTippy.setContent($(objTippy.props.content)[0]);
+        });
+
+        if ($(`.customization_chb`).length == $(`.customization_chb:checked`).length) {
+            $('#selectAll').prop('checked', true);
+        } else {
+            $('#selectAll').prop('checked', false);
+        }
+
+        $('.alert_import').remove();
+
+        // updateStatistics();
+        saveData();
+    });
+
+    if ($('#search_items').val() != '') {
+        $('#search_items').keyup();
+    }
+    if ($('input.obtain_cbx:checked').length) {
+        $('input.obtain_cbx').change()
+    }
+
+    changeSortForObject(objMistriaData, objCustomization, '.category', '#category_');
+    Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
+        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
+    });
+    checkMuseumVisibility();
+}
 function loadAlmanacTab() {
 
     let arrAllItems = [];
@@ -1119,6 +1329,7 @@ function loadAlmanacTab() {
                 <a class="section_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(objSection['name'])}" target="_blank">
                     <img class="section_img_mini" src="images/almanac/${strSectionKey}.png">          
                     ${objSection['name']}
+                    <div class="smaller">[${objTagItems[strUsedTag].length}]</div>
                 </a>
             ` );
         $('#almanac').append($divSection);
@@ -1189,6 +1400,9 @@ function loadAlmanacTab() {
     if ($('#search_items').val() != '') {
         $('#search_items').keyup();
     }
+    if ($('input.obtain_cbx:checked').length) {
+        $('input.obtain_cbx').change()
+    }
 
     changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
     checkAlmanacVisibility();
@@ -1214,7 +1428,7 @@ function addSelectAllAndAlert(strSectionID, strChbClass, arrAllItems) {
 
     $(`#${strSectionID}`).prepend(strSelectAll);
 
-    if (objMistriaData[strStorageKey].size === 0) {
+    if (objMistriaData[strStorageKey].size === 0 || (strStorageKey === 'customization' && eqSet(objMistriaData['customization'], new Set(objMistriaDataDefault.customization)))) {
         var strAlert = `
         <div class="alert show yellow alert_import" style="grid-column: 1/-1; height: min-content;">
             <div class="icon yellow">
@@ -4121,6 +4335,24 @@ function checkMuseumVisibility() {
     });
 }
 
+function checkCustomizationVisibility() {
+
+    $('#customization .category .subcategory').css('display', '');
+    $('#customization .category').css('display', '');
+
+    $('#customization .category .subcategory').each(function () {
+        if (!$(this).find('.item:visible').length) {
+            $(this).hide();
+        }
+    });
+
+    $('#customization .category').each(function () {
+        if (!$(this).find('.subcategory:visible').length) {
+            $(this).hide();
+        }
+    });
+}
+
 function checkAlmanacVisibility() {
     $('#almanac .section').css('display', '');
     $('#almanac .section').each(function () {
@@ -4211,7 +4443,6 @@ function updateStatistics() {
 
             objItemsAlmanacable[strSectionKey] = objItemsAlmanacable[strSectionKey] + 1;
             if (objMistriaData.almanac.has(strItemKey)) {
-
                 objItemsAlmanaced[strSectionKey] = objItemsAlmanaced[strSectionKey] + 1;
             }
         });
@@ -4397,6 +4628,9 @@ function loadTab(strTabKey) {
             case "museum":
                 loadMuseumTab();
                 break;
+            case "customization":
+                loadCustomizationTab();
+                break;
             case "almanac":
                 loadAlmanacTab();
                 break;
@@ -4431,6 +4665,7 @@ function checkAllVisibility() {
     /* TODO: check only open tab visibility */
     checkGiftVisibility();
     checkMuseumVisibility();
+    checkCustomizationVisibility();
     checkAlmanacVisibility();
     checkCookingVisibility();
     checkWoodworkingVisibility();

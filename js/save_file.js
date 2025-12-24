@@ -193,6 +193,7 @@ $(function () {
                     let objNpcs = objNPC(jsonBlocks);
                     let objMuseumData = objMUSEUM(jsonBlocks);
                     let objAquiredData = removeNonAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']);
+                    let objCustomizationData = objPLAYER(jsonBlocks)['seen_cosmetics'];
                     let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
                     let arrFound = [];
 
@@ -253,6 +254,22 @@ $(function () {
                         $('#extracting_alert .info').append("Couldn't find almanac data");
                         $('#extracting_alert .info').append("</br>");
                     }
+
+
+                    if (typeof objCustomizationData === 'object') {
+
+                        objOldData.customization = [...new Set(objCustomizationData)];
+
+                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+                        arrFound.push(`${objCustomizationData.length} cosmetics items were found `);
+
+                    } else {
+                        $('#extracting_alert').addClass('show');
+                        $('#extracting_alert .info').append("Couldn't find cosmetics data");
+                        $('#extracting_alert .info').append("</br>");
+                    }
+
 
                     if (typeof jsonBlocks === 'object') {
                         $("#output").show().text(JSON.stringify(jsonBlocks, null, 2));

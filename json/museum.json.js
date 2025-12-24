@@ -1,221 +1,5 @@
 var objMuseum =
 {
-    "archaeology": {
-        "name": "Archaeology",
-        "sets": {
-            "aldarian": {
-                "name": "Aldarian Artifact Set",
-                "items": [
-                    "aldarian_sword",
-                    "family_crest_pendant",
-                    "aldarian_war_banner",
-                    "aldarian_gauntlet",
-                    "lost_crown_of_aldaria"
-                ]
-            },
-            "caldosian": {
-                "name": "Caldosian Artifact Set",
-                "items": [
-                    "caldosian_sword",
-                    "caldosian_emperor_bust",
-                    "caldosian_breastplate",
-                    "caldosian_drinking_horn",
-                    "statuette_of_caldarus"
-                ]
-            },
-            "alda": {
-                "name": "Alda Artifact Set",
-                "items": [
-                    "alda_bronze_sword",
-                    "alda_clay_pot",
-                    "alda_feather_pendant",
-                    "alda_gem_bracelet",
-                    "alda_mural_tablet"
-                ]
-            },
-            "ancient": {
-                "name": "Ancient Artifact Set",
-                "items": [
-                    "ancient_stone_lantern",
-                    "ancient_gold_coin",
-                    "ancient_crystal_goblet",
-                    "ancient_horn_circlet",
-                    "ancient_royal_scepter"
-                ]
-            },
-            "prehistoric": {
-                "name": "Prehistoric Artifact Set",
-                "items": [
-                    "amber_trapped_insect",
-                    "trilobite_fossil",
-                    "tiny_dinosaur_skeleton",
-                    "fossilized_egg",
-                    "meteorite"
-                ]
-            },
-            "oopart": {
-                "name": "Oopart Artifact Set",
-                "items": [
-                    "muttering_cube",
-                    "weightless_stone",
-                    "completely_wrong_map",
-                    "black_tablet",
-                    "unknown_dragon_statuette"
-                ]
-            },
-            "aquatic": {
-                "name": "Aquatic Artifact Set",
-                "items": [
-                    "rubber_fish",
-                    "giant_fish_scale",
-                    "coin_lump",
-                    "water_sphere",
-                    "rusted_treasure_chest"
-                ]
-            },
-            "sunken": {
-                "name": "Sunken Artifact Set",
-                "items": [
-                    "rusted_shield",
-                    "rock_with_a_hole",
-                    "rainbow_seaweed",
-                    "criminal_confession",
-                    "mermaids_comb"
-                ]
-            },
-            "deep_woods": {
-                "name": "Deep Woods Artifact Set",
-                "items": [
-                    "petrified_wood",
-                    "gathering_basket",
-                    "crystal_apple",
-                    "metal_leaf",
-                    "fossilized_mandrake_root"
-                ]
-            },
-            "mine": {
-                "name": "Buried Artifact Set",
-                "items": [
-                    "stone_horse",
-                    "flint_arrowhead",
-                    "obsidian_blade",
-                    "diamond_backed_mirror",
-                    "shortcut_scroll"
-                ]
-            },
-            "upper_mines_artifacts": {
-                "name": "Upper Mines Artifact Set",
-                "items": [
-                    "miners_pickaxe",
-                    "tin_lunchbox",
-                    "miners_slab",
-                    "miners_rucksack",
-                    "miners_helmet"
-                ]
-            },
-            "tide_caverns": {
-                "name": "Tide Cavern Artifact Set",
-                "items": [
-                    "stone_shell",
-                    "tidestone",
-                    "starlight_coral",
-                    "dense_water",
-                    "crab_statue"
-                ]
-            },
-            "deep_earth": {
-                "name": "Deep Earth Artifact Set",
-                "items": [
-                    "really_round_rock",
-                    "seriously_square_stone",
-                    "earth_infused_stone",
-                    "faceted_rock_gem",
-                    "rock_statue"
-                ]
-            },
-            "lava_caves": {
-                "name": "Lava Caves Artifact Set",
-                "items": [
-                    "fire_crystal",
-                    "warm_rock",
-                    "red_obsidian",
-                    "rainbow_geode",
-                    "tiny_volcano"
-                ]
-            },
-            "gems_of_mistria": {
-                "name": "Gems of Mistria Set",
-                "items": [
-                    "perfect_ruby",
-                    "perfect_sapphire",
-                    "perfect_emerald",
-                    "perfect_diamond",
-                    "perfect_pink_diamond"
-                ]
-            },
-            "metals_of_mistria": {
-                "name": "Metals of Mistria Set",
-                "items": [
-                    "perfect_copper_ore",
-                    "perfect_iron_ore",
-                    "perfect_silver_ore",
-                    "perfect_gold_ore",
-                    "perfect_mistril_ore"
-                ]
-            },
-            "ritual": {
-                "name": "Ritual Artifact Set",
-                "items": [
-                    "ritual_incense_burner",
-                    "ritual_beads",
-                    "ritual_chalice",
-                    "ritual_scepter",
-                    "ritual_tablet"
-                ]
-            },
-            "mist": {
-                "name": "Mist Artifact Set",
-                "items": [
-                    "misty_black_mirror",
-                    "misty_feather_quill",
-                    "mist_crystal",
-                    "mist_scroll",
-                    "mist_flute"
-                ]
-            },
-            "vintage_farm_tools": {
-                "name": "Vintage Farm Tools Set",
-                "items": [
-                    "vintage_watering_can",
-                    "vintage_hammer",
-                    "vintage_sickle",
-                    "vintage_brush",
-                    "vintage_cow_bell"
-                ]
-            },
-            "common_finds": {
-                "name": "Dig Site Material Set",
-                "items": [
-                    "sod",
-                    "peat",
-                    "shards",
-                    "clay",
-                    "shard_mass"
-                ]
-            },
-            "dragon": {
-                "name": "Dragon",
-                "items": [
-                    "dragon_claw",
-                    "dragon_forged_bracelet",
-                    "dragon_pact_tablet",
-                    "dragon_scale",
-                    "hardened_essence"
-                ],
-                "spoiler": 1
-            }
-        }
-    },
     "insect": {
         "name": "Insects",
         "sets": {
@@ -727,6 +511,222 @@ var objMuseum =
                     "hot_potato",
                     "breath_of_fire"
                 ]
+            }
+        }
+    },
+    "archaeology": {
+        "name": "Archaeology",
+        "sets": {
+            "aldarian": {
+                "name": "Aldarian Artifact Set",
+                "items": [
+                    "aldarian_sword",
+                    "family_crest_pendant",
+                    "aldarian_war_banner",
+                    "aldarian_gauntlet",
+                    "lost_crown_of_aldaria"
+                ]
+            },
+            "caldosian": {
+                "name": "Caldosian Artifact Set",
+                "items": [
+                    "caldosian_sword",
+                    "caldosian_emperor_bust",
+                    "caldosian_breastplate",
+                    "caldosian_drinking_horn",
+                    "statuette_of_caldarus"
+                ]
+            },
+            "alda": {
+                "name": "Alda Artifact Set",
+                "items": [
+                    "alda_bronze_sword",
+                    "alda_clay_pot",
+                    "alda_feather_pendant",
+                    "alda_gem_bracelet",
+                    "alda_mural_tablet"
+                ]
+            },
+            "ancient": {
+                "name": "Ancient Artifact Set",
+                "items": [
+                    "ancient_stone_lantern",
+                    "ancient_gold_coin",
+                    "ancient_crystal_goblet",
+                    "ancient_horn_circlet",
+                    "ancient_royal_scepter"
+                ]
+            },
+            "prehistoric": {
+                "name": "Prehistoric Artifact Set",
+                "items": [
+                    "amber_trapped_insect",
+                    "trilobite_fossil",
+                    "tiny_dinosaur_skeleton",
+                    "fossilized_egg",
+                    "meteorite"
+                ]
+            },
+            "oopart": {
+                "name": "Oopart Artifact Set",
+                "items": [
+                    "muttering_cube",
+                    "weightless_stone",
+                    "completely_wrong_map",
+                    "black_tablet",
+                    "unknown_dragon_statuette"
+                ]
+            },
+            "aquatic": {
+                "name": "Aquatic Artifact Set",
+                "items": [
+                    "rubber_fish",
+                    "giant_fish_scale",
+                    "coin_lump",
+                    "water_sphere",
+                    "rusted_treasure_chest"
+                ]
+            },
+            "sunken": {
+                "name": "Sunken Artifact Set",
+                "items": [
+                    "rusted_shield",
+                    "rock_with_a_hole",
+                    "rainbow_seaweed",
+                    "criminal_confession",
+                    "mermaids_comb"
+                ]
+            },
+            "deep_woods": {
+                "name": "Deep Woods Artifact Set",
+                "items": [
+                    "petrified_wood",
+                    "gathering_basket",
+                    "crystal_apple",
+                    "metal_leaf",
+                    "fossilized_mandrake_root"
+                ]
+            },
+            "mine": {
+                "name": "Buried Artifact Set",
+                "items": [
+                    "stone_horse",
+                    "flint_arrowhead",
+                    "obsidian_blade",
+                    "diamond_backed_mirror",
+                    "shortcut_scroll"
+                ]
+            },
+            "upper_mines_artifacts": {
+                "name": "Upper Mines Artifact Set",
+                "items": [
+                    "miners_pickaxe",
+                    "tin_lunchbox",
+                    "miners_slab",
+                    "miners_rucksack",
+                    "miners_helmet"
+                ]
+            },
+            "tide_caverns": {
+                "name": "Tide Cavern Artifact Set",
+                "items": [
+                    "stone_shell",
+                    "tidestone",
+                    "starlight_coral",
+                    "dense_water",
+                    "crab_statue"
+                ]
+            },
+            "deep_earth": {
+                "name": "Deep Earth Artifact Set",
+                "items": [
+                    "really_round_rock",
+                    "seriously_square_stone",
+                    "earth_infused_stone",
+                    "faceted_rock_gem",
+                    "rock_statue"
+                ]
+            },
+            "lava_caves": {
+                "name": "Lava Caves Artifact Set",
+                "items": [
+                    "fire_crystal",
+                    "warm_rock",
+                    "red_obsidian",
+                    "rainbow_geode",
+                    "tiny_volcano"
+                ]
+            },
+            "gems_of_mistria": {
+                "name": "Gems of Mistria Set",
+                "items": [
+                    "perfect_ruby",
+                    "perfect_sapphire",
+                    "perfect_emerald",
+                    "perfect_diamond",
+                    "perfect_pink_diamond"
+                ]
+            },
+            "metals_of_mistria": {
+                "name": "Metals of Mistria Set",
+                "items": [
+                    "perfect_copper_ore",
+                    "perfect_iron_ore",
+                    "perfect_silver_ore",
+                    "perfect_gold_ore",
+                    "perfect_mistril_ore"
+                ]
+            },
+            "ritual": {
+                "name": "Ritual Artifact Set",
+                "items": [
+                    "ritual_incense_burner",
+                    "ritual_beads",
+                    "ritual_chalice",
+                    "ritual_scepter",
+                    "ritual_tablet"
+                ]
+            },
+            "mist": {
+                "name": "Mist Artifact Set",
+                "items": [
+                    "misty_black_mirror",
+                    "misty_feather_quill",
+                    "mist_crystal",
+                    "mist_scroll",
+                    "mist_flute"
+                ]
+            },
+            "vintage_farm_tools": {
+                "name": "Vintage Farm Tools Set",
+                "items": [
+                    "vintage_watering_can",
+                    "vintage_hammer",
+                    "vintage_sickle",
+                    "vintage_brush",
+                    "vintage_cow_bell"
+                ]
+            },
+            "common_finds": {
+                "name": "Dig Site Material Set",
+                "items": [
+                    "sod",
+                    "peat",
+                    "shards",
+                    "clay",
+                    "shard_mass"
+                ]
+            },
+            "dragon": {
+                "name": "Dragon",
+                "items": [
+                    "dragon_claw",
+                    "dragon_forged_bracelet",
+                    "dragon_pact_tablet",
+                    "dragon_scale",
+                    "hardened_essence"
+                ],
+                "spoiler": 1
             }
         }
     }

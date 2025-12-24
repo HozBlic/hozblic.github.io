@@ -7,11 +7,11 @@
     <base target="_blank">
     <meta name="theme-color" content="#ffffff">
 
-    <title>Fields of Mistria gift guide</title>
+    <title>Fields of Mistria Gift Guide</title>
     <meta name="description"
         content="Interactive visual gift guide, museum and progress tracker for Fields of Mistria" />
     <meta name="keywords"
-        content="Fields of Mistria, gift guide, visual, almanac, interactive, gifting, museum, tracker, completion, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
+        content="Fields of Mistria, gift guide, visual, almanac, checklist, interactive, gifting, museum, tracker, completion, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Fields of Mistria gift guide" />
@@ -39,12 +39,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="css/style.css?v=25">
+    <link rel="stylesheet" href="css/style.css?v=26">
     <link rel="stylesheet" href="css/wrapped.css">
 
-    <script type="text/javascript" src="json/items.json.js?v=10"></script>
+    <script type="text/javascript" src="json/items.json.js?v=11"></script>
+    <script type="text/javascript" src="json/accessories.json.js"></script>
     <script type="text/javascript" src="json/characters.json.js?v=4"></script>
-    <script type="text/javascript" src="json/museum.json.js?v=3"></script>
+    <script type="text/javascript" src="json/museum.json.js?v=4"></script>
+    <script type="text/javascript" src="json/customization.json.js"></script>
     <script type="text/javascript" src="json/almanac.json.js"></script>
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -57,8 +59,8 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=29"></script>
-    <script type="text/javascript" src="js/save_file.js?v=7"></script>
+    <script type="text/javascript" src="js/script.js?v=30"></script>
+    <script type="text/javascript" src="js/save_file.js?v=8"></script>
 </head>
 
 <body>
@@ -67,7 +69,7 @@
             <a href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US"><img src="images/items/rose_tea.png"></a>
         </div>
         <div id="side_menu">
-            <div id="title">Fields of Mistria<span class="version">v.0.14.0</span></div>
+            <div id="title">Fields of Mistria<span class="version">v.0.14.2</span></div>
             <div id="filter_content">
 
                 <div class="input-label">
@@ -247,6 +249,7 @@
                         <span class="museum_show">Hide donated items</span>
                         <span class="almanac_show">Hide revealed items</span>
                         <span class="cooking_show woodworking_show">Hide obtained recipes</span>
+                        <span class="customization_show">Hide obtained items</span>
                         <span class="animal_show">Hide obtained animals</span>
 
                         <svg id="older_browsers" class="feather feather-alert-triangle" fill="none" height="24"
@@ -345,6 +348,9 @@
             <div class="tab_window almanac_show">
                 <div id="almanac" class="tab_content"></div>
             </div>
+            <div class="tab_window customization_show">
+                <div id="customization" class="tab_content"></div>
+            </div>
             <div class="tab_window wrapped_show">
                 <div id="wrapped" class="tab_content"></div>
             </div>
@@ -372,6 +378,8 @@
                 <div class="tab" id="tab_gift" data-tab="gift"><img src="images/gift.png">Gift guide</div>
                 <div class="tab" id="tab_museum" data-tab="museum"><img src="images/museum.png">Museum</div>
                 <div class="tab" id="tab_almanac" data-tab="almanac"><img src="images/almanac.png">Almanac</div>
+                <div class="tab" id="tab_customization" data-tab="customization"><img src="images/customization.png">Customization</div>
+                
                 <div class="tab" id="tab_wrapped" data-tab="wrapped">
                     <div class="icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -551,7 +559,7 @@
                         </div>
 
                         <div class="button_set">
-                            <div class="button_item" id="save_file" onclick="saveAsJsonFile(save_file)">
+                            <div class="button_item" id="save_file" onclick="saveAsJsonFile('settings_json')">
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19.421" height="24.002" stroke="none"
                                         viewBox="0 0 19.421 24.002">
