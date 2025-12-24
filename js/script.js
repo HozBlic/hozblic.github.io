@@ -368,7 +368,7 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false, bolAcc
     var strTipHTML = $(`<div id="tip_${strID}" class="tip_wrap">
                         <div class="tip">
                             <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
-                                ${bolAccessories ? objInfo['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg/wiki/${objInfo['url']}">${objInfo['name']}</a>`}
+                                ${bolAccessories ? objInfo['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objInfo['url']}">${objInfo['name']}</a>`}
                                 ${bolDonatable ? '<img src="images/museum.png">' : ''}
                             </div>
                             ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
