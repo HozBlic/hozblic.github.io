@@ -337,10 +337,10 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false, bolAcc
                     objInfo['tip_extra'][strTipKey].forEach(function (objItem, index) {
                         if ('item' in objItem) {
                             intCount = objItem['count'];
-                            strItemKey = objItem['item'];
-                            strItemName = objItems[strItemKey]['name'];
-                            strItemUrl = objItems[strItemKey]['url'];
-                            strTableHTML += `<a href="${strItemUrl}" title="${strItemName}"><img alt="${strItemName}.png" src="images/items/${strItemKey}.png"></a><a href="${strItemUrl}" title="${strItemName}">${strItemName}</a> (${intCount})<br>`;
+                            strItemKeyTemp = objItem['item'];
+                            strItemName = objItems[strItemKeyTemp]['name'];
+                            strItemUrl = objItems[strItemKeyTemp]['url'];
+                            strTableHTML += `<a href="https://fieldsofmistria.wiki.gg${strItemUrl}" title="${strItemName}"><img alt="${strItemName}.png" src="images/items/${strItemKeyTemp}.png"></a><a href="https://fieldsofmistria.wiki.gg${strItemUrl}" title="${strItemName}">${strItemName}</a> (${intCount})<br>`;
                         }
                     });
                     strTableHTML = strTableHTML.substring(0, strTableHTML.length - 4); // remove last <br>
