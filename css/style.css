@@ -97,7 +97,8 @@
     display: none;
 }
 
-#page.mode_gift .item:has(input:checked) {
+#page.mode_gift .item:has(input:checked),
+#page.mode_gift .item.spoiler:has(input:checked) +.spoiler_placeholder {
     display: none;
 }
 
@@ -375,7 +376,7 @@ svg:focus {
 #page.wrapped #tab_wrapped,
 #page.woodworking #tab_woodworking,
 #page.cooking #tab_cooking,
-#page.animal #tab_animal {
+#page.animals #tab_animals {
     background-color: rgba(var(--color-btn-rgb), 0.6);
 }
 
@@ -399,7 +400,7 @@ svg:focus {
 .wrapped_show,
 .cooking_show,
 .woodworking_show,
-.animal_show {
+.animals_show {
     display: none;
 }
 
@@ -410,7 +411,7 @@ svg:focus {
 #page.wrapped .wrapped_show,
 #page.cooking .cooking_show,
 #page.woodworking .woodworking_show,
-#page.animal .animal_show {
+#page.animals .animals_show {
     display: block;
 }
 
