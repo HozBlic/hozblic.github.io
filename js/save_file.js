@@ -193,6 +193,9 @@ $(function () {
                     let objNpcs = objNPC(jsonBlocks);
                     let objMuseumData = objMUSEUM(jsonBlocks);
                     let objAquiredData = removeNonAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']);
+                    let objScrollsData = objPLAYER(jsonBlocks)['morning_recipe_unlocks'];
+                    let objAnimalsData = objPLAYER(jsonBlocks)['animal_variant_unlocks'];
+
                     let objCustomizationData = objPLAYER(jsonBlocks)['seen_cosmetics'];
                     let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
                     let arrFound = [];
@@ -255,6 +258,40 @@ $(function () {
                         $('#extracting_alert .info').append("</br>");
                     }
 
+                    if (typeof objScrollsData === 'object') {
+
+                        objOldData.scrolls = [...new Set(objScrollsData)];
+
+                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+                        arrFound.push(`${objScrollsData.length} obtained recipes were found `);
+
+                    } else {
+                        $('#extracting_alert').addClass('show');
+                        $('#extracting_alert .info').append("Couldn't find obtained recipes");
+                        $('#extracting_alert .info').append("</br>");
+                    }
+
+                    if (typeof objAnimalsData === 'object') {
+
+                        var arrAnimalsData = [];
+
+                        Object.entries(objAnimalsData).forEach(([strItemKey, arrAnimals]) => {
+                            var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
+                            arrAnimalsData.push(...arrVariants);
+                        });
+
+                        objOldData.animals = [...new Set(arrAnimalsData)];
+
+                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+                        arrFound.push(`${objOldData.animals.length} unlocked animals were found `);
+
+                    } else {
+                        $('#extracting_alert').addClass('show');
+                        $('#extracting_alert .info').append("Couldn't find unlocked animals");
+                        $('#extracting_alert .info').append("</br>");
+                    }
 
                     if (typeof objCustomizationData === 'object') {
 
