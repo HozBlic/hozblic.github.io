@@ -98,7 +98,7 @@
 }
 
 #page.mode_gift .item:has(input:checked),
-#page.mode_gift .item.spoiler:has(input:checked) +.spoiler_placeholder {
+#page.mode_gift .item.spoiler:has(input:checked)+.spoiler_placeholder {
     display: none;
 }
 
@@ -374,8 +374,7 @@ svg:focus {
 #page.almanac #tab_almanac,
 #page.customization #tab_customization,
 #page.wrapped #tab_wrapped,
-#page.woodworking #tab_woodworking,
-#page.cooking #tab_cooking,
+#page.scrolls #tab_scrolls,
 #page.animals #tab_animals {
     background-color: rgba(var(--color-btn-rgb), 0.6);
 }
@@ -398,8 +397,7 @@ svg:focus {
 .almanac_show,
 .customization_show,
 .wrapped_show,
-.cooking_show,
-.woodworking_show,
+.scrolls_show,
 .animals_show {
     display: none;
 }
@@ -409,10 +407,19 @@ svg:focus {
 #page.almanac .almanac_show,
 #page.customization .customization_show,
 #page.wrapped .wrapped_show,
-#page.cooking .cooking_show,
-#page.woodworking .woodworking_show,
+#page.scrolls .scrolls_show,
 #page.animals .animals_show {
     display: block;
+}
+
+#page.gift span.gift_show,
+#page.museum span.museum_show,
+#page.almanac span.almanac_show,
+#page.customization span.customization_show,
+#page.wrapped span.wrapped_show,
+#page.scrolls span.scrolls_show,
+#page.animals span.animals_show {
+    display: inline;
 }
 
 
@@ -437,7 +444,38 @@ svg:focus {
         opacity: 1;
     }
 }
-@media only screen and (min-width: 900px) {
+
+@media only screen and (min-width: 700px) {
+
+    #page.gift #tab_gift,
+    #page.museum #tab_museum,
+    #page.almanac #tab_almanac,
+    #page.customization #tab_customization,
+    #page.wrapped #tab_wrapped,
+    #page.scrolls #tab_scrolls,
+    #page.animals #tab_animals,
+    .tab:hover {
+        font-size: 12px;
+        gap: 5px;
+        padding-right: 12px;
+        min-height: 34px;
+    }
+
+    #page.gift #tab_gift img,
+    #page.museum #tab_museum img,
+    #page.almanac #tab_almanac img,
+    #page.customization #tab_customization img,
+    #page.wrapped #tab_wrapped img,
+    #page.scrolls #tab_scrolls img,
+    #page.animals #tab_animals img,
+
+    .tab:hover img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
     .tab {
         font-size: 12px;
         gap: 5px;
@@ -959,6 +997,8 @@ svg:focus {
     }
 }
 
+#scrolls,
+#animals,
 #customization,
 #museum {
     display: flex;
@@ -997,7 +1037,15 @@ svg:focus {
     min-width: 220px;
 }
 
+@media only screen and (min-width: 800px) {
+    #scrolls .category {
+        max-width: 400px;
+    }
 
+    #animals .category {
+        min-width: 260px;
+    }
+}
 
 .section .subcategory_items,
 .section .set_items {
@@ -1021,6 +1069,7 @@ svg:focus {
     height: 100%;
     object-fit: contain;
 }
+
 .char_img img {
     object-fit: cover;
     image-rendering: pixelated;
@@ -1032,7 +1081,7 @@ svg:focus {
     margin-bottom: 10px;
 }
 
-.category_img img  {
+.category_img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -1065,6 +1114,7 @@ svg:focus {
 .section_name, .section_img_mini {
     display: flex;
 }
+
 .section_name .smaller {
     opacity: 0.5;
     font-size: 0.7em;
@@ -1297,9 +1347,11 @@ svg:focus {
     color: var(--color-txt);
     text-decoration: unset;
 }
+
 .category_name {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
+
 .wing_name {
     font-weight: bold;
     margin-bottom: 10px;
@@ -1335,6 +1387,8 @@ svg:focus {
     cursor: pointer;
     background-size: contain;
     image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .item label .image.noimage {
@@ -1394,7 +1448,7 @@ svg:focus {
     display: flex;
     align-items: center;
     gap: 10px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .switch_wrap svg {

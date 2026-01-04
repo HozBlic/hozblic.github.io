@@ -47,6 +47,8 @@
     <script type="text/javascript" src="json/characters.json.js?v=4"></script>
     <script type="text/javascript" src="json/museum.json.js?v=4"></script>
     <script type="text/javascript" src="json/customization.json.js"></script>
+    <script type="text/javascript" src="json/scrolls.json.js"></script>
+    <script type="text/javascript" src="json/animals.json.js"></script>
     <script type="text/javascript" src="json/almanac.json.js"></script>
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -236,7 +238,9 @@
                             <div class='toggler'>
                             </div>
                         </label>
-                        Show spoilers
+                        <span>
+                            Show spoilers <span class="scrolls_show">and items without recipe scrolls</span>
+                        </span>
                     </div>
 
                     <div class="switch_wrap">
@@ -248,7 +252,7 @@
                         <span class="gift_show">Hide gifted items</span>
                         <span class="museum_show">Hide donated items</span>
                         <span class="almanac_show">Hide revealed items</span>
-                        <span class="cooking_show woodworking_show">Hide obtained recipes</span>
+                        <span class="scrolls_show">Hide obtained recipes</span>
                         <span class="customization_show">Hide obtained items</span>
                         <span class="animals_show">Hide obtained animals</span>
 
@@ -357,11 +361,8 @@
             <div class="tab_window animals_show">
                 <div id="animals" class="tab_content soon"></div>
             </div>
-            <div class="tab_window cooking_show">
-                <div id="cooking" class="tab_content soon"></div>
-            </div>
-            <div class="tab_window woodworking_show">
-                <div id="woodworking" class="tab_content soon"></div>
+            <div class="tab_window scrolls_show">
+                <div id="scrolls" class="tab_content soon"></div>
             </div>
         </div>
         <div id="header">
@@ -378,8 +379,9 @@
                 <div class="tab" id="tab_gift" data-tab="gift"><img src="images/gift.png">Gift guide</div>
                 <div class="tab" id="tab_museum" data-tab="museum"><img src="images/museum.png">Museum</div>
                 <div class="tab" id="tab_almanac" data-tab="almanac"><img src="images/almanac.png">Almanac</div>
-                <!-- <div class="tab" id="tab_animals" data-tab="animals"><img src="images/rabbit.png">Animals</div> -->
-                <div class="tab" id="tab_customization" data-tab="customization"><img src="images/customization.png">Customization</div>  
+                <div class="tab" id="tab_animals" data-tab="animals"><img src="images/rabbit.png">Animals</div>
+                <div class="tab" id="tab_scrolls" data-tab="scrolls"><img src="images/items/crafting_scroll.png">Recipe scrolls</div>
+                <div class="tab" id="tab_customization" data-tab="customization"><img src="images/customization.png">Customization</div>
                 <div class="tab" id="tab_wrapped" data-tab="wrapped">
                     <div class="icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -391,8 +393,6 @@
                     </div>
                     Mistria Wrapped
                 </div>
-                <!-- <div class="tab" id="tab_cooking" data-tab="cooking"><img src="images/items/fish_stew.png">Cooking</div> -->
-                <!-- <div class="tab" id="tab_woodworking" data-tab="woodworking"><img src="images/tooltip/30px-Crafting_table.png">Woodworking</div> -->
             </div>
         </div>
 
@@ -512,7 +512,8 @@
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
                                             viewBox="0 0 20.278 24" stroke="none">
-                                            <path d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                            <path
+                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
                                                 transform="translate(-4969 7272.001)" fill="#FFFFFF" />
                                         </svg>
                                     </div>
@@ -574,7 +575,8 @@
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
                                         viewBox="0 0 20.278 24" stroke="none">
-                                        <path d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                        <path
+                                            d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
                                             transform="translate(-4969 7272.001)" fill="#FFFFFF" />
                                     </svg>
                                 </div>

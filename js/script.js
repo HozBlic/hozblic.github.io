@@ -222,12 +222,12 @@ Object.entries(objTagItems).forEach(([tag, keys]) => {
 
     recipes = []
     objTagItems[tag] = objTagItems[tag].filter(key => {
-        if (objItems[key].recipe !== '') {
-            const includes = recipes.includes(objItems[key].recipe);
+        if (objItems[key].scroll_key !== '') {
+            const includes = recipes.includes(objItems[key].scroll_key);
             if (includes) {
                 return false
             }
-            recipes.push(objItems[key].recipe);
+            recipes.push(objItems[key].scroll_key);
         }
         return true
     })
@@ -248,6 +248,8 @@ var arrCustomizationDefault = Object.keys(objAccessories).filter(item => objAcce
 var objMistriaDataDefault = {
     gifts: [],
     museum: [],
+    scrolls: [],
+    animals: [],
     almanac: [],
     customization: arrCustomizationDefault,
     options: ['mode_dark']
@@ -259,9 +261,8 @@ var arrTabs = [
     'almanac',
     'customization',
     'wrapped',
-    'cooking',
-    'woodworking',
-    'animal'
+    'scrolls',
+    'animals'
 ];
 
 var allCharts = {};
@@ -438,6 +439,11 @@ function changeSort(objElem) {
     Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
         changeSortForObject(objMistriaData, objWing['sets'], `.wing_${strWingKey} .set`, `#set_${strWingKey}_`);
     });
+    changeSortForObject(objMistriaData, objScrolls, '.category', '#category_');
+    Object.entries(objScrolls).forEach(([strCategoryKey, objCategory]) => {
+        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
+    });
+    changeSortForObject(objMistriaData, objAnimals, '.category', '#category_');
 }
 
 function changeSortForObject(objMistriaData, objForSort, strElemClass, strElemID, objDefaultOrder = false) {
@@ -491,6 +497,12 @@ function compareData(strJson) {
     if (! 'museum' in objOldData) {
         objOldData.museum = [];
     }
+    if (! 'scrolls' in objOldData) {
+        objOldData.scrolls = [];
+    }
+    if (! 'animals' in objOldData) {
+        objOldData.animals = [];
+    }
     if (! 'customization' in objOldData) {
         objOldData.customization = objMistriaDataDefault.customization;
     }
@@ -503,6 +515,10 @@ function compareData(strJson) {
     objNewData.gifts = [...new Set(objNewData.gifts)];
     objOldData.museum = [...new Set(objOldData.museum)];
     objNewData.museum = [...new Set(objNewData.museum)];
+    objOldData.scrolls = [...new Set(objOldData.scrolls)];
+    objNewData.scrolls = [...new Set(objNewData.scrolls)];
+    objOldData.animals = [...new Set(objOldData.animals)];
+    objNewData.animals = [...new Set(objNewData.animals)];
     objOldData.customization = [...new Set(objOldData.customization)];
     objNewData.customization = [...new Set(objNewData.customization)];
     objOldData.almanac = [...new Set(objOldData.almanac)];
@@ -515,6 +531,10 @@ function compareData(strJson) {
     const intNewGiftCount = Array.isArray(objNewData.gifts) ? objNewData.gifts.length : 0;
     const intOldMuseumCount = Array.isArray(objOldData.museum) ? objOldData.museum.length : 0;
     const intNewMuseumCount = Array.isArray(objNewData.museum) ? objNewData.museum.length : 0;
+    const intOldScrollsCount = Array.isArray(objOldData.scrolls) ? objOldData.scrolls.length : 0;
+    const intNewScrollsCount = Array.isArray(objNewData.scrolls) ? objNewData.scrolls.length : 0;
+    const intOldAnimalsCount = Array.isArray(objOldData.animals) ? objOldData.animals.length : 0;
+    const intNewAnimalsCount = Array.isArray(objNewData.animals) ? objNewData.animals.length : 0;
     const intOldCustomizationCount = Array.isArray(objOldData.customization) ? objOldData.customization.length : 0;
     const intNewCustomizationCount = Array.isArray(objNewData.customization) ? objNewData.customization.length : 0;
     const intOldAlmanacCount = Array.isArray(objOldData.almanac) ? objOldData.almanac.length : 0;
@@ -560,6 +580,18 @@ function compareData(strJson) {
         arrChanges.push(`<b>Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}</b>`);
     } else {
         arrChanges.push(`Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}`);
+    }
+    if (JSON.stringify(objOldData.scrolls) !== JSON.stringify(objNewData.scrolls)) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Obtained recipes: ${intOldScrollsCount} -> ${intNewScrollsCount}</b>`);
+    } else {
+        arrChanges.push(`Obtained recipes: ${intOldScrollsCount} -> ${intNewScrollsCount}`);
+    }
+    if (JSON.stringify(objOldData.animals) !== JSON.stringify(objNewData.animals)) {
+        bolChangesDetected = true;
+        arrChanges.push(`<b>Unlocked animal colors: ${intOldAnimalsCount} -> ${intNewAnimalsCount}</b>`);
+    } else {
+        arrChanges.push(`Unlocked animal colors: ${intOldAnimalsCount} -> ${intNewAnimalsCount}`);
     }
     if (JSON.stringify(objOldData.customization) !== JSON.stringify(objNewData.customization)) {
         bolChangesDetected = true;
@@ -614,6 +646,8 @@ function saveJson() {
             objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
             objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
             objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
+            objMistriaData.scrolls = ('scrolls' in objMistriaData ? new Set(objMistriaData.scrolls) : new Set());
+            objMistriaData.animals = ('animals' in objMistriaData ? new Set(objMistriaData.animals) : new Set());
             objMistriaData.customization = ('customization' in objMistriaData ? new Set(objMistriaData.customization) : new Set(objMistriaDataDefault.customization));
             objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
             saveData();
@@ -707,6 +741,8 @@ function loadData() {
     objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
     objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
     objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
+    objMistriaData.scrolls = ('scrolls' in objMistriaData ? new Set(objMistriaData.scrolls) : new Set());
+    objMistriaData.animals = ('animals' in objMistriaData ? new Set(objMistriaData.animals) : new Set());
     objMistriaData.customization = ('customization' in objMistriaData ? new Set(objMistriaData.customization) : new Set(objMistriaDataDefault.customization));
     objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
 }
@@ -721,6 +757,12 @@ function saveData() {
     }
     if ('museum' in objMistriaData) {
         objMistriaData.museum = [...objMistriaData.museum];
+    }
+    if ('scrolls' in objMistriaData) {
+        objMistriaData.scrolls = [...objMistriaData.scrolls];
+    }
+    if ('animals' in objMistriaData) {
+        objMistriaData.animals = [...objMistriaData.animals];
     }
     if ('customization' in objMistriaData) {
         objMistriaData.customization = [...objMistriaData.customization];
@@ -834,6 +876,26 @@ function loadMenuItems() {
                     $(this).addClass('hide_search');
                 }
             });
+            $('#scrolls .item').filter(function () {
+                const text = $(this).text().trim().toLowerCase();
+                const matchesAll = keywords.some(word => text.includes(word));
+
+                if (matchesAll) {
+                    $(this).removeClass('hide_search');
+                } else {
+                    $(this).addClass('hide_search');
+                }
+            });
+            $('#animals .item').filter(function () {
+                const text = $(this).text().trim().toLowerCase();
+                const matchesAll = keywords.some(word => text.includes(word));
+
+                if (matchesAll) {
+                    $(this).removeClass('hide_search');
+                } else {
+                    $(this).addClass('hide_search');
+                }
+            });
 
             $('#customization .item').filter(function () {
                 const text = $(this).text().trim().toLowerCase();
@@ -859,7 +921,7 @@ function loadMenuItems() {
                 }
             }
 
-            if (!$(this).find('.item:visible').length) {
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
                 $(this).hide()
             }
         });
@@ -871,7 +933,7 @@ function loadMenuItems() {
                 }
             }
 
-            if (!$(this).find('.item:visible').length) {
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
                 $(this).hide()
             }
         });
@@ -883,7 +945,7 @@ function loadMenuItems() {
                 }
             }
 
-            if (!$(this).find('.item:visible').length) {
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
                 $(this).hide()
             }
         });
@@ -895,11 +957,57 @@ function loadMenuItems() {
                 }
             }
 
-            if (!$(this).find('.item:visible').length) {
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
                 $(this).hide()
             }
         });
 
+        $('#scrolls .category .subcategory').each(function () {
+            if (value !== '') {
+                if ($(this).find('.subcategory_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
+                $(this).hide()
+            }
+        });
+
+        $('#scrolls .category').each(function () {
+            if (value !== '') {
+                if ($(this).find('.category_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
+                $(this).hide()
+            }
+        });
+        $('#animals .category .subcategory').each(function () {
+            if (value !== '') {
+                if ($(this).find('.subcategory_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
+                $(this).hide()
+            }
+        });
+
+        $('#animals .category').each(function () {
+            if (value !== '') {
+                if ($(this).find('.category_name').html().includes('highlight')) {
+                    $(this).find('.item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
+                $(this).hide()
+            }
+        });
         $('#museum .wing .set').each(function () {
             if (value !== '') {
                 if ($(this).find('.set_name').html().includes('highlight')) {
@@ -907,7 +1015,7 @@ function loadMenuItems() {
                 }
             }
 
-            if (!$(this).find('.item:visible').length) {
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
                 $(this).hide()
             }
         });
@@ -919,7 +1027,7 @@ function loadMenuItems() {
                 }
             }
 
-            if (!$(this).find('.item:visible').length) {
+            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
                 $(this).hide()
             }
         });
@@ -1315,7 +1423,7 @@ function loadCustomizationTab() {
     Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
         changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
     });
-    checkMuseumVisibility();
+    checkCustomizationVisibility();
 }
 function loadAlmanacTab() {
 
@@ -4301,17 +4409,231 @@ function createTestMap() {
 
     $('#wrapped').prepend($divInfoBlock);
 }
-function loadCookingTab() {
+function loadScrollsTab() {
+    let arrAllItems = [];
 
+    Object.entries(objScrolls).forEach(([strCategoryKey, objCategory]) => {
+        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCategoryKey}` });
+
+        $divCategory.append(` 
+            <div class="category_img"><img src="images/items/${objCategory['img']}.png"></div>
+                                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}" target="_blank">
+                                   ${objCategory['name']}
+                                </a>
+                            ` );
+        $('#scrolls').append($divCategory);
+
+        var $divSubCategories = $('<div>', { 'class': 'subcategories' });
+        $divCategory.append($divSubCategories);
+
+        let sortedEntriesSets = Object.entries(objCategory['subcategories']);
+        if (objMistriaData.sort === 'az') {
+            sortedEntriesSets.sort((a, b) => a[1].name.localeCompare(b[1].name));
+        } else if (objMistriaData.sort === 'za') {
+            sortedEntriesSets.sort((a, b) => b[1].name.localeCompare(a[1].name));
+        }
+
+        sortedEntriesSets.forEach(([strSubcategoryKey, objSubcategory]) => {
+            strID = strCategoryKey + '_' + strSubcategoryKey;
+
+            var $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCategoryKey}_${strSubcategoryKey}` });
+
+            $divSubCategories.append($divSubcategory);
+
+            var $divitems = $('<div>', { 'class': 'subcategory_items' });
+            $divSubcategory.append($divitems);
+
+            $divitems.append(` 
+                                <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}#${objSubcategory['name'].replaceAll(' ', '_')}" target="_blank">
+                                   ${objSubcategory['name']}
+                                </a>
+                            ` );
+
+
+            objSubcategory['items'].forEach((strItemKey) => {
+                strID = strItemKey;
+                arrAllItems.push(strID);
+                strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
+                bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
+
+                $divitems.append(`<div class="item ${objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
+                                <input class="scrolls_chb" ${objMistriaData.scrolls.has(strID) ? 'checked' : ''} type="checkbox" id="${strCategoryKey}_${strSubcategoryKey}_${strID}" name="scrolls" value="${strID}">
+                                <label for="${strCategoryKey}_${strSubcategoryKey}_${strID}" class="has_tip" id="scrolls_label_${strID}">
+                                    <div class="image ${objItems[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strItemKey}.png)"></div>
+                                    <div class="name">${objItems[strItemKey]['name']}</div>
+                                </label>
+                                ${createTip(strID, strItemKey, true)}
+                               
+                            </div>`);
+
+                if (objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] || bolAdditionalSpoiler) {
+                    $divitems.append(`<div class="item spoiler_placeholder" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}"></div>`);
+                }
+                const template = $(`#tip_${strID}`)[0];
+                template.style.display = 'block';
+                tippy(`#scrolls_label_${strID}`, {
+                    content: template,
+                    interactive: true,
+                    maxWidth: 370
+                });
+            });
+        });
+    });
+
+    addSelectAllAndAlert('scrolls', 'scrolls_chb', arrAllItems);
+
+    $('.scrolls_chb:checkbox').change(function () {
+        var bolAdd = true;
+        if ($(this).is(':checked')) {
+            objMistriaData.scrolls.add($(this).val());
+        } else {
+            objMistriaData.scrolls.delete($(this).val());
+            bolAdd = false;
+        }
+
+        strItemKey = $(this).val();
+        $(`[id^="label_"][id$="_${strItemKey}"]`).each(function (index) {
+            var objLabel = $(this)[0];
+            var objTippy = objLabel._tippy;
+            if (bolAdd) {
+                $(objTippy.props.content).find('.tip_name').addClass('checked');
+            } else {
+                $(objTippy.props.content).find('.tip_name').removeClass('checked');
+            }
+            objTippy.setContent($(objTippy.props.content)[0]);
+        });
+
+        if ($(`.scrolls_chb`).length == $(`.scrolls_chb:checked`).length) {
+            $('#selectAll').prop('checked', true);
+        } else {
+            $('#selectAll').prop('checked', false);
+        }
+
+        $('.alert_import').remove();
+
+        saveData();
+    });
+
+    if ($('#search_items').val() != '') {
+        $('#search_items').keyup();
+    }
+    if ($('input.obtain_cbx:checked').length) {
+        $('input.obtain_cbx').change()
+    }
+
+    changeSortForObject(objMistriaData, objScrolls, '.category', '#category_');
+    Object.entries(objScrolls).forEach(([strCategoryKey, objCategory]) => {
+        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
+    });
+    checkScrollsVisibility();
 }
-function loadWoodworkingTab() {
+function loadAnimalsTab() {
+    let arrAllItems = [];
 
+    Object.entries(objAnimals).forEach(([strCategoryKey, objCategory]) => {
+        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCategoryKey}` });
+
+
+        var strFirstVariantKey = Object.keys(objCategory['subcategories']['1'])[0];
+
+        $divCategory.append(` 
+            <div class="category_img"><img src="images/animals/${strCategoryKey}_${strFirstVariantKey}.png"></div>
+                                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}" target="_blank">
+                                   ${objCategory['name']}
+                                </a>
+                            ` );
+        $('#animals').append($divCategory);
+
+        var $divSubCategories = $('<div>', { 'class': 'subcategories' });
+        $divCategory.append($divSubCategories);
+
+        let sortedEntriesSets = Object.entries(objCategory['subcategories']);
+        // if (objMistriaData.sort === 'az') {
+        //     sortedEntriesSets.sort((a, b) => a[1].name.localeCompare(b[1].name));
+        // } else if (objMistriaData.sort === 'za') {
+        //     sortedEntriesSets.sort((a, b) => b[1].name.localeCompare(a[1].name));
+        // }
+
+        sortedEntriesSets.forEach(([strSubcategoryKey, objSubcategory]) => {
+            strID = strCategoryKey + '_' + strSubcategoryKey;
+
+            var $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCategoryKey}_${strSubcategoryKey}` });
+
+            $divSubCategories.append($divSubcategory);
+
+            var $divitems = $('<div>', { 'class': 'subcategory_items' });
+            $divSubcategory.append($divitems);
+
+            $divitems.append(` 
+                                <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}" target="_blank">
+                                   Tier ${strSubcategoryKey}
+                                </a>
+                            ` );
+
+
+            Object.entries(objSubcategory).forEach(([strItemKey, objVariant]) => {
+                strID = `${strCategoryKey}_${strItemKey}`;
+                arrAllItems.push(strID);
+                // strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
+                // bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
+
+                $divitems.append(`<div class="item" data-cbx="Ranching">
+                                <input class="animals_chb" ${objMistriaData.animals.has(strID) ? 'checked' : ''} type="checkbox" id="${strCategoryKey}_${strSubcategoryKey}_${strID}" name="animals" value="${strID}">
+                                <label for="${strCategoryKey}_${strSubcategoryKey}_${strID}" class="has_tip" id="animals_label_${strID}">
+                                    <div class="image" style="background-image: url(images/animals/${strID}.png)"></div>
+                                    <div class="name">${objVariant['name']}</div>
+                                </label>
+                            </div>`);
+
+
+                // const template = $(`#tip_${strID}`)[0];
+                // template.style.display = 'block';
+                // tippy(`#scrolls_label_${strID}`, {
+                //     content: template,
+                //     interactive: true,
+                //     maxWidth: 370
+                // });
+            });
+        });
+    });
+
+    addSelectAllAndAlert('animals', 'animals_chb', arrAllItems);
+
+    $('.animals_chb:checkbox').change(function () {
+        var bolAdd = true;
+        if ($(this).is(':checked')) {
+            objMistriaData.animals.add($(this).val());
+        } else {
+            objMistriaData.animals.delete($(this).val());
+            bolAdd = false;
+        }
+
+        if ($(`.animals_chb`).length == $(`.animals_chb:checked`).length) {
+            $('#selectAll').prop('checked', true);
+        } else {
+            $('#selectAll').prop('checked', false);
+        }
+
+        $('.alert_import').remove();
+
+        saveData();
+    });
+
+    if ($('#search_items').val() != '') {
+        $('#search_items').keyup();
+    }
+    if ($('input.obtain_cbx:checked').length) {
+        $('input.obtain_cbx').change()
+    }
+
+    changeSortForObject(objMistriaData, objAnimals, '.category', '#category_');
+    checkAnimalsVisibility();
 }
 
 function checkGiftVisibility() {
     $('#characters .character').css('display', '');
     $('#characters .character').each(function () {
-        if (!$(this).find('.item:visible').length) {
+        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
             $(this).hide();
         }
     });
@@ -4323,7 +4645,7 @@ function checkMuseumVisibility() {
     $('#museum .wing').css('display', '');
 
     $('#museum .wing .set').each(function () {
-        if (!$(this).find('.item:visible').length) {
+        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
             $(this).hide();
         }
     });
@@ -4341,7 +4663,7 @@ function checkCustomizationVisibility() {
     $('#customization .category').css('display', '');
 
     $('#customization .category .subcategory').each(function () {
-        if (!$(this).find('.item:visible').length) {
+        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
             $(this).hide();
         }
     });
@@ -4356,14 +4678,44 @@ function checkCustomizationVisibility() {
 function checkAlmanacVisibility() {
     $('#almanac .section').css('display', '');
     $('#almanac .section').each(function () {
-        if (!$(this).find('.item:visible').length) {
+        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
             $(this).hide();
         }
     });
 }
-function checkCookingVisibility() {
+
+function checkScrollsVisibility() {
+
+    $('#scrolls .category .subcategory').css('display', '');
+    $('#scrolls .category').css('display', '');
+
+    $('#scrolls .category .subcategory').each(function () {
+        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
+            $(this).hide();
+        }
+    });
+
+    $('#scrolls .category').each(function () {
+        if (!$(this).find('.subcategory:visible').length) {
+            $(this).hide();
+        }
+    });
 }
-function checkWoodworkingVisibility() {
+function checkAnimalsVisibility() {
+    $('#animals .category .subcategory').css('display', '');
+    $('#animals .category').css('display', '');
+
+    $('#animals .category .subcategory').each(function () {
+        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
+            $(this).hide();
+        }
+    });
+
+    $('#animals .category').each(function () {
+        if (!$(this).find('.subcategory:visible').length) {
+            $(this).hide();
+        }
+    });
 }
 
 function updateStatistics() {
@@ -4637,13 +4989,12 @@ function loadTab(strTabKey) {
             case "wrapped":
                 loadWrappedTab();
                 break;
-            case "cooking":
-                loadCookingTab();
-                break;
-            case "woodworking":
-                loadWoodworkingTab();
+            case "scrolls":
+                loadScrollsTab();
                 break;
             case "animals":
+                loadAnimalsTab();
+                break;
             default:
         }
 
@@ -4667,6 +5018,6 @@ function checkAllVisibility() {
     checkMuseumVisibility();
     checkCustomizationVisibility();
     checkAlmanacVisibility();
-    checkCookingVisibility();
-    checkWoodworkingVisibility();
+    checkAnimalsVisibility();
+    checkScrollsVisibility();
 }
