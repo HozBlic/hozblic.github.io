@@ -4908,6 +4908,10 @@ $(function () {
         content: 'Red bull, please?',
     });
 
+    if ($('#tutorial').length) {
+        return;
+    }
+
     updateStatistics();
 
     loadTab(objMistriaData.tab ? objMistriaData.tab : 'gift');

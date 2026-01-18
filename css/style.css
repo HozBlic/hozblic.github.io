@@ -355,6 +355,7 @@ svg:focus {
     color: var(--color-txt);
     font-size: 0;
     fill: var(--color-txt);
+    text-decoration: unset;
 }
 
 .tab .icon {
@@ -369,6 +370,7 @@ svg:focus {
 }
 
 .tab:hover,
+#page.tutorial #tab_tutorial,
 #page.gift #tab_gift,
 #page.museum #tab_museum,
 #page.almanac #tab_almanac,
@@ -392,6 +394,7 @@ svg:focus {
     overflow: auto;
 }
 
+.tutorial_show,
 .gift_show,
 .museum_show,
 .almanac_show,
@@ -402,6 +405,7 @@ svg:focus {
     display: none;
 }
 
+#page.tutorial .tutorial_show,
 #page.gift .gift_show,
 #page.museum .museum_show,
 #page.almanac .almanac_show,
@@ -447,6 +451,7 @@ svg:focus {
 
 @media only screen and (min-width: 700px) {
 
+    #page.tutorial #tab_tutorial,
     #page.gift #tab_gift,
     #page.museum #tab_museum,
     #page.almanac #tab_almanac,
@@ -461,6 +466,7 @@ svg:focus {
         min-height: 34px;
     }
 
+    #page.tutorial #tab_tutorial img,
     #page.gift #tab_gift img,
     #page.museum #tab_museum img,
     #page.almanac #tab_almanac img,
@@ -813,40 +819,42 @@ svg:focus {
     }
 }
 
-#location_info {
+.code_copy_block {
     display: flex;
     position: relative;
     margin: 10px 0;
 }
 
-#location_info pre {
+.code_copy_block pre {
     min-height: 35px;
+    width: 100%;
 }
 
-#location_info .copy_button {
+.code_copy_block .copy_button {
     position: absolute;
     right: 4px;
     top: 4px;
     padding: 5px 0;
     min-height: 26px;
     font-size: 11px;
+    width: unset;
 }
 
-#location_info .copy_button .icon {
+.code_copy_block .copy_button .icon {
     width: 26px;
     min-width: 26px;
 }
 
-#location_info .copy_button .icon svg {
+.code_copy_block .copy_button .icon svg {
     height: 12px;
     width: 12px;
 }
 
-#location_info .copy_button .copied {
+.code_copy_block .copy_button .copied {
     padding: 5px 10px 5px 0;
 }
 
-#location_info .copy_button:not(.copied):hover {
+.code_copy_block .copy_button:not(.copied):hover {
     padding: 5px 10px 5px 0;
 
     .hover {
@@ -1687,6 +1695,7 @@ input[type="checkbox"].styled:checked+label {
 .button_item.copy_button {
     span {
         display: none;
+        font-size: 11px;
     }
 
     .default {
@@ -1868,7 +1877,7 @@ textarea {
     padding-top: 7px;
 }
 
-ul {
+ul:not(.subSectionUl) {
     padding: 0;
     list-style: none;
     margin: 0;
@@ -2020,4 +2029,75 @@ pre {
     padding: 0 6px;
     text-align: center;
     width: 100%;
+}
+
+
+#tutorial {}
+
+#tutorial .subSections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#tutorial .subSection {
+    border: 1px solid var(--color-bg-darkest);
+    background: var(--color-bg-darker);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
+    width: 100%;
+}
+
+#tutorial .subSectionTitle {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#tutorial .subSectionDesc {
+    line-height: 18px;
+}
+
+#tutorial ul {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+#tutorial li {
+    padding-top: 5px;
+}
+
+#tutorial img {
+    max-width: 600px;
+    max-height: 600px;
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+    object-fit: contain;
+    object-position: left center;
+}
+
+#tutorial pre {
+    max-height: 200px;
+    background: var(--color-bg-darkest-solid);
+    line-height: 14px;
+    font-size: 11px;
+}
+
+#tutorial a {
+    text-decoration: unset;
+    color: #a2d2ff;
+    height: 19px;
+    line-height: 19px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#tutorial a:visited {
+    color: #cdb4db;
 }
