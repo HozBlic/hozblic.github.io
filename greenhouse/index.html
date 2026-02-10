@@ -34,17 +34,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="./images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="../css/style.css?v=29">
+    <link rel="stylesheet" href="../css/style.css?v=30">
 
-    <script type="text/javascript" src="../json/items.json.js?v=14"></script>
-    <script type="text/javascript" src="../json/accessories.json.js?v=1"></script>
-    <script type="text/javascript" src="../json/characters.json.js?v=4"></script>
-    <script type="text/javascript" src="../json/museum.json.js?v=4"></script>
-    <script type="text/javascript" src="../json/customization.json.js"></script>
-    <script type="text/javascript" src="../json/scrolls.json.js"></script>
-    <script type="text/javascript" src="../json/animals.json.js"></script>
-    <script type="text/javascript" src="../json/almanac.json.js"></script>
+    <script type="text/javascript" src="../json/items.json.js?v=15"></script>
+    <script type="text/javascript" src="../json/items_accessories.json.js"></script>
+    <script type="text/javascript" src="../json/items_animals.json.js"></script>
+    <script type="text/javascript" src="../json/build.json.js"></script>
+    <script type="text/javascript" src="../json/tabs.json.js"></script>
+
     <script type="text/javascript" src="../json/wrapped_dummy.json.js?v=1"></script>
+
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/tippy-bundle.umd.min.js?v=2"></script>
@@ -53,7 +52,7 @@
     <script type="text/javascript" src="../js/chart.js"></script>
     <script type="text/javascript" src="../js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="../js/script.js?v=36"></script>
+    <script type="text/javascript" src="../js/script.js?v=37"></script>
 </head>
 
 <body>
@@ -109,266 +108,264 @@
             </div>
         </div>
         <div id="content">
-            <div class="tab_window tutorial_show">
-                <div id="tutorial" class="tab_content">
-                    <div class="subSections">
-                        <div class="subSection">
-                            <div class="subSectionTitle">Herb greenhouse</div>
-                            <div class="subSectionDesc">
-                                This tutorial explains how to obtain the seeds required for a herb greenhouse by editing
-                                the game save file
-                                <img src="../images/greenhouse/0.png" />
-                            </div>
+            <div id="tutorial" class="tab_content tutorial_show">
+                <div class="subSections">
+                    <div class="subSection">
+                        <div class="subSectionTitle">Herb greenhouse</div>
+                        <div class="subSectionDesc">
+                            This tutorial explains how to obtain the seeds required for a herb greenhouse by editing
+                            the game save file
+                            <img src="../images/greenhouse/0.png" />
                         </div>
-                        <div class="subSection">
-                            <div class="subSectionTitle">Prerequsities</div>
-                            <div class="subSectionDesc">First, you need to download tools required to edit your save
-                                file. You will need a program to convert your save file into a readable format and a
-                                text editor to change contents. Also, you will need to make a new chest in the game:
-                                <ul class="subSectionUl">
-                                    <li> Download <b>Vaultc tool</b>
-                                        <ol>
-                                            <li> Open <a href="https://github.com/NPC-Studio/vaultc"
-                                                    target="_blank">this link</a>, click on right side of the page below
-                                                "Releases"
-                                                <img src="../images/greenhouse/1.png" />
-                                            </li>
-                                            <li> Click on first asset, it should be an .exe file. That should start the
-                                                download<a href="https://code.visualstudio.com/download"
-                                                    target="_blank"></a>
-                                                <img src="../images/greenhouse/2.png" />
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li> Download and install <b>Visual Studio Code</b> (<a
-                                            href="https://code.visualstudio.com/download" target="_blank">link</a>).
-                                        Theoretically you can
-                                        use Notepad as well to make changes in your save file but I find working with VS
-                                        Code easier. </li>
-                                    <li> Prepare a chest in <b>Fields of Mistria</b>:
-                                        <ol>
-                                            <li> open the game</li>
-                                            <li> create and place a new chest in main room in your house (the one that's
-                                                immediately after entering the front doors)</li>
-                                            <li> add one seed to it (I did carrot seed)
-                                                <img src="../images/greenhouse/3.png" />
-                                            </li>
-                                            <li> save game manually</li>
-                                            <li> exit the game completely (not to the title screen)</li>
-                                        </ol>
-                                    </li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="subSection">
+                        <div class="subSectionTitle">Prerequsities</div>
+                        <div class="subSectionDesc">First, you need to download tools required to edit your save
+                            file. You will need a program to convert your save file into a readable format and a
+                            text editor to change contents. Also, you will need to make a new chest in the game:
+                            <ul class="subSectionUl">
+                                <li> Download <b>Vaultc tool</b>
+                                    <ol>
+                                        <li> Open <a href="https://github.com/NPC-Studio/vaultc"
+                                                target="_blank">this link</a>, click on right side of the page below
+                                            "Releases"
+                                            <img src="../images/greenhouse/1.png" />
+                                        </li>
+                                        <li> Click on first asset, it should be an .exe file. That should start the
+                                            download<a href="https://code.visualstudio.com/download"
+                                                target="_blank"></a>
+                                            <img src="../images/greenhouse/2.png" />
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li> Download and install <b>Visual Studio Code</b> (<a
+                                        href="https://code.visualstudio.com/download" target="_blank">link</a>).
+                                    Theoretically you can
+                                    use Notepad as well to make changes in your save file but I find working with VS
+                                    Code easier. </li>
+                                <li> Prepare a chest in <b>Fields of Mistria</b>:
+                                    <ol>
+                                        <li> open the game</li>
+                                        <li> create and place a new chest in main room in your house (the one that's
+                                            immediately after entering the front doors)</li>
+                                        <li> add one seed to it (I did carrot seed)
+                                            <img src="../images/greenhouse/3.png" />
+                                        </li>
+                                        <li> save game manually</li>
+                                        <li> exit the game completely (not to the title screen)</li>
+                                    </ol>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="subSection">
-                            <div class="subSectionTitle"> Editing save file </div>
-                            <div class="subSectionDesc">
-                                <ul class="subSectionUl">
-                                    <li> Lets start with making a folder to work in:
-                                        <ol>
-                                            <li>Create a folder with name "mistria" on your Desktop </li>
-                                            <li>In that folder, create another 3 folders, name them "backup", "new" and
-                                                "unpacked" </li>
-                                            <li>Find the Vaultc tool you dowloaded in previous step and move it to
-                                                "mistria" folder </li>
-                                            <li>Go to your save file folder. For Windows, you usually can find it in
-                                                this folder
-                                                <div class="code_copy_block">
-                                                    <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
-                                                    <div class="button_item copy_button"
-                                                        onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Local\\FieldsOfMistria\\saves`)">
-                                                        <div class="icon">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
-                                                                height="24" viewBox="0 0 20.278 24" stroke="none">
-                                                                <path
-                                                                    d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                    transform="translate(-4969 7272.001)"
-                                                                    fill="#FFFFFF" />
-                                                            </svg>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span class="default"></span>
-                                                            <span class="hover">Copy</span>
-                                                            <span class="copied">Copied</span>
-                                                        </div>
+                    </div>
+                    <div class="subSection">
+                        <div class="subSectionTitle"> Editing save file </div>
+                        <div class="subSectionDesc">
+                            <ul class="subSectionUl">
+                                <li> Lets start with making a folder to work in:
+                                    <ol>
+                                        <li>Create a folder with name "mistria" on your Desktop </li>
+                                        <li>In that folder, create another 3 folders, name them "backup", "new" and
+                                            "unpacked" </li>
+                                        <li>Find the Vaultc tool you dowloaded in previous step and move it to
+                                            "mistria" folder </li>
+                                        <li>Go to your save file folder. For Windows, you usually can find it in
+                                            this folder
+                                            <div class="code_copy_block">
+                                                <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
+                                                <div class="button_item copy_button"
+                                                    onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Local\\FieldsOfMistria\\saves`)">
+                                                    <div class="icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
+                                                            height="24" viewBox="0 0 20.278 24" stroke="none">
+                                                            <path
+                                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                                transform="translate(-4969 7272.001)"
+                                                                fill="#FFFFFF" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text">
+                                                        <span class="default"></span>
+                                                        <span class="hover">Copy</span>
+                                                        <span class="copied">Copied</span>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li>copy the most recent file. It's name will start with "game", followed by
-                                                bunch of numbers and dashes, end with .sav. You might not see the
-                                                extension part, depending on your settings </li>
-                                            <li>paste your save file in "mistria" and "backup" folders. Your folder
-                                                should look like this:
-                                                <img src="../images/greenhouse/4.png" />
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li> Unpacking the save file:
-                                        <ol>
-                                            <li>Currently your save file is in unreadable format. To fix that, right
-                                                click in the folder "mistria", then click "Open in terminal"
-                                                <img src="../images/greenhouse/5.png" />
-                                            </li>
-                                            <li>Type in the command below and press enter. You need to change
-                                                "game-365124577-1693549356.sav" to name your save file has. While you
-                                                are typing in the command, you can press tab, it will try to
-                                                autocomplete word you are currently writing
-                                                <div class="code_copy_block">
-                                                    <pre>.\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe unpack .\game-365124577-1693549356.sav .\unpacked\</pre>
-                                                    <div class="button_item copy_button"
-                                                        onclick="copyClipboard(this, `.\\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe unpack .\\game-365124577-1693549356.sav .\\unpacked\\`)">
-                                                        <div class="icon">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
-                                                                height="24" viewBox="0 0 20.278 24" stroke="none">
-                                                                <path
-                                                                    d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                    transform="translate(-4969 7272.001)"
-                                                                    fill="#FFFFFF" />
-                                                            </svg>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span class="default"></span>
-                                                            <span class="hover">Copy</span>
-                                                            <span class="copied">Copied</span>
-                                                        </div>
+                                            </div>
+                                        </li>
+                                        <li>copy the most recent file. It's name will start with "game", followed by
+                                            bunch of numbers and dashes, end with .sav. You might not see the
+                                            extension part, depending on your settings </li>
+                                        <li>paste your save file in "mistria" and "backup" folders. Your folder
+                                            should look like this:
+                                            <img src="../images/greenhouse/4.png" />
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li> Unpacking the save file:
+                                    <ol>
+                                        <li>Currently your save file is in unreadable format. To fix that, right
+                                            click in the folder "mistria", then click "Open in terminal"
+                                            <img src="../images/greenhouse/5.png" />
+                                        </li>
+                                        <li>Type in the command below and press enter. You need to change
+                                            "game-365124577-1693549356.sav" to name your save file has. While you
+                                            are typing in the command, you can press tab, it will try to
+                                            autocomplete word you are currently writing
+                                            <div class="code_copy_block">
+                                                <pre>.\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe unpack .\game-365124577-1693549356.sav .\unpacked\</pre>
+                                                <div class="button_item copy_button"
+                                                    onclick="copyClipboard(this, `.\\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe unpack .\\game-365124577-1693549356.sav .\\unpacked\\`)">
+                                                    <div class="icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
+                                                            height="24" viewBox="0 0 20.278 24" stroke="none">
+                                                            <path
+                                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                                transform="translate(-4969 7272.001)"
+                                                                fill="#FFFFFF" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text">
+                                                        <span class="default"></span>
+                                                        <span class="hover">Copy</span>
+                                                        <span class="copied">Copied</span>
                                                     </div>
                                                 </div>
+                                            </div>
 
-                                                <img src="../images/greenhouse/6.png" />
-                                            </li>
-                                            <li>"unpacked" folder should have bunch of files in it now
-                                                <img src="../images/greenhouse/7.png" />
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li> Editing your save file:
-                                        <ol>
-                                            <li>Open VS Code </li>
-                                            <li>Click "Open Folder"
-                                                <img src="../images/greenhouse/8.png" />
-                                            </li>
-                                            <li>Choose "mistria" folder and click "Select folder"<img
-                                                    src="../images/greenhouse/9.png" />
-                                            </li>
-                                            <li>Click "Yes, I trust the author"
-                                                <img src="../images/greenhouse/10.png" />
+                                            <img src="../images/greenhouse/6.png" />
+                                        </li>
+                                        <li>"unpacked" folder should have bunch of files in it now
+                                            <img src="../images/greenhouse/7.png" />
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li> Editing your save file:
+                                    <ol>
+                                        <li>Open VS Code </li>
+                                        <li>Click "Open Folder"
+                                            <img src="../images/greenhouse/8.png" />
+                                        </li>
+                                        <li>Choose "mistria" folder and click "Select folder"<img
+                                                src="../images/greenhouse/9.png" />
+                                        </li>
+                                        <li>Click "Yes, I trust the author"
+                                            <img src="../images/greenhouse/10.png" />
 
-                                            </li>
-                                            <li>Click on magnifying glass icon on the left side and type in
-                                                "seed_carrot". It will show all the files were it found "seed_carrot".
-                                                You will need to open files "gamedata.json", "player_home.json" and
-                                                "player.json". You can open them by clicking on orange highlighted part
-                                                under each filename. You will NOT need the "game_stats.json"
-                                                file
-                                                <img src="../images/greenhouse/11.png" />
-                                            </li>
-                                            <li>In "gamedata.json" file, you need to find line that says
-                                                "had_item_seed_basil". It will be under "t2_world_facts". You can search
-                                                in opened file by pressing CTRL + F. The line most likely will say
-                                                <pre>"had_item_seed_basil": 0.0</pre>
-                                                You need to change
-                                                it to
-                                                <pre>"had_item_seed_basil": 1.0</pre>
-                                                In case number already said "1.0", that means you have found a basil
-                                                seed already in game and don't have to do anything in this and next
-                                                step. Save file by pressing CTRL + S.
-                                                <img src="../images/greenhouse/12.png" />
+                                        </li>
+                                        <li>Click on magnifying glass icon on the left side and type in
+                                            "seed_carrot". It will show all the files were it found "seed_carrot".
+                                            You will need to open files "gamedata.json", "player_home.json" and
+                                            "player.json". You can open them by clicking on orange highlighted part
+                                            under each filename. You will NOT need the "game_stats.json"
+                                            file
+                                            <img src="../images/greenhouse/11.png" />
+                                        </li>
+                                        <li>In "gamedata.json" file, you need to find line that says
+                                            "had_item_seed_basil". It will be under "t2_world_facts". You can search
+                                            in opened file by pressing CTRL + F. The line most likely will say
+                                            <pre>"had_item_seed_basil": 0.0</pre>
+                                            You need to change
+                                            it to
+                                            <pre>"had_item_seed_basil": 1.0</pre>
+                                            In case number already said "1.0", that means you have found a basil
+                                            seed already in game and don't have to do anything in this and next
+                                            step. Save file by pressing CTRL + S.
+                                            <img src="../images/greenhouse/12.png" />
 
-                                            </li>
-                                            <li>In "player.json" file, you need to find "items_acquired". Under that you
-                                                need to add "seed_basil". In case you have already found a basil seed,
-                                                it's gonna already be there, and you don't need to add it again. This
-                                                list is alphabetically sorted, I suggest adding the new line in the
-                                                correct spot alphabetically. Save file by pressing CTRL + S.<img
-                                                    src="../images/greenhouse/13.png" />
-                                            </li>
-                                            <li>In "player_home.json" file, find "seed_carrot" under "inventories". It
-                                                might be in multiple lines, we are interested in only newly created
-                                                chest, so, it will have only one carrot seed and the rest of slots will
-                                                be empty. In the file, it will look as below:<img
-                                                    src="../images/greenhouse/14.png" /></a>
-                                                <ol>
-                                                    <li>Select the part as shown in image below and copy it<img
-                                                            src="../images/greenhouse/15.png" />
-                                                    </li>
-                                                    <li>select the part as shown below and paste<img
-                                                            src="../images/greenhouse/16.png" />
-                                                    </li>
-                                                    <li>It will look like this:
-                                                        <img src="../images/greenhouse/17.png" />
-                                                    </li>
-                                                    <li>Change "seed_carrot" to "seed_basil" and change count to "1.0"
-                                                        to "10.0" or however much you want to. Save file by pressing
-                                                        CTRL + S.
-                                                        <img src="../images/greenhouse/18.png" />
-                                                    </li>
-                                                    <li>Repeat those steps with all herb seeds:
-                                                        <pre>seed_basil</br>seed_chickpea</br>seed_dill</br>seed_oregano</br>seed_sage</br>seed_thyme</br>seed_garlic</br>seed_rosemary</br>seed_burdock_root</pre>
-                                                    </li>
-                                                    <li>Check again that you have saved all the files and you can close
-                                                        VS Code</li>
-                                                </ol>
-                                            </li>
-                                            <li>Open the terminal again and run command below. Remember to change
-                                                filename to one you have
-                                                <div class="code_copy_block">
-                                                    <pre>.\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe pack .\unpacked\ .\new\game-365124577-1693549356.sav</pre>
-                                                    <div class="button_item copy_button"
-                                                        onclick="copyClipboard(this, `.\\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe pack .\\unpacked\\ .\\new\\game-365124577-1693549356.sav`)">
-                                                        <div class="icon">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
-                                                                height="24" viewBox="0 0 20.278 24" stroke="none">
-                                                                <path
-                                                                    d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                    transform="translate(-4969 7272.001)"
-                                                                    fill="#FFFFFF" />
-                                                            </svg>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span class="default"></span>
-                                                            <span class="hover">Copy</span>
-                                                            <span class="copied">Copied</span>
-                                                        </div>
+                                        </li>
+                                        <li>In "player.json" file, you need to find "items_acquired". Under that you
+                                            need to add "seed_basil". In case you have already found a basil seed,
+                                            it's gonna already be there, and you don't need to add it again. This
+                                            list is alphabetically sorted, I suggest adding the new line in the
+                                            correct spot alphabetically. Save file by pressing CTRL + S.<img
+                                                src="../images/greenhouse/13.png" />
+                                        </li>
+                                        <li>In "player_home.json" file, find "seed_carrot" under "inventories". It
+                                            might be in multiple lines, we are interested in only newly created
+                                            chest, so, it will have only one carrot seed and the rest of slots will
+                                            be empty. In the file, it will look as below:<img
+                                                src="../images/greenhouse/14.png" /></a>
+                                            <ol>
+                                                <li>Select the part as shown in image below and copy it<img
+                                                        src="../images/greenhouse/15.png" />
+                                                </li>
+                                                <li>select the part as shown below and paste<img
+                                                        src="../images/greenhouse/16.png" />
+                                                </li>
+                                                <li>It will look like this:
+                                                    <img src="../images/greenhouse/17.png" />
+                                                </li>
+                                                <li>Change "seed_carrot" to "seed_basil" and change count to "1.0"
+                                                    to "10.0" or however much you want to. Save file by pressing
+                                                    CTRL + S.
+                                                    <img src="../images/greenhouse/18.png" />
+                                                </li>
+                                                <li>Repeat those steps with all herb seeds:
+                                                    <pre>seed_basil</br>seed_chickpea</br>seed_dill</br>seed_oregano</br>seed_sage</br>seed_thyme</br>seed_garlic</br>seed_rosemary</br>seed_burdock_root</pre>
+                                                </li>
+                                                <li>Check again that you have saved all the files and you can close
+                                                    VS Code</li>
+                                            </ol>
+                                        </li>
+                                        <li>Open the terminal again and run command below. Remember to change
+                                            filename to one you have
+                                            <div class="code_copy_block">
+                                                <pre>.\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe pack .\unpacked\ .\new\game-365124577-1693549356.sav</pre>
+                                                <div class="button_item copy_button"
+                                                    onclick="copyClipboard(this, `.\\vaultc-x86_64-pc-windows-msvc-v0.14.0.exe pack .\\unpacked\\ .\\new\\game-365124577-1693549356.sav`)">
+                                                    <div class="icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
+                                                            height="24" viewBox="0 0 20.278 24" stroke="none">
+                                                            <path
+                                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                                transform="translate(-4969 7272.001)"
+                                                                fill="#FFFFFF" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text">
+                                                        <span class="default"></span>
+                                                        <span class="hover">Copy</span>
+                                                        <span class="copied">Copied</span>
                                                     </div>
                                                 </div>
-                                                <img src="../images/greenhouse/19.png" />
-                                            </li>
-                                            <li> Open "new" folder, copy the only file there</li>
-                                            <li> Open save file folder, paste just copied file in there. There should be
-                                                a popup asking if you want to replace file, you should replace it. If
-                                                there is no popup, either you have misspelled you new filename or you
-                                                have accidentally deleted file in previous steps
-                                                <div class="code_copy_block">
-                                                    <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
-                                                    <div class="button_item copy_button"
-                                                        onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Local\\FieldsOfMistria\\saves`)">
-                                                        <div class="icon">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
-                                                                height="24" viewBox="0 0 20.278 24" stroke="none">
-                                                                <path
-                                                                    d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                    transform="translate(-4969 7272.001)"
-                                                                    fill="#FFFFFF" />
-                                                            </svg>
-                                                        </div>
-                                                        <div class="text">
-                                                            <span class="default"></span>
-                                                            <span class="hover">Copy</span>
-                                                            <span class="copied">Copied</span>
-                                                        </div>
+                                            </div>
+                                            <img src="../images/greenhouse/19.png" />
+                                        </li>
+                                        <li> Open "new" folder, copy the only file there</li>
+                                        <li> Open save file folder, paste just copied file in there. There should be
+                                            a popup asking if you want to replace file, you should replace it. If
+                                            there is no popup, either you have misspelled you new filename or you
+                                            have accidentally deleted file in previous steps
+                                            <div class="code_copy_block">
+                                                <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
+                                                <div class="button_item copy_button"
+                                                    onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Local\\FieldsOfMistria\\saves`)">
+                                                    <div class="icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
+                                                            height="24" viewBox="0 0 20.278 24" stroke="none">
+                                                            <path
+                                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                                transform="translate(-4969 7272.001)"
+                                                                fill="#FFFFFF" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text">
+                                                        <span class="default"></span>
+                                                        <span class="hover">Copy</span>
+                                                        <span class="copied">Copied</span>
                                                     </div>
                                                 </div>
-                                                <img src="../images/greenhouse/20.png" />
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li>Open "Fields of Mistria" again, the chest should contain all the seeds you
-                                        added! Plant them in greenhouse, remember that they grow only in specific
-                                        seasons if not using the greenhouse
-                                        <img src="../images/greenhouse/21.png" />
-                                    </li>
-                                </ul>
-                            </div>
+                                            </div>
+                                            <img src="../images/greenhouse/20.png" />
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Open "Fields of Mistria" again, the chest should contain all the seeds you
+                                    added! Plant them in greenhouse, remember that they grow only in specific
+                                    seasons if not using the greenhouse
+                                    <img src="../images/greenhouse/21.png" />
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -383,8 +380,9 @@
                 </svg>
             </label>
             <div id="tabs">
-                <div class="tab" id="tab_tutorial" data-tab="tutorial"><img
-                        src="../images/items/small_greenhouse_wood_blueprint.png">Tutorial</div>
+                <div class="tab active" id="tab_tutorial" data-tab="tutorial">
+                    <img src="../images/items/small_greenhouse_wood_blueprint.png">Tutorial
+                </div>
                 <a class="tab" href="/" id="tab_gift" data-tab="gift"><img src="../images/gift.png">Gift guide</a>
             </div>
         </div>

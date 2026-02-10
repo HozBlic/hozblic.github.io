@@ -1,4 +1,4 @@
-var objAccessories =
+var objItemsAccessories =
 {
     "back_gear_ancient_witch_broom": {
         "name": "Ancient Witch Broom",

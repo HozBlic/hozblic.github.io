@@ -206,33 +206,6 @@ var objLocations = {
     'western_ruins': { x: 19, y: 44 },
 }
 
-
-var objTagItems = {}
-Object.entries(objItems).forEach(([key, value]) => {
-    tags = value.tags ?? ['notag']
-    tags.forEach(tag => {
-        objTagItems[tag] = [...(objTagItems[tag] ?? []), key]
-    })
-})
-Object.entries(objTagItems).forEach(([tag, keys]) => {
-    objTagItems[tag] = keys.sort((a, b) => {
-        const comp = objItems[a].name.localeCompare(objItems[b].name);
-        return comp === 0 ? a.localeCompare(b) : comp;
-    })
-
-    recipes = []
-    objTagItems[tag] = objTagItems[tag].filter(key => {
-        if (objItems[key].scroll_key !== '') {
-            const includes = recipes.includes(objItems[key].scroll_key);
-            if (includes) {
-                return false
-            }
-            recipes.push(objItems[key].scroll_key);
-        }
-        return true
-    })
-})
-
 Object.filter = (obj, predicate) =>
     Object.keys(obj)
         .filter(key => predicate(obj[key]))
@@ -243,28 +216,9 @@ const eqSet = (xs, ys) =>
     [...xs].every((x) => ys.has(x));
 
 var objMistriaData;
-var arrCustomizationDefault = Object.keys(objAccessories).filter(item => objAccessories[item]['default_unlocked']);
 
-var objMistriaDataDefault = {
-    gifts: [],
-    museum: [],
-    scrolls: [],
-    animals: [],
-    almanac: [],
-    customization: arrCustomizationDefault,
-    options: ['mode_dark']
-};
-
-var arrTabs = [
-    'gift',
-    'museum',
-    'almanac',
-    'customization',
-    'wrapped',
-    'scrolls',
-    'animals'
-];
-
+var objMistriaDataDefault = objBuild.objMistriaDataDefault;
+var arrTabs = objBuild.tabsOrder;
 var allCharts = {};
 
 $('.item').each(function () {
@@ -317,25 +271,19 @@ var objTips = {
     'diving': 'Diveable'
 }
 
-function createTip(strID, strItemKey, bolMuseum = false, strBuff = false, bolAccessories = false) {
+function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
+    let strTableHTML = '';
+    let bolDonatable = false;
+    let objItemTemp = objItemsTemp[strItemKey];
 
-    var strTableHTML = '';
-    var bolDonatable = false;
-    var objInfo = {}
-    if (bolAccessories) {
-        objInfo = objAccessories[strItemKey]
-    } else {
-        objInfo = objItems[strItemKey]
-    }
-
-    if ('tip_extra' in objInfo) {
+    if ('tip_extra' in objItemTemp) {
         strTableHTML = '<table>';
 
         Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
-            if (strTipKey in objInfo['tip_extra']) {
+            if (strTipKey in objItemTemp['tip_extra']) {
                 if (strTipKey == 'ingredients') {
                     strTableHTML += `<tr><td>${strTipValue}</td><td>`;
-                    objInfo['tip_extra'][strTipKey].forEach(function (objItem, index) {
+                    objItemTemp['tip_extra'][strTipKey].forEach(function (objItem, index) {
                         if ('item' in objItem) {
                             intCount = objItem['count'];
                             strItemKeyTemp = objItem['item'];
@@ -348,71 +296,39 @@ function createTip(strID, strItemKey, bolMuseum = false, strBuff = false, bolAcc
                     strTableHTML += `</td></tr>`;
                     return;
                 }
-                if (strTipKey == 'museumSet') {
+                if (strTipKey === 'museumSet') {
                     bolDonatable = true;
-                    if (bolMuseum) {
+                    if (strTab === 'museum') {
                         return;
                     }
                 }
-                strTableHTML += `<tr><td>${strTipValue}</td><td>${objInfo['tip_extra'][strTipKey]}</td></tr>`;
+                strTableHTML += `<tr><td>${strTipValue}</td><td>${objItemTemp['tip_extra'][strTipKey]}</td></tr>`;
             }
         });
         strTableHTML += '</table>';
     }
 
-    var strChecked = '';
+    let strChecked = '';
     if (objMistriaData.museum.has(strItemKey)) {
         strChecked = 'checked';
     }
 
-
-    var strTipHTML = $(`<div id="tip_${strID}" class="tip_wrap">
+    let strTipHTML = $(`<div id="tip_${strID}" class="tip_wrap">
                         <div class="tip">
                             <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
-                                ${bolAccessories ? objInfo['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objInfo['url']}">${objInfo['name']}</a>`}
+                                ${strTab === 'customization' ? objItemTemp['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItemTemp['url']}">${objItemTemp['name']}</a>`}
                                 ${bolDonatable ? '<img src="images/museum.png">' : ''}
                             </div>
                             ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
-                            <div class="tip_info">${objInfo['tip']}</div>
-                            ${objInfo['nodata'] ? 'No data available' : ''}
+                            <div class="tip_info">${objItemTemp['tip']}</div>
+                            ${objItemTemp['nodata'] ? 'No data available' : ''}
                             ${strTableHTML}
                         </div>
                     </div>`);
 
-    var $objTip = $(strTipHTML);
+    let $objTip = $(strTipHTML);
 
     return $objTip.prop('outerHTML');
-}
-function createGiftItem(arrGifts, strCharacterKey, $objParent) {
-
-    var arrAllGifts = [];
-
-    arrGifts.forEach(function (strGiftKey) {
-        strID = strCharacterKey + '_' + strGiftKey;
-        arrAllGifts.push(strID);
-        strDataCbx = $($.parseHTML(objItems[strGiftKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-
-        $objParent.append(`<div class="item ${objItems[strGiftKey]['spoiler'] || objItems[strGiftKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="gift_chb" ${objMistriaData.gifts.has(strID) ? 'checked' : ''} type="checkbox" id="${strID}" name="gifts" value="${strID}">
-                                <label for="${strID}" class="has_tip" id="label_${strID}">
-                                    <div class="image ${objItems[strGiftKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strGiftKey}.png)"></div>
-                                    <div class="name">${objItems[strGiftKey]['name']}</div>
-                                </label>
-                                ${createTip(strID, strGiftKey, false)}
-                            </div>`);
-
-
-        const template = $(`#tip_${strID}`)[0];
-        template.style.display = 'block';
-
-        tippy(`#label_${strID}`, {
-            content: template,
-            interactive: true,
-            maxWidth: 370
-        });
-    });
-
-    return arrAllGifts;
 }
 
 function changeSort(objElem) {
@@ -429,55 +345,18 @@ function changeSort(objElem) {
     $('.dropdown-item.sort').removeClass('selected');
     $(`.dropdown-item.sort[data-value="${objMistriaData.sort ? objMistriaData.sort : 'default'}"]`).addClass('selected');
 
-    changeSortForObject(objMistriaData, objCharacters, '.character', '#character_', objCharOrder);
-    changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
-    changeSortForObject(objMistriaData, objCustomization, '.category', '#category_');
-    Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
-        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
-    });
-    changeSortForObject(objMistriaData, objMuseum, '.wing', '#wing_');
-    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
-        changeSortForObject(objMistriaData, objWing['sets'], `.wing_${strWingKey} .set`, `#set_${strWingKey}_`);
-    });
-    changeSortForObject(objMistriaData, objScrolls, '.category', '#category_');
-    Object.entries(objScrolls).forEach(([strCategoryKey, objCategory]) => {
-        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
-    });
-    changeSortForObject(objMistriaData, objAnimals, '.category', '#category_');
+    sortItems()
 }
 
-function changeSortForObject(objMistriaData, objForSort, strElemClass, strElemID, objDefaultOrder = false) {
-    $(strElemClass).css('order', '');
+function sortItems() {
+    $(`#scraped .sortable`).css('order', '');
 
-    var sortedEntries = Object.entries(objForSort);
-    if (objMistriaData.sort === 'az') {
-        sortedEntries.sort((a, b) => a[1].name.localeCompare(b[1].name));
-    } else if (objMistriaData.sort === 'za') {
-        sortedEntries.sort((a, b) => b[1].name.localeCompare(a[1].name));
+    if (typeof (objMistriaData.sort) !== undefined && $(`#scraped .sortable[data-sort-${objMistriaData.sort}]`).length) {
+        $(`#scraped .sortable[data-sort-${objMistriaData.sort}]`).each(function () {
+            let intSortIndex = $(this).attr(`data-sort-${objMistriaData.sort}`);
+            $(this).css('order', intSortIndex);
+        });
     }
-
-    var intIndex = 0;
-    sortedEntries.forEach(([strItemKey, objCharacter]) => {
-        $divItem = $(strElemID + strItemKey);
-
-        if (!('sort' in objMistriaData)) {
-            if (objDefaultOrder) {
-                if (strItemKey in objDefaultOrder) {
-                    $divItem.css('order', objDefaultOrder[strItemKey]);
-                }
-                else {
-                    $divItem.css('order', 99);
-                }
-            }
-            else {
-                $divItem.css('order', '');
-            }
-        }
-        else {
-            $divItem.css('order', intIndex);
-            intIndex++;
-        }
-    });
 }
 
 function isJsonString(str) {
@@ -490,58 +369,37 @@ function isJsonString(str) {
 }
 
 function compareData(strJson) {
+    let objOldData = {};
+    arrTabs.forEach(function (strTab) {
+        if (strTab in objMistriaData) {
+            objOldData[strTab] = [...objMistriaData[strTab]];
+        }
+    });
+    objOldData.options = [...objMistriaData.options];
 
-    var objNewData = JSON.parse(strJson);
-    var objOldData = JSON.parse(localStorage.getItem('mistria_data')) || JSON.parse(JSON.stringify(objMistriaDataDefault));
+    let objNewData = JSON.parse(strJson);
 
-    if (! 'museum' in objOldData) {
-        objOldData.museum = [];
-    }
-    if (! 'scrolls' in objOldData) {
-        objOldData.scrolls = [];
-    }
-    if (! 'animals' in objOldData) {
-        objOldData.animals = [];
-    }
-    if (! 'customization' in objOldData) {
-        objOldData.customization = objMistriaDataDefault.customization;
-    }
-    if (! 'almanac' in objOldData) {
-        objOldData.almanac = [];
-    }
-
-    // remove duplicates
-    objOldData.gifts = [...new Set(objOldData.gifts)];
-    objNewData.gifts = [...new Set(objNewData.gifts)];
-    objOldData.museum = [...new Set(objOldData.museum)];
-    objNewData.museum = [...new Set(objNewData.museum)];
-    objOldData.scrolls = [...new Set(objOldData.scrolls)];
-    objNewData.scrolls = [...new Set(objNewData.scrolls)];
-    objOldData.animals = [...new Set(objOldData.animals)];
-    objNewData.animals = [...new Set(objNewData.animals)];
-    objOldData.customization = [...new Set(objOldData.customization)];
-    objNewData.customization = [...new Set(objNewData.customization)];
-    objOldData.almanac = [...new Set(objOldData.almanac)];
-    objNewData.almanac = [...new Set(objNewData.almanac)];
-    objOldData.options = [...new Set(objOldData.options)];
+    //remove duplicates for new data
+    arrTabs.forEach(function (strTab) {
+        if (strTab in objMistriaData) {
+            objNewData[strTab] = [...new Set(objNewData[strTab])];
+        }
+    });
     objNewData.options = [...new Set(objNewData.options)];
 
-    // Compare old and new data
-    const intOldGiftCount = Array.isArray(objOldData.gifts) ? objOldData.gifts.length : 0;
-    const intNewGiftCount = Array.isArray(objNewData.gifts) ? objNewData.gifts.length : 0;
-    const intOldMuseumCount = Array.isArray(objOldData.museum) ? objOldData.museum.length : 0;
-    const intNewMuseumCount = Array.isArray(objNewData.museum) ? objNewData.museum.length : 0;
-    const intOldScrollsCount = Array.isArray(objOldData.scrolls) ? objOldData.scrolls.length : 0;
-    const intNewScrollsCount = Array.isArray(objNewData.scrolls) ? objNewData.scrolls.length : 0;
-    const intOldAnimalsCount = Array.isArray(objOldData.animals) ? objOldData.animals.length : 0;
-    const intNewAnimalsCount = Array.isArray(objNewData.animals) ? objNewData.animals.length : 0;
-    const intOldCustomizationCount = Array.isArray(objOldData.customization) ? objOldData.customization.length : 0;
-    const intNewCustomizationCount = Array.isArray(objNewData.customization) ? objNewData.customization.length : 0;
-    const intOldAlmanacCount = Array.isArray(objOldData.almanac) ? objOldData.almanac.length : 0;
-    const intNewAlmanacCount = Array.isArray(objNewData.almanac) ? objNewData.almanac.length : 0;
-    const intOldToggleCount = Array.isArray(objOldData.options) ? objOldData.options.length : 0;
-    const intNewToggleCount = Array.isArray(objNewData.options) ? objNewData.options.length : 0;
+    //sort arrays for comparison
+    arrTabs.forEach(function (strTab) {
+        if (strTab in objOldData) {
+            objOldData[strTab].sort();
+        }
+        if (strTab in objNewData) {
+            objNewData[strTab].sort();
+        }
+    });
 
+    // Compare old and new data
+    var bolChangesDetected = false;
+    let arrChanges = [];
     var strOldSort = '';
     var strNewSort = '';
     switch (objOldData.sort) {
@@ -566,56 +424,27 @@ function compareData(strJson) {
             strNewSort = 'In game';
     }
 
-    var bolChangesDetected = false;
-    let arrChanges = [];
+    arrTabs.forEach(function (strTab) {
+        if (objOldData[strTab].length === objNewData[strTab].length && objOldData[strTab].every((value, index) => value === objNewData[strTab][index])) {
+            arrChanges.push(`${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} -> ${objNewData[strTab].length}`);
+        } else {
+            bolChangesDetected = true;
+            arrChanges.push(`<b>${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} -> ${objNewData[strTab].length}</b>`);
+        }
+    });
 
-    if (JSON.stringify(objOldData.gifts) !== JSON.stringify(objNewData.gifts)) {
-        bolChangesDetected = true;
-        arrChanges.push(`<b>Given gifts: ${intOldGiftCount} -> ${intNewGiftCount}</b>`);
+    if (objOldData.options.length === objNewData.options.length && objOldData.options.every((value, index) => value === objNewData.options[index])) {
+        arrChanges.push(`Layout toggles: ${objOldData.options.length} -> ${objNewData.options.length}`);
     } else {
-        arrChanges.push(`Given gifts: ${intOldGiftCount} -> ${intNewGiftCount}`);
-    }
-    if (JSON.stringify(objOldData.museum) !== JSON.stringify(objNewData.museum)) {
         bolChangesDetected = true;
-        arrChanges.push(`<b>Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}</b>`);
-    } else {
-        arrChanges.push(`Donated museum items: ${intOldMuseumCount} -> ${intNewMuseumCount}`);
+        arrChanges.push(`<b>Layout toggles: ${objOldData.options.length} -> ${objNewData.options.length}</b>`);
     }
-    if (JSON.stringify(objOldData.scrolls) !== JSON.stringify(objNewData.scrolls)) {
-        bolChangesDetected = true;
-        arrChanges.push(`<b>Obtained recipes: ${intOldScrollsCount} -> ${intNewScrollsCount}</b>`);
+
+    if (strOldSort === strNewSort) {
+        arrChanges.push(`Sort settings: ${strOldSort} -> ${strNewSort}`);
     } else {
-        arrChanges.push(`Obtained recipes: ${intOldScrollsCount} -> ${intNewScrollsCount}`);
-    }
-    if (JSON.stringify(objOldData.animals) !== JSON.stringify(objNewData.animals)) {
-        bolChangesDetected = true;
-        arrChanges.push(`<b>Unlocked animal colors: ${intOldAnimalsCount} -> ${intNewAnimalsCount}</b>`);
-    } else {
-        arrChanges.push(`Unlocked animal colors: ${intOldAnimalsCount} -> ${intNewAnimalsCount}`);
-    }
-    if (JSON.stringify(objOldData.customization) !== JSON.stringify(objNewData.customization)) {
-        bolChangesDetected = true;
-        arrChanges.push(`<b>Obtained customization items: ${intOldCustomizationCount} -> ${intNewCustomizationCount}</b>`);
-    } else {
-        arrChanges.push(`Obtained customization items: ${intOldCustomizationCount} -> ${intNewCustomizationCount}`);
-    }
-    if (JSON.stringify(objOldData.almanac) !== JSON.stringify(objNewData.almanac)) {
-        bolChangesDetected = true;
-        arrChanges.push(`<b>Obtained almanac items: ${intOldAlmanacCount} -> ${intNewAlmanacCount}</b>`);
-    } else {
-        arrChanges.push(`Obtained almanac items: ${intOldAlmanacCount} -> ${intNewAlmanacCount}`);
-    }
-    if (JSON.stringify(objOldData.options) !== JSON.stringify(objNewData.options)) {
-        bolChangesDetected = true;
-        arrChanges.push(`<b>Layout toggles: ${intOldToggleCount} -> ${intNewToggleCount}</b>`);
-    } else {
-        arrChanges.push(`Layout toggles: ${intOldToggleCount} -> ${intNewToggleCount}`);
-    }
-    if (strOldSort !== strNewSort) {
         bolChangesDetected = true;
         arrChanges.push(`<b>Sort settings: ${strOldSort} -> ${strNewSort}</b>`);
-    } else {
-        arrChanges.push(`Sort settings: ${strOldSort} -> ${strNewSort}`);
     }
 
     if (!bolChangesDetected) {
@@ -629,7 +458,6 @@ function saveJson() {
     var strJson = $('#settings_json').val();
     if (isJsonString(strJson)) {
         const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson);
-
         $('#accept_changes').show();
 
         $('#changes').html(
@@ -643,13 +471,17 @@ function saveJson() {
             }
 
             objMistriaData = objNewData;
-            objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
-            objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
-            objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
-            objMistriaData.scrolls = ('scrolls' in objMistriaData ? new Set(objMistriaData.scrolls) : new Set());
-            objMistriaData.animals = ('animals' in objMistriaData ? new Set(objMistriaData.animals) : new Set());
-            objMistriaData.customization = ('customization' in objMistriaData ? new Set(objMistriaData.customization) : new Set(objMistriaDataDefault.customization));
-            objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
+
+            // convert arrays to sets for to remove duplicates 
+            arrTabs.forEach(function (strTab) {
+                if (strTab in objMistriaData) {
+                    objMistriaData[strTab] = new Set(objMistriaData[strTab]);
+                } else {
+                    objMistriaData[strTab] = new Set(objMistriaDataDefault[strTab]);
+                }
+            });
+            objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set(objMistriaDataDefault.options));
+
             saveData();
             window.location.reload();
         });
@@ -738,38 +570,31 @@ function loadData() {
     }
 
     $('#settings_json').val(JSON.stringify(objMistriaData, undefined, 4));
-    objMistriaData.gifts = ('gifts' in objMistriaData ? new Set(objMistriaData.gifts) : new Set());
-    objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set());
-    objMistriaData.museum = ('museum' in objMistriaData ? new Set(objMistriaData.museum) : new Set());
-    objMistriaData.scrolls = ('scrolls' in objMistriaData ? new Set(objMistriaData.scrolls) : new Set());
-    objMistriaData.animals = ('animals' in objMistriaData ? new Set(objMistriaData.animals) : new Set());
-    objMistriaData.customization = ('customization' in objMistriaData ? new Set(objMistriaData.customization) : new Set(objMistriaDataDefault.customization));
-    objMistriaData.almanac = ('almanac' in objMistriaData ? new Set(objMistriaData.almanac) : new Set());
+
+    // convert arrays to sets for to remove duplicates 
+    arrTabs.forEach(function (strTab) {
+        if (strTab in objMistriaData) {
+            objMistriaData[strTab] = new Set(objMistriaData[strTab]);
+        } else {
+            objMistriaData[strTab] = new Set(objMistriaDataDefault[strTab]);
+        }
+    });
+    objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set(objMistriaDataDefault.options));
+
+    // for backward compatibility with old data structure
+    if (objMistriaData.tab === 'gift') {
+        objMistriaData.tab = 'gifts';
+    }
 }
 
 function saveData() {
     // convert to array since JSON.stringify does not work on sets
-    if ('gifts' in objMistriaData) {
-        objMistriaData.gifts = [...objMistriaData.gifts];
-    }
-    if ('options' in objMistriaData) {
-        objMistriaData.options = [...objMistriaData.options];
-    }
-    if ('museum' in objMistriaData) {
-        objMistriaData.museum = [...objMistriaData.museum];
-    }
-    if ('scrolls' in objMistriaData) {
-        objMistriaData.scrolls = [...objMistriaData.scrolls];
-    }
-    if ('animals' in objMistriaData) {
-        objMistriaData.animals = [...objMistriaData.animals];
-    }
-    if ('customization' in objMistriaData) {
-        objMistriaData.customization = [...objMistriaData.customization];
-    }
-    if ('almanac' in objMistriaData) {
-        objMistriaData.almanac = [...objMistriaData.almanac];
-    }
+    arrTabs.forEach(function (strTab) {
+        if (strTab in objMistriaData) {
+            objMistriaData[strTab] = [...objMistriaData[strTab]];
+        }
+    });
+    objMistriaData.options = [...objMistriaData.options];
 
     localStorage.setItem('mistria_data', JSON.stringify(objMistriaData));
     loadData();
@@ -782,6 +607,29 @@ function openJsonPopup() {
 }
 
 function loadMenuItems() {
+
+    $('#side_menu #title .version').text(`v ${objBuild.version}`);
+
+    if (!$('#tutorial').length) {
+        objBuild.tabsOrder.forEach(function (strTab) {
+            let objTabInfo = objTabs[strTab].info;
+            $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/${objTabInfo.icon}">${objTabInfo.name}</div>`)
+        });
+         $('#tabs').append(` 
+            <div class="tab" data-tab="wrapped">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20,7H18a2,2,0,0,0-2,2V20H15V12a2,2,0,0,0-2-2H11a2,2,0,0,0-2,2v8H8V16a2,2,0,0,0-2-2H4a2,2,0,0,0-2,2v5a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V9A2,2,0,0,0,20,7ZM4,20V16H6v4Zm7,0V12h2v8Zm7,0V9h2V20Z" />
+                        <path
+                            d="M3.81,12.58l4.57-6.4L13.68,8a1,1,0,0,0,.82-.08l7-4a1,1,0,0,0-1-1.74L13.89,5.91,8.32,4.05a1,1,0,0,0-1.13.37l-5,7a1,1,0,0,0,.23,1.39A1,1,0,0,0,3,13,1,1,0,0,0,3.81,12.58Z" />
+                    </svg>
+                </div>
+                Mistria Wrapped
+            </div>
+        `);
+    }
+
     // create menu checkboxes
     arrObtain.forEach(function (strObtain, i) {
         if (strObtain === 'spacing') {
@@ -832,7 +680,7 @@ function loadMenuItems() {
             });
         }
 
-        checkAllVisibility();
+        checkScrapedTabVisibility();
     });
 
     $('#search_items').on('keyup', function () {
@@ -844,60 +692,7 @@ function loadMenuItems() {
         if (value !== '') {
             const keywords = value.split('+').map(s => s.trim()).filter(Boolean);
 
-            $('#characters .item').filter(function () {
-                const text = $(this).text().trim().toLowerCase();
-                const matchesAll = keywords.some(word => text.includes(word));
-
-                if (matchesAll) {
-                    $(this).removeClass('hide_search');
-                } else {
-                    $(this).addClass('hide_search');
-                }
-            });
-
-            $('#almanac .item').filter(function () {
-                const text = $(this).text().trim().toLowerCase();
-                const matchesAll = keywords.some(word => text.includes(word));
-
-                if (matchesAll) {
-                    $(this).removeClass('hide_search');
-                } else {
-                    $(this).addClass('hide_search');
-                }
-            });
-
-            $('#museum .item').filter(function () {
-                const text = $(this).text().trim().toLowerCase();
-                const matchesAll = keywords.some(word => text.includes(word));
-
-                if (matchesAll) {
-                    $(this).removeClass('hide_search');
-                } else {
-                    $(this).addClass('hide_search');
-                }
-            });
-            $('#scrolls .item').filter(function () {
-                const text = $(this).text().trim().toLowerCase();
-                const matchesAll = keywords.some(word => text.includes(word));
-
-                if (matchesAll) {
-                    $(this).removeClass('hide_search');
-                } else {
-                    $(this).addClass('hide_search');
-                }
-            });
-            $('#animals .item').filter(function () {
-                const text = $(this).text().trim().toLowerCase();
-                const matchesAll = keywords.some(word => text.includes(word));
-
-                if (matchesAll) {
-                    $(this).removeClass('hide_search');
-                } else {
-                    $(this).addClass('hide_search');
-                }
-            });
-
-            $('#customization .item').filter(function () {
+            $('#scraped .item').filter(function () {
                 const text = $(this).text().trim().toLowerCase();
                 const matchesAll = keywords.some(word => text.includes(word));
 
@@ -914,9 +709,9 @@ function loadMenuItems() {
 
         }
 
-        $('#characters .character').each(function () {
+        $('#scraped .category .subcategory').each(function () {
             if (value !== '') {
-                if ($(this).find('.char_name').html().includes('highlight')) {
+                if ($(this).find('.subcategory_name').length && $(this).find('.subcategory_name').html().includes('highlight')) {
                     $(this).find('.item').removeClass('hide_search');
                 }
             }
@@ -926,31 +721,7 @@ function loadMenuItems() {
             }
         });
 
-        $('#almanac .section').each(function () {
-            if (value !== '') {
-                if ($(this).find('.section_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-
-        $('#customization .category .subcategory').each(function () {
-            if (value !== '') {
-                if ($(this).find('.subcategory_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-
-        $('#customization .category').each(function () {
+        $('#scraped .category').each(function () {
             if (value !== '') {
                 if ($(this).find('.category_name').html().includes('highlight')) {
                     $(this).find('.item').removeClass('hide_search');
@@ -962,77 +733,7 @@ function loadMenuItems() {
             }
         });
 
-        $('#scrolls .category .subcategory').each(function () {
-            if (value !== '') {
-                if ($(this).find('.subcategory_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-
-        $('#scrolls .category').each(function () {
-            if (value !== '') {
-                if ($(this).find('.category_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-        $('#animals .category .subcategory').each(function () {
-            if (value !== '') {
-                if ($(this).find('.subcategory_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-
-        $('#animals .category').each(function () {
-            if (value !== '') {
-                if ($(this).find('.category_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-        $('#museum .wing .set').each(function () {
-            if (value !== '') {
-                if ($(this).find('.set_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-
-        $('#museum .wing').each(function () {
-            if (value !== '') {
-                if ($(this).find('.wing_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
-                }
-            }
-
-            if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-                $(this).hide()
-            }
-        });
-
-        checkAllVisibility();
+        checkScrapedTabVisibility();
     });
 
     var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_mini_tooltip'];
@@ -1051,7 +752,6 @@ function loadMenuItems() {
             if (strMode === 'mode_dark') {
 
                 const color = objMistriaData.options.has('mode_dark') ? "#00000050" : Chart.defaults.borderColor;
-
 
                 if ('chartMap' in allCharts) {
                     allCharts['chartMap'].data.datasets = generateMapChartData()
@@ -1074,7 +774,7 @@ function loadMenuItems() {
 
 
             if (strMode === 'mode_spoilers' || strMode === 'mode_gift') {
-                checkAllVisibility();
+                checkScrapedTabVisibility();
                 if (strMode === 'mode_spoilers') {
                     updateStatistics();
                 }
@@ -1099,299 +799,193 @@ function loadMenuItems() {
     });
 }
 
-function loadGiftTab() {
-
+function loadScrapedTab(strTab) {
     let arrAllItems = [];
 
-    Object.entries(objCharacters).forEach(([strCharacterKey, objCharacter]) => {
-        var $divCharacter = $('<div>', { 'class': 'character', 'id': `character_${strCharacterKey}` });
+    let objCategories = objTabs[strTab].categories;
 
-        if (objCharacter['spoiler']) {
-            $divCharacter.addClass('spoiler');
-        }
+    let strImagePath = `images/${objTabs[strTab].info.img_path}`;
+    let strImageMiniPath = `images/${objTabs[strTab].info.img_mini_path}`;
+    let strImageItemPath = `images/${objTabs[strTab].info.img_item_path}`;
+    let objItemsTemp = {};
 
-        if (!('sort' in objMistriaData)) {
-            if (strCharacterKey in objCharOrder) {
-                $divCharacter.css('order', objCharOrder[strCharacterKey]);
-            }
-            else {
-                $divCharacter.css('order', 99);
-            }
-        }
-
-        $divCharacter.append(`  <div class="char_img"><img src="images/profiles/${capitalizeFirstLetter(strCharacterKey)}.png"></div>
-                                <a class="char_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCharacter['name']}" target="_blank">
-                                    <img class="char_img_mini" src="images/mini_profiles/${capitalizeFirstLetter(strCharacterKey)}.png">
-                                   ${objCharacter['name']}
-                                </a>
-                            ` );
-        $('#characters').append($divCharacter);
-
-        var $divLoved = $('<div>', { 'class': 'loved_gifts' });
-        $divLoved.append('<div class="giftset">Loved</div>');
-        $divCharacter.append($divLoved);
-        let arrLovedGifts = createGiftItem(objCharacter['loved'], strCharacterKey, $divLoved);
-        arrAllItems = arrAllItems.concat(arrLovedGifts);
-
-        var $divLiked = $('<div>', { 'class': 'liked_gifts' });
-        $divLiked.append('<div class="giftset">Liked</div>');
-        $divCharacter.append($divLiked);
-        let arrLikedGifts = createGiftItem(objCharacter['liked'], strCharacterKey, $divLiked)
-        arrAllItems = arrAllItems.concat(arrLikedGifts);
-    });
-
-    addSelectAllAndAlert('characters', 'gift_chb', arrAllItems);
-
-    $('.gift_chb:checkbox').change(function () {
-        if ($(this).is(':checked')) {
-            objMistriaData.gifts.add($(this).val())
-        } else {
-            objMistriaData.gifts.delete($(this).val())
-        }
-
-        if ($(`.gift_chb`).length == $(`.gift_chb:checked`).length) {
-            $('#selectAll').prop('checked', true);
-        } else {
-            $('#selectAll').prop('checked', false);
-        }
-
-        $('.alert_import').remove();
-
-        updateStatistics();
-        saveData();
-    });
-
-    if ($('#search_items').val() != '') {
-        $('#search_items').keyup();
-    }
-    if ($('input.obtain_cbx:checked').length) {
-        $('input.obtain_cbx').change()
+    switch (objTabs[strTab].info.item_json) {
+        case 'accessories':
+            objItemsTemp = objItemsAccessories;
+            break;
+        case 'animals':
+            objItemsTemp = objItemsAnimals;
+            break;
+        default:
+            objItemsTemp = objItems;
     }
 
-    changeSortForObject(objMistriaData, objCharacters, '.character', '#character_', objCharOrder);
-    checkGiftVisibility();
-}
+    let arrCategoryKeys = Object.keys(objCategories);
+    let arrCategoryKeysAlphabetical = arrCategoryKeys.sort((a, b) => objCategories[a].info.name.localeCompare(objCategories[b].info.name));
 
-function loadMuseumTab() {
-
-    let arrAllItems = [];
-
-    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
-        var $divWing = $('<div>', { 'class': 'wing', 'id': `wing_${strWingKey}` });
-
-        $divWing.append(` 
-            <div class="wing_img"><img src="images/${objWing['name']}_wing.png"></div>
-                                <a class="wing_name" href="https://fieldsofmistria.wiki.gg/wiki/${objWing['name']}_Wing" target="_blank">
-                                   ${objWing['name']}
-                                </a>
-                            ` );
-        $('#museum').append($divWing);
-
-        var $divSets = $('<div>', { 'class': 'sets' });
-        $divWing.append($divSets);
-
-        let sortedEntriesSets = Object.entries(objWing['sets']);
-        if (objMistriaData.sort === 'az') {
-            sortedEntriesSets.sort((a, b) => a[1].name.localeCompare(b[1].name));
-        } else if (objMistriaData.sort === 'za') {
-            sortedEntriesSets.sort((a, b) => b[1].name.localeCompare(a[1].name));
-        }
-
-        sortedEntriesSets.forEach(([strSetKey, objSet]) => {
-            strID = strWingKey + '_' + strSetKey;
-
-            var strCleanedName = objSet['name'].replace('Set', '');
-
-            var strLinkHash = strCleanedName
-                .replace('Artifact', '')
-                .replace('Fish', '')
-                .replace('Material', '')
-                .replace('Flower', '')
-                .replace('Forage', '')
-                .replace('Crop', '')
-                .replace('Insect', '')
-                .trim().replaceAll(' ', '_');
-
-            var $divSet = $('<div>', { 'class': 'set', 'id': `set_${strWingKey}_${strSetKey}` });
-
-            if (objSet['spoiler'] || objSet['nodata']) {
-                $divSet.addClass('spoiler')
-            }
-
-            $divSets.append($divSet);
-
-            var $divitems = $('<div>', { 'class': 'set_items' });
-            $divSet.append($divitems);
-
-            $divitems.append(` 
-                                <a class="set_name" href="https://fieldsofmistria.wiki.gg/wiki/${objWing['name']}_Wing#${strLinkHash}" target="_blank">
-                                   ${strCleanedName}
-                                </a>
-                            ` );
-
-
-            objSet['items'].forEach((item) => {
-                strID = item;
-                arrAllItems.push(strID);
-                strDataCbx = $($.parseHTML(objItems[item]['tip'])).text().replace(/["'&<>]/g, '').trim();
-
-                $divitems.append(`<div class="item ${objItems[item]['spoiler'] || objItems[item]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="museum_chb" ${objMistriaData.museum.has(strID) ? 'checked' : ''} type="checkbox" id="set_${strID}" name="museum" value="${strID}">
-                                <label for="set_${strID}" class="has_tip" id="museum_label_${strID}">
-                                    <div class="image ${objItems[item]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${item}.png)"></div>
-                                    <div class="name">${objItems[item]['name']}</div>
-                                </label>
-                                ${createTip(strID, item, true)}
-                               
-                            </div>`);
-
-                const template = $(`#tip_${strID}`)[0];
-                template.style.display = 'block';
-                tippy(`#museum_label_${strID}`, {
-                    content: template,
-                    interactive: true,
-                    maxWidth: 370
-                });
-            });
-        });
-    });
-
-    addSelectAllAndAlert('museum', 'museum_chb', arrAllItems);
-
-    $('.museum_chb:checkbox').change(function () {
-        var bolAdd = true;
-        if ($(this).is(':checked')) {
-            objMistriaData.museum.add($(this).val());
-        } else {
-            objMistriaData.museum.delete($(this).val());
-            bolAdd = false;
-        }
-
-        strItemKey = $(this).val();
-        $(`[id^="label_"][id$="_${strItemKey}"]`).each(function (index) {
-            var objLabel = $(this)[0];
-            var objTippy = objLabel._tippy;
-            if (bolAdd) {
-                $(objTippy.props.content).find('.tip_name').addClass('checked');
-            } else {
-                $(objTippy.props.content).find('.tip_name').removeClass('checked');
-            }
-            objTippy.setContent($(objTippy.props.content)[0]);
-        });
-
-        if ($(`.museum_chb`).length == $(`.museum_chb:checked`).length) {
-            $('#selectAll').prop('checked', true);
-        } else {
-            $('#selectAll').prop('checked', false);
-        }
-
-        $('.alert_import').remove();
-
-        updateStatistics();
-        saveData();
-    });
-
-    if ($('#search_items').val() != '') {
-        $('#search_items').keyup();
-    }
-    if ($('input.obtain_cbx:checked').length) {
-        $('input.obtain_cbx').change()
+    let objCategoriesSorted = {
+        'az': arrCategoryKeysAlphabetical,
+        'za': arrCategoryKeysAlphabetical.toReversed()
     }
 
-    changeSortForObject(objMistriaData, objMuseum, '.wing', '#wing_');
-    Object.entries(objMuseum).forEach(([strWingKey, objWing]) => {
-        changeSortForObject(objMistriaData, objWing['sets'], `.wing_${strWingKey} .set`, `#set_${strWingKey}_`);
-    });
-    checkMuseumVisibility();
-}
+    Object.entries(objCategories).forEach(([strCatgoryKey, objCategory]) => {
+        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCatgoryKey}` });
 
-function loadCustomizationTab() {
+        $divCategory.addClass('sortable');
+        $divCategory.attr('data-sort-az', objCategoriesSorted.az.indexOf(strCatgoryKey));
+        $divCategory.attr('data-sort-za', objCategoriesSorted.za.indexOf(strCatgoryKey));
 
-    let arrAllItems = [];
+        if (objCategory.info.spoiler || objCategory.info.nodata || objCategory.info.noimage) {
+            $divCategory.addClass('spoiler')
+        }
 
-    Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
+        if ('img' in objCategory.info) {
+            $divCategory.append(` 
+                <div class="category_img">
+                    <img src="${strImagePath}${objCategory.info.img}.png">
+                </div>
+            `);
+        }
 
-        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCategoryKey}` });
-        var strCleanedName = capitalizeFirstLetter(strCategoryKey.replace('_', ' '));
-        $divCategory.append(` 
-            <div class="category_img"><img src="images/${objCategory['img']}.png"></div>
-                                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/Cosmetics" target="_blank">
-                                   ${strCleanedName}
-                                </a>
-                            ` );
-        $('#customization').append($divCategory);
+        if ('wikilink' in objCategory.info) {
+            $divCategory.append(` 
+                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/${objCategory.info.wikilink}" target="_blank">
+                    ${objCategory.info.name}
+                </a>
+            `);
+        } else {
+            $divCategory.append(` 
+                <div class="category_name" >
+                    ${objCategory.info.name}
+                </div>
+            `);
+        }
+
+
+        if ('img_mini' in objCategory.info) {
+            $divCategory.find('.category_name').prepend(`
+                <div class="category_img_mini">
+                    <img src="${strImageMiniPath}${objCategory.info.img_mini}.png">
+                </div>
+            `)
+        }
+
+        $('#scraped').append($divCategory);
 
         var $divSubcategories = $('<div>', { 'class': 'subcategories' });
         $divCategory.append($divSubcategories);
 
-        let sortedEntriesSubcategories = Object.entries(objCategory['subcategories']);
-        if (objMistriaData.sort === 'az') {
-            sortedEntriesSubcategories.sort((a, b) => a[1].name.localeCompare(b[1].name));
-        } else if (objMistriaData.sort === 'za') {
-            sortedEntriesSubcategories.sort((a, b) => b[1].name.localeCompare(a[1].name));
+
+        let arrSubcategoryKeys = Object.keys(objCategory.subcategories);
+        let arrSubcategoryKeysAlphabetical = arrSubcategoryKeys.sort((a, b) => objCategory.subcategories[a].info.name.localeCompare(objCategory.subcategories[b].info.name));
+
+        let objSubcategoriesSorted = {
+            'az': arrSubcategoryKeysAlphabetical,
+            'za': arrSubcategoryKeysAlphabetical.toReversed()
         }
 
-        sortedEntriesSubcategories.forEach(([strSubcategoryKey, objSubcategory]) => {
-            strID = strCategoryKey + '_' + strSubcategoryKey;
+        Object.entries(objCategory.subcategories).forEach(([strSubcategoryKey, objSubcategory]) => {
 
-            var $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCategoryKey}_${strSubcategoryKey}` });
+            let $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCatgoryKey}_${strSubcategoryKey}` });
 
-            if (objSubcategory['spoiler'] || objSubcategory['nodata']) {
+            $divSubcategory.addClass('sortable');
+
+            if (strCatgoryKey !== 'gifts' && strCatgoryKey !== 'animals') {
+                $divSubcategory.attr('data-sort-az', objSubcategoriesSorted.az.indexOf(strSubcategoryKey));
+                $divSubcategory.attr('data-sort-za', objSubcategoriesSorted.za.indexOf(strSubcategoryKey));
+            }
+
+            if (objSubcategory.info.spoiler || objSubcategory.info.nodata) {
                 $divSubcategory.addClass('spoiler')
             }
 
             $divSubcategories.append($divSubcategory);
 
-            var $divitems = $('<div>', { 'class': 'subcategory_items' });
-            $divSubcategory.append($divitems);
+            let $divItems = $('<div>', { 'class': 'subcategory_items' });
+            $divSubcategory.append($divItems);
 
-            $divitems.append(` 
-                                <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/Cosmetics"" target="_blank">
-                                   ${objSubcategory['name']}
-                                </a>
-                            ` );
+            if ('name' in objSubcategory.info) {
 
+                if ('wikilink' in objSubcategory.info) {
+                    $divItems.append(` 
+                        <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/${objSubcategory.info.wikilink}" target="_blank">
+                            ${objSubcategory.info.name}
+                        </a>
+                    `);
+                } else {
+                    $divItems.append(` 
+                        <div class="subcategory_name">
+                            ${objSubcategory.info.name}
+                        </div>
+                    `);
+                }
+            }
 
-            objSubcategory['items'].forEach((item) => {
-                strID = item;
-                arrAllItems.push(strID);
-                strDataCbx = $($.parseHTML(objAccessories[item]['tip'])).text().replace(/["'&<>]/g, '').trim();
-                $divitems.append(`<div class="item ${objAccessories[item]['spoiler'] || objAccessories[item]['nodata'] ? 'spoiler' : ''}" data-cbx="${strDataCbx}">
-                                <input class="customization_chb" ${objMistriaData.customization.has(strID) ? 'checked' : ''} type="checkbox" id="subcategory_${strID}" name="customization" value="${strID}">
-                                <label for="subcategory_${strID}" class="has_tip" id="customization_label_${strID}">
-                                    <div class="image ${objAccessories[item]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/accessories/${item}.png)"></div>
-                                    <div class="name">${objAccessories[item]['name']}</div>
-                                </label>
-                                ${createTip(strID, item, false, false, true)}
-                               
-                            </div>`);
+            objSubcategory['items'].forEach((strItemKey) => {
+                let strLocalstorageKey = strItemKey;
+                if (strTab === 'gifts') {
+                    strLocalstorageKey = `${strCatgoryKey}_${strItemKey}`;
+                }
+                arrAllItems.push(strLocalstorageKey);
 
-                const template = $(`#tip_${strID}`)[0];
-                template.style.display = 'block';
-                tippy(`#customization_label_${strID}`, {
-                    content: template,
-                    interactive: true,
-                    maxWidth: 370
-                });
+                let strCbxID = `${strCatgoryKey}_${strSubcategoryKey}_${strItemKey}`;
+                let strDataCbx = $($.parseHTML(objItemsTemp[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
+
+                let bolAdditionalSpoiler = false;
+                if (strTab === 'scrolls') {
+                    bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
+                }
+                $divItems.append(`
+                    <div class="item ${objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
+                        <input class="item_cbx" ${objMistriaData[strTab].has(strLocalstorageKey) ? 'checked' : ''} type="checkbox" id="${strCbxID}" name="${strTab}" value="${strLocalstorageKey}">
+                        <label for="${strCbxID}" class="has_tip" id="label_${strCbxID}">
+                            <div class="image ${objItemsTemp[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(${strImageItemPath}${strItemKey}.png)"></div>
+                            <div class="name">${objItemsTemp[strItemKey]['name']}</div>
+                        </label>
+                    </div>
+                `);
+
+                if (strTab === 'scrolls' || strTab === 'almanac') {
+                    if (objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler) {
+                        $divItems.append(`<div class="item spoiler_placeholder" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}"></div>`);
+                    }
+                }
+
+                if (strTab !== 'animals') {
+                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, objItemsTemp)}`);
+                    const template = $(`#tip_${strCbxID}`)[0];
+                    template.style.display = 'block';
+                    tippy(`#label_${strCbxID}`, {
+                        content: template,
+                        interactive: true,
+                        maxWidth: 370
+                    });
+                }
+
             });
         });
     });
 
-    addSelectAllAndAlert('customization', 'customization_chb', arrAllItems);
+    addSelectAllAndAlert(strTab, arrAllItems);
 
-    $('.customization_chb:checkbox').change(function () {
-        var bolAdd = true;
-        if ($(this).is(':checked')) {
-            objMistriaData.customization.add($(this).val());
+    $('.item_cbx:checkbox').change(function () {
+        let bolChecked = $(this).is(':checked');
+        let bolAdd = true;
+        let strItemKey = $(this).val();
+
+        if (bolChecked) {
+            objMistriaData[strTab].add($(this).val());
         } else {
-            objMistriaData.customization.delete($(this).val());
+            objMistriaData[strTab].delete($(this).val());
             bolAdd = false;
         }
 
-        strItemKey = $(this).val();
+        // check all the checkboxes with same value, for example almanact has 2 pink scallops
+        $(`.item_cbx:checkbox[value=${strItemKey}]`).prop('checked', bolChecked);
+
         $(`[id^="label_"][id$="_${strItemKey}"]`).each(function (index) {
-            var objLabel = $(this)[0];
-            var objTippy = objLabel._tippy;
+            let objLabel = $(this)[0];
+            let objTippy = objLabel._tippy;
             if (bolAdd) {
                 $(objTippy.props.content).find('.tip_name').addClass('checked');
             } else {
@@ -1400,100 +994,7 @@ function loadCustomizationTab() {
             objTippy.setContent($(objTippy.props.content)[0]);
         });
 
-        if ($(`.customization_chb`).length == $(`.customization_chb:checked`).length) {
-            $('#selectAll').prop('checked', true);
-        } else {
-            $('#selectAll').prop('checked', false);
-        }
-
-        $('.alert_import').remove();
-
-        // updateStatistics();
-        saveData();
-    });
-
-    if ($('#search_items').val() != '') {
-        $('#search_items').keyup();
-    }
-    if ($('input.obtain_cbx:checked').length) {
-        $('input.obtain_cbx').change()
-    }
-
-    changeSortForObject(objMistriaData, objCustomization, '.category', '#category_');
-    Object.entries(objCustomization).forEach(([strCategoryKey, objCategory]) => {
-        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
-    });
-    checkCustomizationVisibility();
-}
-function loadAlmanacTab() {
-
-    let arrAllItems = [];
-    Object.entries(objAlmanac).forEach(([strSectionKey, objSection]) => {
-        strUsedTag = objSection['tags'][0];
-
-        var $divSection = $('<div>', { 'class': 'section', 'id': `section_${strSectionKey}` });
-
-        $divSection.append(` 
-                <a class="section_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(objSection['name'])}" target="_blank">
-                    <img class="section_img_mini" src="images/almanac/${strSectionKey}.png">          
-                    ${objSection['name']}
-                    <div class="smaller">[${objTagItems[strUsedTag].length}]</div>
-                </a>
-            ` );
-        $('#almanac').append($divSection);
-
-        var $divitems = $('<div>', { 'class': 'set_items' });
-        $divSection.append($divitems);
-
-        objTagItems[strUsedTag].forEach((strItemKey) => {
-            strID = strItemKey;
-            arrAllItems.push(strID);
-            strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-
-            if ('tags' in objItems[strItemKey]) {
-                if (objItems[strItemKey]['tags'].includes('furniture')) {
-                    strDataCbx = strDataCbx + ' ' + 'Furniture';
-                }
-            }
-
-            $divitems.append(`<div class="item ${objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="almanac_chb" ${objMistriaData.almanac.has(strID) ? 'checked' : ''} type="checkbox" id="set_${strSectionKey}_${strID}" name="almanac" value="${strID}">
-                                <label for="set_${strSectionKey}_${strID}" class="has_tip" id="almanac_label_set_${strSectionKey}_${strID}">
-                                    <div class="image ${objItems[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strItemKey}.png)"></div>
-                                    <div class="name">${objItems[strItemKey]['name']}</div>
-                                </label>
-                                ${createTip(strID, strItemKey, true)}
-                               
-                            </div>`);
-
-            if (objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata']) {
-                $divitems.append(`<div class="item spoiler_placeholder" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}"></div>`);
-            }
-
-            const template = $(`#tip_${strID}`)[0];
-            template.style.display = 'block';
-            tippy(`#almanac_label_set_${strSectionKey}_${strID}`, {
-                content: template,
-                interactive: true,
-                maxWidth: 370
-            });
-        });
-    });
-
-    addSelectAllAndAlert('almanac', 'almanac_chb', arrAllItems);
-
-    $('.almanac_chb:checkbox').change(function () {
-        let strItemKey = $(this).attr('value');
-        let bolChecked = $(this).is(':checked');
-        $(`.almanac_chb[value='${strItemKey}']`).prop('checked', bolChecked);
-
-        if (bolChecked) {
-            objMistriaData.almanac.add($(this).val());
-        } else {
-            objMistriaData.almanac.delete($(this).val());
-        }
-
-        if ($(`.almanac_chb`).length == $(`.almanac_chb:checked`).length) {
+        if ($(`.item_cbx`).length == $(`.item_cbx:checked`).length) {
             $('#selectAll').prop('checked', true);
         } else {
             $('#selectAll').prop('checked', false);
@@ -1511,17 +1012,14 @@ function loadAlmanacTab() {
     if ($('input.obtain_cbx:checked').length) {
         $('input.obtain_cbx').change()
     }
+    sortItems()
 
-    changeSortForObject(objMistriaData, objAlmanac, '.section', '#section_');
-    checkAlmanacVisibility();
+    checkScrapedTabVisibility();
+
 }
 
-function addSelectAllAndAlert(strSectionID, strChbClass, arrAllItems) {
+function addSelectAllAndAlert(strTab, arrAllItems) {
 
-    let strStorageKey = strSectionID;
-    if (strSectionID === 'characters') {
-        strStorageKey = 'gifts';
-    }
     var strSelectAll = `
         <div id="selectAllWrapper">
             <div class="choice">
@@ -1534,9 +1032,9 @@ function addSelectAllAndAlert(strSectionID, strChbClass, arrAllItems) {
             </div>
         </div>`;
 
-    $(`#${strSectionID}`).prepend(strSelectAll);
+    $(`#scraped`).prepend(strSelectAll);
 
-    if (objMistriaData[strStorageKey].size === 0 || (strStorageKey === 'customization' && eqSet(objMistriaData['customization'], new Set(objMistriaDataDefault.customization)))) {
+    if (objMistriaData[strTab].size === 0 || (strTab === 'customization' && eqSet(objMistriaData['customization'], new Set(objMistriaDataDefault.customization)))) {
         var strAlert = `
         <div class="alert show yellow alert_import" style="grid-column: 1/-1; height: min-content;">
             <div class="icon yellow">
@@ -1552,10 +1050,10 @@ function addSelectAllAndAlert(strSectionID, strChbClass, arrAllItems) {
             </div>
         </div>`;
 
-        $(`#${strSectionID}`).prepend(strAlert);
+        $(`#scraped`).prepend(strAlert);
     }
 
-    if ($(`.${strChbClass}`).length == $(`.${strChbClass}:checked`).length) {
+    if ($(`.item_cbx`).length == $(`.item_cbx:checked`).length) {
         $('#selectAll').prop('checked', true);
     }
 
@@ -1563,12 +1061,13 @@ function addSelectAllAndAlert(strSectionID, strChbClass, arrAllItems) {
         $('.alert_import').remove();
 
         let bolChecked = $(this).is(':checked');
-        $(`.${strChbClass}`).prop('checked', bolChecked);
+        $(`.item_cbx`).prop('checked', bolChecked);
+
 
         if (bolChecked) {
-            arrAllItems.forEach(strItemKey => objMistriaData[strStorageKey].add(strItemKey))
+            arrAllItems.forEach(strItemKey => objMistriaData[strTab].add(strItemKey))
         } else {
-            arrAllItems.forEach(strItemKey => objMistriaData[strStorageKey].delete(strItemKey))
+            arrAllItems.forEach(strItemKey => objMistriaData[strTab].delete(strItemKey))
         }
         updateStatistics();
         saveData();
@@ -1600,8 +1099,8 @@ const getFlexChildren = function (strText) {
 const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 
 function loadWrappedTab() {
-    // if update charts, update dummy data as well
 
+    // if update charts, update dummy data as well
     if (JSON.parse(localStorage.getItem('mistria_wrapped')) === null) {
         // load dummy data
 
@@ -1881,7 +1380,7 @@ function loadWrappedTab() {
     // const arrCutscenesKeys = Object.fromEntries(objCutscenesOnly);
     // var objCharactersCutscenes = {};
 
-    Object.entries(objCharacters).forEach(([strCharKey, value]) => {
+    Object.entries(objTabs.gifts.categories).forEach(([strCharKey, value]) => {
         var intLastSpoken = objInfoGameDataFacts[strCharKey + '_was_last_spoken_to'];
         if (!intLastSpoken) {
             return;
@@ -2060,8 +1559,9 @@ function loadWrappedTab() {
             }
             prevValue = intValue;
             i++;
+            let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
             strTableSpokenTo += `<tr>
-                                <td><img data-tippy-content="${objCharacters[strCharacterKey]['name']}" src="images/mini_profiles/${objCharacters[strCharacterKey]['name']}.png"></td>
+                                <td><img data-tippy-content="${objCharInfo.name}" src="images/${objTabs.gifts.info.img_mini_path}${objCharInfo.img_mini}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
         });
@@ -2100,8 +1600,9 @@ function loadWrappedTab() {
             }
             prevValue = intValue;
             i++;
+            let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
             strTableSpokenTo += `<tr>
-                                <td><img data-tippy-content="${objCharacters[strCharacterKey]['name']}" src="images/mini_profiles/${objCharacters[strCharacterKey]['name']}.png"></td>
+                                <td><img data-tippy-content="${objCharInfo.name}" src="images/${objTabs.gifts.info.img_mini_path}${objCharInfo.img_mini}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
         });
@@ -2131,7 +1632,7 @@ function loadWrappedTab() {
 
     var intSpokenTo = Object.keys(objSpokenCount).filter(el => objSpokenCount[el] > 0).length;
     var data = {
-        labels: Object.keys(objSpokenCount).map((x) => objCharacters[x]['name']),
+        labels: Object.keys(objSpokenCount).map((x) => objTabs.gifts.categories[x].info.name),
         datasets: [{
             data: Object.values(objSpokenCount),
         }]
@@ -2261,7 +1762,7 @@ function loadWrappedTab() {
     });
 
     var data = {
-        labels: Object.keys(objCharacetsGivenGiftCount).map((x) => objCharacters[x]['name']),
+        labels: Object.keys(objCharacetsGivenGiftCount).map((x) => objTabs.gifts.categories[x].info.name),
         datasets: arrDatasets
     };
 
@@ -2684,7 +2185,7 @@ function loadWrappedTab() {
         }
 
         arrTips.push(strID);
-        arrTipsHtml.push(createTip(strID, strItemKey, false));
+        arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
         if (strItemKey in objItems) {
             strTableSold += `<tr>
                                 <td><img id="item_${strID}" src="images/items/${strItemKey}.png"></td>
@@ -2762,7 +2263,9 @@ function loadWrappedTab() {
         }
 
         arrTips.push(strID);
-        arrTipsHtml.push(createTip(strID, strItemKey, false));
+
+        arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
+
         if (strItemKey in objItems) {
             strTableSold += `<tr>
                                 <td><img id="item_${strID}" src="images/items/${strItemKey}.png"></td>
@@ -3647,7 +3150,6 @@ function loadWrappedTab() {
     }, 150);
 }
 
-
 function base64ToArrayBuffer(base64) {
     var binaryString = atob(base64);
     var bytes = new Uint8Array(binaryString.length);
@@ -3743,7 +3245,9 @@ function generateGenericTableGrid(objData, strTitle, bolAllData = false) {
             }
 
             arrTips.push(strID);
-            arrTipsHtml.push(createTip(strID, strItemKey, false, strBuff));
+
+            arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems, strBuff));
+
 
             prevValue = intValue;
             i++;
@@ -4409,327 +3913,42 @@ function createTestMap() {
 
     $('#wrapped').prepend($divInfoBlock);
 }
-function loadScrollsTab() {
-    let arrAllItems = [];
 
-    Object.entries(objScrolls).forEach(([strCategoryKey, objCategory]) => {
-        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCategoryKey}` });
+function checkScrapedTabVisibility() {
+    $('#scraped').removeClass('completed');
+    $('#scraped .category .subcategory').css('display', '');
+    $('#scraped .category').css('display', '');
 
-        $divCategory.append(` 
-            <div class="category_img"><img src="images/items/${objCategory['img']}.png"></div>
-                                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}" target="_blank">
-                                   ${objCategory['name']}
-                                </a>
-                            ` );
-        $('#scrolls').append($divCategory);
-
-        var $divSubCategories = $('<div>', { 'class': 'subcategories' });
-        $divCategory.append($divSubCategories);
-
-        let sortedEntriesSets = Object.entries(objCategory['subcategories']);
-        if (objMistriaData.sort === 'az') {
-            sortedEntriesSets.sort((a, b) => a[1].name.localeCompare(b[1].name));
-        } else if (objMistriaData.sort === 'za') {
-            sortedEntriesSets.sort((a, b) => b[1].name.localeCompare(a[1].name));
-        }
-
-        sortedEntriesSets.forEach(([strSubcategoryKey, objSubcategory]) => {
-            strID = strCategoryKey + '_' + strSubcategoryKey;
-
-            var $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCategoryKey}_${strSubcategoryKey}` });
-
-            $divSubCategories.append($divSubcategory);
-
-            var $divitems = $('<div>', { 'class': 'subcategory_items' });
-            $divSubcategory.append($divitems);
-
-            $divitems.append(` 
-                                <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}#${objSubcategory['name'].replaceAll(' ', '_')}" target="_blank">
-                                   ${objSubcategory['name']}
-                                </a>
-                            ` );
-
-
-            objSubcategory['items'].forEach((strItemKey) => {
-                strID = strItemKey;
-                arrAllItems.push(strID);
-                strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-                bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
-
-                $divitems.append(`<div class="item ${objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
-                                <input class="scrolls_chb" ${objMistriaData.scrolls.has(strID) ? 'checked' : ''} type="checkbox" id="${strCategoryKey}_${strSubcategoryKey}_${strID}" name="scrolls" value="${strID}">
-                                <label for="${strCategoryKey}_${strSubcategoryKey}_${strID}" class="has_tip" id="scrolls_label_${strID}">
-                                    <div class="image ${objItems[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strItemKey}.png)"></div>
-                                    <div class="name">${objItems[strItemKey]['name']}</div>
-                                </label>
-                                ${createTip(strID, strItemKey, true)}
-                               
-                            </div>`);
-
-                if (objItems[strItemKey]['spoiler'] || objItems[strItemKey]['nodata'] || bolAdditionalSpoiler) {
-                    $divitems.append(`<div class="item spoiler_placeholder" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}"></div>`);
-                }
-                const template = $(`#tip_${strID}`)[0];
-                template.style.display = 'block';
-                tippy(`#scrolls_label_${strID}`, {
-                    content: template,
-                    interactive: true,
-                    maxWidth: 370
-                });
-            });
-        });
-    });
-
-    addSelectAllAndAlert('scrolls', 'scrolls_chb', arrAllItems);
-
-    $('.scrolls_chb:checkbox').change(function () {
-        var bolAdd = true;
-        if ($(this).is(':checked')) {
-            objMistriaData.scrolls.add($(this).val());
-        } else {
-            objMistriaData.scrolls.delete($(this).val());
-            bolAdd = false;
-        }
-
-        strItemKey = $(this).val();
-        $(`[id^="label_"][id$="_${strItemKey}"]`).each(function (index) {
-            var objLabel = $(this)[0];
-            var objTippy = objLabel._tippy;
-            if (bolAdd) {
-                $(objTippy.props.content).find('.tip_name').addClass('checked');
-            } else {
-                $(objTippy.props.content).find('.tip_name').removeClass('checked');
-            }
-            objTippy.setContent($(objTippy.props.content)[0]);
-        });
-
-        if ($(`.scrolls_chb`).length == $(`.scrolls_chb:checked`).length) {
-            $('#selectAll').prop('checked', true);
-        } else {
-            $('#selectAll').prop('checked', false);
-        }
-
-        $('.alert_import').remove();
-
-        saveData();
-    });
-
-    if ($('#search_items').val() != '') {
-        $('#search_items').keyup();
-    }
-    if ($('input.obtain_cbx:checked').length) {
-        $('input.obtain_cbx').change()
-    }
-
-    changeSortForObject(objMistriaData, objScrolls, '.category', '#category_');
-    Object.entries(objScrolls).forEach(([strCategoryKey, objCategory]) => {
-        changeSortForObject(objMistriaData, objCategory['subcategories'], `.category_${strCategoryKey} .subcategory`, `#subcategory_${strCategoryKey}_`);
-    });
-    checkScrollsVisibility();
-}
-function loadAnimalsTab() {
-    let arrAllItems = [];
-
-    Object.entries(objAnimals).forEach(([strCategoryKey, objCategory]) => {
-        var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCategoryKey}` });
-
-
-        var strFirstVariantKey = Object.keys(objCategory['subcategories']['1'])[0];
-
-        $divCategory.append(` 
-            <div class="category_img"><img src="images/animals/${strCategoryKey}_${strFirstVariantKey}.png"></div>
-                                <a class="category_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}" target="_blank">
-                                   ${objCategory['name']}
-                                </a>
-                            ` );
-        $('#animals').append($divCategory);
-
-        var $divSubCategories = $('<div>', { 'class': 'subcategories' });
-        $divCategory.append($divSubCategories);
-
-        let sortedEntriesSets = Object.entries(objCategory['subcategories']);
-        // if (objMistriaData.sort === 'az') {
-        //     sortedEntriesSets.sort((a, b) => a[1].name.localeCompare(b[1].name));
-        // } else if (objMistriaData.sort === 'za') {
-        //     sortedEntriesSets.sort((a, b) => b[1].name.localeCompare(a[1].name));
-        // }
-
-        sortedEntriesSets.forEach(([strSubcategoryKey, objSubcategory]) => {
-            strID = strCategoryKey + '_' + strSubcategoryKey;
-
-            var $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCategoryKey}_${strSubcategoryKey}` });
-
-            $divSubCategories.append($divSubcategory);
-
-            var $divitems = $('<div>', { 'class': 'subcategory_items' });
-            $divSubcategory.append($divitems);
-
-            $divitems.append(` 
-                                <a class="subcategory_name" href="https://fieldsofmistria.wiki.gg/wiki/${capitalizeFirstLetter(strCategoryKey)}" target="_blank">
-                                   Tier ${strSubcategoryKey}
-                                </a>
-                            ` );
-
-
-            Object.entries(objSubcategory).forEach(([strItemKey, objVariant]) => {
-                strID = `${strCategoryKey}_${strItemKey}`;
-                arrAllItems.push(strID);
-                // strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-                // bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
-
-                $divitems.append(`<div class="item" data-cbx="Ranching">
-                                <input class="animals_chb" ${objMistriaData.animals.has(strID) ? 'checked' : ''} type="checkbox" id="${strCategoryKey}_${strSubcategoryKey}_${strID}" name="animals" value="${strID}">
-                                <label for="${strCategoryKey}_${strSubcategoryKey}_${strID}" class="has_tip" id="animals_label_${strID}">
-                                    <div class="image" style="background-image: url(images/animals/${strID}.png)"></div>
-                                    <div class="name">${objVariant['name']}</div>
-                                </label>
-                            </div>`);
-
-
-                // const template = $(`#tip_${strID}`)[0];
-                // template.style.display = 'block';
-                // tippy(`#scrolls_label_${strID}`, {
-                //     content: template,
-                //     interactive: true,
-                //     maxWidth: 370
-                // });
-            });
-        });
-    });
-
-    addSelectAllAndAlert('animals', 'animals_chb', arrAllItems);
-
-    $('.animals_chb:checkbox').change(function () {
-        var bolAdd = true;
-        if ($(this).is(':checked')) {
-            objMistriaData.animals.add($(this).val());
-        } else {
-            objMistriaData.animals.delete($(this).val());
-            bolAdd = false;
-        }
-
-        if ($(`.animals_chb`).length == $(`.animals_chb:checked`).length) {
-            $('#selectAll').prop('checked', true);
-        } else {
-            $('#selectAll').prop('checked', false);
-        }
-
-        $('.alert_import').remove();
-
-        saveData();
-    });
-
-    if ($('#search_items').val() != '') {
-        $('#search_items').keyup();
-    }
-    if ($('input.obtain_cbx:checked').length) {
-        $('input.obtain_cbx').change()
-    }
-
-    changeSortForObject(objMistriaData, objAnimals, '.category', '#category_');
-    checkAnimalsVisibility();
-}
-
-function checkGiftVisibility() {
-    $('#characters .character').css('display', '');
-    $('#characters .character').each(function () {
-        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-            $(this).hide();
-        }
-    });
-}
-
-function checkMuseumVisibility() {
-
-    $('#museum .wing .set').css('display', '');
-    $('#museum .wing').css('display', '');
-
-    $('#museum .wing .set').each(function () {
+    $('#scraped .category .subcategory').each(function () {
         if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
             $(this).hide();
         }
     });
 
-    $('#museum .wing').each(function () {
-        if (!$(this).find('.set:visible').length) {
-            $(this).hide();
-        }
-    });
-}
-
-function checkCustomizationVisibility() {
-
-    $('#customization .category .subcategory').css('display', '');
-    $('#customization .category').css('display', '');
-
-    $('#customization .category .subcategory').each(function () {
-        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-            $(this).hide();
-        }
-    });
-
-    $('#customization .category').each(function () {
+    $('#scraped .category').each(function () {
         if (!$(this).find('.subcategory:visible').length) {
             $(this).hide();
         }
     });
+
+    if (!$('#scraped .category:visible').length && $('#search_items').val() === '' && !$('input.obtain_cbx:checked').length) {
+        $('#scraped').addClass('completed');
+    }
 }
 
-function checkAlmanacVisibility() {
-    $('#almanac .section').css('display', '');
-    $('#almanac .section').each(function () {
-        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-            $(this).hide();
-        }
-    });
-}
-
-function checkScrollsVisibility() {
-
-    $('#scrolls .category .subcategory').css('display', '');
-    $('#scrolls .category').css('display', '');
-
-    $('#scrolls .category .subcategory').each(function () {
-        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-            $(this).hide();
-        }
-    });
-
-    $('#scrolls .category').each(function () {
-        if (!$(this).find('.subcategory:visible').length) {
-            $(this).hide();
-        }
-    });
-}
-function checkAnimalsVisibility() {
-    $('#animals .category .subcategory').css('display', '');
-    $('#animals .category').css('display', '');
-
-    $('#animals .category .subcategory').each(function () {
-        if (!$(this).find('.item:not(.spoiler_placeholder):visible').length) {
-            $(this).hide();
-        }
-    });
-
-    $('#animals .category').each(function () {
-        if (!$(this).find('.subcategory:visible').length) {
-            $(this).hide();
-        }
-    });
-}
 
 function updateStatistics() {
 
     var intItemsGiftable = 0;
     var intItemsGifted = 0;
 
-    let sortedEntries = Object.entries(objCharacters);
+    let sortedEntries = Object.entries(objTabs.gifts.categories);
     sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
-        if (objCharacter['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+        if ((objCharacter.info.spoiler || objCharacter.info.noimage) && !objMistriaData.options.has('mode_spoilers')) {
             return;
         }
 
-        objCharacter['loved'].forEach(function (strGiftKey) {
+        objCharacter.subcategories.loved.items.forEach(function (strGiftKey) {
             strID = strCharacterKey + '_' + strGiftKey;
 
             if (objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
@@ -4741,7 +3960,7 @@ function updateStatistics() {
             }
         });
 
-        objCharacter['liked'].forEach(function (strGiftKey) {
+        objCharacter.subcategories.liked.items.forEach(function (strGiftKey) {
             strID = strCharacterKey + '_' + strGiftKey;
 
             if (objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
@@ -4758,45 +3977,59 @@ function updateStatistics() {
     var intItemsDonatable = 0;
     var intItemsDonated = 0;
 
-    let sortedEntriesWings = Object.entries(objMuseum);
+    let sortedEntriesWings = Object.entries(objTabs.museum.categories);
     sortedEntriesWings.forEach(([strWingKey, objWing]) => {
-        let sortedEntriesSets = Object.entries(objWing['sets']);
+        let sortedEntriesSets = Object.entries(objWing.subcategories);
 
         sortedEntriesSets.forEach(([strSetKey, objSet]) => {
 
-            if (objSet['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+            if (objSet.info.spoiler && !objMistriaData.options.has('mode_spoilers')) {
                 return;
             }
 
-            objSet['items'].forEach((item) => {
-                if (objItems[item]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+            objSet['items'].forEach((strItemKey) => {
+                if (objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
                     return;
                 }
                 intItemsDonatable++;
-                if (objMistriaData.museum.has(item)) {
+                if (objMistriaData.museum.has(strItemKey)) {
                     intItemsDonated++;
                 }
             });
         });
     });
 
+
     var objItemsAlmanacable = {};
     var objItemsAlmanaced = {};
 
-    let sortedEntriesSections = Object.entries(objAlmanac);
+    let sortedEntriesSections = Object.entries(objTabs.almanac.categories);
     sortedEntriesSections.forEach(([strSectionKey, objSection]) => {
-        strUsedTag = objSection['tags'][0];
+
         objItemsAlmanacable[strSectionKey] = 0;
         objItemsAlmanaced[strSectionKey] = 0;
-        objTagItems[strUsedTag].forEach((strItemKey) => {
-            if (objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+        let sortedEntriesSets = Object.entries(objSection.subcategories);
+
+        sortedEntriesSets.forEach(([strSetKey, objSet]) => {
+
+
+            if (objSet.info.spoiler && !objMistriaData.options.has('mode_spoilers')) {
                 return;
             }
 
-            objItemsAlmanacable[strSectionKey] = objItemsAlmanacable[strSectionKey] + 1;
-            if (objMistriaData.almanac.has(strItemKey)) {
-                objItemsAlmanaced[strSectionKey] = objItemsAlmanaced[strSectionKey] + 1;
-            }
+
+            objSet['items'].forEach((strItemKey) => {
+                if (objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                    return;
+                }
+
+                objItemsAlmanacable[strSectionKey] = objItemsAlmanacable[strSectionKey] + 1;
+                if (objMistriaData.almanac.has(strItemKey)) {
+                    objItemsAlmanaced[strSectionKey] = objItemsAlmanaced[strSectionKey] + 1;
+                }
+            });
+
+
         });
     });
 
@@ -4840,7 +4073,7 @@ function updateStatistics() {
     strAlmanacedTippy += '<table class="statistics_table">';
 
     Object.entries(objItemsAlmanacable).forEach(([strSectionKey, intValue]) => {
-        strAlmanacedTippy += `<tr><td>${objAlmanac[strSectionKey]['name']}:</td><td>${objItemsAlmanaced[strSectionKey]} / ${intValue}</td></tr>`;
+        strAlmanacedTippy += `<tr><td>${objTabs.almanac.categories[strSectionKey]['info']['name']}:</td><td>${objItemsAlmanaced[strSectionKey]} / ${intValue}</td></tr>`;
     });
 
     strAlmanacedTippy += '</table>';
@@ -4900,7 +4133,6 @@ function getCellWidth() {
 
 $(function () {
 
-
     loadData();
     loadMenuItems();
 
@@ -4914,11 +4146,7 @@ $(function () {
 
     updateStatistics();
 
-    loadTab(objMistriaData.tab ? objMistriaData.tab : 'gift');
-
-    $('.tab').on('click', function () {
-        loadTab($(this).attr('data-tab'));
-    });
+    loadTab(objMistriaData.tab ? objMistriaData.tab : 'gifts');
 
     $('.tab').on('click', function () {
         loadTab($(this).attr('data-tab'));
@@ -4927,7 +4155,6 @@ $(function () {
     setTimeout(() => {
         handleResize();
     }, 150);
-
 
     const handleResize = () => {
         getCellWidth();
@@ -4963,43 +4190,40 @@ function loadTab(strTabKey) {
     if ($('#page').hasClass(strTabKey)) {
         return;
     }
-    if (!arrTabs.includes(strTabKey)) {
-        return;
-    }
 
     allCharts = {};
     let start = Date.now();
 
     $(`.tab_content`).html('');
+    $(`.tab_content`).hide();
+    $(`#tabs .tab`).removeClass('active');
+    $(`#tabs .tab[data-tab="${strTabKey}"]`).addClass('active');
 
     $('#page').removeClass(arrTabs.join(' '));
+    $('#page').removeClass('wrapped');
+
+
     $('#page').addClass(strTabKey);
 
-    //break up execution stack
+    switch (strTabKey) {
+        case "wrapped":
+            $('#wrapped').css('display', '');
+            break;
+        default:
+            $('#scraped').removeClass('completed');
+            $('#scraped').css('display', '');
+            break;
+    }
+
+    // break up execution stack
     setTimeout(() => {
         switch (strTabKey) {
-            case "gift":
-                loadGiftTab();
-                break;
-            case "museum":
-                loadMuseumTab();
-                break;
-            case "customization":
-                loadCustomizationTab();
-                break;
-            case "almanac":
-                loadAlmanacTab();
-                break;
             case "wrapped":
                 loadWrappedTab();
                 break;
-            case "scrolls":
-                loadScrollsTab();
-                break;
-            case "animals":
-                loadAnimalsTab();
-                break;
             default:
+                loadScrapedTab(strTabKey);
+                break;
         }
 
         objMistriaData.tab = strTabKey;
@@ -5008,20 +4232,10 @@ function loadTab(strTabKey) {
         if ($('#search_items').val() != '') {
             $('#search_items').keyup();
         }
-        checkAllVisibility();
+        checkScrapedTabVisibility();
 
         let timeTaken = Date.now() - start;
-        console.log(`Loaded ${strTabKey} tab in ${timeTaken} milliseconds`);
+        console.log(`Loaded ${strTabKey} tab in ${timeTaken} ms`);
 
     }, 50);
-}
-
-function checkAllVisibility() {
-    /* TODO: check only open tab visibility */
-    checkGiftVisibility();
-    checkMuseumVisibility();
-    checkCustomizationVisibility();
-    checkAlmanacVisibility();
-    checkAnimalsVisibility();
-    checkScrollsVisibility();
 }

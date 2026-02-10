@@ -39,19 +39,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="css/style.css?v=29">
+    <link rel="stylesheet" href="css/style.css?v=30">
     <link rel="stylesheet" href="css/wrapped.css">
 
-    <script type="text/javascript" src="json/items.json.js?v=14"></script>
-    <script type="text/javascript" src="json/accessories.json.js?v=1"></script>
-    <script type="text/javascript" src="json/characters.json.js?v=4"></script>
-    <script type="text/javascript" src="json/museum.json.js?v=4"></script>
-    <script type="text/javascript" src="json/customization.json.js"></script>
-    <script type="text/javascript" src="json/scrolls.json.js"></script>
-    <script type="text/javascript" src="json/animals.json.js"></script>
-    <script type="text/javascript" src="json/almanac.json.js"></script>
-    <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
+    <script type="text/javascript" src="json/items.json.js?v=15"></script>
+    <script type="text/javascript" src="json/items_accessories.json.js"></script>
+    <script type="text/javascript" src="json/items_animals.json.js"></script>
+    <script type="text/javascript" src="json/build.json.js"></script>
+    <script type="text/javascript" src="json/tabs.json.js"></script>
 
+    <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -61,8 +58,8 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=36"></script>
-    <script type="text/javascript" src="js/save_file.js?v=9"></script>
+    <script type="text/javascript" src="js/script.js?v=37"></script>
+    <script type="text/javascript" src="js/save_file.js?v=10"></script>
 </head>
 
 <body>
@@ -214,7 +211,7 @@
                             <div class='toggler'>
                             </div>
                         </label>
-                        Show names
+                        Show item names
                     </div>
                     <div class="switch_wrap">
                         <label class="switch mode_mini">
@@ -249,7 +246,7 @@
                             <div class='toggler'>
                             </div>
                         </label>
-                        <span class="gift_show">Hide gifted items</span>
+                        <span class="gifts_show">Hide gifted items</span>
                         <span class="museum_show">Hide donated items</span>
                         <span class="almanac_show">Hide revealed items</span>
                         <span class="scrolls_show">Hide obtained recipes</span>
@@ -342,28 +339,8 @@
             </div>
         </div>
         <div id="content">
-
-            <div class="tab_window gift_show">
-                <div id="characters" class="tab_content"></div>
-            </div>
-            <div class="tab_window museum_show">
-                <div id="museum" class="tab_content"></div>
-            </div>
-            <div class="tab_window almanac_show">
-                <div id="almanac" class="tab_content"></div>
-            </div>
-            <div class="tab_window customization_show">
-                <div id="customization" class="tab_content"></div>
-            </div>
-            <div class="tab_window wrapped_show">
-                <div id="wrapped" class="tab_content"></div>
-            </div>
-            <div class="tab_window animals_show">
-                <div id="animals" class="tab_content"></div>
-            </div>
-            <div class="tab_window scrolls_show">
-                <div id="scrolls" class="tab_content"></div>
-            </div>
+            <div id="scraped" class="tab_content"></div>
+            <div id="wrapped" class="tab_content"></div>
         </div>
         <div id="header">
             <label class="mode_collapse side_menu_btn">
@@ -375,25 +352,7 @@
                 </svg>
             </label>
 
-            <div id="tabs">
-                <div class="tab" id="tab_gift" data-tab="gift"><img src="images/gift.png">Gift guide</div>
-                <div class="tab" id="tab_museum" data-tab="museum"><img src="images/museum.png">Museum</div>
-                <div class="tab" id="tab_almanac" data-tab="almanac"><img src="images/almanac.png">Almanac</div>
-                <div class="tab" id="tab_animals" data-tab="animals"><img src="images/rabbit.png">Animals</div>
-                <div class="tab" id="tab_scrolls" data-tab="scrolls"><img src="images/items/crafting_scroll.png">Recipe scrolls</div>
-                <div class="tab" id="tab_customization" data-tab="customization"><img src="images/customization.png">Customization</div>
-                <div class="tab" id="tab_wrapped" data-tab="wrapped">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M20,7H18a2,2,0,0,0-2,2V20H15V12a2,2,0,0,0-2-2H11a2,2,0,0,0-2,2v8H8V16a2,2,0,0,0-2-2H4a2,2,0,0,0-2,2v5a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V9A2,2,0,0,0,20,7ZM4,20V16H6v4Zm7,0V12h2v8Zm7,0V9h2V20Z" />
-                            <path
-                                d="M3.81,12.58l4.57-6.4L13.68,8a1,1,0,0,0,.82-.08l7-4a1,1,0,0,0-1-1.74L13.89,5.91,8.32,4.05a1,1,0,0,0-1.13.37l-5,7a1,1,0,0,0,.23,1.39A1,1,0,0,0,3,13,1,1,0,0,0,3.81,12.58Z" />
-                        </svg>
-                    </div>
-                    Mistria Wrapped
-                </div>
-            </div>
+            <div id="tabs"></div>
         </div>
 
         <div id="json_button_popup" class="popup_wrapper">

@@ -65,13 +65,17 @@
     transform: scale(1.1);
 }
 
-#page.mode_mini .section_img,
-#page.mode_mini .wing_img,
-#page.mode_mini .char_img {
+#page.mode_mini .category_img {
     display: none;
 }
 
-#page.mode_mini .char_name, #page.mode_mini .char_name .char_img_mini, #page.mode_name .char_name {
+#page.mode_mini:is(.gifts, .museum, .animals, .customization) .category_name,
+#page:is(.almanac, .scrolls) .category_name {
+    margin-bottom: 10px;
+}
+
+#page.mode_mini:is(.gifts, .museum, .animals, .customization) .category_name .category_img_mini,
+#page:is(.almanac, .scrolls) .category_name .category_img_mini {
     display: flex;
 }
 
@@ -102,11 +106,14 @@
     display: none;
 }
 
-html {}
+html {
+    overflow: hidden;
+}
 
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
+    overflow: hidden;
 }
 
 svg:focus {
@@ -370,14 +377,7 @@ svg:focus {
 }
 
 .tab:hover,
-#page.tutorial #tab_tutorial,
-#page.gift #tab_gift,
-#page.museum #tab_museum,
-#page.almanac #tab_almanac,
-#page.customization #tab_customization,
-#page.wrapped #tab_wrapped,
-#page.scrolls #tab_scrolls,
-#page.animals #tab_animals {
+.tab.active {
     background-color: rgba(var(--color-btn-rgb), 0.6);
 }
 
@@ -388,45 +388,6 @@ svg:focus {
     display: none;
 }
 
-.tab_window {
-    display: none;
-    height: 100%;
-    overflow: auto;
-}
-
-.tutorial_show,
-.gift_show,
-.museum_show,
-.almanac_show,
-.customization_show,
-.wrapped_show,
-.scrolls_show,
-.animals_show {
-    display: none;
-}
-
-#page.tutorial .tutorial_show,
-#page.gift .gift_show,
-#page.museum .museum_show,
-#page.almanac .almanac_show,
-#page.customization .customization_show,
-#page.wrapped .wrapped_show,
-#page.scrolls .scrolls_show,
-#page.animals .animals_show {
-    display: block;
-}
-
-#page.gift span.gift_show,
-#page.museum span.museum_show,
-#page.almanac span.almanac_show,
-#page.customization span.customization_show,
-#page.wrapped span.wrapped_show,
-#page.scrolls span.scrolls_show,
-#page.animals span.animals_show {
-    display: inline;
-}
-
-
 .tab img {
     image-rendering: pixelated;
     width: 26px;
@@ -436,7 +397,6 @@ svg:focus {
 
 #page:not(.mode_collapse) #header #tabs {
     opacity: 0;
-
 }
 
 @media only screen and (min-width: 550px) {
@@ -451,30 +411,25 @@ svg:focus {
 
 @media only screen and (min-width: 700px) {
 
-    #page.tutorial #tab_tutorial,
-    #page.gift #tab_gift,
-    #page.museum #tab_museum,
-    #page.almanac #tab_almanac,
-    #page.customization #tab_customization,
-    #page.wrapped #tab_wrapped,
-    #page.scrolls #tab_scrolls,
-    #page.animals #tab_animals,
+    .tab {
+        min-height: 34px;
+        padding: 4px 4px;
+    }
+
+    .tab img {
+        /* width: 20px; */
+    }
+
+    .tab.active,
     .tab:hover {
         font-size: 12px;
         gap: 5px;
+        padding: 5px 7px;
         padding-right: 12px;
         min-height: 34px;
     }
 
-    #page.tutorial #tab_tutorial img,
-    #page.gift #tab_gift img,
-    #page.museum #tab_museum img,
-    #page.almanac #tab_almanac img,
-    #page.customization #tab_customization img,
-    #page.wrapped #tab_wrapped img,
-    #page.scrolls #tab_scrolls img,
-    #page.animals #tab_animals img,
-
+    .tab.active img,
     .tab:hover img {
         width: 20px;
         height: 20px;
@@ -485,6 +440,7 @@ svg:focus {
     .tab {
         font-size: 12px;
         gap: 5px;
+        padding: 5px 7px;
         padding-right: 12px;
         min-height: 34px;
     }
@@ -922,16 +878,15 @@ svg:focus {
 
 .tab_content {
     padding: 8px;
-
 }
 
-.tab_content.soon,
+.tab_content.completed,
 .tab_content:empty {
     position: relative;
     min-height: 100%;
-
 }
 
+.tab_content.completed:after,
 .tab_content:empty:after {
     --loader-height: 70px;
     content: '';
@@ -948,17 +903,21 @@ svg:focus {
     image-rendering: pixelated;
 }
 
-.tab_content.soon:empty:after {
-    content: 'Nothing here yet..';
-    background-image: url("images/spr_ui_generic_lock_icon.png");
-    height: unset;
-    width: unset;
-    padding-left: 22px;
-    background-size: calc(10px * 1.3) calc(12px * 1.3);
+.tab_content.completed:after {
+    background-image: url(../images/100.png);
+    background-position: center;
+    content: 'completed';
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.tab_content.completed #selectAllWrapper {
+    display: none;
 }
 
 #selectAllWrapper {
-    grid-column: 1 / -1;
     height: min-content;
     width: 100%;
     line-height: 12px;
@@ -986,29 +945,43 @@ svg:focus {
     height: 12px;
 }
 
-#almanac,
-.sets,
-#characters {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
-    gap: 10px;
+.tutorial_show,
+.gifts_show,
+.museum_show,
+.almanac_show,
+.customization_show,
+.wrapped_show,
+.scrolls_show,
+.animals_show {
+    display: none;
+}
+
+#page.tutorial .tutorial_show,
+#page.gifts .gifts_show,
+#page.museum .museum_show,
+#page.almanac .almanac_show,
+#page.customization .customization_show,
+#page.wrapped .wrapped_show,
+#page.scrolls .scrolls_show,
+#page.animals .animals_show {
+    display: block;
+}
+
+#page.gifts span.gifts_show,
+#page.museum span.museum_show,
+#page.almanac span.almanac_show,
+#page.customization span.customization_show,
+#page.wrapped span.wrapped_show,
+#page.scrolls span.scrolls_show,
+#page.animals span.animals_show {
+    display: inline;
+}
+
+.tab_content {
     overflow: auto;
 }
 
-#almanac {
-    grid-template-columns: repeat(auto-fill, 1fr);
-}
-
-@media only screen and (min-width: 640px) {
-    #almanac {
-        grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    }
-}
-
-#scrolls,
-#animals,
-#customization,
-#museum {
+#scraped {
     display: flex;
     gap: 10px;
     overflow: auto;
@@ -1016,89 +989,77 @@ svg:focus {
     justify-content: flex-start;
 }
 
-.subcategories,
-.sets {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.category,
-.wing,
-.section,
-.character {
+.category {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--color-bg-darkest);
-    border-radius: 5px;
     background: var(--color-bg-darker);
     padding: 10px;
     border-radius: 10px;
-}
-
-.category,
-.wing {
-    max-width: 350px;
     flex: 1;
-    width: 100%;
     min-width: 220px;
+    width: 100%
 }
 
-@media only screen and (min-width: 800px) {
-    #scrolls .category {
-        max-width: 400px;
+
+@media only screen and (min-width: 640px) {
+
+    .category {
+        min-width: 300px;
+        max-width: 350px;
     }
 
-    #animals .category {
-        min-width: 260px;
+    #page.gifts .category,
+    #page.almanac .category {
+        max-width: 500px;
+    }
+
+    #page.almanac .category {
+        min-width: 370px;
+    }
+
+    #page.museum .category {
+        max-width: 350px;
+    }
+
+    #page.scrolls .category {
+        flex: unset;
     }
 }
 
-.section .subcategory_items,
-.section .set_items {
-    max-width: 450px;
-    background: unset;
-    border: unset;
-    margin-top: 20px;
+.subcategories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
-
-.wing_img,
-.char_img {
+.category_img {
     width: 180px;
     height: 180px;
     margin-bottom: 10px;
 }
 
-.wing_img img,
-.char_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.char_img img {
-    object-fit: cover;
-    image-rendering: pixelated;
-}
-
-.category_img {
+#page:is(.animals, .customization) .category_img {
     width: 50px;
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: unset;
+}
+
+#page:is(.animals, .customization) .category_img img {
+    object-fit: contain;
 }
 
 .category_img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     image-rendering: pixelated;
 }
 
 
-.section_img_mini,
-.char_img_mini {
+.category_img_mini {
     width: 40px;
     height: 40px;
     image-rendering: pixelated;
@@ -1108,48 +1069,49 @@ svg:focus {
     display: none;
 }
 
-.section_name,
-.char_name {
-    font-size: 18px;
-    font-weight: bold;
-    display: none;
-    color: var(--color-txt);
+.category_img_mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.category_name, .subcategory_name {
+    font-size: 14px;
     text-decoration: unset;
-    align-items: center;
-    height: 42px;
-}
-
-.section_name, .section_img_mini {
+    color: var(--color-txt);
+    text-transform: unset;
     display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.section_name .smaller {
-    opacity: 0.5;
-    font-size: 0.7em;
-    margin-left: 5px;
-    margin-top: 2px;
+.category_name {
+    font-weight: bold;
+    height: 42px;
+    font-size: 18px;
 }
 
-.liked_gifts, .loved_gifts, .set_items, .subcategory_items {
+.subcategory_name {
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.subcategory_items {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 5px;
     justify-content: space-around;
-    margin-top: 20px;
-}
-
-.subcategory_items,
-.set_items {
     border: 1px solid var(--color-bg-darkest);
-    border-radius: 5px;
     background: var(--color-bg-darkest-solid);
     padding: 10px;
     border-radius: 10px;
-    margin-top: unset;
+    max-width: 450px;
+    margin: auto;
 }
 
-.liked_gifts {}
 
 [data-tippy-root] .tippy-box {
     background-color: rgba(51, 51, 51, 0.8);
@@ -1276,7 +1238,6 @@ svg:focus {
     object-fit: contain;
     display: block;
     display: inline-block;
-    vertical-align: top;
     image-rendering: pixelated;
 }
 
@@ -1339,36 +1300,6 @@ svg:focus {
     white-space: nowrap;
 }
 
-.statistics_table tr:first-child td {
-    /* border-top: unset; */
-}
-
-.wing_name,
-.set_name,
-.category_name,
-.subcategory_name,
-.giftset {
-    width: 100%;
-    text-align: center;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: var(--color-txt);
-    text-decoration: unset;
-}
-
-.category_name {
-    margin-bottom: 10px;
-}
-
-.wing_name {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.set_name,
-.subcategory_name {
-    text-transform: unset;
-}
 
 .item.hide_checkbox, .item.hide_search {
     display: none;
@@ -1456,7 +1387,6 @@ svg:focus {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* white-space: nowrap; */
 }
 
 .switch_wrap svg {

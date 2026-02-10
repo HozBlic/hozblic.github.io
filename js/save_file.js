@@ -127,7 +127,6 @@ function cleanForWrapped(jsonBlocks) {
         }
     }
 
-
     var jsonWrapped = {
         'player': objInfoPlayer,
         'gamedata': objInfoGameData,
@@ -136,21 +135,39 @@ function cleanForWrapped(jsonBlocks) {
 
     localStorage.setItem('mistria_wrapped', JSON.stringify(jsonWrapped));
 }
-function removeNonAlmanacKeys(arrKeys) {
-    var arrAlmanacTags = Object.values(objAlmanac).map(item => item['tags'][0]);
+
+function extractAlmanacKeys(arrKeys) {
     if (!arrKeys) return false;
-    arrKeys = arrKeys.filter(strItemKey => {
-        if (strItemKey in objItems) {
-            if ('tags' in objItems[strItemKey]) {
-                if (objItems[strItemKey]['tags'].includes('furniture')) {
-                    if (objTagItems.furniture.includes(strItemKey)) { return true; }
-                } else {
-                    return arrAlmanacTags.some(r => objItems[strItemKey]['tags'].includes(r));
+    return objBuild.almanacItems.filter(strItemKey => arrKeys.includes(strItemKey));
+}
+
+function extractGiftKeys(objNpcs) {
+    if (typeof objNpcs === 'object') {
+        let arrGivenGifts = [];
+        for (const [npcname, value] of Object.entries(objNpcs)) {
+            for (const [key, strItemKey] of Object.entries(objNpcs[npcname]['gifts_given'])) {
+                if (objTabs.gifts.categories[npcname]['subcategories']['liked']['items'].includes(strItemKey) || objTabs.gifts.categories[npcname]['subcategories']['loved']['items'].includes(strItemKey)) {
+                    arrGivenGifts.push(`${npcname}_${strItemKey}`);
                 }
             }
-        };
-    });
-    return arrKeys;
+        }
+        return arrGivenGifts;
+    } else {
+        return false;
+    }
+}
+
+function extractAnimalData(objAnimalsData) {
+    if (typeof objAnimalsData === 'object') {
+        var arrAnimalsData = [];
+        Object.entries(objAnimalsData).forEach(([strItemKey, arrAnimals]) => {
+            var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
+            arrAnimalsData.push(...arrVariants);
+        });
+        return arrAnimalsData;
+    } else {
+        return false;
+    }
 }
 
 $(function () {
@@ -189,139 +206,53 @@ $(function () {
                 $("#json_button_popup").removeClass("loading");
 
                 if (cleaned) {
+
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
-                    let objNpcs = objNPC(jsonBlocks);
-                    let objMuseumData = objMUSEUM(jsonBlocks);
-                    let objAquiredData = removeNonAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']);
-                    let objScrollsData = objPLAYER(jsonBlocks)['morning_recipe_unlocks'];
-                    let objAnimalsData = objPLAYER(jsonBlocks)['animal_variant_unlocks'];
+                    let objMistriaDataExtracted = {
+                        gifts: extractGiftKeys(objNPC(jsonBlocks)) || false,
+                        museum: objMUSEUM(jsonBlocks) || false,
+                        almanac: extractAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']) || false,
+                        scrolls: objPLAYER(jsonBlocks)['morning_recipe_unlocks'] || false,
+                        animals: extractAnimalData(objPLAYER(jsonBlocks)['animal_variant_unlocks']) || false,
+                        customization: objPLAYER(jsonBlocks)['seen_cosmetics'] || false,
+                    }
 
-                    let objCustomizationData = objPLAYER(jsonBlocks)['seen_cosmetics'];
-                    let objOldData = JSON.parse(localStorage.getItem('mistria_data'));
+                    let objOldData = {};
+                    arrTabs.forEach(function (strTab) {
+                        if (strTab in objMistriaData) {
+                            objOldData[strTab] = [...objMistriaData[strTab]];
+                        }
+                    });
+                    objOldData.options = [...objMistriaData.options];
+
                     let arrFound = [];
+                    arrTabs.forEach(function (strTab) {
+                        if (objMistriaDataExtracted[strTab]) {
+                            arrFound.push(`${objMistriaDataExtracted[strTab].length} ${strTab} items were found`);
+                            objOldData[strTab] = [...new Set(objMistriaDataExtracted[strTab])];
+                            $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
-                    if (objOldData === null) {
-                        objOldData = JSON.parse(JSON.stringify(objMistriaDataDefault));
-                    }
-
-                    if (typeof objNpcs === 'object') {
-                        let arrGivenGifts = [];
-                        for (const [npcname, value] of Object.entries(objNpcs)) {
-                            for (const [key, strItemKey] of Object.entries(objNpcs[npcname]['gifts_given'])) {
-                                if (objCharacters[npcname]['liked'].includes(strItemKey) || objCharacters[npcname]['loved'].includes(strItemKey)) {
-                                    arrGivenGifts.push(`${npcname}_${strItemKey}`);
-                                }
-                            }
+                        } else {
+                            $('#extracting_alert').addClass('show');
+                            $('#extracting_alert .info').append(`Couldn't find ${strTab} data`);
+                            $('#extracting_alert .info').append('</br>');
                         }
-
-                        objOldData.gifts = [...new Set(arrGivenGifts)];
-
-                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
-
-                        arrFound.push(`${arrGivenGifts.length} gifts were found`);
-
-                    } else {
-                        $('#extracting_alert').addClass('show');
-                        $('#extracting_alert .info').append("Couldn't find gift data");
-                        $('#extracting_alert .info').append("</br>");
-                    }
-
-                    if (typeof objMuseumData === 'object') {
-                        let arrDonatedItems = [];
-                        for (const key in objMuseumData) {
-                            arrDonatedItems.push(objMuseumData[key]);
-                        }
-
-                        objOldData.museum = [...new Set(arrDonatedItems)];
-
-                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
-
-                        arrFound.push(`${arrDonatedItems.length} donated items were found `);
-
-                    } else {
-                        $('#extracting_alert').addClass('show');
-                        $('#extracting_alert .info').append("Couldn't find musuem data");
-                        $('#extracting_alert .info').append("</br>");
-                    }
-
-                    if (typeof objAquiredData === 'object') {
-
-                        objOldData.almanac = [...new Set(objAquiredData)];
-
-                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
-
-                        arrFound.push(`${objAquiredData.length} almanac items were found `);
-
-                    } else {
-                        $('#extracting_alert').addClass('show');
-                        $('#extracting_alert .info').append("Couldn't find almanac data");
-                        $('#extracting_alert .info').append("</br>");
-                    }
-
-                    if (typeof objScrollsData === 'object') {
-
-                        objOldData.scrolls = [...new Set(objScrollsData)];
-
-                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
-
-                        arrFound.push(`${objScrollsData.length} obtained recipes were found `);
-
-                    } else {
-                        $('#extracting_alert').addClass('show');
-                        $('#extracting_alert .info').append("Couldn't find obtained recipes");
-                        $('#extracting_alert .info').append("</br>");
-                    }
-
-                    if (typeof objAnimalsData === 'object') {
-
-                        var arrAnimalsData = [];
-
-                        Object.entries(objAnimalsData).forEach(([strItemKey, arrAnimals]) => {
-                            var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
-                            arrAnimalsData.push(...arrVariants);
-                        });
-
-                        objOldData.animals = [...new Set(arrAnimalsData)];
-
-                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
-
-                        arrFound.push(`${objOldData.animals.length} unlocked animals were found `);
-
-                    } else {
-                        $('#extracting_alert').addClass('show');
-                        $('#extracting_alert .info').append("Couldn't find unlocked animals");
-                        $('#extracting_alert .info').append("</br>");
-                    }
-
-                    if (typeof objCustomizationData === 'object') {
-
-                        objOldData.customization = [...new Set(objCustomizationData)];
-
-                        $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
-
-                        arrFound.push(`${objCustomizationData.length} cosmetics items were found `);
-
-                    } else {
-                        $('#extracting_alert').addClass('show');
-                        $('#extracting_alert .info').append("Couldn't find cosmetics data");
-                        $('#extracting_alert .info').append("</br>");
-                    }
-
+                    });
 
                     if (typeof jsonBlocks === 'object') {
                         $("#output").show().text(JSON.stringify(jsonBlocks, null, 2));
                     }
 
                     if (arrFound.length) {
-                        $('#json_alert .info').html(`Data extraction was ${arrFound.length == 3 ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
+                        $('#json_alert .info').html(`Data extraction was ${arrFound.length == arrTabs.length ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
                             ${arrFound.join('</br>')}`
                         );
                         $('#json_alert').addClass('show').addClass('yellow');
-                    }
-                    else {
+                    } else {
                         $('#json_alert .info').html('Couldn\'t retrieve data')
                         $('#json_alert').addClass('show')
                     }
+
                 } else {
                     $('#extracting_alert').addClass('show');
                     $('#extracting_alert .info').html("Failed to decode file");
@@ -333,8 +264,6 @@ $(function () {
                 $('#extracting_alert .info').html("Failed to decode file:\n" + err);
             }
         };
-
         reader.readAsArrayBuffer(file);
     });
-
 });
