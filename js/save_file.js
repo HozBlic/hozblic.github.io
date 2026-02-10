@@ -160,10 +160,18 @@ function extractGiftKeys(objNpcs) {
 function extractAnimalData(objAnimalsData) {
     if (typeof objAnimalsData === 'object') {
         var arrAnimalsData = [];
-        Object.entries(objAnimalsData).forEach(([strItemKey, arrAnimals]) => {
+        Object.entries(objAnimalsData['animal_variant_unlocks']).forEach(([strItemKey, arrAnimals]) => {
             var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
             arrAnimalsData.push(...arrVariants);
         });
+        Object.entries(objAnimalsData['animal_cosmetic_unlocks']).forEach(([strItemKey, arrAnimals]) => {
+            var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
+            arrAnimalsData.push(...arrVariants);
+        });
+
+        var arrVariants = objAnimalsData['pet_cosmetic_sets_unlocked'].map(function (x) { return `pets_${x}`; });
+        arrAnimalsData.push(...arrVariants);
+
         return arrAnimalsData;
     } else {
         return false;
@@ -213,7 +221,7 @@ $(function () {
                         museum: objMUSEUM(jsonBlocks) || false,
                         almanac: extractAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']) || false,
                         scrolls: objPLAYER(jsonBlocks)['morning_recipe_unlocks'] || false,
-                        animals: extractAnimalData(objPLAYER(jsonBlocks)['animal_variant_unlocks']) || false,
+                        animals: extractAnimalData(objPLAYER(jsonBlocks)) || false,
                         customization: objPLAYER(jsonBlocks)['seen_cosmetics'] || false,
                     }
 
@@ -224,6 +232,12 @@ $(function () {
                         }
                     });
                     objOldData.options = [...objMistriaData.options];
+                    if ('sort' in objMistriaData) {
+                        objOldData.sort = objMistriaData.sort;
+                    }
+                    if ('tab' in objMistriaData) {
+                        objOldData.tab = objMistriaData.tab;
+                    }
 
                     let arrFound = [];
                     arrTabs.forEach(function (strTab) {

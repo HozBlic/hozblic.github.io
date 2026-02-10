@@ -3487,6 +3487,28 @@ var objTabs =
                             "capybara_fall",
                             "capybara_winter"
                         ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Capybara"
+                        },
+                        "items": [
+                            "capybara_baseball_cap",
+                            "capybara_bow",
+                            "capybara_bowler_hat",
+                            "capybara_flower_crown",
+                            "capybara_horns",
+                            "capybara_leaf",
+                            "capybara_ribbon_blue",
+                            "capybara_ribbon_red",
+                            "capybara_ribbon_white",
+                            "capybara_umbrella_hat",
+                            "capybara_winter_hat",
+                            "capybara_yuzu",
+                            "capybara_angel_wings",
+                            "capybara_bat_wings"
+                        ]
                     }
                 }
             },
@@ -3559,6 +3581,28 @@ var objTabs =
                             "horse_summer",
                             "horse_fall",
                             "horse_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Horse"
+                        },
+                        "items": [
+                            "horse_antlers",
+                            "horse_cowboy_hat",
+                            "horse_crown",
+                            "horse_derby_hat",
+                            "horse_dark_unicorn_horn",
+                            "horse_flower_crown",
+                            "horse_pink_bow",
+                            "horse_ribbon_blue",
+                            "horse_ribbon_red",
+                            "horse_ribbon_white",
+                            "horse_unicorn_horn",
+                            "horse_seashell_clips",
+                            "horse_monocle",
+                            "horse_bandana"
                         ]
                     }
                 }
@@ -3633,6 +3677,30 @@ var objTabs =
                             "cow_fall",
                             "cow_winter"
                         ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Cow"
+                        },
+                        "items": [
+                            "cow_antlers",
+                            "cow_beret",
+                            "cow_cheese_hat",
+                            "cow_cowboy_hat",
+                            "cow_crown",
+                            "cow_flower_crown",
+                            "cow_halo",
+                            "cow_horns",
+                            "cow_pink_bow",
+                            "cow_pink_sunglasses",
+                            "cow_ribbon_blue",
+                            "cow_ribbon_red",
+                            "cow_ribbon_white",
+                            "cow_sun_hat",
+                            "cow_bell_collar",
+                            "cow_laurels"
+                        ]
                     }
                 }
             },
@@ -3705,6 +3773,29 @@ var objTabs =
                             "chicken_summer",
                             "chicken_fall",
                             "chicken_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Chicken"
+                        },
+                        "items": [
+                            "chicken_business_tie",
+                            "chicken_ear_muffs",
+                            "chicken_egg_hat",
+                            "chicken_sunglasses",
+                            "chicken_flower_crown",
+                            "chicken_pearl_necklace",
+                            "chicken_red_eyes",
+                            "chicken_ribbon_blue",
+                            "chicken_ribbon_red",
+                            "chicken_ribbon_white",
+                            "chicken_top_hat",
+                            "chicken_winter_hat",
+                            "chicken_yellow_bow",
+                            "chicken_apple",
+                            "chicken_baseball_cap"
                         ]
                     }
                 }
@@ -3779,6 +3870,28 @@ var objTabs =
                             "rabbit_fall",
                             "rabbit_winter"
                         ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Rabbit"
+                        },
+                        "items": [
+                            "rabbit_daisy_clips",
+                            "rabbit_flower_crown",
+                            "rabbit_halo",
+                            "rabbit_heart_clips",
+                            "rabbit_horn",
+                            "rabbit_pink_bow",
+                            "rabbit_ribbon_blue",
+                            "rabbit_ribbon_red",
+                            "rabbit_ribbon_white",
+                            "rabbit_sunglasses",
+                            "rabbit_top_hat",
+                            "rabbit_winter_hat",
+                            "rabbit_cowboy_hat",
+                            "rabbit_chef_hat"
+                        ]
                     }
                 }
             },
@@ -3851,6 +3964,28 @@ var objTabs =
                             "alpaca_summer",
                             "alpaca_fall",
                             "alpaca_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Alpaca"
+                        },
+                        "items": [
+                            "alpaca_beaded_necklace",
+                            "alpaca_bowtie",
+                            "alpaca_flower_crown",
+                            "alpaca_gold_pendant",
+                            "alpaca_horns",
+                            "alpaca_ribbon_blue",
+                            "alpaca_ribbon_red",
+                            "alpaca_ribbon_white",
+                            "alpaca_scarf",
+                            "alpaca_spiked_collar",
+                            "alpaca_sunglasses",
+                            "alpaca_winter_hat",
+                            "alpaca_beret",
+                            "alpaca_lacy_collar"
                         ]
                     }
                 }
@@ -3925,6 +4060,28 @@ var objTabs =
                             "duck_fall",
                             "duck_winter"
                         ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Duck"
+                        },
+                        "items": [
+                            "duck_black_bowtie",
+                            "duck_bonnet",
+                            "duck_flower_crown",
+                            "duck_pink_bow",
+                            "duck_red_eyes",
+                            "duck_ribbon_blue",
+                            "duck_ribbon_red",
+                            "duck_ribbon_white",
+                            "duck_ruffled_collar",
+                            "duck_sun_hat",
+                            "duck_sunglasses",
+                            "duck_winter_hat",
+                            "duck_backwards_cap",
+                            "duck_strawberry_hat"
+                        ]
                     }
                 }
             },
@@ -3997,6 +4154,57 @@ var objTabs =
                             "sheep_summer",
                             "sheep_fall",
                             "sheep_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Sheep"
+                        },
+                        "items": [
+                            "sheep_flower_crown",
+                            "sheep_palm_tree",
+                            "sheep_party_hat",
+                            "sheep_pink_bow",
+                            "sheep_mushroom_hat",
+                            "sheep_horns",
+                            "sheep_winter_hat",
+                            "sheep_ribbon_blue",
+                            "sheep_ribbon_red",
+                            "sheep_ribbon_white",
+                            "sheep_tartan_beret",
+                            "sheep_unicorn_horn",
+                            "sheep_hot_water_bottle",
+                            "sheep_green_visor"
+                        ]
+                    }
+                }
+            },
+            "pets": {
+                "info": {
+                    "img": "pets",
+                    "img_mini": "pets",
+                    "name": "Pets",
+                    "wikilink": "Pets"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Pets"
+                        },
+                        "items": [
+                            "pets_halo",
+                            "pets_flower_crown",
+                            "pets_purple_bow",
+                            "pets_green_bow",
+                            "pets_yellow_bow",
+                            "pets_red_bow",
+                            "pets_blue_bow",
+                            "pets_black_bow",
+                            "pets_pink_bow",
+                            "pets_sun_hat",
+                            "pets_unicorn_horn"
                         ]
                     }
                 }

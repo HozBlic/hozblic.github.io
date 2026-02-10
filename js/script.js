@@ -272,6 +272,7 @@ var objTips = {
 }
 
 function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
+
     let strTableHTML = '';
     let bolDonatable = false;
     let objItemTemp = objItemsTemp[strItemKey];
@@ -951,8 +952,8 @@ function loadScrapedTab(strTab) {
                     }
                 }
 
-                if (strTab !== 'animals') {
-                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, objItemsTemp)}`);
+                if (!(strTab === 'animals' && objSubcategory.info.name !== 'Cosmetics')) {
+                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, (strTab === 'animals' ? objItemsAnimals : objItemsTemp), (strTab === 'buffs' && 'buff' in objItemsTemp[strItemKey] ? objItemsTemp[strItemKey]['buff'] : false))}`);
                     const template = $(`#tip_${strCbxID}`)[0];
                     template.style.display = 'block';
                     tippy(`#label_${strCbxID}`, {
