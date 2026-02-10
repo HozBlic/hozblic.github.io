@@ -1221,7 +1221,7 @@ svg:focus {
     height: 19px;
     line-height: 19px;
     display: inline-block;
-    vertical-align: top;
+    /* vertical-align: top; */
 }
 
 [data-tippy-root] .tippy-box .tippy-content .tip a:visited {
@@ -1239,6 +1239,7 @@ svg:focus {
     display: block;
     display: inline-block;
     image-rendering: pixelated;
+    vertical-align: bottom;
 }
 
 [data-tippy-root] .tippy-box .tippy-content .tip img[alt^=Season] {
