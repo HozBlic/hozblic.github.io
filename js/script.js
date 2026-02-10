@@ -377,6 +377,12 @@ function compareData(strJson) {
         }
     });
     objOldData.options = [...objMistriaData.options];
+    if ('sort' in objMistriaData) {
+        objOldData.sort = objMistriaData.sort;
+    }
+    if ('tab' in objMistriaData) {
+        objOldData.tab = objMistriaData.tab;
+    }
 
     let objNewData = JSON.parse(strJson);
 
@@ -616,7 +622,7 @@ function loadMenuItems() {
             let objTabInfo = objTabs[strTab].info;
             $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/${objTabInfo.icon}">${objTabInfo.name}</div>`)
         });
-         $('#tabs').append(` 
+        $('#tabs').append(` 
             <div class="tab" data-tab="wrapped">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
