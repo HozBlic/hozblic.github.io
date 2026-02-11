@@ -711,7 +711,7 @@ function loadMenuItems() {
             });
 
             keywords.forEach(word => {
-                $('.tab_content').highlight(word);
+                $('#scraped .category').highlight(word);
             });
 
         }
