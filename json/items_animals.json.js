@@ -432,9 +432,8 @@ var objItemsAnimals =
     },
     "chicken_red_eyes": {
         "name": "Chicken Red Eyes",
-        "spoiler": 1,
-        "tip": "",
-        "url": ""
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_autumn.png?b79477\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken#Colors\" title=\"Chicken\">Variant</a>",
+        "url": "/wiki/Red_Chicken_Eyes"
     },
     "chicken_ribbon_blue": {
         "name": "Chicken Blue Ribbon",
@@ -773,9 +772,8 @@ var objItemsAnimals =
     },
     "duck_red_eyes": {
         "name": "Duck Red Eyes",
-        "spoiler": 1,
-        "tip": "",
-        "url": ""
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_autumn.png?b79477\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
+        "url": "/wiki/Red_Duck_Eyes"
     },
     "duck_ribbon_blue": {
         "name": "Duck Blue Ribbon",
