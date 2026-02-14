@@ -1,0 +1,12 @@
+{
+  "name": "Fields of Mistria Tracker",
+  "theme_color": "#b23147",
+  "background_color": "#242424",
+  "short_name": "Gift Tracker",
+  "display": "browser",
+  "orientation": "any",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en",
+  "dir": "auto"
+}
