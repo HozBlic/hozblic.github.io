@@ -83,12 +83,12 @@
     display: none;
 }
 
-#page.mode_mini:is(.gifts, .museum, .animals, .customization) .category_name,
+#page.mode_mini:not(.almanac, .scrolls) .category_name,
 #page:is(.almanac, .scrolls) .category_name {
     margin-bottom: 10px;
 }
 
-#page.mode_mini:is(.gifts, .museum, .animals, .customization) .category_name .category_img_mini,
+#page.mode_mini:not(.almanac, .scrolls) .category_name .category_img_mini,
 #page:is(.almanac, .scrolls) .category_name .category_img_mini {
     display: flex;
 }
@@ -1000,6 +1000,7 @@ svg:focus {
 .customization_show,
 .wrapped_show,
 .scrolls_show,
+.perks_show,
 .animals_show {
     display: none;
 }
@@ -1011,6 +1012,7 @@ svg:focus {
 #page.customization .customization_show,
 #page.wrapped .wrapped_show,
 #page.scrolls .scrolls_show,
+#page.perks .perks_show,
 #page.animals .animals_show {
     display: block;
 }
@@ -1021,6 +1023,7 @@ svg:focus {
 #page.customization span.customization_show,
 #page.wrapped span.wrapped_show,
 #page.scrolls span.scrolls_show,
+#page.perks span.perks_show,
 #page.animals span.animals_show {
     display: inline;
 }
@@ -1379,6 +1382,12 @@ svg:focus {
     background-position: center;
 }
 
+#page.perks .item label .image {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
 .item label .image.noimage {
     position: relative;
     display: flex;
@@ -1408,6 +1417,7 @@ svg:focus {
     text-align: center;
     overflow: hidden;
     display: none;
+    text-overflow: ellipsis;
 }
 
 #search_items {

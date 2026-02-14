@@ -306,6 +306,22 @@ function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
                 strTableHTML += `<tr><td>${strTipValue}</td><td>${objItemTemp['tip_extra'][strTipKey]}</td></tr>`;
             }
         });
+
+        if (strTab === 'perks') {
+            strTableHTML += `<tr><td>Enabled</td><td>`;
+            if (objMistriaData.perks.has(strItemKey)) {
+
+                if (objMistriaData.perks_disabled.has(strItemKey)) {
+                    strTableHTML += `<span style="color:#ce5070; font-weight: bold;">No</span>`;
+                } else {
+                    strTableHTML += `Yes`;
+                }
+            } else {
+                strTableHTML += `Not obtained`;
+            }
+            strTableHTML += `</td></tr>`;
+        }
+
         strTableHTML += '</table>';
     }
 
@@ -619,6 +635,7 @@ function loadMenuItems() {
 
     if (!$('#tutorial').length) {
         objBuild.tabsOrder.forEach(function (strTab) {
+            if (!(strTab in objTabs)) return;
             let objTabInfo = objTabs[strTab].info;
             $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/${objTabInfo.icon}">${objTabInfo.name}</div>`)
         });
@@ -822,6 +839,9 @@ function loadScrapedTab(strTab) {
             break;
         case 'animals':
             objItemsTemp = objItemsAnimals;
+            break;
+        case 'perks':
+            objItemsTemp = objItemsPerks;
             break;
         default:
             objItemsTemp = objItems;
@@ -1343,7 +1363,7 @@ function loadWrappedTab() {
             scales: {
                 r: {
                     min: 0,
-                    max: 60,
+                    max: objBuild.maxSkillLevel,
                     beginAtZero: true,
                     ticks: {
                         stepSize: 20,

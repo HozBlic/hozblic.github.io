@@ -7379,5 +7379,595 @@ var objTabs =
                 }
             }
         }
+    },
+    "perks": {
+        "info": {
+            "name": "Perks",
+            "icon": "fake_essence.png",
+            "img_path": "perks/",
+            "img_mini_path": "perks/",
+            "img_item_path": "perks/",
+            "item_json": "perks"
+        },
+        "categories": {
+            "woodcrafting": {
+                "info": {
+                    "img": "woodcrafting",
+                    "img_mini": "woodcrafting",
+                    "name": "Woodcrafting",
+                    "wikilink": "/wiki/Skills#Woodcrafting"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "hammer_timing",
+                            "lumberjack",
+                            "masonry",
+                            "forager"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "working_with_the_grain",
+                            "quality_crafting",
+                            "natural",
+                            "hammer_timing_two"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "material_world",
+                            "steady_supplies",
+                            "set_pieces",
+                            "hammer_timing_three"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "lumberjack_two",
+                            "underground_inspiration",
+                            "deliberate_debris",
+                            "working_with_the_grain_two"
+                        ]
+                    }
+                }
+            },
+            "blacksmithing": {
+                "info": {
+                    "img": "blacksmithing",
+                    "img_mini": "blacksmithing",
+                    "name": "Blacksmithing",
+                    "wikilink": "/wiki/Skills#Blacksmithing"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "copper_expert",
+                            "time_sensitive",
+                            "sharp_blacksmithing",
+                            "fortified_blacksmithing"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "iron_expert",
+                            "time_sensitive_two",
+                            "leech_blacksmithing",
+                            "lightweight_blacksmithing"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "silver_expert",
+                            "hasty_blacksmithing",
+                            "time_sensitive_three",
+                            "empowered"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "empowered_two",
+                            "gold_expert",
+                            "tireless_blacksmithing",
+                            "time_sensitive_four"
+                        ]
+                    }
+                }
+            },
+            "combat": {
+                "info": {
+                    "img": "combat",
+                    "img_mini": "combat",
+                    "name": "Combat",
+                    "wikilink": "/wiki/Skills#Combat"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Combat"
+                        },
+                        "items": [
+                            "guardians_shield",
+                            "true_strike",
+                            "jump_attack",
+                            "well_armed"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Combat"
+                        },
+                        "items": [
+                            "quick_footed",
+                            "shrine_savant",
+                            "generous_in_defeat",
+                            "dungeon_delicacies"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Combat"
+                        },
+                        "items": [
+                            "perfect_prefix",
+                            "rocking",
+                            "in_motion",
+                            "out_of_juice"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Combat"
+                        },
+                        "items": [
+                            "sonic_boom",
+                            "gift_exchange",
+                            "guardians_shield_two",
+                            "true_strike_two"
+                        ]
+                    }
+                }
+            },
+            "ranching": {
+                "info": {
+                    "img": "ranching",
+                    "img_mini": "ranching",
+                    "name": "Ranching",
+                    "wikilink": "/wiki/Skills#Ranching"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Ranching"
+                        },
+                        "items": [
+                            "feeding_frenzy",
+                            "close_bond",
+                            "barnyard_bounty",
+                            "currency_of_care"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Ranching"
+                        },
+                        "items": [
+                            "currency_of_care_two",
+                            "feed_prepper",
+                            "welcome_home",
+                            "discount_treats"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Ranching"
+                        },
+                        "items": [
+                            "currency_of_care_three",
+                            "welcome_home_two",
+                            "barnyard_bounty_two",
+                            "wind_down"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Ranching"
+                        },
+                        "items": [
+                            "the_bell_tolls",
+                            "maximum_milling",
+                            "barnyard_bounty_three"
+                        ]
+                    }
+                }
+            },
+            "mining": {
+                "info": {
+                    "img": "mining",
+                    "img_mini": "mining",
+                    "name": "Mining",
+                    "wikilink": "/wiki/Skills#Mining"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Mining"
+                        },
+                        "items": [
+                            "earth_breaker",
+                            "ore_riginal",
+                            "reclaimer",
+                            "treasure_hunter"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Mining"
+                        },
+                        "items": [
+                            "iron_hound",
+                            "true_blue",
+                            "treasured",
+                            "mine_time"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Mining"
+                        },
+                        "items": [
+                            "resonance",
+                            "earth_breaker_two",
+                            "silver_seeker",
+                            "fantastic_finds"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Mining"
+                        },
+                        "items": [
+                            "lost_to_history",
+                            "good_as_gold",
+                            "refined_rockery",
+                            "break_one_get_two"
+                        ]
+                    }
+                }
+            },
+            "farming": {
+                "info": {
+                    "img": "farming",
+                    "img_mini": "farming",
+                    "name": "Farming",
+                    "wikilink": "/wiki/Skills#Farming"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Farming"
+                        },
+                        "items": [
+                            "prepared_picker",
+                            "a_day_well_spent",
+                            "green_thumb",
+                            "refreshing"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Farming"
+                        },
+                        "items": [
+                            "bountiful",
+                            "heavy_duty",
+                            "well_watered",
+                            "nice_swing"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Farming"
+                        },
+                        "items": [
+                            "living_off_the_land",
+                            "superb_sower",
+                            "harvest_time",
+                            "prize_winning"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Farming"
+                        },
+                        "items": [
+                            "sickle_sword",
+                            "ornamental",
+                            "perfect_pollinators",
+                            "magic_design"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "/wiki/Skills#Farming"
+                        },
+                        "items": [
+                            "earthly_essence"
+                        ]
+                    }
+                }
+            },
+            "archaeology": {
+                "info": {
+                    "img": "archaeology",
+                    "img_mini": "archaeology",
+                    "name": "Archaeology",
+                    "wikilink": "/wiki/Skills#Archaeology"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Archaeology"
+                        },
+                        "items": [
+                            "museum_quality_one",
+                            "unpeatable",
+                            "sunken_secrets",
+                            "western_ruins_scholar"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Archaeology"
+                        },
+                        "items": [
+                            "sunken_treasure",
+                            "stoneturner",
+                            "eastern_road_scholar",
+                            "pursuit"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Archaeology"
+                        },
+                        "items": [
+                            "back_in_vogue",
+                            "natural_beauty",
+                            "well_placed",
+                            "museum_quality_two"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Archaeology"
+                        },
+                        "items": [
+                            "former_farmers",
+                            "museum_quality_three",
+                            "back_in_vogue_two",
+                            "natural_beauty_two"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "/wiki/Skills#Archaeology"
+                        },
+                        "items": [
+                            "mist_sight"
+                        ]
+                    }
+                }
+            },
+            "fishing": {
+                "info": {
+                    "img": "fishing",
+                    "img_mini": "fishing",
+                    "name": "Fishing",
+                    "wikilink": "/wiki/Skills#Fishing"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Fishing"
+                        },
+                        "items": [
+                            "weedline_watcher",
+                            "aquatic_antiquities",
+                            "appealing_reeling",
+                            "catch_of_the_day"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Fishing"
+                        },
+                        "items": [
+                            "school_crasher",
+                            "lucky_haul",
+                            "perfect_catch",
+                            "unexpected_haul"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Fishing"
+                        },
+                        "items": [
+                            "full_class",
+                            "legendary",
+                            "treasure_trove",
+                            "weedline_watcher_two"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Fishing"
+                        },
+                        "items": [
+                            "appealing_reeling_two",
+                            "frenzy",
+                            "what_a_catch",
+                            "lucky_haul_two"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "/wiki/Skills#Fishing"
+                        },
+                        "items": [
+                            "abyssal_ascendence"
+                        ]
+                    }
+                }
+            },
+            "cooking": {
+                "info": {
+                    "img": "cooking",
+                    "img_mini": "cooking",
+                    "name": "Cooking",
+                    "wikilink": "/wiki/Skills#Cooking"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Cooking"
+                        },
+                        "items": [
+                            "waste_not_want_not",
+                            "time_to_eat",
+                            "restorative_cooking",
+                            "taste_maker"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "/wiki/Skills#Cooking"
+                        },
+                        "items": [
+                            "seasoned",
+                            "time_to_eat_two",
+                            "award_winning",
+                            "likable_cooking"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "/wiki/Skills#Cooking"
+                        },
+                        "items": [
+                            "speedy_cooking",
+                            "dinner_for_two",
+                            "a_way_to_the_heart",
+                            "time_to_eat_three"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "/wiki/Skills#Cooking"
+                        },
+                        "items": [
+                            "loveable_cooking",
+                            "snacktime",
+                            "caffeine_crimes",
+                            "magical_meals"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "/wiki/Skills#Cooking"
+                        },
+                        "items": [
+                            "fairy_cooking"
+                        ]
+                    }
+                }
+            },
+            "mount": {
+                "info": {
+                    "img": "mount",
+                    "img_mini": "mount",
+                    "name": "Mistmare",
+                    "wikilink": "/wiki/Skills#Mistmare"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "/wiki/Skills#Mistmare"
+                        },
+                        "items": [
+                            "horsepower",
+                            "harvest_horse",
+                            "nice_ride"
+                        ]
+                    }
+                }
+            }
+        }
     }
 }

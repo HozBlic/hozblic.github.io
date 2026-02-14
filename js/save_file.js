@@ -178,6 +178,24 @@ function extractAnimalData(objAnimalsData) {
     }
 }
 
+function extractPerksData(objPlayerData, boolDisabled = false) {
+    if (typeof objPlayerData === 'object') {
+        var arrPerksData = [];
+
+        Object.entries(objPlayerData['stats']['perks_active']).forEach(([strItemKey, bolActive]) => {
+            if (boolDisabled && bolActive === false) {
+                arrPerksData.push(strItemKey);
+            }
+            if (!boolDisabled && (bolActive === true || bolActive === false)) {
+                arrPerksData.push(strItemKey);
+            }
+        });
+
+        return arrPerksData;
+    } else {
+        return false;
+    }
+}
 $(function () {
     $("#save_input").on("change", function (event) {
 
@@ -216,6 +234,7 @@ $(function () {
                 if (cleaned) {
 
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
+                    console.log(jsonBlocks);
                     let objMistriaDataExtracted = {
                         gifts: extractGiftKeys(objNPC(jsonBlocks)) || false,
                         museum: objMUSEUM(jsonBlocks) || false,
@@ -223,6 +242,8 @@ $(function () {
                         scrolls: objPLAYER(jsonBlocks)['morning_recipe_unlocks'] || false,
                         animals: extractAnimalData(objPLAYER(jsonBlocks)) || false,
                         customization: objPLAYER(jsonBlocks)['seen_cosmetics'] || false,
+                        perks: extractPerksData(objPLAYER(jsonBlocks)) || false,
+                        perks_disabled: extractPerksData(objPLAYER(jsonBlocks), true) || false,
                     }
 
                     let objOldData = {};

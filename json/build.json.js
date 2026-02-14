@@ -1,13 +1,16 @@
 var objBuild =
 {
     "version": "0.14.4",
+    "maxSkillLevel": 60,
     "tabsOrder": [
         "gifts",
         "museum",
         "almanac",
         "animals",
         "scrolls",
-        "customization"
+        "customization",
+        "perks",
+        "perks_disabled"
     ],
     "objMistriaDataDefault": {
         "gifts": [],
@@ -15,6 +18,8 @@ var objBuild =
         "almanac": [],
         "animals": [],
         "scrolls": [],
+        "perks": [],
+        "perks_disabled": [],
         "customization": [
             "back_gear_basic_backpack",
             "back_gear_basic_cape",

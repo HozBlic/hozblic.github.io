@@ -51,14 +51,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="stylesheet" href="css/style.css?v=36">
+    <link rel="stylesheet" href="css/style.css?v=37">
     <link rel="stylesheet" href="css/wrapped.css">
 
     <script type="text/javascript" src="json/items.json.js?v=16"></script>
     <script type="text/javascript" src="json/items_accessories.json.js?v=1"></script>
     <script type="text/javascript" src="json/items_animals.json.js?v=3"></script>
-    <script type="text/javascript" src="json/build.json.js"></script>
-    <script type="text/javascript" src="json/tabs.json.js?v=1"></script>
+    <script type="text/javascript" src="json/items_perks.json.js?v=1"></script>
+    <script type="text/javascript" src="json/build.json.js?v=2"></script>
+    <script type="text/javascript" src="json/tabs.json.js?v=2"></script>
 
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -70,9 +71,9 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=39"></script>
+    <script type="text/javascript" src="js/script.js?v=40"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
-    <script type="text/javascript" src="js/save_file.js?v=19"></script>
+    <script type="text/javascript" src="js/save_file.js?v=20"></script>
 </head>
 
 <body>
@@ -89,7 +90,7 @@
                     <input id="search_items" type="text" placeholder="Adeline + gold">
                 </div>
 
-                <div id="checkbox_filter" class="collapsed">
+                <div id="checkbox_filter" class="collapsed gifts_show museum_show almanac_show scrolls_show animals_show customization_show">
                     <div id="checkbox_filter_items"></div>
 
                     <label id="checkbox_filter_collapse" class="mode_chbexpand">
@@ -265,6 +266,7 @@
                         <span class="scrolls_show">Hide obtained recipes</span>
                         <span class="customization_show">Hide obtained items</span>
                         <span class="animals_show">Hide obtained animals</span>
+                        <span class="perks_show">Hide obtained perks</span>
 
                         <svg id="older_browsers" class="feather feather-alert-triangle" fill="none" height="24"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
