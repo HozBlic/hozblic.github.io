@@ -19,6 +19,8 @@
     --color-btn: #9a8c98;
     --color-btn2: #726d81;
     --color-btn-rgb: 154, 140, 152;
+
+    --menu-size: 260px;
 }
 
 #page.mode_dark {
@@ -49,6 +51,17 @@
     width: 0;
     height: 0;
     z-index: 4;
+    transition: opacity 0.3s ease;
+}
+
+#page:not(.mode_collapse) #triangle {
+    opacity: 0;
+}
+
+@media only screen and (min-width: 550px) {
+    #page:not(.mode_collapse) #triangle {
+        opacity: 1;
+    }
 }
 
 #triangle img {
@@ -165,9 +178,9 @@ svg:focus {
 }
 
 #page:not(.mode_collapse) #side_menu {
-    max-width: 260px;
+    max-width: var(--menu-size);
     z-index: 2;
-    min-width: 260px;
+    min-width: var(--menu-size);
     overflow: unset;
 }
 
@@ -199,12 +212,12 @@ svg:focus {
     }
 
     #page:not(.mode_collapse) #side_menu {
-        max-width: 260px;
+        max-width: var(--menu-size);
         min-width: unset;
     }
 
     #page:not(.mode_collapse) #content {
-        width: calc(100% - 260px);
+        width: calc(100% - var(--menu-size));
     }
 }
 
@@ -224,8 +237,39 @@ svg:focus {
     display: none;
 }
 
-.side_menu_btn:hover {
-    transform: scale(1.1);
+
+
+#page #header .side_menu_btn.side_menu_btn:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    bottom: 0;
+    width: calc(100% - var(--menu-size));
+    background-color: rgba(var(--color-btn-rgb), 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    cursor: default;
+}
+
+#page:not(.mode_collapse) #header .side_menu_btn.side_menu_btn:before {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media only screen and (min-width: 550px) {
+    .side_menu_btn:hover {
+        transform: scale(1.1);
+    }
+
+    #page:not(.mode_collapse) #header .side_menu_btn.side_menu_btn:before {
+        display: none;
+    }
+
 }
 
 .side_menu_btn svg {
@@ -364,6 +408,8 @@ svg:focus {
     font-size: 0;
     fill: var(--color-txt);
     text-decoration: unset;
+    min-width: 40px;
+    justify-content: center;
 }
 
 .tab .icon {
@@ -402,7 +448,7 @@ svg:focus {
 
 @media only screen and (min-width: 550px) {
     #page:not(.mode_collapse) #header #tabs {
-        margin-left: calc(260px - 50px + 8px);
+        margin-left: calc(var(--menu-size) - 50px + 8px);
     }
 
     #page:not(.mode_collapse) #header #tabs {
@@ -415,6 +461,7 @@ svg:focus {
     .tab {
         min-height: 34px;
         padding: 4px 4px;
+        min-width: 34px;
     }
 
     .tab img {
