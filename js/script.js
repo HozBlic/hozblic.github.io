@@ -632,17 +632,27 @@ function openJsonPopup() {
 
 function loadMenuItems() {
 
-    var prevScrollpos = 0;
-    $('.tab_content').on('scroll', function () {
-        var currentScrollPos = $(this).scrollTop();
-        if (prevScrollpos < currentScrollPos && currentScrollPos > 500) {
-            $('#header').addClass('hidden');
-        } else {
-            $('#header').removeClass('hidden');
-        }
-        prevScrollpos = currentScrollPos;
-    });
+    let bolScrolled = false;
+    let intPrevScrollPos = 0;
 
+    $('.tab_content').on('scroll', function () {
+        bolScrolled = true;
+    })
+
+    setInterval(function () {
+        if (bolScrolled) {
+            bolScrolled = false;
+            var intCurrentScrollPos = $('.tab_content:visible').scrollTop();
+            if (intPrevScrollPos < intCurrentScrollPos && intCurrentScrollPos > 500) {
+                if (intCurrentScrollPos - intPrevScrollPos > 30) {
+                    $('#header').addClass('hidden');
+                }
+            } else {
+                $('#header').removeClass('hidden');
+            }
+            intPrevScrollPos = intCurrentScrollPos;
+        }
+    }, 150);
 
     $('#side_menu #title .version').text(`v ${objBuild.version}`);
 
