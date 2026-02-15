@@ -433,6 +433,12 @@ svg:focus {
         position: unset;
         box-shadow: unset;
         justify-content: flex-start;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    #tabs {
         padding: 7.5px 0;
     }
 }
