@@ -218,6 +218,10 @@ const eqSet = (xs, ys) =>
 var objMistriaData;
 
 var objMistriaDataDefault = objBuild.objMistriaDataDefault;
+// close menu on mobile by default
+if ($(window).width() < 700) {
+    objMistriaDataDefault.options.push('mode_collapse');
+}
 var arrTabs = objBuild.tabsOrder;
 var allCharts = {};
 
@@ -306,22 +310,6 @@ function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
                 strTableHTML += `<tr><td>${strTipValue}</td><td>${objItemTemp['tip_extra'][strTipKey]}</td></tr>`;
             }
         });
-
-        if (strTab === 'perks') {
-            strTableHTML += `<tr><td>Enabled</td><td>`;
-            if (objMistriaData.perks.has(strItemKey)) {
-
-                if (objMistriaData.perks_disabled.has(strItemKey)) {
-                    strTableHTML += `<span style="color:#ce5070; font-weight: bold;">No</span>`;
-                } else {
-                    strTableHTML += `Yes`;
-                }
-            } else {
-                strTableHTML += `Not obtained`;
-            }
-            strTableHTML += `</td></tr>`;
-        }
-
         strTableHTML += '</table>';
     }
 
@@ -330,18 +318,31 @@ function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
         strChecked = 'checked';
     }
 
-    let strTipHTML = $(`<div id="tip_${strID}" class="tip_wrap">
-                        <div class="tip">
-                            <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
-                                ${strTab === 'customization' ? objItemTemp['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItemTemp['url']}">${objItemTemp['name']}</a>`}
-                                ${bolDonatable ? '<img src="images/museum.png">' : ''}
-                            </div>
-                            ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
-                            <div class="tip_info">${objItemTemp['tip']}</div>
-                            ${objItemTemp['nodata'] ? 'No data available' : ''}
-                            ${strTableHTML}
-                        </div>
-                    </div>`);
+    let strDisabled = '';
+    if (strTab === 'perks') {
+        if (objMistriaData.perks.has(strItemKey)) {
+            strChecked = 'checked';
+        }
+
+        if (objMistriaData.perks_disabled.has(strItemKey)) {
+            strDisabled = 'disabled';
+        }
+    }
+
+    let strTipHTML = $(`
+        <div id="tip_${strID}" class="tip_wrap">
+            <div class="tip">
+                <div class="tip_name ${strChecked} ${strTab === 'perks' ? 'is_perk' : ''} ${strDisabled} ${bolDonatable ? 'donatable' : ''}">
+                    ${strTab === 'customization' ? objItemTemp['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItemTemp['url']}">${objItemTemp['name']}</a>`}
+                    ${strTab === 'perks' ? '<img src="images/fake_essence.png">' : ''}
+                    ${bolDonatable ? '<img src="images/museum.png">' : ''}
+                </div>
+                ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
+                <div class="tip_info">${objItemTemp['tip']}</div>
+                ${objItemTemp['nodata'] ? 'No data available' : ''}
+                ${strTableHTML}
+            </div>
+        </div>`);
 
     let $objTip = $(strTipHTML);
 
@@ -630,6 +631,18 @@ function openJsonPopup() {
 }
 
 function loadMenuItems() {
+
+    var prevScrollpos = 0;
+    $('.tab_content').on('scroll', function () {
+        var currentScrollPos = $(this).scrollTop();
+        if (prevScrollpos > currentScrollPos) {
+            $('#header').removeClass('hidden');
+        } else {
+            $('#header').addClass('hidden');
+        }
+        prevScrollpos = currentScrollPos;
+    });
+
 
     $('#side_menu #title .version').text(`v ${objBuild.version}`);
 
@@ -1154,7 +1167,7 @@ function loadWrappedTab() {
         $('#wrapped').append(strAlert);
 
 
-        $('.tab_window.wrapped_show').css('overflow', 'hidden');
+        $('#wrapped').css('overflow', 'hidden');
         $('#wrapped').append('<div id="wrapped_charts"></div>');
 
     } else {
