@@ -7395,13 +7395,13 @@ var objTabs =
                     "img": "woodcrafting",
                     "img_mini": "woodcrafting",
                     "name": "Woodcrafting",
-                    "wikilink": "/wiki/Skills#Woodcrafting"
+                    "wikilink": "Skills#Woodcrafting"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Woodcrafting"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
                             "hammer_timing",
@@ -7413,7 +7413,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Woodcrafting"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
                             "working_with_the_grain",
@@ -7425,7 +7425,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Woodcrafting"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
                             "material_world",
@@ -7437,7 +7437,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Woodcrafting"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
                             "lumberjack_two",
@@ -7453,13 +7453,13 @@ var objTabs =
                     "img": "blacksmithing",
                     "img_mini": "blacksmithing",
                     "name": "Blacksmithing",
-                    "wikilink": "/wiki/Skills#Blacksmithing"
+                    "wikilink": "Skills#Blacksmithing"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Blacksmithing"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
                             "copper_expert",
@@ -7471,7 +7471,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Blacksmithing"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
                             "iron_expert",
@@ -7483,7 +7483,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Blacksmithing"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
                             "silver_expert",
@@ -7495,7 +7495,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Blacksmithing"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
                             "empowered_two",
@@ -7511,13 +7511,13 @@ var objTabs =
                     "img": "combat",
                     "img_mini": "combat",
                     "name": "Combat",
-                    "wikilink": "/wiki/Skills#Combat"
+                    "wikilink": "Skills#Combat"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Combat"
+                            "wikilink": "Skills#Combat"
                         },
                         "items": [
                             "guardians_shield",
@@ -7529,7 +7529,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Combat"
+                            "wikilink": "Skills#Combat"
                         },
                         "items": [
                             "quick_footed",
@@ -7541,7 +7541,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Combat"
+                            "wikilink": "Skills#Combat"
                         },
                         "items": [
                             "perfect_prefix",
@@ -7553,7 +7553,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Combat"
+                            "wikilink": "Skills#Combat"
                         },
                         "items": [
                             "sonic_boom",
@@ -7569,13 +7569,13 @@ var objTabs =
                     "img": "ranching",
                     "img_mini": "ranching",
                     "name": "Ranching",
-                    "wikilink": "/wiki/Skills#Ranching"
+                    "wikilink": "Skills#Ranching"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Ranching"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
                             "feeding_frenzy",
@@ -7587,7 +7587,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Ranching"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
                             "currency_of_care_two",
@@ -7599,7 +7599,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Ranching"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
                             "currency_of_care_three",
@@ -7611,7 +7611,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Ranching"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
                             "the_bell_tolls",
@@ -7626,13 +7626,13 @@ var objTabs =
                     "img": "mining",
                     "img_mini": "mining",
                     "name": "Mining",
-                    "wikilink": "/wiki/Skills#Mining"
+                    "wikilink": "Skills#Mining"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Mining"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
                             "earth_breaker",
@@ -7644,7 +7644,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Mining"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
                             "iron_hound",
@@ -7656,7 +7656,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Mining"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
                             "resonance",
@@ -7668,7 +7668,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Mining"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
                             "lost_to_history",
@@ -7684,13 +7684,13 @@ var objTabs =
                     "img": "farming",
                     "img_mini": "farming",
                     "name": "Farming",
-                    "wikilink": "/wiki/Skills#Farming"
+                    "wikilink": "Skills#Farming"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Farming"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
                             "prepared_picker",
@@ -7702,7 +7702,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Farming"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
                             "bountiful",
@@ -7714,7 +7714,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Farming"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
                             "living_off_the_land",
@@ -7726,7 +7726,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Farming"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
                             "sickle_sword",
@@ -7738,7 +7738,7 @@ var objTabs =
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "/wiki/Skills#Farming"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
                             "earthly_essence"
@@ -7751,13 +7751,13 @@ var objTabs =
                     "img": "archaeology",
                     "img_mini": "archaeology",
                     "name": "Archaeology",
-                    "wikilink": "/wiki/Skills#Archaeology"
+                    "wikilink": "Skills#Archaeology"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Archaeology"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
                             "museum_quality_one",
@@ -7769,7 +7769,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Archaeology"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
                             "sunken_treasure",
@@ -7781,7 +7781,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Archaeology"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
                             "back_in_vogue",
@@ -7793,7 +7793,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Archaeology"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
                             "former_farmers",
@@ -7805,7 +7805,7 @@ var objTabs =
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "/wiki/Skills#Archaeology"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
                             "mist_sight"
@@ -7818,13 +7818,13 @@ var objTabs =
                     "img": "fishing",
                     "img_mini": "fishing",
                     "name": "Fishing",
-                    "wikilink": "/wiki/Skills#Fishing"
+                    "wikilink": "Skills#Fishing"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Fishing"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
                             "weedline_watcher",
@@ -7836,7 +7836,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Fishing"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
                             "school_crasher",
@@ -7848,7 +7848,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Fishing"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
                             "full_class",
@@ -7860,7 +7860,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Fishing"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
                             "appealing_reeling_two",
@@ -7872,7 +7872,7 @@ var objTabs =
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "/wiki/Skills#Fishing"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
                             "abyssal_ascendence"
@@ -7885,13 +7885,13 @@ var objTabs =
                     "img": "cooking",
                     "img_mini": "cooking",
                     "name": "Cooking",
-                    "wikilink": "/wiki/Skills#Cooking"
+                    "wikilink": "Skills#Cooking"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Cooking"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
                             "waste_not_want_not",
@@ -7903,7 +7903,7 @@ var objTabs =
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "/wiki/Skills#Cooking"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
                             "seasoned",
@@ -7915,7 +7915,7 @@ var objTabs =
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "/wiki/Skills#Cooking"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
                             "speedy_cooking",
@@ -7927,7 +7927,7 @@ var objTabs =
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "/wiki/Skills#Cooking"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
                             "loveable_cooking",
@@ -7939,7 +7939,7 @@ var objTabs =
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "/wiki/Skills#Cooking"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
                             "fairy_cooking"
@@ -7952,13 +7952,13 @@ var objTabs =
                     "img": "mount",
                     "img_mini": "mount",
                     "name": "Mistmare",
-                    "wikilink": "/wiki/Skills#Mistmare"
+                    "wikilink": "Skills#Mistmare"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "/wiki/Skills#Mistmare"
+                            "wikilink": "Skills#Mistmare"
                         },
                         "items": [
                             "horsepower",
