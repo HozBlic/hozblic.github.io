@@ -768,16 +768,15 @@ function loadMenuItems() {
         }
     });
 
-    //hide sort dropdown on outside click
+    //hide dropdowns on outside click
     $(document).on('click', function (e) {
-        var jqTarget = $(e.target);
+        var jqTarget = $(e.target).closest('.dropdown_wrap');
 
-        // Close previous dropdown when opening a new one
-        if (jqTarget.hasClass('dropdown_wrap') || jqTarget.parents('.dropdown_wrap').length > 0) {
-            $('.dropdown_wrap').not(jqTarget.closest('.dropdown_wrap')).removeClass('open');
-        }
-        if (jqTarget.hasClass('dropdown-item')) {
+        if (jqTarget.length === 0) {
             $('.dropdown_wrap').removeClass('open');
+        } else {
+            $('.dropdown_wrap').not(jqTarget).removeClass('open');
+            $(jqTarget).toggleClass('open');
         }
     });
 
