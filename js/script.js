@@ -349,6 +349,24 @@ function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
     return $objTip.prop('outerHTML');
 }
 
+function changeLayout(objElem) {
+    if ($(objElem).hasClass('selected')) return;
+
+    if ($(objElem).attr('data-value') !== 'default') {
+        objMistriaData.options.add('mode_list');
+        $('#page').addClass('mode_list');
+    } else {
+        objMistriaData.options.delete('mode_list');
+        $('#page').removeClass('mode_list');
+    }
+
+    saveData();
+
+    $('.dropdown-item.layout').removeClass('selected');
+    $(`.dropdown-item.layout[data-value="${objMistriaData.options.has('mode_list') ? 'mode_list' : 'default'}"]`).addClass('selected');
+}
+
+
 function changeSort(objElem) {
     if ($(objElem).hasClass('selected')) return;
 
@@ -450,25 +468,67 @@ function compareData(strJson) {
 
     arrTabs.forEach(function (strTab) {
         if (objOldData[strTab].length === objNewData[strTab].length && objOldData[strTab].every((value, index) => value === objNewData[strTab][index])) {
-            arrChanges.push(`${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} -> ${objNewData[strTab].length}`);
+            arrChanges.push(`${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+            ${objNewData[strTab].length}`);
         } else {
             bolChangesDetected = true;
-            arrChanges.push(`<b>${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} -> ${objNewData[strTab].length}</b>`);
+            arrChanges.push(`<b>${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+            ${objNewData[strTab].length}</b>`);
         }
     });
 
     if (objOldData.options.length === objNewData.options.length && objOldData.options.every((value, index) => value === objNewData.options[index])) {
-        arrChanges.push(`Layout toggles: ${objOldData.options.length} -> ${objNewData.options.length}`);
+        arrChanges.push(`Layout toggles: ${objOldData.options.length} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+            ${objNewData.options.length}`);
     } else {
         bolChangesDetected = true;
-        arrChanges.push(`<b>Layout toggles: ${objOldData.options.length} -> ${objNewData.options.length}</b>`);
+        arrChanges.push(`<b>Layout toggles: ${objOldData.options.length} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+            ${objNewData.options.length}</b>`);
     }
 
     if (strOldSort === strNewSort) {
-        arrChanges.push(`Sort settings: ${strOldSort} -> ${strNewSort}`);
+        arrChanges.push(`Sort settings: ${strOldSort} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+            ${strNewSort}`);
     } else {
         bolChangesDetected = true;
-        arrChanges.push(`<b>Sort settings: ${strOldSort} -> ${strNewSort}</b>`);
+        arrChanges.push(`<b>Sort settings: ${strOldSort} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+            ${strNewSort}</b>`);
     }
 
     if (!bolChangesDetected) {
@@ -477,7 +537,14 @@ function compareData(strJson) {
         return [true, arrChanges, objNewData];
     }
 }
+function deleteData() {
+    $('#accept_delete_data').show();
 
+    $('#popup-selete-data').off('click').on('click', function () {
+        localStorage.clear();
+        window.location.reload();
+    });
+}
 function saveJson() {
     var strJson = $('#settings_json').val();
     if (isJsonString(strJson)) {
@@ -630,6 +697,20 @@ function openJsonPopup() {
     $('#json_button_popup').show();
 }
 
+function disableTippy() {
+    let bolDisable = objMistriaData.options.has('mode_disable_tooltip');
+    $(`.item label, .category_name`).each(function (index) {
+        let objLabel = $(this)[0];
+        let objTippy = objLabel._tippy;
+        if (typeof objTippy === 'undefined') return;
+
+        if (bolDisable) {
+            objTippy.disable();
+        } else {
+            objTippy.enable();
+        }
+    });
+}
 function loadMenuItems() {
 
     let bolScrolled = false;
@@ -691,12 +772,19 @@ function loadMenuItems() {
     $(document).on('click', function (e) {
         var jqTarget = $(e.target);
         if (
-            jqTarget.parents('#sort_button').length == 0 &&
-            jqTarget.attr('id') != 'sort_button'
+            jqTarget.parents('.dropdown_button').length == 0 &&
+            !(jqTarget.hasClass('dropdown_button'))
         ) {
-            $('#sort_button').parent().removeClass('open');
+            $('.dropdown_button').parent().removeClass('open');
+        } else if (jqTarget.hasClass('dropdown_button')) {
+            // close other dropdowns, keep only the clicked one open
+            $('.dropdown_button').parent().not(jqTarget.parent()).removeClass('open');
         }
     });
+
+    //select saved layout option
+    $('.dropdown-item.layout').removeClass('selected');
+    $(`.dropdown-item.layout[data-value="${objMistriaData.options.has('mode_list') ? 'mode_list' : 'default'}"]`).addClass('selected');
 
     //select saved sorting option
     $('.dropdown-item.sort').removeClass('selected');
@@ -783,11 +871,12 @@ function loadMenuItems() {
         checkScrapedTabVisibility();
     });
 
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_mini_tooltip'];
+    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
-            if ($(this).is(':checked')) {
+            let bolChecked = $(this).is(':checked');
+            if (bolChecked) {
                 $('#page').addClass(strMode);
                 objMistriaData.options.add(strMode);
             } else {
@@ -819,6 +908,9 @@ function loadMenuItems() {
                 }
             }
 
+            if (strMode === 'mode_disable_tooltip') {
+                disableTippy();
+            }
 
             if (strMode === 'mode_spoilers' || strMode === 'mode_gift') {
                 checkScrapedTabVisibility();
@@ -905,12 +997,11 @@ function loadScrapedTab(strTab) {
             `);
         } else {
             $divCategory.append(` 
-                <div class="category_name" >
+                <div class="category_name">
                     ${objCategory.info.name}
                 </div>
             `);
         }
-
 
         if ('img_mini' in objCategory.info) {
             $divCategory.find('.category_name').prepend(`
@@ -921,6 +1012,25 @@ function loadScrapedTab(strTab) {
         }
 
         $('#scraped').append($divCategory);
+
+        if ('tip' in objCategory.info) {
+            let strTipHTML = $(`
+            <div id="tip_category_${strCatgoryKey}" class="tip_wrap">
+                <div class="tip">
+                    <div class="tip_info">${objCategory.info.tip}</div>
+                </div>
+            </div>`);
+
+            $divCategory.append(strTipHTML);
+            const template = $(`#tip_category_${strCatgoryKey}`)[0];
+            template.style.display = 'block';
+            tippy(`#category_${strCatgoryKey} .category_name`, {
+                content: template,
+                interactive: true,
+                maxWidth: 370
+            });
+        }
+
 
         var $divSubcategories = $('<div>', { 'class': 'subcategories' });
         $divCategory.append($divSubcategories);
@@ -1015,6 +1125,8 @@ function loadScrapedTab(strTab) {
             });
         });
     });
+
+    disableTippy();
 
     addSelectAllAndAlert(strTab, arrAllItems);
 

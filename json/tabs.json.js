@@ -15,7 +15,8 @@ var objTabs =
                     "name": "Adeline",
                     "img": "Adeline",
                     "img_mini": "Adeline",
-                    "wikilink": "Adeline"
+                    "wikilink": "Adeline",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 18</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -69,7 +70,8 @@ var objTabs =
                     "name": "Dozy",
                     "img": "Dozy",
                     "img_mini": "Dozy",
-                    "wikilink": "Dozy"
+                    "wikilink": "Dozy",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -123,7 +125,8 @@ var objTabs =
                     "name": "Maple",
                     "img": "Maple",
                     "img_mini": "Maple",
-                    "wikilink": "Maple"
+                    "wikilink": "Maple",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 26</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -178,6 +181,7 @@ var objTabs =
                     "img": "Seridia",
                     "img_mini": "Seridia",
                     "wikilink": "Priestess",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
                     "spoiler": 1
                 },
                 "subcategories": {
@@ -218,7 +222,8 @@ var objTabs =
                     "name": "Celine",
                     "img": "Celine",
                     "img_mini": "Celine",
-                    "wikilink": "Celine"
+                    "wikilink": "Celine",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 14</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -272,7 +277,8 @@ var objTabs =
                     "name": "Errol",
                     "img": "Errol",
                     "img_mini": "Errol",
-                    "wikilink": "Errol"
+                    "wikilink": "Errol",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 11</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -326,7 +332,8 @@ var objTabs =
                     "name": "Hemlock",
                     "img": "Hemlock",
                     "img_mini": "Hemlock",
-                    "wikilink": "Hemlock"
+                    "wikilink": "Hemlock",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 23</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -380,7 +387,8 @@ var objTabs =
                     "name": "Luc",
                     "img": "Luc",
                     "img_mini": "Luc",
-                    "wikilink": "Luc"
+                    "wikilink": "Luc",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 21</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -434,7 +442,8 @@ var objTabs =
                     "name": "Louis",
                     "img": "Louis",
                     "img_mini": "Louis",
-                    "wikilink": "Louis"
+                    "wikilink": "Louis",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 20</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -488,7 +497,8 @@ var objTabs =
                     "name": "Darcy",
                     "img": "Darcy",
                     "img_mini": "Darcy",
-                    "wikilink": "Darcy"
+                    "wikilink": "Darcy",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 13</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -542,7 +552,8 @@ var objTabs =
                     "name": "Dell",
                     "img": "Dell",
                     "img_mini": "Dell",
-                    "wikilink": "Dell"
+                    "wikilink": "Dell",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 3</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -596,7 +607,8 @@ var objTabs =
                     "name": "Josephine",
                     "img": "Josephine",
                     "img_mini": "Josephine",
-                    "wikilink": "Josephine"
+                    "wikilink": "Josephine",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -651,6 +663,7 @@ var objTabs =
                     "img": "Stillwell",
                     "img_mini": "Stillwell",
                     "wikilink": "Stillwell",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 27</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
                     "noimage": 1
                 },
                 "subcategories": {
@@ -692,6 +705,7 @@ var objTabs =
                     "img": "Zorel",
                     "img_mini": "Zorel",
                     "wikilink": "Zorel",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
                     "noimage": 1
                 },
                 "subcategories": {
@@ -732,7 +746,8 @@ var objTabs =
                     "name": "Merri",
                     "img": "Merri",
                     "img_mini": "Merri",
-                    "wikilink": "Merri"
+                    "wikilink": "Merri",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -786,7 +801,8 @@ var objTabs =
                     "name": "Balor",
                     "img": "Balor",
                     "img_mini": "Balor",
-                    "wikilink": "Balor"
+                    "wikilink": "Balor",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 10</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -840,7 +856,8 @@ var objTabs =
                     "name": "Hayden",
                     "img": "Hayden",
                     "img_mini": "Hayden",
-                    "wikilink": "Hayden"
+                    "wikilink": "Hayden",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 8</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -894,7 +911,8 @@ var objTabs =
                     "name": "Nora",
                     "img": "Nora",
                     "img_mini": "Nora",
-                    "wikilink": "Nora"
+                    "wikilink": "Nora",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 24</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -948,7 +966,8 @@ var objTabs =
                     "name": "Elsie",
                     "img": "Elsie",
                     "img_mini": "Elsie",
-                    "wikilink": "Elsie"
+                    "wikilink": "Elsie",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1002,7 +1021,8 @@ var objTabs =
                     "name": "Landen",
                     "img": "Landen",
                     "img_mini": "Landen",
-                    "wikilink": "Landen"
+                    "wikilink": "Landen",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 4</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1056,7 +1076,8 @@ var objTabs =
                     "name": "Ryis",
                     "img": "Ryis",
                     "img_mini": "Ryis",
-                    "wikilink": "Ryis"
+                    "wikilink": "Ryis",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 4</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1110,7 +1131,8 @@ var objTabs =
                     "name": "Holt",
                     "img": "Holt",
                     "img_mini": "Holt",
-                    "wikilink": "Holt"
+                    "wikilink": "Holt",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 14</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1164,7 +1186,8 @@ var objTabs =
                     "name": "Reina",
                     "img": "Reina",
                     "img_mini": "Reina",
-                    "wikilink": "Reina"
+                    "wikilink": "Reina",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 12</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1218,7 +1241,8 @@ var objTabs =
                     "name": "Vera",
                     "img": "Vera",
                     "img_mini": "Vera",
-                    "wikilink": "Vera"
+                    "wikilink": "Vera",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1272,7 +1296,8 @@ var objTabs =
                     "name": "Juniper",
                     "img": "Juniper",
                     "img_mini": "Juniper",
-                    "wikilink": "Juniper"
+                    "wikilink": "Juniper",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 26</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1326,7 +1351,8 @@ var objTabs =
                     "name": "Valen",
                     "img": "Valen",
                     "img_mini": "Valen",
-                    "wikilink": "Valen"
+                    "wikilink": "Valen",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 1</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1380,7 +1406,8 @@ var objTabs =
                     "name": "Wheedle",
                     "img": "Wheedle",
                     "img_mini": "Wheedle",
-                    "wikilink": "Wheedle"
+                    "wikilink": "Wheedle",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1434,7 +1461,8 @@ var objTabs =
                     "name": "Olric",
                     "img": "Olric",
                     "img_mini": "Olric",
-                    "wikilink": "Olric"
+                    "wikilink": "Olric",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 10</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1488,7 +1516,8 @@ var objTabs =
                     "name": "Taliferro",
                     "img": "Taliferro",
                     "img_mini": "Taliferro",
-                    "wikilink": "Taliferro"
+                    "wikilink": "Taliferro",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 13</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1542,7 +1571,8 @@ var objTabs =
                     "name": "Terithia",
                     "img": "Terithia",
                     "img_mini": "Terithia",
-                    "wikilink": "Terithia"
+                    "wikilink": "Terithia",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 22</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1596,7 +1626,8 @@ var objTabs =
                     "name": "Henrietta",
                     "img": "Henrietta",
                     "img_mini": "Henrietta",
-                    "wikilink": "Henrietta"
+                    "wikilink": "Henrietta",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 7</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1650,7 +1681,8 @@ var objTabs =
                     "name": "Eiland",
                     "img": "Eiland",
                     "img_mini": "Eiland",
-                    "wikilink": "Eiland"
+                    "wikilink": "Eiland",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 20</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1704,7 +1736,8 @@ var objTabs =
                     "name": "March",
                     "img": "March",
                     "img_mini": "March",
-                    "wikilink": "March"
+                    "wikilink": "March",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1758,7 +1791,8 @@ var objTabs =
                     "name": "Caldarus",
                     "img": "Caldarus",
                     "img_mini": "Caldarus",
-                    "wikilink": "Caldarus"
+                    "wikilink": "Caldarus",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 25</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {

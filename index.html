@@ -51,7 +51,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="stylesheet" href="css/style.css?v=40">
+    <link rel="stylesheet" href="css/style.css?v=41">
     <link rel="stylesheet" href="css/wrapped.css">
 
     <script type="text/javascript" src="json/items.json.js?v=17"></script>
@@ -59,7 +59,7 @@
     <script type="text/javascript" src="json/items_animals.json.js?v=3"></script>
     <script type="text/javascript" src="json/items_perks.json.js?v=1"></script>
     <script type="text/javascript" src="json/build.json.js?v=2"></script>
-    <script type="text/javascript" src="json/tabs.json.js?v=3"></script>
+    <script type="text/javascript" src="json/tabs.json.js?v=4"></script>
 
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -71,7 +71,7 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=43"></script>
+    <script type="text/javascript" src="js/script.js?v=44"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
     <script type="text/javascript" src="js/save_file.js?v=20"></script>
 </head>
@@ -90,7 +90,8 @@
                     <input id="search_items" type="text" placeholder="Adeline + gold">
                 </div>
 
-                <div id="checkbox_filter" class="collapsed gifts_show museum_show almanac_show scrolls_show animals_show customization_show">
+                <div id="checkbox_filter"
+                    class="collapsed gifts_show museum_show almanac_show scrolls_show animals_show customization_show">
                     <div id="checkbox_filter_items"></div>
 
                     <label id="checkbox_filter_collapse" class="mode_chbexpand">
@@ -114,96 +115,139 @@
                     </label>
                 </div>
 
-                <div class="dropdown_wrap">
-                    <div class="button_item dropdown_button" id="sort_button"
-                        onclick="$(this).parent().toggleClass('open')">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12.424" height="13.449"
-                                viewBox="0 0 12.424 13.449">
-                                <g id="sort_arrows" stroke="none" transform="translate(-2.3 -1.5)">
-                                    <g id="Group_1387" data-name="Group 1387" transform="translate(2.3 1.5)">
-                                        <path id="Path_28891" data-name="Path 28891"
-                                            d="M8.7,5.663a.581.581,0,0,1-.448-.192L5.822,3.037,3.389,5.471a.634.634,0,0,1-.9-.9L5.31,1.692a.619.619,0,0,1,.9,0L9.152,4.574a.619.619,0,0,1,0,.9A.692.692,0,0,1,8.7,5.663Z"
-                                            transform="translate(-2.3 -1.5)" fill="#9a9a9a" />
-                                    </g>
-                                    <g id="Group_1388" data-name="Group 1388" transform="translate(5.118 1.5)">
-                                        <path id="Path_28892" data-name="Path 28892"
-                                            d="M7.34,11.106a.605.605,0,0,1-.64-.64V2.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,7.34,11.106Z"
-                                            transform="translate(-6.7 -1.5)" fill="#9a9a9a" />
-                                    </g>
-                                    <g id="Group_1389" data-name="Group 1389" transform="translate(7.679 10.786)">
-                                        <path id="Path_28893" data-name="Path 28893"
-                                            d="M14.286,20.163a.581.581,0,0,1-.448-.192l-2.946-2.882a.634.634,0,0,1,.9-.9l2.434,2.434,2.434-2.434a.634.634,0,0,1,.9.9l-2.818,2.882a.692.692,0,0,1-.448.192Z"
-                                            transform="translate(-10.7 -16)" fill="#9a9a9a" />
-                                    </g>
-                                    <g id="Group_1390" data-name="Group 1390" transform="translate(10.561 5.342)">
-                                        <path id="Path_28894" data-name="Path 28894"
-                                            d="M15.84,17.106a.605.605,0,0,1-.64-.64V8.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,15.84,17.106Z"
-                                            transform="translate(-15.2 -7.5)" fill="#9a9a9a" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="text">Sort by</div>
-                    </div>
-                    <div class="dropdown">
-                        <div class="dropdown-item sort selected" data-value="default" onclick="changeSort(this)">
+                <div class="dropdowns">
+                    <div class="dropdown_wrap">
+                        <div class="button_item dropdown_button" onclick="$(this).parent().toggleClass('open')">
                             <div class="icon">
-                                <svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
-                                    <title />
-                                    <path stroke="#ff0000"
-                                        d="M467.51,248.83c-18.4-83.18-45.69-136.24-89.43-149.17A91.5,91.5,0,0,0,352,96c-26.89,0-48.11,16-96,16s-69.15-16-96-16a99.09,99.09,0,0,0-27.2,3.66C89,112.59,61.94,165.7,43.33,248.83c-19,84.91-15.56,152,21.58,164.88,26,9,49.25-9.61,71.27-37,25-31.2,55.79-40.8,119.82-40.8s93.62,9.6,118.66,40.8c22,27.41,46.11,45.79,71.42,37.16C487.1,399.86,486.52,334.74,467.51,248.83Z"
-                                        style="fill:none;stroke-miterlimit:10;stroke-width:32px" />
-                                    <circle cx="292" cy="224" r="20" />
-                                    <path d="M336,288a20,20,0,1,1,20-19.95A20,20,0,0,1,336,288Z" />
-                                    <circle cx="336" cy="180" r="20" />
-                                    <circle cx="380" cy="224" r="20" />
-                                    <line stroke="#ff0000"
-                                        style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-                                        x1="160" x2="160" y1="176" y2="272" />
-                                    <line stroke="#ff0000"
-                                        style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-                                        x1="208" x2="112" y1="224" y2="224" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-layout">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
                                 </svg>
                             </div>
-                            In game
+                            <div class="text">Layout</div>
                         </div>
-                        <div class="dropdown-item sort" data-value="az" onclick="changeSort(this)">
+                        <div class="dropdown">
+                            <div class="dropdown-item layout selected" data-value="default"
+                                onclick="changeLayout(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-grid">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </div>
+                                Grid
+                            </div>
+                            <div class="dropdown-item layout" data-value="mode_list" onclick="changeLayout(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check-square">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                                Checklist
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown_wrap">
+                        <div class="button_item dropdown_button" onclick="$(this).parent().toggleClass('open')">
                             <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12.424" height="13.449"
+                                    viewBox="0 0 12.424 13.449">
+                                    <g id="sort_arrows" stroke="none" transform="translate(-2.3 -1.5)">
+                                        <g id="Group_1387" data-name="Group 1387" transform="translate(2.3 1.5)">
+                                            <path id="Path_28891" data-name="Path 28891"
+                                                d="M8.7,5.663a.581.581,0,0,1-.448-.192L5.822,3.037,3.389,5.471a.634.634,0,0,1-.9-.9L5.31,1.692a.619.619,0,0,1,.9,0L9.152,4.574a.619.619,0,0,1,0,.9A.692.692,0,0,1,8.7,5.663Z"
+                                                transform="translate(-2.3 -1.5)" fill="#9a9a9a" />
+                                        </g>
+                                        <g id="Group_1388" data-name="Group 1388" transform="translate(5.118 1.5)">
+                                            <path id="Path_28892" data-name="Path 28892"
+                                                d="M7.34,11.106a.605.605,0,0,1-.64-.64V2.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,7.34,11.106Z"
+                                                transform="translate(-6.7 -1.5)" fill="#9a9a9a" />
+                                        </g>
+                                        <g id="Group_1389" data-name="Group 1389" transform="translate(7.679 10.786)">
+                                            <path id="Path_28893" data-name="Path 28893"
+                                                d="M14.286,20.163a.581.581,0,0,1-.448-.192l-2.946-2.882a.634.634,0,0,1,.9-.9l2.434,2.434,2.434-2.434a.634.634,0,0,1,.9.9l-2.818,2.882a.692.692,0,0,1-.448.192Z"
+                                                transform="translate(-10.7 -16)" fill="#9a9a9a" />
+                                        </g>
+                                        <g id="Group_1390" data-name="Group 1390" transform="translate(10.561 5.342)">
+                                            <path id="Path_28894" data-name="Path 28894"
+                                                d="M15.84,17.106a.605.605,0,0,1-.64-.64V8.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,15.84,17.106Z"
+                                                transform="translate(-15.2 -7.5)" fill="#9a9a9a" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="text">Sort by</div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="dropdown-item sort selected" data-value="default" onclick="changeSort(this)">
+                                <div class="icon">
+                                    <svg height="512" viewBox="0 0 512 512" width="512"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title />
+                                        <path stroke="#ff0000"
+                                            d="M467.51,248.83c-18.4-83.18-45.69-136.24-89.43-149.17A91.5,91.5,0,0,0,352,96c-26.89,0-48.11,16-96,16s-69.15-16-96-16a99.09,99.09,0,0,0-27.2,3.66C89,112.59,61.94,165.7,43.33,248.83c-19,84.91-15.56,152,21.58,164.88,26,9,49.25-9.61,71.27-37,25-31.2,55.79-40.8,119.82-40.8s93.62,9.6,118.66,40.8c22,27.41,46.11,45.79,71.42,37.16C487.1,399.86,486.52,334.74,467.51,248.83Z"
+                                            style="fill:none;stroke-miterlimit:10;stroke-width:32px" />
+                                        <circle cx="292" cy="224" r="20" />
+                                        <path d="M336,288a20,20,0,1,1,20-19.95A20,20,0,0,1,336,288Z" />
+                                        <circle cx="336" cy="180" r="20" />
+                                        <circle cx="380" cy="224" r="20" />
+                                        <line stroke="#ff0000"
+                                            style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                            x1="160" x2="160" y1="176" y2="272" />
+                                        <line stroke="#ff0000"
+                                            style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                            x1="208" x2="112" y1="224" y2="224" />
+                                    </svg>
+                                </div>
+                                In game
+                            </div>
+                            <div class="dropdown-item sort" data-value="az" onclick="changeSort(this)">
+                                <div class="icon">
 
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                    height="24px" viewBox="-408 286.3 24 24"
-                                    style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
 
-                                    <path fill="#9a9a9a" class="st0" stroke="none"
-                                        d="M-401,288.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-401,288.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
                                         l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.8,288.6-401.4,288.3-401,288.3z M-401,292.3l-0.7,2.1
                                         h1.5L-401,292.3z M-403.3,299.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1c0.2,0.3,0.5,0.6,0.9,0.6h5.3
                                         c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.3z M-395.7,302.6
                                         c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-4,4
                                         c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                </svg>
+                                    </svg>
+                                </div>
+                                Alphabetical (A-Z)
                             </div>
-                            Alphabetical (A-Z)
-                        </div>
-                        <div class="dropdown-item sort" data-value="za" onclick="changeSort(this)">
-                            <div class="icon">
+                            <div class="dropdown-item sort" data-value="za" onclick="changeSort(this)">
+                                <div class="icon">
 
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                    height="24px" viewBox="-408 286.3 24 24"
-                                    style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
-                                    <path fill="#9a9a9a" class="st0" stroke="none"
-                                        d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
                                         l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
                                         l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
                                         c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
                                         M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
                                         c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                </svg>
+                                    </svg>
+                                </div>
+                                Alphabetical (Z-A)
                             </div>
-                            Alphabetical (Z-A)
                         </div>
                     </div>
                 </div>
@@ -219,7 +263,7 @@
                         </label>
                         Dark mode
                     </div>
-                    <div class="switch_wrap">
+                    <div class="switch_wrap switch_wrap_name">
                         <label class="switch mode_name">
                             <input type='checkbox' id="mode_name"></input>
                             <div class='toggler'>
@@ -227,7 +271,7 @@
                         </label>
                         Show item names
                     </div>
-                    <div class="switch_wrap">
+                    <div class="switch_wrap switch_wrap_mini">
                         <label class="switch mode_mini">
                             <input type='checkbox' id="mode_mini"></input>
                             <div class='toggler'>
@@ -236,6 +280,14 @@
                         Minimize portraits
                     </div>
                     <div class="switch_wrap">
+                        <label class="switch mode_disable_tooltip">
+                            <input type='checkbox' id="mode_disable_tooltip"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Disable tooltips
+                    </div>
+                    <div class="switch_wrap switch_wrap_mini_tooltip">
                         <label class="switch mode_mini_tooltip">
                             <input type='checkbox' id="mode_mini_tooltip"></input>
                             <div class='toggler'>
@@ -321,7 +373,8 @@
                         href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1mdf17v/interactive_gift_guide_v0140/">
                         <div id="suggestion_question">
                             <p>Have a suggestion or feedback?</p>
-                            <p>Leave a comment! <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                            <p>Leave a comment!
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
                                     viewBox="0 0 16 15.9">
                                     <path id="arrow_right"
                                         d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
@@ -562,11 +615,37 @@
                         </div>
 
                     </div>
+
+                    <div class="inner_divider">
+                        <div class="popup_subtitle">Delete saved data</div>
+                        <div class="popup_subdesc">
+                            <p>Delete all your saved data. This will include all checked items, layout choices and saved
+                                data for wrapped tab. If you use multiple browsers and / or devices, only current
+                                browser on current device will be affected.
+                            </p>
+                        </div>
+                        <div class="button_set">
+                            <div class="button_item delete" id="delete_data" onclick="deleteData()">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-trash-2">
+                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                        <path
+                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                        </path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <div class="text">Delete data</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="popup_close" onclick="$(this).parent().hide();"></div>
         </div>
-
 
         <div id="accept_changes" class="popup_wrapper">
             <div class="popup_inner">
@@ -582,8 +661,7 @@
                 <div class="popup_content">
                     <ul id="changes"></ul>
                     <div class="button_set">
-                        <div id="popup-cancel" onclick="$('#accept_changes').hide();" class="button_item no_icon">Cancel
-                        </div>
+                        <div onclick="$('#accept_changes').hide();" class="button_item no_icon">Cancel</div>
                         <div id="popup-accept" class="button_item accent">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
@@ -594,6 +672,42 @@
                                 </svg>
                             </div>
                             <div class="text">Save</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
+        </div>
+
+        <div id="accept_delete_data" class="popup_wrapper">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        Confirm data deletion
+                    </div>
+                    <div class="popup_header_desc">
+                        After deletion page will be reloaded
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="popup_content">
+                    <ul id="changes"></ul>
+                    <div class="button_set">
+                        <div onclick="$('#accept_delete_data').hide();" class="button_item no_icon">Cancel</div>
+                        <div id="popup-selete-data" class="button_item delete">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-trash-2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path
+                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                    </path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                            </div>
+                            <div class="text">Delete data</div>
                         </div>
                     </div>
                 </div>
