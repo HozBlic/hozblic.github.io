@@ -771,14 +771,13 @@ function loadMenuItems() {
     //hide sort dropdown on outside click
     $(document).on('click', function (e) {
         var jqTarget = $(e.target);
-        if (
-            jqTarget.parents('.dropdown_button').length == 0 &&
-            !(jqTarget.hasClass('dropdown_button'))
-        ) {
-            $('.dropdown_button').parent().removeClass('open');
-        } else if (jqTarget.hasClass('dropdown_button')) {
-            // close other dropdowns, keep only the clicked one open
-            $('.dropdown_button').parent().not(jqTarget.parent()).removeClass('open');
+
+        // Close previous dropdown when opening a new one
+        if (jqTarget.hasClass('dropdown_wrap') || jqTarget.parents('.dropdown_wrap').length > 0) {
+            $('.dropdown_wrap').not(jqTarget.closest('.dropdown_wrap')).removeClass('open');
+        }
+        if (jqTarget.hasClass('dropdown-item')) {
+            $('.dropdown_wrap').removeClass('open');
         }
     });
 
