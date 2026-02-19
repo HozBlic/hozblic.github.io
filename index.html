@@ -51,7 +51,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="stylesheet" href="css/style.css?v=41">
+    <link rel="stylesheet" href="css/style.css?v=42">
     <link rel="stylesheet" href="css/wrapped.css">
 
     <script type="text/javascript" src="json/items.json.js?v=17"></script>
@@ -71,7 +71,7 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=46"></script>
+    <script type="text/javascript" src="js/script.js?v=47"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
     <script type="text/javascript" src="js/save_file.js?v=20"></script>
 </head>
@@ -374,8 +374,7 @@
                         <div id="suggestion_question">
                             <p>Have a suggestion or feedback?</p>
                             <p>Leave a comment!
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
-                                    viewBox="0 0 16 15.9">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9" viewBox="0 0 16 15.9">
                                     <path id="arrow_right"
                                         d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
                                         transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
@@ -709,6 +708,41 @@
                             </div>
                             <div class="text">Delete data</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
+        </div>
+
+        <div id="popup_move" class="popup_wrapper">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        Hiii
+                    </div>
+                    <div class="popup_header_desc">
+                        As you may have noticed, we have moved to a new home - domain <a href="https://mistria.app"
+                            target="_blank">mistria.app</a>!
+                        </br>
+                        Please, update your bookmark and use the new link to access the app. The old link will still
+                        work
+                        for some time.
+                        </br></br>
+                        Unfortunately, the previously saved data can't be transferred to the new domain, so please
+                        upload your save file again
+                        </br></br>
+                        Meanwhile I've started working on something fun, no promises made, but here is a little sneak
+                        peek!
+                        </br></br>
+                        <img src="images/planner_small.gif" alt="">
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="popup_content">
+                    <div class="button_set">
+                        <div onclick="$('#popup_move').hide();" class="button_item no_icon">Close</div>
+                        <div onclick="$('#popup_move').hide(); openJsonPopup();" class="button_item no_icon accent">
+                            Upload save file</div>
                     </div>
                 </div>
             </div>

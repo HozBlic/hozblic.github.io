@@ -819,7 +819,21 @@ svg:focus {
     opacity: 0.5;
     width: 100%;
 }
-
+#popup_move .popup_header_desc {
+    opacity: 1;
+    font-size: 14px;
+    line-height: 18px;
+}
+#popup_move .popup_header_desc a {
+   text-decoration: unset;
+   color: var(--color-txt);
+   font-weight: bold;
+}
+#popup_move .popup_header_desc img {
+   height: 200px;
+   width: 100%;
+   object-fit: contain;
+}
 .popup_subdesc {
     margin-bottom: 10px;
     font-size: 11px;
