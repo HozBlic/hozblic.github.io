@@ -1,7 +1,7 @@
 {
 "name": "Fields of Mistria Tracker",
 "short_name": "FoM Tracker",
-"start_url": "https://hozblic.github.io/",
+"start_url": "https://mistria.app/",
 "display": "standalone",
 "description": "Interactive visual gift guide, museum and progress tracker for Fields of Mistria",
 "lang": "en",
@@ -11,13 +11,13 @@
 "orientation": "any",
 "icons": [
     {
-        "src": "https://hozblic.github.io/images/favicon/favicon-512px.png",
+        "src": "https://mistria.app/images/favicon/favicon-512px.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
     },
     {
-        "src": "https://hozblic.github.io/images/favicon/favicon-192px.png",
+        "src": "https://mistria.app/images/favicon/favicon-192px.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any"
@@ -25,7 +25,7 @@
 ],
 "screenshots": [
     {
-        "src": "https://hozblic.github.io/images/meta.png",
+        "src": "https://mistria.app/images/meta.png",
         "sizes": "1210x632",
         "type": "image/png",
         "description": "A screenshot of the home page"
@@ -34,7 +34,7 @@
 "related_applications": [
     {
         "platform":"windows",
-        "url": "https://hozblic.github.io/"
+        "url": "https://mistria.app/"
     }
 ],
 "prefer_related_applications": false,
