@@ -13,12 +13,10 @@ const objGrid = {
     y: 103
 }
 const intGridCellSize = 16;
-
 const objCanvasDefault = {
     width: objGrid.x * intGridCellSize,
     height: objGrid.y * intGridCellSize
 }
-
 let intMultiplierCanvas = 1;
 
 
@@ -145,15 +143,15 @@ function drawCollision() {
                     elemCollisionChild.rect(x * intCellSize, y * intCellSize, intCellSize, intCellSize);
 
                     switch (arrCollision[y][x]) {
-                        case 2:
-                            elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
-                            break;
-                        case 4:
-                            elemCollisionChild.fill(`rgba(0,0,255,0.3)`);
-                            break;
-                        case 6:
-                            elemCollisionChild.fill(`rgba(168, 0, 255, 0.3)`);
-                            break;
+                        // case 2:
+                        //     elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
+                        //     break;
+                        // case 4:
+                        //     elemCollisionChild.fill(`rgba(0,0,255,0.3)`);
+                        //     break;
+                        // case 6:
+                        //     elemCollisionChild.fill(`rgba(168, 0, 255, 0.3)`);
+                        //     break;
                         default:
                             elemCollisionChild.fill(`rgba(255,0,0,0.3)`);
                     }
@@ -266,65 +264,33 @@ $(document).ready(function () {
                 x: 0,
                 y: 0
             };
-             drawSelection();
+            drawSelection();
         });
 
-
-
-
-        // app.view.style.width = `${objCanvasSize.width}px`;
-        // app.view.style.height = `${objCanvasSize.height}px`;
-
-        // Create and add a container to the stage
-        const container = new PIXI.Container();
-
-        app.stage.addChild(container);
-
-
-        // Load the bunny texture
-        const texture = await PIXI.Assets.load('https://pixijs.com/assets/bunny.png');
-        texture.source.scaleMode = 'nearest';
-
-        // Create a 5x5 elemGrid of bunnies in the container
-        for (let i = 0; i < 25; i++) {
-            const bunny = new PIXI.Sprite(texture);
-
-            bunny.x = (i % 5) * 40;
-            bunny.y = Math.floor(i / 5) * 40;
-            container.addChild(bunny);
-        }
-
-        // Move the container to the center
-        container.x = app.screen.width / 2;
-        container.y = app.screen.height / 2;
-
-        // Center the bunny sprites in local container coordinates
-        container.pivot.x = container.width / 2;
-        container.pivot.y = container.height / 2;
-
-        //   let count = 0;
-        // Listen for animate update
-        app.ticker.add((time) => {
-            // Continuously rotate the container!
-            // * use delta to create frame-independent transform *
-            container.rotation -= 0.01 * time.deltaTime;
-
-            container.x = app.screen.width / 2;
-            container.y = app.screen.height / 2;
-
-            // count += 0.01;
-            // container.scale = 1 + (Math.sin(count) + 1) * 2;
-
+        app.stage.on('pointerupoutside', (e) => {
+            bolIsDragging = false;
+            // drawMap();
+            objStartCell = {
+                x: 0,
+                y: 0
+            };
+            drawSelection();
         });
 
+        // let count = 0;
+        // // Listen for animate update
+        // app.ticker.add((time) => {
+        //     count += 0.01;
+        //     elemGrid.scale = 1 + (Math.sin(count) + 1) * 2;
+        // });
 
         addBackground();
         drawGrid();
         drawCollision();
 
-        resize();
-        app.resize();
 
+        resize(1);
+        app.resize();
     })();
 
 });
