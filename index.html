@@ -3,23 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <base target="_blank">
-
+    <title>PixiJS + jQuery Example</title>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/collision.json.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript" src="js/pixi.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
-    <div id="app">
-        <canvas id="canvas"></canvas>
-    </div>
 
+    <div id="game-container"></div>
     <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
         body {
             margin: 0;
             padding: 0;
+            height: 100%;
+            width: 100%;
             /* overflow: hidden; */
         }
 
@@ -28,18 +33,27 @@
             height: 100vh;
         } */
 
-        #canvas {
+        #game-container {
+
+
+             width: 300%;
+            height: 300%;
+         max-width: 300%;
+            max-height: 300%; 
+/* 
+            width:2208px;
+            height: 1648px; */
+        }
+
+        #game-container canvas {
             background-image: url('images/rm_farm.png');
             background-size: cover;
             image-rendering: pixelated;
 
-            /* image-rendering: pixelated; */
-             image-rendering: crisp-edges;
-
-            /* width: 500%; */
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
         }
     </style>
-
 </body>
 
 </html>
