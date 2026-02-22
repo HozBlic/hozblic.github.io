@@ -10,14 +10,30 @@
     <script type="text/javascript" src="js/pixi.min.js"></script>
     <script type="text/javascript" src="js/collision.json.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/manageSprites.js"></script>
 </head>
 
 <body>
 
+    <label for="seasons">Choose a season:</label>
+
+    <select name="seasons" id="seasons">
+        <option value="spring">spring</option>
+        <option value="summer">summer</option>
+        <option value="fall">fall</option>
+        <option value="winter">winter</option>
+    </select>
+    <br>
+    <input type="checkbox" id="chb_collision" name="chb_collision" value="collision" checked>
+    <label for="chb_collision"> Show collision</label>
+    <br>
+    <input type="checkbox" id="chb_grid" name="chb_grid" value="grid" checked>
+    <label for="chb_grid"> Show grid</label><br>
+
     <div id="app">
- <div id="game-container"></div>
+        <div id="game-container"></div>
     </div>
-   
+
     <style>
         html {
             height: 100%;
@@ -29,27 +45,27 @@
             padding: 0;
             height: 100%;
             width: 100%;
-                  padding: 5px;
-                  box-sizing: border-box;
+            padding: 5px;
+            box-sizing: border-box;
             /* overflow: hidden; */
         }
 
         #app {
-              width: 100%;
+            width: 100%;
             height: 100%;
             max-width: 100%;
-            max-height: 100%; 
+            max-height: 100%;
         }
 
         #game-container {
 
 
-         
+
 
             /* width:2208px;
             height: 1648px;  */
 
-      
+
         }
 
         #game-container canvas {

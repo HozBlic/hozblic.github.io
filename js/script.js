@@ -1,12 +1,21 @@
-let bolGrid = true;
+let objPresets = {
+    'season': 'spring',
+    'grid': true,
+    'collision': true,
+}
+
+let strSeason = 'spring';
+
+let containerBackground = null;
+
 let elemGrid = null;
-let bolCollision = true;
 let elemCollision = null;
 let bolSelection = true;
 let elemSelection = null;
-let backgroundTexture;
 let elemBackground = null;
 
+
+let containerSprites = null;
 
 const objGrid = {
     x: 138,
@@ -64,19 +73,15 @@ function resize(intForcedMultiplier = false) {
 }
 
 function resizeElements() {
-    if (elemBackground !== null) {
-        elemBackground.scale = intMultiplierCanvas;
+    if (containerBackground !== null) {
+        containerBackground.scale = intMultiplierCanvas;
     }
-
-    if (elemGrid !== null) {
-        elemGrid.scale = intMultiplierCanvas;
-    }
-    if (elemCollision !== null) {
-        elemCollision.scale = intMultiplierCanvas;
-    }
-
     if (elemSelection !== null) {
         elemSelection.scale = intMultiplierCanvas;
+    }
+
+    if (containerSprites !== null) {
+        containerSprites.scale = intMultiplierCanvas;
     }
 }
 
@@ -109,30 +114,30 @@ function buildGrid() {
 }
 
 function drawGrid() {
-    if (elemGrid !== null && !bolGrid) {
-        app.stage.removeChild(elemGrid);
+    if (elemGrid !== null && !objPresets['grid']) {
+        containerBackground.removeChild(elemGrid);
         elemGrid.destroy();
         elemGrid = null;
     }
 
-    if (elemGrid === null && bolGrid) {
+    if (elemGrid === null && objPresets['grid']) {
         elemGrid = buildGrid().stroke({ color: 0x808080, pixelLine: true, width: 1 });
-        app.stage.addChild(elemGrid);
+        containerBackground.addChild(elemGrid);
     }
 
-    if (bolGrid) {
-        elemGrid.scale = intMultiplierCanvas;
+    if (objPresets['grid']) {
+        elemGrid.zIndex = 2;
     }
 }
 
 function drawCollision() {
-    if (elemCollision !== null && !bolCollision) {
-        app.stage.removeChild(elemCollision);
+    if (elemCollision !== null && !objPresets['collision']) {
+        containerBackground.removeChild(elemCollision);
         elemCollision.destroy();
         elemCollision = null;
     }
 
-    if (elemCollision === null && bolCollision) {
+    if (elemCollision === null && objPresets['collision']) {
         elemCollision = new PIXI.Container();
         let intCellSize = intGridCellSize / 2;
 
@@ -160,21 +165,34 @@ function drawCollision() {
             }
         }
 
-        app.stage.addChild(elemCollision);
+        containerBackground.addChild(elemCollision);
     }
 
-    if (bolCollision) {
-        elemCollision.scale = intMultiplierCanvas;
+    if (objPresets['collision']) {
+
+        elemCollision.zIndex = 1;
     }
 }
 
-function addBackground() {
-    if (elemBackground === null) {
-        elemBackground = new PIXI.Sprite(backgroundTexture);
-        app.stage.addChild(elemBackground);
+async function addBackground() {
+
+    if (elemBackground !== null) {
+        containerBackground.removeChild(elemBackground);
+        elemBackground.destroy();
+        elemBackground = null;
     }
 
-    elemBackground.scale = intMultiplierCanvas;
+    if (elemBackground === null) {
+
+        let backgroundTexture = await PIXI.Assets.load(`images/rooms/rm_farm_${objPresets['season']}.png`);
+        backgroundTexture.source.scaleMode = 'nearest';
+
+        elemBackground = new PIXI.Sprite(backgroundTexture);
+        containerBackground.addChild(elemBackground);
+
+
+        elemBackground.zIndex = 0;
+    }
 }
 
 function drawSelection(x, y) {
@@ -206,9 +224,11 @@ function drawSelection(x, y) {
         elemSelection.rect(objSelectionCell.x1, objSelectionCell.y1, objSelectionCell.x2 - objSelectionCell.x1 + intGridCellSize, objSelectionCell.y2 - objSelectionCell.y1 + intGridCellSize);
         elemSelection.fill(`rgba(255, 174, 0, 0.3)`);
         elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
-        app.stage.addChild(elemSelection);
 
-        elemSelection.scale = intMultiplierCanvas;
+
+        app.stage.addChild(elemSelection);
+        elemSelection.scale = intMultiplierCanvas
+
     }
 }
 
@@ -217,6 +237,23 @@ $(document).ready(function () {
 
     //TODO: add throttling
     window.addEventListener("resize", () => resize(false));
+
+
+    //select checkboxes according to preset
+    //detect changes to checkboxes
+    $('#seasons').on('change', function (e) {
+        objPresets['season'] = this.value;
+        addBackground();
+    });
+
+    $("#chb_grid").change(function () {
+        objPresets['grid'] = this.checked;
+        drawGrid();
+    });
+    $("#chb_collision").change(function () {
+        objPresets['collision'] = this.checked;
+        drawCollision()
+    });
 
     (async () => {
         containerDiv = document.querySelector('#game-container');
@@ -230,11 +267,11 @@ $(document).ready(function () {
         // Append the application canvas to the document body
         containerDiv.appendChild(app.canvas);
 
-        backgroundTexture = await PIXI.Assets.load('images/rm_farm.png');
-        backgroundTexture.source.scaleMode = 'nearest';
 
         app.stage.eventMode = 'static';
         app.stage.hitArea = app.screen;
+
+        app.sortableChildren = true;
 
         app.stage.on('pointerdown', (e) => {
             bolIsDragging = true;
@@ -284,12 +321,30 @@ $(document).ready(function () {
         //     elemGrid.scale = 1 + (Math.sin(count) + 1) * 2;
         // });
 
+
+        containerBackground = new PIXI.Container();
+        app.stage.addChild(containerBackground);
+
+
         addBackground();
         drawGrid();
         drawCollision();
 
 
-        resize(1);
+        const sprites = await loadSprites();
+
+
+        // if (containerSprites === null) {
+        //     containerSprites = new PIXI.Container();
+
+        //     let elemSprite = sprites['breath_of_fire'].sprite;
+        //     elemCollision.addChild(elemSprite);
+        //     // elemSprite.scale = 1
+
+        //     app.stage.addChild(elemCollision);
+        // }
+
+        resize();
         app.resize();
     })();
 
