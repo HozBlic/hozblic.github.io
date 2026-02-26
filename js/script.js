@@ -736,7 +736,7 @@ function loadMenuItems() {
         }
     }, 150);
 
-    $('#side_menu #title .version').text(`v ${objBuild.version}`);
+    $('#side_menu #title .version').text(`v${objBuild.version}`);
 
     if (!$('#tutorial').length) {
         objBuild.tabsOrder.forEach(function (strTab) {

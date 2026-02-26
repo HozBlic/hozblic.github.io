@@ -1,399 +1,29 @@
 var objItemsPerks =
 {
-    "ranching": {},
-    "feeding_frenzy": {
-        "name": "Feeding Frenzy",
-        "tip": "Hay and Grass Seed drop at double the usual amount from Cutting Grass.",
+    "mount": {},
+    "horsepower": {
+        "name": "Horsepower",
+        "tip": "Your Mistmare now runs 10% faster.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
         },
-        "url": "/wiki/Skills#Ranching"
+        "url": "/wiki/Skills#Mistmare"
     },
-    "close_bond": {
-        "name": "Close Bond",
-        "tip": "Animals that have been Pet and Fed for the day will receive an extra Heart Point increase.",
+    "harvest_horse": {
+        "name": "Harvest Horse",
+        "tip": "When your Mistmare runs over a forage spot or a fully grown crop, it will pop from the ground.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>190</span>"
         },
-        "url": "/wiki/Skills#Ranching"
+        "url": "/wiki/Skills#Mistmare"
     },
-    "barnyard_bounty": {
-        "name": "Barnyard Bounty",
-        "tip": "Chickens and Cows will sometimes drop extra Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "currency_of_care": {
-        "name": "Currency Of Care",
-        "tip": "When animals eat crops, either by hand feeding or by grazing, they will drop the currency Shiny Beads.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "currency_of_care_two": {
-        "name": "Currency of Care II",
-        "tip": "Animals that have been Pet and Fed for the day will sometimes drop Shiny Bead the next day in addition to their regular Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "feed_prepper": {
-        "name": "Feed Prepper",
-        "tip": "The Craft Time for all animal feed is reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "welcome_home": {
-        "name": "Welcome Home",
-        "tip": "Newly bought or born animals will start at 1 Heart Level.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "discount_treats": {
-        "name": "Discount Treats",
-        "tip": "Heart shaped treats sold by Hayden will have a 10% price reduction.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "currency_of_care_three": {
-        "name": "Currency of Care III",
-        "tip": "Animals can now be fed cooked dishes and will reward more Shiny Beads based on the dish's star level.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "welcome_home_two": {
-        "name": "Welcome Home II",
-        "tip": "Newly bought or born animals will start at 2 Heart Level.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "barnyard_bounty_two": {
-        "name": "Barnyard Bounty II",
-        "tip": "Ducks and Horses will sometimes drop extra Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "wind_down": {
-        "name": "Wind Down",
-        "tip": "The Mill Time for all mill recipes will be reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "the_bell_tolls": {
-        "name": "The Bell Tolls",
-        "tip": "You will receive the Big Bell crafting recipe. When rung, the Big Bell calls out or sends in all animals into their buildings.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "maximum_milling": {
-        "name": "Maximum Milling",
-        "tip": "Crafting Animal Feeds at the mill will sometimes drop an additional item of the same kind.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "barnyard_bounty_three": {
-        "name": "Barnyard Bounty III",
-        "tip": "Sheep and Rabbits will sometimes drop extra Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "cooking": {},
-    "waste_not_want_not": {
-        "name": "Waste Not Want Not",
-        "tip": "Cooking a dish will occasionally return one of its ingredients afterward.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "time_to_eat": {
-        "name": "Time To Eat",
-        "tip": "The Cook Time for all cooking recipes will be reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "restorative_cooking": {
-        "name": "Restorative Cooking",
-        "tip": "Cooking a dish will occasionally result in a bonus Restorative Infusion, which grants an HP & Stamina Regen buff when consumed.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "taste_maker": {
-        "name": "Taste Maker",
-        "tip": "Cooking Recipes will sometimes drop from Treasure Chests in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "seasoned": {
-        "name": "Seasoned",
-        "tip": "Finding Uncommon or rarer Forageables will become more likely.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "time_to_eat_two": {
-        "name": "Time To Eat II",
-        "tip": "The Cook Time for all cooking recipes will be reduced by an additional 10 minutes, bringing the total reduction to 20 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "award_winning": {
-        "name": "Award Winning",
-        "tip": "Cooked Dishes given as Liked Gifts will reward more Heart Points than before.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "likable_cooking": {
-        "name": "Likable Cooking",
-        "tip": "Cooking a dish will occasionally result in a bonus Likable Infusion, turning the item into a Universally Liked gift.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "speedy_cooking": {
-        "name": "Speedy Cooking",
-        "tip": "Cooking a dish will occasionally result in a bonus Speedy Infusion, which grants a Speed Boost buff when consumed.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "dinner_for_two": {
-        "name": "Dinner for Two",
-        "tip": "Cooking a dish will sometimes create a bonus extra dish.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "a_way_to_the_heart": {
-        "name": "A Way to the Heart",
-        "tip": "Cooked Dishes given as Loved Gifts will reward more Heart Points than before.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "time_to_eat_three": {
-        "name": "Time to Eat III",
-        "tip": "The Cook Time for all cooking recipes will be reduced by another 10 minutes, bringing the total reduction to 30 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "loveable_cooking": {
-        "name": "Lovable Cooking",
-        "tip": "Cooking a dish will occasionally result in a bonus Lovable Infusion, turning the item into a Universally Loved gift.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "snacktime": {
-        "name": "Snacktime",
-        "tip": "The time it takes to eat has been reduced by half.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "caffeine_crimes": {
-        "name": "Caffeine Crimes",
-        "tip": "Consuming an item with the Speedy infusion will now double both its speed boost and the buff's duration.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "magical_meals": {
-        "name": "Magical Meals",
-        "tip": "Cooking a Four star dish and above will occasionally result in a bonus Mana Infusion, which restores a mana orb when consumed.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "fairy_cooking": {
-        "name": "Fairy Cooking",
-        "tip": "Cooking a Four star dish and above will occasionally result in a bonus Fairy Infusion, which grants a One-Time Revival buff when consumed.",
+    "nice_ride": {
+        "name": "Nice Ride",
+        "tip": "The appearance of large animals can now be unlocked at 5 Hearts to ride them.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
         },
-        "url": "/wiki/Skills#Cooking"
-    },
-    "farming": {},
-    "prepared_picker": {
-        "name": "Prepared Picker",
-        "tip": "Harvesting a Forageable will occasionally drop a Seed version, if it can be grown.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "a_day_well_spent": {
-        "name": "A Day Well Spent",
-        "tip": "Going to bed with zero stamina gives a stamina boost the next day.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "green_thumb": {
-        "name": "Green Thumb",
-        "tip": "Planting a Seed will sometimes also Water the soil of the targeted tile.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "refreshing": {
-        "name": "Refreshing",
-        "tip": "Watering a crop will sometimes refund the Stamina used.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "bountiful": {
-        "name": "Bountiful",
-        "tip": "Watering a crop will occasionally drop a Seed version of it.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>60</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "heavy_duty": {
-        "name": "Heavy Duty",
-        "tip": "Tilling soil will sometimes drop a piece of Stone or Wood.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "well_watered": {
-        "name": "Well Watered",
-        "tip": "Watered crops will occasionally retain their water through the next day.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "nice_swing": {
-        "name": "Nice Swing",
-        "tip": "Grants a chance that tilling refunds the stamina it uses.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "living_off_the_land": {
-        "name": "Living off the Land",
-        "tip": "Harvesting a crop will occasionally drop a cooked dish that uses the crop.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>95</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "superb_sower": {
-        "name": "Superb Sower",
-        "tip": "You can now charge your seeds to spread them across a wider area.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>100</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "harvest_time": {
-        "name": "Harvest Time",
-        "tip": "Slow-Growing crops now reach their first-time harvest a day earlier.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "prize_winning": {
-        "name": "Prize Winning",
-        "tip": "Harvesting crops will occasionally drop coins based on 5% of their selling price.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "sickle_sword": {
-        "name": "Sickle Sword",
-        "tip": "You can now use your sword to harvest crops quickly.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "ornamental": {
-        "name": "Ornamental",
-        "tip": "Harvesting a crop or forageable will sometimes drop a recipe teaching you how to make an ornamental furniture version of the plant.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "perfect_pollinators": {
-        "name": "Perfect Pollinators",
-        "tip": "Legendary bugs will now appear more often.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "magic_design": {
-        "name": "Magic Design",
-        "tip": "Giant Essence Stones are now craftable, and can power a statue for 40 days.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "earthly_essence": {
-        "name": "Earthly Essence",
-        "tip": "Harvested crops now have a low chance of dropping a Magic Seed. Who knows what will grow if you plant it?",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>210</span>"
-        },
-        "url": "/wiki/Skills#Farming"
+        "url": "/wiki/Skills#Mistmare"
     },
     "woodcrafting": {},
     "hammer_timing": {
@@ -540,6 +170,417 @@ var objItemsPerks =
         },
         "url": "/wiki/Skills#Woodcrafting"
     },
+    "ranching": {},
+    "feeding_frenzy": {
+        "name": "Feeding Frenzy",
+        "tip": "Hay and Grass Seed drop at double the usual amount from Cutting Grass.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "close_bond": {
+        "name": "Close Bond",
+        "tip": "Animals that have been Pet and Fed for the day will receive an extra Heart Point increase.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "barnyard_bounty": {
+        "name": "Barnyard Bounty",
+        "tip": "Chickens and Cows will sometimes drop extra Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "currency_of_care": {
+        "name": "Currency Of Care",
+        "tip": "When animals eat crops, either by hand feeding or by grazing, they will drop the currency Shiny Beads.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "currency_of_care_two": {
+        "name": "Currency of Care II",
+        "tip": "Animals that have been Pet and Fed for the day will sometimes drop Shiny Bead the next day in addition to their regular Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "feed_prepper": {
+        "name": "Feed Prepper",
+        "tip": "The Craft Time for all animal feed is reduced by 10 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "welcome_home": {
+        "name": "Welcome Home",
+        "tip": "Newly bought or born animals will start at 1 Heart Level.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "discount_treats": {
+        "name": "Discount Treats",
+        "tip": "Heart shaped treats sold by Hayden will have a 10% price reduction.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "currency_of_care_three": {
+        "name": "Currency of Care III",
+        "tip": "Animals can now be fed cooked dishes and will reward more Shiny Beads based on the dish's star level.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "welcome_home_two": {
+        "name": "Welcome Home II",
+        "tip": "Newly bought or born animals will start at 2 Heart Level.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "barnyard_bounty_two": {
+        "name": "Barnyard Bounty II",
+        "tip": "Ducks and Horses will sometimes drop extra Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "wind_down": {
+        "name": "Wind Down",
+        "tip": "The Mill Time for all mill recipes will be reduced by 10 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "the_bell_tolls": {
+        "name": "The Bell Tolls",
+        "tip": "You will receive the Big Bell crafting recipe. When rung, the Big Bell calls out or sends in all animals into their buildings.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "maximum_milling": {
+        "name": "Maximum Milling",
+        "tip": "Crafting Animal Feeds at the mill will sometimes drop an additional item of the same kind.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "barnyard_bounty_three": {
+        "name": "Barnyard Bounty III",
+        "tip": "Sheep and Rabbits will sometimes drop extra Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "combat": {},
+    "guardians_shield": {
+        "name": "Guardian's Shield",
+        "tip": "Once per day, the first hit you take is reflected.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "true_strike": {
+        "name": "True Strike",
+        "tip": "Your Attacks will occasionally become Critical, doing double damage in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "jump_attack": {
+        "name": "Jump Attack",
+        "tip": "Jumping and then Attacking mid-air will damage enemies in a small radius.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "well_armed": {
+        "name": "Well-Armed",
+        "tip": "Biome-unique Armor and Weapons will sometimes drop from Treasure Chests in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "quick_footed": {
+        "name": "Quick Footed",
+        "tip": "Blue Sapling pools will grant a short Speed Boost rather than slow you down.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "shrine_savant": {
+        "name": "What an Offer",
+        "tip": "Using an Offering Shrine will bestow a short HP & Stamina Regen buff in addition to their usual effect.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "generous_in_defeat": {
+        "name": "Generous In Defeat",
+        "tip": "Monsters will occasionally drop twice as many items when defeated.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "dungeon_delicacies": {
+        "name": "Dungeon Delicacies",
+        "tip": "Certain Cooked Dishes will occasionally drop from Treasure Chests in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "perfect_prefix": {
+        "name": "Perfect Prefix",
+        "tip": "The infusion power of Infused Weapons will double.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "rocking": {
+        "name": "Rocking",
+        "tip": "Clod Projectiles that are reflected back are now much more likely to critically strike.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "in_motion": {
+        "name": "In Motion",
+        "tip": "Defeating a Monster will sometimes grant a brief Speed Boost.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "out_of_juice": {
+        "name": "Out of Juice",
+        "tip": "Enchanterns now briefly freeze in place after discharging.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "sonic_boom": {
+        "name": "Sonic Boom",
+        "tip": "If you attack the Essence Bat's sonic attack, unleash a Sonic Boom, damaging all enemies around you.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "gift_exchange": {
+        "name": "Gift Exchange",
+        "tip": "When you throw an item into a resting Mimic Chest, it will drop two items instead of one.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "guardians_shield_two": {
+        "name": "Guardian Shield II",
+        "tip": "Your Shield will now activate randomly at low chance.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "true_strike_two": {
+        "name": "True Strike II",
+        "tip": "Your Attacks are more likely to become Critical, doing double damage in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "sure_strike": {
+        "name": "Sure Strike",
+        "tip": "Defeating an enemy buffs your damage by 5% for 10 seconds, stacking up to 25%.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "generous_in_defeat_two": {
+        "name": "Generous in Defeat II",
+        "tip": "Monsters will more often drop twice as many items when defeated.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "friend_shaped": {
+        "name": "Friend-Shaped",
+        "tip": "Pet skins can now drop from defeated monsters, allowing your pet to take on a monster's appearance. (Note: only saplings for now, more coming later.)",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "farming": {},
+    "prepared_picker": {
+        "name": "Prepared Picker",
+        "tip": "Harvesting a Forageable will occasionally drop a Seed version, if it can be grown.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "a_day_well_spent": {
+        "name": "A Day Well Spent",
+        "tip": "Going to bed with zero stamina gives a stamina boost the next day.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "green_thumb": {
+        "name": "Green Thumb",
+        "tip": "Planting a Seed will sometimes also Water the soil of the targeted tile.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "refreshing": {
+        "name": "Refreshing",
+        "tip": "Watering a crop will sometimes refund the Stamina used.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "bountiful": {
+        "name": "Bountiful",
+        "tip": "Watering a crop will occasionally drop a Seed version of it.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>60</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "heavy_duty": {
+        "name": "Heavy Duty",
+        "tip": "Tilling soil will sometimes drop a piece of Stone or Wood.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "well_watered": {
+        "name": "Well Watered",
+        "tip": "Watered crops will occasionally retain their water through the next day.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "nice_swing": {
+        "name": "Nice Swing",
+        "tip": "Grants a chance that tilling refunds the stamina it uses.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "living_off_the_land": {
+        "name": "Living off the Land",
+        "tip": "Harvesting a crop will occasionally drop a cooked dish that uses the crop.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>95</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "superb_sower": {
+        "name": "Superb Sower",
+        "tip": "You can now charge your seeds to spread them across a wider area.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>100</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "harvest_time": {
+        "name": "Harvest Time",
+        "tip": "Slow-Growing crops now reach their first-time harvest a day earlier.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "prize_winning": {
+        "name": "Prize Winning",
+        "tip": "Harvesting crops will occasionally drop coins based on 5% of their selling price.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "sickle_sword": {
+        "name": "Sickle Sword",
+        "tip": "You can now use your sword to harvest crops quickly.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "ornamental": {
+        "name": "Ornamental",
+        "tip": "Harvesting a crop or forageable will sometimes drop a recipe teaching you how to make an ornamental furniture version of the plant.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "perfect_pollinators": {
+        "name": "Perfect Pollinators",
+        "tip": "Legendary bugs will now appear more often.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "magic_design": {
+        "name": "Magic Design",
+        "tip": "Giant Essence Stones are now craftable, and can power a statue for 40 days.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "earthly_essence": {
+        "name": "Earthly Essence",
+        "tip": "Harvested crops now have a low chance of dropping a Magic Seed. Who knows what will grow if you plant it?",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>210</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
     "blacksmithing": {},
     "copper_expert": {
         "name": "Copper Expert",
@@ -677,142 +718,279 @@ var objItemsPerks =
         },
         "url": "/wiki/Skills#Blacksmithing"
     },
-    "archaeology": {},
-    "museum_quality_one": {
-        "name": "Museum Quality I",
-        "tip": "Digging up Uncommon Artifacts will become more likely.",
+    "cooking": {},
+    "waste_not_want_not": {
+        "name": "Waste Not Want Not",
+        "tip": "Cooking a dish will occasionally return one of its ingredients afterward.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "unpeatable": {
-        "name": "Unpeatable",
-        "tip": "Digging up Peat, Sod, and Clay will sometimes drop double the usual amount.",
+    "time_to_eat": {
+        "name": "Time To Eat",
+        "tip": "The Cook Time for all cooking recipes will be reduced by 10 minutes.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "sunken_secrets": {
-        "name": "Sunken Secrets",
-        "tip": "Dive spots can now contain Sunken Artifacts.",
+    "restorative_cooking": {
+        "name": "Restorative Cooking",
+        "tip": "Cooking a dish will occasionally result in a bonus Restorative Infusion, which grants an HP & Stamina Regen buff when consumed.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "taste_maker": {
+        "name": "Taste Maker",
+        "tip": "Cooking Recipes will sometimes drop from Treasure Chests in the Mines.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "western_ruins_scholar": {
-        "name": "Western Ruins Scholar",
-        "tip": "An additional Dig Site will appear daily at the Western Ruins.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Archaeology"
-    },
-    "sunken_treasure": {
-        "name": "Sunken Treasure",
-        "tip": "Treasure chests are more likely to appear when diving.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>35</span>"
-        },
-        "url": "/wiki/Skills#Archaeology"
-    },
-    "stoneturner": {
-        "name": "Stoneturner",
-        "tip": "Artifacts will sometimes drop from breaking Rocks in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
-        },
-        "url": "/wiki/Skills#Archaeology"
-    },
-    "eastern_road_scholar": {
-        "name": "Eastern Road Scholar",
-        "tip": "An additional Dig Site will appear daily on the Eastern Road.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Archaeology"
-    },
-    "pursuit": {
-        "name": "Pursuit",
-        "tip": "Digging up Peat, Sod, or Clay increases your chances of finding an Uncommon or Rare Artifact the next time.",
+    "seasoned": {
+        "name": "Seasoned",
+        "tip": "Finding Uncommon or rarer Forageables will become more likely.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "back_in_vogue": {
-        "name": "Back in Vogue",
-        "tip": "Artifacts will now sell for 25% more tesserae.",
+    "time_to_eat_two": {
+        "name": "Time To Eat II",
+        "tip": "The Cook Time for all cooking recipes will be reduced by an additional 10 minutes, bringing the total reduction to 20 minutes.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "natural_beauty": {
-        "name": "Natural Beauty",
-        "tip": "Biome Furniture Recipes will sometimes drop from Dig Sites in the Mines.",
+    "award_winning": {
+        "name": "Award Winning",
+        "tip": "Cooked Dishes given as Liked Gifts will reward more Heart Points than before.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>85</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "well_placed": {
-        "name": "Well Placed",
-        "tip": "Out of Place Artifacts will sometimes drop from Dig Sites in the overworld.",
+    "likable_cooking": {
+        "name": "Likable Cooking",
+        "tip": "Cooking a dish will occasionally result in a bonus Likable Infusion, turning the item into a Universally Liked gift.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "speedy_cooking": {
+        "name": "Speedy Cooking",
+        "tip": "Cooking a dish will occasionally result in a bonus Speedy Infusion, which grants a Speed Boost buff when consumed.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "museum_quality_two": {
-        "name": "Museum Quality II",
-        "tip": "Digging up Rare Artifacts will become more likely.",
+    "dinner_for_two": {
+        "name": "Dinner for Two",
+        "tip": "Cooking a dish will sometimes create a bonus extra dish.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "a_way_to_the_heart": {
+        "name": "A Way to the Heart",
+        "tip": "Cooked Dishes given as Loved Gifts will reward more Heart Points than before.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "former_farmers": {
-        "name": "Former Farmers",
-        "tip": "A dig site will now appear daily on your farm, with a new artifact set to collect.",
+    "time_to_eat_three": {
+        "name": "Time to Eat III",
+        "tip": "The Cook Time for all cooking recipes will be reduced by another 10 minutes, bringing the total reduction to 30 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "loveable_cooking": {
+        "name": "Lovable Cooking",
+        "tip": "Cooking a dish will occasionally result in a bonus Lovable Infusion, turning the item into a Universally Loved gift.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "museum_quality_three": {
-        "name": "Museum Quality III",
-        "tip": "Digging up Legendary Artifacts will become more likely.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>140</span>"
-        },
-        "url": "/wiki/Skills#Archaeology"
-    },
-    "back_in_vogue_two": {
-        "name": "Back In Vogue II",
-        "tip": "Artifacts now sell for an additional 25% more tesserae.",
+    "snacktime": {
+        "name": "Snacktime",
+        "tip": "The time it takes to eat has been reduced by half.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Cooking"
     },
-    "natural_beauty_two": {
-        "name": "Natural Beauty II",
-        "tip": "Biome Furniture Recipes are now more likely to drop from Dig Sites in the Mines.",
+    "caffeine_crimes": {
+        "name": "Caffeine Crimes",
+        "tip": "Consuming an item with the Speedy infusion will now double both its speed boost and the buff's duration.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "magical_meals": {
+        "name": "Magical Meals",
+        "tip": "Cooking a Four star dish and above will occasionally result in a bonus Mana Infusion, which restores a mana orb when consumed.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "fairy_cooking": {
+        "name": "Fairy Cooking",
+        "tip": "Cooking a Four star dish and above will occasionally result in a bonus Fairy Infusion, which grants a One-Time Revival buff when consumed.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Cooking"
+    },
+    "fishing": {},
+    "weedline_watcher": {
+        "name": "Weedline Watcher",
+        "tip": "Fishing up Junk will become less likely.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "aquatic_antiquities": {
+        "name": "Aquatic Antiquities",
+        "tip": "Aquatic Artifacts can sometimes be fished up.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "appealing_reeling": {
+        "name": "Appealing Reeling",
+        "tip": "Fish will become attracted to your Bobber from a greater range.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "catch_of_the_day": {
+        "name": "Catch of the Day",
+        "tip": "Catching a Fish will sometimes refund the Stamina used.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "school_crasher": {
+        "name": "School Crasher",
+        "tip": "Swimming into a Fish School will drop half its contained items without spending Stamina.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "lucky_haul": {
+        "name": "Lucky Haul",
+        "tip": "Catching a fish will sometimes drop double the amount.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "perfect_catch": {
+        "name": "Perfect Catch",
+        "tip": "Uncommon and rare fish will become more common.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "unexpected_haul": {
+        "name": "Unexpected Haul",
+        "tip": "Treasure Boxes will become more likely to appear when Fishing.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "full_class": {
+        "name": "Full Class I",
+        "tip": "Fish schools will all contain an additional Fish.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "legendary": {
+        "name": "Legendary",
+        "tip": "Legendary fish can now appear when the season and weather conditions are right.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "treasure_trove": {
+        "name": "Treasure Trove",
+        "tip": "You can no longer catch Wooden Treasure Boxes, and you are now more likely to catch a higher tier of Treasure Box.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "weedline_watcher_two": {
+        "name": "Weedline Watcher II",
+        "tip": "Fishing up Junk will become even less likely.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "appealing_reeling_two": {
+        "name": "Appealing Reeling II",
+        "tip": "Fish will become attracted to your Bobber from an even greater range.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "frenzy": {
+        "name": "Frenzy",
+        "tip": "Catching a fish will occasionally cause a fish school to spawn nearby.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Fishing"
     },
-    "mist_sight": {
-        "name": "Mist Sight",
-        "tip": "A Mist Spot will appear daily around Mistria where the veil between worlds is thin, allowing you to reach through and pull forth unusual objects from the magic realm in exchange for essence.",
+    "what_a_catch": {
+        "name": "What a Catch",
+        "tip": "Fish have a chance of dropping coins worth 10% of their value when caught.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
         },
-        "url": "/wiki/Skills#Archaeology"
+        "url": "/wiki/Skills#Fishing"
+    },
+    "lucky_haul_two": {
+        "name": "Lucky Haul II",
+        "tip": "Catching a fish is even more likely to drop double the amount of the fish.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
+    },
+    "abyssal_ascendence": {
+        "name": "Abyssal Ascendence",
+        "tip": "You now have a chance to fish up an Abyssal Chest that drops a unique set of clothing or an Essence Stone, dredged up from mysterious sunken ruins.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Fishing"
     },
     "mining": {},
     "earth_breaker": {
@@ -975,319 +1153,141 @@ var objItemsPerks =
         },
         "url": "/wiki/Skills#Mining"
     },
-    "fishing": {},
-    "weedline_watcher": {
-        "name": "Weedline Watcher",
-        "tip": "Fishing up Junk will become less likely.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Fishing"
-    },
-    "aquatic_antiquities": {
-        "name": "Aquatic Antiquities",
-        "tip": "Aquatic Artifacts can sometimes be fished up.",
+    "archaeology": {},
+    "museum_quality_one": {
+        "name": "Museum Quality I",
+        "tip": "Digging up Uncommon Artifacts will become more likely.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "appealing_reeling": {
-        "name": "Appealing Reeling",
-        "tip": "Fish will become attracted to your Bobber from a greater range.",
+    "unpeatable": {
+        "name": "Unpeatable",
+        "tip": "Digging up Peat, Sod, and Clay will sometimes drop double the usual amount.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "catch_of_the_day": {
-        "name": "Catch of the Day",
-        "tip": "Catching a Fish will sometimes refund the Stamina used.",
+    "sunken_secrets": {
+        "name": "Sunken Secrets",
+        "tip": "Dive spots can now contain Sunken Artifacts.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "school_crasher": {
-        "name": "School Crasher",
-        "tip": "Swimming into a Fish School will drop half its contained items without spending Stamina.",
+    "western_ruins_scholar": {
+        "name": "Western Ruins Scholar",
+        "tip": "An additional Dig Site will appear daily at the Western Ruins.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "lucky_haul": {
-        "name": "Lucky Haul",
-        "tip": "Catching a fish will sometimes drop double the amount.",
+    "sunken_treasure": {
+        "name": "Sunken Treasure",
+        "tip": "Treasure chests are more likely to appear when diving.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>35</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "perfect_catch": {
-        "name": "Perfect Catch",
-        "tip": "Uncommon and rare fish will become more common.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Fishing"
-    },
-    "unexpected_haul": {
-        "name": "Unexpected Haul",
-        "tip": "Treasure Boxes will become more likely to appear when Fishing.",
+    "stoneturner": {
+        "name": "Stoneturner",
+        "tip": "Artifacts will sometimes drop from breaking Rocks in the Mines.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "full_class": {
-        "name": "Full Class I",
-        "tip": "Fish schools will all contain an additional Fish.",
+    "eastern_road_scholar": {
+        "name": "Eastern Road Scholar",
+        "tip": "An additional Dig Site will appear daily on the Eastern Road.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "legendary": {
-        "name": "Legendary",
-        "tip": "Legendary fish can now appear when the season and weather conditions are right.",
+    "pursuit": {
+        "name": "Pursuit",
+        "tip": "Digging up Peat, Sod, or Clay increases your chances of finding an Uncommon or Rare Artifact the next time.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Archaeology"
+    },
+    "back_in_vogue": {
+        "name": "Back in Vogue",
+        "tip": "Artifacts will now sell for 25% more tesserae.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "treasure_trove": {
-        "name": "Treasure Trove",
-        "tip": "You can no longer catch Wooden Treasure Boxes, and you are now more likely to catch a higher tier of Treasure Box.",
+    "natural_beauty": {
+        "name": "Natural Beauty",
+        "tip": "Biome Furniture Recipes will sometimes drop from Dig Sites in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>85</span>"
+        },
+        "url": "/wiki/Skills#Archaeology"
+    },
+    "well_placed": {
+        "name": "Well Placed",
+        "tip": "Out of Place Artifacts will sometimes drop from Dig Sites in the overworld.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "weedline_watcher_two": {
-        "name": "Weedline Watcher II",
-        "tip": "Fishing up Junk will become even less likely.",
+    "museum_quality_two": {
+        "name": "Museum Quality II",
+        "tip": "Digging up Rare Artifacts will become more likely.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "appealing_reeling_two": {
-        "name": "Appealing Reeling II",
-        "tip": "Fish will become attracted to your Bobber from an even greater range.",
+    "former_farmers": {
+        "name": "Former Farmers",
+        "tip": "A dig site will now appear daily on your farm, with a new artifact set to collect.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "frenzy": {
-        "name": "Frenzy",
-        "tip": "Catching a fish will occasionally cause a fish school to spawn nearby.",
+    "museum_quality_three": {
+        "name": "Museum Quality III",
+        "tip": "Digging up Legendary Artifacts will become more likely.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>140</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "what_a_catch": {
-        "name": "What a Catch",
-        "tip": "Fish have a chance of dropping coins worth 10% of their value when caught.",
+    "back_in_vogue_two": {
+        "name": "Back In Vogue II",
+        "tip": "Artifacts now sell for an additional 25% more tesserae.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "lucky_haul_two": {
-        "name": "Lucky Haul II",
-        "tip": "Catching a fish is even more likely to drop double the amount of the fish.",
+    "natural_beauty_two": {
+        "name": "Natural Beauty II",
+        "tip": "Biome Furniture Recipes are now more likely to drop from Dig Sites in the Mines.",
         "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
         },
-        "url": "/wiki/Skills#Fishing"
+        "url": "/wiki/Skills#Archaeology"
     },
-    "abyssal_ascendence": {
-        "name": "Abyssal Ascendence",
-        "tip": "You now have a chance to fish up an Abyssal Chest that drops a unique set of clothing or an Essence Stone, dredged up from mysterious sunken ruins.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Fishing"
-    },
-    "mount": {},
-    "horsepower": {
-        "name": "Horsepower",
-        "tip": "Your Mistmare now runs 10% faster.",
+    "mist_sight": {
+        "name": "Mist Sight",
+        "tip": "A Mist Spot will appear daily around Mistria where the veil between worlds is thin, allowing you to reach through and pull forth unusual objects from the magic realm in exchange for essence.",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
         },
-        "url": "/wiki/Skills#Mistmare"
-    },
-    "harvest_horse": {
-        "name": "Harvest Horse",
-        "tip": "When your Mistmare runs over a forage spot or a fully grown crop, it will pop from the ground.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>190</span>"
-        },
-        "url": "/wiki/Skills#Mistmare"
-    },
-    "nice_ride": {
-        "name": "Nice Ride",
-        "tip": "The appearance of large animals can now be unlocked at 5 Hearts to ride them.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Mistmare"
-    },
-    "combat": {},
-    "guardians_shield": {
-        "name": "Guardian's Shield",
-        "tip": "Once per day, the first hit you take is reflected.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "true_strike": {
-        "name": "True Strike",
-        "tip": "Your Attacks will occasionally become Critical, doing double damage in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "jump_attack": {
-        "name": "Jump Attack",
-        "tip": "Jumping and then Attacking mid-air will damage enemies in a small radius.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "well_armed": {
-        "name": "Well-Armed",
-        "tip": "Biome-unique Armor and Weapons will sometimes drop from Treasure Chests in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "quick_footed": {
-        "name": "Quick Footed",
-        "tip": "Blue Sapling pools will grant a short Speed Boost rather than slow you down.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "shrine_savant": {
-        "name": "What an Offer",
-        "tip": "Using an Offering Shrine will bestow a short HP & Stamina Regen buff in addition to their usual effect.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "generous_in_defeat": {
-        "name": "Generous In Defeat",
-        "tip": "Monsters will occasionally drop twice as many items when defeated.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "dungeon_delicacies": {
-        "name": "Dungeon Delicacies",
-        "tip": "Certain Cooked Dishes will occasionally drop from Treasure Chests in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "perfect_prefix": {
-        "name": "Perfect Prefix",
-        "tip": "The infusion power of Infused Weapons will double.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "rocking": {
-        "name": "Rocking",
-        "tip": "Clod Projectiles that are reflected back are now much more likely to critically strike.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "in_motion": {
-        "name": "In Motion",
-        "tip": "Defeating a Monster will sometimes grant a brief Speed Boost.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "out_of_juice": {
-        "name": "Out of Juice",
-        "tip": "Enchanterns now briefly freeze in place after discharging.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "sonic_boom": {
-        "name": "Sonic Boom",
-        "tip": "If you attack the Essence Bat's sonic attack, unleash a Sonic Boom, damaging all enemies around you.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "gift_exchange": {
-        "name": "Gift Exchange",
-        "tip": "When you throw an item into a resting Mimic Chest, it will drop two items instead of one.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "guardians_shield_two": {
-        "name": "Guardian Shield II",
-        "tip": "Your Shield will now activate randomly at low chance.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "true_strike_two": {
-        "name": "True Strike II",
-        "tip": "Your Attacks are more likely to become Critical, doing double damage in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "sure_strike": {
-        "name": "Sure Strike",
-        "tip": "Defeating an enemy buffs your damage by 5% for 10 seconds, stacking up to 25%.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "generous_in_defeat_two": {
-        "name": "Generous in Defeat II",
-        "tip": "Monsters will more often drop twice as many items when defeated.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "friend_shaped": {
-        "name": "Friend-Shaped",
-        "tip": "Pet skins can now drop from defeated monsters, allowing your pet to take on a monster's appearance. (Note: only saplings for now, more coming later.)",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
-        },
-        "url": "/wiki/Skills#Combat"
+        "url": "/wiki/Skills#Archaeology"
     }
 }

@@ -87,7 +87,7 @@ var objItemsAccessories =
         "name": "Exalted Cloak",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 81,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 81,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
         },
         "url": ""
     },
@@ -115,7 +115,7 @@ var objItemsAccessories =
         "name": "Noble Cape",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 62,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 62,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
         },
         "url": ""
     },
@@ -348,7 +348,7 @@ var objItemsAccessories =
         "name": "Caldosian Traveler's Earrings",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 44,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 44,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
         },
         "url": ""
     },
@@ -833,7 +833,7 @@ var objItemsAccessories =
         "name": "Adventurer's Hood",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 2,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 2,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
         },
         "url": ""
     },
@@ -893,7 +893,7 @@ var objItemsAccessories =
         "name": "Caldosian Traveler's Hat",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 48,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 48,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
         },
         "url": ""
     },
@@ -1006,7 +1006,7 @@ var objItemsAccessories =
         "name": "Exalted Crown",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 88,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 88,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
         },
         "url": ""
     },
@@ -1055,7 +1055,7 @@ var objItemsAccessories =
     },
     "head_flame_spirit_hat": {
         "name": "Flame Spirit Hat",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Flame_Spirit\" title=\"Flame Spirit\"><img alt=\"Flame spirit main.png\" data-file-height=\"68\" data-file-width=\"56\" decoding=\"async\" height=\"24\" loading=\"lazy\" src=\"images/tooltip/20px-Flame_spirit_main.png?8813ae\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Flame_Spirit\" title=\"Flame Spirit\">Flame Spirit</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#The_Mines'_Entrance\" title=\"Mines\">The Mines</a>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Flame_Spirit\" title=\"Flame Spirit\"><img alt=\"Flame spirit main.png\" data-file-height=\"68\" data-file-width=\"56\" decoding=\"async\" height=\"24\" loading=\"lazy\" src=\"images/tooltip/20px-Flame_spirit_main.png?8813ae\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Flame_Spirit\" title=\"Flame Spirit\">\u00a0Flame Spirit</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines#The_Mines'_Entrance\" title=\"Mines\">The Mines</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1172,7 +1172,7 @@ var objItemsAccessories =
         "name": "Noble Hat",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 69,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 69,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
         },
         "url": ""
     },
@@ -1209,7 +1209,7 @@ var objItemsAccessories =
         "name": "Ranger's Leaf Hair Clips",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 28,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Copper Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_copper_icon.png?20058e\" width=\"20\"/></a> Copper</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 28,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Copper Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_copper_icon.png?20058e\" width=\"20\"/></a> Copper</span>"
         },
         "url": ""
     },
@@ -1380,7 +1380,7 @@ var objItemsAccessories =
         "name": "Adventurer's Pants",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 6,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 6,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
         },
         "url": ""
     },
@@ -1403,7 +1403,7 @@ var objItemsAccessories =
         "name": "Exalted Pants",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 85,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 85,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
         },
         "url": ""
     },
@@ -1434,7 +1434,7 @@ var objItemsAccessories =
         "name": "Adventurer's Boots",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 8,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 8,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
         },
         "url": ""
     },
@@ -1456,7 +1456,7 @@ var objItemsAccessories =
         "name": "Caldosian Traveler's High Boots",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 46,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 46,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
         },
         "url": ""
     },
@@ -1477,7 +1477,7 @@ var objItemsAccessories =
         "name": "Exalted Boots",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 87,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 87,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
         },
         "url": ""
     },
@@ -1499,7 +1499,7 @@ var objItemsAccessories =
         "name": "Noble Boots",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 66,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 66,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
         },
         "url": ""
     },
@@ -1515,7 +1515,7 @@ var objItemsAccessories =
         "name": "Ranger's Boots",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 26,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Copper Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_copper_icon.png?20058e\" width=\"20\"/></a> Copper</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 26,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Copper Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_copper_icon.png?20058e\" width=\"20\"/></a> Copper</span>"
         },
         "url": ""
     },
@@ -1709,7 +1709,7 @@ var objItemsAccessories =
         "name": "Adventurer's Jerkin",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 4,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 4,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
         },
         "url": ""
     },
@@ -1723,7 +1723,7 @@ var objItemsAccessories =
         "name": "Caldosian Traveler's Overcoat",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 42,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 42,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Iron Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_iron_icon.png?82b460\" width=\"20\"/></a> Iron</span>"
         },
         "url": ""
     },
@@ -1761,7 +1761,7 @@ var objItemsAccessories =
         "name": "Exalted Top",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 83,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 83,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
         },
         "url": ""
     },
@@ -1813,7 +1813,7 @@ var objItemsAccessories =
         "name": "Noble Jacket",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 64,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 64,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
         },
         "url": ""
     },
@@ -1821,7 +1821,7 @@ var objItemsAccessories =
         "name": "Noble Tunic",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 68,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 68,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Silver Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_silver_icon.png?9f30ab\" width=\"20\"/></a> Silver</span>"
         },
         "url": ""
     },
@@ -1837,7 +1837,7 @@ var objItemsAccessories =
         "name": "Ranger's Jacket",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 2,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 2,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Wood Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_wood_icon.png?391348\" width=\"20\"/></a> Wood</span>"
         },
         "url": ""
     },
@@ -1845,7 +1845,7 @@ var objItemsAccessories =
         "name": "Ranger's Short Sleeve Top",
         "tip": "Unlocked",
         "tip_extra": {
-            "price": "Renown, <a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a>, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 24,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Copper Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_copper_icon.png?20058e\" width=\"20\"/></a> Copper</span>"
+            "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 24,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Copper Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_copper_icon.png?20058e\" width=\"20\"/></a> Copper</span>"
         },
         "url": ""
     },
