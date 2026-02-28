@@ -249,7 +249,7 @@ $(function () {
                 }
 
                 // Remove unprintable characters
-                let cleaned = decodedText.replaceAll(/[^\x20-\x7E]/g, "\u1337");
+                let cleaned = decodedText.replaceAll(/[^\x20-\xFE]/g, "\u1337");
 
                 $("#json_button_popup").removeClass("loading");
 
