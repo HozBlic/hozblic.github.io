@@ -1,3 +1,5 @@
+var objErrors = {};
+
 function extractJsonBlocksFromMixedText(input) {
     const result = {};
     const regex = /([a-zA-Z0-9_]+).*?({[^\u1337]*})/g;
@@ -7,11 +9,26 @@ function extractJsonBlocksFromMixedText(input) {
         try {
             result[match[1]] = JSON.parse(match[2]);
         } catch (e) {
-            $("#output").text(`Failed to parse JSON for label: ${match[1]}`, e);
+            objErrors[match[1]] = e
         }
     }
 
     return result;
+}
+
+function showParsingError() {
+    if (Object.keys(objErrors).length) {
+        $('#parsing_alert').addClass('show');
+        $('#parsing_alert .info').append(`Failed to parse JSON:`);
+
+        Object.entries(objErrors).forEach(([strLabel, strError]) => {
+            $('#parsing_alert .info').append('</br>');
+            $('#parsing_alert .info').append('</br>');
+            $('#parsing_alert .info').append(`${strLabel}:`);
+            $('#parsing_alert .info').append('</br>');
+            $('#parsing_alert .info').append(strError);
+        });
+    }
 }
 
 // Recursively search for 'gifts_given' key in the object
@@ -196,10 +213,15 @@ function extractPerksData(objPlayerData, boolDisabled = false) {
         return false;
     }
 }
+
 $(function () {
     $("#save_input").on("change", function (event) {
-
+        $('#parsing_alert').removeClass('show');
+        $('#parsing_alert .info').html('');
+        $('#json_alert').removeClass('show').removeClass('green').removeClass('yellow');
+        $('#json_alert .info').html('');
         $('#extracting_alert').removeClass('show').removeClass('green').removeClass('yellow');
+        $('#extracting_alert .info').html('');
         $("#output").hide();
         let file = event.target.files[0];
         if (!file) return;
@@ -261,6 +283,7 @@ $(function () {
                     }
 
                     let arrFound = [];
+                    let bolShowError = false;
                     arrTabs.forEach(function (strTab) {
                         if (objMistriaDataExtracted[strTab]) {
                             arrFound.push(`${objMistriaDataExtracted[strTab].length} ${strTab} items were found`);
@@ -268,11 +291,16 @@ $(function () {
                             $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
                         } else {
+                            bolShowError = true;
                             $('#extracting_alert').addClass('show');
                             $('#extracting_alert .info').append(`Couldn't find ${strTab} data`);
                             $('#extracting_alert .info').append('</br>');
                         }
                     });
+
+                    if (bolShowError) {
+                        showParsingError();
+                    }
 
                     if (typeof jsonBlocks === 'object') {
                         $("#output").show().text(JSON.stringify(jsonBlocks, null, 2));
@@ -291,12 +319,14 @@ $(function () {
                 } else {
                     $('#extracting_alert').addClass('show');
                     $('#extracting_alert .info').html("Failed to decode file");
+                    showParsingError()
                 }
 
             } catch (err) {
                 $('#json_button_popup').removeClass('loading');
                 $('#extracting_alert').addClass('show');
                 $('#extracting_alert .info').html("Failed to decode file:\n" + err);
+                showParsingError()
             }
         };
         reader.readAsArrayBuffer(file);
