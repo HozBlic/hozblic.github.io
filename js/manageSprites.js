@@ -63,6 +63,7 @@ async function loadSprites() {
 
     await Promise.all(Object.entries(spriteSheetData).map(async ([sheetKey, sheetData]) => {
         const sheetTexture = await PIXI.Assets.load(`textures/sheets/${sheetKey}.png`)
+        sheetTexture.source.scaleMode = PIXI.SCALE_MODES.NEAREST
         const sheet = new PIXI.Spritesheet(sheetTexture, sheetData)
         await sheet.parse()
         parsedSheets[sheetKey] = sheet

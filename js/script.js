@@ -286,6 +286,8 @@ $(document).ready(function () {
                 y: Math.floor(objMouseLocation.y / intGridCellSize) * intGridCellSize,
             }
 
+            console.log(objStartCell)
+
             drawSelection(objMouseLocation.x, objMouseLocation.y)
         });
 
@@ -354,15 +356,126 @@ $(document).ready(function () {
         if (containerSprites === null) {
             containerSprites = new PIXI.Container();
 
-            let elemSprite = sprites['tile_soil_autumn_0,0,0,0,0,0,0,0'].sprite;
-            containerSprites.addChild(elemSprite);
-            elemSprite.scale = 20;
+            //tile_soil_spring_0,0,0,1,1,1,1,0
+            // let elemSprite = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite;
 
+            // elemSprite.position.set(752, 368);
+
+            // containerSprites.addChild(elemSprite);
+            // elemSprite.scale = 20;
+
+
+            let x0 = 736;
+            let y0 = 368;
+
+            let intRows = 7;
+            let intColumns = 9
+
+            // let texture_full = sprites['tile_soil_spring_1,1,1,1,1,1,1,1'].sprite.texture;
+            // let texture = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite.texture;
+            // let texture = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite.texture;
+            // let texture = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite.texture;
+
+            let arrFilledGrid = [];
+            for (let y = 0; y < intRows; y++) {
+                let arrFilledGrid_Row = [];
+                for (let x = 0; x < intColumns; x++) {
+                    switch (true) {
+                        case (y == 0 && x == 0):
+                        case (y == 0 && x == intColumns - 1):
+                        case (y == intRows - 1 && x == 0):
+                        case (y == intRows - 1 && x == intColumns - 1):
+                            arrFilledGrid_Row.push(0);
+                            break;
+                        default:
+                            arrFilledGrid_Row.push(1);
+                            break;
+                    }
+                }
+                arrFilledGrid.push(arrFilledGrid_Row)
+            }
+
+            // 8 directions 
+
+            const directions = [
+                [-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]
+            ];
+
+            let arrNeighbourGrid = [];
+            for (let row = 0; row < intRows; row++) {
+                let arrNeighbourGrid_row = [];
+                for (let col = 0; col < intColumns; col++) {
+
+                    let arrNeighbourGrid_current = [];
+
+                    directions.forEach(([dx, dy]) => {
+                        const newRow = row + dx;
+                        const newCol = col + dy;
+
+                        arrNeighbourGrid_current.push(arrFilledGrid[newRow]?.[newCol] || 0)
+                    });
+                    arrNeighbourGrid_row.push(arrNeighbourGrid_current.join(','))
+                }
+                arrNeighbourGrid.push(arrNeighbourGrid_row)
+            }
+
+            for (let y = 0; y < intRows; y++) {
+                for (let x = 0; x < intColumns; x++) {
+                    console.log(x, y)
+                    if (arrFilledGrid[y][x]) {
+
+                        console.log(arrNeighbourGrid[y][x])
+                        let strNeigbours = arrNeighbourGrid[y][x];
+
+                        switch (strNeigbours) {
+                            case '0,0,0,1,1,1,1,0':
+                                strNeigbours = '0,0,0,1,1,1,0,0';
+                                console.log('change')
+                                break;
+                            case '0,0,0,0,1,1,1,1': 
+                                strNeigbours = '0,0,0,0,0,1,1,1';
+                                console.log('change')
+                                break;
+                            case '0,0,1,1,1,1,0,0':
+                                strNeigbours = '0,0,0,1,1,1,0,0';
+                                console.log('change')
+                                break;
+                            case '1,0,0,0,0,1,1,1': 
+                                strNeigbours = '0,0,0,0,0,1,1,1';
+                                console.log('change')
+                                break;
+                            case '0,1,1,1,1,0,0,0': //nav pareizs
+                                strNeigbours = '0,1,1,1,0,0,0,0';
+                                console.log('change')
+                                break;
+                            case '1,1,0,0,0,0,1,1': //nav pareizs
+                                strNeigbours = '1,1,0,0,0,0,0,1';
+                                console.log('change')
+                                break;
+                            case '1,1,1,1,0,0,0,0': //nav pareizs
+                                strNeigbours = '0,1,1,1,0,0,0,0';
+                                console.log('change')
+                                break;
+                            case '1,1,1,0,0,0,0,1': //nav pareizs
+                                strNeigbours = '1,1,0,0,0,0,0,1';
+                                console.log('change')
+                                break;
+
+                        }
+
+                        let texture = sprites[`tile_soil_spring_${strNeigbours}`].sprite.texture;
+                        let elemSprite = new PIXI.Sprite(texture);
+                        elemSprite.position.set(x * 16, y * 16);
+                        containerSprites.addChild(elemSprite);
+                    }
+                }
+            }
+
+            containerSprites.position.set(x0, y0);
             app.stage.addChild(containerSprites);
         }
 
-
-        resize();
+        resize(1);
         app.resize();
     })();
 
