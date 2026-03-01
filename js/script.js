@@ -184,7 +184,7 @@ async function addBackground() {
 
     if (elemBackground === null) {
 
-        let backgroundTexture = await PIXI.Assets.load(`images/rooms/rm_farm_${objPresets['season']}.png`);
+        let backgroundTexture = await PIXI.Assets.load(`textures/rooms/rm_farm_${objPresets['season']}.png`);
         backgroundTexture.source.scaleMode = 'nearest';
 
         elemBackground = new PIXI.Sprite(backgroundTexture);
