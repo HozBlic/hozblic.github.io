@@ -1,30 +1,38 @@
 {
-    "Texture 37": {
-        "sheetW": 4096,
-        "sheetH": 4096
-    },
     "Texture 35": {
         "sheetW": 2048,
         "sheetH": 4096
     },
+    "Texture 37": {
+        "sheetW": 4096,
+        "sheetH": 4096
+    },
     "Texture 13": {
-        "sheetW": 2048,
+        "sheetW": 4096,
         "sheetH": 4096
     },
     "Texture 23": {
         "sheetW": 2048,
         "sheetH": 4096
     },
-    "Texture 43": {
+    "Texture 49": {
         "sheetW": 2048,
         "sheetH": 2048
     },
-    "Texture 47": {
-        "sheetW": 4096,
-        "sheetH": 4096
+    "Texture 44": {
+        "sheetW": 2048,
+        "sheetH": 2048
+    },
+    "Texture 27": {
+        "sheetW": 1024,
+        "sheetH": 2048
     },
     "Texture 9": {
         "sheetW": 1024,
-        "sheetH": 1024
+        "sheetH": 2048
+    },
+    "Texture 48": {
+        "sheetW": 4096,
+        "sheetH": 4096
     }
 }

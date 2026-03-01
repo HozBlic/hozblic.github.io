@@ -333,16 +333,19 @@ $(document).ready(function () {
 
         const sprites = await loadSprites();
 
+        console.log(sprites)
+        console.log(sprites['snow_peas'])
 
-        // if (containerSprites === null) {
-        //     containerSprites = new PIXI.Container();
 
-        //     let elemSprite = sprites['breath_of_fire'].sprite;
-        //     elemCollision.addChild(elemSprite);
-        //     // elemSprite.scale = 1
+        if (containerSprites === null) {
+            containerSprites = new PIXI.Container();
 
-        //     app.stage.addChild(elemCollision);
-        // }
+            let elemSprite = sprites['snow_peas'].sprite;
+            containerSprites.addChild(elemSprite);
+            // elemSprite.scale = 1
+
+            app.stage.addChild(containerSprites);
+        }
 
         resize();
         app.resize();

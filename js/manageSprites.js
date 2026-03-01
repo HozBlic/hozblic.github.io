@@ -3,6 +3,9 @@ async function loadSprites() {
     const spriteMapping = await (await fetch('textures/planner_sprites.json')).json()
     const spriteSheetMeta = await (await fetch('textures/sheet_sprites.json')).json()
     const objectData = await (await fetch('textures/fiddle_sprites.json')).json()
+    const tileSpriteMeta = await (await fetch('textures/tiles_sprites.json')).json()
+
+    console.log(tileSpriteMeta)
 
     logStage('initializing data')
 
@@ -61,5 +64,5 @@ function initializeSheetData(spriteSheetMeta) {
 }
 
 function logStage(text) {
-    console.log(`%c${text}`, 'font-size: 1.5em;color: #62893e;padding: 5px;margin: 10px;border: 5px ridge #22c813;background: #444444')
+    console.log(`%c${text}`, 'font-size: 1.5em;color: #62893e;padding: 0 5px;margin: 0 10px;border: 5px ridge #22c813;background: #444444')
 }

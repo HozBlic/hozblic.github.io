@@ -1,0 +1,74 @@
+{
+    "tile_grassautotile_autumn": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2040,
+            "y": 1292,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_grassautotile_spring": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 1292,
+            "y": 2040,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_grassautotile_summer": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2188,
+            "y": 1292,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_grassautotile_winter": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2040,
+            "y": 1440,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_autumn": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2336,
+            "y": 1292,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_spring": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2336,
+            "y": 1292,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_summer": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2188,
+            "y": 1440,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_winter": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 1292,
+            "y": 2336,
+            "sheet": "Texture 38"
+        }
+    }
+}
