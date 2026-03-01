@@ -364,6 +364,7 @@ $(document).ready(function () {
             // containerSprites.addChild(elemSprite);
             // elemSprite.scale = 20;
 
+            let intSoilTileOffset = 2;
 
             let x0 = 736;
             let y0 = 368;
@@ -465,13 +466,13 @@ $(document).ready(function () {
 
                         let texture = sprites[`tile_soil_spring_${strNeigbours}`].sprite.texture;
                         let elemSprite = new PIXI.Sprite(texture);
-                        elemSprite.position.set(x * 16, y * 16);
+                        elemSprite.position.set( x0 + x * intGridCellSize - intSoilTileOffset, y0 + y * intGridCellSize - intSoilTileOffset);
                         containerSprites.addChild(elemSprite);
                     }
                 }
             }
 
-            containerSprites.position.set(x0, y0);
+          
             app.stage.addChild(containerSprites);
         }
 
