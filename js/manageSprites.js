@@ -5,8 +5,6 @@ async function loadSprites() {
     const objectData = await (await fetch('textures/fiddle_sprites.json')).json()
     const tileSpriteMeta = await (await fetch('textures/tiles_sprites.json')).json()
 
-    console.log(tileSpriteMeta)
-
     logStage('initializing data')
 
     const spriteSheetData = initializeSheetData(spriteSheetMeta)
@@ -15,12 +13,51 @@ async function loadSprites() {
 
     logStage('mapping sprites')
 
-    Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
-        const { sheet: sheetKey, ...frameCoords } = spriteMapping[cropData.sprites.at(-1)]["0"]
 
-        spriteSheetData[sheetKey].frames[cropKey] = { frame: { ...frameCoords } } // populate spritesheet frames
-        singleSpriteData[cropKey] = { sheetKey }                                // map sprite to sheet
+    // CROPS
+
+    // Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
+    //     const { sheet: sheetKey, ...frameCoords } = spriteMapping[cropData.sprites.at(-1)]["0"]
+
+    //     spriteSheetData[sheetKey].frames[cropKey] = { frame: { ...frameCoords } } // populate spritesheet frames
+    //     singleSpriteData[cropKey] = { sheetKey }                                // map sprite to sheet
+    // })
+
+    // TILES
+
+    const tileSize = 20
+
+    const tileMask = [
+        [null             , [0,1,0,0,0,0,0,0], [0,0,0,0,0,0,0,1], [0,1,0,0,0,0,0,1], [1,1,0,0,0,0,0,1], [0,0,0,1,0,0,0,0], [0,1,0,1,0,0,0,0]], 
+        [[0,1,1,1,0,0,0,0], [0,0,0,1,0,0,0,1], [0,1,0,1,0,0,0,1], [1,1,0,1,0,0,0,1], [0,1,1,1,0,0,0,1], [1,1,1,1,0,0,0,1], [0,0,0,0,0,1,0,0]], 
+        [[0,1,0,0,0,1,0,0], [0,0,0,0,0,1,0,1], [0,1,0,0,0,1,0,1], [1,1,0,0,0,1,0,1], [0,0,0,1,0,1,0,0], [0,1,0,1,0,1,0,0], [0,1,1,1,0,1,0,0]], 
+        [[0,0,0,1,0,1,0,1], [0,1,0,1,0,1,0,1], [1,1,0,1,0,1,0,1], [0,1,1,1,0,1,0,1], [1,1,1,1,0,1,0,1], [0,0,0,0,0,1,1,1], [0,1,0,0,0,1,1,1]], 
+        [[1,1,0,0,0,1,1,1], [0,0,0,1,0,1,1,1], [0,1,0,1,0,1,1,1], [1,1,0,1,0,1,1,1], [0,1,1,1,0,1,1,1], [1,1,1,1,0,1,1,1], [0,0,0,1,1,1,0,0]], 
+        [[0,1,0,1,1,1,0,0], [0,1,1,1,1,1,0,0], [0,0,0,1,1,1,0,1], [0,1,0,1,1,1,0,1], [1,1,0,1,1,1,0,1], [0,1,1,1,1,1,0,1], [1,1,1,1,1,1,0,1]], 
+        [[0,0,0,1,1,1,1,1], [0,1,0,1,1,1,1,1], [1,1,0,1,1,1,1,1], [0,1,1,1,1,1,1,1], [1,1,1,1,1,1,1,1], [0,0,0,0,0,0,0,0], null,            ]
+    ]
+
+    Object.entries(tileSpriteMeta).forEach(([tileSheetKey, {"0": tileData}]) => {
+        const origin = { x: tileData.x, y: tileData.y }
+
+        tileMask.forEach((row, y) => row.forEach((coords, x) => {
+            if (!coords) {
+                return
+            }
+
+            const tileKey = `${tileSheetKey}_${coords.join()}`
+
+            spriteSheetData[tileData.sheet].frames[tileKey] = { frame: {
+                h: tileSize,
+                w: tileSize,
+                x: origin.x + x * tileSize,
+                y: origin.y + y * tileSize,
+            } }
+            singleSpriteData[tileKey] = { sheetKey: tileData.sheet }   
+        }))
     })
+
+    console.log(singleSpriteData)
 
     logStage('loading sprites')
 

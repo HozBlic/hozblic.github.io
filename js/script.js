@@ -3,6 +3,7 @@ let objPresets = {
     'grid': true,
     'collision': true,
 }
+let arrCollision = null;
 
 let strSeason = 'spring';
 
@@ -131,6 +132,7 @@ function drawGrid() {
 }
 
 function drawCollision() {
+
     if (elemCollision !== null && !objPresets['collision']) {
         containerBackground.removeChild(elemCollision);
         elemCollision.destroy();
@@ -256,6 +258,8 @@ $(document).ready(function () {
     });
 
     (async () => {
+        arrCollision = await (await fetch('textures/collision.json')).json()
+
         containerDiv = document.querySelector('#game-container');
 
         // Create a new application
@@ -333,19 +337,30 @@ $(document).ready(function () {
 
         const sprites = await loadSprites();
 
-        console.log(sprites)
-        console.log(sprites['snow_peas'])
+        // console.log(sprites)
+        // console.log(sprites['snow_peas'])
+
+        // if (containerSprites === null) {
+        //     containerSprites = new PIXI.Container();
+
+        //     let elemSprite = sprites['snow_peas'].sprite;
+        //     containerSprites.addChild(elemSprite);
+        //     // elemSprite.scale = 1
+
+        //     app.stage.addChild(containerSprites);
+        // }
 
 
         if (containerSprites === null) {
             containerSprites = new PIXI.Container();
 
-            let elemSprite = sprites['snow_peas'].sprite;
+            let elemSprite = sprites['tile_soil_autumn_0,0,0,0,0,0,0,0'].sprite;
             containerSprites.addChild(elemSprite);
-            // elemSprite.scale = 1
+            elemSprite.scale = 20;
 
             app.stage.addChild(containerSprites);
         }
+
 
         resize();
         app.resize();
