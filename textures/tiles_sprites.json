@@ -35,6 +35,42 @@
             "sheet": "Texture 38"
         }
     },
+    "tile_main_exteriors_fall": {
+        "0": {
+            "h": 1280,
+            "w": 1280,
+            "x": 4,
+            "y": 4,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_main_exteriors_spring": {
+        "0": {
+            "h": 1280,
+            "w": 1280,
+            "x": 4,
+            "y": 1292,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_main_exteriors_summer": {
+        "0": {
+            "h": 1280,
+            "w": 1280,
+            "x": 4,
+            "y": 2580,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_main_exteriors_winter": {
+        "0": {
+            "h": 1280,
+            "w": 1280,
+            "x": 1292,
+            "y": 4,
+            "sheet": "Texture 38"
+        }
+    },
     "tile_soil_autumn": {
         "0": {
             "h": 140,
@@ -59,6 +95,42 @@
             "w": 140,
             "x": 2188,
             "y": 1440,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_wet_autumn": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2040,
+            "y": 1588,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_wet_spring": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 2040,
+            "y": 1588,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_wet_summer": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 1588,
+            "y": 2040,
+            "sheet": "Texture 38"
+        }
+    },
+    "tile_soil_wet_winter": {
+        "0": {
+            "h": 140,
+            "w": 140,
+            "x": 1440,
+            "y": 2188,
             "sheet": "Texture 38"
         }
     },

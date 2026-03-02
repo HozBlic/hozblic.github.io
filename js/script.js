@@ -2,6 +2,8 @@ let objPresets = {
     'season': 'spring',
     'grid': true,
     'collision': true,
+    'soil': false,
+    'wet': false,
 }
 
 let arrCollisionGrid = null;
@@ -16,8 +18,14 @@ let objGraphics_Grid = null;
 let objContainer_Collision = null;
 
 let objGraphics_Selection = null;
-let objContainer_Soil = null;
-let objContainer_Grass = null;
+
+
+let objGroundContainers = {
+    ground: null,
+    soil: null,
+    soilWet: null,
+    grass: null,
+}
 
 let objSprites = null;
 
@@ -33,9 +41,11 @@ const objCanvasDefault = {
 const objZindexes = {
     background: 0, // image 
     collision: 1,
-    soil: 2,
-    grass: 3,
-    grid: 4,
+    ground: 2,
+    soil: 3,
+    soilWet: 4,
+    grass: 5,
+    grid: 6,
     selection: 99,
 }
 let intMultiplierCanvas = 1;
@@ -78,7 +88,7 @@ if (1) {
     }
 }
 
-function convertGridToNeighbours(arrGrid) {
+function convertGridToNeighbours(arrGrid, intValue = null) {
     //clockwise NOT
     const directions = [
         [-1, -1], [0, -1], [1, -1],
@@ -91,76 +101,104 @@ function convertGridToNeighbours(arrGrid) {
         let arrNeighbourGrid_row = [];
         for (let col = 0; col < arrGrid[0].length; col++) {
 
+
             let arrNeighbourGrid_current = [];
 
             directions.forEach(([dx, dy]) => {
                 const newRow = row + dy;
                 const newCol = col + dx;
 
-                arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] || 0)
+                const intCurrentValue = arrGrid[newRow]?.[newCol] || 0
+
+                switch (intValue) {
+                    case null:
+                        //checking if any tile is in neighbors - used for grass
+                        arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] ? 1 : 0)
+                        break;
+                    case 1:
+                        //checking for ground - will use the same sprite regardless of whether there is ground, soil or wet soil nearby
+                        arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] ? 1 : 0)
+                        break;
+                    case 2:
+                        //checking for tilled soil - will use the same sprite regardless of whether there is soil or wet soil nearby
+                        arrNeighbourGrid_current.push((intCurrentValue == 2 || intCurrentValue == 3) ? 1 : 0)
+                        break;
+                    case 3:
+                        //checking for wet tilled soil - sptite will change only wor another wet soil sprite
+                        arrNeighbourGrid_current.push((intCurrentValue == 3) ? 1 : 0)
+                        break;
+                }
             });
             arrNeighbourGrid_row.push(arrNeighbourGrid_current)
         }
         arrNeighbourGrid.push(arrNeighbourGrid_row)
     }
-
     return arrNeighbourGrid;
 }
+
+
 function drawSoil() {
-    if (objContainer_Soil !== null) {
-        objPIXIapp.stage.addChild(objContainer_Soil);
+    Object.keys(objGroundContainers).forEach(function (strContainerKey) {
+        if (objGroundContainers[strContainerKey] !== null) {
+            objPIXIapp.stage.addChild(objGroundContainers[strContainerKey]);
 
-        objContainer_Soil.destroy();
-        objContainer_Soil = null;
-    }
+            objGroundContainers[strContainerKey].destroy();
+            objGroundContainers[strContainerKey] = null;
+        }
+        objGroundContainers[strContainerKey] = new PIXI.Container();
+    });
 
-    if (objContainer_Grass !== null) {
-        objPIXIapp.stage.addChild(objContainer_Grass);
+    let arrGridNeighbours = convertGridToNeighbours(arrGrid_Soil)
+    let arrGridNeighbours_Soil = convertGridToNeighbours(arrGrid_Soil, 2)
+    let arrGridNeighbours_Wet = convertGridToNeighbours(arrGrid_Soil, 3)
 
-        objContainer_Grass.destroy();
-        objContainer_Grass = null;
-    }
+    for (let y = 0; y < arrGrid_Soil.length; y++) {
+        for (let x = 0; x < arrGrid_Soil[0].length; x++) {
 
-    if (objContainer_Soil === null) {
-        objContainer_Soil = new PIXI.Container();
-        objContainer_Grass = new PIXI.Container();
-        let intSoilTileOffset = 2;
+            if (arrGrid_Soil[y][x]) {
+                switch (arrGrid_Soil[y][x]) {
+                    case 1: //ground
+                        const textureGround = objSprites['tile_main_exteriors_spring'].sprite.texture;
+                        const elemSpriteGround = new PIXI.Sprite(textureGround);
+                        elemSpriteGround.position.set(x * intGridCellSize, y * intGridCellSize);
+                        objGroundContainers['ground'].addChild(elemSpriteGround);
+                        break;
+                    case 2: //tilled
+                        const textureTilled = getSoilTex('soil_spring', arrGridNeighbours_Soil[y][x])
+                        const elemSpriteTilled = new PIXI.Sprite(textureTilled);
+                        elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
+                        objGroundContainers['soil'].addChild(elemSpriteTilled);
+                        break;
+                    case 3: //tilled wet
+                        const texture = getSoilTex('soil_spring', arrGridNeighbours_Soil[y][x])
+                        const elemSprite = new PIXI.Sprite(texture);
+                        elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                        objGroundContainers['soil'].addChild(elemSprite);
 
-        let arrGrid_Soil_Neighbours = convertGridToNeighbours(arrGrid_Soil)
-
-
-        for (let y = 0; y < arrGrid_Soil.length; y++) {
-            for (let x = 0; x < arrGrid_Soil[0].length; x++) {
-
-                if (arrGrid_Soil[y][x]) {
-                    const texture = getTileTex('soil_spring', arrGrid_Soil_Neighbours[y][x])
-
-                    const elemSprite = new PIXI.Sprite(texture);
-                    elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
-                    objContainer_Soil.addChild(elemSprite);
-                } else if (!checkTileHasCollision({ x: x, y: y })) {
-
-                    if (!arrGrid_Soil_Neighbours[y][x].includes(1)) {
-                        continue;
-                    }
-
-                    const texture = getTileTex('grassautotile_winter', arrGrid_Soil_Neighbours[y][x])
-
-                    const elemSprite = new PIXI.Sprite(texture);
-                    elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
-                    objContainer_Grass.addChild(elemSprite);
+                        const textureWet = getSoilTex('soil_wet_spring', arrGridNeighbours_Wet[y][x])
+                        const elemSpriteWet = new PIXI.Sprite(textureWet);
+                        elemSpriteWet.position.set(x * intGridCellSize, y * intGridCellSize);
+                        objGroundContainers['soilWet'].addChild(elemSpriteWet);
+                        break;
                 }
+            } else if (!checkTileHasCollision({ x: x, y: y })) {
+
+                if (!arrGridNeighbours[y][x].includes(1)) {
+                    continue;
+                }
+                const texture = getGrassTex('grassautotile_spring', arrGridNeighbours[y][x])
+                const elemSprite = new PIXI.Sprite(texture);
+                elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                objGroundContainers['grass'].addChild(elemSprite);
             }
         }
-
-        objPIXIapp.stage.addChild(objContainer_Soil);
-        objPIXIapp.stage.addChild(objContainer_Grass);
-        objContainer_Soil.zIndex = objZindexes.soil;
-        objContainer_Grass.zIndex = objZindexes.grass;
-
-        objContainer_Soil.scale = intMultiplierCanvas;
-        objContainer_Grass.scale = intMultiplierCanvas;
     }
+
+    Object.keys(objGroundContainers).forEach(function (strContainerKey) {
+        objPIXIapp.stage.addChild(objGroundContainers[strContainerKey]);
+        objGroundContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
+        objGroundContainers[strContainerKey].scale = intMultiplierCanvas;
+    });
 }
 
 function getClickedCell(event) {
@@ -213,11 +251,16 @@ function resizeElements() {
         objGraphics_Selection.scale = intMultiplierCanvas;
     }
 
-    if (objContainer_Soil !== null) {
-        objContainer_Soil.scale = intMultiplierCanvas;
-    } if (objContainer_Grass !== null) {
-        objContainer_Grass.scale = intMultiplierCanvas;
-    }
+
+    Object.keys(objGroundContainers).forEach(function (strContainerKey) {
+
+        if (objGroundContainers[strContainerKey] !== null) {
+            objGroundContainers[strContainerKey].scale = intMultiplierCanvas;
+
+        }
+
+
+    });
 }
 
 function buildGrid() {
@@ -268,7 +311,7 @@ function drawGrid() {
         objContainer_Grid.addChild(objGraphics_Grid);
     }
 
-   
+
 }
 
 function drawCollision() {
@@ -341,10 +384,11 @@ async function addBackground() {
     }
 }
 
-function drawSelection(objCellCoord) {
+function drawSelection(objCellCoord = false) {
     //might be useful new Rectangle(100, 100, 200, 150);
 
     if (!bolSelection) return;
+    
 
     if (objGraphics_Selection !== null) {
         objPIXIapp.stage.removeChild(objGraphics_Selection);
@@ -353,6 +397,8 @@ function drawSelection(objCellCoord) {
 
         if (!bolIsDragging) return;
     }
+
+    if (!objCellCoord) return;
 
     objGraphics_Selection = new PIXI.Graphics();
 
@@ -383,7 +429,7 @@ const slice2D = (arr, startX, endX, startY, endY) => {
     return arr.slice(startY, endY).map(subArr => subArr.slice(startX, endX))
 }
 
-function updateSoilGrid(objCellCoord) {
+function updateSoilGrid(objCellCoord, bolTilled = false, bolWet = false) {
 
     if (!bolIsDragging) return;
 
@@ -397,12 +443,12 @@ function updateSoilGrid(objCellCoord) {
     const arrGrid_SoilSlice = slice2D(arrGrid_Soil, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1)
     const arrGrid_SoilSliceValues = arrGrid_SoilSlice.flat()
 
-    if (arrGrid_SoilSliceValues.includes(0)) {
+    if (1 || arrGrid_SoilSliceValues.includes(0)) {
         //add only
         for (let y = objSelection.y0; y <= objSelection.y1; y++) {
             for (let x = objSelection.x0; x <= objSelection.x1; x++) {
                 if (!checkTileHasCollision({ x: x, y: y })) {
-                    arrGrid_Soil[y][x] = 1
+                    arrGrid_Soil[y][x] = bolTilled ? (bolWet ? 3 : 2) : 1
                 }
             }
         }
@@ -451,6 +497,12 @@ $(document).ready(function () {
         objPresets['collision'] = this.checked;
         drawCollision()
     });
+    $("#chb_soil").change(function () {
+        objPresets['soil'] = this.checked;
+    });
+    $("#chb_wet").change(function () {
+        objPresets['wet'] = this.checked
+    });
 
     (async () => {
         arrCollisionGrid = await (await fetch('textures/collision.json')).json()
@@ -488,24 +540,17 @@ $(document).ready(function () {
         objPIXIapp.stage.on('pointermove', (e) => {
             if (bolIsDragging) {
                 drawSelection(getClickedCell(e))
-
             }
         });
 
         objPIXIapp.stage.on('pointerup', (e) => {
-            updateSoilGrid(getClickedCell(e))
-
-
+            updateSoilGrid(getClickedCell(e), objPresets.soil, objPresets.wet)
             bolIsDragging = false;
-
-
-
             objStartCellCoord = {
                 x: 0,
                 y: 0
             };
             drawSelection();
-
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
@@ -530,6 +575,10 @@ $(document).ready(function () {
         drawGrid();
         drawCollision();
         drawSoil();
+
+
+        // objPIXIapp.renderer.extract.log(image);
+
 
         // console.log(sprites)
         // console.log(sprites['snow_peas'])
