@@ -75,9 +75,11 @@ if (1) {
 }
 
 function convertGridToNeighbours(arrGrid) {
-    //clockwise
+    //clockwise NOT
     const directions = [
-        [-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]
+        [-1, -1], [0, -1], [1, -1], 
+        [-1,  0],          [1, 0], 
+        [-1, 1],  [0, 1],  [1, 1]
     ];
 
     let arrNeighbourGrid = [];
@@ -88,12 +90,12 @@ function convertGridToNeighbours(arrGrid) {
             let arrNeighbourGrid_current = [];
 
             directions.forEach(([dx, dy]) => {
-                const newRow = row + dx;
-                const newCol = col + dy;
+                const newRow = row + dy;
+                const newCol = col + dx;
 
                 arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] || 0)
             });
-            arrNeighbourGrid_row.push(arrNeighbourGrid_current.join(','))
+            arrNeighbourGrid_row.push(arrNeighbourGrid_current)
         }
         arrNeighbourGrid.push(arrNeighbourGrid_row)
     }
@@ -119,41 +121,9 @@ function drawSoil() {
             for (let x = 0; x < arrGrid_Soil[0].length; x++) {
 
                 if (arrGrid_Soil[y][x]) {
-                    let strNeigbours = arrGrid_Soil_Neighbours[y][x];
+                    const texture = getTileTex('soil_winter', arrGrid_Soil_Neighbours[y][x])
 
-                    switch (strNeigbours) {
-                        case '0,0,0,1,1,1,1,0':
-                            strNeigbours = '0,0,0,1,1,1,0,0';
-                            break;
-                        case '0,0,0,0,1,1,1,1':
-                            strNeigbours = '0,0,0,0,0,1,1,1';
-                            break;
-                        case '0,0,1,1,1,1,0,0':
-                            strNeigbours = '0,0,0,1,1,1,0,0';
-                            break;
-                        case '1,0,0,0,0,1,1,1':
-                            strNeigbours = '0,0,0,0,0,1,1,1';
-                            break;
-                        case '0,1,1,1,1,0,0,0': //nav pareizs
-                            strNeigbours = '0,1,1,1,0,0,0,0';
-                            break;
-                        case '1,1,0,0,0,0,1,1': //nav pareizs
-                            strNeigbours = '1,1,0,0,0,0,0,1';
-                            break;
-                        case '1,1,1,1,0,0,0,0': //nav pareizs
-                            strNeigbours = '0,1,1,1,0,0,0,0';
-                            break;
-                        case '1,1,1,0,0,0,0,1': //nav pareizs
-                            strNeigbours = '1,1,0,0,0,0,0,1';
-                            break;
-                    }
-
-                    if (typeof objSprites[`tile_soil_spring_${strNeigbours}`] === 'undefined') {
-                           strNeigbours = '0,0,0,1,1,1,0,0';
-                    }
-
-                    let texture = objSprites[`tile_soil_spring_${strNeigbours}`].sprite.texture;
-                    let elemSprite = new PIXI.Sprite(texture);
+                    const elemSprite = new PIXI.Sprite(texture);
                     elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
                     objContainer_Soil.addChild(elemSprite);
                 }
@@ -162,6 +132,8 @@ function drawSoil() {
 
         objPIXIapp.stage.addChild(objContainer_Soil);
         objContainer_Soil.zIndex = objZindexes.soil;
+
+         objContainer_Soil.scale = intMultiplierCanvas;
     }
 }
 
@@ -535,7 +507,7 @@ $(document).ready(function () {
         //     objPIXIapp.stage.addChild(objContainer_Soil);
         // }
 
-        resize(1);
+        resize(4);
         objPIXIapp.resize();
     })();
 

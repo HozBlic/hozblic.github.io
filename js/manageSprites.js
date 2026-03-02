@@ -16,24 +16,24 @@ async function loadSprites() {
 
     // CROPS
 
-    // Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
-    //     const { sheet: sheetKey, ...frameCoords } = spriteMapping[cropData.sprites.at(-1)]["0"]
+    Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
+        const { sheet: sheetKey, ...frameCoords } = spriteMapping[cropData.sprites.at(-1)]["0"]
 
-    //     spriteSheetData[sheetKey].frames[cropKey] = { frame: { ...frameCoords } } // populate spritesheet frames
-    //     singleSpriteData[cropKey] = { sheetKey }                                // map sprite to sheet
-    // })
+        spriteSheetData[sheetKey].frames[cropKey] = { frame: { ...frameCoords } } // populate spritesheet frames
+        singleSpriteData[cropKey] = { sheetKey }                                // map sprite to sheet
+    })
 
     // TILES
 
     const tileSize = 20
 
     const tileMask = [
-        [null             , [0,1,0,0,0,0,0,0], [0,0,0,0,0,0,0,1], [0,1,0,0,0,0,0,1], [1,1,0,0,0,0,0,1], [0,0,0,1,0,0,0,0], [0,1,0,1,0,0,0,0]], 
-        [[0,1,1,1,0,0,0,0], [0,0,0,1,0,0,0,1], [0,1,0,1,0,0,0,1], [1,1,0,1,0,0,0,1], [0,1,1,1,0,0,0,1], [1,1,1,1,0,0,0,1], [0,0,0,0,0,1,0,0]], 
-        [[0,1,0,0,0,1,0,0], [0,0,0,0,0,1,0,1], [0,1,0,0,0,1,0,1], [1,1,0,0,0,1,0,1], [0,0,0,1,0,1,0,0], [0,1,0,1,0,1,0,0], [0,1,1,1,0,1,0,0]], 
-        [[0,0,0,1,0,1,0,1], [0,1,0,1,0,1,0,1], [1,1,0,1,0,1,0,1], [0,1,1,1,0,1,0,1], [1,1,1,1,0,1,0,1], [0,0,0,0,0,1,1,1], [0,1,0,0,0,1,1,1]], 
-        [[1,1,0,0,0,1,1,1], [0,0,0,1,0,1,1,1], [0,1,0,1,0,1,1,1], [1,1,0,1,0,1,1,1], [0,1,1,1,0,1,1,1], [1,1,1,1,0,1,1,1], [0,0,0,1,1,1,0,0]], 
-        [[0,1,0,1,1,1,0,0], [0,1,1,1,1,1,0,0], [0,0,0,1,1,1,0,1], [0,1,0,1,1,1,0,1], [1,1,0,1,1,1,0,1], [0,1,1,1,1,1,0,1], [1,1,1,1,1,1,0,1]], 
+        [null             , [0,1,0,0,0,0,0,0], [0,0,0,1,0,0,0,0], [0,1,0,1,0,0,0,0], [1,1,0,1,0,0,0,0], [0,0,0,0,1,0,0,0], [0,1,0,0,1,0,0,0]], 
+        [[0,1,1,0,1,0,0,0], [0,0,0,1,1,0,0,0], [0,1,0,1,1,0,0,0], [1,1,0,1,1,0,0,0], [0,1,1,1,1,0,0,0], [1,1,1,1,1,0,0,0], [0,0,0,0,0,0,1,0]], 
+        [[0,1,0,0,0,0,1,0], [0,0,0,1,0,0,1,0], [0,1,0,1,0,0,1,0], [1,1,0,1,0,0,1,0], [0,0,0,0,1,0,1,0], [0,1,0,0,1,0,1,0], [0,1,1,0,1,0,1,0]], 
+        [[0,0,0,1,1,0,1,0], [0,1,0,1,1,0,1,0], [1,1,0,1,1,0,1,0], [0,1,1,1,1,0,1,0], [1,1,1,1,1,0,1,0], [0,0,0,1,0,1,1,0], [0,1,0,1,0,1,1,0]], 
+        [[1,1,0,1,0,1,1,0], [0,0,0,1,1,1,1,0], [0,1,0,1,1,1,1,0], [1,1,0,1,1,1,1,0], [0,1,1,1,1,1,1,0], [1,1,1,1,1,1,1,0], [0,0,0,0,1,0,1,1]], 
+        [[0,1,0,0,1,0,1,1], [0,1,1,0,1,0,1,1], [0,0,0,1,1,0,1,1], [0,1,0,1,1,0,1,1], [1,1,0,1,1,0,1,1], [0,1,1,1,1,0,1,1], [1,1,1,1,1,0,1,1]], 
         [[0,0,0,1,1,1,1,1], [0,1,0,1,1,1,1,1], [1,1,0,1,1,1,1,1], [0,1,1,1,1,1,1,1], [1,1,1,1,1,1,1,1], [0,0,0,0,0,0,0,0], null,            ]
     ]
 
@@ -83,6 +83,24 @@ async function loadSprites() {
     logStage('sprite loading done')
 
     return singleSpriteData
+}
+
+function getTileTex(tileSheet, neighbors) {
+    let [
+        d1, o1, d2,
+        o2,     o3,
+        d3, o4, d4
+    ] = neighbors
+
+    // un-neighbored diagnonals have no separate case
+    if (!o1 || !o2) {d1 = 0}
+    if (!o1 || !o3) {d2 = 0}
+    if (!o2 || !o4) {d3 = 0}
+    if (!o3 || !o4) {d4 = 0}
+
+    const combinedNeighbors = [d1, o1, d2, o2, o3, d3, o4, d4]
+
+    return (objSprites[`tile_${tileSheet}_${Object.values(combinedNeighbors)}`] || objSprites[`snow_peas`]).sprite.texture;
 }
 
 function initializeSheetData(spriteSheetMeta) {
