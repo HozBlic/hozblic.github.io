@@ -121,7 +121,7 @@ function drawSoil() {
             for (let x = 0; x < arrGrid_Soil[0].length; x++) {
 
                 if (arrGrid_Soil[y][x]) {
-                    const texture = getTileTex('soil_winter', arrGrid_Soil_Neighbours[y][x])
+                    const texture = getTileTex('soil_spring', arrGrid_Soil_Neighbours[y][x])
 
                     const elemSprite = new PIXI.Sprite(texture);
                     elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
