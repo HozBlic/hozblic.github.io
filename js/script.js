@@ -9,6 +9,7 @@ let bolSelection = true;
 
 
 let objContainer_Background = null;
+let objContainer_Grid = null;
 let objSprite_Background = null;
 
 let objGraphics_Grid = null;
@@ -16,6 +17,7 @@ let objContainer_Collision = null;
 
 let objGraphics_Selection = null;
 let objContainer_Soil = null;
+let objContainer_Grass = null;
 
 let objSprites = null;
 
@@ -29,9 +31,11 @@ const objCanvasDefault = {
     height: objGrid.y * intGridCellSize
 }
 const objZindexes = {
-    background: 0, // image + grid
+    background: 0, // image 
     collision: 1,
     soil: 2,
+    grass: 3,
+    grid: 4,
     selection: 99,
 }
 let intMultiplierCanvas = 1;
@@ -77,9 +81,9 @@ if (1) {
 function convertGridToNeighbours(arrGrid) {
     //clockwise NOT
     const directions = [
-        [-1, -1], [0, -1], [1, -1], 
-        [-1,  0],          [1, 0], 
-        [-1, 1],  [0, 1],  [1, 1]
+        [-1, -1], [0, -1], [1, -1],
+        [-1, 0], [1, 0],
+        [-1, 1], [0, 1], [1, 1]
     ];
 
     let arrNeighbourGrid = [];
@@ -110,8 +114,16 @@ function drawSoil() {
         objContainer_Soil = null;
     }
 
+    if (objContainer_Grass !== null) {
+        objPIXIapp.stage.addChild(objContainer_Grass);
+
+        objContainer_Grass.destroy();
+        objContainer_Grass = null;
+    }
+
     if (objContainer_Soil === null) {
         objContainer_Soil = new PIXI.Container();
+        objContainer_Grass = new PIXI.Container();
         let intSoilTileOffset = 2;
 
         let arrGrid_Soil_Neighbours = convertGridToNeighbours(arrGrid_Soil)
@@ -126,14 +138,28 @@ function drawSoil() {
                     const elemSprite = new PIXI.Sprite(texture);
                     elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
                     objContainer_Soil.addChild(elemSprite);
+                } else if (!checkTileHasCollision({ x: x, y: y })) {
+
+                    if (!arrGrid_Soil_Neighbours[y][x].includes(1)) {
+                        continue;
+                    }
+
+                    const texture = getTileTex('grassautotile_winter', arrGrid_Soil_Neighbours[y][x])
+
+                    const elemSprite = new PIXI.Sprite(texture);
+                    elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
+                    objContainer_Grass.addChild(elemSprite);
                 }
             }
         }
 
         objPIXIapp.stage.addChild(objContainer_Soil);
+        objPIXIapp.stage.addChild(objContainer_Grass);
         objContainer_Soil.zIndex = objZindexes.soil;
+        objContainer_Grass.zIndex = objZindexes.grass;
 
-         objContainer_Soil.scale = intMultiplierCanvas;
+        objContainer_Soil.scale = intMultiplierCanvas;
+        objContainer_Grass.scale = intMultiplierCanvas;
     }
 }
 
@@ -180,12 +206,17 @@ function resizeElements() {
     if (objContainer_Background !== null) {
         objContainer_Background.scale = intMultiplierCanvas;
     }
+    if (objContainer_Grid !== null) {
+        objContainer_Grid.scale = intMultiplierCanvas;
+    }
     if (objGraphics_Selection !== null) {
         objGraphics_Selection.scale = intMultiplierCanvas;
     }
 
     if (objContainer_Soil !== null) {
         objContainer_Soil.scale = intMultiplierCanvas;
+    } if (objContainer_Grass !== null) {
+        objContainer_Grass.scale = intMultiplierCanvas;
     }
 }
 
@@ -218,20 +249,26 @@ function buildGrid() {
 }
 
 function drawGrid() {
+
+    if (objContainer_Grid === null) {
+        objContainer_Grid = new PIXI.Container();
+        objPIXIapp.stage.addChild(objContainer_Grid);
+        objContainer_Grid.zIndex = objZindexes.grid;
+    }
+
+
     if (objGraphics_Grid !== null && !objPresets['grid']) {
-        objContainer_Background.removeChild(objGraphics_Grid);
+        objContainer_Grid.removeChild(objGraphics_Grid);
         objGraphics_Grid.destroy();
         objGraphics_Grid = null;
     }
 
     if (objGraphics_Grid === null && objPresets['grid']) {
         objGraphics_Grid = buildGrid().stroke({ color: 0x808080, pixelLine: true, width: 1 });
-        objContainer_Background.addChild(objGraphics_Grid);
+        objContainer_Grid.addChild(objGraphics_Grid);
     }
 
-    if (objPresets['grid']) {
-        objGraphics_Grid.zIndex = 1;
-    }
+   
 }
 
 function drawCollision() {
@@ -507,7 +544,7 @@ $(document).ready(function () {
         //     objPIXIapp.stage.addChild(objContainer_Soil);
         // }
 
-        resize(4);
+        resize(1);
         objPIXIapp.resize();
     })();
 
