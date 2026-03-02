@@ -3,20 +3,21 @@ let objPresets = {
     'grid': true,
     'collision': true,
 }
-let arrCollision = null;
 
-let strSeason = 'spring';
-
-let containerBackground = null;
-
-let elemGrid = null;
-let elemCollision = null;
+let arrCollisionGrid = null;
 let bolSelection = true;
-let elemSelection = null;
-let elemBackground = null;
 
 
-let containerSprites = null;
+let objContainer_Background = null;
+let objSprite_Background = null;
+
+let objGraphics_Grid = null;
+let objContainer_Collision = null;
+
+let objGraphics_Selection = null;
+let objContainer_Soil = null;
+
+let objSprites = null;
 
 const objGrid = {
     x: 138,
@@ -27,29 +28,159 @@ const objCanvasDefault = {
     width: objGrid.x * intGridCellSize,
     height: objGrid.y * intGridCellSize
 }
+const objZindexes = {
+    background: 0, // image + grid
+    collision: 1,
+    soil: 2,
+    selection: 99,
+}
 let intMultiplierCanvas = 1;
 
-
 let bolIsDragging = false;
-let objStartCell = {
+let objStartCellCoord = {
     x: 0,
     y: 0
 };
 
-let app;
-let containerDiv;
+let objPIXIapp;
+let objPlannerDiv;
 
-function getMousePosition(event) {
+let arrGrid_Soil = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
 
-    const rect = app.canvas.getBoundingClientRect();
+if (1) {
+    //add test soil in front of the house
 
-    let scaleX = app.screen.width / rect.width;
-    let scaleY = app.screen.height / rect.height;
+    let intRows = 7;
+    let intColumns = 9
+
+    // starting point is {x: 736, y: 368} / 16
+    let intStartX = 736 / intGridCellSize;
+    let intStartY = 368 / intGridCellSize;
+
+    for (let y = 0; y < intRows; y++) {
+        // let arrFilledGrid_Row = [];
+        for (let x = 0; x < intColumns; x++) {
+            switch (true) {
+                case (y == 0 && x == 0):
+                case (y == 0 && x == intColumns - 1):
+                case (y == intRows - 1 && x == 0):
+                case (y == intRows - 1 && x == intColumns - 1):
+                    break;
+                default:
+                    arrGrid_Soil[intStartY + y][intStartX + x] = 1;
+                    break;
+            }
+        }
+    }
+}
+
+function convertGridToNeighbours(arrGrid) {
+    //clockwise
+    const directions = [
+        [-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]
+    ];
+
+    let arrNeighbourGrid = [];
+    for (let row = 0; row < arrGrid.length; row++) {
+        let arrNeighbourGrid_row = [];
+        for (let col = 0; col < arrGrid[0].length; col++) {
+
+            let arrNeighbourGrid_current = [];
+
+            directions.forEach(([dx, dy]) => {
+                const newRow = row + dx;
+                const newCol = col + dy;
+
+                arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] || 0)
+            });
+            arrNeighbourGrid_row.push(arrNeighbourGrid_current.join(','))
+        }
+        arrNeighbourGrid.push(arrNeighbourGrid_row)
+    }
+
+    return arrNeighbourGrid;
+}
+function drawSoil() {
+    if (objContainer_Soil !== null) {
+        objPIXIapp.stage.addChild(objContainer_Soil);
+
+        objContainer_Soil.destroy();
+        objContainer_Soil = null;
+    }
+
+    if (objContainer_Soil === null) {
+        objContainer_Soil = new PIXI.Container();
+        let intSoilTileOffset = 2;
+
+        let arrGrid_Soil_Neighbours = convertGridToNeighbours(arrGrid_Soil)
+
+
+        for (let y = 0; y < arrGrid_Soil.length; y++) {
+            for (let x = 0; x < arrGrid_Soil[0].length; x++) {
+
+                if (arrGrid_Soil[y][x]) {
+                    let strNeigbours = arrGrid_Soil_Neighbours[y][x];
+
+                    switch (strNeigbours) {
+                        case '0,0,0,1,1,1,1,0':
+                            strNeigbours = '0,0,0,1,1,1,0,0';
+                            break;
+                        case '0,0,0,0,1,1,1,1':
+                            strNeigbours = '0,0,0,0,0,1,1,1';
+                            break;
+                        case '0,0,1,1,1,1,0,0':
+                            strNeigbours = '0,0,0,1,1,1,0,0';
+                            break;
+                        case '1,0,0,0,0,1,1,1':
+                            strNeigbours = '0,0,0,0,0,1,1,1';
+                            break;
+                        case '0,1,1,1,1,0,0,0': //nav pareizs
+                            strNeigbours = '0,1,1,1,0,0,0,0';
+                            break;
+                        case '1,1,0,0,0,0,1,1': //nav pareizs
+                            strNeigbours = '1,1,0,0,0,0,0,1';
+                            break;
+                        case '1,1,1,1,0,0,0,0': //nav pareizs
+                            strNeigbours = '0,1,1,1,0,0,0,0';
+                            break;
+                        case '1,1,1,0,0,0,0,1': //nav pareizs
+                            strNeigbours = '1,1,0,0,0,0,0,1';
+                            break;
+                    }
+
+                    if (typeof objSprites[`tile_soil_spring_${strNeigbours}`] === 'undefined') {
+                           strNeigbours = '0,0,0,1,1,1,0,0';
+                    }
+
+                    let texture = objSprites[`tile_soil_spring_${strNeigbours}`].sprite.texture;
+                    let elemSprite = new PIXI.Sprite(texture);
+                    elemSprite.position.set(x * intGridCellSize - intSoilTileOffset, y * intGridCellSize - intSoilTileOffset);
+                    objContainer_Soil.addChild(elemSprite);
+                }
+            }
+        }
+
+        objPIXIapp.stage.addChild(objContainer_Soil);
+        objContainer_Soil.zIndex = objZindexes.soil;
+    }
+}
+
+function getClickedCell(event) {
+
+    const rect = objPIXIapp.canvas.getBoundingClientRect();
+
+    let scaleX = objPIXIapp.screen.width / rect.width;
+    let scaleY = objPIXIapp.screen.height / rect.height;
 
     let x = (event.clientX - rect.left) * scaleX / intMultiplierCanvas;
     let y = (event.clientY - rect.top) * scaleY / intMultiplierCanvas;
 
-    return { x: x, y: y };
+    let objCell = {
+        x: Math.floor(x / intGridCellSize),
+        y: Math.floor(y / intGridCellSize),
+    }
+
+    return objCell;
 }
 
 function calculateMultiplier(intForcedMultiplier = false) {
@@ -67,22 +198,22 @@ function calculateMultiplier(intForcedMultiplier = false) {
 function resize(intForcedMultiplier = false) {
     calculateMultiplier(intForcedMultiplier);
 
-    containerDiv.style.width = `${objCanvasDefault.width * intMultiplierCanvas}px`;
-    containerDiv.style.height = `${objCanvasDefault.height * intMultiplierCanvas}px`;
+    objPlannerDiv.style.width = `${objCanvasDefault.width * intMultiplierCanvas}px`;
+    objPlannerDiv.style.height = `${objCanvasDefault.height * intMultiplierCanvas}px`;
 
     resizeElements();
 }
 
 function resizeElements() {
-    if (containerBackground !== null) {
-        containerBackground.scale = intMultiplierCanvas;
+    if (objContainer_Background !== null) {
+        objContainer_Background.scale = intMultiplierCanvas;
     }
-    if (elemSelection !== null) {
-        elemSelection.scale = intMultiplierCanvas;
+    if (objGraphics_Selection !== null) {
+        objGraphics_Selection.scale = intMultiplierCanvas;
     }
 
-    if (containerSprites !== null) {
-        containerSprites.scale = intMultiplierCanvas;
+    if (objContainer_Soil !== null) {
+        objContainer_Soil.scale = intMultiplierCanvas;
     }
 }
 
@@ -115,41 +246,41 @@ function buildGrid() {
 }
 
 function drawGrid() {
-    if (elemGrid !== null && !objPresets['grid']) {
-        containerBackground.removeChild(elemGrid);
-        elemGrid.destroy();
-        elemGrid = null;
+    if (objGraphics_Grid !== null && !objPresets['grid']) {
+        objContainer_Background.removeChild(objGraphics_Grid);
+        objGraphics_Grid.destroy();
+        objGraphics_Grid = null;
     }
 
-    if (elemGrid === null && objPresets['grid']) {
-        elemGrid = buildGrid().stroke({ color: 0x808080, pixelLine: true, width: 1 });
-        containerBackground.addChild(elemGrid);
+    if (objGraphics_Grid === null && objPresets['grid']) {
+        objGraphics_Grid = buildGrid().stroke({ color: 0x808080, pixelLine: true, width: 1 });
+        objContainer_Background.addChild(objGraphics_Grid);
     }
 
     if (objPresets['grid']) {
-        elemGrid.zIndex = 2;
+        objGraphics_Grid.zIndex = 1;
     }
 }
 
 function drawCollision() {
 
-    if (elemCollision !== null && !objPresets['collision']) {
-        containerBackground.removeChild(elemCollision);
-        elemCollision.destroy();
-        elemCollision = null;
+    if (objContainer_Collision !== null && !objPresets['collision']) {
+        objContainer_Background.removeChild(objContainer_Collision);
+        objContainer_Collision.destroy();
+        objContainer_Collision = null;
     }
 
-    if (elemCollision === null && objPresets['collision']) {
-        elemCollision = new PIXI.Container();
+    if (objContainer_Collision === null && objPresets['collision']) {
+        objContainer_Collision = new PIXI.Container();
         let intCellSize = intGridCellSize / 2;
 
-        for (var y = 0; y < arrCollision.length; y++) {
-            for (var x = 0; x < arrCollision[y].length; x++) {
-                if (arrCollision[y][x]) {
+        for (var y = 0; y < arrCollisionGrid.length; y++) {
+            for (var x = 0; x < arrCollisionGrid[y].length; x++) {
+                if (arrCollisionGrid[y][x]) {
                     let elemCollisionChild = new PIXI.Graphics();
                     elemCollisionChild.rect(x * intCellSize, y * intCellSize, intCellSize, intCellSize);
 
-                    switch (arrCollision[y][x]) {
+                    switch (arrCollisionGrid[y][x]) {
                         // case 2:
                         //     elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
                         //     break;
@@ -162,76 +293,131 @@ function drawCollision() {
                         default:
                             elemCollisionChild.fill(`rgba(255,0,0,0.3)`);
                     }
-                    elemCollision.addChild(elemCollisionChild);
+                    objContainer_Collision.addChild(elemCollisionChild);
                 }
             }
         }
 
-        containerBackground.addChild(elemCollision);
+        objContainer_Background.addChild(objContainer_Collision);
     }
 
     if (objPresets['collision']) {
 
-        elemCollision.zIndex = 1;
+        objContainer_Collision.zIndex = objZindexes.collision;
     }
 }
 
 async function addBackground() {
 
-    if (elemBackground !== null) {
-        containerBackground.removeChild(elemBackground);
-        elemBackground.destroy();
-        elemBackground = null;
+    if (objContainer_Background === null) {
+        objContainer_Background = new PIXI.Container();
+        objPIXIapp.stage.addChild(objContainer_Background);
+        objContainer_Background.zIndex = objZindexes.background;
     }
 
-    if (elemBackground === null) {
+    if (objSprite_Background !== null) {
+        objContainer_Background.removeChild(objSprite_Background);
+        objSprite_Background.destroy();
+        objSprite_Background = null;
+    }
 
+    if (objSprite_Background === null) {
         let backgroundTexture = await PIXI.Assets.load(`textures/rooms/rm_farm_${objPresets['season']}.png`);
         backgroundTexture.source.scaleMode = 'nearest';
 
-        elemBackground = new PIXI.Sprite(backgroundTexture);
-        containerBackground.addChild(elemBackground);
+        objSprite_Background = new PIXI.Sprite(backgroundTexture);
+        objContainer_Background.addChild(objSprite_Background);
 
-
-        elemBackground.zIndex = 0;
+        objSprite_Background.zIndex = 0;
     }
 }
 
-function drawSelection(x, y) {
+function drawSelection(objCellCoord) {
     //might be useful new Rectangle(100, 100, 200, 150);
 
-    if (bolSelection) {
-        if (elemSelection !== null) {
-            app.stage.removeChild(elemSelection);
-            elemSelection.destroy();
-            elemSelection = null;
+    if (!bolSelection) return;
 
-            if (!bolIsDragging) return;
-        }
+    if (objGraphics_Selection !== null) {
+        objPIXIapp.stage.removeChild(objGraphics_Selection);
+        objGraphics_Selection.destroy();
+        objGraphics_Selection = null;
 
-        elemSelection = new PIXI.Graphics();
-
-        let objCurrentCell = {
-            x: Math.floor(x / intGridCellSize) * intGridCellSize,
-            y: Math.floor(y / intGridCellSize) * intGridCellSize,
-        }
-
-        let objSelectionCell = {
-            x1: Math.min(objStartCell.x, objCurrentCell.x),
-            y1: Math.min(objStartCell.y, objCurrentCell.y),
-            x2: Math.max(objStartCell.x, objCurrentCell.x),
-            y2: Math.max(objStartCell.y, objCurrentCell.y),
-        }
-
-        elemSelection.rect(objSelectionCell.x1, objSelectionCell.y1, objSelectionCell.x2 - objSelectionCell.x1 + intGridCellSize, objSelectionCell.y2 - objSelectionCell.y1 + intGridCellSize);
-        elemSelection.fill(`rgba(255, 174, 0, 0.3)`);
-        elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
-
-
-        app.stage.addChild(elemSelection);
-        elemSelection.scale = intMultiplierCanvas
-
+        if (!bolIsDragging) return;
     }
+
+    objGraphics_Selection = new PIXI.Graphics();
+
+    const objSelection = {
+        x0: Math.min(objStartCellCoord.x, objCellCoord.x),
+        y0: Math.min(objStartCellCoord.y, objCellCoord.y),
+        x1: Math.max(objStartCellCoord.x, objCellCoord.x),
+        y1: Math.max(objStartCellCoord.y, objCellCoord.y),
+    }
+
+    const objRectanglePx = {
+        x: objSelection.x0 * intGridCellSize,
+        y: objSelection.y0 * intGridCellSize,
+        w: (objSelection.x1 - objSelection.x0) * intGridCellSize + intGridCellSize,
+        h: (objSelection.y1 - objSelection.y0) * intGridCellSize + intGridCellSize,
+    }
+
+    objGraphics_Selection.rect(objRectanglePx.x, objRectanglePx.y, objRectanglePx.w, objRectanglePx.h);
+    objGraphics_Selection.fill(`rgba(255, 174, 0, 0.3)`);
+    objGraphics_Selection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
+
+    objPIXIapp.stage.addChild(objGraphics_Selection);
+    objGraphics_Selection.scale = intMultiplierCanvas
+    objGraphics_Selection.zIndex = objZindexes.selection;
+}
+
+const slice2D = (arr, startX, endX, startY, endY) => {
+    return arr.slice(startY, endY).map(subArr => subArr.slice(startX, endX))
+}
+
+function updateSoilGrid(objCellCoord) {
+
+    if (!bolIsDragging) return;
+
+    const objSelection = {
+        x0: Math.min(objStartCellCoord.x, objCellCoord.x),
+        y0: Math.min(objStartCellCoord.y, objCellCoord.y),
+        x1: Math.max(objStartCellCoord.x, objCellCoord.x),
+        y1: Math.max(objStartCellCoord.y, objCellCoord.y),
+    }
+
+    const arrGrid_SoilSlice = slice2D(arrGrid_Soil, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1)
+    const arrGrid_SoilSliceValues = arrGrid_SoilSlice.flat()
+
+    if (arrGrid_SoilSliceValues.includes(0)) {
+        //add only
+        for (let y = objSelection.y0; y <= objSelection.y1; y++) {
+            for (let x = objSelection.x0; x <= objSelection.x1; x++) {
+                if (!checkTileHasCollision({ x: x, y: y })) {
+                    arrGrid_Soil[y][x] = 1
+                }
+            }
+        }
+    } else {
+        //remove only
+        for (let y = objSelection.y0; y <= objSelection.y1; y++) {
+            arrGrid_Soil[y].fill(0, objSelection.x0, objSelection.x1 + 1)
+        }
+    }
+    drawSoil();
+}
+
+function checkTileHasCollision(objCell) {
+    const objSelection = {
+        x0: objCell.x * 2,
+        y0: objCell.y * 2,
+        x1: objCell.x * 2 + 1,
+        y1: objCell.y * 2 + 1,
+    }
+
+    const arrGrid_CollisionSlice = slice2D(arrCollisionGrid, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
+    const setGrid_CollisionSliceValues = new Set(arrGrid_CollisionSlice.flat())
+
+    return (setGrid_CollisionSliceValues.size === 1 && setGrid_CollisionSliceValues.has(0)) ? false : true;
 }
 
 
@@ -258,226 +444,99 @@ $(document).ready(function () {
     });
 
     (async () => {
-        arrCollision = await (await fetch('textures/collision.json')).json()
+        arrCollisionGrid = await (await fetch('textures/collision.json')).json()
 
-        containerDiv = document.querySelector('#game-container');
+        objPlannerDiv = document.querySelector('#game-container');
 
         // Create a new application
-        app = new PIXI.Application();
+        objPIXIapp = new PIXI.Application();
 
         // Initialize the application
-        await app.init({ backgroundAlpha: 0, antialias: false, resizeTo: containerDiv });
+        await objPIXIapp.init({ backgroundAlpha: 0, antialias: false, resizeTo: objPlannerDiv });
 
         // Append the application canvas to the document body
-        containerDiv.appendChild(app.canvas);
+        objPlannerDiv.appendChild(objPIXIapp.canvas);
+
+        //load sprites
+        objSprites = await loadSprites();
+
+        objPIXIapp.stage.eventMode = 'static';
+        objPIXIapp.stage.hitArea = objPIXIapp.screen;
+
+        objPIXIapp.sortableChildren = true;
 
 
-        app.stage.eventMode = 'static';
-        app.stage.hitArea = app.screen;
-
-        app.sortableChildren = true;
-
-        app.stage.on('pointerdown', (e) => {
+        // clicking and dragging
+        objPIXIapp.stage.on('pointerdown', (e) => {
             bolIsDragging = true;
-            let objMouseLocation = getMousePosition(e);
 
-            objStartCell = {
-                x: Math.floor(objMouseLocation.x / intGridCellSize) * intGridCellSize,
-                y: Math.floor(objMouseLocation.y / intGridCellSize) * intGridCellSize,
-            }
 
-            console.log(objStartCell)
-
-            drawSelection(objMouseLocation.x, objMouseLocation.y)
+            objStartCellCoord = getClickedCell(e)
+            drawSelection(objStartCellCoord)
+            // updateSoilGrid(objStartCellCoord)
         });
 
-        app.stage.on('pointermove', (e) => {
-
+        objPIXIapp.stage.on('pointermove', (e) => {
             if (bolIsDragging) {
-                let objMouseLocation = getMousePosition(e);
+                drawSelection(getClickedCell(e))
 
-                drawSelection(objMouseLocation.x, objMouseLocation.y)
             }
         });
 
-        app.stage.on('pointerup', (e) => {
+        objPIXIapp.stage.on('pointerup', (e) => {
+            updateSoilGrid(getClickedCell(e))
+
+
             bolIsDragging = false;
-            // drawMap();
-            objStartCell = {
+
+
+
+            objStartCellCoord = {
+                x: 0,
+                y: 0
+            };
+            drawSelection();
+
+        });
+
+        objPIXIapp.stage.on('pointerupoutside', (e) => {
+            bolIsDragging = false;
+            objStartCellCoord = {
                 x: 0,
                 y: 0
             };
             drawSelection();
         });
 
-        app.stage.on('pointerupoutside', (e) => {
-            bolIsDragging = false;
-            // drawMap();
-            objStartCell = {
-                x: 0,
-                y: 0
-            };
-            drawSelection();
-        });
 
         // let count = 0;
         // // Listen for animate update
-        // app.ticker.add((time) => {
+        // objPIXIapp.ticker.add((time) => {
         //     count += 0.01;
-        //     elemGrid.scale = 1 + (Math.sin(count) + 1) * 2;
+        //     objGraphics_Grid.scale = 1 + (Math.sin(count) + 1) * 2;
         // });
-
-
-        containerBackground = new PIXI.Container();
-        app.stage.addChild(containerBackground);
 
 
         addBackground();
         drawGrid();
         drawCollision();
-
-
-        const sprites = await loadSprites();
+        drawSoil();
 
         // console.log(sprites)
         // console.log(sprites['snow_peas'])
 
-        // if (containerSprites === null) {
-        //     containerSprites = new PIXI.Container();
+        // if (objContainer_Soil === null) {
+        //     objContainer_Soil = new PIXI.Container();
 
         //     let elemSprite = sprites['snow_peas'].sprite;
-        //     containerSprites.addChild(elemSprite);
+        //     objContainer_Soil.addChild(elemSprite);
         //     // elemSprite.scale = 1
 
-        //     app.stage.addChild(containerSprites);
+        //     objPIXIapp.stage.addChild(objContainer_Soil);
         // }
 
-
-        if (containerSprites === null) {
-            containerSprites = new PIXI.Container();
-
-            //tile_soil_spring_0,0,0,1,1,1,1,0
-            // let elemSprite = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite;
-
-            // elemSprite.position.set(752, 368);
-
-            // containerSprites.addChild(elemSprite);
-            // elemSprite.scale = 20;
-
-            let intSoilTileOffset = 2;
-
-            let x0 = 736;
-            let y0 = 368;
-
-            let intRows = 7;
-            let intColumns = 9
-
-            // let texture_full = sprites['tile_soil_spring_1,1,1,1,1,1,1,1'].sprite.texture;
-            // let texture = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite.texture;
-            // let texture = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite.texture;
-            // let texture = sprites['tile_soil_spring_0,0,0,1,1,1,0,0'].sprite.texture;
-
-            let arrFilledGrid = [];
-            for (let y = 0; y < intRows; y++) {
-                let arrFilledGrid_Row = [];
-                for (let x = 0; x < intColumns; x++) {
-                    switch (true) {
-                        case (y == 0 && x == 0):
-                        case (y == 0 && x == intColumns - 1):
-                        case (y == intRows - 1 && x == 0):
-                        case (y == intRows - 1 && x == intColumns - 1):
-                            arrFilledGrid_Row.push(0);
-                            break;
-                        default:
-                            arrFilledGrid_Row.push(1);
-                            break;
-                    }
-                }
-                arrFilledGrid.push(arrFilledGrid_Row)
-            }
-
-            // 8 directions 
-
-            const directions = [
-                [-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]
-            ];
-
-            let arrNeighbourGrid = [];
-            for (let row = 0; row < intRows; row++) {
-                let arrNeighbourGrid_row = [];
-                for (let col = 0; col < intColumns; col++) {
-
-                    let arrNeighbourGrid_current = [];
-
-                    directions.forEach(([dx, dy]) => {
-                        const newRow = row + dx;
-                        const newCol = col + dy;
-
-                        arrNeighbourGrid_current.push(arrFilledGrid[newRow]?.[newCol] || 0)
-                    });
-                    arrNeighbourGrid_row.push(arrNeighbourGrid_current.join(','))
-                }
-                arrNeighbourGrid.push(arrNeighbourGrid_row)
-            }
-
-            for (let y = 0; y < intRows; y++) {
-                for (let x = 0; x < intColumns; x++) {
-                    console.log(x, y)
-                    if (arrFilledGrid[y][x]) {
-
-                        console.log(arrNeighbourGrid[y][x])
-                        let strNeigbours = arrNeighbourGrid[y][x];
-
-                        switch (strNeigbours) {
-                            case '0,0,0,1,1,1,1,0':
-                                strNeigbours = '0,0,0,1,1,1,0,0';
-                                console.log('change')
-                                break;
-                            case '0,0,0,0,1,1,1,1': 
-                                strNeigbours = '0,0,0,0,0,1,1,1';
-                                console.log('change')
-                                break;
-                            case '0,0,1,1,1,1,0,0':
-                                strNeigbours = '0,0,0,1,1,1,0,0';
-                                console.log('change')
-                                break;
-                            case '1,0,0,0,0,1,1,1': 
-                                strNeigbours = '0,0,0,0,0,1,1,1';
-                                console.log('change')
-                                break;
-                            case '0,1,1,1,1,0,0,0': //nav pareizs
-                                strNeigbours = '0,1,1,1,0,0,0,0';
-                                console.log('change')
-                                break;
-                            case '1,1,0,0,0,0,1,1': //nav pareizs
-                                strNeigbours = '1,1,0,0,0,0,0,1';
-                                console.log('change')
-                                break;
-                            case '1,1,1,1,0,0,0,0': //nav pareizs
-                                strNeigbours = '0,1,1,1,0,0,0,0';
-                                console.log('change')
-                                break;
-                            case '1,1,1,0,0,0,0,1': //nav pareizs
-                                strNeigbours = '1,1,0,0,0,0,0,1';
-                                console.log('change')
-                                break;
-
-                        }
-
-                        let texture = sprites[`tile_soil_spring_${strNeigbours}`].sprite.texture;
-                        let elemSprite = new PIXI.Sprite(texture);
-                        elemSprite.position.set( x0 + x * intGridCellSize - intSoilTileOffset, y0 + y * intGridCellSize - intSoilTileOffset);
-                        containerSprites.addChild(elemSprite);
-                    }
-                }
-            }
-
-          
-            app.stage.addChild(containerSprites);
-        }
-
         resize(1);
-        app.resize();
+        objPIXIapp.resize();
     })();
 
 });
