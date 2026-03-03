@@ -6,6 +6,8 @@ let objPresets = {
     'wet': false,
 }
 
+let arrFenceCoord = null;
+
 let arrCollisionGrid = null;
 let bolSelection = true;
 
@@ -27,6 +29,7 @@ let objGroundContainers = {
     grass: null,
 }
 let objContainer_Crops = null;
+let objContainer_Fence = null;
 
 let sprites = null;
 
@@ -49,7 +52,9 @@ const objZindexes = {
 
     'grid': 6,
 
-    'crops': 7,
+    'fence': 7,
+
+    'crops': 8,
 
     'selection': 99,
 }
@@ -260,6 +265,11 @@ function resizeElements() {
     if (objContainer_Crops !== null) {
         objContainer_Crops.scale = intMultiplierCanvas;
     }
+    if (objContainer_Fence !== null) {
+        objContainer_Fence.scale = intMultiplierCanvas;
+    }
+
+
 }
 
 function buildGrid() {
@@ -358,6 +368,31 @@ function drawCollision() {
     }
 }
 
+function drawFence() {
+
+    // sprites.get(strCropSpriteKey);
+    // arrFenceCoord
+
+    if (objContainer_Fence !== null) {
+        objPIXIapp.stage.addChild(objContainer_Fence);
+
+        objContainer_Fence.destroy();
+        objContainer_Fence = null;
+    }
+    objContainer_Fence = new PIXI.Container();
+
+    arrFenceCoord.forEach((objCoord) => {
+        const elemSprite = sprites.get('snow_peas');
+        elemSprite.position.set(objCoord.x * intGridCellSize, objCoord.y * intGridCellSize);
+        objContainer_Fence.addChild(elemSprite);
+    });
+
+
+    objPIXIapp.stage.addChild(objContainer_Fence);
+    objContainer_Fence.zIndex = objZindexes.fence;
+    objContainer_Fence.scale = intMultiplierCanvas;
+}
+
 async function addBackground() {
 
     if (objContainer_Background === null) {
@@ -373,7 +408,7 @@ async function addBackground() {
     }
 
     if (objSprite_Background === null) {
-        let backgroundTexture = await PIXI.Assets.load(`textures/rooms/rm_farm_${objPresets['season']}.png`);
+        let backgroundTexture = await PIXI.Assets.load(`textures/rooms/rm_farm_${objPresets['season']}_0.png`);
         backgroundTexture.source.scaleMode = 'nearest';
 
         objSprite_Background = new PIXI.Sprite(backgroundTexture);
@@ -578,23 +613,7 @@ function drawCrops() {
 
                 const elemSprite = sprites.get(strCropSpriteKey);
 
-                var intOffsetX = 0;
-                var intOffsetY = 0;
-
-                // if (strCropSpriteKey == 'tea') {
-                //     intOffsetX = Math.ceil((elemSprite.getSize().width - intGridCellSize) / 2)
-                //     intOffsetY = elemSprite.getSize().height - intGridCellSize + intGridCellSize / 2 - 2
-                // } else {
-                //     intOffsetX = Math.ceil((elemSprite.getSize().width - intGridCellSize) / 2) -1
-                //     intOffsetY = elemSprite.getSize().height - intGridCellSize + intGridCellSize / 2 - 1
-                // }
-
-
-                console.log(strCropSpriteKey)
-                console.log(elemSprite.getSize())
-                console.log(intOffsetX, intOffsetY)
-
-                elemSprite.position.set(x * intGridCellSize - intOffsetX, y * intGridCellSize - intOffsetY);
+                elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                 objContainer_Crops.addChild(elemSprite);
             }
         }
@@ -652,6 +671,7 @@ $(document).ready(function () {
 
     (async () => {
         arrCollisionGrid = await (await fetch('textures/collision.json')).json()
+        arrFenceCoord = await (await fetch('textures/fences.json')).json()
 
         objPlannerDiv = document.querySelector('#game-container');
 
@@ -720,6 +740,7 @@ $(document).ready(function () {
         addBackground();
         drawGrid();
         drawCollision();
+        drawFence();
 
         drawSoil();
         drawCrops();
