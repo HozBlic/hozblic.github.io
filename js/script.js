@@ -375,7 +375,7 @@ function sortItems() {
     if ($(`#scraped .category`).length) {
         $(`#scraped .category`).each(function () {
             let intCategoryID = $(this).attr('id').replace('category_', '');
-            if (objMistriaData.favorites.has(`${objMistriaData.tab}_${intCategoryID}`)) {
+            if (objMistriaData.favorites.has(`${intCategoryID}`)) {
                 $(this).css('order', 0);
             }
         });
@@ -970,7 +970,7 @@ function loadScrapedTab(strTab) {
 
         $divCategory.append(` 
             <div class="favorite_cbx_wrap">
-                <input type="checkbox" ${objMistriaData.favorites.has(`${strTab}_${strCatgoryKey}`) ? 'checked' : ''} class="favorite_cbx" id="favorite_category_${strCatgoryKey}" name="${strTab}" value="${strTab}_${strCatgoryKey}" />
+                <input type="checkbox" ${objMistriaData.favorites.has(`${strCatgoryKey}`) ? 'checked' : ''} class="favorite_cbx" id="favorite_category_${strCatgoryKey}" name="${strTab}" value="${strCatgoryKey}" />
                 <label class="label_favorite_cbx" for="favorite_category_${strCatgoryKey}"></label>
             </div>
         `);
