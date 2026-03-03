@@ -28,7 +28,7 @@ let objGroundContainers = {
 }
 let objContainer_Crops = null;
 
-let objSprites = null;
+let sprites = null;
 
 const objGrid = {
     x: 138,
@@ -481,24 +481,22 @@ function drawSoil() {
             if (arrGrid_Soil[y][x]) {
                 switch (arrGrid_Soil[y][x]) {
                     case 1: //ground
-                        const textureGround = objSprites['tile_main_exteriors_winter'].sprite.texture;
-                        const elemSpriteGround = new PIXI.Sprite(textureGround);
+                        const elemSpriteGround = sprites.get('tile_main_exteriors_summer');
                         elemSpriteGround.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['ground'].addChild(elemSpriteGround);
                         break;
                     case 2: //tilled
-                        const textureTilled = getSoilTex('soil_winter', arrGridNeighbours_Soil[y][x])
-                        const elemSpriteTilled = new PIXI.Sprite(textureTilled);
+                        const elemSpriteTilled = sprites.getSoil('soil_summer', arrGridNeighbours_Soil[y][x])
                         elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['soil'].addChild(elemSpriteTilled);
                         break;
                     case 3: //tilled wet
-                        const texture = getSoilTex('soil_winter', arrGridNeighbours_Soil[y][x])
-                        const elemSprite = new PIXI.Sprite(texture);
+                        const elemSprite = sprites.getSoil('soil_summer', arrGridNeighbours_Soil[y][x])
+                        // elemSprite.anchor.set(0.5)
                         elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['soil'].addChild(elemSprite);
 
-                        const textureWet = getSoilTex('soil_wet_winter', arrGridNeighbours_Wet[y][x])
+                        const textureWet = sprites.getSoil('soil_wet_summer', arrGridNeighbours_Wet[y][x])
                         const elemSpriteWet = new PIXI.Sprite(textureWet);
                         elemSpriteWet.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['soilWet'].addChild(elemSpriteWet);
@@ -509,7 +507,7 @@ function drawSoil() {
                 if (!arrGridNeighbours[y][x].includes(1)) {
                     continue;
                 }
-                const texture = getGrassTex('grassautotile_winter', arrGridNeighbours[y][x])
+                const texture = sprites.getGrass('grassautotile_summer', arrGridNeighbours[y][x])
                 const elemSprite = new PIXI.Sprite(texture);
                 elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                 objGroundContainers['grass'].addChild(elemSprite);
@@ -578,20 +576,18 @@ function drawCrops() {
 
             if (strCropSpriteKey && !checkTileHasCollision({ x: x, y: y })) {
 
-                const texture = objSprites[strCropSpriteKey].sprite.texture;
-                const elemSprite = new PIXI.Sprite(texture);
-                // elemSprite.anchor.set({ x: 0, y: 1})
+                const elemSprite = sprites.get(strCropSpriteKey);
 
-                var intOffsetX;
-                var intOffsetY;
+                var intOffsetX = 0;
+                var intOffsetY = 0;
 
-                if (strCropSpriteKey == 'tea') {
-                    intOffsetX = Math.ceil((elemSprite.getSize().width - intGridCellSize) / 2)
-                    intOffsetY = elemSprite.getSize().height - intGridCellSize + intGridCellSize / 2 - 2
-                } else {
-                    intOffsetX = Math.ceil((elemSprite.getSize().width - intGridCellSize) / 2) -1
-                    intOffsetY = elemSprite.getSize().height - intGridCellSize + intGridCellSize / 2 - 1
-                }
+                // if (strCropSpriteKey == 'tea') {
+                //     intOffsetX = Math.ceil((elemSprite.getSize().width - intGridCellSize) / 2)
+                //     intOffsetY = elemSprite.getSize().height - intGridCellSize + intGridCellSize / 2 - 2
+                // } else {
+                //     intOffsetX = Math.ceil((elemSprite.getSize().width - intGridCellSize) / 2) -1
+                //     intOffsetY = elemSprite.getSize().height - intGridCellSize + intGridCellSize / 2 - 1
+                // }
 
 
                 console.log(strCropSpriteKey)
@@ -668,8 +664,8 @@ $(document).ready(function () {
         // Append the application canvas to the document body
         objPlannerDiv.appendChild(objPIXIapp.canvas);
 
-        //load sprites
-        objSprites = await loadSprites();
+        //load textures
+        sprites = await SpriteStore.getInstance();
 
         objPIXIapp.stage.eventMode = 'static';
         objPIXIapp.stage.hitArea = objPIXIapp.screen;
