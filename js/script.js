@@ -232,28 +232,6 @@ $('.item').each(function () {
     }
 });
 
-//get rid of old data storing system
-var arrCheckboxes = localStorage.getItem('mistria_chb');
-var arrOptions = localStorage.getItem('mistria_options');
-var strSort = localStorage.getItem('mistria_sort');
-if (arrCheckboxes !== null || arrOptions !== null || strSort !== null) {
-    var objMistriaDataTemp = {};
-
-    if (arrCheckboxes !== null) {
-        objMistriaDataTemp.gifts = [...new Set(JSON.parse(arrCheckboxes))];
-        localStorage.removeItem("mistria_chb");
-    }
-    if (arrOptions !== null) {
-        objMistriaDataTemp.options = [...new Set(JSON.parse(arrOptions))];
-        localStorage.removeItem('mistria_options');
-    }
-    if (strSort !== null) {
-        objMistriaDataTemp.sort = strSort;
-        localStorage.removeItem('mistria_sort');
-    }
-    localStorage.setItem('mistria_data', JSON.stringify(objMistriaDataTemp));
-}
-
 var objDataWrapped = JSON.parse(localStorage.getItem('mistria_wrapped'));
 if (objDataWrapped === null) {
     objDataWrapped = objDataWrappedDummy;
@@ -385,12 +363,21 @@ function changeSort(objElem) {
 }
 
 function sortItems() {
-    $(`#scraped .sortable`).css('order', '');
+    $(`#scraped .sortable`).css('order', 1);
 
     if (typeof (objMistriaData.sort) !== undefined && $(`#scraped .sortable[data-sort-${objMistriaData.sort}]`).length) {
         $(`#scraped .sortable[data-sort-${objMistriaData.sort}]`).each(function () {
             let intSortIndex = $(this).attr(`data-sort-${objMistriaData.sort}`);
             $(this).css('order', intSortIndex);
+        });
+    }
+
+    if ($(`#scraped .category`).length) {
+        $(`#scraped .category`).each(function () {
+            let intCategoryID = $(this).attr('id').replace('category_', '');
+            if (objMistriaData.favorites.has(`${objMistriaData.tab}_${intCategoryID}`)) {
+                $(this).css('order', 0);
+            }
         });
     }
 }
@@ -412,6 +399,7 @@ function compareData(strJson) {
         }
     });
     objOldData.options = [...objMistriaData.options];
+    objOldData.favorites = [...objMistriaData.favorites];
     if ('sort' in objMistriaData) {
         objOldData.sort = objMistriaData.sort;
     }
@@ -573,6 +561,7 @@ function saveJson() {
                 }
             });
             objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set(objMistriaDataDefault.options));
+            objMistriaData.favorites = ('favorites' in objMistriaData ? new Set(objMistriaData.favorites) : new Set());
 
             saveData();
             window.location.reload();
@@ -672,6 +661,8 @@ function loadData() {
         }
     });
     objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set(objMistriaDataDefault.options));
+    objMistriaData.favorites = ('favorites' in objMistriaData ? new Set(objMistriaData.favorites) : new Set());
+
 
     // for backward compatibility with old data structure
     if (objMistriaData.tab === 'gift') {
@@ -687,6 +678,7 @@ function saveData() {
         }
     });
     objMistriaData.options = [...objMistriaData.options];
+    objMistriaData.favorites = [...objMistriaData.favorites];
 
     localStorage.setItem('mistria_data', JSON.stringify(objMistriaData));
     loadData();
@@ -973,8 +965,15 @@ function loadScrapedTab(strTab) {
         var $divCategory = $('<div>', { 'class': 'category', 'id': `category_${strCatgoryKey}` });
 
         $divCategory.addClass('sortable');
-        $divCategory.attr('data-sort-az', objCategoriesSorted.az.indexOf(strCatgoryKey));
-        $divCategory.attr('data-sort-za', objCategoriesSorted.za.indexOf(strCatgoryKey));
+        $divCategory.attr('data-sort-az', objCategoriesSorted.az.indexOf(strCatgoryKey) + 1);
+        $divCategory.attr('data-sort-za', objCategoriesSorted.za.indexOf(strCatgoryKey) + 1);
+
+        $divCategory.append(` 
+            <div class="favorite_cbx_wrap">
+                <input type="checkbox" ${objMistriaData.favorites.has(`${strTab}_${strCatgoryKey}`) ? 'checked' : ''} class="favorite_cbx" id="favorite_category_${strCatgoryKey}" name="${strTab}" value="${strTab}_${strCatgoryKey}" />
+                <label class="label_favorite_cbx" for="favorite_category_${strCatgoryKey}"></label>
+            </div>
+        `);
 
         if (objCategory.info.spoiler || objCategory.info.nodata || objCategory.info.noimage) {
             $divCategory.addClass('spoiler')
@@ -1026,7 +1025,8 @@ function loadScrapedTab(strTab) {
             tippy(`#category_${strCatgoryKey} .category_name`, {
                 content: template,
                 interactive: true,
-                maxWidth: 370
+                maxWidth: 370,
+                delay: [500, 50],
             });
         }
 
@@ -1117,7 +1117,8 @@ function loadScrapedTab(strTab) {
                     tippy(`#label_${strCbxID}`, {
                         content: template,
                         interactive: true,
-                        maxWidth: 370
+                        maxWidth: 370,
+                        delay: [500, 50],
                     });
                 }
 
@@ -1128,6 +1129,19 @@ function loadScrapedTab(strTab) {
     disableTippy();
 
     addSelectAllAndAlert(strTab, arrAllItems);
+
+    $('.favorite_cbx:checkbox').change(function () {
+        let bolChecked = $(this).is(':checked');
+
+        if (bolChecked) {
+            objMistriaData.favorites.add($(this).val());
+        } else {
+            objMistriaData.favorites.delete($(this).val());
+        }
+
+        sortItems();
+        saveData();
+    });
 
     $('.item_cbx:checkbox').change(function () {
         let bolChecked = $(this).is(':checked');

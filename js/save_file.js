@@ -275,6 +275,7 @@ $(function () {
                         }
                     });
                     objOldData.options = [...objMistriaData.options];
+                    objOldData.favorites = [...objMistriaData.favorites];
                     if ('sort' in objMistriaData) {
                         objOldData.sort = objMistriaData.sort;
                     }
