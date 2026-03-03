@@ -977,8 +977,7 @@ var objItemsAccessories =
     },
     "head_dark_regent_crown": {
         "name": "Dark Regent Crown",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\"><img alt=\"Fp wiki mining.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mining.png?5b2276\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">Ancient Ruins Loot</a><br/>Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" data-file-height=\"119\" data-file-width=\"126\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png?e605a6\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1092,8 +1091,7 @@ var objItemsAccessories =
     },
     "head_flying_tome_hat": {
         "name": "Flying Tome Hat",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Flying_Tome\" title=\"Flying Tome\"><img alt=\"Flying tome main.png\" data-file-height=\"68\" data-file-width=\"104\" decoding=\"async\" height=\"13\" loading=\"lazy\" src=\"images/tooltip/20px-Flying_tome_main.png?e89ed6\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Flying_Tome\" title=\"Flying Tome\">Flying Tome</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1108,8 +1106,7 @@ var objItemsAccessories =
     },
     "head_griffin_statue_hat": {
         "name": "Living Gryphon Statue Hat",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Living_Gryphon_Statue\" title=\"Living Gryphon Statue\"><img alt=\"Living griffin statue main.png\" data-file-height=\"172\" data-file-width=\"120\" decoding=\"async\" height=\"29\" loading=\"lazy\" src=\"images/tooltip/20px-Living_griffin_statue_main.png?a3729f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Living_Gryphon_Statue\" title=\"Living Gryphon Statue\">Living Gryphon Statue</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1130,7 +1127,7 @@ var objItemsAccessories =
     },
     "head_lava_cat_hat": {
         "name": "Lava Cat Hat",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Lava_Cat\" title=\"Lava Cat\"><img alt=\"Lava cat main.png\" data-file-height=\"64\" data-file-width=\"120\" decoding=\"async\" height=\"11\" loading=\"lazy\" src=\"images/tooltip/20px-Lava_cat_main.png?9d7685\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Lava_Cat\" title=\"Lava Cat\">Lava Cat</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Upper_Mines\" title=\"Mines/Upper Mines\">The Upper Mines</a>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Lava_Cat\" title=\"Lava Cat\"><img alt=\"Lava cat main.png\" data-file-height=\"64\" data-file-width=\"120\" decoding=\"async\" height=\"11\" loading=\"lazy\" src=\"images/tooltip/20px-Lava_cat_main.png?9d7685\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Lava_Cat\" title=\"Lava Cat\">Lava Cat</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Lava_Caves\" title=\"Mines/Lava Caves\">The Lava Caves</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1228,8 +1225,7 @@ var objItemsAccessories =
     },
     "head_rock_stack_hat": {
         "name": "Rock Stack Hat",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Rock_Stack\" title=\"Rock Stack\"><img alt=\"Rock stack main.png\" data-file-height=\"68\" data-file-width=\"56\" decoding=\"async\" height=\"24\" loading=\"lazy\" src=\"images/tooltip/20px-Rock_stack_main.png?e34117\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Rock_Stack\" title=\"Rock Stack\">Rock Stack</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1256,8 +1252,7 @@ var objItemsAccessories =
     },
     "head_skull_mask": {
         "name": "Skull Mask",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sapling\" title=\"Sapling\"><img alt=\"Sapling pink.png\" data-file-height=\"150\" data-file-width=\"130\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Sapling_pink.png?593534\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sapling\" title=\"Sapling\">Pink\u00a0Sapling</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1330,8 +1325,7 @@ var objItemsAccessories =
     },
     "head_void_cat_hat": {
         "name": "Void Cat Hat",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Void_Cat\" title=\"Void Cat\"><img alt=\"Void cat main.png\" data-file-height=\"72\" data-file-width=\"128\" decoding=\"async\" height=\"11\" loading=\"lazy\" src=\"images/tooltip/20px-Void_cat_main.png?1149cc\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Void_Cat\" title=\"Void Cat\">Void Cat</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -1462,8 +1456,7 @@ var objItemsAccessories =
     },
     "shoes_boots_dark_regent": {
         "name": "Dark Regent Boots",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\"><img alt=\"Fp wiki mining.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mining.png?5b2276\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">Ancient Ruins Loot</a><br/>Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" data-file-height=\"119\" data-file-width=\"126\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png?e605a6\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },
@@ -2198,58 +2191,58 @@ var objItemsAccessories =
     },
     "head_corrupted_mistril_helmet": {
         "name": "Corrupted Mistril Helmet",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a class=\"new\" href=\"https://fieldsofmistria.wiki.gg/wiki/Corrupted_Mistril_Helmet?action=edit&amp;redlink=1\" rel=\"nofollow\" title=\"Corrupted Mistril Helmet (page does not exist)\">Corrupted Mistril Helmet</a>",
         "tip_extra": {},
         "url": ""
     },
     "pants_corrupted_mistril": {
         "name": "Corrupted Mistril Legplates",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a class=\"new\" href=\"https://fieldsofmistria.wiki.gg/wiki/Corrupted_Mistril_Legplates?action=edit&amp;redlink=1\" rel=\"nofollow\" title=\"Corrupted Mistril Legplates (page does not exist)\">Corrupted Mistril Legplates</a>",
         "tip_extra": {},
         "url": ""
     },
     "shoes_boots_corrupted_mistril": {
         "name": "Corrupted Mistril Greaves",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a class=\"new\" href=\"https://fieldsofmistria.wiki.gg/wiki/Corrupted_Mistril_Greaves?action=edit&amp;redlink=1\" rel=\"nofollow\" title=\"Corrupted Mistril Greaves (page does not exist)\">Corrupted Mistril Greaves</a>",
         "tip_extra": {},
         "url": ""
     },
     "top_corrupted_mistril": {
         "name": "Corrupted Mistril Armor",
-        "spoiler": 1,
-        "tip": "",
+        "tip": "<a class=\"new\" href=\"https://fieldsofmistria.wiki.gg/wiki/Corrupted_Mistril_Chestpiece?action=edit&amp;redlink=1\" rel=\"nofollow\" title=\"Corrupted Mistril Chestpiece (page does not exist)\">Corrupted Mistril Chestpiece</a>",
         "tip_extra": {},
         "url": ""
     },
     "head_mistril_helmet": {
         "name": "Mistril Helmet",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<span style=\"display:none; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" data-file-height=\"113\" data-file-width=\"100\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png?514008\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Skill icon blacksmithing.png\" data-file-height=\"36\" data-file-width=\"32\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Skill_icon_blacksmithing.png?763214\" width=\"20\"/>  30</span> <b>+</b><a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\"><img alt=\"Mistril Ingot.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"30\" loading=\"lazy\" src=\"images/tooltip/30px-Mistril_Ingot.png?dfa0fe\" width=\"30\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\">4 Mistril Ingots</a><br/><i>Or</i><br/><span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a> (once unlocked)"
+        },
         "url": ""
     },
     "pants_mistril": {
         "name": "Mistril Legplates",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<span style=\"display:none; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" data-file-height=\"113\" data-file-width=\"100\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png?514008\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Skill icon blacksmithing.png\" data-file-height=\"36\" data-file-width=\"32\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Skill_icon_blacksmithing.png?763214\" width=\"20\"/>  30</span> <b>+</b> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\"><img alt=\"Mistril Ingot.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"30\" loading=\"lazy\" src=\"images/tooltip/30px-Mistril_Ingot.png?dfa0fe\" width=\"30\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\">Mistril Ingots</a> (4)<br/><i>Or</i><br/><span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>*"
+        },
         "url": ""
     },
     "shoes_boots_mistril": {
         "name": "Mistril Greaves",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<span style=\"display:none; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" data-file-height=\"113\" data-file-width=\"100\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png?514008\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Skill icon blacksmithing.png\" data-file-height=\"36\" data-file-width=\"32\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Skill_icon_blacksmithing.png?763214\" width=\"20\"/>  30</span> <b>+</b> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\"><img alt=\"Mistril Ingot.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"30\" loading=\"lazy\" src=\"images/tooltip/30px-Mistril_Ingot.png?dfa0fe\" width=\"30\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\">Mistril Ingots</a> (4)<br/><i>Or</i><br/><span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>*"
+        },
         "url": ""
     },
     "top_mistril": {
         "name": "Mistril Armor",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<span style=\"display:none; margin-right:0; white-space: wrap;\"></span><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\"><img alt=\"Blacksmithing icon.png\" data-file-height=\"113\" data-file-width=\"100\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmithing_icon.png?514008\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmithing\" title=\"Blacksmithing\">Blacksmithing</a><br/><a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Skill icon blacksmithing.png\" data-file-height=\"36\" data-file-width=\"32\" decoding=\"async\" height=\"23\" loading=\"lazy\" src=\"images/tooltip/20px-Skill_icon_blacksmithing.png?763214\" width=\"20\"/>  30</span> <b>+</b> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\"><img alt=\"Mistril Ingot.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"30\" loading=\"lazy\" src=\"images/tooltip/30px-Mistril_Ingot.png?dfa0fe\" width=\"30\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mistril_Ingot\" title=\"Mistril Ingot\">Mistril Ingots</a> (4)<br/><i>Or</i><br/><span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span> from <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\"><img alt=\"Blacksmith icon.png\" data-file-height=\"84\" data-file-width=\"104\" decoding=\"async\" height=\"16\" loading=\"lazy\" src=\"images/tooltip/20px-Blacksmith_icon.png?7f6f2f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Blacksmith#Armor\" title=\"Blacksmith\">Blacksmith</a>*"
+        },
         "url": ""
     },
     "back_gear_dragonsworn_cloak": {
