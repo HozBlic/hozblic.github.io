@@ -975,6 +975,10 @@ svg:focus {
     transition: opacity 0.1s ease;
 }
 
+#additional_info_wrap label:hover {
+    opacity: 1;
+}
+
 #additional_info_wrap label svg {
     color: var(--color-txt);
     width: 20px;
@@ -999,17 +1003,19 @@ svg:focus {
     overflow: hidden;
     transition: max-height 0.2s ease;
 }
+
 #additional_info_content {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-bg-darkest);
-  background: var(--color-bg-darker);
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  line-height: 11px;
-  margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-bg-darkest);
+    background: var(--color-bg-darker);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    line-height: 11px;
+    margin-top: 5px;
 }
+
 #additional_info_content p {
     opacity: 1;
     display: flex;
@@ -1027,12 +1033,20 @@ svg:focus {
 #additional_info_content ol li {
     margin-bottom: 10px;
 }
-#additional_info_content ol li .win_span {display: inline-flex;align-items: center;vertical-align: middle;margin: 0 3px;}
+
+#additional_info_content ol li .win_span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
 #additional_info_content ol li svg {
     fill: var(--color-txt);
     margin-right: 2px;
 }
-#additional_info_content ol li  pre {
+
+#additional_info_content ol li pre {
     background: var(--color-bg-darkest-solid);
     line-height: 13px;
 }
