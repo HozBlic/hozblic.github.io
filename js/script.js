@@ -1293,7 +1293,7 @@ function loadWrappedTab() {
                     <div class="info" style="line-height: 18px;">
                         <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a> to generate charts! </br>
                         <div style="font-size: 12px; line-height: 12px; padding-top: 2px;">
-                            If you catch any errors, feel free to <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1mdf17v/interactive_gift_guide_v0140/">contact me</a>!
+                            If you catch any errors, feel free to <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">contact me</a>!
                         </div>
                     </div>
                 </div>`;
@@ -3339,7 +3339,7 @@ function loadWrappedTab() {
                     <div class="info" style="line-height: 18px;">
                         <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Unfortunately an error happened while rendering charts</b></br>
                         <div style="font-size: 12px; line-height: 14px; padding-top: 2px;">
-                            You can <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1mdf17v/interactive_gift_guide_v0140/">contact me</a>, I will try to help :)
+                            You can <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">contact me</a>, I will try to help :)
                             </br>
                             Error: ${e}
                         </div>
