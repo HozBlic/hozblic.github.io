@@ -151,7 +151,7 @@ svg:focus {
     min-height: 100dvh;
     overflow: hidden;
     max-height: 100dvh;
-    font-size: 14px;
+    font-size: 13px;
     flex-wrap: nowrap;
 }
 
@@ -325,7 +325,7 @@ svg:focus {
 
 @media screen and (min-width: 575px) {
     #checkbox_filter_items {
-        max-height: 270px;
+        max-height: 227px;
     }
 }
 
@@ -961,6 +961,93 @@ svg:focus {
     }
 }
 
+#additional_info_wrap {}
+
+#additional_info_wrap input[type="checkbox"] {
+    display: none;
+}
+
+#additional_info_wrap label {
+    display: flex;
+    cursor: pointer;
+    line-height: 20px;
+    opacity: 0.5;
+    transition: opacity 0.1s ease;
+}
+
+#additional_info_wrap label svg {
+    color: var(--color-txt);
+    width: 20px;
+    height: 20px;
+}
+
+#additional_info_wrap input[type="checkbox"]:checked+label {
+    opacity: 1;
+}
+
+#additional_info_wrap input[type="checkbox"]:checked+label svg {
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+#additional_info_wrap input[type="checkbox"]:checked+label+#additional_info {
+    max-height: 1000px;
+}
+
+#additional_info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+}
+#additional_info_content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-bg-darkest);
+  background: var(--color-bg-darker);
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  line-height: 11px;
+  margin-top: 5px;
+}
+#additional_info_content p {
+    opacity: 1;
+    display: flex;
+    gap: 0 5px;
+    flex-wrap: wrap;
+    display: inline;
+}
+
+#additional_info_content ol {
+    padding-left: 25px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+#additional_info_content ol li {
+    margin-bottom: 10px;
+}
+#additional_info_content ol li .win_span {display: inline-flex;align-items: center;vertical-align: middle;margin: 0 3px;}
+#additional_info_content ol li svg {
+    fill: var(--color-txt);
+    margin-right: 2px;
+}
+#additional_info_content ol li  pre {
+    background: var(--color-bg-darkest-solid);
+    line-height: 13px;
+}
+
+#additional_info_content a {
+    text-decoration: unset;
+    color: #a2d2ff;
+}
+
+#additional_info_content a:visited {
+    color: #cdb4db;
+}
+
+
+
 #output {
     margin: 10px 0;
 }
@@ -1278,8 +1365,9 @@ svg:focus {
     cursor: pointer;
     -webkit-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
-      background-image: url(../images/star.svg);
+    background-image: url(../images/star.svg);
 }
+
 .favorite_cbx_wrap input[type="checkbox"].favorite_cbx+label:hover {
     transform: scale(1.1);
 }
@@ -1726,13 +1814,14 @@ svg:focus {
 .switch_wrap {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
 }
 
 .switch_wrap svg {
     color: var(--color-txt);
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
 }
 
 /*** switch checkbox ***/
@@ -1884,13 +1973,13 @@ input[type="checkbox"].styled {
 
 #page.mode_list .item input[type="checkbox"]+label,
 input[type="checkbox"].styled+label {
-    min-height: 20px;
+    min-height: 16px;
     align-items: center;
-    padding-left: 30px;
-    padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 15px;
     background-position: 0 center;
-    line-height: 20px;
-    background-size: 20px;
+    line-height: 16px;
+    background-size: 15px;
     background-repeat: no-repeat;
     display: inline-flex;
     cursor: pointer;

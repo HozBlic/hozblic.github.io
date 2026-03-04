@@ -921,10 +921,12 @@ function loadMenuItems() {
     tippy('#older_browsers', {
         content: 'Does not work in older browsers',
     });
+    tippy('#unreleased_content', {
+        content: 'Content obtained via datamining, has not been implemented in the game yet',
+    });
     tippy('#save_file_icon', {
-        content: `<p class="save_file">AppData is a hidden folder, you must turn on "show hidden files" manually, if you haven't already done so.</p>
-                  <p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>
-                  <p class="save_file">Tested and should work on v.0.14.0 save files</p>`,
+        content: `<p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>
+                  <p class="save_file">Tested and should work on v.0.15.0 save files</p>`,
         allowHTML: true,
     });
 }
