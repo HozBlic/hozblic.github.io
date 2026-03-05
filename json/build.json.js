@@ -1,6 +1,6 @@
 var objBuild =
 {
-    "version": "0.15.1",
+    "version": "0.15.2",
     "maxSkillLevel": 60,
     "tabsOrder": [
         "gifts",
@@ -1499,8 +1499,20 @@ var objBuild =
         "crop_sign_rosemary",
         "round_cushioned_stool_beige",
         "royal_chest_blue",
+        "ruins_crystal_light",
+        "ruins_wall_crystal_light",
         "ruins_flooring",
+        "ruins_floor_brazier_blue",
+        "ruins_floor_brazier_orange",
+        "ruins_floor_brazier_purple",
+        "ruins_pot1",
+        "ruins_pot2",
+        "ruins_pot5",
+        "ruins_stone_arch",
         "ruins_wallpaper",
+        "ruins_window_v1",
+        "ruins_window_v2",
+        "ruins_window_v3",
         "cabin_bed_cherry",
         "cabin_bookshelf_cherry",
         "cabin_chair_cherry",

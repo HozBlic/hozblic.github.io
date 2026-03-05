@@ -1,5 +1,120 @@
 var objItemsAnimals =
 {
+    "sheep_white": {
+        "name": "White"
+    },
+    "sheep_black": {
+        "name": "Black"
+    },
+    "sheep_brown": {
+        "name": "Brown"
+    },
+    "sheep_black_nosed": {
+        "name": "Black Nosed"
+    },
+    "sheep_beige": {
+        "name": "Beige"
+    },
+    "sheep_white_nosed": {
+        "name": "White Nosed"
+    },
+    "sheep_blue": {
+        "name": "Blue"
+    },
+    "sheep_purple": {
+        "name": "Purple"
+    },
+    "sheep_pink": {
+        "name": "Pink"
+    },
+    "sheep_silver": {
+        "name": "Silver"
+    },
+    "sheep_gold": {
+        "name": "Gold"
+    },
+    "sheep_spring": {
+        "name": "Spring"
+    },
+    "sheep_summer": {
+        "name": "Summer"
+    },
+    "sheep_fall": {
+        "name": "Fall"
+    },
+    "sheep_winter": {
+        "name": "Winter"
+    },
+    "sheep_flower_crown": {
+        "name": "Sheep Flower Crown",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_spring.png?1c93f3\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
+        "url": "/wiki/Sheep_Flower_Crown"
+    },
+    "sheep_palm_tree": {
+        "name": "Sheep Palm Tree Hat",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_summer.png?f826d4\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
+        "url": "/wiki/Sheep_Palm_Tree"
+    },
+    "sheep_party_hat": {
+        "name": "Sheep Party Hat",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
+        "url": "/wiki/Sheep_Party_Hat"
+    },
+    "sheep_pink_bow": {
+        "name": "Pink Sheep Bow",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
+        "url": "/wiki/Pink_Sheep_Bow"
+    },
+    "sheep_mushroom_hat": {
+        "name": "Sheep Mushroom Hat",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
+        "url": "/wiki/Sheep_Mushroom_Hat"
+    },
+    "sheep_horns": {
+        "name": "Sheep Horns",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_autumn.png?b79477\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
+        "url": "/wiki/Sheep_Horns"
+    },
+    "sheep_winter_hat": {
+        "name": "Sheep Winter Hat",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_winter.png?4b2fdb\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
+        "url": "/wiki/Sheep_Winter_Hat"
+    },
+    "sheep_ribbon_blue": {
+        "name": "Sheep Blue Ribbon",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\">Large Animal Prize for 1<sup>st</sup> Place</a>",
+        "url": "/wiki/Blue_Sheep_Ribbon"
+    },
+    "sheep_ribbon_red": {
+        "name": "Sheep Red Ribbon",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\">Large Animal Prize for 2<sup>nd</sup> Place</a>",
+        "url": "/wiki/Red_Sheep_Ribbon"
+    },
+    "sheep_ribbon_white": {
+        "name": "Sheep White Ribbon",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\">Large Animal Prize for 3<sup>rd</sup> Place</a>",
+        "url": "/wiki/White_Sheep_Ribbon"
+    },
+    "sheep_tartan_beret": {
+        "name": "Sheep Tartan Beret",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" data-file-height=\"192\" data-file-width=\"160\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png?989f10\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead\" title=\"Shiny Bead\"><img alt=\"Shiny bead.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png?c1a750\" width=\"20\"/></a>  10</span> Offering",
+        "url": "/wiki/Sheep_Tartan_Beret"
+    },
+    "sheep_unicorn_horn": {
+        "name": "Sheep Unicorn Horn",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" data-file-height=\"192\" data-file-width=\"160\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png?989f10\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead\" title=\"Shiny Bead\"><img alt=\"Shiny bead.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png?c1a750\" width=\"20\"/></a>  10</span> Offering",
+        "url": "/wiki/Sheep_Unicorn_Horn"
+    },
+    "sheep_hot_water_bottle": {
+        "name": "Sheep Hot Water Bottle",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
+        "url": "/wiki/Sheep_Hot_Water_Bottle"
+    },
+    "sheep_green_visor": {
+        "name": "Sheep Green Visor",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
+        "url": "/wiki/Sheep_Green_Visor"
+    },
     "horse_spotted": {
         "name": "Spotted"
     },
@@ -590,120 +705,120 @@ var objItemsAnimals =
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
         "url": "/wiki/Cow_Laurels"
     },
-    "sheep_white": {
+    "duck_mallard": {
+        "name": "Mallard"
+    },
+    "duck_muscovy": {
+        "name": "Muscovy"
+    },
+    "duck_white": {
         "name": "White"
     },
-    "sheep_black": {
-        "name": "Black"
+    "duck_mandarin": {
+        "name": "Mandarin"
     },
-    "sheep_brown": {
-        "name": "Brown"
+    "duck_ruddy_shelduck": {
+        "name": "Ruddy Shelduck"
     },
-    "sheep_black_nosed": {
-        "name": "Black Nosed"
+    "duck_cayuga": {
+        "name": "Cayuga"
     },
-    "sheep_beige": {
-        "name": "Beige"
-    },
-    "sheep_white_nosed": {
-        "name": "White Nosed"
-    },
-    "sheep_blue": {
+    "duck_blue": {
         "name": "Blue"
     },
-    "sheep_purple": {
+    "duck_purple": {
         "name": "Purple"
     },
-    "sheep_pink": {
+    "duck_pink": {
         "name": "Pink"
     },
-    "sheep_silver": {
+    "duck_silver": {
         "name": "Silver"
     },
-    "sheep_gold": {
+    "duck_gold": {
         "name": "Gold"
     },
-    "sheep_spring": {
+    "duck_spring": {
         "name": "Spring"
     },
-    "sheep_summer": {
+    "duck_summer": {
         "name": "Summer"
     },
-    "sheep_fall": {
+    "duck_fall": {
         "name": "Fall"
     },
-    "sheep_winter": {
+    "duck_winter": {
         "name": "Winter"
     },
-    "sheep_flower_crown": {
-        "name": "Sheep Flower Crown",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_spring.png?1c93f3\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
-        "url": "/wiki/Sheep_Flower_Crown"
-    },
-    "sheep_palm_tree": {
-        "name": "Sheep Palm Tree Hat",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_summer.png?f826d4\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
-        "url": "/wiki/Sheep_Palm_Tree"
-    },
-    "sheep_party_hat": {
-        "name": "Sheep Party Hat",
+    "duck_black_bowtie": {
+        "name": "Black Duck Bowtie",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Sheep_Party_Hat"
+        "url": "/wiki/Black_Duck_Bowtie"
     },
-    "sheep_pink_bow": {
-        "name": "Pink Sheep Bow",
+    "duck_bonnet": {
+        "name": "Duck Bonnet",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Pink_Sheep_Bow"
+        "url": "/wiki/Duck_Bonnet"
     },
-    "sheep_mushroom_hat": {
-        "name": "Sheep Mushroom Hat",
+    "duck_flower_crown": {
+        "name": "Duck Flower Crown",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_spring.png?1c93f3\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
+        "url": "/wiki/Duck_Flower_Crown"
+    },
+    "duck_pink_bow": {
+        "name": "Pink Duck Bow",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Sheep_Mushroom_Hat"
+        "url": "/wiki/Pink_Duck_Bow"
     },
-    "sheep_horns": {
-        "name": "Sheep Horns",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_autumn.png?b79477\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
-        "url": "/wiki/Sheep_Horns"
+    "duck_red_eyes": {
+        "name": "Duck Red Eyes",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_autumn.png?b79477\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
+        "url": "/wiki/Red_Duck_Eyes"
     },
-    "sheep_winter_hat": {
-        "name": "Sheep Winter Hat",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_winter.png?4b2fdb\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Sheep#Colors\" title=\"Sheep\">Variant</a>",
-        "url": "/wiki/Sheep_Winter_Hat"
+    "duck_ribbon_blue": {
+        "name": "Duck Blue Ribbon",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\">Small Animal Prize for 1<sup>st</sup> Place</a>",
+        "url": "/wiki/Blue_Duck_Ribbon"
     },
-    "sheep_ribbon_blue": {
-        "name": "Sheep Blue Ribbon",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\">Large Animal Prize for 1<sup>st</sup> Place</a>",
-        "url": "/wiki/Blue_Sheep_Ribbon"
+    "duck_ribbon_red": {
+        "name": "Duck Red Ribbon",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\">Small Animal Prize for 2<sup>nd</sup> Place</a>",
+        "url": "/wiki/Red_Duck_Ribbon"
     },
-    "sheep_ribbon_red": {
-        "name": "Sheep Red Ribbon",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\">Large Animal Prize for 2<sup>nd</sup> Place</a>",
-        "url": "/wiki/Red_Sheep_Ribbon"
+    "duck_ribbon_white": {
+        "name": "Duck White Ribbon",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\">Small Animal Prize for 3<sup>rd</sup> Place</a>",
+        "url": "/wiki/White_Duck_Ribbon"
     },
-    "sheep_ribbon_white": {
-        "name": "Sheep White Ribbon",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Large_Animal_Prizes\" title=\"Animal Festival\">Large Animal Prize for 3<sup>rd</sup> Place</a>",
-        "url": "/wiki/White_Sheep_Ribbon"
-    },
-    "sheep_tartan_beret": {
-        "name": "Sheep Tartan Beret",
+    "duck_ruffled_collar": {
+        "name": "Duck Ruffled Collar",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" data-file-height=\"192\" data-file-width=\"160\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png?989f10\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead\" title=\"Shiny Bead\"><img alt=\"Shiny bead.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png?c1a750\" width=\"20\"/></a>  10</span> Offering",
-        "url": "/wiki/Sheep_Tartan_Beret"
+        "url": "/wiki/Duck_Ruffled_Collar"
     },
-    "sheep_unicorn_horn": {
-        "name": "Sheep Unicorn Horn",
+    "duck_sun_hat": {
+        "name": "Duck Sun Hat",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" data-file-height=\"192\" data-file-width=\"160\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png?989f10\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead\" title=\"Shiny Bead\"><img alt=\"Shiny bead.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png?c1a750\" width=\"20\"/></a>  10</span> Offering",
-        "url": "/wiki/Sheep_Unicorn_Horn"
+        "url": "/wiki/Duck_Sun_Hat"
     },
-    "sheep_hot_water_bottle": {
-        "name": "Sheep Hot Water Bottle",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Sheep_Hot_Water_Bottle"
+    "duck_sunglasses": {
+        "name": "Duck Sunglasses",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_summer.png?f826d4\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
+        "url": "/wiki/Duck_Sunglasses"
     },
-    "sheep_green_visor": {
-        "name": "Sheep Green Visor",
+    "duck_winter_hat": {
+        "name": "Duck Winter Hat",
+        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_winter.png?4b2fdb\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
+        "url": "/wiki/Duck_Winter_Hat"
+    },
+    "duck_backwards_cap": {
+        "name": "Duck Backwards Cap",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Sheep_Green_Visor"
+        "url": "/wiki/Duck_Backwards_Cap"
+    },
+    "duck_strawberry_hat": {
+        "name": "Duck Strawberry Hat",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
+        "url": "/wiki/Duck_Strawberry_Hat"
     },
     "rabbit_white": {
         "name": "White"
@@ -819,121 +934,6 @@ var objItemsAnimals =
         "name": "Rabbit Chef Hat",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
         "url": "/wiki/Rabbit_Chef_Hat"
-    },
-    "duck_mallard": {
-        "name": "Mallard"
-    },
-    "duck_muscovy": {
-        "name": "Muscovy"
-    },
-    "duck_white": {
-        "name": "White"
-    },
-    "duck_mandarin": {
-        "name": "Mandarin"
-    },
-    "duck_ruddy_shelduck": {
-        "name": "Ruddy Shelduck"
-    },
-    "duck_cayuga": {
-        "name": "Cayuga"
-    },
-    "duck_blue": {
-        "name": "Blue"
-    },
-    "duck_purple": {
-        "name": "Purple"
-    },
-    "duck_pink": {
-        "name": "Pink"
-    },
-    "duck_silver": {
-        "name": "Silver"
-    },
-    "duck_gold": {
-        "name": "Gold"
-    },
-    "duck_spring": {
-        "name": "Spring"
-    },
-    "duck_summer": {
-        "name": "Summer"
-    },
-    "duck_fall": {
-        "name": "Fall"
-    },
-    "duck_winter": {
-        "name": "Winter"
-    },
-    "duck_black_bowtie": {
-        "name": "Black Duck Bowtie",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Black_Duck_Bowtie"
-    },
-    "duck_bonnet": {
-        "name": "Duck Bonnet",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Duck_Bonnet"
-    },
-    "duck_flower_crown": {
-        "name": "Duck Flower Crown",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_spring.png?1c93f3\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
-        "url": "/wiki/Duck_Flower_Crown"
-    },
-    "duck_pink_bow": {
-        "name": "Pink Duck Bow",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\"><img alt=\"Hayden's shop icon.png\" data-file-height=\"92\" data-file-width=\"104\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Hayden's_shop_icon.png?3c69f1\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Hayden%27s_Shop#Animal_Accessories\" title=\"Hayden's Shop\">Hayden's Shop</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Pink_Duck_Bow"
-    },
-    "duck_red_eyes": {
-        "name": "Duck Red Eyes",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_autumn.png?b79477\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
-        "url": "/wiki/Red_Duck_Eyes"
-    },
-    "duck_ribbon_blue": {
-        "name": "Duck Blue Ribbon",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\">Small Animal Prize for 1<sup>st</sup> Place</a>",
-        "url": "/wiki/Blue_Duck_Ribbon"
-    },
-    "duck_ribbon_red": {
-        "name": "Duck Red Ribbon",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\">Small Animal Prize for 2<sup>nd</sup> Place</a>",
-        "url": "/wiki/Red_Duck_Ribbon"
-    },
-    "duck_ribbon_white": {
-        "name": "Duck White Ribbon",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Small_Animal_Prizes\" title=\"Animal Festival\">Small Animal Prize for 3<sup>rd</sup> Place</a>",
-        "url": "/wiki/White_Duck_Ribbon"
-    },
-    "duck_ruffled_collar": {
-        "name": "Duck Ruffled Collar",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" data-file-height=\"192\" data-file-width=\"160\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png?989f10\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead\" title=\"Shiny Bead\"><img alt=\"Shiny bead.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png?c1a750\" width=\"20\"/></a>  10</span> Offering",
-        "url": "/wiki/Duck_Ruffled_Collar"
-    },
-    "duck_sun_hat": {
-        "name": "Duck Sun Hat",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\"><img alt=\"Chicken statue.png\" data-file-height=\"192\" data-file-width=\"160\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/15px-Chicken_statue.png?989f10\" width=\"15\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Chicken_Statue\" title=\"Chicken Statue\">Chicken Statue</a> <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Shiny_Bead\" title=\"Shiny Bead\"><img alt=\"Shiny bead.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Shiny_bead.png?c1a750\" width=\"20\"/></a>  10</span> Offering",
-        "url": "/wiki/Duck_Sun_Hat"
-    },
-    "duck_sunglasses": {
-        "name": "Duck Sunglasses",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_summer.png?f826d4\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
-        "url": "/wiki/Duck_Sunglasses"
-    },
-    "duck_winter_hat": {
-        "name": "Duck Winter Hat",
-        "tip": "<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Season_icon_winter.png?4b2fdb\" width=\"20\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Duck#Colors\" title=\"Duck\">Variant</a>",
-        "url": "/wiki/Duck_Winter_Hat"
-    },
-    "duck_backwards_cap": {
-        "name": "Duck Backwards Cap",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Duck_Backwards_Cap"
-    },
-    "duck_strawberry_hat": {
-        "name": "Duck Strawberry Hat",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\"><img alt=\"Calendar icon animal festival.png\" data-file-height=\"44\" data-file-width=\"48\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/24px-Calendar_icon_animal_festival.png?69bde2\" width=\"24\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Animal_Festival#Souvenir_Stall\" title=\"Animal Festival\">Animal Festival from The Souvenir Stall</a> for <span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>",
-        "url": "/wiki/Duck_Strawberry_Hat"
     },
     "pets_halo": {
         "name": "Halo",

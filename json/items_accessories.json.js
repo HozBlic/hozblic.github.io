@@ -97,6 +97,22 @@ var objItemsAccessories =
         "tip_extra": {},
         "url": ""
     },
+    "back_gear_hunter_bow": {
+        "name": "Hunter's Bow",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
+    "back_gear_hunter_cape": {
+        "name": "Hunter's Cape",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
     "back_gear_jasmine_backpack": {
         "name": "Jasmine Backpack",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\"><img alt=\"Almanac icon crops.png\" data-file-height=\"52\" data-file-width=\"56\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Almanac_icon_crops.png?e65cac\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Farming\" title=\"Farming\">Harvesting</a> a <a href=\"https://fieldsofmistria.wiki.gg/wiki/Magic_Seed\" title=\"Magic Seed\"><img alt=\"Magic seed.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"30\" loading=\"lazy\" src=\"images/tooltip/30px-Magic_seed.png?b78dc5\" width=\"30\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Magic_Seed\" title=\"Magic Seed\">Magic Seed</a> during <span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"24\" loading=\"lazy\" src=\"images/tooltip/24px-Season_icon_winter.png?4b2fdb\" width=\"24\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span>",
@@ -307,7 +323,7 @@ var objItemsAccessories =
         "url": ""
     },
     "robe_dark_regent": {
-        "name": "Dark Rgent Robe",
+        "name": "Dark Regent Robe",
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
@@ -1125,6 +1141,14 @@ var objItemsAccessories =
         "url": "",
         "default_unlocked": 1
     },
+    "head_hunter_hat": {
+        "name": "Hunter's Hat",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
     "head_lava_cat_hat": {
         "name": "Lava Cat Hat",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\"><img alt=\"Fp wiki combat.png\" data-file-height=\"33\" data-file-width=\"33\" decoding=\"async\" height=\"22\" loading=\"lazy\" src=\"images/tooltip/22px-Fp_wiki_combat.png?dca503\" width=\"22\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Combat\" title=\"Combat\">Slaying</a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Lava_Cat\" title=\"Lava Cat\"><img alt=\"Lava cat main.png\" data-file-height=\"64\" data-file-width=\"120\" decoding=\"async\" height=\"11\" loading=\"lazy\" src=\"images/tooltip/20px-Lava_cat_main.png?9d7685\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Lava_Cat\" title=\"Lava Cat\">Lava Cat</a>  in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Lava_Caves\" title=\"Mines/Lava Caves\">The Lava Caves</a>",
@@ -1329,6 +1353,14 @@ var objItemsAccessories =
         "tip_extra": {},
         "url": ""
     },
+    "head_winter_beanie": {
+        "name": "Winter Beanie",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
     "head_witch_hat": {
         "name": "Witch Hat",
         "tip": "Available From Character Creation",
@@ -1409,6 +1441,14 @@ var objItemsAccessories =
         },
         "url": ""
     },
+    "pants_hunter": {
+        "name": "Hunter's Pants",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
     "pants_rogue": {
         "name": "Rogue's Pants",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Saturday Market</a> at Wheedle's Stall",
@@ -1486,6 +1526,14 @@ var objItemsAccessories =
         "name": "Fire Sage Boots",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\"><img alt=\"Fp wiki mining.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mining.png?5b2276\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Lava_Caves\" title=\"Mines/Lava Caves\">Lava Caves Loot</a><br/>Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" data-file-height=\"119\" data-file-width=\"126\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png?e605a6\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Lava_Caves\" title=\"Mines/Lava Caves\">The Lava Caves</a>",
         "tip_extra": {},
+        "url": ""
+    },
+    "shoes_boots_hunter": {
+        "name": "Hunter's Boots",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
         "url": ""
     },
     "shoes_boots_noble": {
@@ -1608,6 +1656,14 @@ var objItemsAccessories =
         },
         "url": ""
     },
+    "shorts_swimtrunks": {
+        "name": "Swim Trunks",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
     "skirt_ancient_witch": {
         "name": "Ancient Witch Skirt",
         "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Abyssal_Chest\" title=\"Abyssal Chest\"><img alt=\"Abyssal chest.png\" data-file-height=\"72\" data-file-width=\"72\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Abyssal_chest.png?e2f59e\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Abyssal_Chest\" title=\"Abyssal Chest\">Abyssal Chest</a>",
@@ -1698,6 +1754,14 @@ var objItemsAccessories =
         "tip_extra": {},
         "url": ""
     },
+    "suit_halter_bikini_set": {
+        "name": "Halter Bikini Set",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
     "top_adventurer": {
         "name": "Adventurer's Jerkin",
         "tip": "Unlocked",
@@ -1756,6 +1820,22 @@ var objItemsAccessories =
         "tip_extra": {
             "price": "Renown, <span class=\"no-wrap\"><a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\">Town Rank</a> Level 83,<a href=\"https://fieldsofmistria.wiki.gg/wiki/Town_Rank\" title=\"Town Rank\"><img alt=\"Gold Town Rank Icon\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Renown_gold_icon.png?279fc7\" width=\"20\"/></a> Gold</span>"
         },
+        "url": ""
+    },
+    "top_halter_bikini": {
+        "name": "Halter Bikini Top",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
+        "url": ""
+    },
+    "top_hunter": {
+        "name": "Hunter's Top",
+        "spoiler": 1,
+        "tip": "",
+        "tip_extra": {},
+        "noimage": 1,
         "url": ""
     },
     "top_jacket_and_tee_basic": {
@@ -2209,7 +2289,7 @@ var objItemsAccessories =
     },
     "top_corrupted_mistril": {
         "name": "Corrupted Mistril Armor",
-        "tip": "<a class=\"new\" href=\"https://fieldsofmistria.wiki.gg/wiki/Corrupted_Mistril_Chestpiece?action=edit&amp;redlink=1\" rel=\"nofollow\" title=\"Corrupted Mistril Chestpiece (page does not exist)\">Corrupted Mistril Chestpiece</a>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines\" title=\"Mines\"><img alt=\"Fp wiki mining.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_mining.png?5b2276\" width=\"20\"/></a>  Treasure Chests in  <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a> <small>(requires <a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Combat_Skill_Perks\" title=\"Skills\"><img alt=\"Well armed.png\" data-file-height=\"64\" data-file-width=\"64\" decoding=\"async\" height=\"15\" loading=\"lazy\" src=\"images/tooltip/15px-Well_armed.png?83c0c4\" width=\"15\"/></a>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Skills#Combat_Skill_Perks\" title=\"Skills\">Well Armed\u00a0Skill</a>)</small><br/>Feeding <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\"><img alt=\"Mimic main.png\" data-file-height=\"119\" data-file-width=\"126\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/20px-Mimic_main.png?e605a6\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mimic\" title=\"Mimic\">Mimics</a> in <a href=\"https://fieldsofmistria.wiki.gg/wiki/Mines/Ancient_Ruins\" title=\"Mines/Ancient Ruins\">The Ancient Ruins</a>",
         "tip_extra": {},
         "url": ""
     },

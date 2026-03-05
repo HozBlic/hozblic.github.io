@@ -1,723 +1,5 @@
 var objItemsPerks =
 {
-    "mount": {},
-    "horsepower": {
-        "name": "Horsepower",
-        "tip": "Your Mistmare now runs 10% faster.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
-        },
-        "url": "/wiki/Skills#Mistmare"
-    },
-    "harvest_horse": {
-        "name": "Harvest Horse",
-        "tip": "When your Mistmare runs over a forage spot or a fully grown crop, it will pop from the ground.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>190</span>"
-        },
-        "url": "/wiki/Skills#Mistmare"
-    },
-    "nice_ride": {
-        "name": "Nice Ride",
-        "tip": "The appearance of large animals can now be unlocked at 5 Hearts to ride them.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Mistmare"
-    },
-    "woodcrafting": {},
-    "hammer_timing": {
-        "name": "Hammer Timing",
-        "tip": "The Craft Time for all crafting recipes will be reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "lumberjack": {
-        "name": "Lumberjack",
-        "tip": "Breaking a Branch will sometimes drop an extra piece of Wood.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "masonry": {
-        "name": "Masonry",
-        "tip": "Breaking a Rock will sometimes drop an extra piece of Stone.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "forager": {
-        "name": "Forager",
-        "tip": "Chopping down a Tree will occasionally drop a seasonally appropriate Forageable.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "working_with_the_grain": {
-        "name": "Working with the Grain",
-        "tip": "Crafting an item will occasionally return one of its ingredients afterward.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>60</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "quality_crafting": {
-        "name": "Quality Crafting",
-        "tip": "Crafting an Item will occasionally result in a bonus Quality Infusion, which grants it a 10% higher selling price.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>95</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "natural": {
-        "name": "Natural",
-        "tip": "Chopping down any tree will occasionally drop Hardwood.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "hammer_timing_two": {
-        "name": "Hammer Timing II",
-        "tip": "The Craft Time for all crafting recipes will reduce by an additional 10 minutes, bringing the total reduction to 20 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "material_world": {
-        "name": "Material World",
-        "tip": "Material drops from breakables in the Mines now drop twice as much.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "steady_supplies": {
-        "name": "Steady Supplies",
-        "tip": "Sod, Peat, and Cattails can now be purchased at the Carpenter's Shop.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "set_pieces": {
-        "name": "Set Pieces",
-        "tip": "Crafting an item can occasionally give you two of it.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "hammer_timing_three": {
-        "name": "Hammer Timing III",
-        "tip": "The Craft Time for all crafting recipes will reduce by an additional 10 minutes, bringing the total reduction to 30 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "lumberjack_two": {
-        "name": "Lumberjack II",
-        "tip": "Breaking a Branch, felling a tree, or chopping down a stump will always drop an extra piece of Wood.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "underground_inspiration": {
-        "name": "Underground Inspiration",
-        "tip": "Coral and Crystals now drop materials twice as often.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "deliberate_debris": {
-        "name": "Deliberate Debris",
-        "tip": "Farm debris will spawn 50% less often.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "working_with_the_grain_two": {
-        "name": "Working with the Grain II",
-        "tip": "Crafting an item is now even more likely to return one of its ingredients afterward.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "void_crafting": {
-        "name": "Void Crafting",
-        "tip": "Voidite can now be used to craft a unique furniture set.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "big_water_sprites": {
-        "name": "Big Water Sprites",
-        "tip": "Unlocks new water sprites designs with a larger watering radius.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Woodcrafting"
-    },
-    "ranching": {},
-    "feeding_frenzy": {
-        "name": "Feeding Frenzy",
-        "tip": "Hay and Grass Seed drop at double the usual amount from Cutting Grass.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "close_bond": {
-        "name": "Close Bond",
-        "tip": "Animals that have been Pet and Fed for the day will receive an extra Heart Point increase.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "barnyard_bounty": {
-        "name": "Barnyard Bounty",
-        "tip": "Chickens and Cows will sometimes drop extra Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "currency_of_care": {
-        "name": "Currency Of Care",
-        "tip": "When animals eat crops, either by hand feeding or by grazing, they will drop the currency Shiny Beads.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "currency_of_care_two": {
-        "name": "Currency of Care II",
-        "tip": "Animals that have been Pet and Fed for the day will sometimes drop Shiny Bead the next day in addition to their regular Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "feed_prepper": {
-        "name": "Feed Prepper",
-        "tip": "The Craft Time for all animal feed is reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "welcome_home": {
-        "name": "Welcome Home",
-        "tip": "Newly bought or born animals will start at 1 Heart Level.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "discount_treats": {
-        "name": "Discount Treats",
-        "tip": "Heart shaped treats sold by Hayden will have a 10% price reduction.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "currency_of_care_three": {
-        "name": "Currency of Care III",
-        "tip": "Animals can now be fed cooked dishes and will reward more Shiny Beads based on the dish's star level.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "welcome_home_two": {
-        "name": "Welcome Home II",
-        "tip": "Newly bought or born animals will start at 2 Heart Level.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "barnyard_bounty_two": {
-        "name": "Barnyard Bounty II",
-        "tip": "Ducks and Horses will sometimes drop extra Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "wind_down": {
-        "name": "Wind Down",
-        "tip": "The Mill Time for all mill recipes will be reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "the_bell_tolls": {
-        "name": "The Bell Tolls",
-        "tip": "You will receive the Big Bell crafting recipe. When rung, the Big Bell calls out or sends in all animals into their buildings.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "maximum_milling": {
-        "name": "Maximum Milling",
-        "tip": "Crafting Animal Feeds at the mill will sometimes drop an additional item of the same kind.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "barnyard_bounty_three": {
-        "name": "Barnyard Bounty III",
-        "tip": "Sheep and Rabbits will sometimes drop extra Produce.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Ranching"
-    },
-    "combat": {},
-    "guardians_shield": {
-        "name": "Guardian's Shield",
-        "tip": "Once per day, the first hit you take is reflected.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "true_strike": {
-        "name": "True Strike",
-        "tip": "Your Attacks will occasionally become Critical, doing double damage in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "jump_attack": {
-        "name": "Jump Attack",
-        "tip": "Jumping and then Attacking mid-air will damage enemies in a small radius.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "well_armed": {
-        "name": "Well-Armed",
-        "tip": "Biome-unique Armor and Weapons will sometimes drop from Treasure Chests in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "quick_footed": {
-        "name": "Quick Footed",
-        "tip": "Blue Sapling pools will grant a short Speed Boost rather than slow you down.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "shrine_savant": {
-        "name": "What an Offer",
-        "tip": "Using an Offering Shrine will bestow a short HP & Stamina Regen buff in addition to their usual effect.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "generous_in_defeat": {
-        "name": "Generous In Defeat",
-        "tip": "Monsters will occasionally drop twice as many items when defeated.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "dungeon_delicacies": {
-        "name": "Dungeon Delicacies",
-        "tip": "Certain Cooked Dishes will occasionally drop from Treasure Chests in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "perfect_prefix": {
-        "name": "Perfect Prefix",
-        "tip": "The infusion power of Infused Weapons will double.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "rocking": {
-        "name": "Rocking",
-        "tip": "Clod Projectiles that are reflected back are now much more likely to critically strike.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "in_motion": {
-        "name": "In Motion",
-        "tip": "Defeating a Monster will sometimes grant a brief Speed Boost.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "out_of_juice": {
-        "name": "Out of Juice",
-        "tip": "Enchanterns now briefly freeze in place after discharging.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "sonic_boom": {
-        "name": "Sonic Boom",
-        "tip": "If you attack the Essence Bat's sonic attack, unleash a Sonic Boom, damaging all enemies around you.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "gift_exchange": {
-        "name": "Gift Exchange",
-        "tip": "When you throw an item into a resting Mimic Chest, it will drop two items instead of one.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "guardians_shield_two": {
-        "name": "Guardian Shield II",
-        "tip": "Your Shield will now activate randomly at low chance.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "true_strike_two": {
-        "name": "True Strike II",
-        "tip": "Your Attacks are more likely to become Critical, doing double damage in the Mines.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "sure_strike": {
-        "name": "Sure Strike",
-        "tip": "Defeating an enemy buffs your damage by 5% for 10 seconds, stacking up to 25%.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "generous_in_defeat_two": {
-        "name": "Generous in Defeat II",
-        "tip": "Monsters will more often drop twice as many items when defeated.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "friend_shaped": {
-        "name": "Friend-Shaped",
-        "tip": "Pet skins can now drop from defeated monsters, allowing your pet to take on a monster's appearance. (Note: only saplings for now, more coming later.)",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
-        },
-        "url": "/wiki/Skills#Combat"
-    },
-    "farming": {},
-    "prepared_picker": {
-        "name": "Prepared Picker",
-        "tip": "Harvesting a Forageable will occasionally drop a Seed version, if it can be grown.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "a_day_well_spent": {
-        "name": "A Day Well Spent",
-        "tip": "Going to bed with zero stamina gives a stamina boost the next day.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "green_thumb": {
-        "name": "Green Thumb",
-        "tip": "Planting a Seed will sometimes also Water the soil of the targeted tile.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "refreshing": {
-        "name": "Refreshing",
-        "tip": "Watering a crop will sometimes refund the Stamina used.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "bountiful": {
-        "name": "Bountiful",
-        "tip": "Watering a crop will occasionally drop a Seed version of it.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>60</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "heavy_duty": {
-        "name": "Heavy Duty",
-        "tip": "Tilling soil will sometimes drop a piece of Stone or Wood.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "well_watered": {
-        "name": "Well Watered",
-        "tip": "Watered crops will occasionally retain their water through the next day.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "nice_swing": {
-        "name": "Nice Swing",
-        "tip": "Grants a chance that tilling refunds the stamina it uses.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "living_off_the_land": {
-        "name": "Living off the Land",
-        "tip": "Harvesting a crop will occasionally drop a cooked dish that uses the crop.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>95</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "superb_sower": {
-        "name": "Superb Sower",
-        "tip": "You can now charge your seeds to spread them across a wider area.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>100</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "harvest_time": {
-        "name": "Harvest Time",
-        "tip": "Slow-Growing crops now reach their first-time harvest a day earlier.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "prize_winning": {
-        "name": "Prize Winning",
-        "tip": "Harvesting crops will occasionally drop coins based on 5% of their selling price.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "sickle_sword": {
-        "name": "Sickle Sword",
-        "tip": "You can now use your sword to harvest crops quickly.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "ornamental": {
-        "name": "Ornamental",
-        "tip": "Harvesting a crop or forageable will sometimes drop a recipe teaching you how to make an ornamental furniture version of the plant.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "perfect_pollinators": {
-        "name": "Perfect Pollinators",
-        "tip": "Legendary bugs will now appear more often.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "magic_design": {
-        "name": "Magic Design",
-        "tip": "Giant Essence Stones are now craftable, and can power a statue for 40 days.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "earthly_essence": {
-        "name": "Earthly Essence",
-        "tip": "Harvested crops now have a low chance of dropping a Magic Seed. Who knows what will grow if you plant it?",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>210</span>"
-        },
-        "url": "/wiki/Skills#Farming"
-    },
-    "blacksmithing": {},
-    "copper_expert": {
-        "name": "Copper Expert",
-        "tip": "The amount of Copper Ore required to craft Copper Ingots will be reduced by 1.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "time_sensitive": {
-        "name": "Time Sensitive",
-        "tip": "The Craft Time for all blacksmithing recipes will be reduced by 10 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "sharp_blacksmithing": {
-        "name": "Sharp Blacksmithing",
-        "tip": "Crafting a Weapon will occasionally result in a bonus Sharp Infusion, which grants it an additional +1 Attack Power.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "fortified_blacksmithing": {
-        "name": "Fortified Blacksmithing",
-        "tip": "Crafting Armor will occasionally result in a bonus Fortified Infusion, which grants you an additional +4 HP when worn.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "iron_expert": {
-        "name": "Iron Expert",
-        "tip": "The amount of Iron Ore required to craft Iron Ingots will be reduced by 1.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "time_sensitive_two": {
-        "name": "Time Sensitive II",
-        "tip": "The Craft Time for all blacksmithing recipes will reduce by an additional 10 minutes, bringing the total reduction to 20 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "leech_blacksmithing": {
-        "name": "Leech Blacksmithing",
-        "tip": "Crafting a Weapon will occasionally result in a bonus Leech Infusion, which restores 1 HP each time it's used to attack a Monster.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "lightweight_blacksmithing": {
-        "name": "Lightweight Blacksmithing",
-        "tip": "Crafting a Tool will occasionally result in a bonus Lightweight Infusion, occasionally dropping Stamina orbs on use.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "silver_expert": {
-        "name": "Silver Expert",
-        "tip": "The amount of Silver Ore required to craft Silver Ingots will be reduced by 1.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "hasty_blacksmithing": {
-        "name": "Hasty Blacksmithing",
-        "tip": "Crafting Armor will occasionally result in a bonus Hasty Infusion, which grants you an additional 4% Speed Boost when worn.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "time_sensitive_three": {
-        "name": "Time Sensitive III",
-        "tip": "The Craft Time for all blacksmithing recipes will reduce by another 10 minutes, bringing the total reduction to 30 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "empowered": {
-        "name": "Empowered",
-        "tip": "Crafting a Tool, Weapon, or Armor will be more likely to result in an available Infused version.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>65</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "empowered_two": {
-        "name": "Empowered II",
-        "tip": "Crafting a Tool, Weapon, or Armor will be a bit more likely to result in an available Infused version than before.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "gold_expert": {
-        "name": "Gold Expert",
-        "tip": "The amount of Gold Ore required to craft Gold Ingots will be reduced by 1.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "tireless_blacksmithing": {
-        "name": "Tireless Blacksmithing",
-        "tip": "Crafting Armor will occasionally result in a bonus Tireless Infusion, which grants you an additional +4 Stamina when worn.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "time_sensitive_four": {
-        "name": "Time Sensitive IV",
-        "tip": "The Craft Time for all blacksmithing recipes will reduce by yet another 10 minutes, bringing the total reduction to 40 minutes.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
-    "mistril_expert": {
-        "name": "Mistril Expert",
-        "tip": "The amount of Mistril Ore required to craft Mistril Ingots will be reduced by 1.",
-        "tip_extra": {
-            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
-        },
-        "url": "/wiki/Skills#Blacksmithing"
-    },
     "cooking": {},
     "waste_not_want_not": {
         "name": "Waste Not Want Not",
@@ -1153,6 +435,280 @@ var objItemsPerks =
         },
         "url": "/wiki/Skills#Mining"
     },
+    "combat": {},
+    "guardians_shield": {
+        "name": "Guardian's Shield",
+        "tip": "Once per day, the first hit you take is reflected.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "true_strike": {
+        "name": "True Strike",
+        "tip": "Your Attacks will occasionally become Critical, doing double damage in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "jump_attack": {
+        "name": "Jump Attack",
+        "tip": "Jumping and then Attacking mid-air will damage enemies in a small radius.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "well_armed": {
+        "name": "Well-Armed",
+        "tip": "Biome-unique Armor and Weapons will sometimes drop from Treasure Chests in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "quick_footed": {
+        "name": "Quick Footed",
+        "tip": "Blue Sapling pools will grant a short Speed Boost rather than slow you down.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "shrine_savant": {
+        "name": "What an Offer",
+        "tip": "Using an Offering Shrine will bestow a short HP & Stamina Regen buff in addition to their usual effect.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "generous_in_defeat": {
+        "name": "Generous In Defeat",
+        "tip": "Monsters will occasionally drop twice as many items when defeated.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "dungeon_delicacies": {
+        "name": "Dungeon Delicacies",
+        "tip": "Certain Cooked Dishes will occasionally drop from Treasure Chests in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "perfect_prefix": {
+        "name": "Perfect Prefix",
+        "tip": "The infusion power of Infused Weapons will double.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "rocking": {
+        "name": "Rocking",
+        "tip": "Clod Projectiles that are reflected back are now much more likely to critically strike.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "in_motion": {
+        "name": "In Motion",
+        "tip": "Defeating a Monster will sometimes grant a brief Speed Boost.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "out_of_juice": {
+        "name": "Out of Juice",
+        "tip": "Enchanterns now briefly freeze in place after discharging.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "sonic_boom": {
+        "name": "Sonic Boom",
+        "tip": "If you attack the Essence Bat's sonic attack, unleash a Sonic Boom, damaging all enemies around you.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "gift_exchange": {
+        "name": "Gift Exchange",
+        "tip": "When you throw an item into a resting Mimic Chest, it will drop two items instead of one.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "guardians_shield_two": {
+        "name": "Guardian Shield II",
+        "tip": "Your Shield will now activate randomly at low chance.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "true_strike_two": {
+        "name": "True Strike II",
+        "tip": "Your Attacks are more likely to become Critical, doing double damage in the Mines.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "sure_strike": {
+        "name": "Sure Strike",
+        "tip": "Defeating an enemy buffs your damage by 5% for 10 seconds, stacking up to 25%.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "generous_in_defeat_two": {
+        "name": "Generous in Defeat II",
+        "tip": "Monsters will more often drop twice as many items when defeated.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "friend_shaped": {
+        "name": "Friend-Shaped",
+        "tip": "Pet skins can now drop from defeated monsters, allowing your pet to take on a monster's appearance. (Note: only saplings, mushrooms, rockclods and oreclods for now, more coming later.)",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
+        },
+        "url": "/wiki/Skills#Combat"
+    },
+    "ranching": {},
+    "feeding_frenzy": {
+        "name": "Feeding Frenzy",
+        "tip": "Hay and Grass Seed drop at double the usual amount from Cutting Grass.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "close_bond": {
+        "name": "Close Bond",
+        "tip": "Animals that have been Pet and Fed for the day will receive an extra Heart Point increase.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "barnyard_bounty": {
+        "name": "Barnyard Bounty",
+        "tip": "Chickens and Cows will sometimes drop extra Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "currency_of_care": {
+        "name": "Currency Of Care",
+        "tip": "When animals eat crops, either by hand feeding or by grazing, they will drop the currency Shiny Beads.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>25</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "currency_of_care_two": {
+        "name": "Currency of Care II",
+        "tip": "Animals that have been Pet and Fed for the day will sometimes drop Shiny Bead the next day in addition to their regular Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "feed_prepper": {
+        "name": "Feed Prepper",
+        "tip": "The Craft Time for all animal feed is reduced by 10 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "welcome_home": {
+        "name": "Welcome Home",
+        "tip": "Newly bought or born animals will start at 1 Heart Level.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "discount_treats": {
+        "name": "Discount Treats",
+        "tip": "Heart shaped treats sold by Hayden will have a 10% price reduction.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>40</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "currency_of_care_three": {
+        "name": "Currency of Care III",
+        "tip": "Animals can now be fed cooked dishes and will reward more Shiny Beads based on the dish's star level.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "welcome_home_two": {
+        "name": "Welcome Home II",
+        "tip": "Newly bought or born animals will start at 2 Heart Level.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "barnyard_bounty_two": {
+        "name": "Barnyard Bounty II",
+        "tip": "Ducks and Horses will sometimes drop extra Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "wind_down": {
+        "name": "Wind Down",
+        "tip": "The Mill Time for all mill recipes will be reduced by 10 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "the_bell_tolls": {
+        "name": "The Bell Tolls",
+        "tip": "You will receive the Big Bell crafting recipe. When rung, the Big Bell calls out or sends in all animals into their buildings.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "maximum_milling": {
+        "name": "Maximum Milling",
+        "tip": "Crafting Animal Feeds at the mill will sometimes drop an additional item of the same kind.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
+    "barnyard_bounty_three": {
+        "name": "Barnyard Bounty III",
+        "tip": "Sheep and Rabbits will sometimes drop extra Produce.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Ranching"
+    },
     "archaeology": {},
     "museum_quality_one": {
         "name": "Museum Quality I",
@@ -1289,5 +845,449 @@ var objItemsPerks =
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
         },
         "url": "/wiki/Skills#Archaeology"
+    },
+    "farming": {},
+    "prepared_picker": {
+        "name": "Prepared Picker",
+        "tip": "Harvesting a Forageable will occasionally drop a Seed version, if it can be grown.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "a_day_well_spent": {
+        "name": "A Day Well Spent",
+        "tip": "Going to bed with zero stamina gives a stamina boost the next day.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "green_thumb": {
+        "name": "Green Thumb",
+        "tip": "Planting a Seed will sometimes also Water the soil of the targeted tile.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "refreshing": {
+        "name": "Refreshing",
+        "tip": "Watering a crop will sometimes refund the Stamina used.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "bountiful": {
+        "name": "Bountiful",
+        "tip": "Watering a crop will occasionally drop a Seed version of it.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>60</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "heavy_duty": {
+        "name": "Heavy Duty",
+        "tip": "Tilling soil will sometimes drop a piece of Stone or Wood.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>30</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "well_watered": {
+        "name": "Well Watered",
+        "tip": "Watered crops will occasionally retain their water through the next day.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "nice_swing": {
+        "name": "Nice Swing",
+        "tip": "Grants a chance that tilling refunds the stamina it uses.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "living_off_the_land": {
+        "name": "Living off the Land",
+        "tip": "Harvesting a crop will occasionally drop a cooked dish that uses the crop.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>95</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "superb_sower": {
+        "name": "Superb Sower",
+        "tip": "You can now charge your seeds to spread them across a wider area.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>100</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "harvest_time": {
+        "name": "Harvest Time",
+        "tip": "Slow-Growing crops now reach their first-time harvest a day earlier.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "prize_winning": {
+        "name": "Prize Winning",
+        "tip": "Harvesting crops will occasionally drop coins based on 5% of their selling price.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>90</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "sickle_sword": {
+        "name": "Sickle Sword",
+        "tip": "You can now use your sword to harvest crops quickly.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "ornamental": {
+        "name": "Ornamental",
+        "tip": "Harvesting a crop or forageable will sometimes drop a recipe teaching you how to make an ornamental furniture version of the plant.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "perfect_pollinators": {
+        "name": "Perfect Pollinators",
+        "tip": "Legendary bugs will now appear more often.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "magic_design": {
+        "name": "Magic Design",
+        "tip": "Giant Essence Stones are now craftable, and can power a statue for 40 days.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>160</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "earthly_essence": {
+        "name": "Earthly Essence",
+        "tip": "Harvested crops now have a low chance of dropping a Magic Seed. Who knows what will grow if you plant it?",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>210</span>"
+        },
+        "url": "/wiki/Skills#Farming"
+    },
+    "mount": {},
+    "horsepower": {
+        "name": "Horsepower",
+        "tip": "Your Mistmare now runs 10% faster.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>200</span>"
+        },
+        "url": "/wiki/Skills#Mistmare"
+    },
+    "harvest_horse": {
+        "name": "Harvest Horse",
+        "tip": "When your Mistmare runs over a forage spot or a fully grown crop, it will pop from the ground.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>190</span>"
+        },
+        "url": "/wiki/Skills#Mistmare"
+    },
+    "nice_ride": {
+        "name": "Nice Ride",
+        "tip": "The appearance of large animals can now be unlocked at 5 Hearts to ride them.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Mistmare"
+    },
+    "blacksmithing": {},
+    "copper_expert": {
+        "name": "Copper Expert",
+        "tip": "The amount of Copper Ore required to craft Copper Ingots will be reduced by 1.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "time_sensitive": {
+        "name": "Time Sensitive",
+        "tip": "The Craft Time for all blacksmithing recipes will be reduced by 10 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "sharp_blacksmithing": {
+        "name": "Sharp Blacksmithing",
+        "tip": "Crafting a Weapon will occasionally result in a bonus Sharp Infusion, which grants it an additional +1 Attack Power.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "fortified_blacksmithing": {
+        "name": "Fortified Blacksmithing",
+        "tip": "Crafting Armor will occasionally result in a bonus Fortified Infusion, which grants you an additional +4 HP when worn.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "iron_expert": {
+        "name": "Iron Expert",
+        "tip": "The amount of Iron Ore required to craft Iron Ingots will be reduced by 1.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "time_sensitive_two": {
+        "name": "Time Sensitive II",
+        "tip": "The Craft Time for all blacksmithing recipes will reduce by an additional 10 minutes, bringing the total reduction to 20 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "leech_blacksmithing": {
+        "name": "Leech Blacksmithing",
+        "tip": "Crafting a Weapon will occasionally result in a bonus Leech Infusion, which restores 1 HP each time it's used to attack a Monster.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "lightweight_blacksmithing": {
+        "name": "Lightweight Blacksmithing",
+        "tip": "Crafting a Tool will occasionally result in a bonus Lightweight Infusion, occasionally dropping Stamina orbs on use.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>45</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "silver_expert": {
+        "name": "Silver Expert",
+        "tip": "The amount of Silver Ore required to craft Silver Ingots will be reduced by 1.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "hasty_blacksmithing": {
+        "name": "Hasty Blacksmithing",
+        "tip": "Crafting Armor will occasionally result in a bonus Hasty Infusion, which grants you an additional 4% Speed Boost when worn.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "time_sensitive_three": {
+        "name": "Time Sensitive III",
+        "tip": "The Craft Time for all blacksmithing recipes will reduce by another 10 minutes, bringing the total reduction to 30 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "empowered": {
+        "name": "Empowered",
+        "tip": "Crafting a Tool, Weapon, or Armor will be more likely to result in an available Infused version.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>65</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "empowered_two": {
+        "name": "Empowered II",
+        "tip": "Crafting a Tool, Weapon, or Armor will be a bit more likely to result in an available Infused version than before.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "gold_expert": {
+        "name": "Gold Expert",
+        "tip": "The amount of Gold Ore required to craft Gold Ingots will be reduced by 1.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "tireless_blacksmithing": {
+        "name": "Tireless Blacksmithing",
+        "tip": "Crafting Armor will occasionally result in a bonus Tireless Infusion, which grants you an additional +4 Stamina when worn.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "time_sensitive_four": {
+        "name": "Time Sensitive IV",
+        "tip": "The Craft Time for all blacksmithing recipes will reduce by yet another 10 minutes, bringing the total reduction to 40 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "mistril_expert": {
+        "name": "Mistril Expert",
+        "tip": "The amount of Mistril Ore required to craft Mistril Ingots will be reduced by 1.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Blacksmithing"
+    },
+    "woodcrafting": {},
+    "hammer_timing": {
+        "name": "Hammer Timing",
+        "tip": "The Craft Time for all crafting recipes will be reduced by 10 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>10</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "lumberjack": {
+        "name": "Lumberjack",
+        "tip": "Breaking a Branch will sometimes drop an extra piece of Wood.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "masonry": {
+        "name": "Masonry",
+        "tip": "Breaking a Rock will sometimes drop an extra piece of Stone.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>15</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "forager": {
+        "name": "Forager",
+        "tip": "Chopping down a Tree will occasionally drop a seasonally appropriate Forageable.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "working_with_the_grain": {
+        "name": "Working with the Grain",
+        "tip": "Crafting an item will occasionally return one of its ingredients afterward.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>60</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "quality_crafting": {
+        "name": "Quality Crafting",
+        "tip": "Crafting an Item will occasionally result in a bonus Quality Infusion, which grants it a 10% higher selling price.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>95</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "natural": {
+        "name": "Natural",
+        "tip": "Chopping down any tree will occasionally drop Hardwood.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>20</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "hammer_timing_two": {
+        "name": "Hammer Timing II",
+        "tip": "The Craft Time for all crafting recipes will reduce by an additional 10 minutes, bringing the total reduction to 20 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "material_world": {
+        "name": "Material World",
+        "tip": "Material drops from breakables in the Mines now drop twice as much.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>75</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "steady_supplies": {
+        "name": "Steady Supplies",
+        "tip": "Sod, Peat, and Cattails can now be purchased at the Carpenter's Shop.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>70</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "set_pieces": {
+        "name": "Set Pieces",
+        "tip": "Crafting an item can occasionally give you two of it.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>80</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "hammer_timing_three": {
+        "name": "Hammer Timing III",
+        "tip": "The Craft Time for all crafting recipes will reduce by an additional 10 minutes, bringing the total reduction to 30 minutes.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>50</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "lumberjack_two": {
+        "name": "Lumberjack II",
+        "tip": "Breaking a Branch, felling a tree, or chopping down a stump will always drop an extra piece of Wood.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "underground_inspiration": {
+        "name": "Underground Inspiration",
+        "tip": "Coral and Crystals now drop materials twice as often.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>145</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "deliberate_debris": {
+        "name": "Deliberate Debris",
+        "tip": "Farm debris will spawn 50% less often.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>150</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "working_with_the_grain_two": {
+        "name": "Working with the Grain II",
+        "tip": "Crafting an item is now even more likely to return one of its ingredients afterward.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>155</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "void_crafting": {
+        "name": "Void Crafting",
+        "tip": "Voidite can now be used to craft a unique furniture set.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
+    },
+    "big_water_sprites": {
+        "name": "Big Water Sprites",
+        "tip": "Unlocks new water sprites designs with a larger watering radius.",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/20px-Essence.png\" width=\"18\"/>205</span>"
+        },
+        "url": "/wiki/Skills#Woodcrafting"
     }
 }
