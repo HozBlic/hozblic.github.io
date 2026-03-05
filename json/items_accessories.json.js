@@ -102,7 +102,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "back_gear_hunter_cape": {
@@ -110,7 +109,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "back_gear_jasmine_backpack": {
@@ -1146,7 +1144,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "head_lava_cat_hat": {
@@ -1358,7 +1355,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "head_witch_hat": {
@@ -1446,7 +1442,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "pants_rogue": {
@@ -1533,7 +1528,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "shoes_boots_noble": {
@@ -1661,7 +1655,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "skirt_ancient_witch": {
@@ -1759,7 +1752,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "top_adventurer": {
@@ -1827,7 +1819,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "top_hunter": {
@@ -1835,7 +1826,6 @@ var objItemsAccessories =
         "spoiler": 1,
         "tip": "",
         "tip_extra": {},
-        "noimage": 1,
         "url": ""
     },
     "top_jacket_and_tee_basic": {
