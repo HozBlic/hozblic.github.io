@@ -2,85 +2,363 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>PixiJS + jQuery Example</title>
+    <base target="_blank">
+    <meta name="theme-color" content="#4a4e69">
+    <title>Fields of Mistria Greenhouse tutorial</title>
+    <meta name="description"
+        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file." />
+    <meta name="keywords" content="Fields of Mistria, herb, seeds, tutorial, save file, edit, modification">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Fields of Mistria Greenhouse tutorial" />
+    <meta itemprop="description"
+        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
+    <meta itemprop="image" content="https://mistria.app/images/greenhouse/meta.png" /> <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://mistria.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fields of Mistria Greenhouse tutorial" />
+    <meta property="og:description"
+        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
+    <meta property="og:image" content="https://mistria.app/images/greenhouse/meta.png" />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fields of Mistria Greenhouse tutorial" />
+    <meta name="twitter:description"
+        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
+    <meta name="twitter:image" content="https://mistria.app/images/greenhouse/meta.png" />
+    <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96px.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon-96px.svg" />
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/favicon-180px.png" />
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96px.png">
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css?v=45">
+    <link rel="stylesheet" href="css/planner.css">
+
+    <script type="text/javascript" src="json/build.json.js"></script>
 
     <script type="text/javascript" src="js/pixi.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/tippy-bundle.umd.min.js?v=2"></script>
+
+    <script type="text/javascript" src="js/script.js?v=53"></script>
+    <script type="text/javascript" src="js/planner.js"></script>
     <script type="text/javascript" src="js/manageSprites.js"></script>
 </head>
 
 <body>
+    <div id="page" class="planner">
+        <div id="triangle">
+            <a href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US"><img src="images/items/rose_tea.png"></a>
+        </div>
+        <div id="side_menu">
+            <div id="title">Fields of Mistria<span class="version">v.0.14.2</span></div>
+            <div id="filter_content">
+                <div class="dropdowns">
+                    <div class="dropdown_wrap">
+                        <div class="button_item dropdown_button">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-layout">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                            </div>
+                            <div class="text">Season</div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="dropdown-item season" data-value="spring" onclick="changeSeason(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-grid">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </div>
+                                Spring
+                            </div>
+                            <div class="dropdown-item season" data-value="summer" onclick="changeSeason(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-grid">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </div>
+                                Summer
+                            </div>
+                            <div class="dropdown-item season" data-value="fall" onclick="changeSeason(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-grid">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </div>
+                                Fall
+                            </div>
+                            <div class="dropdown-item season" data-value="winter" onclick="changeSeason(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-grid">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </div>
+                                Winter
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown_wrap">
+                        <div class="button_item dropdown_button">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12.424" height="13.449"
+                                    viewBox="0 0 12.424 13.449">
+                                    <g id="sort_arrows" stroke="none" transform="translate(-2.3 -1.5)">
+                                        <g id="Group_1387" data-name="Group 1387" transform="translate(2.3 1.5)">
+                                            <path id="Path_28891" data-name="Path 28891"
+                                                d="M8.7,5.663a.581.581,0,0,1-.448-.192L5.822,3.037,3.389,5.471a.634.634,0,0,1-.9-.9L5.31,1.692a.619.619,0,0,1,.9,0L9.152,4.574a.619.619,0,0,1,0,.9A.692.692,0,0,1,8.7,5.663Z"
+                                                transform="translate(-2.3 -1.5)" fill="#9a9a9a" />
+                                        </g>
+                                        <g id="Group_1388" data-name="Group 1388" transform="translate(5.118 1.5)">
+                                            <path id="Path_28892" data-name="Path 28892"
+                                                d="M7.34,11.106a.605.605,0,0,1-.64-.64V2.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,7.34,11.106Z"
+                                                transform="translate(-6.7 -1.5)" fill="#9a9a9a" />
+                                        </g>
+                                        <g id="Group_1389" data-name="Group 1389" transform="translate(7.679 10.786)">
+                                            <path id="Path_28893" data-name="Path 28893"
+                                                d="M14.286,20.163a.581.581,0,0,1-.448-.192l-2.946-2.882a.634.634,0,0,1,.9-.9l2.434,2.434,2.434-2.434a.634.634,0,0,1,.9.9l-2.818,2.882a.692.692,0,0,1-.448.192Z"
+                                                transform="translate(-10.7 -16)" fill="#9a9a9a" />
+                                        </g>
+                                        <g id="Group_1390" data-name="Group 1390" transform="translate(10.561 5.342)">
+                                            <path id="Path_28894" data-name="Path 28894"
+                                                d="M15.84,17.106a.605.605,0,0,1-.64-.64V8.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,15.84,17.106Z"
+                                                transform="translate(-15.2 -7.5)" fill="#9a9a9a" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="text">House upgrade</div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="dropdown-item house_upgrade" data-value="0" onclick="changeHouseUpgrade(this)">
+                                <div class="icon">
 
-    <label for="seasons">Choose a season:</label>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
 
-    <select name="seasons" id="seasons">
-        <option value="spring">spring</option>
-        <option value="summer">summer</option>
-        <option value="fall">fall</option>
-        <option value="winter">winter</option>
-    </select>
-    <br>
-    <input type="checkbox" id="chb_collision" name="chb_collision" value="collision" checked>
-    <label for="chb_collision"> Show collision</label>
-    <br>
-    <input type="checkbox" id="chb_grid" name="chb_grid" value="grid" checked>
-    <label for="chb_grid"> Show grid</label><br>
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-401,288.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.8,288.6-401.4,288.3-401,288.3z M-401,292.3l-0.7,2.1
+                                        h1.5L-401,292.3z M-403.3,299.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1c0.2,0.3,0.5,0.6,0.9,0.6h5.3
+                                        c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.3z M-395.7,302.6
+                                        c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-4,4
+                                        c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
+                                    </svg>
+                                </div>
+                                0
+                            </div>
+                            <div class="dropdown-item house_upgrade" data-value="1" onclick="changeHouseUpgrade(this)">
+                                <div class="icon">
 
-    <input type="checkbox" id="chb_soil" name="chb_soil" value="soil">
-    <label for="chb_soil">Draw soil</label><br>
-    <input type="checkbox" id="chb_wet" name="chb_wet" value="wet">
-    <label for="chb_wet">Draw wet</label><br>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
+                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
+                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
+                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
+                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
+                                    </svg>
+                                </div>
+                                1
+                            </div>
+                            <div class="dropdown-item house_upgrade" data-value="2" onclick="changeHouseUpgrade(this)">
+                                <div class="icon">
 
-    <div id="app">
-        <div id="game-container"></div>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
+                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
+                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
+                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
+                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
+                                    </svg>
+                                </div>
+                                2
+                            </div>
+                            <div class="dropdown-item house_upgrade" data-value="3" onclick="changeHouseUpgrade(this)">
+                                <div class="icon">
+
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
+                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
+                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
+                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
+                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
+                                    </svg>
+                                </div>
+                                3
+                            </div>
+                            <div class="dropdown-item house_upgrade" data-value="4" onclick="changeHouseUpgrade(this)">
+                                <div class="icon">
+
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+                                        height="24px" viewBox="-408 286.3 24 24"
+                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
+                                        <path fill="#9a9a9a" class="st0" stroke="none"
+                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
+                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
+                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
+                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
+                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
+                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
+                                    </svg>
+                                </div>
+                                4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="switches">
+
+                    <div class="switch_wrap">
+                        <label class="switch mode_grid">
+                            <input type='checkbox' id="mode_grid"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Show grid
+                    </div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_collision">
+                            <input type='checkbox' id="mode_collision"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Show collision
+                    </div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_soil">
+                            <input type='checkbox' id="mode_soil"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Draw soil
+                    </div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_wet">
+                            <input type='checkbox' id="mode_wet"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Draw wet soil
+                    </div>
+
+                    </br>
+                    </br>
+                    </br>
+                    <div class="switch_wrap switch_wrap_dark">
+                        <label class="switch mode_dark">
+                            <input type='checkbox' id="mode_dark"></input>
+                            <div class='toggler'>
+                                <div class='moon-icon'></div>
+                                <div class='sun-icon'></div>
+                            </div>
+                        </label> Dark mode
+                    </div>
+                </div>
+                <div class="bottom_info">
+                    <a id="suggestion"
+                        href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">
+                        <div id="suggestion_question">
+                            <p>Have a suggestion or feedback?</p>
+                            <p>Leave a comment!
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9" viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                            </p>
+                        </div>
+                        <div id="owner">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                                <defs> </defs>
+                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                                    transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                    <path
+                                        d="M 74.298 90 H 15.702 C 7.03 90 0 82.97 0 74.298 V 15.702 C 0 7.03 7.03 0 15.702 0 h 58.596 C 82.97 0 90 7.03 90 15.702 v 58.596 C 90 82.97 82.97 90 74.298 90 z"
+                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;"
+                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                    <path
+                                        d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 s 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"
+                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                </g>
+                            </svg>
+                            HozBlic
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div id="planner" class="tab_content planner_show">
+                <div id="app">
+                    <div id="game-container"></div>
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <label class="mode_collapse side_menu_btn"> <input type='checkbox' id="mode_collapse"></input>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
+                    </path>
+                </svg>
+            </label>
+            <div id="tabs">
+
+                <a class="tab" href="/" id="tab_gift" target="_self" data-tab="gift"><img src="images/gift.png">Gift
+                    guide</a>
+            </div>
+        </div>
     </div>
-
-    <style>
-        html {
-            height: 100%;
-            width: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            padding: 5px;
-            box-sizing: border-box;
-            /* overflow: hidden; */
-        }
-
-        #app {
-            width: 100%;
-            height: 100%;
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        #game-container {
-
-
-
-
-            /* width:2208px;
-            height: 1648px;  */
-
-
-        }
-
-        #game-container canvas {
-            /* background-image: url('images/rm_farm.png');
-            background-size: cover;
-            image-rendering: pixelated;
-
-            image-rendering: pixelated;
-            image-rendering: crisp-edges; */
-        }
-    </style>
 </body>
 
 </html>
