@@ -735,13 +735,21 @@ function loadMenuItems() {
         $(`#${strMode}`).change(function () {
             let bolChecked = $(this).is(':checked');
             if (bolChecked) {
-                // $('#page').addClass(strMode);
+                $('#page').addClass(strMode);
                 objMistriaDataPlanner.options.add(strMode);
             } else {
-                // $('#page').removeClass(strMode);
+                $('#page').removeClass(strMode);
                 objMistriaDataPlanner.options.delete(strMode);
             }
             saveDataPlanner();
+
+            if (strMode === 'mode_grid') {
+                drawGrid();
+            }
+
+            if (strMode === 'mode_collision') {
+                drawCollision();
+            }
         });
     })
     objMistriaDataPlanner.options.forEach(key => {
