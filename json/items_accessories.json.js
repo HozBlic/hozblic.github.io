@@ -99,16 +99,18 @@ var objItemsAccessories =
     },
     "back_gear_hunter_bow": {
         "name": "Hunter's Bow",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Wheedle's Stall</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span>"
+        },
         "url": ""
     },
     "back_gear_hunter_cape": {
         "name": "Hunter's Cape",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Wheedle's Stall</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span>"
+        },
         "url": ""
     },
     "back_gear_jasmine_backpack": {
@@ -405,7 +407,7 @@ var objItemsAccessories =
     },
     "face_gear_pumpkin_earrings": {
         "name": "Pumpkin Earrings",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_autumn.png?b79477\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> Only)</small>",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
         },
@@ -1111,12 +1113,11 @@ var objItemsAccessories =
     },
     "head_halo": {
         "name": "Halo",
-        "tip": "?",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a><a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Saturday Market</a> at Wheedle's Stall",
         "tip_extra": {
-            "price": "?"
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>999,999t</span>"
         },
-        "url": "",
-        "spoiler": 1
+        "url": ""
     },
     "head_griffin_statue_hat": {
         "name": "Living Gryphon Statue Hat",
@@ -1141,9 +1142,10 @@ var objItemsAccessories =
     },
     "head_hunter_hat": {
         "name": "Hunter's Hat",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Wheedle's Stall</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span>"
+        },
         "url": ""
     },
     "head_lava_cat_hat": {
@@ -1210,7 +1212,7 @@ var objItemsAccessories =
     },
     "head_pumpkin_beanie": {
         "name": "Pumpkin Beanie",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_autumn.png?b79477\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> Only)</small>",
         "tip_extra": {
             "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
         },
@@ -1352,9 +1354,10 @@ var objItemsAccessories =
     },
     "head_winter_beanie": {
         "name": "Winter Beanie",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_winter.png?4b2fdb\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span> Only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "head_witch_hat": {
@@ -1439,9 +1442,10 @@ var objItemsAccessories =
     },
     "pants_hunter": {
         "name": "Hunter's Pants",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Wheedle's Stall</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>10,000t</span>"
+        },
         "url": ""
     },
     "pants_rogue": {
@@ -1525,9 +1529,10 @@ var objItemsAccessories =
     },
     "shoes_boots_hunter": {
         "name": "Hunter's Boots",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Wheedle's Stall</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>5,000t</span>"
+        },
         "url": ""
     },
     "shoes_boots_noble": {
@@ -1749,9 +1754,10 @@ var objItemsAccessories =
     },
     "suit_halter_bikini_set": {
         "name": "Halter Bikini Set",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_summer.png?f826d4\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "top_adventurer": {
@@ -1816,16 +1822,18 @@ var objItemsAccessories =
     },
     "top_halter_bikini": {
         "name": "Halter Bikini Top",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_summer.png?f826d4\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "top_hunter": {
         "name": "Hunter's Top",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Wheedle's_Stall\" title=\"Saturday Market\">Wheedle's Stall</a>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>10,000t</span>"
+        },
         "url": ""
     },
     "top_jacket_and_tee_basic": {
