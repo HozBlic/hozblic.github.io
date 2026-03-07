@@ -1,4 +1,3 @@
-
 .gifts_show,
 .museum_show,
 .almanac_show,
@@ -89,7 +88,7 @@
     flex-direction: column;
     gap: 3px;
     overflow: hidden;
-    max-height: 125px;
+    max-height: 105px;
 }
 
 @media screen and (min-width: 575px) {
@@ -165,6 +164,7 @@ input[type="checkbox"].styled+label {
 input[type="checkbox"].styled:checked+label {
     background-image: url(../images/checkbox_ch.svg);
 }
+
 /* End: Left menu, filter checkboxes */
 
 /* Left menu, statistics */
@@ -229,6 +229,7 @@ input[type="checkbox"].styled:checked+label {
     text-align: center;
     width: 100%;
 }
+
 /* End: Left menu, statistics */
 
 
@@ -589,7 +590,7 @@ input[type="checkbox"].styled:checked+label {
     display: none;
 }
 
-#page.mode_list .item input[type="checkbox"]+label{
+#page.mode_list .item input[type="checkbox"]+label {
     background-image: url(../images/checkbox.svg);
 }
 
@@ -871,6 +872,7 @@ input[type="checkbox"].styled:checked+label {
     padding-right: 10px;
     white-space: nowrap;
 }
+
 /* end: tippy */
 
 
