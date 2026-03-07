@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <base target="_blank">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#4a4e69">
     <title>Fields of Mistria Greenhouse tutorial</title>
     <meta name="description"
         content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file." />
@@ -34,25 +34,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="./images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="../css/style.css?v=41">
+    <link rel="stylesheet" href="../css/style.css?v=45">
+    <link rel="stylesheet" href="../css/greenhouse.css">
 
-    <script type="text/javascript" src="../json/items.json.js?v=17"></script>
-    <script type="text/javascript" src="../json/items_accessories.json.js?v=2"></script>
-    <script type="text/javascript" src="../json/items_animals.json.js?v=1"></script>
     <script type="text/javascript" src="../json/build.json.js"></script>
-    <script type="text/javascript" src="../json/tabs.json.js?v=4"></script>
-
-    <script type="text/javascript" src="../json/wrapped_dummy.json.js?v=1"></script>
 
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/tippy-bundle.umd.min.js?v=2"></script>
-    <script type="text/javascript" src="../js/jquery.highlight-5.js?v=1"></script>
-    <script type="text/javascript" src="../js/pako.min.js"></script>
-    <script type="text/javascript" src="../js/chart.js"></script>
-    <script type="text/javascript" src="../js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="../js/script.js?v=44"></script>
+    <script type="text/javascript" src="../js/script.js?v=53"></script>
+    <script type="text/javascript" src="../js/greenhouse.js"></script>
 </head>
 
 <body>
@@ -126,8 +118,8 @@
                             <ul class="subSectionUl">
                                 <li> Download <b>Vaultc tool</b>
                                     <ol>
-                                        <li> Open <a href="https://github.com/NPC-Studio/vaultc"
-                                                target="_blank">this link</a>, click on right side of the page below
+                                        <li> Open <a href="https://github.com/NPC-Studio/vaultc" target="_blank">this
+                                                link</a>, click on right side of the page below
                                             "Releases"
                                             <img src="../images/greenhouse/1.png" />
                                         </li>
@@ -180,8 +172,7 @@
                                                             height="24" viewBox="0 0 20.278 24" stroke="none">
                                                             <path
                                                                 d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                transform="translate(-4969 7272.001)"
-                                                                fill="#FFFFFF" />
+                                                                transform="translate(-4969 7272.001)" fill="#FFFFFF" />
                                                         </svg>
                                                     </div>
                                                     <div class="text">
@@ -220,8 +211,7 @@
                                                             height="24" viewBox="0 0 20.278 24" stroke="none">
                                                             <path
                                                                 d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                transform="translate(-4969 7272.001)"
-                                                                fill="#FFFFFF" />
+                                                                transform="translate(-4969 7272.001)" fill="#FFFFFF" />
                                                         </svg>
                                                     </div>
                                                     <div class="text">
@@ -318,8 +308,7 @@
                                                             height="24" viewBox="0 0 20.278 24" stroke="none">
                                                             <path
                                                                 d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                transform="translate(-4969 7272.001)"
-                                                                fill="#FFFFFF" />
+                                                                transform="translate(-4969 7272.001)" fill="#FFFFFF" />
                                                         </svg>
                                                     </div>
                                                     <div class="text">
@@ -345,8 +334,7 @@
                                                             height="24" viewBox="0 0 20.278 24" stroke="none">
                                                             <path
                                                                 d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
-                                                                transform="translate(-4969 7272.001)"
-                                                                fill="#FFFFFF" />
+                                                                transform="translate(-4969 7272.001)" fill="#FFFFFF" />
                                                         </svg>
                                                     </div>
                                                     <div class="text">
@@ -383,7 +371,7 @@
                 <div class="tab active" id="tab_tutorial" data-tab="tutorial">
                     <img src="../images/items/small_greenhouse_wood_blueprint.png">Tutorial
                 </div>
-                <a class="tab" href="/" id="tab_gift" data-tab="gift"><img src="../images/gift.png">Gift guide</a>
+                <a class="tab" href="/" id="tab_gift" target="_self" data-tab="gift"><img src="../images/gift.png">Gift guide</a>
             </div>
         </div>
     </div>
