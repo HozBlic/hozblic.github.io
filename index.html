@@ -58,70 +58,63 @@
         <div id="side_menu">
             <div id="title">Fields of Mistria<span class="version">v.0.14.2</span></div>
             <div id="filter_content">
+
+                <div id="zoom">
+                    <div id="minimap_wrapper">
+                        <div id="minimap"></div>
+                        <div id="zoom_selection"></div>
+                    </div>
+                    <div id="controls">
+                        <input type="range" id="zoomSlider" type="range" min="0.5" max="5" value="1" step="0.1">
+                        <div id="zoom_precent"></div>
+                        <div id="zoom_reset" onclick="resetZoom()">
+                            <div class="icon">
+                                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Edit / Undo">
+                                        <path id="Vector"
+                                            d="M10 8H5V3M5.29102 16.3569C6.22284 17.7918 7.59014 18.8902 9.19218 19.4907C10.7942 20.0913 12.547 20.1624 14.1925 19.6937C15.8379 19.225 17.2893 18.2413 18.3344 16.8867C19.3795 15.5321 19.963 13.878 19.9989 12.1675C20.0347 10.4569 19.5211 8.78001 18.5337 7.38281C17.5462 5.98561 16.1366 4.942 14.5122 4.40479C12.8878 3.86757 11.1341 3.86499 9.5083 4.39795C7.88252 4.93091 6.47059 5.97095 5.47949 7.36556"
+                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="dropdowns">
                     <div class="dropdown_wrap">
                         <div class="button_item dropdown_button">
+
                             <div class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-layout">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                                    <line x1="9" y1="21" x2="9" y2="9"></line>
-                                </svg>
+                                <img src="images/tooltip/22px-Category_Functional_calendar.png">
                             </div>
+
                             <div class="text">Season</div>
                         </div>
                         <div class="dropdown">
                             <div class="dropdown-item season" data-value="spring" onclick="changeSeason(this)">
                                 <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
+                                    <img src="images/tooltip/18px-Season_icon_spring.png">
                                 </div>
                                 Spring
                             </div>
                             <div class="dropdown-item season" data-value="summer" onclick="changeSeason(this)">
                                 <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
+                                    <img src="images/tooltip/18px-Season_icon_summer.png">
                                 </div>
                                 Summer
                             </div>
                             <div class="dropdown-item season" data-value="fall" onclick="changeSeason(this)">
                                 <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
+                                    <img src="images/tooltip/18px-Season_icon_autumn.png">
                                 </div>
                                 Fall
                             </div>
                             <div class="dropdown-item season" data-value="winter" onclick="changeSeason(this)">
                                 <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-grid">
-                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                        <rect x="3" y="14" width="7" height="7"></rect>
-                                    </svg>
+                                    <img src="images/tooltip/18px-Season_icon_winter.png">
                                 </div>
                                 Winter
                             </div>
@@ -130,132 +123,43 @@
                     <div class="dropdown_wrap">
                         <div class="button_item dropdown_button">
                             <div class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12.424" height="13.449"
-                                    viewBox="0 0 12.424 13.449">
-                                    <g id="sort_arrows" stroke="none" transform="translate(-2.3 -1.5)">
-                                        <g id="Group_1387" data-name="Group 1387" transform="translate(2.3 1.5)">
-                                            <path id="Path_28891" data-name="Path 28891"
-                                                d="M8.7,5.663a.581.581,0,0,1-.448-.192L5.822,3.037,3.389,5.471a.634.634,0,0,1-.9-.9L5.31,1.692a.619.619,0,0,1,.9,0L9.152,4.574a.619.619,0,0,1,0,.9A.692.692,0,0,1,8.7,5.663Z"
-                                                transform="translate(-2.3 -1.5)" fill="#9a9a9a" />
-                                        </g>
-                                        <g id="Group_1388" data-name="Group 1388" transform="translate(5.118 1.5)">
-                                            <path id="Path_28892" data-name="Path 28892"
-                                                d="M7.34,11.106a.605.605,0,0,1-.64-.64V2.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,7.34,11.106Z"
-                                                transform="translate(-6.7 -1.5)" fill="#9a9a9a" />
-                                        </g>
-                                        <g id="Group_1389" data-name="Group 1389" transform="translate(7.679 10.786)">
-                                            <path id="Path_28893" data-name="Path 28893"
-                                                d="M14.286,20.163a.581.581,0,0,1-.448-.192l-2.946-2.882a.634.634,0,0,1,.9-.9l2.434,2.434,2.434-2.434a.634.634,0,0,1,.9.9l-2.818,2.882a.692.692,0,0,1-.448.192Z"
-                                                transform="translate(-10.7 -16)" fill="#9a9a9a" />
-                                        </g>
-                                        <g id="Group_1390" data-name="Group 1390" transform="translate(10.561 5.342)">
-                                            <path id="Path_28894" data-name="Path 28894"
-                                                d="M15.84,17.106a.605.605,0,0,1-.64-.64V8.14a.64.64,0,1,1,1.281,0v8.325A.605.605,0,0,1,15.84,17.106Z"
-                                                transform="translate(-15.2 -7.5)" fill="#9a9a9a" />
-                                        </g>
-                                    </g>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-maximize-2">
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <polyline points="9 21 3 21 3 15"></polyline>
+                                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                                    <line x1="3" y1="21" x2="10" y2="14"></line>
                                 </svg>
                             </div>
-                            <div class="text">House upgrade</div>
+                            <div class="text">Home Upgrade</div>
                         </div>
                         <div class="dropdown">
                             <div class="dropdown-item house_upgrade" data-value="0" onclick="changeHouseUpgrade(this)">
-                                <div class="icon">
-
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                        height="24px" viewBox="-408 286.3 24 24"
-                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
-
-                                        <path fill="#9a9a9a" class="st0" stroke="none"
-                                            d="M-401,288.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
-                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.8,288.6-401.4,288.3-401,288.3z M-401,292.3l-0.7,2.1
-                                        h1.5L-401,292.3z M-403.3,299.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1c0.2,0.3,0.5,0.6,0.9,0.6h5.3
-                                        c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.3z M-395.7,302.6
-                                        c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-4,4
-                                        c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                    </svg>
-                                </div>
-                                0
+                                <div class="icon"></div>
+                                Home Upgrade 0
                             </div>
                             <div class="dropdown-item house_upgrade" data-value="1" onclick="changeHouseUpgrade(this)">
-                                <div class="icon">
-
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                        height="24px" viewBox="-408 286.3 24 24"
-                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
-                                        <path fill="#9a9a9a" class="st0" stroke="none"
-                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
-                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
-                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
-                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
-                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
-                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                    </svg>
-                                </div>
-                                1
+                                <div class="icon"></div>
+                                Home Upgrade 1
                             </div>
                             <div class="dropdown-item house_upgrade" data-value="2" onclick="changeHouseUpgrade(this)">
-                                <div class="icon">
-
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                        height="24px" viewBox="-408 286.3 24 24"
-                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
-                                        <path fill="#9a9a9a" class="st0" stroke="none"
-                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
-                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
-                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
-                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
-                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
-                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                    </svg>
-                                </div>
-                                2
+                                <div class="icon"></div>
+                                Home Upgrade 2
                             </div>
                             <div class="dropdown-item house_upgrade" data-value="3" onclick="changeHouseUpgrade(this)">
-                                <div class="icon">
-
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                        height="24px" viewBox="-408 286.3 24 24"
-                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
-                                        <path fill="#9a9a9a" class="st0" stroke="none"
-                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
-                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
-                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
-                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
-                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
-                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                    </svg>
-                                </div>
-                                3
+                                <div class="icon"></div>
+                                Home Upgrade 3
                             </div>
                             <div class="dropdown-item house_upgrade" data-value="4" onclick="changeHouseUpgrade(this)">
-                                <div class="icon">
-
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-                                        height="24px" viewBox="-408 286.3 24 24"
-                                        style="enable-background:new -408 286.3 24 24;" xml:space="preserve">
-                                        <path fill="#9a9a9a" class="st0" stroke="none"
-                                            d="M-400.9,298.3c0.4,0,0.8,0.3,0.9,0.7l2.8,8.1c0.2,0.5-0.1,1.1-0.6,1.3c-0.5,0.2-1.1-0.1-1.3-0.6l-0.4-1.2h-2.9
-                                        l-0.4,1.2c-0.2,0.5-0.8,0.8-1.3,0.6c-0.5-0.2-0.8-0.8-0.6-1.3l2.8-8.1C-401.7,298.6-401.4,298.3-400.9,298.3z M-400.9,302.3
-                                        l-0.7,2.1h1.5L-400.9,302.3z M-403.6,288.3c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h3.3l-4.1,5.4c-0.2,0.3-0.3,0.7-0.1,1
-                                        c0.2,0.3,0.5,0.6,0.9,0.6h5.3c0.6,0,1-0.4,1-1s-0.4-1-1-1h-3.3l4.1-5.4c0.2-0.3,0.3-0.7,0.1-1c-0.2-0.3-0.5-0.6-0.9-0.6H-403.6z
-                                        M-395.7,302.6c0.4-0.4,1-0.4,1.4,0l2.3,2.3v-15.6c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1v15.6l2.3-2.3c0.4-0.4,1-0.4,1.4,0
-                                        c0.4,0.4,0.4,1,0,1.4l-4,4c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-4-4C-396.1,303.6-396.1,303-395.7,302.6z" />
-                                    </svg>
-                                </div>
-                                4
+                                <div class="icon"></div>
+                                Home Upgrade 4
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="switches">
-
                     <div class="switch_wrap">
                         <label class="switch mode_grid">
                             <input type='checkbox' id="mode_grid"></input>
@@ -288,9 +192,6 @@
                         </label>
                         Draw wet soil
                     </div>
-
-                    </br>
-                    </br>
                     </br>
                     <div class="switch_wrap switch_wrap_dark">
                         <label class="switch mode_dark">
@@ -299,7 +200,8 @@
                                 <div class='moon-icon'></div>
                                 <div class='sun-icon'></div>
                             </div>
-                        </label> Dark mode
+                        </label>
+                        Dark mode
                     </div>
                 </div>
                 <div class="bottom_info">

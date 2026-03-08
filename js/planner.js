@@ -2,13 +2,18 @@ let objMistriaDataPlanner;
 let objMistriaDataPlannerDefault = {
     'season': 'spring',
     'house_upgrade': 0,
+    'zoom': 1,
+    'offsetCanvas': {
+        x: 0,
+        y: 0
+    },
     'options': ['mode_grid', 'mode_collision'] // mode_soil, mode_wet
 }
-
 
 let arrFenceCoord = null;
 
 let arrCollisionGrid = null;
+let arrDiggableGrid = null;
 let bolSelection = true;
 
 
@@ -217,59 +222,64 @@ function getClickedCell(event) {
     let y = (event.clientY - rect.top) * scaleY / intMultiplierCanvas;
 
     let objCell = {
-        x: Math.floor(x / intGridCellSize),
-        y: Math.floor(y / intGridCellSize),
+        x: Math.floor((x - objMistriaDataPlanner.offsetCanvas.x) / intGridCellSize),
+        y: Math.floor((y - objMistriaDataPlanner.offsetCanvas.y) / intGridCellSize),
     }
+
+    console.log(objCell)
 
     return objCell;
 }
 
-function calculateMultiplier(intForcedMultiplier = false) {
-    if (intForcedMultiplier) {
-        intMultiplierCanvas = intForcedMultiplier;
-        return;
-    }
+function calculateMultiplier() {
+    intMultiplierCanvas = getMultiplierFitScreen() / objMistriaDataPlanner.zoom;
+}
 
+function getMultiplierFitScreen() {
     const intContainerWidth = document.querySelector('#app').offsetWidth;
     const intContainerHeight = document.querySelector('#app').offsetHeight;
-
-    intMultiplierCanvas = Math.min(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
+    return Math.min(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
 }
 
-function resize(intForcedMultiplier = false) {
-    calculateMultiplier(intForcedMultiplier);
-
-    objPlannerDiv.style.width = `${objCanvasDefault.width * intMultiplierCanvas}px`;
-    objPlannerDiv.style.height = `${objCanvasDefault.height * intMultiplierCanvas}px`;
-
-    resizeElements();
+function resize(bolZoom = false) {
+    if (!bolZoom) {
+        objPlannerDiv.style.width = `${objCanvasDefault.width * getMultiplierFitScreen()}px`;
+        objPlannerDiv.style.height = `${objCanvasDefault.height * getMultiplierFitScreen()}px`;
+    }
+    calculateMultiplier();
+    resizeContainers();
 }
 
-function resizeElements() {
-    if (objContainer_Background !== null) {
+function resizeContainers(strContainerKeyToZoom = false) {
+
+    if (objContainer_Background !== null && (!strContainerKeyToZoom || strContainerKeyToZoom === 'background')) {
         objContainer_Background.scale = intMultiplierCanvas;
+        objContainer_Background.position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
     }
-    if (objContainer_Grid !== null) {
+    if (objContainer_Grid !== null && (!strContainerKeyToZoom || strContainerKeyToZoom === 'grid')) {
         objContainer_Grid.scale = intMultiplierCanvas;
+        objContainer_Grid.position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
     }
-    if (objGraphics_Selection !== null) {
+    if (objGraphics_Selection !== null && (!strContainerKeyToZoom || strContainerKeyToZoom === 'selection')) {
         objGraphics_Selection.scale = intMultiplierCanvas;
+        objGraphics_Selection.position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
     }
 
     Object.keys(objGroundContainers).forEach(function (strContainerKey) {
-        if (objGroundContainers[strContainerKey] !== null) {
+        if (objGroundContainers[strContainerKey] !== null && (!strContainerKeyToZoom || strContainerKeyToZoom === 'ground')) {
             objGroundContainers[strContainerKey].scale = intMultiplierCanvas;
+            objGroundContainers[strContainerKey].position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
         }
     });
 
-    if (objContainer_Crops !== null) {
+    if (objContainer_Crops !== null && (!strContainerKeyToZoom || strContainerKeyToZoom === 'crops')) {
         objContainer_Crops.scale = intMultiplierCanvas;
+        objContainer_Crops.position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
     }
-    if (objContainer_Fence !== null) {
+    if (objContainer_Fence !== null && (!strContainerKeyToZoom || strContainerKeyToZoom === 'fence')) {
         objContainer_Fence.scale = intMultiplierCanvas;
+        objContainer_Fence.position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
     }
-
-
 }
 
 function buildGrid() {
@@ -308,7 +318,6 @@ function drawGrid() {
         objContainer_Grid.zIndex = objZindexes.grid;
     }
 
-
     if (objGraphics_Grid !== null && !objMistriaDataPlanner.options.has('mode_grid')) {
         objContainer_Grid.removeChild(objGraphics_Grid);
         objGraphics_Grid.destroy();
@@ -320,12 +329,11 @@ function drawGrid() {
         objContainer_Grid.addChild(objGraphics_Grid);
     }
 
-
 }
 
 function drawCollision() {
 
-    if (objContainer_Collision !== null && !objMistriaDataPlanner.options.has('mode_collision')) {
+    if (objContainer_Collision !== null) {
         objContainer_Background.removeChild(objContainer_Collision);
         objContainer_Collision.destroy();
         objContainer_Collision = null;
@@ -335,13 +343,42 @@ function drawCollision() {
         objContainer_Collision = new PIXI.Container();
         let intCellSize = intGridCellSize / 2;
 
-        for (var y = 0; y < arrCollisionGrid.length; y++) {
-            for (var x = 0; x < arrCollisionGrid[y].length; x++) {
-                if (arrCollisionGrid[y][x]) {
+        // arrCollisionUpgradeGrid.forEach((objCoord) => {
+        //     arrCollisionGrid[objCoord.y][objCoord.x] = objMistriaDataPlanner.house_upgrade ? 1 : 0;
+        // });
+
+        // for (var y = 0; y < arrCollisionGrid.length; y++) {
+        //     for (var x = 0; x < arrCollisionGrid[y].length; x++) {
+        //         if (arrCollisionGrid[y][x]) {
+        //             let elemCollisionChild = new PIXI.Graphics();
+        //             elemCollisionChild.rect(x * intCellSize, y * intCellSize, intCellSize, intCellSize);
+
+        //             switch (arrCollisionGrid[y][x]) {
+        //                 // case 2:
+        //                 //     elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
+        //                 //     break;
+        //                 // case 4:
+        //                 //     elemCollisionChild.fill(`rgba(0,0,255,0.3)`);
+        //                 //     break;
+        //                 // case 6:
+        //                 //     elemCollisionChild.fill(`rgba(168, 0, 255, 0.3)`);
+        //                 //     break;
+        //                 default:
+        //                     elemCollisionChild.fill(`rgba(255,0,0,0.3)`);
+        //             }
+        //             objContainer_Collision.addChild(elemCollisionChild);
+        //         }
+        //     }
+        // }
+
+
+        for (var y = 0; y < arrDiggableGrid.length; y++) {
+            for (var x = 0; x < arrDiggableGrid[y].length; x++) {
+                if (!arrDiggableGrid[y][x]) {
                     let elemCollisionChild = new PIXI.Graphics();
                     elemCollisionChild.rect(x * intCellSize, y * intCellSize, intCellSize, intCellSize);
 
-                    switch (arrCollisionGrid[y][x]) {
+                    switch (arrDiggableGrid[y][x]) {
                         // case 2:
                         //     elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
                         //     break;
@@ -358,6 +395,8 @@ function drawCollision() {
                 }
             }
         }
+
+
 
         objContainer_Background.addChild(objContainer_Collision);
     }
@@ -389,7 +428,7 @@ function drawFence() {
 
     objPIXIapp.stage.addChild(objContainer_Fence);
     objContainer_Fence.zIndex = objZindexes.fence;
-    objContainer_Fence.scale = intMultiplierCanvas;
+    resizeContainers('fence');
 }
 
 async function addBackground() {
@@ -407,7 +446,7 @@ async function addBackground() {
     }
 
     if (objSprite_Background === null) {
-        let backgroundTexture = await PIXI.Assets.load(`textures/rooms/rm_farm_${objMistriaDataPlanner.season}_0.png`);
+        let backgroundTexture = await PIXI.Assets.load(`textures/rooms/rm_farm_${objMistriaDataPlanner.season}_${objMistriaDataPlanner.house_upgrade}.png`);
         backgroundTexture.source.scaleMode = 'nearest';
 
         objSprite_Background = new PIXI.Sprite(backgroundTexture);
@@ -415,13 +454,14 @@ async function addBackground() {
 
         objSprite_Background.zIndex = 0;
     }
+
+    $('#minimap').css('background-image', `url(textures/rooms/rm_farm_${objMistriaDataPlanner.season}_${objMistriaDataPlanner.house_upgrade}.png)`)
 }
 
 function drawSelection(objCellCoord = false) {
     //might be useful new Rectangle(100, 100, 200, 150);
 
     if (!bolSelection) return;
-
 
     if (objGraphics_Selection !== null) {
         objPIXIapp.stage.removeChild(objGraphics_Selection);
@@ -454,7 +494,7 @@ function drawSelection(objCellCoord = false) {
     objGraphics_Selection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
 
     objPIXIapp.stage.addChild(objGraphics_Selection);
-    objGraphics_Selection.scale = intMultiplierCanvas
+    resizeContainers('selection');
     objGraphics_Selection.zIndex = objZindexes.selection;
 }
 
@@ -515,22 +555,22 @@ function drawSoil() {
             if (arrGrid_Soil[y][x]) {
                 switch (arrGrid_Soil[y][x]) {
                     case 1: //ground
-                        const elemSpriteGround = sprites.get('tile_main_exteriors_summer');
+                        const elemSpriteGround = sprites.get(`tile_main_exteriors_${objMistriaDataPlanner.season}`);
                         elemSpriteGround.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['ground'].addChild(elemSpriteGround);
                         break;
                     case 2: //tilled
-                        const elemSpriteTilled = sprites.getSoil('soil_summer', arrGridNeighbours_Soil[y][x])
+                        const elemSpriteTilled = sprites.getSoil(`soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours_Soil[y][x])
                         elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['soil'].addChild(elemSpriteTilled);
                         break;
                     case 3: //tilled wet
-                        const elemSprite = sprites.getSoil('soil_summer', arrGridNeighbours_Soil[y][x])
+                        const elemSprite = sprites.getSoil(`soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours_Soil[y][x])
                         // elemSprite.anchor.set(0.5)
                         elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['soil'].addChild(elemSprite);
 
-                        const textureWet = sprites.getSoil('soil_wet_summer', arrGridNeighbours_Wet[y][x])
+                        const textureWet = sprites.getSoil(`soil_wet_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours_Wet[y][x])
                         const elemSpriteWet = new PIXI.Sprite(textureWet);
                         elemSpriteWet.position.set(x * intGridCellSize, y * intGridCellSize);
                         objGroundContainers['soilWet'].addChild(elemSpriteWet);
@@ -541,7 +581,7 @@ function drawSoil() {
                 if (!arrGridNeighbours[y][x].includes(1)) {
                     continue;
                 }
-                const texture = sprites.getGrass('grassautotile_summer', arrGridNeighbours[y][x])
+                const texture = sprites.getGrass(`grassautotile_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours[y][x])
                 const elemSprite = new PIXI.Sprite(texture);
                 elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                 objGroundContainers['grass'].addChild(elemSprite);
@@ -552,7 +592,7 @@ function drawSoil() {
     Object.keys(objGroundContainers).forEach(function (strContainerKey) {
         objPIXIapp.stage.addChild(objGroundContainers[strContainerKey]);
         objGroundContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
-        objGroundContainers[strContainerKey].scale = intMultiplierCanvas;
+        resizeContainers('ground');
     });
 }
 
@@ -620,8 +660,7 @@ function drawCrops() {
 
     objPIXIapp.stage.addChild(objContainer_Crops);
     objContainer_Crops.zIndex = objZindexes.crops;
-    objContainer_Crops.scale = intMultiplierCanvas;
-
+    resizeContainers('crops');
 }
 
 function checkTileHasCollision(objCell) {
@@ -632,10 +671,16 @@ function checkTileHasCollision(objCell) {
         y1: objCell.y * 2 + 1,
     }
 
-    const arrGrid_CollisionSlice = slice2D(arrCollisionGrid, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
-    const setGrid_CollisionSliceValues = new Set(arrGrid_CollisionSlice.flat())
-
-    return (setGrid_CollisionSliceValues.size === 1 && setGrid_CollisionSliceValues.has(0)) ? false : true;
+    const bolUseDiggableGrid = true;
+    if (bolUseDiggableGrid) {
+        const arrGrid_DiggableSlice = slice2D(arrDiggableGrid, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
+        const setGrid_DiggableSliceValues = new Set(arrGrid_DiggableSlice.flat())
+        return (!setGrid_DiggableSliceValues.has(0)) ? false : true;
+    } else {
+        const arrGrid_CollisionSlice = slice2D(arrCollisionGrid, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
+        const setGrid_CollisionSliceValues = new Set(arrGrid_CollisionSlice.flat())
+        return (setGrid_CollisionSliceValues.size === 1 && setGrid_CollisionSliceValues.has(0)) ? false : true;
+    }
 }
 
 function loadMenuItems() {
@@ -677,14 +722,6 @@ function loadMenuItems() {
     });
 
 
-    //select saved sorting option
-    $('.dropdown-item.season').removeClass('selected');
-    $(`.dropdown-item.season[data-value="${objMistriaData.season}"]`).addClass('selected');
-
-    $('.dropdown-item.house_upgrade').removeClass('selected');
-    $(`.dropdown-item.house_upgrade[data-value="${objMistriaData.house_upgrade}"]`).addClass('selected');
-
-
     var arrModes = ['mode_dark', 'mode_collapse'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
@@ -696,6 +733,12 @@ function loadMenuItems() {
             } else {
                 $('#page').removeClass(strMode);
                 objMistriaData.options.delete(strMode);
+            }
+
+            if (strMode === 'mode_collapse') {
+                resize()
+                // setTimeout(function () { resize() }, 50);
+
             }
             saveData();
         });
@@ -755,12 +798,20 @@ function loadMenuItems() {
     objMistriaDataPlanner.options.forEach(key => {
         $(`#${key}`).prop('checked', true);
     })
+
+    $('.dropdown-item.season').removeClass('selected');
+    $(`.dropdown-item.season[data-value="${objMistriaDataPlanner.season}"]`).addClass('selected');
+
+    $('.dropdown-item.house_upgrade').removeClass('selected');
+    $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
+
+
 }
 
 function changeHouseUpgrade(objElem) {
     if ($(objElem).hasClass('selected')) return;
 
-    objMistriaDataPlanner.house_upgrade = $(objElem).attr('data-value');
+    objMistriaDataPlanner.house_upgrade = parseInt($(objElem).attr('data-value'));
 
     saveDataPlanner();
 
@@ -768,6 +819,7 @@ function changeHouseUpgrade(objElem) {
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
     addBackground();
+    drawCollision();
 }
 
 function changeSeason(objElem) {
@@ -781,10 +833,150 @@ function changeSeason(objElem) {
     $(`.dropdown-item.season[data-value="${objMistriaDataPlanner.season}"]`).addClass('selected');
 
     addBackground();
+    drawSoil();
+}
 
+function resetZoom() {
+    $("#zoomSlider").val(1);
+    $("#zoomSlider").trigger('input')
+}
+function updateZoom(intMinimapW, intMinimapH, offsetX, offsetY) {
+    let rectW = 0;
+    let rectH = 0;
+
+    if (objMistriaDataPlanner.zoom > 1) {
+        rectW = intMinimapW * 1
+        rectH = intMinimapH * 1
+    } else {
+        rectW = intMinimapW * objMistriaDataPlanner.zoom
+        rectH = intMinimapH * objMistriaDataPlanner.zoom
+    }
+
+    if (offsetY + rectH > intMinimapH) {
+        offsetY = intMinimapH - rectH
+    }
+    if (offsetX + rectW > intMinimapW) {
+        offsetX = intMinimapW - rectW
+    }
+
+    objMistriaDataPlanner.offsetCanvas = {
+        x: offsetX * objGrid.x * intGridCellSize / intMinimapW * -1,
+        y: offsetY * objGrid.y * intGridCellSize / intMinimapH * -1,
+    };
+
+    updateMinimap(intMinimapW, intMinimapH);
+
+    resize(true);
+    saveDataPlanner();
 }
 
 
+function getOffsetMinimapX(result, intMinimapW) {
+    return result * -intMinimapW / (objGrid.x * intGridCellSize);
+}
+function getOffsetMinimapY(result, intMinimapH) {
+    return result * -intMinimapH / (objGrid.y * intGridCellSize);
+}
+
+function updateMinimap(intMinimapW, intMinimapH) {
+    let rectW = 0;
+    let rectH = 0;
+    if (objMistriaDataPlanner.zoom > 1) {
+        rectW = intMinimapW * 1
+        rectH = intMinimapH * 1
+        $('#minimap').css({
+            width: intMinimapW / objMistriaDataPlanner.zoom + 'px',
+            height: intMinimapH / objMistriaDataPlanner.zoom + 'px'
+        });
+    } else {
+        rectW = intMinimapW * objMistriaDataPlanner.zoom
+        rectH = intMinimapH * objMistriaDataPlanner.zoom
+        $('#minimap').css({
+            width: intMinimapW + 'px',
+            height: intMinimapH + 'px'
+        });
+    }
+
+    $("#zoom_selection").css({
+        width: rectW,
+        height: rectH,
+        left: getOffsetMinimapX(objMistriaDataPlanner.offsetCanvas.x, intMinimapW),
+        top: getOffsetMinimapY(objMistriaDataPlanner.offsetCanvas.y, intMinimapH)
+    })
+
+    $('#zoom_precent').html(Math.round((1 / objMistriaDataPlanner.zoom).toFixed(1) * 100) + '%')
+}
+
+function minimapInit() {
+
+    let intMinimapW = 230;
+    let intMinimapH = objGrid.y * 230 / objGrid.x;
+
+    let offsetX = 0
+    let offsetY = 0
+
+    let bolDraggingMinimap = false
+    let dragOffsetX = 0
+    let dragOffsetY = 0
+
+    $("#zoomSlider").val((1 / objMistriaDataPlanner.zoom).toFixed(1));
+    updateMinimap(intMinimapW, intMinimapH)
+
+
+    $('#minimap_wrapper').css({
+        width: intMinimapW + 'px',
+        height: intMinimapH + 'px'
+    });
+
+    $("#zoomSlider").on("input", function () {
+        let intValue = parseFloat($(this).val())
+        objMistriaDataPlanner.zoom = 1 / intValue;
+
+        updateZoom(intMinimapW, intMinimapH, offsetX, offsetY);
+    })
+
+    $("#zoom_selection").on('pointerdown', function (e) {
+        bolDraggingMinimap = true
+        let rectOffset = $(this).offset()
+        dragOffsetX = e.pageX - rectOffset.left
+        dragOffsetY = e.pageY - rectOffset.top
+    })
+
+    $(document).on('pointerup', function (e) {
+        bolDraggingMinimap = false
+    })
+
+    // $("#minimap_wrapper").on('pointerleave', function (e) {
+    //     if (!bolDraggingMinimap) return;
+    //     bolDraggingMinimap = false
+    // })
+
+    $("#zoom_selection").on('pointermove', function (e) {
+        if (!bolDraggingMinimap) return
+
+        let objMinimapOffset = $("#minimap").offset()
+        let objMinimapSize = {
+            width: $("#minimap").width(),
+            height: $("#minimap").height(),
+        }
+        let objZoomSize = {
+            width: $("#zoom_selection").outerWidth(),
+            height: $("#zoom_selection").outerHeight(),
+        }
+
+        let intDraggedToX = e.pageX - objMinimapOffset.left - dragOffsetX
+        let intDraggedToY = e.pageY - objMinimapOffset.top - dragOffsetY
+
+        offsetX = Math.max(0, Math.min(intDraggedToX, objMinimapSize.width - objZoomSize.width))
+        offsetY = Math.max(0, Math.min(intDraggedToY, objMinimapSize.height - objZoomSize.height))
+
+        updateZoom(intMinimapW, intMinimapH, offsetX, offsetY);
+    })
+
+    document.addEventListener('dragstart', (event) => {
+        event.preventDefault();
+    });
+}
 
 function loadDataPlanner() {
     objMistriaDataPlanner = JSON.parse(localStorage.getItem('mistria_data_planner'));
@@ -807,21 +999,41 @@ function saveDataPlanner() {
 }
 
 
+function throttle(fn, time) {
+    let timeout = null;
+    return function () {
+        if (timeout) return;
+        const context = this;
+        const args = arguments;
+        const later = () => {
+            fn.call(context, ...args);
+            timeout = null;
+        }
+        timeout = setTimeout(later, time);
+    }
+}
+const handleResize = () => {
+    resize();
+    objPIXIapp.resize();
+}
+const handleResizeThrottled = throttle(handleResize, 250);
+const resizeObserver = new ResizeObserver((entries) => {
+    handleResizeThrottled();
+});
+
 $(function () {
     loadDataPlanner();
     loadMenuItems();
-
-    //TODO: add throttling
-    window.addEventListener("resize", () => resize(false));
-
-
-
+    minimapInit();
 
     (async () => {
         arrCollisionGrid = await (await fetch('textures/collision.json')).json()
+        arrCollisionUpgradeGrid = await (await fetch('textures/collision_houseupgrade.json')).json()
+        arrDiggableGrid = await (await fetch('textures/diggable.json')).json()
+
         arrFenceCoord = await (await fetch('textures/fences.json')).json()
 
-        objPlannerDiv = document.querySelector('#game-container');
+        objPlannerDiv = document.getElementById("game-container");
 
         // Create a new application
         objPIXIapp = new PIXI.Application();
@@ -848,6 +1060,7 @@ $(function () {
 
             objStartCellCoord = getClickedCell(e)
             drawSelection(objStartCellCoord)
+
             // updateSoilGrid(objStartCellCoord)
         });
 
@@ -910,8 +1123,15 @@ $(function () {
         //     objPIXIapp.stage.addChild(objContainer_Soil);
         // }
 
-        resize(1);
-        objPIXIapp.resize();
+
+        resizeObserver.observe(document.getElementById("app"));
+
+        setTimeout(() => {
+            handleResize();
+            // $("#zoomSlider").trigger('input');
+        }, 150);
+
     })();
 
 });
+

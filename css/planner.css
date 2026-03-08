@@ -1,0 +1,158 @@
+#page {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#planner {
+    height: 100%;
+    width: 100%;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+#game-container {
+      height: 100%;
+    width: 100%;
+}
+
+canvas {
+    border: 1px solid white;
+}
+
+
+
+
+#zoom {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    --slider-height: 15px;
+    --slider-radius: calc(var(--slider-height) / 5);
+}
+
+#minimap_wrapper {
+    position: relative;
+}
+
+#minimap {
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+}
+
+#zoom_selection {
+    position: absolute;
+    border: 2px solid rgba(255, 174, 0, 0.8);
+    background: rgba(255, 174, 0, 0.3);
+    cursor: move;
+}
+
+#controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/ */
+#zoomSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    margin: 0;
+    background: var(--color-bg-darker);
+    border: 1px solid var(--color-btn);
+
+    border-radius: var(--slider-radius);
+}
+
+/* Track: webkit browsers */
+#zoomSlider::-webkit-slider-runnable-track {
+    height: var(--slider-height);
+    background: var(--color-bg-darker);
+    border-radius: calc(var(--slider-radius) - 1);
+}
+
+/* Track: Mozilla Firefox */
+#zoomSlider::-moz-range-track {
+    height: var(--slider-height);
+    background: var(--color-bg-darker);
+    border-radius: calc(var(--slider-radius) - 1);
+}
+
+/* Thumb: webkit */
+#zoomSlider::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: var(--slider-height);
+    width: var(--slider-height);
+    background-color: #fff;
+    border-radius: var(--slider-radius);
+    border: 2px solid var(--color-btn);
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px var(--color-btn);
+}
+
+/* Thumb: Firefox */
+#zoomSlider::-moz-range-thumb {
+    height: var(--slider-height);
+    width: var(--slider-height);
+    background-color: #fff;
+    border-radius: var(--slider-radius);
+    border: 1px solid var(--color-btn);
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px var(--color-btn);
+}
+
+#zoom_precent {
+    font-size: 11px;
+    line-height: 12px;
+    min-width: 27px;
+    text-align: right;
+}
+
+#zoom_reset {
+    color: var(--color-txt);
+    fill: var(--color-txt);
+    stroke: var(--color-txt);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    opacity: 0.5;
+}
+
+#zoom_reset:hover {
+    opacity: 1;
+}
+
+#zoom_reset .icon {
+    width: var(--slider-height);
+    min-width: var(--slider-height);
+}
+
+#zoom_reset .icon svg {
+    height: var(--slider-height);
+    width: var(--slider-height);
+}
+
+.icon img {
+    image-rendering: pixelated;
+}
