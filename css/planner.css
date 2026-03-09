@@ -25,15 +25,18 @@
 }
 
 #game-container {
-      height: 100%;
+    height: 100%;
     width: 100%;
+
+    /* --var-multiplier: 9;
+    max-width: calc(138px * var(--var-multiplier));
+    max-height: calc(103px * var(--var-multiplier)); */
+
 }
 
 canvas {
     border: 1px solid white;
 }
-
-
 
 
 #zoom {
@@ -53,6 +56,7 @@ canvas {
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
+    cursor: pointer;
 }
 
 #zoom_selection {
@@ -133,10 +137,10 @@ canvas {
 #zoom_reset {
     color: var(--color-txt);
     fill: var(--color-txt);
-    stroke: var(--color-txt);
+    /* stroke: var(--color-txt); */
     cursor: pointer;
     transition: opacity 0.2s ease;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 #zoom_reset:hover {
@@ -144,13 +148,13 @@ canvas {
 }
 
 #zoom_reset .icon {
-    width: var(--slider-height);
-    min-width: var(--slider-height);
+    width: 20px;
+    min-width: 20px;
 }
 
 #zoom_reset .icon svg {
     height: var(--slider-height);
-    width: var(--slider-height);
+    width: 20px;
 }
 
 .icon img {

@@ -51,6 +51,7 @@ const objMinimapWrapperSize = {
     w: 230,
     h: objGrid.y * 230 / objGrid.x
 }
+let objZoomSelectionSize = {}
 const objZindexes = {
     'background': 0, // image 
     'collision': 1,
@@ -240,8 +241,8 @@ function calculateMultiplier() {
 }
 
 function getMultiplierFitScreen() {
-    const intContainerWidth = document.querySelector('#app').offsetWidth;
-    const intContainerHeight = document.querySelector('#app').offsetHeight;
+    const intContainerWidth = document.querySelector('#game-container').offsetWidth;
+    const intContainerHeight = document.querySelector('#game-container').offsetHeight;
     return Math.min(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
 }
 
@@ -838,7 +839,7 @@ function changeSeason(objElem) {
 }
 
 function resetZoom() {
-    $("#zoomSlider").val(100);
+    $('#zoomSlider').val(100);
 
     objMistriaDataPlanner.zoom = 100;
     resize();
@@ -903,9 +904,20 @@ function updateMinimap() {
     let intMinimapRatio;
 
     if (objCanvasSize.w > objCanvasSize.h) {
+        $('#zoom_reset .icon').html (`
+            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.79,10.21a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-2.5-2.5a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-2.5,2.5a1,1,0,0,0,1.42,1.42l.79-.8v5.18l-.79-.8a1,1,0,0,0-1.42,1.42l2.5,2.5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l2.5-2.5a1,1,0,0,0-1.42-1.42l-.79.8V9.41ZM7,4H17a1,1,0,0,0,0-2H7A1,1,0,0,0,7,4ZM17,20H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Z" />
+            </svg>
+        `);
+
         intMinimapRatio = objMinimapSize.h * intMapScale / objMinimapWrapperSize.h
     } else {
         intMinimapRatio = objMinimapSize.w * intMapScale / objMinimapWrapperSize.w;
+        $('#zoom_reset .icon').html (`
+            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.71,11.29l-2.5-2.5a1,1,0,0,0-1.42,1.42l.8.79H9.41l.8-.79A1,1,0,0,0,8.79,8.79l-2.5,2.5a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l2.5,2.5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L9.41,13h5.18l-.8.79a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l2.5-2.5a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76A1,1,0,0,0,17.71,11.29ZM3,6A1,1,0,0,0,2,7V17a1,1,0,0,0,2,0V7A1,1,0,0,0,3,6ZM21,6a1,1,0,0,0-1,1V17a1,1,0,0,0,2,0V7A1,1,0,0,0,21,6Z" />
+            </svg>
+        `);
     }
 
     if (intMinimapRatio > 1) {
@@ -914,17 +926,24 @@ function updateMinimap() {
         intSelectionScale = 1 / intMinimapRatio;
     }
 
+    objZoomSelectionSize = {
+          w: objSelectionSize.w * intSelectionScale,
+        h: objSelectionSize.h * intSelectionScale,
+    }
+
     $('#minimap').css({
         width: objMinimapSize.w * intMapScale + 'px',
         height: objMinimapSize.h * intMapScale + 'px'
     });
 
-    $("#zoom_selection").css({
-        width: objSelectionSize.w * intSelectionScale,
-        height: objSelectionSize.h * intSelectionScale,
+    $('#zoom_selection').css({
+        width: objZoomSelectionSize.w,
+        height: objZoomSelectionSize.h,
         left: objMistriaDataPlanner.offsetCanvas.x * -objMinimapWrapperSize.w / (objGrid.x * intGridCellSize),
         top: objMistriaDataPlanner.offsetCanvas.y * -objMinimapWrapperSize.h / (objGrid.y * intGridCellSize)
     })
+
+    
 
     $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
 }
@@ -935,7 +954,7 @@ function minimapInit() {
     let dragOffsetX = 0
     let dragOffsetY = 0
 
-    $("#zoomSlider").val(objMistriaDataPlanner.zoom);
+    $('#zoomSlider').val(objMistriaDataPlanner.zoom);
     updateMinimap();
 
     $('#minimap_wrapper').css({
@@ -943,12 +962,25 @@ function minimapInit() {
         height: objMinimapWrapperSize.h + 'px'
     });
 
-    $("#zoomSlider").on("input", function () {
+    $('#minimap').on('click', function (e) {
+        let objMinimapOffset = $(this).offset()
+
+        let intDraggedToX = e.pageX - objMinimapOffset.left - objZoomSelectionSize.w / 2;
+        let intDraggedToY = e.pageY - objMinimapOffset.top - objZoomSelectionSize.h / 2;
+
+        //from minimap size to full size
+        objMistriaDataPlanner.offsetCanvas = {
+            x: intDraggedToX * objGrid.x * intGridCellSize / objMinimapWrapperSize.w * -1,
+            y: intDraggedToY * objGrid.y * intGridCellSize / objMinimapWrapperSize.h * -1,
+        };
+        resize();
+    })
+    $('#zoomSlider').on('input', function () {
         objMistriaDataPlanner.zoom = parseInt($(this).val());
         resize();
     })
 
-    $("#zoom_selection").on('pointerdown', function (e) {
+    $('#zoom_selection').on('pointerdown', function (e) {
         bolDraggingMinimap = true;
         let rectOffset = $(this).offset();
         dragOffsetX = e.pageX - rectOffset.left;
@@ -959,15 +991,15 @@ function minimapInit() {
         bolDraggingMinimap = false;
     })
 
-    // $("#minimap_wrapper").on('pointerleave', function (e) {
+    // $('#minimap_wrapper').on('pointerleave', function (e) {
     //     if (!bolDraggingMinimap) return;
     //     bolDraggingMinimap = false
     // })
 
-    $("#zoom_selection").on('pointermove', function (e) {
+    $('#zoom_selection').on('pointermove', function (e) {
         if (!bolDraggingMinimap) return;
 
-        let objMinimapOffset = $("#minimap").offset()
+        let objMinimapOffset = $('#minimap').offset()
 
         let intDraggedToX = e.pageX - objMinimapOffset.left - dragOffsetX;
         let intDraggedToY = e.pageY - objMinimapOffset.top - dragOffsetY;
@@ -1039,7 +1071,7 @@ $(function () {
 
         arrFenceCoord = await (await fetch('textures/fences.json')).json()
 
-        objPlannerDiv = document.getElementById("game-container");
+        objPlannerDiv = document.getElementById('game-container');
 
         // Create a new application
         objPIXIapp = new PIXI.Application();
@@ -1131,11 +1163,11 @@ $(function () {
         // }
 
 
-        resizeObserver.observe(document.getElementById("app"));
+        resizeObserver.observe(document.getElementById('app'));
 
         setTimeout(() => {
             handleResize();
-            // $("#zoomSlider").trigger('input');
+            // $('#zoomSlider').trigger('input');
         }, 150);
 
     })();
