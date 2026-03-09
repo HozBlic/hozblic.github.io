@@ -2,7 +2,7 @@ let objMistriaDataPlanner;
 let objMistriaDataPlannerDefault = {
     'season': 'spring',
     'house_upgrade': 0,
-    'zoom': 1,
+    'zoom': 100,
     'offsetCanvas': {
         x: 0,
         y: 0
@@ -226,13 +226,13 @@ function getClickedCell(event) {
         y: Math.floor((y - objMistriaDataPlanner.offsetCanvas.y) / intGridCellSize),
     }
 
-    console.log(objCell)
+    // console.log(objCell)
 
     return objCell;
 }
 
 function calculateMultiplier() {
-    intMultiplierCanvas = getMultiplierFitScreen() / objMistriaDataPlanner.zoom;
+    intMultiplierCanvas = getMultiplierFitScreen() * (objMistriaDataPlanner.zoom / 100);
 }
 
 function getMultiplierFitScreen() {
@@ -243,11 +243,13 @@ function getMultiplierFitScreen() {
 
 function resize(bolZoom = false) {
     if (!bolZoom) {
-        objPlannerDiv.style.width = `${objCanvasDefault.width * getMultiplierFitScreen()}px`;
-        objPlannerDiv.style.height = `${objCanvasDefault.height * getMultiplierFitScreen()}px`;
+        updateMinimap();
+        const objSelectionOffset = getSelectionCurrent();
+        updateZoom(objSelectionOffset.x, objSelectionOffset.y);
     }
     calculateMultiplier();
     resizeContainers();
+    updateMinimap();
 }
 
 function resizeContainers(strContainerKeyToZoom = false) {
@@ -837,20 +839,16 @@ function changeSeason(objElem) {
 }
 
 function resetZoom() {
-    $("#zoomSlider").val(1);
+    $("#zoomSlider").val(100);
     $("#zoomSlider").trigger('input')
 }
-function updateZoom(intMinimapW, intMinimapH, offsetX, offsetY) {
-    let rectW = 0;
-    let rectH = 0;
+function updateZoom(offsetX, offsetY) {
 
-    if (objMistriaDataPlanner.zoom > 1) {
-        rectW = intMinimapW * 1
-        rectH = intMinimapH * 1
-    } else {
-        rectW = intMinimapW * objMistriaDataPlanner.zoom
-        rectH = intMinimapH * objMistriaDataPlanner.zoom
-    }
+    const intMinimapW = $('#minimap_wrapper').width();
+    const intMinimapH = $('#minimap_wrapper').height();
+
+    let rectW = $("#zoom_selection").width();
+    let rectH = $("#zoom_selection").height();
 
     if (offsetY + rectH > intMinimapH) {
         offsetY = intMinimapH - rectH
@@ -864,9 +862,7 @@ function updateZoom(intMinimapW, intMinimapH, offsetX, offsetY) {
         y: offsetY * objGrid.y * intGridCellSize / intMinimapH * -1,
     };
 
-    updateMinimap(intMinimapW, intMinimapH);
 
-    resize(true);
     saveDataPlanner();
 }
 
@@ -878,35 +874,81 @@ function getOffsetMinimapY(result, intMinimapH) {
     return result * -intMinimapH / (objGrid.y * intGridCellSize);
 }
 
-function updateMinimap(intMinimapW, intMinimapH) {
-    let rectW = 0;
-    let rectH = 0;
-    if (objMistriaDataPlanner.zoom > 1) {
-        rectW = intMinimapW * 1
-        rectH = intMinimapH * 1
-        $('#minimap').css({
-            width: intMinimapW / objMistriaDataPlanner.zoom + 'px',
-            height: intMinimapH / objMistriaDataPlanner.zoom + 'px'
-        });
-    } else {
-        rectW = intMinimapW * objMistriaDataPlanner.zoom
-        rectH = intMinimapH * objMistriaDataPlanner.zoom
-        $('#minimap').css({
-            width: intMinimapW + 'px',
-            height: intMinimapH + 'px'
-        });
+function fitSize(container, content) {
+    const scale = Math.min(
+        container.w / content.w,
+        container.h / content.h
+    );
+
+    return {
+        w: content.w * scale,
+        h: content.h * scale,
+        // scale
+    };
+}
+function updateMinimap() {
+    const objMinimapWrapperSize = {
+        w: 230,
+        h: objGrid.y * 230 / objGrid.x
     }
 
+    const objCanvasSize = {
+        w: $('#game-container').width(),
+        h: $('#game-container').height()
+    }
+    let objSelectionSize = fitSize(objMinimapWrapperSize, objCanvasSize);;
+    let objMinimapSize = fitSize({ w: objSelectionSize.w, h: objSelectionSize.h }, objMinimapWrapperSize);
+    let intMapScale = objMistriaDataPlanner.zoom / 100;
+
+    let intSelectionScale = 1;
+
+    let intMinimapRatio;
+
+    if (objCanvasSize.w > objCanvasSize.h) {
+        intMinimapRatio = objMinimapSize.h * intMapScale / objMinimapWrapperSize.h
+    } else {
+        intMinimapRatio = objMinimapSize.w * intMapScale / objMinimapWrapperSize.w;
+    }
+
+    if (intMinimapRatio > 1) {
+        objMinimapSize = objMinimapWrapperSize;
+        intMapScale = 1;
+        intSelectionScale = 1 / intMinimapRatio;
+    }
+
+    $('#minimap').css({
+        width: objMinimapSize.w * intMapScale + 'px',
+        height: objMinimapSize.h * intMapScale + 'px'
+    });
+
     $("#zoom_selection").css({
-        width: rectW,
-        height: rectH,
-        left: getOffsetMinimapX(objMistriaDataPlanner.offsetCanvas.x, intMinimapW),
-        top: getOffsetMinimapY(objMistriaDataPlanner.offsetCanvas.y, intMinimapH)
+        width: objSelectionSize.w * intSelectionScale,
+        height: objSelectionSize.h * intSelectionScale,
+        left: getOffsetMinimapX(objMistriaDataPlanner.offsetCanvas.x, objMinimapWrapperSize.w),
+        top: getOffsetMinimapY(objMistriaDataPlanner.offsetCanvas.y, objMinimapWrapperSize.h)
     })
 
-    $('#zoom_precent').html(Math.round((1 / objMistriaDataPlanner.zoom).toFixed(1) * 100) + '%')
+    $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
 }
+function getSelectionCurrent() {
+    let objMinimapOffset = $("#zoom_selection").position()
 
+    let objMinimapSize = {
+        width: $("#minimap").width(),
+        height: $("#minimap").height(),
+    }
+    let objZoomSize = {
+        width: $("#zoom_selection").outerWidth(),
+        height: $("#zoom_selection").outerHeight(),
+    }
+
+    let intDraggedToX = objMinimapOffset.left;
+    let intDraggedToY = objMinimapOffset.top;
+
+    offsetX = Math.max(0, Math.min(intDraggedToX, objMinimapSize.width - objZoomSize.width));
+    offsetY = Math.max(0, Math.min(intDraggedToY, objMinimapSize.height - objZoomSize.height));
+    return { x: offsetX, y: offsetY }
+}
 function minimapInit() {
 
     let intMinimapW = 230;
@@ -919,8 +961,8 @@ function minimapInit() {
     let dragOffsetX = 0
     let dragOffsetY = 0
 
-    $("#zoomSlider").val((1 / objMistriaDataPlanner.zoom).toFixed(1));
-    updateMinimap(intMinimapW, intMinimapH)
+    $("#zoomSlider").val(objMistriaDataPlanner.zoom);
+    updateMinimap();
 
 
     $('#minimap_wrapper').css({
@@ -929,21 +971,25 @@ function minimapInit() {
     });
 
     $("#zoomSlider").on("input", function () {
-        let intValue = parseFloat($(this).val())
-        objMistriaDataPlanner.zoom = 1 / intValue;
+        // let intValue = 
+        objMistriaDataPlanner.zoom = $(this).val();
 
-        updateZoom(intMinimapW, intMinimapH, offsetX, offsetY);
+        const objSelectionOffset = getSelectionCurrent();
+
+
+        updateZoom(objSelectionOffset.x, objSelectionOffset.y);
+        resize(true);
     })
 
     $("#zoom_selection").on('pointerdown', function (e) {
-        bolDraggingMinimap = true
-        let rectOffset = $(this).offset()
-        dragOffsetX = e.pageX - rectOffset.left
-        dragOffsetY = e.pageY - rectOffset.top
+        bolDraggingMinimap = true;
+        let rectOffset = $(this).offset();
+        dragOffsetX = e.pageX - rectOffset.left;
+        dragOffsetY = e.pageY - rectOffset.top;
     })
 
     $(document).on('pointerup', function (e) {
-        bolDraggingMinimap = false
+        bolDraggingMinimap = false;
     })
 
     // $("#minimap_wrapper").on('pointerleave', function (e) {
@@ -952,7 +998,7 @@ function minimapInit() {
     // })
 
     $("#zoom_selection").on('pointermove', function (e) {
-        if (!bolDraggingMinimap) return
+        if (!bolDraggingMinimap) return;
 
         let objMinimapOffset = $("#minimap").offset()
         let objMinimapSize = {
@@ -964,13 +1010,19 @@ function minimapInit() {
             height: $("#zoom_selection").outerHeight(),
         }
 
-        let intDraggedToX = e.pageX - objMinimapOffset.left - dragOffsetX
-        let intDraggedToY = e.pageY - objMinimapOffset.top - dragOffsetY
+        let intDraggedToX = e.pageX - objMinimapOffset.left - dragOffsetX;
+        let intDraggedToY = e.pageY - objMinimapOffset.top - dragOffsetY;
 
-        offsetX = Math.max(0, Math.min(intDraggedToX, objMinimapSize.width - objZoomSize.width))
-        offsetY = Math.max(0, Math.min(intDraggedToY, objMinimapSize.height - objZoomSize.height))
+        offsetX = Math.max(0, Math.min(intDraggedToX, objMinimapSize.width - objZoomSize.width));
+        offsetY = Math.max(0, Math.min(intDraggedToY, objMinimapSize.height - objZoomSize.height));
 
-        updateZoom(intMinimapW, intMinimapH, offsetX, offsetY);
+
+        console.log('--------')
+        console.log(intDraggedToX, intDraggedToY)
+        // console.log(offsetX, offsetY)
+
+        updateZoom(offsetX, offsetY);
+        resize(true);
     })
 
     document.addEventListener('dragstart', (event) => {
@@ -1051,6 +1103,7 @@ $(function () {
         objPIXIapp.stage.hitArea = objPIXIapp.screen;
 
         objPIXIapp.sortableChildren = true;
+        objPIXIapp.interactiveChildren = false;
 
 
         // clicking and dragging
