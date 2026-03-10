@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/planner.css">
 
     <script type="text/javascript" src="json/build.json.js"></script>
+    <script type="text/javascript" src="json/items.json.js"></script>
 
     <script type="text/javascript" src="js/pixi.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -67,8 +68,23 @@
                     <div id="controls">
                         <input type="range" id="zoomSlider" type="range" min="50" max="500" value="100" step="10">
                         <div id="zoom_precent"></div>
-                        <div id="zoom_reset" onclick="resetZoom()">
-                            <div class="icon"></div>
+                        <div class="zoom_reset" onclick="resetZoom('vertical')">
+                            <div class="icon">
+                                <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.79,10.21a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-2.5-2.5a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-2.5,2.5a1,1,0,0,0,1.42,1.42l.79-.8v5.18l-.79-.8a1,1,0,0,0-1.42,1.42l2.5,2.5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l2.5-2.5a1,1,0,0,0-1.42-1.42l-.79.8V9.41ZM7,4H17a1,1,0,0,0,0-2H7A1,1,0,0,0,7,4ZM17,20H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="zoom_reset" onclick="resetZoom('horizontal')">
+                            <div class="icon">
+                                <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.71,11.29l-2.5-2.5a1,1,0,0,0-1.42,1.42l.8.79H9.41l.8-.79A1,1,0,0,0,8.79,8.79l-2.5,2.5a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l2.5,2.5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L9.41,13h5.18l-.8.79a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l2.5-2.5a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76A1,1,0,0,0,17.71,11.29ZM3,6A1,1,0,0,0,2,7V17a1,1,0,0,0,2,0V7A1,1,0,0,0,3,6ZM21,6a1,1,0,0,0-1,1V17a1,1,0,0,0,2,0V7A1,1,0,0,0,21,6Z" />
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ let objMistriaDataPlannerDefault = {
     'options': ['mode_grid', 'mode_collision'] // mode_soil, mode_wet
 }
 
+let objTabs = null;
 let arrFenceCoord = null;
 
 let arrCollisionGrid = null;
@@ -244,6 +245,11 @@ function getMultiplierFitScreen() {
     const intContainerWidth = document.querySelector('#game-container').offsetWidth;
     const intContainerHeight = document.querySelector('#game-container').offsetHeight;
     return Math.min(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
+}
+function getMultiplierCoverScreen() {
+    const intContainerWidth = document.querySelector('#game-container').offsetWidth;
+    const intContainerHeight = document.querySelector('#game-container').offsetHeight;
+    return Math.max(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
 }
 
 function resize() {
@@ -685,7 +691,7 @@ function checkTileHasCollision(objCell) {
     }
 }
 
-function loadMenuItems() {
+async function loadMenuItems() {
 
     let bolScrolled = false;
     let intPrevScrollPos = 0;
@@ -709,20 +715,6 @@ function loadMenuItems() {
         }
     }, 150);
     $('#side_menu #title .version').text(`v${objBuild.version}`);
-
-
-    //hide dropdowns on outside click
-    $(document).on('click', function (e) {
-        var jqTarget = $(e.target).closest('.dropdown_wrap');
-
-        if (jqTarget.length === 0) {
-            $('.dropdown_wrap').removeClass('open');
-        } else {
-            $('.dropdown_wrap').not(jqTarget).removeClass('open');
-            $(jqTarget).toggleClass('open');
-        }
-    });
-
 
     var arrModes = ['mode_dark', 'mode_collapse'];
     arrModes.forEach(function (strMode) {
@@ -808,6 +800,128 @@ function loadMenuItems() {
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
 
+    //load item dropdowns
+
+    // Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
+    //     console.log(cropKey, cropData)
+    //     // const { sheet: sheetKey, h, w, x, y, targetX, targetY } = spriteMapping[cropData.sprites.at(-1)]['0']
+
+    //     // spriteSheetData[sheetKey].frames[cropKey] = { frame: { h, w, x, y } } // populate spritesheet frames
+    //     // singleTextureData[cropKey] = { sheetKey, pivot: { x: targetX, y: targetY } }                                 // map sprite to sheet
+    // })
+
+
+    const objTabs = await (await fetch('json/tabs_planner.json')).json();
+    const objItemsPlanner = await (await fetch('json/items_planner.json')).json();
+
+    Object.entries(objTabs).forEach(([tabKey, tabData]) => {
+
+        let $divDropdownWrapper = $('<div>', { 'class': 'dropdown_wrap', 'id': `tab_dropdown_${tabKey}` });
+
+        $divDropdownWrapper.append(` 
+            <div class="button_item dropdown_button">
+                <div class="icon">
+                    <img src="images/${tabData.info.icon}">
+                </div>
+               ${tabData.info.name}
+            </div>
+        `);
+
+        let $divDropdown = $('<div>', { 'class': 'dropdown' });
+
+        Object.entries(tabData.categories).forEach(([categoryKey, categoryData]) => {
+
+            let $divDropdownSection = $('<div>', { 'class': 'dropdown-section' });
+
+            let $divDropdownSectionHeader = $('<div>', { 'class': 'dropdown-item dropdown-section-item' });
+            $divDropdownSectionHeader.append(` 
+                <div class="icon"><img src="images/${categoryData.info.img_item_section_path}${categoryData.info.img}.png"></div>
+                ${categoryData.info.name}
+            `);
+            $divDropdownSection.append($divDropdownSectionHeader);
+
+            let $divDropdownSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
+
+            categoryData.items.forEach(function (strItemKey) {
+
+                let strName;
+                let strImage;
+                if (strItemKey in objItemsPlanner) {
+                    strName = objItemsPlanner[strItemKey].name;
+                    strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
+                } else {
+                    strName = objItems[strItemKey].name;
+                    strImage = `images/${categoryData.info.img_item_path}${strItemKey}.png`;
+                }
+                $divDropdownSectionItems.append(` 
+                    <div class="dropdown-item">
+                        <div class="icon"><img src="${strImage}"></div>
+                        ${strName}
+                    </div>
+                `);
+                $divDropdownSection.append($divDropdownSectionItems);
+            });
+
+            $divDropdown.append($divDropdownSection);
+        });
+
+
+        $divDropdownWrapper.append($divDropdown);
+
+        $('#tabs').append($divDropdownWrapper);
+
+
+        console.log(tabData)
+    });
+
+    //hide dropdowns on outside click
+    $(document).on('click', function (e) {
+
+        if ($(e.target).hasClass('dropdown-section-item')) {
+            var jqDropdownSectionWrap = $(e.target).closest('.dropdown-section');
+
+            if (jqDropdownSectionWrap.length === 0) {
+                if ($(window).width() > 550) {
+                    $('.dropdown-section').removeClass('open');
+                }
+            } else {
+                if ($(window).width() > 550) {
+                    $('.dropdown-section').not(jqDropdownSectionWrap).removeClass('open');
+                }
+                $(jqDropdownSectionWrap).toggleClass('open');
+            }
+
+        } else {
+            var jqDropdownWrap = $(e.target).closest('.dropdown_wrap');
+
+            if ($(jqDropdownWrap).closest('#tabs').length) {
+                if ($(window).width() > 550) {
+                    $(jqDropdownWrap).find('.dropdown').css({
+                        // 'top': $(jqDropdownWrap)[0].getBoundingClientRect().bottom + 10 + 'px',
+                        'left': $(jqDropdownWrap)[0].getBoundingClientRect().right - $(jqDropdownWrap).outerWidth() + 'px',
+                    })
+                } else {
+                    $(jqDropdownWrap).find('.dropdown').css('left', '')
+                }
+
+            }
+
+            if (jqDropdownWrap.length === 0) {
+                $('.dropdown_wrap').removeClass('open');
+            } else {
+                $('.dropdown_wrap').not(jqDropdownWrap).removeClass('open');
+                //for mobile, if clicked outside mobile dropdown
+                if (!$(e.target).hasClass('dropdown-item') && $(e.target).closest('#tabs').length && $(e.target).closest('.dropdown').length) {
+                    return;
+                } else {
+                    $(jqDropdownWrap).toggleClass('open');
+                }
+
+            }
+        }
+
+    });
+
 }
 
 function changeHouseUpgrade(objElem) {
@@ -838,14 +952,33 @@ function changeSeason(objElem) {
     drawSoil();
 }
 
-function resetZoom() {
-    $('#zoomSlider').val(100);
+function resetZoom(strDirection) {
+    const objCanvasSize = {
+        w: $('#game-container').width(),
+        h: $('#game-container').height()
+    }
 
-    objMistriaDataPlanner.zoom = 100;
+    const intMultiplierFit = getMultiplierFitScreen();
+    const intMultiplierCover = getMultiplierCoverScreen();
+
+    let intZoom = (intMultiplierCover * 100 / intMultiplierFit).toFixed();
+
+    if (strDirection === 'vertical') {
+        if (objCanvasSize.w > objCanvasSize.h) {
+            intZoom = 100;
+        }
+    } else if (strDirection === 'horizontal') {
+        if (objCanvasSize.w < objCanvasSize.h) {
+            intZoom = 100;
+        }
+    } else {
+        intZoom = 100;
+    }
+
+    $('#zoomSlider').val(intZoom);
+    objMistriaDataPlanner.zoom = intZoom;
     resize();
 }
-
-
 
 function verifyZoomParameters() {
     if (objMistriaDataPlanner.zoom > 100) {
@@ -904,20 +1037,9 @@ function updateMinimap() {
     let intMinimapRatio;
 
     if (objCanvasSize.w > objCanvasSize.h) {
-        $('#zoom_reset .icon').html (`
-            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.79,10.21a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-2.5-2.5a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-2.5,2.5a1,1,0,0,0,1.42,1.42l.79-.8v5.18l-.79-.8a1,1,0,0,0-1.42,1.42l2.5,2.5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l2.5-2.5a1,1,0,0,0-1.42-1.42l-.79.8V9.41ZM7,4H17a1,1,0,0,0,0-2H7A1,1,0,0,0,7,4ZM17,20H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Z" />
-            </svg>
-        `);
-
         intMinimapRatio = objMinimapSize.h * intMapScale / objMinimapWrapperSize.h
     } else {
         intMinimapRatio = objMinimapSize.w * intMapScale / objMinimapWrapperSize.w;
-        $('#zoom_reset .icon').html (`
-            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.71,11.29l-2.5-2.5a1,1,0,0,0-1.42,1.42l.8.79H9.41l.8-.79A1,1,0,0,0,8.79,8.79l-2.5,2.5a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l2.5,2.5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L9.41,13h5.18l-.8.79a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l2.5-2.5a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76A1,1,0,0,0,17.71,11.29ZM3,6A1,1,0,0,0,2,7V17a1,1,0,0,0,2,0V7A1,1,0,0,0,3,6ZM21,6a1,1,0,0,0-1,1V17a1,1,0,0,0,2,0V7A1,1,0,0,0,21,6Z" />
-            </svg>
-        `);
     }
 
     if (intMinimapRatio > 1) {
@@ -927,7 +1049,7 @@ function updateMinimap() {
     }
 
     objZoomSelectionSize = {
-          w: objSelectionSize.w * intSelectionScale,
+        w: objSelectionSize.w * intSelectionScale,
         h: objSelectionSize.h * intSelectionScale,
     }
 
@@ -943,7 +1065,7 @@ function updateMinimap() {
         top: objMistriaDataPlanner.offsetCanvas.y * -objMinimapWrapperSize.h / (objGrid.y * intGridCellSize)
     })
 
-    
+
 
     $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
 }
@@ -1065,6 +1187,7 @@ $(function () {
     minimapInit();
 
     (async () => {
+
         arrCollisionGrid = await (await fetch('textures/collision.json')).json()
         arrCollisionUpgradeGrid = await (await fetch('textures/collision_houseupgrade.json')).json()
         arrDiggableGrid = await (await fetch('textures/diggable.json')).json()
@@ -1094,11 +1217,14 @@ $(function () {
 
         // clicking and dragging
         objPIXIapp.stage.on('pointerdown', (e) => {
+
+            if ($('#tabs .dropdown_wrap.open').length) {
+                return;
+            }
             bolIsDragging = true;
 
-
-            objStartCellCoord = getClickedCell(e)
-            drawSelection(objStartCellCoord)
+            objStartCellCoord = getClickedCell(e);
+            drawSelection(objStartCellCoord);
 
             // updateSoilGrid(objStartCellCoord)
         });

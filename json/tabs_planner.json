@@ -1,0 +1,142 @@
+{
+    "crops": {
+        "info": {
+            "name": "Farming",
+            "icon": "almanac/crops.png"
+        },
+        "categories": {
+            "spring": {
+                "info": {
+                    "name": "Spring",
+                    "img": "18px-Season_icon_spring",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    "cabbage",
+                    "carrot",
+                    "chickpea",
+                    "daffodil",
+                    "lilac",
+                    "mystery_bag",
+                    "peas",
+                    "potato",
+                    "snowdrop_anemone",
+                    "strawberry",
+                    "temple_flower",
+                    "tulip",
+                    "turnip"
+                ]
+            },
+            "summer": {
+                "info": {
+                    "name": "Summer",
+                    "img": "18px-Season_icon_summer",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    "basil",
+                    "catmint",
+                    "chili_pepper",
+                    "corn",
+                    "cosmos",
+                    "cucumber",
+                    "daisy",
+                    "dill",
+                    "iris",
+                    "marigold",
+                    "mystery_bag",
+                    "night_queen",
+                    "oregano",
+                    "sage",
+                    "sugar_cane",
+                    "sunflower",
+                    "tea",
+                    "temple_flower",
+                    "thyme",
+                    "tomato",
+                    "watermelon"
+                ]
+            },
+            "fall": {
+                "info": {
+                    "name": "Fall",
+                    "img": "18px-Season_icon_autumn",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    "broccoli",
+                    "celosia",
+                    "chrysanthemum",
+                    "cranberry",
+                    "garlic",
+                    "heather",
+                    "moon_fruit",
+                    "mystery_bag",
+                    "onion",
+                    "pumpkin",
+                    "rice",
+                    "rosemary",
+                    "sweet_potato",
+                    "temple_flower",
+                    "viola",
+                    "wheat"
+                ]
+            },
+            "winter": {
+                "info": {
+                    "name": "Winter",
+                    "img": "18px-Season_icon_winter",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    "beet",
+                    "burdock_root",
+                    "cauliflower",
+                    "daikon_radish",
+                    "frost_lily",
+                    "jasmine",
+                    "mystery_bag",
+                    "poinsettia",
+                    "snapdragon",
+                    "snow_peas",
+                    "temple_flower"
+                ]
+            },
+            "soil": {
+                "info": {
+                    "name": "Soil",
+                    "img": "sod",
+                    "img_item_section_path": "items/"
+                },
+                "items": [
+                    "soil",
+                    "soil_tilled",
+                    "soil_wet"
+                ]
+            },
+            "trees": {
+                "info": {
+                    "name": "Trees",
+                    "img": "sapling_oak",
+                    "img_item_section_path": "items/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    "tree_apple",
+                    "tree_cherry",
+                    "tree_lemon",
+                    "tree_oak",
+                    "tree_orange",
+                    "tree_peach",
+                    "tree_pear",
+                    "tree_pine",
+                    "tree_pomegranate"
+                ]
+            }
+        }
+    }
+}

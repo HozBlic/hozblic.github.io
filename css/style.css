@@ -462,6 +462,7 @@ textarea {
     background-position: calc(100% - 10px) center;
     background-size: 8px 8px;
     white-space: nowrap;
+    padding-right: 30px;
 }
 
 .dropdown_button:hover {
@@ -481,7 +482,7 @@ textarea {
     flex-direction: column;
     -webkit-box-shadow: -1px 2px 30px 0px var(--color-bg-darkest);
     box-shadow: -1px 2px 30px 0px var(--color-bg-darkest);
-    transition: 0.5s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
     overflow: hidden;
     flex-wrap: nowrap;
     align-items: flex-start;

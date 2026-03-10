@@ -1,0 +1,54 @@
+{
+    "mystery_bag": {
+        "name": "Magic Seed",
+        "img": "items/seed_mystery_bag"
+    },
+    "soil": {
+        "name": "Soil",
+        "img": "items/shovel_iron"
+    },
+    "soil_tilled": {
+        "name": "Tilled soil",
+        "img": "items/hoe_iron"
+    },
+    "soil_wet": {
+        "name": "Wet soil",
+        "img": "items/watering_can_iron"
+    },
+    "tree_apple": {
+        "name": "Apple",
+        "img": "items/apple"
+    },
+    "tree_cherry": {
+        "name": "Cherry",
+        "img": "items/cherry"
+    },
+    "tree_lemon": {
+        "name": "Lemon",
+        "img": "items/lemon"
+    },
+    "tree_oak": {
+        "name": "Oak",
+        "img": "items/acorn"
+    },
+    "tree_orange": {
+        "name": "Orange",
+        "img": "items/orange"
+    },
+    "tree_peach": {
+        "name": "Peach",
+        "img": "items/peach"
+    },
+    "tree_pear": {
+        "name": "Pear",
+        "img": "items/pear"
+    },
+    "tree_pine": {
+        "name": "Pine",
+        "img": "items/pinecone"
+    },
+    "tree_pomegranate": {
+        "name": "Pomegranate",
+        "img": "items/pomegranate"
+    }
+}
