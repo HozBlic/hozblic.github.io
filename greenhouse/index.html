@@ -34,7 +34,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="../css/style.css?v=45">
+    <link rel="stylesheet" href="../css/style.css?v=46">
     <link rel="stylesheet" href="../css/greenhouse.css">
 
     <script type="text/javascript" src="../json/build.json.js"></script>
@@ -44,7 +44,7 @@
     <script type="text/javascript" src="../js/tippy-bundle.umd.min.js?v=2"></script>
 
     <script type="text/javascript" src="../js/script.js?v=53"></script>
-    <script type="text/javascript" src="../js/greenhouse.js?v=2"></script>
+    <script type="text/javascript" src="../js/greenhouse.js?v=3"></script>
 </head>
 
 <body>
@@ -65,6 +65,58 @@
                         </label> Dark mode </div>
                 </div>
                 <div class="bottom_info">
+                    <div class="buttons">
+                        <div class="dropdown_wrap top">
+                            <div class="button_item dropdown_button">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-external-link">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                                <div class="text">Other tools / links</div>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-item" target="_self" href="/">
+                                    <div class="icon">
+                                        <img src="../images/gift.png">
+                                    </div>
+                                    Tracker
+                                </a>
+                                <a class="dropdown-item" href="https://github.com/HozBlic/hozblic.github.io">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+                                            <polyline points="16 18 22 12 16 6"></polyline>
+                                            <polyline points="8 6 2 12 8 18"></polyline>
+                                        </svg>
+                                    </div>
+                                    Source code
+                                </a>
+                                <a class="dropdown-item" href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-coffee">
+                                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                            <line x1="6" y1="1" x2="6" y2="4"></line>
+                                            <line x1="10" y1="1" x2="10" y2="4"></line>
+                                            <line x1="14" y1="1" x2="14" y2="4"></line>
+                                        </svg>
+                                    </div>
+                                    Tip jar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <a id="suggestion"
                         href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">
                         <div id="suggestion_question">
@@ -371,7 +423,6 @@
                 <div class="tab active" id="tab_tutorial" data-tab="tutorial">
                     <img src="../images/items/small_greenhouse_wood_blueprint.png">Tutorial
                 </div>
-                <a class="tab" href="/" id="tab_gift" target="_self" data-tab="gift"><img src="../images/gift.png">Gift guide</a>
             </div>
         </div>
     </div>

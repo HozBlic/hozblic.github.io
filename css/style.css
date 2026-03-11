@@ -362,6 +362,13 @@ svg:focus {
     justify-content: center;
 }
 
+.icon img {
+    image-rendering: pixelated;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
 .icon svg {
     height: 13px;
     width: 13px;
@@ -436,8 +443,11 @@ textarea {
     padding-top: 7px;
 }
 
+.buttons {
+    margin-top: 5px;
+}
 
-
+.buttons,
 .dropdowns {
     display: flex;
     flex-direction: column;
@@ -445,10 +455,23 @@ textarea {
 }
 
 @media only screen and (min-width: 550px) {
+
+    .buttons,
     .dropdowns {
         gap: 7px;
     }
 }
+
+.buttons .button_item {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.buttons .button_item:hover {
+    opacity: 1;
+}
+
+
 /* END: Search items */
 
 /* Layout and sort dropdowns */
@@ -462,6 +485,7 @@ textarea {
     background-position: calc(100% - 10px) center;
     background-size: 8px 8px;
     white-space: nowrap;
+    padding-right: 30px;
 }
 
 .dropdown_button:hover {
@@ -481,7 +505,7 @@ textarea {
     flex-direction: column;
     -webkit-box-shadow: -1px 2px 30px 0px var(--color-bg-darkest);
     box-shadow: -1px 2px 30px 0px var(--color-bg-darkest);
-    transition: 0.5s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
     overflow: hidden;
     flex-wrap: nowrap;
     align-items: flex-start;
@@ -495,6 +519,12 @@ textarea {
     background-color: rgba(var(--color-bg-darkest-solid-rgb), 0.5);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+}
+
+.dropdown_wrap.top .dropdown {
+
+    top: unset;
+    bottom: calc(100% + 5px);
 }
 
 .dropdown_wrap.open .dropdown {
@@ -539,6 +569,7 @@ textarea {
     width: 13px;
     height: 13px;
 }
+
 /* END: Layout and sort dropdowns */
 
 
@@ -727,25 +758,7 @@ textarea {
     color: var(--color-txt);
     fill: var(--color-txt);
     stroke: var(--color-txt);
-    opacity: 0.5;
 }
-
-#json_button:hover {
-    opacity: 01;
-}
-
-#json_button .icon {
-    justify-content: flex-start;
-    width: 17px;
-    min-width: 17px;
-    height: 20px;
-}
-
-#json_button .icon svg {
-    height: 11px;
-    width: 11px;
-}
-
 
 #suggestion {
     display: flex;
@@ -760,12 +773,12 @@ textarea {
 #suggestion_question {
     font-size: 10px;
     line-height: 10px;
-    opacity: 0.2;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
 }
 
 #suggestion:hover #suggestion_question {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 #suggestion_question p {
@@ -788,7 +801,7 @@ textarea {
     display: flex;
     align-items: center;
     gap: 7px;
-    opacity: 0.3;
+    opacity: 0.6;
     transition: opacity 0.3s ease;
 }
 
@@ -800,6 +813,7 @@ textarea {
     height: 16px;
     width: 16px;
 }
+
 /* End: Menu bottom info */
 
 

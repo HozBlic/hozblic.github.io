@@ -738,6 +738,13 @@ function loadScrapedTab(strTab) {
 
         $('#scraped').append($divCategory);
 
+        tippy(`#category_${strCatgoryKey} .favorite_cbx_wrap`, {
+            content: objMistriaData.favorites.has(`${strCatgoryKey}`) ? 'Remove from pinned' : 'Pin to top',
+            interactive: true,
+            maxWidth: 370,
+            delay: [500, 50],
+        });
+
         if ('tip' in objCategory.info) {
             let strTipHTML = $(`
             <div id="tip_category_${strCatgoryKey}" class="tip_wrap">
@@ -860,10 +867,15 @@ function loadScrapedTab(strTab) {
     $('.favorite_cbx:checkbox').change(function () {
         let bolChecked = $(this).is(':checked');
 
+        let objWrapper = $(this).parent()[0];
+        let objTippy = objWrapper._tippy;
+
         if (bolChecked) {
             objMistriaData.favorites.add($(this).val());
+            objTippy.setContent('Remove from pinned');
         } else {
             objMistriaData.favorites.delete($(this).val());
+            objTippy.setContent('Pin to top');
         }
 
         sortItems();
@@ -4084,26 +4096,26 @@ function loadMenuItems() {
 
     $('#side_menu #title .version').text(`v${objBuild.version}`);
 
-    if (!$('#tutorial').length) {
-        objBuild.tabsOrder.forEach(function (strTab) {
-            if (!(strTab in objTabs)) return;
-            let objTabInfo = objTabs[strTab].info;
-            $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/${objTabInfo.icon}">${objTabInfo.name}</div>`)
-        });
-        $('#tabs').append(` 
-            <div class="tab" data-tab="wrapped">
-                <div class="icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M20,7H18a2,2,0,0,0-2,2V20H15V12a2,2,0,0,0-2-2H11a2,2,0,0,0-2,2v8H8V16a2,2,0,0,0-2-2H4a2,2,0,0,0-2,2v5a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V9A2,2,0,0,0,20,7ZM4,20V16H6v4Zm7,0V12h2v8Zm7,0V9h2V20Z" />
-                        <path
-                            d="M3.81,12.58l4.57-6.4L13.68,8a1,1,0,0,0,.82-.08l7-4a1,1,0,0,0-1-1.74L13.89,5.91,8.32,4.05a1,1,0,0,0-1.13.37l-5,7a1,1,0,0,0,.23,1.39A1,1,0,0,0,3,13,1,1,0,0,0,3.81,12.58Z" />
-                    </svg>
-                </div>
-                Mistria Wrapped
+
+    objBuild.tabsOrder.forEach(function (strTab) {
+        if (!(strTab in objTabs)) return;
+        let objTabInfo = objTabs[strTab].info;
+        $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/${objTabInfo.icon}">${objTabInfo.name}</div>`)
+    });
+    $('#tabs').append(` 
+        <div class="tab" data-tab="wrapped">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20,7H18a2,2,0,0,0-2,2V20H15V12a2,2,0,0,0-2-2H11a2,2,0,0,0-2,2v8H8V16a2,2,0,0,0-2-2H4a2,2,0,0,0-2,2v5a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V9A2,2,0,0,0,20,7ZM4,20V16H6v4Zm7,0V12h2v8Zm7,0V9h2V20Z" />
+                    <path
+                        d="M3.81,12.58l4.57-6.4L13.68,8a1,1,0,0,0,.82-.08l7-4a1,1,0,0,0-1-1.74L13.89,5.91,8.32,4.05a1,1,0,0,0-1.13.37l-5,7a1,1,0,0,0,.23,1.39A1,1,0,0,0,3,13,1,1,0,0,0,3.81,12.58Z" />
+                </svg>
             </div>
-        `);
-    }
+            Mistria Wrapped
+        </div>
+    `);
+
 
     // create menu checkboxes
     arrObtain.forEach(function (strObtain, i) {

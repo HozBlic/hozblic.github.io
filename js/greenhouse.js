@@ -45,6 +45,20 @@ function loadMenuItems() {
         $(`#${key}`).prop('checked', true);
         $('#page').addClass(key);
     })
+
+    
+    //hide dropdowns on outside click
+    $(document).on('click', function (e) {
+        var jqTarget = $(e.target).closest('.dropdown_wrap');
+
+        if (jqTarget.length === 0) {
+            $('.dropdown_wrap').removeClass('open');
+        } else {
+            $('.dropdown_wrap').not(jqTarget).removeClass('open');
+            $(jqTarget).toggleClass('open');
+        }
+    });
+
 }
 
 $(function () {

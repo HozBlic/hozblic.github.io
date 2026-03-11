@@ -49,8 +49,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="css/style.css?v=45">
+
+    <link rel="stylesheet" href="css/style.css?v=46">
     <link rel="stylesheet" href="css/popups.css">
     <link rel="stylesheet" href="css/tracker.css">
     <link rel="stylesheet" href="css/wrapped.css">
@@ -73,7 +73,7 @@
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
     <script type="text/javascript" src="js/script.js?v=53"></script>
-    <script type="text/javascript" src="js/tracker.js"></script>
+    <script type="text/javascript" src="js/tracker.js?v=2"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
     <script type="text/javascript" src="js/save_file.js?v=23"></script>
 </head>
@@ -341,16 +341,6 @@
                 </div>
 
                 <div class="bottom_info">
-                    <div id="json_button" onclick="openJsonPopup();">
-                        <div class="icon">
-                            <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z" />
-                            </svg>
-                        </div>
-                        <div class="text">Import / Export data</div>
-                    </div>
-
                     <div class="statistics">
                         <div class="meter_label_wrapper">
                             <div class="statistics_label">Given gifts</div>
@@ -374,6 +364,68 @@
                                 <div id="almanac_statistics" class="meter">
                                     <div><span></span></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div id="json_button" class="button_item" onclick="openJsonPopup();">
+                            <div class="icon">
+                                <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M416 31.94C416 21.75 408.1 0 384.1 0c-13.98 0-26.87 9.072-30.89 23.18l-128 448c-.8404 2.935-1.241 5.892-1.241 8.801C223.1 490.3 232 512 256 512c13.92 0 26.73-9.157 30.75-23.22l128-448C415.6 37.81 416 34.85 416 31.94zM176 143.1c0-18.28-14.95-32-32-32c-8.188 0-16.38 3.125-22.62 9.376l-112 112C3.125 239.6 0 247.8 0 255.1S3.125 272.4 9.375 278.6l112 112C127.6 396.9 135.8 399.1 144 399.1c17.05 0 32-13.73 32-32c0-8.188-3.125-16.38-9.375-22.63L77.25 255.1l89.38-89.38C172.9 160.3 176 152.2 176 143.1zM640 255.1c0-8.188-3.125-16.38-9.375-22.63l-112-112C512.4 115.1 504.2 111.1 496 111.1c-17.05 0-32 13.73-32 32c0 8.188 3.125 16.38 9.375 22.63l89.38 89.38l-89.38 89.38C467.1 351.6 464 359.8 464 367.1c0 18.28 14.95 32 32 32c8.188 0 16.38-3.125 22.62-9.376l112-112C636.9 272.4 640 264.2 640 255.1z" />
+                                </svg>
+                            </div>
+                            <div class="text">Save file import</div>
+                        </div>
+
+                        <div class="dropdown_wrap top">
+                            <div class="button_item dropdown_button">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-external-link">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </div>
+                                <div class="text">Other tools / links</div>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-item" target="_self" href="/greenhouse">
+                                    <div class="icon">
+                                        <img style="width: 20px; height: 20px;"
+                                            src="/images/items/small_greenhouse_wood_blueprint.png">
+                                    </div>
+                                    Save file editing (herb greenhouse)
+                                </a>
+                                <a class="dropdown-item" href="https://github.com/HozBlic/hozblic.github.io">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+                                            <polyline points="16 18 22 12 16 6"></polyline>
+                                            <polyline points="8 6 2 12 8 18"></polyline>
+                                        </svg>
+                                    </div>
+                                    Source code
+                                </a>
+                                <a class="dropdown-item" href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-coffee">
+                                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                            <line x1="6" y1="1" x2="6" y2="4"></line>
+                                            <line x1="10" y1="1" x2="10" y2="4"></line>
+                                            <line x1="14" y1="1" x2="14" y2="4"></line>
+                                        </svg>
+                                    </div>
+                                    Tip jar
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -619,7 +671,8 @@
                                                         </svg>
                                                         + R
                                                     </span>
-                                                    [Windows logo key + R] and paste command below, save file folder should appear
+                                                    [Windows logo key + R] and paste command below, save file folder
+                                                    should appear
                                                 </p>
 
                                                 <div class="code_copy_block">
