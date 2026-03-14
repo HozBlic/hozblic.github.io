@@ -987,8 +987,8 @@ textarea {
         /* width: 20px; */
     }
 
-    .tab.active,
-    .tab:hover {
+    .tab:not(.button-notext).active,
+    .tab:not(.button-notext):hover {
         font-size: 12px;
         gap: 5px;
         padding: 5px 7px;
@@ -996,15 +996,15 @@ textarea {
         min-height: 34px;
     }
 
-    .tab.active img,
-    .tab:hover img {
+    .tab:not(.button-notext).active img,
+    .tab:not(.button-notext):hover img {
         width: 20px;
         height: 20px;
     }
 }
 
 @media only screen and (min-width: 1100px) {
-    .tab {
+    .tab:not(.button-notext) {
         font-size: 12px;
         gap: 5px;
         padding: 5px 7px;
@@ -1012,7 +1012,7 @@ textarea {
         min-height: 34px;
     }
 
-    .tab img {
+    .tab:not(.button-notext) img {
         width: 20px;
         height: 20px;
     }

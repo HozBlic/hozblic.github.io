@@ -998,6 +998,29 @@ async function loadMenuItems() {
     tippy('#wet_soil', {
         content: 'When placing crops on the map, automatically place wet soil underneath them',
     });
+    tippy('[data-tab="dragging_mode"]', {
+        content: 'Drag map',
+    });
+    tippy('[data-tab="selection_mode"]', {
+        content: 'Select item or area',
+    });
+    tippy('#undo', {
+        content: 'Undo, up to 20 changes',
+    });
+    tippy('#redo', {
+        content: 'Redo',
+    });
+    tippy('#save_image', {
+        content: 'Save as image',
+    });
+    tippy('#upload_file', {
+        content: 'Upload save file',
+    });
+    tippy('#delete', {
+        content: 'Clear map',
+    });
+
+
 }
 
 function changeHouseUpgrade(objElem) {

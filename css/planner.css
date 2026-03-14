@@ -72,7 +72,7 @@
     }
 }
 
-.tab .icon {
+.tab:not(.delete) .icon {
     color: var(--color-txt);
     fill: var(--color-txt);
     stroke: var(--color-txt);
@@ -165,6 +165,13 @@ canvas {
     border: 1px solid white;
 }
 
+.button_item.disabled {
+    opacity: 0.4;
+    cursor: auto;
+}
+.button_item.disabled:hover{
+      background-color: var(--color-bg-darker);
+}
 
 
 #zoom {
