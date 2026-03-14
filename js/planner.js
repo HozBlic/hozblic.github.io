@@ -3,23 +3,43 @@ let objMistriaDataPlannerDefault = {
     'season': 'spring',
     'house_upgrade': 0,
     'zoom': 100,
-    'offsetCanvas': {
-        x: 0,
-        y: 0
-    },
-    'options': ['mode_grid', 'mode_collision'] // mode_soil, mode_wet
+    'offsetCanvas': { x: 0, y: 0 },
+    'options': ['mode_grid', 'mode_collision'] // mode_wet
 }
 
-let objTabs = null;
+let strMode = 'dragging_mode'; // drawing_mode, selection_mode
+let strCurrentlyDrawing = false;
+let bolIsDragging = false;
+
+const intGridCellSize = 16;
+const objGrid = {
+    x: 138,
+    y: 103
+}
+const objCanvasDefault = {
+    width: objGrid.x * intGridCellSize,
+    height: objGrid.y * intGridCellSize
+}
+const objMinimapWrapperSize = {
+    w: 230,
+    h: objGrid.y * 230 / objGrid.x
+}
+
+let objStartCellCoord = { x: 0, y: 0 };
+let objPrevCellCoord = { x: 0, y: 0 };
+let intMultiplierCanvas = 1;
+
+let arrGrid_Soil = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
+let arrGrid_Crop = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
+let arrGrid_Collision = null;
+let arrGrid_Diggable = null;
 let arrFenceCoord = null;
 
-let arrCollisionGrid = null;
-let arrDiggableGrid = null;
-let bolSelection = true;
-
-
+let objPlannerDiv;
+let objPIXIapp;
+let sprites = null;
+let objGraphics_Grid = null;
 let objContainer_Wrapper = null;
-
 let objContainers = {
     'background': null,
     'collision': null,
@@ -32,59 +52,19 @@ let objContainers = {
     'crops': null,
     'selection': null,
 }
+const arrGroundContainers = ['ground', 'soil', 'soilWet', 'grass'];
 const objZindexes = {
     'background': 0,
-    'collision': 6,
     'ground': 2,
     'soil': 3,
     'soilWet': 4,
     'grass': 5,
+    'collision': 6,
     'grid': 7,
     'fence': 8,
     'crops': 9,
     'selection': 99,
 }
-
-const arrGroundContainers = ['ground', 'soil', 'soilWet', 'grass']
-
-
-
-const objGrid = {
-    x: 138,
-    y: 103
-}
-const intGridCellSize = 16;
-const objCanvasDefault = {
-    width: objGrid.x * intGridCellSize,
-    height: objGrid.y * intGridCellSize
-}
-const objMinimapWrapperSize = {
-    w: 230,
-    h: objGrid.y * 230 / objGrid.x
-}
-let objZoomSelectionSize = {}
-
-let intMultiplierCanvas = 1;
-
-let bolIsDragging = false;
-let objStartCellCoord = {
-    x: 0,
-    y: 0
-};
-let objPrevCellCoord = {
-    x: 0,
-    y: 0
-};
-
-
-let objPlannerDiv;
-let objPIXIapp;
-let sprites = null;
-let objGraphics_Grid = null;
-
-
-let arrGrid_Soil = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
-let arrGrid_Crop = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
 
 function addTestData(intTest) {
 
@@ -92,11 +72,10 @@ function addTestData(intTest) {
         case 1: //add test soil in front of the house
 
             var intRows = 7;
-            var intColumns = 9
+            var intColumns = 9;
 
-            // starting point is {x: 736, y: 368} / 16
-            var intStartX = 736 / intGridCellSize;
-            var intStartY = 368 / intGridCellSize;
+            var intStartX = 46;
+            var intStartY = 23;
 
             for (let y = 0; y < intRows; y++) {
                 // let arrFilledGrid_Row = [];
@@ -108,7 +87,7 @@ function addTestData(intTest) {
                         case (y == intRows - 1 && x == intColumns - 1):
                             break;
                         default:
-                            arrGrid_Soil[intStartY + y][intStartX + x] = 3;
+                            arrGrid_Soil[intStartY + y][intStartX + x] = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
                             arrGrid_Crop[intStartY + y][intStartX + x] = 'snow_peas';
                             break;
                     }
@@ -133,7 +112,7 @@ function addTestData(intTest) {
                         case (y == intRows - 1 && x == intColumns - 1):
                             break;
                         default:
-                            arrGrid_Soil[intStartY + y][intStartX + x] = 3;
+                            arrGrid_Soil[intStartY + y][intStartX + x] = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
                             arrGrid_Crop[intStartY + y][intStartX + x] = 'snow_peas';
                             break;
                     }
@@ -151,7 +130,7 @@ function addTestData(intTest) {
             for (let y = 0; y < intRows; y++) {
                 // let arrFilledGrid_Row = [];
                 for (let x = 0; x < intColumns; x++) {
-                    arrGrid_Soil[intStartY + y][intStartX + x] = 3;
+                    arrGrid_Soil[intStartY + y][intStartX + x] = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
                     arrGrid_Crop[intStartY + y][intStartX + x] = 'snow_peas';
                 }
             }
@@ -161,7 +140,7 @@ function addTestData(intTest) {
             for (let y = 0; y < intRows; y++) {
                 // let arrFilledGrid_Row = [];
                 for (let x = 0; x < intColumns; x++) {
-                    arrGrid_Soil[intStartY + y][intStartX + x] = 3;
+                    arrGrid_Soil[intStartY + y][intStartX + x] = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
                     arrGrid_Crop[intStartY + y][intStartX + x] = 'tea';
                 }
             }
@@ -169,7 +148,6 @@ function addTestData(intTest) {
             break;
     }
 }
-addTestData(3);
 
 function convertGridToNeighbours(arrGrid, intValue = null) {
     //clockwise NOT
@@ -302,13 +280,13 @@ function drawCollision(bolUseDiggableGrid = true) {
             let intCellSize = intGridCellSize / 2;
             if (bolUseDiggableGrid) {
 
-                for (var y = 0; y < arrDiggableGrid.length; y++) {
-                    for (var x = 0; x < arrDiggableGrid[y].length; x++) {
-                        if (!arrDiggableGrid[y][x]) {
+                for (var y = 0; y < arrGrid_Diggable.length; y++) {
+                    for (var x = 0; x < arrGrid_Diggable[y].length; x++) {
+                        if (!arrGrid_Diggable[y][x]) {
                             let elemCollisionChild = new PIXI.Graphics();
                             elemCollisionChild.rect(x * intCellSize, y * intCellSize, intCellSize, intCellSize);
 
-                            switch (arrDiggableGrid[y][x]) {
+                            switch (arrGrid_Diggable[y][x]) {
                                 // case 2:
                                 //     elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
                                 //     break;
@@ -327,16 +305,16 @@ function drawCollision(bolUseDiggableGrid = true) {
                 }
             } else {
                 arrCollisionUpgradeGrid.forEach((objCoord) => {
-                    arrCollisionGrid[objCoord.y][objCoord.x] = objMistriaDataPlanner.house_upgrade ? 1 : 0;
+                    arrGrid_Collision[objCoord.y][objCoord.x] = objMistriaDataPlanner.house_upgrade ? 1 : 0;
                 });
 
-                for (var y = 0; y < arrCollisionGrid.length; y++) {
-                    for (var x = 0; x < arrCollisionGrid[y].length; x++) {
-                        if (arrCollisionGrid[y][x]) {
+                for (var y = 0; y < arrGrid_Collision.length; y++) {
+                    for (var x = 0; x < arrGrid_Collision[y].length; x++) {
+                        if (arrGrid_Collision[y][x]) {
                             let elemCollisionChild = new PIXI.Graphics();
                             elemCollisionChild.rect(x * intCellSize, y * intCellSize, intCellSize, intCellSize);
 
-                            switch (arrCollisionGrid[y][x]) {
+                            switch (arrGrid_Collision[y][x]) {
                                 // case 2:
                                 //     elemCollisionChild.fill(`rgba(255, 165,0,0.3)`);
                                 //     break;
@@ -406,7 +384,7 @@ async function addBackground() {
 }
 
 function drawSelection(objCellCoord = false) {
-    if (!bolSelection) return;
+    if (strMode != 'selection_mode' && strMode != 'drawing_mode') return;
 
     //destroy previously drawn elements
     if (objContainers.selection !== null) {
@@ -444,6 +422,17 @@ function drawSelection(objCellCoord = false) {
     resizeContainers();
     //might be useful new Rectangle(100, 100, 200, 150);
     //highlight elements
+}
+
+function dragMap(objCellCoord) {
+    if (strMode != 'dragging_mode') return;
+    if (!bolIsDragging) return;
+
+    objMistriaDataPlanner.offsetCanvas = {
+        x: objMistriaDataPlanner.offsetCanvas.x - ((objStartCellCoord.x - objCellCoord.x) * intMultiplierCanvas),
+        y: objMistriaDataPlanner.offsetCanvas.y - ((objStartCellCoord.y - objCellCoord.y) * intMultiplierCanvas),
+    };
+    resize();
 }
 
 function drawSoil() {
@@ -542,9 +531,16 @@ const slice2D = (arr, startX, endX, startY, endY) => {
     return arr.slice(startY, endY).map(subArr => subArr.slice(startX, endX))
 }
 
-function updateSoilGrid(objCellCoord, bolTilled = false, bolWet = false) {
+function updateSoilGrid(objCellCoord) {
+
+    if (strMode != 'drawing_mode') return;
+    if (!['soil', 'soil_tilled', 'soil_wet'].includes(strCurrentlyDrawing)) return;
+    //can be usef dor crops too, then dragging is not needed, but  const bolWet is needed
 
     if (!bolIsDragging) return;
+
+    const bolWet = strCurrentlyDrawing == 'soil_wet' || (!['soil', 'soil_tilled', 'soil_wet'].includes(strCurrentlyDrawing) && objMistriaDataPlanner.options.has('mode_wet'));
+    const bolTilled = strCurrentlyDrawing == 'soil_tilled';
 
     const objSelection = {
         x0: Math.min(objStartCellCoord.x, objCellCoord.x),
@@ -612,6 +608,24 @@ function updateCropGrid(objCellCoord, strCropKey) {
     drawCrops();
 }
 
+function updateCurrentlyDrawing(strItemKey = false) {
+    strCurrentlyDrawing = strItemKey;
+    updateCursorMode('drawing_mode')
+
+    //update cursor with transparent element
+}
+
+function updateCursorMode(strModeTemp = false) {
+    // let strMode = 'dragging_mode'; // drawing_mode, selection_mode
+    strMode = strModeTemp;
+    $('.tab').removeClass('active');
+    $(`.tab[data-tab="${strMode}"]`).addClass('active');
+    if (strMode == 'dragging_mode') {
+        $('#page').addClass('dragging_mode');
+    } else {
+        $('#page').removeClass('dragging_mode');
+    }
+}
 function checkTileHasCollision(objCell, bolUseDiggableGrid = true) {
     const objSelection = {
         x0: objCell.x * 2,
@@ -621,11 +635,11 @@ function checkTileHasCollision(objCell, bolUseDiggableGrid = true) {
     }
 
     if (bolUseDiggableGrid) {
-        const arrGrid_DiggableSlice = slice2D(arrDiggableGrid, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
+        const arrGrid_DiggableSlice = slice2D(arrGrid_Diggable, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
         const setGrid_DiggableSliceValues = new Set(arrGrid_DiggableSlice.flat())
         return (!setGrid_DiggableSliceValues.has(0)) ? false : true;
     } else {
-        const arrGrid_CollisionSlice = slice2D(arrCollisionGrid, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
+        const arrGrid_CollisionSlice = slice2D(arrGrid_Collision, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1);
         const setGrid_CollisionSliceValues = new Set(arrGrid_CollisionSlice.flat())
         return (setGrid_CollisionSliceValues.size === 1 && setGrid_CollisionSliceValues.has(0)) ? false : true;
     }
@@ -646,10 +660,38 @@ function getClickedCell(event) {
         y: Math.floor((y - objMistriaDataPlanner.offsetCanvas.y) / intGridCellSize),
     }
 
-    // console.log(objCell)
+    // console.log( objCell)
 
     return objCell;
 }
+
+
+function checkDropdownVisibility(searchDiv) {
+    // $('#page').removeClass('completed'); //no items found instead of competed
+    //potentionally add class to force open
+    $('#page .dropdown > .dropdown-section .dropdown-section').css('display', '');
+    $('#page .dropdown > .dropdown-section').css('display', '');
+
+    $(searchDiv).parent().parent().find('#page .dropdown > .dropdown-section .dropdown-section').each(function () {
+        if (!$(this).find('.dropdown-item:visible').length) {
+            $(this).hide();
+        }
+    });
+
+    $(searchDiv).parent().parent().find('#page .dropdown > .dropdown-section').each(function () {
+        if (!$(this).find('.dropdown-section:visible').length) {
+            $(this).hide();
+        }
+    });
+
+
+
+
+    // if (!$('#page .dropdown > .dropdown-section:visible').length && $('#search_items').val() === '' && !$('input.obtain_cbx:checked').length) {
+    //     $('#page').addClass('completed');
+    // }
+}
+
 
 async function loadMenuItems() {
 
@@ -675,6 +717,60 @@ async function loadMenuItems() {
         }
     }, 150);
     $('#side_menu #title .version').text(`v${objBuild.version}`);
+
+    $('.search_items').on('keyup', function () {
+        //remove value fron any other inputs
+        $('#page').removeHighlight();
+        $('.hide_search').removeClass('hide_search');
+        $('#page .dropdown').removeClass('searching');
+
+        const value = $(this).val().toLowerCase();
+
+        if (value !== '') {
+            $(this).parent().parent().find('.dropdown ').addClass('searching');
+            const keywords = value.split('+').map(s => s.trim()).filter(Boolean);
+
+            $(this).parent().parent().find('.dropdown-item').filter(function () {
+                const text = $(this).text().trim().toLowerCase();
+                const matchesAll = keywords.some(word => text.includes(word));
+
+                if (matchesAll) {
+                    $(this).removeClass('hide_search');
+                } else {
+                    $(this).addClass('hide_search');
+                }
+            });
+
+            keywords.forEach(word => {
+                $(this).parent().parent().find('.dropdown > .dropdown-section ').highlight(word);
+            });
+
+        }
+
+        $(this).parent().parent().find('.dropdown > .dropdown-section .dropdown-section').each(function () {
+            if (value !== '') {
+                if ($(this).find('.dropdown-section-item').html().includes('highlight')) {
+                    $(this).find('.dropdown-item').removeClass('hide_search');
+                }
+            }
+            $(this).hide()
+        });
+
+        $(this).parent().parent().find('.dropdown > .dropdown-section').each(function () {
+            if (value !== '') {
+                if ($(this).find('.dropdown-section-item').html().includes('highlight')) {
+                    $(this).find('.dropdown-item').removeClass('hide_search');
+                }
+            }
+
+            if (!$(this).find('.dropdown-item:not(.spoiler_placeholder):visible').length) {
+                $(this).hide()
+            }
+        });
+
+        checkDropdownVisibility(this);
+    });
+
 
     var arrModes = ['mode_dark', 'mode_collapse'];
     arrModes.forEach(function (strMode) {
@@ -702,6 +798,13 @@ async function loadMenuItems() {
         $(`#${key}`).prop('checked', true);
         $('#page').addClass(key);
     })
+
+    $(`.tab[data-tab="${strMode}"]`).addClass('active');
+    if (strMode == 'dragging_mode') {
+        $('#page').addClass('dragging_mode');
+    } else {
+        $('#page').removeClass('dragging_mode');
+    }
 
 
     var arrModes = ['mode_dark'];
@@ -759,36 +862,37 @@ async function loadMenuItems() {
     $('.dropdown-item.house_upgrade').removeClass('selected');
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
-
-    //load item dropdowns
-
-    // Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
-    //     console.log(cropKey, cropData)
-    //     // const { sheet: sheetKey, h, w, x, y, targetX, targetY } = spriteMapping[cropData.sprites.at(-1)]['0']
-
-    //     // spriteSheetData[sheetKey].frames[cropKey] = { frame: { h, w, x, y } } // populate spritesheet frames
-    //     // singleTextureData[cropKey] = { sheetKey, pivot: { x: targetX, y: targetY } }                                 // map sprite to sheet
-    // })
-
-
     const objTabs = await (await fetch('json/tabs_planner.json')).json();
     const objItemsPlanner = await (await fetch('json/items_planner.json')).json();
 
+    let $divDropdownSearch = $('<div>', { 'class': 'dropdown' });
     Object.entries(objTabs).forEach(([tabKey, tabData]) => {
 
-        let $divDropdownWrapper = $('<div>', { 'class': 'dropdown_wrap', 'id': `tab_dropdown_${tabKey}` });
+        let $divDropdownSearchSection = $('<div>', { 'class': 'dropdown-section' });
+        let $divDropdownSearchSectionHeader = $('<div>', { 'class': 'dropdown-item dropdown-section-item' });
+        $divDropdownSearchSectionHeader.append(` 
+                <div class="icon"><img src="images/${tabData.info.icon}"></div>
+                <span class="dropdown-section-name">${tabData.info.name}</span>
+            `);
+        $divDropdownSearchSection.append($divDropdownSearchSectionHeader);
+        let $divDropdownSearchSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
 
+
+        let $divDropdownWrapper = $('<div>', { 'class': 'dropdown_wrap', 'id': `tab_dropdown_${tabKey}` });
         $divDropdownWrapper.append(` 
             <div class="button_item dropdown_button">
                 <div class="icon">
                     <img src="images/${tabData.info.icon}">
                 </div>
-               ${tabData.info.name}
+               <span class="dropdown-section-name">${tabData.info.name}</span>
             </div>
         `);
+        // $divDropdown.append(` 
+        //     <div class="dropdown_search">
 
+        //     </div>
+        // `);
         let $divDropdown = $('<div>', { 'class': 'dropdown' });
-
         Object.entries(tabData.categories).forEach(([categoryKey, categoryData]) => {
 
             let $divDropdownSection = $('<div>', { 'class': 'dropdown-section' });
@@ -796,14 +900,13 @@ async function loadMenuItems() {
             let $divDropdownSectionHeader = $('<div>', { 'class': 'dropdown-item dropdown-section-item' });
             $divDropdownSectionHeader.append(` 
                 <div class="icon"><img src="images/${categoryData.info.img_item_section_path}${categoryData.info.img}.png"></div>
-                ${categoryData.info.name}
+                <span class="dropdown-section-name">${categoryData.info.name}</span>
             `);
             $divDropdownSection.append($divDropdownSectionHeader);
 
             let $divDropdownSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
 
             categoryData.items.forEach(function (strItemKey) {
-
                 let strName;
                 let strImage;
                 if (strItemKey in objItemsPlanner) {
@@ -814,24 +917,33 @@ async function loadMenuItems() {
                     strImage = `images/${categoryData.info.img_item_path}${strItemKey}.png`;
                 }
                 $divDropdownSectionItems.append(` 
-                    <div class="dropdown-item">
+                    <div class="dropdown-item dropdown-item-drawable" data-key="${strItemKey}">
                         <div class="icon"><img src="${strImage}"></div>
-                        ${strName}
+                        <span class="dropdown-section-name">${strName}</span>
                     </div>
                 `);
                 $divDropdownSection.append($divDropdownSectionItems);
             });
 
+            $divDropdownSearchSectionItems.append($divDropdownSection.clone());
+
             $divDropdown.append($divDropdownSection);
+
         });
 
+        $divDropdownSearchSection.append($divDropdownSearchSectionItems);
+        $divDropdownSearch.append($divDropdownSearchSection);
 
         $divDropdownWrapper.append($divDropdown);
-
         $('#tabs').append($divDropdownWrapper);
+    });
 
+    $('#search_items_wrapper').append($divDropdownSearch);
 
-        console.log(tabData)
+    $('.dropdown-item-drawable').on('click', function (e) {
+        const strItemKeySelected = $(this).attr('data-key');
+        updateCurrentlyDrawing(strItemKeySelected);
+        $('#page .dropdown').removeClass('searching');
     });
 
     //hide dropdowns on outside click
@@ -846,11 +958,10 @@ async function loadMenuItems() {
                 }
             } else {
                 if ($(window).width() > 550) {
-                    $('.dropdown-section').not(jqDropdownSectionWrap).removeClass('open');
+                    $('.dropdown-section').not(jqDropdownSectionWrap).not(jqDropdownSectionWrap.parents('.dropdown-section')).removeClass('open');
                 }
                 $(jqDropdownSectionWrap).toggleClass('open');
             }
-
         } else {
             var jqDropdownWrap = $(e.target).closest('.dropdown_wrap');
 
@@ -874,14 +985,19 @@ async function loadMenuItems() {
                 if (!$(e.target).hasClass('dropdown-item') && $(e.target).closest('#tabs').length && $(e.target).closest('.dropdown').length) {
                     return;
                 } else {
-                    $(jqDropdownWrap).toggleClass('open');
+                    if ($(e.target).is('input')) {
+                        $(jqDropdownWrap).addClass('open');
+                    } else {
+                        $(jqDropdownWrap).toggleClass('open');
+                    }
                 }
-
             }
         }
-
     });
 
+    tippy('#wet_soil', {
+        content: 'When placing crops on the map, automatically place wet soil underneath them',
+    });
 }
 
 function changeHouseUpgrade(objElem) {
@@ -1008,7 +1124,7 @@ function updateMinimap() {
         intSelectionScale = 1 / intMinimapRatio;
     }
 
-    objZoomSelectionSize = {
+    const objZoomSelectionSize = {
         w: objSelectionSize.w * intSelectionScale,
         h: objSelectionSize.h * intSelectionScale,
     }
@@ -1025,9 +1141,20 @@ function updateMinimap() {
         top: objMistriaDataPlanner.offsetCanvas.y * -objMinimapWrapperSize.h / (objGrid.y * intGridCellSize)
     })
 
-
-
     $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
+}
+
+function getTopLeftCorner(objCellCoord) {
+    const objCanvasSize = {
+        w: $('#game-container').width(),
+        h: $('#game-container').height()
+    }
+    const objCanvasCellCount = {
+        x: objCanvasSize.w / intMultiplierCanvas / intGridCellSize,
+        y: objCanvasSize.h / intMultiplierCanvas / intGridCellSize
+    }
+
+    return { x: objCellCoord.x - objCanvasCellCount.x / 2, y: objCellCoord.y - objCanvasCellCount.y / 2 }
 }
 
 function minimapInit() {
@@ -1047,13 +1174,16 @@ function minimapInit() {
     $('#minimap').on('click', function (e) {
         let objMinimapOffset = $(this).offset()
 
-        let intDraggedToX = e.pageX - objMinimapOffset.left - objZoomSelectionSize.w / 2;
-        let intDraggedToY = e.pageY - objMinimapOffset.top - objZoomSelectionSize.h / 2;
+        let objClickedCellCoord = {
+            x: Math.floor((e.pageX - objMinimapOffset.left) * objGrid.x / objMinimapWrapperSize.w),
+            y: Math.floor((e.pageY - objMinimapOffset.top) * objGrid.y / objMinimapWrapperSize.h),
+        };
 
-        //from minimap size to full size
+        let objTopLeftCellCoord = getTopLeftCorner(objClickedCellCoord)
+
         objMistriaDataPlanner.offsetCanvas = {
-            x: intDraggedToX * objGrid.x * intGridCellSize / objMinimapWrapperSize.w * -1,
-            y: intDraggedToY * objGrid.y * intGridCellSize / objMinimapWrapperSize.h * -1,
+            x: objTopLeftCellCoord.x * intGridCellSize * -1,
+            y: objTopLeftCellCoord.y * intGridCellSize * -1,
         };
         resize();
     })
@@ -1102,6 +1232,8 @@ function minimapInit() {
 function loadDataPlanner() {
     objMistriaDataPlanner = JSON.parse(localStorage.getItem('mistria_data_planner'));
 
+    objMistriaDataPlanner.zoom = parseInt(objMistriaDataPlanner.zoom);
+
     if (objMistriaDataPlanner === null) {
         objMistriaDataPlanner = objMistriaDataPlannerDefault;
     }
@@ -1145,12 +1277,13 @@ $(function () {
     loadDataPlanner();
     loadMenuItems();
     minimapInit();
+    addTestData(3);
 
     (async () => {
 
-        arrCollisionGrid = await (await fetch('textures/collision.json')).json()
+        arrGrid_Collision = await (await fetch('textures/collision.json')).json()
         arrCollisionUpgradeGrid = await (await fetch('textures/collision_houseupgrade.json')).json()
-        arrDiggableGrid = await (await fetch('textures/diggable.json')).json()
+        arrGrid_Diggable = await (await fetch('textures/diggable.json')).json()
 
         arrFenceCoord = await (await fetch('textures/fences.json')).json()
 
@@ -1190,8 +1323,6 @@ $(function () {
             objStartCellCoord = getClickedCell(e);
             objPrevCellCoord = objStartCellCoord
             drawSelection(objStartCellCoord);
-
-            // updateSoilGrid(objStartCellCoord)
         });
 
         objPIXIapp.stage.on('pointermove', (e) => {
@@ -1200,27 +1331,75 @@ $(function () {
                 if (objPrevCellCoord.x !== objCurrentCellCoord.x || objPrevCellCoord.y !== objCurrentCellCoord.y) {
                     objPrevCellCoord = objCurrentCellCoord
                     drawSelection(objCurrentCellCoord);
+                    dragMap(objCurrentCellCoord);
                 }
             }
         });
 
         objPIXIapp.stage.on('pointerup', (e) => {
-            updateSoilGrid(getClickedCell(e), objMistriaDataPlanner.options.has('mode_soil'), objMistriaDataPlanner.options.has('mode_wet'))
+            const objCurrentCellCoord = getClickedCell(e);
+            updateSoilGrid(objCurrentCellCoord)
+
+            if (strMode === 'dragging_mode') {
+                const objSelection = {
+                    x0: Math.min(objStartCellCoord.x, objCurrentCellCoord.x),
+                    y0: Math.min(objStartCellCoord.y, objCurrentCellCoord.y),
+                    x1: Math.max(objStartCellCoord.x, objCurrentCellCoord.x),
+                    y1: Math.max(objStartCellCoord.y, objCurrentCellCoord.y),
+                }
+
+                if (objSelection.x0 == objSelection.x1 && objSelection.y0 == objSelection.y1) {
+                    let objTopLeftCellCoord = getTopLeftCorner(objStartCellCoord)
+
+                    objMistriaDataPlanner.offsetCanvas = {
+                        x: objTopLeftCellCoord.x * intGridCellSize * -1,
+                        y: objTopLeftCellCoord.y * intGridCellSize * -1,
+                    };
+                    resize();
+                }
+            }
+
             bolIsDragging = false;
-            objStartCellCoord = {
-                x: 0,
-                y: 0
-            };
+            objStartCellCoord = { x: 0, y: 0 };
+            objPrevCellCoord = { x: 0, y: 0 };
             drawSelection();
+
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
             bolIsDragging = false;
-            objStartCellCoord = {
-                x: 0,
-                y: 0
-            };
+            objStartCellCoord = { x: 0, y: 0 };
+            objPrevCellCoord = { x: 0, y: 0 };
             drawSelection();
+        });
+
+        objPIXIapp.stage.on('wheel', (e) => {
+            const intMultiplierFit = getMultiplierFitScreen();
+            const intMultiplierZoomMax = (5 / intMultiplierFit) * 100;
+
+            let intZoom = objMistriaDataPlanner.zoom + e.deltaY * -0.5;
+            intZoom = Math.round(intZoom)
+
+            if (intZoom < 50) {
+                intZoom = 50;
+            }
+
+            if (intZoom > intMultiplierZoomMax) {
+                intZoom = Math.round(intMultiplierZoomMax);
+            }
+
+            objMistriaDataPlanner.zoom = intZoom;
+            $('#zoomSlider').val(intZoom);
+
+            // center against cursor location
+            // const objCurrentCellCoord = getClickedCell(e);
+            // let objTopLeftCellCoord = getTopLeftCorner(objCurrentCellCoord)
+
+            // objMistriaDataPlanner.offsetCanvas = {
+            //     x: objTopLeftCellCoord.x * intGridCellSize * -1,
+            //     y: objTopLeftCellCoord.y * intGridCellSize * -1,
+            // };
+            resize();
         });
 
 
