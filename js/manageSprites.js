@@ -31,8 +31,29 @@ class SpriteStore {
         Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
             const { sheet: sheetKey, h, w, x, y, targetX, targetY } = spriteMapping[cropData.sprites.at(-1)]['0']
 
-            spriteSheetData[sheetKey].frames[cropKey] = { frame: { h, w, x, y } } // populate spritesheet frames
-            singleTextureData[cropKey] = { sheetKey, pivot: {x: targetX, y: targetY} }                                 // map sprite to sheet
+            spriteSheetData[sheetKey].frames[cropKey] = { frame: { h, w, x, y } }      // populate spritesheet frames
+            singleTextureData[cropKey] = { sheetKey, pivot: {x: targetX, y: targetY} } // map sprite to sheet
+        })
+        
+        // FURNITURE
+
+        Object.entries(objectData.furniture).forEach(([furnitureKey, furnitureData]) => {
+            if (!furnitureData.fence) {
+                return // only fences for now lol
+            }
+
+
+            const fenceSprites = spriteMapping[furnitureData.south.sprite]
+
+            Object.entries(fenceSprites).forEach(([fenceSequence, { sheet: sheetKey, h, w, x, y, targetX, targetY }]) => {
+                console.log({fenceSequence, sheetKey, h, w, x, y, targetX, targetY})
+
+                const fenceKey = `${furnitureKey}_${fenceSequence}`
+
+                spriteSheetData[sheetKey].frames[fenceKey] = { frame: { h, w, x, y } }      // populate spritesheet frames
+                singleTextureData[fenceKey] = { sheetKey, pivot: {x: targetX, y: targetY} } // map sprite to sheet
+            })
+
         })
 
         // TILES
@@ -154,7 +175,7 @@ class SpriteStore {
 
         const combinedNeighbors = [d1, o1, d2, o2, o3, d3, o4, d4]
 
-        return this.get(`tile_${tileSheet}_${Object.values(combinedNeighbors)}`) || this.get('snow_peas');
+        return this.get(`${tileSheet}_${Object.values(combinedNeighbors)}`) || this.get('snow_peas');
     }
 
     getGrass(...args) {
