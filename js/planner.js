@@ -422,8 +422,8 @@ function drawFence() {
 
                 let arrGridNeighbours = objFenceNeighbors[intIdx];
 
-                const elemSprite = sprites.get(`${getSpriteKeyByIndex(intIdx)}_0`);
-                elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                const elemSprite = sprites.getFence(getSpriteKeyByIndex(intIdx), arrGridNeighbours[y][x]);
+                elemSprite.position.set((x) * intGridCellSize, y * intGridCellSize);
                 objContainers.fence.addChild(elemSprite);
 
                 // const elemSpriteTilled = sprites.getSoil(`soil_fall`, arrGridNeighbours[y][x])
@@ -538,20 +538,30 @@ function drawGrassFix() {
 
 function populateItemGrids() {
     const objFarmLayout = objMistriaDataPlanner.layout.farm;
+
+    arrGrid_Soil = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
+    // let arrGrid_Crop = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
+    arrGrid_Fence = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
+
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
         const intItemKey = parseInt(strItemKey);
-        objFarmLayout[intItemKey].forEach(function (arrTileCoord) {
-            if (objSpriteCategories.soil.includes(intItemKey)) { //tiles
-                const x = arrTileCoord[0];
-                const y = arrTileCoord[1];
-                arrGrid_Soil[y][x] = intItemKey;
-            } else if (objSpriteCategories.fences.includes(intItemKey)) { //fences
-                const x = arrTileCoord[0];
-                const y = arrTileCoord[1];
-                arrGrid_Fence[y][x] = intItemKey;
+        if (objSpriteCategories.soil.includes(intItemKey)) { //tiles
+            for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
+                for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
+                    if (objFarmLayout[intItemKey][y][x]) {
+                        arrGrid_Soil[y][x] = intItemKey;
+                    }
+                }
             }
-
-        });
+        } else if (objSpriteCategories.fences.includes(intItemKey)) { //fences
+            for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
+                for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
+                    if (objFarmLayout[intItemKey][y][x]) {
+                        arrGrid_Fence[y][x] = intItemKey;
+                    }
+                }
+            }
+        }
     });
 }
 
@@ -591,11 +601,11 @@ function drawSoil() {
                         elemSpriteWet.position.set(x * intGridCellSize, y * intGridCellSize);
                         objContainers.soilWet.addChild(elemSpriteWet);
 
-                        // const elemSprite = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours_Soil[y][x])
-                        // elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
-                        // objContainers.soil.addChild(elemSprite);
-                        // break;
-                        //no break because it need tilled soil underneath
+                    // const elemSprite = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours_Soil[y][x])
+                    // elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                    // objContainers.soil.addChild(elemSprite);
+                    // break;
+                    //no break because it need tilled soil underneath
                     case 2: //tilled
                         const elemSpriteTilled = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrGridNeighbours_Soil[y][x])
                         elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
@@ -671,23 +681,28 @@ function updateSoilGrid(objCellCoord) {
     }
 
     const arrGrid_SoilSlice = slice2D(arrGrid_Soil, objSelection.x0, objSelection.x1 + 1, objSelection.y0, objSelection.y1 + 1)
-    const arrGrid_SoilSliceValues = arrGrid_SoilSlice.flat()
+    // const arrGrid_SoilSliceValues = arrGrid_SoilSlice.flat() //if  arrGrid_SoilSliceValues.includes(0) then add, otherwise remove
+    const intItemKey = bolTilled ? (bolWet ? 3 : 2) : 1;
+    if (!(intItemKey in objMistriaDataPlanner.layout.farm)) {
+        objMistriaDataPlanner.layout.farm[intItemKey] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+    }
 
-    if (1 || arrGrid_SoilSliceValues.includes(0)) {
-        //add only
-        for (let y = objSelection.y0; y <= objSelection.y1; y++) {
-            for (let x = objSelection.x0; x <= objSelection.x1; x++) {
-                if (!checkTileHasCollision({ x: x, y: y })) {
-                    arrGrid_Soil[y][x] = bolTilled ? (bolWet ? 3 : 2) : 1
-                }
+    //add only
+    for (let y = objSelection.y0; y <= objSelection.y1; y++) {
+        for (let x = objSelection.x0; x <= objSelection.x1; x++) {
+            if (!checkTileHasCollision({ x: x, y: y })) {
+                objSpriteCategories.soil.forEach((intIdx) => {
+                    if (intIdx in objMistriaDataPlanner.layout.farm && intIdx !== intItemKey) {
+                        delete objMistriaDataPlanner.layout.farm[intIdx][y][x];
+                    }
+                });
+
+                objMistriaDataPlanner.layout.farm[intItemKey][y][x] = 1;
             }
         }
-    } else {
-        //remove only
-        for (let y = objSelection.y0; y <= objSelection.y1; y++) {
-            arrGrid_Soil[y].fill(0, objSelection.x0, objSelection.x1 + 1)
-        }
     }
+
+    saveDataPlanner();
     drawSoil();
 }
 
@@ -781,7 +796,7 @@ function getClickedCell(event) {
         y: Math.floor((y - objMistriaDataPlanner.offsetCanvas.y) / intGridCellSize),
     }
 
-    console.log(objCell)
+    // console.log(objCell)
 
     return objCell;
 }
@@ -804,8 +819,6 @@ function checkDropdownVisibility(searchDiv) {
             $(this).hide();
         }
     });
-
-
 
 
     // if (!$('#page .dropdown > .dropdown-section:visible').length && $('#search_items').val() === '' && !$('input.obtain_cbx:checked').length) {
@@ -908,8 +921,6 @@ async function loadMenuItems() {
 
             if (strMode === 'mode_collapse') {
                 resize()
-                // setTimeout(function () { resize() }, 50);
-
             }
             saveData();
         });
@@ -1380,29 +1391,80 @@ function minimapInit() {
 }
 
 function loadDataPlanner() {
+
     objMistriaDataPlanner = JSON.parse(localStorage.getItem('mistria_data_planner'));
 
     if (objMistriaDataPlanner === null) {
         objMistriaDataPlanner = objMistriaDataPlannerDefault;
     }
 
-    //TODO: REMOVE!!!
-    objMistriaDataPlanner.layout = objMistriaDataPlannerDefault.layout;
+    const objFarmLayout = objMistriaDataPlanner.layout.farm;
+    Object.keys(objFarmLayout).forEach(function (strItemKey) {
+        const intItemKey = parseInt(strItemKey);
+        let arrTemp = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+        objFarmLayout[intItemKey].forEach(function (arrTileCoord) {
+            const x = arrTileCoord[0];
+            const y = arrTileCoord[1];
+            arrTemp[y][x] = intItemKey;
+        });
+        objMistriaDataPlanner.layout.farm[intItemKey] = arrTemp;
+    });
 
     objMistriaDataPlanner.zoom = parseInt(objMistriaDataPlanner.zoom);
 
     // convert arrays to sets for to remove duplicates 
     objMistriaDataPlanner.options = ('options' in objMistriaDataPlanner ? new Set(objMistriaDataPlanner.options) : new Set(objMistriaDataPlannerDefault.options));
+
+    populateItemGrids();
 }
 
 function saveDataPlanner() {
     // convert to array since JSON.stringify does not work on sets
     objMistriaDataPlanner.options = [...objMistriaDataPlanner.options];
 
+    const objFarmLayout = objMistriaDataPlanner.layout.farm;
+    Object.keys(objFarmLayout).forEach(function (strItemKey) {
+        const intItemKey = parseInt(strItemKey);
+        let arrTemp = [];
+        for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
+            for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
+                if (objFarmLayout[intItemKey][y][x]) {
+                    arrTemp.push([x, y]);
+                }
+            }
+        }
+
+        if (arrTemp.length) {
+            objMistriaDataPlanner.layout.farm[intItemKey] = arrTemp;
+        } else {
+            delete objMistriaDataPlanner.layout.farm[intItemKey];
+        }
+    });
+
     localStorage.setItem('mistria_data_planner', JSON.stringify(objMistriaDataPlanner));
     loadDataPlanner();
 }
 
+function clearMap() {
+    // convert to array since JSON.stringify does not work on sets
+    objMistriaDataPlanner.options = [...objMistriaDataPlanner.options];
+
+    objMistriaDataPlanner.layout.farm = objMistriaDataPlannerDefault.layout.farm;
+   
+    // do not draw default dugged up patch anymore
+    // delete objMistriaDataPlanner.layout.farm[1]
+
+    localStorage.setItem('mistria_data_planner', JSON.stringify(objMistriaDataPlanner));
+    loadDataPlanner();
+
+    drawAllItems();
+}
+
+function drawAllItems() {
+    drawFence();
+    drawSoil();
+    drawCrops();
+}
 
 function throttle(fn, time) {
     let timeout = null;
@@ -1430,8 +1492,8 @@ $(function () {
     loadDataPlanner();
     loadMenuItems();
     minimapInit();
-    populateItemGrids();
-    addTestData(3);
+
+    // addTestData(3);
 
     (async () => {
 
@@ -1579,12 +1641,14 @@ $(function () {
 
         addBackground();
         drawGrassFix();
+
+
+
         drawGrid();
         drawCollision();
-        drawFence();
 
-        drawSoil();
-        drawCrops();
+        drawAllItems();
+
 
 
         // objPIXIapp.renderer.extract.log(image);

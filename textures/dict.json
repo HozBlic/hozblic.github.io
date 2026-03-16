@@ -1,1 +1,20 @@
-[{"tile_main_exteriors" : 1}, {"tile_soil" : 2}, {"tile_soil_wet": 3}, {"tile_grassautotile": 4}, {"border_fence": 5}, {"starter_wood_fence": 6}]
+[
+    {
+        "tile_main_exteriors": 1
+    },
+    {
+        "tile_soil": 2
+    },
+    {
+        "tile_soil_wet": 3
+    },
+    {
+        "tile_grassautotile": 4
+    },
+    {
+        "border_fence": 5
+    },
+    {
+        "starter_wood_fence": 6
+    }
+]

@@ -1,6 +1,5 @@
 class SpriteStore {
-    textures;
-
+    textures
     constructor(test) {
         if (test !== "I know what I'm doing") { throw new Error('use static initializer await SpriteStore.getInstance()')}
     }
@@ -44,11 +43,10 @@ class SpriteStore {
 
 
             const fenceSprites = spriteMapping[furnitureData.south.sprite]
+            const [commonOffsetX, commonOffsetY] = furnitureData.south.offset
 
-            Object.entries(fenceSprites).forEach(([fenceSequence, { sheet: sheetKey, h, w, x, y, targetX, targetY }]) => {
-                console.log({fenceSequence, sheetKey, h, w, x, y, targetX, targetY})
-
-                const fenceKey = `${furnitureKey}_${fenceSequence}`
+            Object.entries(fenceSprites).forEach(([fenceOrd, { sheet: sheetKey, h, w, x, y, targetX, targetY }]) => {
+                const fenceKey = `${furnitureKey}_${fenceOrd}`
 
                 spriteSheetData[sheetKey].frames[fenceKey] = { frame: { h, w, x, y } }      // populate spritesheet frames
                 singleTextureData[fenceKey] = { sheetKey, pivot: {x: targetX, y: targetY} } // map sprite to sheet
@@ -85,11 +83,8 @@ class SpriteStore {
             const origin = { x: tileData.x, y: tileData.y }
 
             if (tileSheetKey.includes('exteriors')) {
-
-                console.log(tileSheetKey)
-                const x = 0; // only get the basic exterior tile
-                const y = 1;
-
+                const x = 0 // only get the basic exterior tile
+                const y = 1
                 spriteSheetData[tileData.sheet].frames[tileSheetKey] = { frame: {
                     h: tileSize,
                     w: tileSize,
@@ -175,8 +170,7 @@ class SpriteStore {
 
         const combinedNeighbors = [d1, o1, d2, o2, o3, d3, o4, d4]
 
-        return this.get(`${tileSheet}_${Object.values(combinedNeighbors)}`) || this.get('snow_peas');
-    }
+        return this.get(`${tileSheet}_${Object.values(combinedNeighbors)}`)    }
 
     getGrass(...args) {
         return this.#getTile(...args, true)
@@ -186,10 +180,27 @@ class SpriteStore {
         return this.#getTile(...args, false)
     }
 
-    get(textureKey) {
-        const {sprite: { texture }, pivot} = this.textures[textureKey]
-        const sprite = new PIXI.Sprite(texture);
+    getFence(fenceType, neighbors) {
+        let [
+            d1, o1, d2,
+            o2,     o3,
+            d3, o4, d4
+        ] = neighbors
 
+        // Fences are ordered with ordinals as bits (times two for some reason)
+        let fenceOrd = parseInt(`${o4}${o3}${o2}`, 2) * 2
+
+        return this.get(`${fenceType}_${fenceOrd}`)}
+
+    get(textureKey) {
+        const foundTexture = this.textures[textureKey]
+
+        if (!foundTexture) {
+            return this.get('snow_peas')
+        }
+
+        const {sprite: { texture }, pivot} = foundTexture
+        const sprite = new PIXI.Sprite(texture)
         if (pivot) {
             const { x, y } = pivot
             sprite.pivot.set(...[intGridCellSize/2 - x, intGridCellSize - y])
