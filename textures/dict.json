@@ -1,20 +1,72 @@
-[
-    {
-        "tile_main_exteriors": 1
-    },
-    {
-        "tile_soil": 2
-    },
-    {
-        "tile_soil_wet": 3
-    },
-    {
-        "tile_grassautotile": 4
-    },
-    {
-        "border_fence": 5
-    },
-    {
-        "starter_wood_fence": 6
-    }
-]
+{
+    "tile_main_exteriors": 1,
+    "tile_soil": 2,
+    "tile_soil_wet": 3,
+    "tile_grassautotile": 4,
+    "border_fence": 5,
+    "starter_wood_fence": 6,
+    "cabbage": 7,
+    "carrot": 8,
+    "chickpea": 9,
+    "daffodil": 10,
+    "lilac": 11,
+    "mystery_bag": 12,
+    "peas": 13,
+    "potato": 14,
+    "snowdrop_anemone": 15,
+    "strawberry": 16,
+    "temple_flower": 17,
+    "tulip": 18,
+    "turnip": 19,
+    "basil": 20,
+    "catmint": 21,
+    "chili_pepper": 22,
+    "corn": 23,
+    "cosmos": 24,
+    "cucumber": 25,
+    "daisy": 26,
+    "dill": 27,
+    "iris": 28,
+    "marigold": 29,
+    "night_queen": 30,
+    "oregano": 31,
+    "sage": 32,
+    "sugar_cane": 33,
+    "sunflower": 34,
+    "tea": 35,
+    "thyme": 36,
+    "tomato": 37,
+    "watermelon": 38,
+    "broccoli": 39,
+    "celosia": 40,
+    "chrysanthemum": 41,
+    "cranberry": 42,
+    "garlic": 43,
+    "heather": 44,
+    "moon_fruit": 45,
+    "onion": 46,
+    "pumpkin": 47,
+    "rice": 48,
+    "rosemary": 49,
+    "sweet_potato": 50,
+    "viola": 51,
+    "wheat": 52,
+    "beet": 53,
+    "burdock_root": 54,
+    "cauliflower": 55,
+    "daikon_radish": 56,
+    "frost_lily": 57,
+    "jasmine": 58,
+    "poinsettia": 59,
+    "snapdragon": 60,
+    "snow_peas": 61,
+    "tree_apple": 62,
+    "tree_cherry": 63,
+    "tree_lemon": 64,
+    "tree_oak": 65,
+    "tree_orange": 66,
+    "tree_peach": 67,
+    "tree_pear": 68,
+    "tree_pine": 69,
+    "tree_pomegranate": 70
+}

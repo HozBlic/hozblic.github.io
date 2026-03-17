@@ -146,28 +146,1032 @@
             "sprites": "spr_farm_tree3_stump"
         }
     },
-    "dig_site": {
-        "dig_site": {
-            "sprite": "spr_dig_site_spring",
+    "building": {
+        "small_barn": {
             "size": [
-                2,
-                2
+                14,
+                10
             ],
+            "collision_grid": [
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "22222222222222",
+                "00000000000000"
+            ],
+            "blueprints": [
+                "small_barn_red_blueprint",
+                "small_barn_black_blueprint"
+            ],
+            "name": "object_prototypes/building/small_barn/name",
+            "location_id": "small_barn",
             "offset": [
+                56,
+                70
+            ],
+            "door_hides_on_open": false,
+            "door_offset": [
                 0,
-                0
-            ]
+                1
+            ],
+            "transition_offset": [
+                -16,
+                -14
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                -2
+            ],
+            "door_closed": [
+                "spr_placeable_small_barn_red_door_spring_closed",
+                "spr_placeable_small_barn_black_door_spring_closed"
+            ],
+            "open_door": true,
+            "doorway_floor": [
+                "spr_placeable_small_barn_red_door_doorway_floor_closed",
+                "spr_placeable_small_barn_black_door_doorway_floor_closed"
+            ],
+            "entrance_offset": [
+                0,
+                -18
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -32
+                    ],
+                    "size": [
+                        96,
+                        32
+                    ]
+                },
+                {
+                    "offset": [
+                        16,
+                        -48
+                    ],
+                    "size": [
+                        80,
+                        16
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_stable_name_plate_spring",
+                "offset": [
+                    39,
+                    2
+                ]
+            },
+            "stable": {
+                "max_occupants": 4,
+                "permitted_animal_size": "large",
+                "double_manger": false,
+                "manger_size": 4,
+                "incubators": 0,
+                "send_animal_in_offset": [
+                    0,
+                    32
+                ],
+                "send_animal_out_offset": [
+                    0,
+                    0
+                ],
+                "exit_direction": "south",
+                "animal_door_point": "small_barn/animal_door",
+                "farm_bell": {
+                    "idle": "spr_stable_bell_spring_idle",
+                    "ring": "spr_stable_bell_spring_ring",
+                    "offset": [
+                        -41,
+                        2
+                    ]
+                }
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_small_barn_red_spring",
+                    "spr_placeable_small_barn_black_spring"
+                ],
+                "winter": [
+                    "spr_placeable_small_barn_red_winter",
+                    "spr_placeable_small_barn_black_winter"
+                ]
+            }
         },
-        "dig_site_destroyed": {
-            "sprite": "spr_dig_site_empty_spring",
+        "medium_barn": {
             "size": [
-                2,
-                2
+                16,
+                12
             ],
+            "collision_grid": [
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "2222222222222222",
+                "0000000000000000"
+            ],
+            "blueprints": [
+                "medium_barn_red_blueprint",
+                "medium_barn_black_blueprint"
+            ],
+            "name": "object_prototypes/building/medium_barn/name",
+            "location_id": "medium_barn",
             "offset": [
+                64,
+                86
+            ],
+            "door_hides_on_open": false,
+            "door_offset": [
+                0,
+                1
+            ],
+            "transition_offset": [
+                -16,
+                -14
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                -2
+            ],
+            "door_closed": [
+                "spr_placeable_small_barn_red_door_spring_closed",
+                "spr_placeable_small_barn_black_door_spring_closed"
+            ],
+            "open_door": true,
+            "doorway_floor": [
+                "spr_placeable_small_barn_red_door_doorway_floor_closed",
+                "spr_placeable_small_barn_black_door_doorway_floor_closed"
+            ],
+            "entrance_offset": [
+                0,
+                -18
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -22
+                    ],
+                    "size": [
+                        112,
+                        22
+                    ]
+                },
+                {
+                    "offset": [
+                        24,
+                        -46
+                    ],
+                    "size": [
+                        84,
+                        24
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_stable_name_plate_spring",
+                "offset": [
+                    39,
+                    2
+                ]
+            },
+            "stable": {
+                "max_occupants": 8,
+                "permitted_animal_size": "large",
+                "double_manger": true,
+                "manger_size": 4,
+                "incubators": 0,
+                "send_animal_in_offset": [
+                    0,
+                    32
+                ],
+                "send_animal_out_offset": [
+                    0,
+                    0
+                ],
+                "exit_direction": "south",
+                "animal_door_point": "medium_barn/animal_door",
+                "farm_bell": {
+                    "idle": "spr_stable_bell_spring_idle",
+                    "ring": "spr_stable_bell_spring_ring",
+                    "offset": [
+                        -44,
+                        2
+                    ]
+                }
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_medium_barn_red_spring",
+                    "spr_placeable_medium_barn_black_spring"
+                ],
+                "winter": [
+                    "spr_placeable_medium_barn_red_winter",
+                    "spr_placeable_medium_barn_black_winter"
+                ]
+            }
+        },
+        "large_barn": {
+            "size": [
+                18,
+                12
+            ],
+            "collision_grid": [
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "222222222222222222",
+                "000000000000000000"
+            ],
+            "blueprints": [
+                "large_barn_red_blueprint",
+                "large_barn_black_blueprint"
+            ],
+            "name": "object_prototypes/building/large_barn/name",
+            "location_id": "large_barn",
+            "offset": [
+                72,
+                86
+            ],
+            "door_hides_on_open": false,
+            "door_offset": [
+                0,
+                1
+            ],
+            "transition_offset": [
+                -16,
+                -14
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                -2
+            ],
+            "door_closed": [
+                "spr_placeable_small_barn_red_door_spring_closed",
+                "spr_placeable_small_barn_black_door_spring_closed"
+            ],
+            "open_door": true,
+            "doorway_floor": [
+                "spr_placeable_small_barn_red_door_doorway_floor_closed",
+                "spr_placeable_small_barn_black_door_doorway_floor_closed"
+            ],
+            "entrance_offset": [
+                0,
+                -18
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -42
+                    ],
+                    "size": [
+                        128,
+                        42
+                    ]
+                },
+                {
+                    "offset": [
+                        24,
+                        -64
+                    ],
+                    "size": [
+                        96,
+                        24
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_stable_name_plate_spring",
+                "offset": [
+                    52,
+                    2
+                ]
+            },
+            "stable": {
+                "max_occupants": 12,
+                "permitted_animal_size": "large",
+                "double_manger": true,
+                "manger_size": 6,
+                "incubators": 0,
+                "send_animal_in_offset": [
+                    0,
+                    32
+                ],
+                "send_animal_out_offset": [
+                    0,
+                    0
+                ],
+                "exit_direction": "south",
+                "animal_door_point": "large_barn/animal_door",
+                "farm_bell": {
+                    "idle": "spr_stable_bell_spring_idle",
+                    "ring": "spr_stable_bell_spring_ring",
+                    "offset": [
+                        -52,
+                        2
+                    ]
+                }
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_large_barn_red_spring",
+                    "spr_placeable_large_barn_black_spring"
+                ],
+                "winter": [
+                    "spr_placeable_large_barn_red_winter",
+                    "spr_placeable_large_barn_black_winter"
+                ]
+            }
+        },
+        "small_coop": {
+            "size": [
+                12,
+                10
+            ],
+            "collision_grid": [
+                "222222222200",
+                "222222222200",
+                "222222222200",
+                "222222222200",
+                "222222222200",
+                "222222222200",
+                "222222222210",
+                "222222224400",
+                "222222222210",
+                "000000000000"
+            ],
+            "blueprints": [
+                "small_coop_red_blueprint",
+                "small_coop_black_blueprint"
+            ],
+            "name": "object_prototypes/building/small_coop/name",
+            "location_id": "small_coop",
+            "offset": [
+                40,
+                71
+            ],
+            "entrance_offset": [
+                39,
+                -14
+            ],
+            "open_door": false,
+            "door_hides_on_open": true,
+            "door_offset": [
+                0,
+                -1
+            ],
+            "transition_offset": [
+                -8,
+                -19
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
                 0,
                 0
-            ]
+            ],
+            "door_closed": [
+                "spr_placeable_small_coop_red_door_spring_closed",
+                "spr_placeable_small_coop_black_door_spring_closed"
+            ],
+            "doorway_floor": [
+                "spr_placeable_small_coop_red_door_doorwayfloor_closed",
+                "spr_placeable_small_coop_black_door_doorwayfloor_closed"
+            ],
+            "ramps": [
+                "spr_placeable_small_coop_red_ramp_spring",
+                "spr_placeable_small_coop_black_ramp_spring"
+            ],
+            "ramp_offset": [
+                40,
+                -23
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -18
+                    ],
+                    "size": [
+                        68,
+                        18
+                    ]
+                },
+                {
+                    "offset": [
+                        16,
+                        -24
+                    ],
+                    "size": [
+                        52,
+                        6
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_stable_name_plate_spring",
+                "offset": [
+                    27,
+                    1
+                ]
+            },
+            "stable": {
+                "double_manger": false,
+                "manger_size": 4,
+                "incubators": 1,
+                "max_occupants": 4,
+                "permitted_animal_size": "small",
+                "send_animal_in_offset": [
+                    24,
+                    4
+                ],
+                "send_animal_out_offset": [
+                    0,
+                    0
+                ],
+                "exit_direction": "east",
+                "animal_door_point": "small_coop/animal_door",
+                "farm_bell": {
+                    "idle": "spr_stable_bell_spring_idle",
+                    "ring": "spr_stable_bell_spring_ring",
+                    "offset": [
+                        -25,
+                        1
+                    ]
+                }
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_small_coop_red_spring",
+                    "spr_placeable_small_coop_black_spring"
+                ],
+                "winter": [
+                    "spr_placeable_small_coop_red_winter",
+                    "spr_placeable_small_coop_black_winter"
+                ]
+            }
+        },
+        "medium_coop": {
+            "size": [
+                14,
+                12
+            ],
+            "collision_grid": [
+                "22222222222200",
+                "22222222222200",
+                "22222222222200",
+                "22222222222200",
+                "22222222222200",
+                "22222222222200",
+                "22222222222200",
+                "22222222222200",
+                "22222222222210",
+                "22222222224400",
+                "22222222222210",
+                "00000000000000"
+            ],
+            "blueprints": [
+                "medium_coop_red_blueprint",
+                "medium_coop_black_blueprint"
+            ],
+            "name": "object_prototypes/building/medium_coop/name",
+            "location_id": "medium_coop",
+            "offset": [
+                48,
+                87
+            ],
+            "entrance_offset": [
+                39,
+                -14
+            ],
+            "open_door": false,
+            "door_hides_on_open": true,
+            "door_offset": [
+                0,
+                -1
+            ],
+            "transition_offset": [
+                -8,
+                -19
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                0
+            ],
+            "door_closed": [
+                "spr_placeable_small_coop_red_door_spring_closed",
+                "spr_placeable_small_coop_black_door_spring_closed"
+            ],
+            "doorway_floor": [
+                "spr_placeable_small_coop_red_door_doorwayfloor_closed",
+                "spr_placeable_small_coop_black_door_doorwayfloor_closed"
+            ],
+            "ramps": [
+                "spr_placeable_small_coop_red_ramp_spring",
+                "spr_placeable_small_coop_black_ramp_spring"
+            ],
+            "ramp_offset": [
+                48,
+                -23
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -16
+                    ],
+                    "size": [
+                        84,
+                        16
+                    ]
+                },
+                {
+                    "offset": [
+                        16,
+                        -28
+                    ],
+                    "size": [
+                        64,
+                        12
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_stable_name_plate_spring",
+                "offset": [
+                    32,
+                    1
+                ]
+            },
+            "stable": {
+                "double_manger": true,
+                "manger_size": 4,
+                "incubators": 2,
+                "max_occupants": 8,
+                "permitted_animal_size": "small",
+                "send_animal_in_offset": [
+                    24,
+                    4
+                ],
+                "send_animal_out_offset": [
+                    0,
+                    0
+                ],
+                "exit_direction": "east",
+                "animal_door_point": "medium_coop/animal_door",
+                "farm_bell": {
+                    "idle": "spr_stable_bell_spring_idle",
+                    "ring": "spr_stable_bell_spring_ring",
+                    "offset": [
+                        -28,
+                        1
+                    ]
+                }
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_medium_coop_red_spring",
+                    "spr_placeable_medium_coop_black_spring"
+                ],
+                "winter": [
+                    "spr_placeable_medium_coop_red_winter",
+                    "spr_placeable_medium_coop_black_winter"
+                ]
+            }
+        },
+        "large_coop": {
+            "size": [
+                16,
+                12
+            ],
+            "collision_grid": [
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222200",
+                "2222222222222210",
+                "2222222222224400",
+                "2222222222222210",
+                "0000000000000000"
+            ],
+            "blueprints": [
+                "large_coop_red_blueprint",
+                "large_coop_black_blueprint"
+            ],
+            "name": "object_prototypes/building/large_coop/name",
+            "location_id": "large_coop",
+            "offset": [
+                56,
+                87
+            ],
+            "entrance_offset": [
+                39,
+                -14
+            ],
+            "open_door": false,
+            "door_hides_on_open": true,
+            "door_offset": [
+                0,
+                -1
+            ],
+            "transition_offset": [
+                -8,
+                -19
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                0
+            ],
+            "door_closed": [
+                "spr_placeable_small_coop_red_door_spring_closed",
+                "spr_placeable_small_coop_black_door_spring_closed"
+            ],
+            "doorway_floor": [
+                "spr_placeable_small_coop_red_door_doorwayfloor_closed",
+                "spr_placeable_small_coop_black_door_doorwayfloor_closed"
+            ],
+            "ramps": [
+                "spr_placeable_small_coop_red_ramp_spring",
+                "spr_placeable_small_coop_black_ramp_spring"
+            ],
+            "ramp_offset": [
+                55,
+                -23
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -32
+                    ],
+                    "size": [
+                        102,
+                        32
+                    ]
+                },
+                {
+                    "offset": [
+                        16,
+                        -44
+                    ],
+                    "size": [
+                        84,
+                        12
+                    ]
+                },
+                {
+                    "offset": [
+                        24,
+                        -52
+                    ],
+                    "size": [
+                        68,
+                        8
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_stable_name_plate_spring",
+                "offset": [
+                    40,
+                    1
+                ]
+            },
+            "stable": {
+                "double_manger": true,
+                "manger_size": 6,
+                "incubators": 4,
+                "max_occupants": 12,
+                "permitted_animal_size": "small",
+                "send_animal_in_offset": [
+                    24,
+                    4
+                ],
+                "send_animal_out_offset": [
+                    0,
+                    0
+                ],
+                "exit_direction": "east",
+                "animal_door_point": "large_coop/animal_door",
+                "farm_bell": {
+                    "idle": "spr_stable_bell_spring_idle",
+                    "ring": "spr_stable_bell_spring_ring",
+                    "offset": [
+                        -36,
+                        1
+                    ]
+                }
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_large_coop_red_spring",
+                    "spr_placeable_large_coop_black_spring"
+                ],
+                "winter": [
+                    "spr_placeable_large_coop_red_winter",
+                    "spr_placeable_large_coop_black_winter"
+                ]
+            }
+        },
+        "small_greenhouse": {
+            "size": [
+                12,
+                6
+            ],
+            "collision_grid": "2",
+            "collision": "2",
+            "blueprints": [
+                "small_greenhouse_white_blueprint",
+                "small_greenhouse_wood_blueprint"
+            ],
+            "tilesets": [
+                "tile_greenhouse_white",
+                "tile_greenhouse_wood"
+            ],
+            "name": "object_prototypes/building/small_greenhouse/name",
+            "location_id": "small_greenhouse",
+            "offset": [
+                48,
+                46
+            ],
+            "transition_offset": [
+                -16,
+                -14
+            ],
+            "door_hides_on_open": false,
+            "door_offset": [
+                0,
+                -1
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                -2
+            ],
+            "door_closed": [
+                "spr_placeable_small_greenhouse_white_door_spring_closed",
+                "spr_placeable_small_greenhouse_wood_door_spring_closed"
+            ],
+            "open_door": true,
+            "doorway_floor": [
+                "spr_placeable_small_greenhouse_white_door_doorwayfloor_closed",
+                "spr_placeable_small_greenhouse_wood_door_doorwayfloor_closed"
+            ],
+            "entrance_offset": [
+                0,
+                -18
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -24
+                    ],
+                    "size": [
+                        80,
+                        24
+                    ]
+                },
+                {
+                    "offset": [
+                        20,
+                        -36
+                    ],
+                    "size": [
+                        56,
+                        12
+                    ]
+                },
+                {
+                    "offset": [
+                        32,
+                        -48
+                    ],
+                    "size": [
+                        32,
+                        12
+                    ]
+                },
+                {
+                    "offset": [
+                        40,
+                        -54
+                    ],
+                    "size": [
+                        16,
+                        6
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_placeable_greenhouse_placard_spring",
+                "offset": [
+                    25,
+                    1
+                ]
+            },
+            "greenhouse": {
+                "crop_area_start": [
+                    10,
+                    16
+                ],
+                "crop_area_end": [
+                    20,
+                    26
+                ]
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_small_greenhouse_white_spring",
+                    "spr_placeable_small_greenhouse_wood_spring"
+                ],
+                "winter": [
+                    "spr_placeable_small_greenhouse_white_winter",
+                    "spr_placeable_small_greenhouse_wood_winter"
+                ]
+            }
+        },
+        "large_greenhouse": {
+            "size": [
+                14,
+                8
+            ],
+            "collision_grid": "2",
+            "door_hides_on_open": false,
+            "collision": "2",
+            "blueprints": [
+                "large_greenhouse_white_blueprint",
+                "large_greenhouse_wood_blueprint"
+            ],
+            "tilesets": [
+                "tile_greenhouse_white",
+                "tile_greenhouse_wood"
+            ],
+            "transition_offset": [
+                -16,
+                -14
+            ],
+            "name": "object_prototypes/building/large_greenhouse/name",
+            "location_id": "large_greenhouse",
+            "offset": [
+                56,
+                62
+            ],
+            "door_offset": [
+                0,
+                -1
+            ],
+            "light_bottom_offset": [
+                0,
+                -46
+            ],
+            "light_top_offset": [
+                0,
+                -2
+            ],
+            "door_closed": [
+                "spr_placeable_small_greenhouse_white_door_spring_closed",
+                "spr_placeable_small_greenhouse_wood_door_spring_closed"
+            ],
+            "open_door": true,
+            "doorway_floor": [
+                "spr_placeable_small_greenhouse_white_door_doorwayfloor_closed",
+                "spr_placeable_small_greenhouse_wood_door_doorwayfloor_closed"
+            ],
+            "entrance_offset": [
+                0,
+                -18
+            ],
+            "transparency_boxes": [
+                {
+                    "offset": [
+                        8,
+                        -20
+                    ],
+                    "size": [
+                        96,
+                        20
+                    ]
+                },
+                {
+                    "offset": [
+                        20,
+                        -32
+                    ],
+                    "size": [
+                        72,
+                        12
+                    ]
+                },
+                {
+                    "offset": [
+                        32,
+                        -44
+                    ],
+                    "size": [
+                        48,
+                        12
+                    ]
+                },
+                {
+                    "offset": [
+                        40,
+                        -54
+                    ],
+                    "size": [
+                        32,
+                        10
+                    ]
+                },
+                {
+                    "offset": [
+                        48,
+                        -58
+                    ],
+                    "size": [
+                        16,
+                        4
+                    ]
+                }
+            ],
+            "farm_plate": {
+                "sprite": "spr_placeable_greenhouse_placard_spring",
+                "offset": [
+                    34,
+                    1
+                ]
+            },
+            "greenhouse": {
+                "crop_area_start": [
+                    10,
+                    16
+                ],
+                "crop_area_end": [
+                    30,
+                    36
+                ]
+            },
+            "sprites": {
+                "spring": [
+                    "spr_placeable_large_greenhouse_white_spring",
+                    "spr_placeable_large_greenhouse_wood_spring"
+                ],
+                "winter": [
+                    "spr_placeable_large_greenhouse_white_winter",
+                    "spr_placeable_large_greenhouse_wood_winter"
+                ]
+            }
         }
     },
     "grass": {
@@ -628,6 +1632,1146 @@
                     "spr_part_easternroad_marsh_grass_c2_winter"
                 ]
             }
+        }
+    },
+    "rock": {
+        "default": {
+            "size": [
+                2,
+                2
+            ],
+            "drops": [],
+            "hp": 1,
+            "spring_sprites": [
+                "spr_illegal_16"
+            ],
+            "collideable": true,
+            "jumpable": true,
+            "dungeon_only": false,
+            "minimum_quality": "tier1",
+            "mining_xp_gain": 4,
+            "offset": [
+                8,
+                0
+            ],
+            "ladder_candidate": true
+        },
+        "boulder_rock_stone": {
+            "jumpable": false,
+            "size": [
+                6,
+                6
+            ],
+            "hp": 6,
+            "minimum_quality": "tier2",
+            "spring_sprites": [
+                "spr_rock_boulder_spring"
+            ],
+            "winter_sprites": [
+                "spr_rock_boulder_winter"
+            ],
+            "offset": [
+                24,
+                8
+            ],
+            "ladder_candidate": false,
+            "mining_xp_gain": 6,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        20,
+                        20
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "ore_sapphire"
+                }
+            ]
+        },
+        "small_rock_stone_one": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_farm_rock_small_t1_c1_spring",
+                "spr_farm_rock_small_t1_c2_spring",
+                "spr_farm_rock_small_t2_c1_spring",
+                "spr_farm_rock_small_t2_c2_spring",
+                "spr_farm_rock_small_t3_c1_spring",
+                "spr_farm_rock_small_t3_c2_spring",
+                "spr_farm_rock_small_t4_c1_spring",
+                "spr_farm_rock_small_t4_c2_spring"
+            ],
+            "winter_sprites": [
+                "spr_farm_rock_small_t1_c1_winter",
+                "spr_farm_rock_small_t1_c2_winter",
+                "spr_farm_rock_small_t2_c1_winter",
+                "spr_farm_rock_small_t2_c2_winter",
+                "spr_farm_rock_small_t3_c1_winter",
+                "spr_farm_rock_small_t3_c2_winter",
+                "spr_farm_rock_small_t4_c1_winter",
+                "spr_farm_rock_small_t4_c2_winter"
+            ],
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        1
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        1
+                    ],
+                    "chance": 10,
+                    "exclusive": false
+                }
+            ]
+        },
+        "small_rock_stone_upper": {
+            "hp": 2,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_1_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_1_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_1_rock_small_t3_spring",
+                "spr_dungeon_mines_biome_1_rock_small_t4_spring"
+            ],
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "exclusive": false
+                },
+                {
+                    "item": "ore_stone",
+                    "chance": 20,
+                    "exclusive": false
+                }
+            ]
+        },
+        "small_rock_stone_two": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_2_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_2_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_2_rock_small_t3_spring",
+                "spr_dungeon_mines_biome_2_rock_small_t4_spring"
+            ],
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "small_rock_stone_three": {
+            "hp": 4,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_3_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_3_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_3_rock_small_t3_spring",
+                "spr_dungeon_mines_biome_3_rock_small_t4_spring"
+            ],
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "small_rock_stone_four": {
+            "hp": 5,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_4_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_4_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_4_rock_small_t3_spring",
+                "spr_dungeon_mines_biome_4_rock_small_t4_spring"
+            ],
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "small_rock_stone_five": {
+            "hp": 6,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_5_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_5_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_5_rock_small_t3_spring",
+                "spr_dungeon_mines_biome_5_rock_small_t4_spring"
+            ],
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "small_rock_priestess_quarters": {
+            "jumpable": false,
+            "hp": 6,
+            "minimum_quality": "tier6",
+            "spring_sprites": [
+                "spr_priestess_quarters_corrupted_rock_small_t1_spring",
+                "spr_priestess_quarters_corrupted_rock_small_t2_spring",
+                "spr_priestess_quarters_corrupted_rock_small_t3_spring",
+                "spr_priestess_quarters_corrupted_rock_small_t4_spring"
+            ],
+            "ladder_candidate": false,
+            "mining_xp_gain": 6,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                }
+            ]
+        },
+        "large_rock_stone_one": {
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                0
+            ],
+            "hp": 10,
+            "mining_xp_gain": 6,
+            "minimum_quality": "tier2",
+            "spring_sprites": [
+                "spr_farm_rock_big_t1_c1_spring",
+                "spr_farm_rock_big_t1_c2_spring",
+                "spr_farm_rock_big_t2_c1_spring",
+                "spr_farm_rock_big_t2_c2_spring",
+                "spr_farm_rock_big_t3_c1_spring",
+                "spr_farm_rock_big_t3_c2_spring"
+            ],
+            "winter_sprites": [
+                "spr_farm_rock_big_t1_c1_winter",
+                "spr_farm_rock_big_t1_c2_winter",
+                "spr_farm_rock_big_t2_c1_winter",
+                "spr_farm_rock_big_t2_c2_winter",
+                "spr_farm_rock_big_t3_c1_winter",
+                "spr_farm_rock_big_t3_c2_winter"
+            ],
+            "ladder_candidate": false,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        6,
+                        8
+                    ]
+                },
+                {
+                    "item": "glass",
+                    "count_range": [
+                        2,
+                        4
+                    ]
+                }
+            ]
+        },
+        "large_rock_stone_upper": {
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                0
+            ],
+            "hp": 8,
+            "mining_xp_gain": 6,
+            "minimum_quality": "tier2",
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_1_rock_big_t1_spring",
+                "spr_dungeon_mines_biome_1_rock_big_t2_spring",
+                "spr_dungeon_mines_biome_1_rock_big_t3_spring"
+            ],
+            "ladder_candidate": false,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        3,
+                        4
+                    ]
+                }
+            ]
+        },
+        "large_rock_stone_two": {
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                0
+            ],
+            "hp": 8,
+            "mining_xp_gain": 6,
+            "minimum_quality": "tier2",
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_2_rock_big_t1_spring",
+                "spr_dungeon_mines_biome_2_rock_big_t2_spring",
+                "spr_dungeon_mines_biome_2_rock_big_t3_spring"
+            ],
+            "ladder_candidate": false,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        3,
+                        4
+                    ]
+                }
+            ]
+        },
+        "large_rock_stone_three": {
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                0
+            ],
+            "hp": 12,
+            "mining_xp_gain": 6,
+            "minimum_quality": "tier3",
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_3_rock_big_t1_spring",
+                "spr_dungeon_mines_biome_3_rock_big_t2_spring",
+                "spr_dungeon_mines_biome_3_rock_big_t3_spring"
+            ],
+            "ladder_candidate": false,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        3,
+                        4
+                    ]
+                }
+            ]
+        },
+        "large_rock_stone_four": {
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                0
+            ],
+            "hp": 16,
+            "mining_xp_gain": 6,
+            "minimum_quality": "tier4",
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_4_rock_big_t1_spring",
+                "spr_dungeon_mines_biome_4_rock_big_t2_spring",
+                "spr_dungeon_mines_biome_4_rock_big_t3_spring"
+            ],
+            "ladder_candidate": false,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        3,
+                        4
+                    ]
+                }
+            ]
+        },
+        "large_rock_stone_five": {
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                0
+            ],
+            "hp": 20,
+            "mining_xp_gain": 6,
+            "minimum_quality": "tier5",
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_5_rock_big_t1_spring",
+                "spr_dungeon_mines_biome_5_rock_big_t2_spring",
+                "spr_dungeon_mines_biome_5_rock_big_t3_spring"
+            ],
+            "ladder_candidate": false,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "count_range": [
+                        3,
+                        4
+                    ]
+                }
+            ]
+        },
+        "seam_rock_copper": {
+            "hp": 1,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_1_ground_seam_spring"
+            ],
+            "collideable": false,
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_copper",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "seam_rock_iron": {
+            "hp": 2,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_2_ground_seam_spring"
+            ],
+            "collideable": false,
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_iron",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "seam_rock_silver": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_3_ground_seam_spring"
+            ],
+            "collideable": false,
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_silver",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "seam_rock_gold": {
+            "hp": 4,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_4_ground_seam_spring"
+            ],
+            "collideable": false,
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_gold",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "seam_rock_mistril": {
+            "hp": 5,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_5_ground_seam_spring"
+            ],
+            "collideable": false,
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_mistril",
+                    "count_range": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "small_dirt_rock_one": {
+            "hp": 1,
+            "mining_xp_gain": 2,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_1_dirt_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_1_dirt_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_1_dirt_rock_small_t3_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "chance": 25,
+                    "exclusive": false
+                },
+                {
+                    "item": "sod",
+                    "chance": 0.8,
+                    "exclusive": false
+                },
+                {
+                    "item": "clay",
+                    "chance": 0.8,
+                    "exclusive": false
+                },
+                {
+                    "item": "peat",
+                    "chance": 0.8,
+                    "exclusive": false
+                }
+            ]
+        },
+        "small_dirt_rock_two": {
+            "mining_xp_gain": 2,
+            "hp": 2,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_2_dirt_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_2_dirt_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_2_dirt_rock_small_t3_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "chance": 25,
+                    "exclusive": false
+                },
+                {
+                    "item": "sod",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "clay",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "peat",
+                    "chance": 1.6,
+                    "exclusive": false
+                }
+            ]
+        },
+        "small_dirt_rock_three": {
+            "mining_xp_gain": 2,
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_3_dirt_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_3_dirt_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_3_dirt_rock_small_t3_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "chance": 25,
+                    "exclusive": false
+                },
+                {
+                    "item": "sod",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "clay",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "peat",
+                    "chance": 1.6,
+                    "exclusive": false
+                }
+            ]
+        },
+        "small_dirt_rock_four": {
+            "mining_xp_gain": 2,
+            "hp": 4,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_4_dirt_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_4_dirt_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_4_dirt_rock_small_t3_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "chance": 25,
+                    "exclusive": false
+                },
+                {
+                    "item": "sod",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "clay",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "peat",
+                    "chance": 1.6,
+                    "exclusive": false
+                }
+            ]
+        },
+        "small_dirt_rock_five": {
+            "mining_xp_gain": 2,
+            "hp": 5,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_5_dirt_rock_small_t1_spring",
+                "spr_dungeon_mines_biome_5_dirt_rock_small_t2_spring",
+                "spr_dungeon_mines_biome_5_dirt_rock_small_t3_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_stone",
+                    "chance": 25,
+                    "exclusive": false
+                },
+                {
+                    "item": "sod",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "clay",
+                    "chance": 1.6,
+                    "exclusive": false
+                },
+                {
+                    "item": "peat",
+                    "chance": 1.6,
+                    "exclusive": false
+                }
+            ]
+        },
+        "node_copper": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_ore_copper_t1_spring",
+                "spr_dungeon_ore_copper_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_copper",
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_copper_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_copper": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_ore_copper_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_copper",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "ore_copper",
+                    "chance": 20,
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_copper_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 4
+                }
+            ]
+        },
+        "node_ruby": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_ore_ruby_t1_spring",
+                "spr_dungeon_ore_ruby_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_ruby",
+                    "count_range": [
+                        1,
+                        1
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_ruby",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_ruby": {
+            "hp": 3,
+            "spring_sprites": [
+                "spr_dungeon_ore_ruby_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_ruby",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_ruby",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 5
+                }
+            ]
+        },
+        "node_iron": {
+            "hp": 6,
+            "spring_sprites": [
+                "spr_dungeon_ore_iron_t1_spring",
+                "spr_dungeon_ore_iron_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_iron",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                }
+            ]
+        },
+        "rock_iron": {
+            "hp": 6,
+            "spring_sprites": [
+                "spr_dungeon_ore_iron_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_iron",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_iron_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 4
+                }
+            ]
+        },
+        "node_sapphire": {
+            "hp": 6,
+            "spring_sprites": [
+                "spr_dungeon_ore_sapphire_t1_spring",
+                "spr_dungeon_ore_sapphire_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_sapphire",
+                    "count_range": [
+                        1,
+                        1
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_sapphire",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_sapphire": {
+            "hp": 6,
+            "spring_sprites": [
+                "spr_dungeon_ore_sapphire_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_sapphire",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_sapphire",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 5
+                }
+            ]
+        },
+        "node_silver": {
+            "hp": 9,
+            "spring_sprites": [
+                "spr_dungeon_ore_silver_t1_spring",
+                "spr_dungeon_ore_silver_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_silver",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_silver_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_silver": {
+            "hp": 9,
+            "spring_sprites": [
+                "spr_dungeon_ore_silver_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_silver",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_silver_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 4
+                }
+            ]
+        },
+        "node_emerald": {
+            "hp": 9,
+            "spring_sprites": [
+                "spr_dungeon_ore_emerald_t1_spring",
+                "spr_dungeon_ore_emerald_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_emerald",
+                    "count_range": [
+                        1,
+                        1
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_emerald",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_emerald": {
+            "hp": 9,
+            "spring_sprites": [
+                "spr_dungeon_ore_emerald_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_emerald",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_emerald",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 5
+                }
+            ]
+        },
+        "node_gold": {
+            "hp": 12,
+            "spring_sprites": [
+                "spr_dungeon_ore_gold_t1_spring",
+                "spr_dungeon_ore_gold_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_gold",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_gold_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_gold": {
+            "hp": 12,
+            "spring_sprites": [
+                "spr_dungeon_ore_gold_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_gold",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_gold_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 4
+                }
+            ]
+        },
+        "node_diamond": {
+            "hp": 12,
+            "spring_sprites": [
+                "spr_dungeon_ore_diamond_t1_spring",
+                "spr_dungeon_ore_diamond_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_diamond",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_diamond",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_diamond": {
+            "hp": 12,
+            "spring_sprites": [
+                "spr_dungeon_ore_diamond_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_diamond",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_diamond",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 5
+                }
+            ]
+        },
+        "node_mistril": {
+            "hp": 15,
+            "spring_sprites": [
+                "spr_dungeon_ore_mistril_t1_spring",
+                "spr_dungeon_ore_mistril_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_mistril",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_mistril_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ],
+            "light": {
+                "name": "circle_forty_eight_weak",
+                "offset": [
+                    0,
+                    7
+                ]
+            }
+        },
+        "rock_mistril": {
+            "hp": 15,
+            "spring_sprites": [
+                "spr_dungeon_ore_mistril_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_mistril",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_mistril_ore",
+                    "chance": 1,
+                    "exclusive": false,
+                    "perfect_pick_chance": 4
+                }
+            ],
+            "light": {
+                "name": "circle_forty_eight_weak",
+                "offset": [
+                    0,
+                    8
+                ]
+            }
+        },
+        "node_pink_diamond": {
+            "hp": 15,
+            "spring_sprites": [
+                "spr_dungeon_ore_pink_diamond_t1_spring",
+                "spr_dungeon_ore_pink_diamond_t2_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_pink_diamond",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_pink_diamond",
+                    "chance": 5,
+                    "exclusive": false,
+                    "perfect_pick_chance": 1
+                }
+            ]
+        },
+        "rock_pink_diamond": {
+            "hp": 15,
+            "spring_sprites": [
+                "spr_dungeon_ore_pink_diamond_full_spring"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "ore_pink_diamond",
+                    "count_range": [
+                        2,
+                        3
+                    ],
+                    "exclusive": false
+                },
+                {
+                    "item": "perfect_pink_diamond",
+                    "chance": 5,
+                    "exclusive": false
+                }
+            ]
+        },
+        "rock_void": {
+            "hp": 15,
+            "spring_sprites": [
+                "spr_dungeon_mines_biome_5_rock_void_main"
+            ],
+            "dungeon_only": true,
+            "drops": [
+                {
+                    "item": "void_stone",
+                    "count_range": [
+                        1,
+                        2
+                    ],
+                    "exclusive": false
+                }
+            ]
         }
     },
     "tree": {
@@ -3156,1034 +5300,6 @@
             }
         }
     },
-    "building": {
-        "small_barn": {
-            "size": [
-                14,
-                10
-            ],
-            "collision_grid": [
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "22222222222222",
-                "00000000000000"
-            ],
-            "blueprints": [
-                "small_barn_red_blueprint",
-                "small_barn_black_blueprint"
-            ],
-            "name": "object_prototypes/building/small_barn/name",
-            "location_id": "small_barn",
-            "offset": [
-                56,
-                70
-            ],
-            "door_hides_on_open": false,
-            "door_offset": [
-                0,
-                1
-            ],
-            "transition_offset": [
-                -16,
-                -14
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                -2
-            ],
-            "door_closed": [
-                "spr_placeable_small_barn_red_door_spring_closed",
-                "spr_placeable_small_barn_black_door_spring_closed"
-            ],
-            "open_door": true,
-            "doorway_floor": [
-                "spr_placeable_small_barn_red_door_doorway_floor_closed",
-                "spr_placeable_small_barn_black_door_doorway_floor_closed"
-            ],
-            "entrance_offset": [
-                0,
-                -18
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -32
-                    ],
-                    "size": [
-                        96,
-                        32
-                    ]
-                },
-                {
-                    "offset": [
-                        16,
-                        -48
-                    ],
-                    "size": [
-                        80,
-                        16
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_stable_name_plate_spring",
-                "offset": [
-                    39,
-                    2
-                ]
-            },
-            "stable": {
-                "max_occupants": 4,
-                "permitted_animal_size": "large",
-                "double_manger": false,
-                "manger_size": 4,
-                "incubators": 0,
-                "send_animal_in_offset": [
-                    0,
-                    32
-                ],
-                "send_animal_out_offset": [
-                    0,
-                    0
-                ],
-                "exit_direction": "south",
-                "animal_door_point": "small_barn/animal_door",
-                "farm_bell": {
-                    "idle": "spr_stable_bell_spring_idle",
-                    "ring": "spr_stable_bell_spring_ring",
-                    "offset": [
-                        -41,
-                        2
-                    ]
-                }
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_small_barn_red_spring",
-                    "spr_placeable_small_barn_black_spring"
-                ],
-                "winter": [
-                    "spr_placeable_small_barn_red_winter",
-                    "spr_placeable_small_barn_black_winter"
-                ]
-            }
-        },
-        "medium_barn": {
-            "size": [
-                16,
-                12
-            ],
-            "collision_grid": [
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "2222222222222222",
-                "0000000000000000"
-            ],
-            "blueprints": [
-                "medium_barn_red_blueprint",
-                "medium_barn_black_blueprint"
-            ],
-            "name": "object_prototypes/building/medium_barn/name",
-            "location_id": "medium_barn",
-            "offset": [
-                64,
-                86
-            ],
-            "door_hides_on_open": false,
-            "door_offset": [
-                0,
-                1
-            ],
-            "transition_offset": [
-                -16,
-                -14
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                -2
-            ],
-            "door_closed": [
-                "spr_placeable_small_barn_red_door_spring_closed",
-                "spr_placeable_small_barn_black_door_spring_closed"
-            ],
-            "open_door": true,
-            "doorway_floor": [
-                "spr_placeable_small_barn_red_door_doorway_floor_closed",
-                "spr_placeable_small_barn_black_door_doorway_floor_closed"
-            ],
-            "entrance_offset": [
-                0,
-                -18
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -22
-                    ],
-                    "size": [
-                        112,
-                        22
-                    ]
-                },
-                {
-                    "offset": [
-                        24,
-                        -46
-                    ],
-                    "size": [
-                        84,
-                        24
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_stable_name_plate_spring",
-                "offset": [
-                    39,
-                    2
-                ]
-            },
-            "stable": {
-                "max_occupants": 8,
-                "permitted_animal_size": "large",
-                "double_manger": true,
-                "manger_size": 4,
-                "incubators": 0,
-                "send_animal_in_offset": [
-                    0,
-                    32
-                ],
-                "send_animal_out_offset": [
-                    0,
-                    0
-                ],
-                "exit_direction": "south",
-                "animal_door_point": "medium_barn/animal_door",
-                "farm_bell": {
-                    "idle": "spr_stable_bell_spring_idle",
-                    "ring": "spr_stable_bell_spring_ring",
-                    "offset": [
-                        -44,
-                        2
-                    ]
-                }
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_medium_barn_red_spring",
-                    "spr_placeable_medium_barn_black_spring"
-                ],
-                "winter": [
-                    "spr_placeable_medium_barn_red_winter",
-                    "spr_placeable_medium_barn_black_winter"
-                ]
-            }
-        },
-        "large_barn": {
-            "size": [
-                18,
-                12
-            ],
-            "collision_grid": [
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "222222222222222222",
-                "000000000000000000"
-            ],
-            "blueprints": [
-                "large_barn_red_blueprint",
-                "large_barn_black_blueprint"
-            ],
-            "name": "object_prototypes/building/large_barn/name",
-            "location_id": "large_barn",
-            "offset": [
-                72,
-                86
-            ],
-            "door_hides_on_open": false,
-            "door_offset": [
-                0,
-                1
-            ],
-            "transition_offset": [
-                -16,
-                -14
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                -2
-            ],
-            "door_closed": [
-                "spr_placeable_small_barn_red_door_spring_closed",
-                "spr_placeable_small_barn_black_door_spring_closed"
-            ],
-            "open_door": true,
-            "doorway_floor": [
-                "spr_placeable_small_barn_red_door_doorway_floor_closed",
-                "spr_placeable_small_barn_black_door_doorway_floor_closed"
-            ],
-            "entrance_offset": [
-                0,
-                -18
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -42
-                    ],
-                    "size": [
-                        128,
-                        42
-                    ]
-                },
-                {
-                    "offset": [
-                        24,
-                        -64
-                    ],
-                    "size": [
-                        96,
-                        24
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_stable_name_plate_spring",
-                "offset": [
-                    52,
-                    2
-                ]
-            },
-            "stable": {
-                "max_occupants": 12,
-                "permitted_animal_size": "large",
-                "double_manger": true,
-                "manger_size": 6,
-                "incubators": 0,
-                "send_animal_in_offset": [
-                    0,
-                    32
-                ],
-                "send_animal_out_offset": [
-                    0,
-                    0
-                ],
-                "exit_direction": "south",
-                "animal_door_point": "large_barn/animal_door",
-                "farm_bell": {
-                    "idle": "spr_stable_bell_spring_idle",
-                    "ring": "spr_stable_bell_spring_ring",
-                    "offset": [
-                        -52,
-                        2
-                    ]
-                }
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_large_barn_red_spring",
-                    "spr_placeable_large_barn_black_spring"
-                ],
-                "winter": [
-                    "spr_placeable_large_barn_red_winter",
-                    "spr_placeable_large_barn_black_winter"
-                ]
-            }
-        },
-        "small_coop": {
-            "size": [
-                12,
-                10
-            ],
-            "collision_grid": [
-                "222222222200",
-                "222222222200",
-                "222222222200",
-                "222222222200",
-                "222222222200",
-                "222222222200",
-                "222222222210",
-                "222222224400",
-                "222222222210",
-                "000000000000"
-            ],
-            "blueprints": [
-                "small_coop_red_blueprint",
-                "small_coop_black_blueprint"
-            ],
-            "name": "object_prototypes/building/small_coop/name",
-            "location_id": "small_coop",
-            "offset": [
-                40,
-                71
-            ],
-            "entrance_offset": [
-                39,
-                -14
-            ],
-            "open_door": false,
-            "door_hides_on_open": true,
-            "door_offset": [
-                0,
-                -1
-            ],
-            "transition_offset": [
-                -8,
-                -19
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                0
-            ],
-            "door_closed": [
-                "spr_placeable_small_coop_red_door_spring_closed",
-                "spr_placeable_small_coop_black_door_spring_closed"
-            ],
-            "doorway_floor": [
-                "spr_placeable_small_coop_red_door_doorwayfloor_closed",
-                "spr_placeable_small_coop_black_door_doorwayfloor_closed"
-            ],
-            "ramps": [
-                "spr_placeable_small_coop_red_ramp_spring",
-                "spr_placeable_small_coop_black_ramp_spring"
-            ],
-            "ramp_offset": [
-                40,
-                -23
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -18
-                    ],
-                    "size": [
-                        68,
-                        18
-                    ]
-                },
-                {
-                    "offset": [
-                        16,
-                        -24
-                    ],
-                    "size": [
-                        52,
-                        6
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_stable_name_plate_spring",
-                "offset": [
-                    27,
-                    1
-                ]
-            },
-            "stable": {
-                "double_manger": false,
-                "manger_size": 4,
-                "incubators": 1,
-                "max_occupants": 4,
-                "permitted_animal_size": "small",
-                "send_animal_in_offset": [
-                    24,
-                    4
-                ],
-                "send_animal_out_offset": [
-                    0,
-                    0
-                ],
-                "exit_direction": "east",
-                "animal_door_point": "small_coop/animal_door",
-                "farm_bell": {
-                    "idle": "spr_stable_bell_spring_idle",
-                    "ring": "spr_stable_bell_spring_ring",
-                    "offset": [
-                        -25,
-                        1
-                    ]
-                }
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_small_coop_red_spring",
-                    "spr_placeable_small_coop_black_spring"
-                ],
-                "winter": [
-                    "spr_placeable_small_coop_red_winter",
-                    "spr_placeable_small_coop_black_winter"
-                ]
-            }
-        },
-        "medium_coop": {
-            "size": [
-                14,
-                12
-            ],
-            "collision_grid": [
-                "22222222222200",
-                "22222222222200",
-                "22222222222200",
-                "22222222222200",
-                "22222222222200",
-                "22222222222200",
-                "22222222222200",
-                "22222222222200",
-                "22222222222210",
-                "22222222224400",
-                "22222222222210",
-                "00000000000000"
-            ],
-            "blueprints": [
-                "medium_coop_red_blueprint",
-                "medium_coop_black_blueprint"
-            ],
-            "name": "object_prototypes/building/medium_coop/name",
-            "location_id": "medium_coop",
-            "offset": [
-                48,
-                87
-            ],
-            "entrance_offset": [
-                39,
-                -14
-            ],
-            "open_door": false,
-            "door_hides_on_open": true,
-            "door_offset": [
-                0,
-                -1
-            ],
-            "transition_offset": [
-                -8,
-                -19
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                0
-            ],
-            "door_closed": [
-                "spr_placeable_small_coop_red_door_spring_closed",
-                "spr_placeable_small_coop_black_door_spring_closed"
-            ],
-            "doorway_floor": [
-                "spr_placeable_small_coop_red_door_doorwayfloor_closed",
-                "spr_placeable_small_coop_black_door_doorwayfloor_closed"
-            ],
-            "ramps": [
-                "spr_placeable_small_coop_red_ramp_spring",
-                "spr_placeable_small_coop_black_ramp_spring"
-            ],
-            "ramp_offset": [
-                48,
-                -23
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -16
-                    ],
-                    "size": [
-                        84,
-                        16
-                    ]
-                },
-                {
-                    "offset": [
-                        16,
-                        -28
-                    ],
-                    "size": [
-                        64,
-                        12
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_stable_name_plate_spring",
-                "offset": [
-                    32,
-                    1
-                ]
-            },
-            "stable": {
-                "double_manger": true,
-                "manger_size": 4,
-                "incubators": 2,
-                "max_occupants": 8,
-                "permitted_animal_size": "small",
-                "send_animal_in_offset": [
-                    24,
-                    4
-                ],
-                "send_animal_out_offset": [
-                    0,
-                    0
-                ],
-                "exit_direction": "east",
-                "animal_door_point": "medium_coop/animal_door",
-                "farm_bell": {
-                    "idle": "spr_stable_bell_spring_idle",
-                    "ring": "spr_stable_bell_spring_ring",
-                    "offset": [
-                        -28,
-                        1
-                    ]
-                }
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_medium_coop_red_spring",
-                    "spr_placeable_medium_coop_black_spring"
-                ],
-                "winter": [
-                    "spr_placeable_medium_coop_red_winter",
-                    "spr_placeable_medium_coop_black_winter"
-                ]
-            }
-        },
-        "large_coop": {
-            "size": [
-                16,
-                12
-            ],
-            "collision_grid": [
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222200",
-                "2222222222222210",
-                "2222222222224400",
-                "2222222222222210",
-                "0000000000000000"
-            ],
-            "blueprints": [
-                "large_coop_red_blueprint",
-                "large_coop_black_blueprint"
-            ],
-            "name": "object_prototypes/building/large_coop/name",
-            "location_id": "large_coop",
-            "offset": [
-                56,
-                87
-            ],
-            "entrance_offset": [
-                39,
-                -14
-            ],
-            "open_door": false,
-            "door_hides_on_open": true,
-            "door_offset": [
-                0,
-                -1
-            ],
-            "transition_offset": [
-                -8,
-                -19
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                0
-            ],
-            "door_closed": [
-                "spr_placeable_small_coop_red_door_spring_closed",
-                "spr_placeable_small_coop_black_door_spring_closed"
-            ],
-            "doorway_floor": [
-                "spr_placeable_small_coop_red_door_doorwayfloor_closed",
-                "spr_placeable_small_coop_black_door_doorwayfloor_closed"
-            ],
-            "ramps": [
-                "spr_placeable_small_coop_red_ramp_spring",
-                "spr_placeable_small_coop_black_ramp_spring"
-            ],
-            "ramp_offset": [
-                55,
-                -23
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -32
-                    ],
-                    "size": [
-                        102,
-                        32
-                    ]
-                },
-                {
-                    "offset": [
-                        16,
-                        -44
-                    ],
-                    "size": [
-                        84,
-                        12
-                    ]
-                },
-                {
-                    "offset": [
-                        24,
-                        -52
-                    ],
-                    "size": [
-                        68,
-                        8
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_stable_name_plate_spring",
-                "offset": [
-                    40,
-                    1
-                ]
-            },
-            "stable": {
-                "double_manger": true,
-                "manger_size": 6,
-                "incubators": 4,
-                "max_occupants": 12,
-                "permitted_animal_size": "small",
-                "send_animal_in_offset": [
-                    24,
-                    4
-                ],
-                "send_animal_out_offset": [
-                    0,
-                    0
-                ],
-                "exit_direction": "east",
-                "animal_door_point": "large_coop/animal_door",
-                "farm_bell": {
-                    "idle": "spr_stable_bell_spring_idle",
-                    "ring": "spr_stable_bell_spring_ring",
-                    "offset": [
-                        -36,
-                        1
-                    ]
-                }
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_large_coop_red_spring",
-                    "spr_placeable_large_coop_black_spring"
-                ],
-                "winter": [
-                    "spr_placeable_large_coop_red_winter",
-                    "spr_placeable_large_coop_black_winter"
-                ]
-            }
-        },
-        "small_greenhouse": {
-            "size": [
-                12,
-                6
-            ],
-            "collision_grid": "2",
-            "collision": "2",
-            "blueprints": [
-                "small_greenhouse_white_blueprint",
-                "small_greenhouse_wood_blueprint"
-            ],
-            "tilesets": [
-                "tile_greenhouse_white",
-                "tile_greenhouse_wood"
-            ],
-            "name": "object_prototypes/building/small_greenhouse/name",
-            "location_id": "small_greenhouse",
-            "offset": [
-                48,
-                46
-            ],
-            "transition_offset": [
-                -16,
-                -14
-            ],
-            "door_hides_on_open": false,
-            "door_offset": [
-                0,
-                -1
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                -2
-            ],
-            "door_closed": [
-                "spr_placeable_small_greenhouse_white_door_spring_closed",
-                "spr_placeable_small_greenhouse_wood_door_spring_closed"
-            ],
-            "open_door": true,
-            "doorway_floor": [
-                "spr_placeable_small_greenhouse_white_door_doorwayfloor_closed",
-                "spr_placeable_small_greenhouse_wood_door_doorwayfloor_closed"
-            ],
-            "entrance_offset": [
-                0,
-                -18
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -24
-                    ],
-                    "size": [
-                        80,
-                        24
-                    ]
-                },
-                {
-                    "offset": [
-                        20,
-                        -36
-                    ],
-                    "size": [
-                        56,
-                        12
-                    ]
-                },
-                {
-                    "offset": [
-                        32,
-                        -48
-                    ],
-                    "size": [
-                        32,
-                        12
-                    ]
-                },
-                {
-                    "offset": [
-                        40,
-                        -54
-                    ],
-                    "size": [
-                        16,
-                        6
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_placeable_greenhouse_placard_spring",
-                "offset": [
-                    25,
-                    1
-                ]
-            },
-            "greenhouse": {
-                "crop_area_start": [
-                    10,
-                    16
-                ],
-                "crop_area_end": [
-                    20,
-                    26
-                ]
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_small_greenhouse_white_spring",
-                    "spr_placeable_small_greenhouse_wood_spring"
-                ],
-                "winter": [
-                    "spr_placeable_small_greenhouse_white_winter",
-                    "spr_placeable_small_greenhouse_wood_winter"
-                ]
-            }
-        },
-        "large_greenhouse": {
-            "size": [
-                14,
-                8
-            ],
-            "collision_grid": "2",
-            "door_hides_on_open": false,
-            "collision": "2",
-            "blueprints": [
-                "large_greenhouse_white_blueprint",
-                "large_greenhouse_wood_blueprint"
-            ],
-            "tilesets": [
-                "tile_greenhouse_white",
-                "tile_greenhouse_wood"
-            ],
-            "transition_offset": [
-                -16,
-                -14
-            ],
-            "name": "object_prototypes/building/large_greenhouse/name",
-            "location_id": "large_greenhouse",
-            "offset": [
-                56,
-                62
-            ],
-            "door_offset": [
-                0,
-                -1
-            ],
-            "light_bottom_offset": [
-                0,
-                -46
-            ],
-            "light_top_offset": [
-                0,
-                -2
-            ],
-            "door_closed": [
-                "spr_placeable_small_greenhouse_white_door_spring_closed",
-                "spr_placeable_small_greenhouse_wood_door_spring_closed"
-            ],
-            "open_door": true,
-            "doorway_floor": [
-                "spr_placeable_small_greenhouse_white_door_doorwayfloor_closed",
-                "spr_placeable_small_greenhouse_wood_door_doorwayfloor_closed"
-            ],
-            "entrance_offset": [
-                0,
-                -18
-            ],
-            "transparency_boxes": [
-                {
-                    "offset": [
-                        8,
-                        -20
-                    ],
-                    "size": [
-                        96,
-                        20
-                    ]
-                },
-                {
-                    "offset": [
-                        20,
-                        -32
-                    ],
-                    "size": [
-                        72,
-                        12
-                    ]
-                },
-                {
-                    "offset": [
-                        32,
-                        -44
-                    ],
-                    "size": [
-                        48,
-                        12
-                    ]
-                },
-                {
-                    "offset": [
-                        40,
-                        -54
-                    ],
-                    "size": [
-                        32,
-                        10
-                    ]
-                },
-                {
-                    "offset": [
-                        48,
-                        -58
-                    ],
-                    "size": [
-                        16,
-                        4
-                    ]
-                }
-            ],
-            "farm_plate": {
-                "sprite": "spr_placeable_greenhouse_placard_spring",
-                "offset": [
-                    34,
-                    1
-                ]
-            },
-            "greenhouse": {
-                "crop_area_start": [
-                    10,
-                    16
-                ],
-                "crop_area_end": [
-                    30,
-                    36
-                ]
-            },
-            "sprites": {
-                "spring": [
-                    "spr_placeable_large_greenhouse_white_spring",
-                    "spr_placeable_large_greenhouse_wood_spring"
-                ],
-                "winter": [
-                    "spr_placeable_large_greenhouse_white_winter",
-                    "spr_placeable_large_greenhouse_wood_winter"
-                ]
-            }
-        }
-    },
     "crop": {
         "default": {
             "sprites": [
@@ -5980,6 +7096,519 @@
             ]
         }
     },
+    "dig_site": {
+        "dig_site": {
+            "sprite": "spr_dig_site_spring",
+            "size": [
+                2,
+                2
+            ],
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "dig_site_destroyed": {
+            "sprite": "spr_dig_site_empty_spring",
+            "size": [
+                2,
+                2
+            ],
+            "offset": [
+                0,
+                0
+            ]
+        }
+    },
+    "bush": {
+        "default": {
+            "size": [
+                2,
+                2
+            ],
+            "offset": [
+                8,
+                8
+            ],
+            "regrow_days": 3,
+            "interact_size": 8,
+            "sound_on_collide": "SoundEffects/Objects/TallGrassRustle",
+            "count": 3,
+            "collides": false,
+            "target_terrain": "ground",
+            "off_season": "regress",
+            "sway": false,
+            "harvest": -1,
+            "sprites": -1,
+            "seasons": -1
+        },
+        "bush": {
+            "harvest": "__none__",
+            "size": [
+                4,
+                4
+            ],
+            "offset": [
+                16,
+                24
+            ],
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "seasons": [],
+            "sprites": {
+                "spring": "spr_bush_spring",
+                "summer": "spr_bush_summer",
+                "fall": "spr_bush_autumn",
+                "winter": "spr_bush_winter"
+            }
+        },
+        "rose_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "rose",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "summer",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": "spr_bush_rose_spring_stage1",
+                "summer": [
+                    "spr_bush_rose_summer_stage1",
+                    "spr_bush_rose_summer_stage2"
+                ],
+                "fall": "spr_bush_rose_autumn_stage1",
+                "winter": "spr_bush_rose_winter_stage1"
+            }
+        },
+        "rose_hip_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "rose_hip",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "winter",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": "spr_bush_rose_spring_stage1",
+                "summer": "spr_bush_rose_summer_stage1",
+                "fall": "spr_bush_rose_autumn_stage1",
+                "winter": [
+                    "spr_bush_rose_winter_stage1",
+                    "spr_bush_rose_winter_stage2"
+                ]
+            }
+        },
+        "hydrangea_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "hydrangea",
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "summer",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": "spr_bush_hydrangea_spring_stage1",
+                "summer": [
+                    "spr_bush_hydrangea_summer_stage1",
+                    "spr_bush_hydrangea_summer_stage2"
+                ],
+                "fall": "spr_bush_hydrangea_autumn_stage1",
+                "winter": "spr_bush_hydrangea_winter_stage1"
+            }
+        },
+        "blueberry_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "blueberry",
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "spring",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": [
+                    "spr_bush_blueberry_spring_stage1",
+                    "spr_bush_blueberry_spring_stage2"
+                ],
+                "summer": "spr_bush_blueberry_summer_stage1",
+                "fall": "spr_bush_blueberry_autumn_stage1",
+                "winter": "spr_bush_blueberry_winter_stage1"
+            }
+        },
+        "wild_berry_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "wild_berries",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "spring",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": [
+                    "spr_bush_wildberry_spring_stage1",
+                    "spr_bush_wildberry_spring_stage2"
+                ],
+                "summer": "spr_bush_wildberry_summer_stage1",
+                "fall": "spr_bush_wildberry_autumn_stage1",
+                "winter": "spr_bush_wildberry_winter_stage1"
+            }
+        },
+        "blackberry_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "blackberry",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "fall",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": "spr_bush_blackberry_spring_stage1",
+                "summer": "spr_bush_blackberry_summer_stage1",
+                "fall": [
+                    "spr_bush_blackberry_autumn_stage1",
+                    "spr_bush_blackberry_autumn_stage2"
+                ],
+                "winter": "spr_bush_blackberry_winter_stage1"
+            }
+        },
+        "wild_grape_bush": {
+            "size": [
+                2,
+                2
+            ],
+            "harvest": "wild_grapes",
+            "regrow_days": 4,
+            "seasons": "summer",
+            "collides": "1",
+            "sprites": {
+                "spring": "spr_bush_grape_spring_stage1",
+                "summer": [
+                    "spr_bush_grape_summer_stage1",
+                    "spr_bush_grape_summer_stage2"
+                ],
+                "fall": "spr_bush_grape_autumn_stage1",
+                "winter": "spr_bush_grape_winter_stage1"
+            }
+        },
+        "wintergreen_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "wintergreen_berry",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "winter",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": "spr_bush_wintergreen_spring_stage1",
+                "summer": "spr_bush_wintergreen_summer_stage1",
+                "fall": "spr_bush_wintergreen_autumn_stage1",
+                "winter": [
+                    "spr_bush_wintergreen_winter_stage1",
+                    "spr_bush_wintergreen_winter_stage2"
+                ]
+            }
+        },
+        "glowberry_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "glowberry",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": "winter",
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": "spr_bush_glowberry_spring_stage1",
+                "summer": "spr_bush_glowberry_summer_stage1",
+                "fall": "spr_bush_glowberry_autumn_stage1",
+                "winter": [
+                    "spr_bush_glowberry_winter_stage1",
+                    "spr_bush_glowberry_winter_stage2"
+                ]
+            }
+        },
+        "bell_berry_bush": {
+            "size": [
+                4,
+                4
+            ],
+            "harvest": "bell_berry",
+            "regrow_days": 4,
+            "offset": [
+                16,
+                24
+            ],
+            "seasons": [
+                "spring",
+                "summer",
+                "fall",
+                "winter"
+            ],
+            "collides": [
+                "0000",
+                "0000",
+                "1111",
+                "1111"
+            ],
+            "sprites": {
+                "spring": [
+                    "spr_bush_bell_berry_spring_stage1",
+                    "spr_bush_bell_berry_spring_stage2"
+                ],
+                "summer": [
+                    "spr_bush_bell_berry_summer_stage1",
+                    "spr_bush_bell_berry_summer_stage2"
+                ],
+                "fall": [
+                    "spr_bush_bell_berry_autumn_stage1",
+                    "spr_bush_bell_berry_autumn_stage2"
+                ],
+                "winter": [
+                    "spr_bush_bell_berry_winter_stage1",
+                    "spr_bush_bell_berry_winter_stage2"
+                ]
+            }
+        },
+        "underseaweed": {
+            "sprites": [
+                "spr_forage_underseaweed_spring_stage_1",
+                "spr_forage_underseaweed_spring_stage_2"
+            ],
+            "water_bases": [
+                "spr_forage_underseaweed_water",
+                "spr_forage_underseaweed_water"
+            ],
+            "count": 1,
+            "target_terrain": "water",
+            "harvest": "underseaweed",
+            "seasons": [
+                "spring",
+                "summer",
+                "fall",
+                "winter"
+            ],
+            "sway": true
+        },
+        "cattail_one": {
+            "sprites": [
+                "spr_forage_cattail_v1_spring_stage_1",
+                "spr_forage_cattail_v1_spring_stage_2"
+            ],
+            "water_bases": [
+                "spr_forage_cattail_v1_water",
+                "spr_forage_cattail_v1_water"
+            ],
+            "target_terrain": "water",
+            "harvest": "cattail",
+            "count": 1,
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true,
+            "regrow_days": 3
+        },
+        "cattail_two": {
+            "sprites": [
+                "spr_forage_cattail_v2_spring_stage_1",
+                "spr_forage_cattail_v2_spring_stage_2"
+            ],
+            "water_bases": [
+                "spr_forage_cattail_v2_water",
+                "spr_forage_cattail_v2_water"
+            ],
+            "target_terrain": "water",
+            "harvest": "cattail",
+            "count": 2,
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true
+        },
+        "cattail_three": {
+            "sprites": [
+                "spr_forage_cattail_v3_spring_stage_1",
+                "spr_forage_cattail_v3_spring_stage_2"
+            ],
+            "water_bases": [
+                "spr_forage_cattail_v3_water",
+                "spr_forage_cattail_v3_water"
+            ],
+            "target_terrain": "water",
+            "harvest": "cattail",
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true
+        },
+        "water_chestnut_one": {
+            "sprites": [
+                "spr_forage_waterchestnut_sprout_spring",
+                "spr_forage_waterchestnut_v1_spring"
+            ],
+            "water_bases": [
+                "spr_forage_waterchestnut_sprout_ground",
+                "spr_forage_waterchestnut_v1_ground"
+            ],
+            "target_terrain": "water",
+            "harvest": "water_chestnut",
+            "count": 1,
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true
+        },
+        "water_chestnut_two": {
+            "sprites": [
+                "spr_forage_waterchestnut_sprout_spring",
+                "spr_forage_waterchestnut_v2_spring"
+            ],
+            "water_bases": [
+                "spr_forage_waterchestnut_sprout_ground",
+                "spr_forage_waterchestnut_v2_ground"
+            ],
+            "target_terrain": "water",
+            "harvest": "water_chestnut",
+            "count": 2,
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true
+        },
+        "water_chestnut_three": {
+            "sprites": [
+                "spr_forage_waterchestnut_sprout_spring",
+                "spr_forage_waterchestnut_v3_spring"
+            ],
+            "water_bases": [
+                "spr_forage_waterchestnut_sprout_ground",
+                "spr_forage_waterchestnut_v3_ground"
+            ],
+            "target_terrain": "water",
+            "harvest": "water_chestnut",
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true
+        },
+        "water_chestnut_four": {
+            "sprites": [
+                "spr_forage_waterchestnut_sprout_spring",
+                "spr_forage_waterchestnut_v4_spring"
+            ],
+            "water_bases": [
+                "spr_forage_waterchestnut_sprout_ground",
+                "spr_forage_waterchestnut_v4_ground"
+            ],
+            "target_terrain": "water",
+            "harvest": "water_chestnut",
+            "count": 4,
+            "seasons": [
+                "spring",
+                "summer",
+                "fall"
+            ],
+            "off_season": "destroy",
+            "sway": true
+        }
+    },
     "breakable": {
         "default": {
             "collideable": true,
@@ -7198,495 +8827,6 @@
                     "spr_illegal_16"
                 ]
             }
-        }
-    },
-    "bush": {
-        "default": {
-            "size": [
-                2,
-                2
-            ],
-            "offset": [
-                8,
-                8
-            ],
-            "regrow_days": 3,
-            "interact_size": 8,
-            "sound_on_collide": "SoundEffects/Objects/TallGrassRustle",
-            "count": 3,
-            "collides": false,
-            "target_terrain": "ground",
-            "off_season": "regress",
-            "sway": false,
-            "harvest": -1,
-            "sprites": -1,
-            "seasons": -1
-        },
-        "bush": {
-            "harvest": "__none__",
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                24
-            ],
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "seasons": [],
-            "sprites": {
-                "spring": "spr_bush_spring",
-                "summer": "spr_bush_summer",
-                "fall": "spr_bush_autumn",
-                "winter": "spr_bush_winter"
-            }
-        },
-        "rose_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "rose",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "summer",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": "spr_bush_rose_spring_stage1",
-                "summer": [
-                    "spr_bush_rose_summer_stage1",
-                    "spr_bush_rose_summer_stage2"
-                ],
-                "fall": "spr_bush_rose_autumn_stage1",
-                "winter": "spr_bush_rose_winter_stage1"
-            }
-        },
-        "rose_hip_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "rose_hip",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "winter",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": "spr_bush_rose_spring_stage1",
-                "summer": "spr_bush_rose_summer_stage1",
-                "fall": "spr_bush_rose_autumn_stage1",
-                "winter": [
-                    "spr_bush_rose_winter_stage1",
-                    "spr_bush_rose_winter_stage2"
-                ]
-            }
-        },
-        "hydrangea_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "hydrangea",
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "summer",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": "spr_bush_hydrangea_spring_stage1",
-                "summer": [
-                    "spr_bush_hydrangea_summer_stage1",
-                    "spr_bush_hydrangea_summer_stage2"
-                ],
-                "fall": "spr_bush_hydrangea_autumn_stage1",
-                "winter": "spr_bush_hydrangea_winter_stage1"
-            }
-        },
-        "blueberry_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "blueberry",
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "spring",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": [
-                    "spr_bush_blueberry_spring_stage1",
-                    "spr_bush_blueberry_spring_stage2"
-                ],
-                "summer": "spr_bush_blueberry_summer_stage1",
-                "fall": "spr_bush_blueberry_autumn_stage1",
-                "winter": "spr_bush_blueberry_winter_stage1"
-            }
-        },
-        "wild_berry_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "wild_berries",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "spring",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": [
-                    "spr_bush_wildberry_spring_stage1",
-                    "spr_bush_wildberry_spring_stage2"
-                ],
-                "summer": "spr_bush_wildberry_summer_stage1",
-                "fall": "spr_bush_wildberry_autumn_stage1",
-                "winter": "spr_bush_wildberry_winter_stage1"
-            }
-        },
-        "blackberry_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "blackberry",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "fall",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": "spr_bush_blackberry_spring_stage1",
-                "summer": "spr_bush_blackberry_summer_stage1",
-                "fall": [
-                    "spr_bush_blackberry_autumn_stage1",
-                    "spr_bush_blackberry_autumn_stage2"
-                ],
-                "winter": "spr_bush_blackberry_winter_stage1"
-            }
-        },
-        "wild_grape_bush": {
-            "size": [
-                2,
-                2
-            ],
-            "harvest": "wild_grapes",
-            "regrow_days": 4,
-            "seasons": "summer",
-            "collides": "1",
-            "sprites": {
-                "spring": "spr_bush_grape_spring_stage1",
-                "summer": [
-                    "spr_bush_grape_summer_stage1",
-                    "spr_bush_grape_summer_stage2"
-                ],
-                "fall": "spr_bush_grape_autumn_stage1",
-                "winter": "spr_bush_grape_winter_stage1"
-            }
-        },
-        "wintergreen_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "wintergreen_berry",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "winter",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": "spr_bush_wintergreen_spring_stage1",
-                "summer": "spr_bush_wintergreen_summer_stage1",
-                "fall": "spr_bush_wintergreen_autumn_stage1",
-                "winter": [
-                    "spr_bush_wintergreen_winter_stage1",
-                    "spr_bush_wintergreen_winter_stage2"
-                ]
-            }
-        },
-        "glowberry_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "glowberry",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": "winter",
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": "spr_bush_glowberry_spring_stage1",
-                "summer": "spr_bush_glowberry_summer_stage1",
-                "fall": "spr_bush_glowberry_autumn_stage1",
-                "winter": [
-                    "spr_bush_glowberry_winter_stage1",
-                    "spr_bush_glowberry_winter_stage2"
-                ]
-            }
-        },
-        "bell_berry_bush": {
-            "size": [
-                4,
-                4
-            ],
-            "harvest": "bell_berry",
-            "regrow_days": 4,
-            "offset": [
-                16,
-                24
-            ],
-            "seasons": [
-                "spring",
-                "summer",
-                "fall",
-                "winter"
-            ],
-            "collides": [
-                "0000",
-                "0000",
-                "1111",
-                "1111"
-            ],
-            "sprites": {
-                "spring": [
-                    "spr_bush_bell_berry_spring_stage1",
-                    "spr_bush_bell_berry_spring_stage2"
-                ],
-                "summer": [
-                    "spr_bush_bell_berry_summer_stage1",
-                    "spr_bush_bell_berry_summer_stage2"
-                ],
-                "fall": [
-                    "spr_bush_bell_berry_autumn_stage1",
-                    "spr_bush_bell_berry_autumn_stage2"
-                ],
-                "winter": [
-                    "spr_bush_bell_berry_winter_stage1",
-                    "spr_bush_bell_berry_winter_stage2"
-                ]
-            }
-        },
-        "underseaweed": {
-            "sprites": [
-                "spr_forage_underseaweed_spring_stage_1",
-                "spr_forage_underseaweed_spring_stage_2"
-            ],
-            "water_bases": [
-                "spr_forage_underseaweed_water",
-                "spr_forage_underseaweed_water"
-            ],
-            "count": 1,
-            "target_terrain": "water",
-            "harvest": "underseaweed",
-            "seasons": [
-                "spring",
-                "summer",
-                "fall",
-                "winter"
-            ],
-            "sway": true
-        },
-        "cattail_one": {
-            "sprites": [
-                "spr_forage_cattail_v1_spring_stage_1",
-                "spr_forage_cattail_v1_spring_stage_2"
-            ],
-            "water_bases": [
-                "spr_forage_cattail_v1_water",
-                "spr_forage_cattail_v1_water"
-            ],
-            "target_terrain": "water",
-            "harvest": "cattail",
-            "count": 1,
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true,
-            "regrow_days": 3
-        },
-        "cattail_two": {
-            "sprites": [
-                "spr_forage_cattail_v2_spring_stage_1",
-                "spr_forage_cattail_v2_spring_stage_2"
-            ],
-            "water_bases": [
-                "spr_forage_cattail_v2_water",
-                "spr_forage_cattail_v2_water"
-            ],
-            "target_terrain": "water",
-            "harvest": "cattail",
-            "count": 2,
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true
-        },
-        "cattail_three": {
-            "sprites": [
-                "spr_forage_cattail_v3_spring_stage_1",
-                "spr_forage_cattail_v3_spring_stage_2"
-            ],
-            "water_bases": [
-                "spr_forage_cattail_v3_water",
-                "spr_forage_cattail_v3_water"
-            ],
-            "target_terrain": "water",
-            "harvest": "cattail",
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true
-        },
-        "water_chestnut_one": {
-            "sprites": [
-                "spr_forage_waterchestnut_sprout_spring",
-                "spr_forage_waterchestnut_v1_spring"
-            ],
-            "water_bases": [
-                "spr_forage_waterchestnut_sprout_ground",
-                "spr_forage_waterchestnut_v1_ground"
-            ],
-            "target_terrain": "water",
-            "harvest": "water_chestnut",
-            "count": 1,
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true
-        },
-        "water_chestnut_two": {
-            "sprites": [
-                "spr_forage_waterchestnut_sprout_spring",
-                "spr_forage_waterchestnut_v2_spring"
-            ],
-            "water_bases": [
-                "spr_forage_waterchestnut_sprout_ground",
-                "spr_forage_waterchestnut_v2_ground"
-            ],
-            "target_terrain": "water",
-            "harvest": "water_chestnut",
-            "count": 2,
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true
-        },
-        "water_chestnut_three": {
-            "sprites": [
-                "spr_forage_waterchestnut_sprout_spring",
-                "spr_forage_waterchestnut_v3_spring"
-            ],
-            "water_bases": [
-                "spr_forage_waterchestnut_sprout_ground",
-                "spr_forage_waterchestnut_v3_ground"
-            ],
-            "target_terrain": "water",
-            "harvest": "water_chestnut",
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true
-        },
-        "water_chestnut_four": {
-            "sprites": [
-                "spr_forage_waterchestnut_sprout_spring",
-                "spr_forage_waterchestnut_v4_spring"
-            ],
-            "water_bases": [
-                "spr_forage_waterchestnut_sprout_ground",
-                "spr_forage_waterchestnut_v4_ground"
-            ],
-            "target_terrain": "water",
-            "harvest": "water_chestnut",
-            "count": 4,
-            "seasons": [
-                "spring",
-                "summer",
-                "fall"
-            ],
-            "off_season": "destroy",
-            "sway": true
         }
     },
     "furniture": {
@@ -33495,1146 +34635,6 @@
                 "winter_top_sprite": "spr_decor_gemstone_bridge_v3_winter_top",
                 "top_sprite_depth_offset": 51
             }
-        }
-    },
-    "rock": {
-        "default": {
-            "size": [
-                2,
-                2
-            ],
-            "drops": [],
-            "hp": 1,
-            "spring_sprites": [
-                "spr_illegal_16"
-            ],
-            "collideable": true,
-            "jumpable": true,
-            "dungeon_only": false,
-            "minimum_quality": "tier1",
-            "mining_xp_gain": 4,
-            "offset": [
-                8,
-                0
-            ],
-            "ladder_candidate": true
-        },
-        "boulder_rock_stone": {
-            "jumpable": false,
-            "size": [
-                6,
-                6
-            ],
-            "hp": 6,
-            "minimum_quality": "tier2",
-            "spring_sprites": [
-                "spr_rock_boulder_spring"
-            ],
-            "winter_sprites": [
-                "spr_rock_boulder_winter"
-            ],
-            "offset": [
-                24,
-                8
-            ],
-            "ladder_candidate": false,
-            "mining_xp_gain": 6,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        20,
-                        20
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "ore_sapphire"
-                }
-            ]
-        },
-        "small_rock_stone_one": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_farm_rock_small_t1_c1_spring",
-                "spr_farm_rock_small_t1_c2_spring",
-                "spr_farm_rock_small_t2_c1_spring",
-                "spr_farm_rock_small_t2_c2_spring",
-                "spr_farm_rock_small_t3_c1_spring",
-                "spr_farm_rock_small_t3_c2_spring",
-                "spr_farm_rock_small_t4_c1_spring",
-                "spr_farm_rock_small_t4_c2_spring"
-            ],
-            "winter_sprites": [
-                "spr_farm_rock_small_t1_c1_winter",
-                "spr_farm_rock_small_t1_c2_winter",
-                "spr_farm_rock_small_t2_c1_winter",
-                "spr_farm_rock_small_t2_c2_winter",
-                "spr_farm_rock_small_t3_c1_winter",
-                "spr_farm_rock_small_t3_c2_winter",
-                "spr_farm_rock_small_t4_c1_winter",
-                "spr_farm_rock_small_t4_c2_winter"
-            ],
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        1
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        1
-                    ],
-                    "chance": 10,
-                    "exclusive": false
-                }
-            ]
-        },
-        "small_rock_stone_upper": {
-            "hp": 2,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_1_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_1_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_1_rock_small_t3_spring",
-                "spr_dungeon_mines_biome_1_rock_small_t4_spring"
-            ],
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "exclusive": false
-                },
-                {
-                    "item": "ore_stone",
-                    "chance": 20,
-                    "exclusive": false
-                }
-            ]
-        },
-        "small_rock_stone_two": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_2_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_2_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_2_rock_small_t3_spring",
-                "spr_dungeon_mines_biome_2_rock_small_t4_spring"
-            ],
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "small_rock_stone_three": {
-            "hp": 4,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_3_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_3_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_3_rock_small_t3_spring",
-                "spr_dungeon_mines_biome_3_rock_small_t4_spring"
-            ],
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "small_rock_stone_four": {
-            "hp": 5,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_4_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_4_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_4_rock_small_t3_spring",
-                "spr_dungeon_mines_biome_4_rock_small_t4_spring"
-            ],
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "small_rock_stone_five": {
-            "hp": 6,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_5_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_5_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_5_rock_small_t3_spring",
-                "spr_dungeon_mines_biome_5_rock_small_t4_spring"
-            ],
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "small_rock_priestess_quarters": {
-            "jumpable": false,
-            "hp": 6,
-            "minimum_quality": "tier6",
-            "spring_sprites": [
-                "spr_priestess_quarters_corrupted_rock_small_t1_spring",
-                "spr_priestess_quarters_corrupted_rock_small_t2_spring",
-                "spr_priestess_quarters_corrupted_rock_small_t3_spring",
-                "spr_priestess_quarters_corrupted_rock_small_t4_spring"
-            ],
-            "ladder_candidate": false,
-            "mining_xp_gain": 6,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                }
-            ]
-        },
-        "large_rock_stone_one": {
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                0
-            ],
-            "hp": 10,
-            "mining_xp_gain": 6,
-            "minimum_quality": "tier2",
-            "spring_sprites": [
-                "spr_farm_rock_big_t1_c1_spring",
-                "spr_farm_rock_big_t1_c2_spring",
-                "spr_farm_rock_big_t2_c1_spring",
-                "spr_farm_rock_big_t2_c2_spring",
-                "spr_farm_rock_big_t3_c1_spring",
-                "spr_farm_rock_big_t3_c2_spring"
-            ],
-            "winter_sprites": [
-                "spr_farm_rock_big_t1_c1_winter",
-                "spr_farm_rock_big_t1_c2_winter",
-                "spr_farm_rock_big_t2_c1_winter",
-                "spr_farm_rock_big_t2_c2_winter",
-                "spr_farm_rock_big_t3_c1_winter",
-                "spr_farm_rock_big_t3_c2_winter"
-            ],
-            "ladder_candidate": false,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        6,
-                        8
-                    ]
-                },
-                {
-                    "item": "glass",
-                    "count_range": [
-                        2,
-                        4
-                    ]
-                }
-            ]
-        },
-        "large_rock_stone_upper": {
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                0
-            ],
-            "hp": 8,
-            "mining_xp_gain": 6,
-            "minimum_quality": "tier2",
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_1_rock_big_t1_spring",
-                "spr_dungeon_mines_biome_1_rock_big_t2_spring",
-                "spr_dungeon_mines_biome_1_rock_big_t3_spring"
-            ],
-            "ladder_candidate": false,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        3,
-                        4
-                    ]
-                }
-            ]
-        },
-        "large_rock_stone_two": {
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                0
-            ],
-            "hp": 8,
-            "mining_xp_gain": 6,
-            "minimum_quality": "tier2",
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_2_rock_big_t1_spring",
-                "spr_dungeon_mines_biome_2_rock_big_t2_spring",
-                "spr_dungeon_mines_biome_2_rock_big_t3_spring"
-            ],
-            "ladder_candidate": false,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        3,
-                        4
-                    ]
-                }
-            ]
-        },
-        "large_rock_stone_three": {
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                0
-            ],
-            "hp": 12,
-            "mining_xp_gain": 6,
-            "minimum_quality": "tier3",
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_3_rock_big_t1_spring",
-                "spr_dungeon_mines_biome_3_rock_big_t2_spring",
-                "spr_dungeon_mines_biome_3_rock_big_t3_spring"
-            ],
-            "ladder_candidate": false,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        3,
-                        4
-                    ]
-                }
-            ]
-        },
-        "large_rock_stone_four": {
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                0
-            ],
-            "hp": 16,
-            "mining_xp_gain": 6,
-            "minimum_quality": "tier4",
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_4_rock_big_t1_spring",
-                "spr_dungeon_mines_biome_4_rock_big_t2_spring",
-                "spr_dungeon_mines_biome_4_rock_big_t3_spring"
-            ],
-            "ladder_candidate": false,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        3,
-                        4
-                    ]
-                }
-            ]
-        },
-        "large_rock_stone_five": {
-            "size": [
-                4,
-                4
-            ],
-            "offset": [
-                16,
-                0
-            ],
-            "hp": 20,
-            "mining_xp_gain": 6,
-            "minimum_quality": "tier5",
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_5_rock_big_t1_spring",
-                "spr_dungeon_mines_biome_5_rock_big_t2_spring",
-                "spr_dungeon_mines_biome_5_rock_big_t3_spring"
-            ],
-            "ladder_candidate": false,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "count_range": [
-                        3,
-                        4
-                    ]
-                }
-            ]
-        },
-        "seam_rock_copper": {
-            "hp": 1,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_1_ground_seam_spring"
-            ],
-            "collideable": false,
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_copper",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "seam_rock_iron": {
-            "hp": 2,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_2_ground_seam_spring"
-            ],
-            "collideable": false,
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_iron",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "seam_rock_silver": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_3_ground_seam_spring"
-            ],
-            "collideable": false,
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_silver",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "seam_rock_gold": {
-            "hp": 4,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_4_ground_seam_spring"
-            ],
-            "collideable": false,
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_gold",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "seam_rock_mistril": {
-            "hp": 5,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_5_ground_seam_spring"
-            ],
-            "collideable": false,
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_mistril",
-                    "count_range": [
-                        1,
-                        2
-                    ]
-                }
-            ]
-        },
-        "small_dirt_rock_one": {
-            "hp": 1,
-            "mining_xp_gain": 2,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_1_dirt_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_1_dirt_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_1_dirt_rock_small_t3_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "chance": 25,
-                    "exclusive": false
-                },
-                {
-                    "item": "sod",
-                    "chance": 0.8,
-                    "exclusive": false
-                },
-                {
-                    "item": "clay",
-                    "chance": 0.8,
-                    "exclusive": false
-                },
-                {
-                    "item": "peat",
-                    "chance": 0.8,
-                    "exclusive": false
-                }
-            ]
-        },
-        "small_dirt_rock_two": {
-            "mining_xp_gain": 2,
-            "hp": 2,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_2_dirt_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_2_dirt_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_2_dirt_rock_small_t3_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "chance": 25,
-                    "exclusive": false
-                },
-                {
-                    "item": "sod",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "clay",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "peat",
-                    "chance": 1.6,
-                    "exclusive": false
-                }
-            ]
-        },
-        "small_dirt_rock_three": {
-            "mining_xp_gain": 2,
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_3_dirt_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_3_dirt_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_3_dirt_rock_small_t3_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "chance": 25,
-                    "exclusive": false
-                },
-                {
-                    "item": "sod",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "clay",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "peat",
-                    "chance": 1.6,
-                    "exclusive": false
-                }
-            ]
-        },
-        "small_dirt_rock_four": {
-            "mining_xp_gain": 2,
-            "hp": 4,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_4_dirt_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_4_dirt_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_4_dirt_rock_small_t3_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "chance": 25,
-                    "exclusive": false
-                },
-                {
-                    "item": "sod",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "clay",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "peat",
-                    "chance": 1.6,
-                    "exclusive": false
-                }
-            ]
-        },
-        "small_dirt_rock_five": {
-            "mining_xp_gain": 2,
-            "hp": 5,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_5_dirt_rock_small_t1_spring",
-                "spr_dungeon_mines_biome_5_dirt_rock_small_t2_spring",
-                "spr_dungeon_mines_biome_5_dirt_rock_small_t3_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_stone",
-                    "chance": 25,
-                    "exclusive": false
-                },
-                {
-                    "item": "sod",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "clay",
-                    "chance": 1.6,
-                    "exclusive": false
-                },
-                {
-                    "item": "peat",
-                    "chance": 1.6,
-                    "exclusive": false
-                }
-            ]
-        },
-        "node_copper": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_ore_copper_t1_spring",
-                "spr_dungeon_ore_copper_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_copper",
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_copper_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_copper": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_ore_copper_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_copper",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "ore_copper",
-                    "chance": 20,
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_copper_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 4
-                }
-            ]
-        },
-        "node_ruby": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_ore_ruby_t1_spring",
-                "spr_dungeon_ore_ruby_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_ruby",
-                    "count_range": [
-                        1,
-                        1
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_ruby",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_ruby": {
-            "hp": 3,
-            "spring_sprites": [
-                "spr_dungeon_ore_ruby_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_ruby",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_ruby",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 5
-                }
-            ]
-        },
-        "node_iron": {
-            "hp": 6,
-            "spring_sprites": [
-                "spr_dungeon_ore_iron_t1_spring",
-                "spr_dungeon_ore_iron_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_iron",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                }
-            ]
-        },
-        "rock_iron": {
-            "hp": 6,
-            "spring_sprites": [
-                "spr_dungeon_ore_iron_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_iron",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_iron_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 4
-                }
-            ]
-        },
-        "node_sapphire": {
-            "hp": 6,
-            "spring_sprites": [
-                "spr_dungeon_ore_sapphire_t1_spring",
-                "spr_dungeon_ore_sapphire_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_sapphire",
-                    "count_range": [
-                        1,
-                        1
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_sapphire",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_sapphire": {
-            "hp": 6,
-            "spring_sprites": [
-                "spr_dungeon_ore_sapphire_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_sapphire",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_sapphire",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 5
-                }
-            ]
-        },
-        "node_silver": {
-            "hp": 9,
-            "spring_sprites": [
-                "spr_dungeon_ore_silver_t1_spring",
-                "spr_dungeon_ore_silver_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_silver",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_silver_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_silver": {
-            "hp": 9,
-            "spring_sprites": [
-                "spr_dungeon_ore_silver_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_silver",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_silver_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 4
-                }
-            ]
-        },
-        "node_emerald": {
-            "hp": 9,
-            "spring_sprites": [
-                "spr_dungeon_ore_emerald_t1_spring",
-                "spr_dungeon_ore_emerald_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_emerald",
-                    "count_range": [
-                        1,
-                        1
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_emerald",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_emerald": {
-            "hp": 9,
-            "spring_sprites": [
-                "spr_dungeon_ore_emerald_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_emerald",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_emerald",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 5
-                }
-            ]
-        },
-        "node_gold": {
-            "hp": 12,
-            "spring_sprites": [
-                "spr_dungeon_ore_gold_t1_spring",
-                "spr_dungeon_ore_gold_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_gold",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_gold_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_gold": {
-            "hp": 12,
-            "spring_sprites": [
-                "spr_dungeon_ore_gold_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_gold",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_gold_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 4
-                }
-            ]
-        },
-        "node_diamond": {
-            "hp": 12,
-            "spring_sprites": [
-                "spr_dungeon_ore_diamond_t1_spring",
-                "spr_dungeon_ore_diamond_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_diamond",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_diamond",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_diamond": {
-            "hp": 12,
-            "spring_sprites": [
-                "spr_dungeon_ore_diamond_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_diamond",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_diamond",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 5
-                }
-            ]
-        },
-        "node_mistril": {
-            "hp": 15,
-            "spring_sprites": [
-                "spr_dungeon_ore_mistril_t1_spring",
-                "spr_dungeon_ore_mistril_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_mistril",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_mistril_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ],
-            "light": {
-                "name": "circle_forty_eight_weak",
-                "offset": [
-                    0,
-                    7
-                ]
-            }
-        },
-        "rock_mistril": {
-            "hp": 15,
-            "spring_sprites": [
-                "spr_dungeon_ore_mistril_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_mistril",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_mistril_ore",
-                    "chance": 1,
-                    "exclusive": false,
-                    "perfect_pick_chance": 4
-                }
-            ],
-            "light": {
-                "name": "circle_forty_eight_weak",
-                "offset": [
-                    0,
-                    8
-                ]
-            }
-        },
-        "node_pink_diamond": {
-            "hp": 15,
-            "spring_sprites": [
-                "spr_dungeon_ore_pink_diamond_t1_spring",
-                "spr_dungeon_ore_pink_diamond_t2_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_pink_diamond",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_pink_diamond",
-                    "chance": 5,
-                    "exclusive": false,
-                    "perfect_pick_chance": 1
-                }
-            ]
-        },
-        "rock_pink_diamond": {
-            "hp": 15,
-            "spring_sprites": [
-                "spr_dungeon_ore_pink_diamond_full_spring"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "ore_pink_diamond",
-                    "count_range": [
-                        2,
-                        3
-                    ],
-                    "exclusive": false
-                },
-                {
-                    "item": "perfect_pink_diamond",
-                    "chance": 5,
-                    "exclusive": false
-                }
-            ]
-        },
-        "rock_void": {
-            "hp": 15,
-            "spring_sprites": [
-                "spr_dungeon_mines_biome_5_rock_void_main"
-            ],
-            "dungeon_only": true,
-            "drops": [
-                {
-                    "item": "void_stone",
-                    "count_range": [
-                        1,
-                        2
-                    ],
-                    "exclusive": false
-                }
-            ]
         }
     },
     "player_house": {

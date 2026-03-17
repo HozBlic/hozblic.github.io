@@ -3,17 +3,21 @@
         "name": "Magic Seed",
         "img": "items/seed_mystery_bag"
     },
-    "soil": {
+    "tile_main_exteriors": {
         "name": "Soil",
         "img": "items/shovel_iron"
     },
-    "soil_tilled": {
+    "tile_soil": {
         "name": "Tilled soil",
         "img": "items/hoe_iron"
     },
-    "soil_wet": {
+    "tile_soil_wet": {
         "name": "Wet soil",
         "img": "items/watering_can_iron"
+    },
+    "tile_grassautotile": {
+        "name": "Grass",
+        "img": "items/field_grass"
     },
     "tree_apple": {
         "name": "Apple",

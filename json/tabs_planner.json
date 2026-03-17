@@ -113,9 +113,10 @@
                     "img_item_section_path": "items/"
                 },
                 "items": [
-                    "soil",
-                    "soil_tilled",
-                    "soil_wet"
+                    "tile_main_exteriors",
+                    "tile_soil",
+                    "tile_soil_wet",
+                    "tile_grassautotile"
                 ]
             },
             "trees": {
