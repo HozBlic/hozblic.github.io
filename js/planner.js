@@ -1,30 +1,34 @@
+let intSaveSlot = 0;
 let objMistriaDataPlanner;
 let objMistriaDataPlannerDefault = {
     'season': 'spring',
     'house_upgrade': 0,
     'zoom': 100,
     'offsetCanvas': { x: 0, y: 0 },
-    'options': ['mode_grid', 'mode_collision'], // mode_wet
+    'options': ['mode_grid', 'mode_collision'], // mode_wet, mode_offseason
     'layout': {
-        'farm': {
-            1: [ // dugged up field in front of house and path
-                [47, 23], [48, 23], [49, 23], [50, 23], [51, 23], [52, 23], [53, 23],
-                [46, 24], [47, 24], [48, 24], [49, 24], [50, 24], [51, 24], [52, 24], [53, 24], [54, 24],
-                [46, 25], [47, 25], [48, 25], [49, 25], [50, 25], [51, 25], [52, 25], [53, 25], [54, 25],
-                [46, 26], [47, 26], [48, 26], [49, 26], [50, 26], [51, 26], [52, 26], [53, 26], [54, 26],
-                [46, 27], [47, 27], [48, 27], [49, 27], [50, 27], [51, 27], [52, 27], [53, 27], [54, 27],
-                [46, 28], [47, 28], [48, 28], [49, 28], [50, 28], [51, 28], [52, 28], [53, 28], [54, 28],
-                [47, 29], [48, 29], [49, 29], [50, 29], [51, 29], [52, 29], [53, 29],
+        0: {
+            'farm': {
+                1: [ // dugged up field in front of house and path
+                    [47, 23], [48, 23], [49, 23], [50, 23], [51, 23], [52, 23], [53, 23],
+                    [46, 24], [47, 24], [48, 24], [49, 24], [50, 24], [51, 24], [52, 24], [53, 24], [54, 24],
+                    [46, 25], [47, 25], [48, 25], [49, 25], [50, 25], [51, 25], [52, 25], [53, 25], [54, 25],
+                    [46, 26], [47, 26], [48, 26], [49, 26], [50, 26], [51, 26], [52, 26], [53, 26], [54, 26],
+                    [46, 27], [47, 27], [48, 27], [49, 27], [50, 27], [51, 27], [52, 27], [53, 27], [54, 27],
+                    [46, 28], [47, 28], [48, 28], [49, 28], [50, 28], [51, 28], [52, 28], [53, 28], [54, 28],
+                    [47, 29], [48, 29], [49, 29], [50, 29], [51, 29], [52, 29], [53, 29],
 
-                [64, 13],
-                [63, 14], [64, 14], [65, 14],
-                [62, 15], [63, 15], [64, 15],
-                [61, 16], [62, 16], [63, 16],
-                [62, 17],
-            ],
-            5: [[90, 12], [128, 12], [90, 13], [128, 13], [9, 14], [90, 14], [128, 14], [9, 15], [90, 15], [128, 15], [9, 16], [90, 16], [128, 16], [9, 17], [90, 17], [128, 17], [9, 18], [90, 18], [128, 18], [9, 19], [89, 19], [90, 19], [128, 19], [9, 20], [89, 20], [128, 20], [9, 21], [89, 21], [128, 21], [0, 22], [1, 22], [2, 22], [3, 22], [4, 22], [5, 22], [6, 22], [7, 22], [8, 22], [9, 22], [89, 22], [128, 22], [89, 23], [128, 23], [89, 24], [90, 24], [128, 24], [90, 25], [128, 25], [90, 26], [128, 26], [0, 27], [1, 27], [2, 27], [3, 27], [4, 27], [5, 27], [6, 27], [7, 27], [8, 27], [9, 27], [90, 27], [128, 27], [9, 28], [90, 28], [128, 28], [9, 29], [90, 29], [128, 29], [9, 30], [90, 30], [128, 30], [9, 31], [90, 31], [128, 31], [9, 32], [90, 32], [128, 32], [9, 33], [90, 33], [128, 33], [9, 34], [90, 34], [91, 34], [128, 34], [9, 35], [91, 35], [128, 35], [9, 36], [91, 36], [128, 36], [9, 37], [91, 37], [128, 37], [9, 38], [91, 38], [128, 38], [9, 39], [91, 39], [128, 39], [9, 40], [91, 40], [128, 40], [9, 41], [91, 41], [128, 41], [9, 42], [91, 42], [128, 42], [9, 43], [91, 43], [128, 43], [9, 44], [91, 44], [128, 44], [9, 45], [91, 45], [128, 45], [9, 46], [91, 46], [128, 46], [9, 47], [91, 47], [128, 47], [9, 48], [91, 48], [128, 48], [9, 49], [91, 49], [128, 49], [9, 50], [91, 50], [128, 50], [9, 51], [91, 51], [128, 51], [9, 52], [91, 52], [128, 52], [9, 53], [91, 53], [128, 53], [9, 54], [90, 54], [91, 54], [128, 54], [9, 55], [90, 55], [128, 55], [9, 56], [90, 56], [128, 56], [9, 57], [90, 57], [102, 57], [103, 57], [104, 57], [105, 57], [106, 57], [107, 57], [108, 57], [109, 57], [110, 57], [111, 57], [112, 57], [113, 57], [114, 57], [115, 57], [128, 57], [1, 58], [2, 58], [3, 58], [4, 58], [5, 58], [6, 58], [7, 58], [8, 58], [9, 58], [90, 58], [91, 58], [92, 58], [93, 58], [94, 58], [95, 58], [96, 58], [97, 58], [98, 58], [99, 58], [100, 58], [101, 58], [102, 58], [115, 58], [116, 58], [117, 58], [118, 58], [119, 58], [120, 58], [121, 58], [122, 58], [123, 58], [124, 58], [125, 58], [126, 58], [127, 58], [128, 58], [129, 58], [130, 58], [131, 58], [132, 58], [133, 58], [134, 58], [135, 58], [136, 58], [11, 65], [12, 65], [13, 65], [14, 65], [15, 65], [16, 65], [17, 65], [18, 65], [19, 65], [20, 65], [105, 65], [106, 65], [107, 65], [108, 65], [109, 65], [110, 65], [111, 65], [112, 65], [1, 66], [2, 66], [3, 66], [4, 66], [5, 66], [6, 66], [7, 66], [8, 66], [9, 66], [10, 66], [11, 66], [20, 66], [21, 66], [22, 66], [23, 66], [24, 66], [25, 66], [26, 66], [27, 66], [28, 66], [29, 66], [30, 66], [31, 66], [32, 66], [33, 66], [34, 66], [35, 66], [36, 66], [37, 66], [38, 66], [39, 66], [40, 66], [60, 66], [61, 66], [62, 66], [63, 66], [64, 66], [65, 66], [73, 66], [74, 66], [75, 66], [76, 66], [77, 66], [78, 66], [79, 66], [80, 66], [81, 66], [82, 66], [83, 66], [84, 66], [85, 66], [86, 66], [87, 66], [88, 66], [89, 66], [90, 66], [91, 66], [92, 66], [93, 66], [94, 66], [95, 66], [96, 66], [97, 66], [98, 66], [99, 66], [100, 66], [101, 66], [102, 66], [103, 66], [104, 66], [105, 66], [112, 66], [113, 66], [114, 66], [115, 66], [116, 66], [117, 66], [118, 66], [119, 66], [120, 66], [121, 66], [122, 66], [123, 66], [124, 66], [125, 66], [126, 66], [127, 66], [128, 66], [129, 66], [130, 66], [131, 66], [132, 66], [133, 66], [134, 66], [135, 66], [136, 66], [9, 67], [40, 67], [41, 67], [42, 67], [43, 67], [44, 67], [45, 67], [56, 67], [57, 67], [58, 67], [59, 67], [60, 67], [65, 67], [73, 67], [128, 67], [9, 68], [45, 68], [46, 68], [47, 68], [48, 68], [49, 68], [50, 68], [51, 68], [52, 68], [53, 68], [54, 68], [55, 68], [56, 68], [65, 68], [73, 68], [128, 68], [9, 69], [65, 69], [73, 69], [128, 69], [9, 70], [65, 70], [73, 70], [128, 70], [9, 71], [65, 71], [73, 71], [128, 71], [9, 72], [65, 72], [73, 72], [128, 72], [9, 73], [65, 73], [73, 73], [128, 73], [9, 74], [65, 74], [73, 74], [128, 74], [9, 75], [65, 75], [73, 75], [128, 75], [9, 76], [65, 76], [73, 76], [128, 76], [9, 77], [65, 77], [73, 77], [128, 77], [9, 78], [65, 78], [73, 78], [128, 78], [9, 79], [65, 79], [73, 79], [128, 79], [9, 80], [65, 80], [73, 80], [128, 80], [9, 81], [65, 81], [73, 81], [128, 81], [9, 82], [65, 82], [73, 82], [128, 82], [9, 83], [65, 83], [73, 83], [128, 83], [9, 84], [65, 84], [73, 84], [128, 84], [9, 85], [65, 85], [73, 85], [128, 85], [9, 86], [65, 86], [73, 86], [128, 86], [9, 87], [65, 87], [73, 87], [128, 87], [9, 88], [65, 88], [73, 88], [128, 88], [9, 89], [65, 89], [73, 89], [128, 89], [9, 90], [65, 90], [73, 90], [128, 90], [9, 91], [10, 91], [11, 91], [12, 91], [13, 91], [14, 91], [15, 91], [16, 91], [17, 91], [18, 91], [19, 91], [20, 91], [21, 91], [22, 91], [23, 91], [24, 91], [25, 91], [26, 91], [27, 91], [28, 91], [29, 91], [30, 91], [31, 91], [32, 91], [33, 91], [34, 91], [35, 91], [36, 91], [37, 91], [38, 91], [39, 91], [40, 91], [41, 91], [42, 91], [43, 91], [44, 91], [45, 91], [46, 91], [47, 91], [48, 91], [49, 91], [50, 91], [51, 91], [52, 91], [53, 91], [54, 91], [55, 91], [56, 91], [57, 91], [58, 91], [59, 91], [60, 91], [61, 91], [62, 91], [63, 91], [64, 91], [65, 91], [73, 91], [74, 91], [75, 91], [76, 91], [77, 91], [78, 91], [79, 91], [80, 91], [81, 91], [82, 91], [83, 91], [84, 91], [85, 91], [86, 91], [87, 91], [88, 91], [89, 91], [90, 91], [91, 91], [92, 91], [93, 91], [94, 91], [95, 91], [96, 91], [97, 91], [98, 91], [99, 91], [100, 91], [101, 91], [102, 91], [103, 91], [104, 91], [105, 91], [106, 91], [107, 91], [108, 91], [109, 91], [110, 91], [111, 91], [112, 91], [113, 91], [114, 91], [115, 91], [116, 91], [117, 91], [118, 91], [119, 91], [120, 91], [121, 91], [122, 91], [123, 91], [124, 91], [125, 91], [126, 91], [127, 91], [128, 91]],
-            6: [[62, 0], [62, 1], [62, 2], [62, 3], [62, 4], [62, 5], [62, 6], [66, 0], [66, 1], [66, 2], [66, 3], [66, 4], [66, 5], [66, 6]]
+                    [64, 13],
+                    [63, 14], [64, 14], [65, 14],
+                    [62, 15], [63, 15], [64, 15],
+                    [61, 16], [62, 16], [63, 16],
+                    [62, 17],
+                ],
+                5: [[90, 12], [128, 12], [90, 13], [128, 13], [9, 14], [90, 14], [128, 14], [9, 15], [90, 15], [128, 15], [9, 16], [90, 16], [128, 16], [9, 17], [90, 17], [128, 17], [9, 18], [90, 18], [128, 18], [9, 19], [89, 19], [90, 19], [128, 19], [9, 20], [89, 20], [128, 20], [9, 21], [89, 21], [128, 21], [0, 22], [1, 22], [2, 22], [3, 22], [4, 22], [5, 22], [6, 22], [7, 22], [8, 22], [9, 22], [89, 22], [128, 22], [89, 23], [128, 23], [89, 24], [90, 24], [128, 24], [90, 25], [128, 25], [90, 26], [128, 26], [0, 27], [1, 27], [2, 27], [3, 27], [4, 27], [5, 27], [6, 27], [7, 27], [8, 27], [9, 27], [90, 27], [128, 27], [9, 28], [90, 28], [128, 28], [9, 29], [90, 29], [128, 29], [9, 30], [90, 30], [128, 30], [9, 31], [90, 31], [128, 31], [9, 32], [90, 32], [128, 32], [9, 33], [90, 33], [128, 33], [9, 34], [90, 34], [91, 34], [128, 34], [9, 35], [91, 35], [128, 35], [9, 36], [91, 36], [128, 36], [9, 37], [91, 37], [128, 37], [9, 38], [91, 38], [128, 38], [9, 39], [91, 39], [128, 39], [9, 40], [91, 40], [128, 40], [9, 41], [91, 41], [128, 41], [9, 42], [91, 42], [128, 42], [9, 43], [91, 43], [128, 43], [9, 44], [91, 44], [128, 44], [9, 45], [91, 45], [128, 45], [9, 46], [91, 46], [128, 46], [9, 47], [91, 47], [128, 47], [9, 48], [91, 48], [128, 48], [9, 49], [91, 49], [128, 49], [9, 50], [91, 50], [128, 50], [9, 51], [91, 51], [128, 51], [9, 52], [91, 52], [128, 52], [9, 53], [91, 53], [128, 53], [9, 54], [90, 54], [91, 54], [128, 54], [9, 55], [90, 55], [128, 55], [9, 56], [90, 56], [128, 56], [9, 57], [90, 57], [102, 57], [103, 57], [104, 57], [105, 57], [106, 57], [107, 57], [108, 57], [109, 57], [110, 57], [111, 57], [112, 57], [113, 57], [114, 57], [115, 57], [128, 57], [1, 58], [2, 58], [3, 58], [4, 58], [5, 58], [6, 58], [7, 58], [8, 58], [9, 58], [90, 58], [91, 58], [92, 58], [93, 58], [94, 58], [95, 58], [96, 58], [97, 58], [98, 58], [99, 58], [100, 58], [101, 58], [102, 58], [115, 58], [116, 58], [117, 58], [118, 58], [119, 58], [120, 58], [121, 58], [122, 58], [123, 58], [124, 58], [125, 58], [126, 58], [127, 58], [128, 58], [129, 58], [130, 58], [131, 58], [132, 58], [133, 58], [134, 58], [135, 58], [136, 58], [11, 65], [12, 65], [13, 65], [14, 65], [15, 65], [16, 65], [17, 65], [18, 65], [19, 65], [20, 65], [105, 65], [106, 65], [107, 65], [108, 65], [109, 65], [110, 65], [111, 65], [112, 65], [1, 66], [2, 66], [3, 66], [4, 66], [5, 66], [6, 66], [7, 66], [8, 66], [9, 66], [10, 66], [11, 66], [20, 66], [21, 66], [22, 66], [23, 66], [24, 66], [25, 66], [26, 66], [27, 66], [28, 66], [29, 66], [30, 66], [31, 66], [32, 66], [33, 66], [34, 66], [35, 66], [36, 66], [37, 66], [38, 66], [39, 66], [40, 66], [60, 66], [61, 66], [62, 66], [63, 66], [64, 66], [65, 66], [73, 66], [74, 66], [75, 66], [76, 66], [77, 66], [78, 66], [79, 66], [80, 66], [81, 66], [82, 66], [83, 66], [84, 66], [85, 66], [86, 66], [87, 66], [88, 66], [89, 66], [90, 66], [91, 66], [92, 66], [93, 66], [94, 66], [95, 66], [96, 66], [97, 66], [98, 66], [99, 66], [100, 66], [101, 66], [102, 66], [103, 66], [104, 66], [105, 66], [112, 66], [113, 66], [114, 66], [115, 66], [116, 66], [117, 66], [118, 66], [119, 66], [120, 66], [121, 66], [122, 66], [123, 66], [124, 66], [125, 66], [126, 66], [127, 66], [128, 66], [129, 66], [130, 66], [131, 66], [132, 66], [133, 66], [134, 66], [135, 66], [136, 66], [9, 67], [40, 67], [41, 67], [42, 67], [43, 67], [44, 67], [45, 67], [56, 67], [57, 67], [58, 67], [59, 67], [60, 67], [65, 67], [73, 67], [128, 67], [9, 68], [45, 68], [46, 68], [47, 68], [48, 68], [49, 68], [50, 68], [51, 68], [52, 68], [53, 68], [54, 68], [55, 68], [56, 68], [65, 68], [73, 68], [128, 68], [9, 69], [65, 69], [73, 69], [128, 69], [9, 70], [65, 70], [73, 70], [128, 70], [9, 71], [65, 71], [73, 71], [128, 71], [9, 72], [65, 72], [73, 72], [128, 72], [9, 73], [65, 73], [73, 73], [128, 73], [9, 74], [65, 74], [73, 74], [128, 74], [9, 75], [65, 75], [73, 75], [128, 75], [9, 76], [65, 76], [73, 76], [128, 76], [9, 77], [65, 77], [73, 77], [128, 77], [9, 78], [65, 78], [73, 78], [128, 78], [9, 79], [65, 79], [73, 79], [128, 79], [9, 80], [65, 80], [73, 80], [128, 80], [9, 81], [65, 81], [73, 81], [128, 81], [9, 82], [65, 82], [73, 82], [128, 82], [9, 83], [65, 83], [73, 83], [128, 83], [9, 84], [65, 84], [73, 84], [128, 84], [9, 85], [65, 85], [73, 85], [128, 85], [9, 86], [65, 86], [73, 86], [128, 86], [9, 87], [65, 87], [73, 87], [128, 87], [9, 88], [65, 88], [73, 88], [128, 88], [9, 89], [65, 89], [73, 89], [128, 89], [9, 90], [65, 90], [73, 90], [128, 90], [9, 91], [10, 91], [11, 91], [12, 91], [13, 91], [14, 91], [15, 91], [16, 91], [17, 91], [18, 91], [19, 91], [20, 91], [21, 91], [22, 91], [23, 91], [24, 91], [25, 91], [26, 91], [27, 91], [28, 91], [29, 91], [30, 91], [31, 91], [32, 91], [33, 91], [34, 91], [35, 91], [36, 91], [37, 91], [38, 91], [39, 91], [40, 91], [41, 91], [42, 91], [43, 91], [44, 91], [45, 91], [46, 91], [47, 91], [48, 91], [49, 91], [50, 91], [51, 91], [52, 91], [53, 91], [54, 91], [55, 91], [56, 91], [57, 91], [58, 91], [59, 91], [60, 91], [61, 91], [62, 91], [63, 91], [64, 91], [65, 91], [73, 91], [74, 91], [75, 91], [76, 91], [77, 91], [78, 91], [79, 91], [80, 91], [81, 91], [82, 91], [83, 91], [84, 91], [85, 91], [86, 91], [87, 91], [88, 91], [89, 91], [90, 91], [91, 91], [92, 91], [93, 91], [94, 91], [95, 91], [96, 91], [97, 91], [98, 91], [99, 91], [100, 91], [101, 91], [102, 91], [103, 91], [104, 91], [105, 91], [106, 91], [107, 91], [108, 91], [109, 91], [110, 91], [111, 91], [112, 91], [113, 91], [114, 91], [115, 91], [116, 91], [117, 91], [118, 91], [119, 91], [120, 91], [121, 91], [122, 91], [123, 91], [124, 91], [125, 91], [126, 91], [127, 91], [128, 91]],
+                6: [[62, 0], [62, 1], [62, 2], [62, 3], [62, 4], [62, 5], [62, 6], [66, 0], [66, 1], [66, 2], [66, 3], [66, 4], [66, 5], [66, 6]]
+            }
         }
+
     }
 }
 
@@ -126,13 +130,13 @@ function addTestData(intTest) {
             var intStartY = 23;
 
             var intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
-            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             var intCurrentlyDrawingTemp = objSpriteKeyDict['snow_peas'];
-            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             for (let y = 0; y < intRows; y++) {
@@ -144,8 +148,8 @@ function addTestData(intTest) {
                         case (y == intRows - 1 && x == intColumns - 1):
                             break;
                         default:
-                            objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                            objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
                             break;
                     }
                 }
@@ -159,13 +163,13 @@ function addTestData(intTest) {
             var intStartY = 14;
 
             var intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
-            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             var intCurrentlyDrawingTemp = objSpriteKeyDict['snow_peas'];
-            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             for (let y = 0; y < intRows; y++) {
@@ -177,8 +181,8 @@ function addTestData(intTest) {
                         case (y == intRows - 1 && x == intColumns - 1):
                             break;
                         default:
-                            objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                            objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
                             break;
                     }
                 }
@@ -192,45 +196,44 @@ function addTestData(intTest) {
             var intStartY = 14;
 
             var intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
-            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             var intCurrentlyDrawingTemp = objSpriteKeyDict['snow_peas'];
-            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             for (let y = 0; y < intRows; y++) {
                 for (let x = 0; x < intColumns; x++) {
-                    objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                    objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
                 }
             }
 
             intStartX = 14;
             intCurrentlyDrawingTemp = objSpriteKeyDict['tea'];
-            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             for (let y = 0; y < intRows; y++) {
                 for (let x = 0; x < intColumns; x++) {
-                    objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                    objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
                 }
             }
 
             break;
-
         case 4: //add all crops
             let arrCrops = [...objSpriteCategories.crops];
             arrCrops = arrCrops.reverse();
             let intCropsSide = Math.round(Math.sqrt(arrCrops.length)) * 2 + 1;
 
             var intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
-            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout.farm)) {
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
 
             var intStartX = 11;
@@ -241,11 +244,13 @@ function addTestData(intTest) {
                     if (arrCrops.length) {
                         let intCurrentlyDrawingTemp = arrCrops.pop();
 
-                        if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-                            objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                        //should remove crop from the area..
+
+                        if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
                         }
-                        objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                        objMistriaDataPlanner.layout.farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
+                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
                     }
                 }
             }
@@ -602,7 +607,7 @@ function drawGrassFix() {
 }
 
 function populateItemGrids() {
-    const objFarmLayout = objMistriaDataPlanner.layout.farm;
+    const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
 
     Object.keys(objGrids).forEach(function (strGridKey) {
         objGrids[strGridKey] = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
@@ -698,9 +703,7 @@ function drawCrops() {
             const intIdx = objGrids.crops[y][x];
 
             if (objGrids.crops[y][x]) {
-
-
-                const elemSprite = sprites.get(`${getSpriteKeyByIndex(intIdx)}`);
+                const elemSprite = sprites.getCrop(`${getSpriteKeyByIndex(intIdx)}`);
                 elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                 objContainers.crops.addChild(elemSprite);
             }
@@ -754,6 +757,11 @@ function drawCursor() {
                             objContainers.cursor.addChild(elemSprite);
                             break;
                     }
+                } else if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
+                    const elemSprite = sprites.getCrop(`${getSpriteKeyByIndex(intCurrentlyDrawing)}`);
+                    elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                    elemSprite.alpha = 0.7;
+                    objContainers.cursor.addChild(elemSprite);
                 } else {
                     const elemSprite = sprites.get(`${getSpriteKeyByIndex(intCurrentlyDrawing)}`);
                     elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
@@ -792,8 +800,8 @@ function updateSoilGrid(objCellCoord, bolUpdateCrops = false) {
         y1: Math.max(objStartCellCoord.y, objCellCoord.y),
     }
 
-    if (!bolGrass && !(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-        objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+    if (!bolGrass && !(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
     }
 
     for (let y = objSelection.y0; y <= objSelection.y1; y++) {
@@ -801,13 +809,13 @@ function updateSoilGrid(objCellCoord, bolUpdateCrops = false) {
             if (!checkTileHasCollision({ x: x, y: y })) {
                 if (checkTileHasCrop({ x: x, y: y }) && (bolGrass || bolGround)) continue;
                 objSpriteCategories.soil.forEach((intIdx) => {
-                    if (intIdx in objMistriaDataPlanner.layout.farm && intIdx !== intCurrentlyDrawingTemp) {
-                        delete objMistriaDataPlanner.layout.farm[intIdx][y][x];
+                    if (intIdx in objMistriaDataPlanner.layout[intSaveSlot].farm && intIdx !== intCurrentlyDrawingTemp) {
+                        delete objMistriaDataPlanner.layout[intSaveSlot].farm[intIdx][y][x];
                     }
                 });
 
                 if (!bolGrass) {
-                    objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][y][x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][y][x] = 1;
                 }
             }
         }
@@ -835,8 +843,8 @@ function updateCropGrid(objCellCoord) {
         y1: Math.max(objStartCellCoord.y, objCellCoord.y),
     }
 
-    if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout.farm)) {
-        objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+    if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
     }
 
     for (let y = objSelection.y0; y <= objSelection.y1; y++) {
@@ -844,12 +852,12 @@ function updateCropGrid(objCellCoord) {
             if (!checkTileHasCollision({ x: x, y: y })) {
 
                 objSpriteCategories.crops.forEach((intIdx) => {
-                    if (intIdx in objMistriaDataPlanner.layout.farm && intIdx !== intCurrentlyDrawingTemp) {
-                        delete objMistriaDataPlanner.layout.farm[intIdx][y][x];
+                    if (intIdx in objMistriaDataPlanner.layout[intSaveSlot].farm && intIdx !== intCurrentlyDrawingTemp) {
+                        delete objMistriaDataPlanner.layout[intSaveSlot].farm[intIdx][y][x];
                     }
                 });
 
-                objMistriaDataPlanner.layout.farm[intCurrentlyDrawingTemp][y][x] = 1;
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][y][x] = 1;
             }
         }
     }
@@ -1106,7 +1114,7 @@ async function loadMenuItems() {
     })
 
 
-    arrModes = ['mode_grid', 'mode_collision', 'mode_soil', 'mode_wet']
+    arrModes = ['mode_grid', 'mode_collision', 'mode_soil', 'mode_wet', 'mode_offseason']
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -1123,9 +1131,11 @@ async function loadMenuItems() {
             if (strMode === 'mode_grid') {
                 drawGrid();
             }
-
             if (strMode === 'mode_collision') {
                 drawCollision();
+            }
+            if (strMode === 'mode_offseason') {
+                drawCrops();
             }
         });
     })
@@ -1282,6 +1292,9 @@ async function loadMenuItems() {
     tippy('#wet_soil', {
         content: 'When placing crops on the map, automatically place wet soil underneath them',
     });
+    tippy('#offseason', {
+        content: 'Show healthy plant instead of a wilted one, even if that plant does not grow in chosen season',
+    });
     tippy('[data-tab="dragging_mode"]', {
         content: 'Drag map',
     });
@@ -1303,8 +1316,13 @@ async function loadMenuItems() {
     tippy('#delete', {
         content: 'Clear map',
     });
+}
 
-
+function openDonatePopup() {
+    $('#popup_donate').show();
+}
+function openControlsPopup() {
+    $('#popup_controls').show();
 }
 
 function changeHouseUpgrade(objElem) {
@@ -1335,6 +1353,9 @@ function changeSeason(objElem) {
     drawGrassFix();
 
     drawSoil();
+    if (!objMistriaDataPlanner.options.has('mode_offseason')) {
+        drawCrops();
+    }
 }
 
 function resetZoom(strDirection) {
@@ -1546,7 +1567,7 @@ function loadDataPlanner() {
         objMistriaDataPlanner = objMistriaDataPlannerDefault;
     }
 
-    const objFarmLayout = objMistriaDataPlanner.layout.farm;
+    const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
         const intItemKey = parseInt(strItemKey);
         let arrTemp = [...Array(objGrid.y)].map(e => Array(objGrid.x));
@@ -1555,7 +1576,7 @@ function loadDataPlanner() {
             const y = arrTileCoord[1];
             arrTemp[y][x] = intItemKey;
         });
-        objMistriaDataPlanner.layout.farm[intItemKey] = arrTemp;
+        objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey] = arrTemp;
     });
 
     objMistriaDataPlanner.zoom = parseInt(objMistriaDataPlanner.zoom);
@@ -1570,7 +1591,7 @@ function saveDataPlanner() {
     // convert to array since JSON.stringify does not work on sets
     objMistriaDataPlanner.options = [...objMistriaDataPlanner.options];
 
-    const objFarmLayout = objMistriaDataPlanner.layout.farm;
+    const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
         const intItemKey = parseInt(strItemKey);
         let arrTemp = [];
@@ -1583,9 +1604,9 @@ function saveDataPlanner() {
         }
 
         if (arrTemp.length) {
-            objMistriaDataPlanner.layout.farm[intItemKey] = arrTemp;
+            objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey] = arrTemp;
         } else {
-            delete objMistriaDataPlanner.layout.farm[intItemKey];
+            delete objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey];
         }
     });
 
@@ -1597,10 +1618,10 @@ function clearMap() {
     // convert to array since JSON.stringify does not work on sets
     objMistriaDataPlanner.options = [...objMistriaDataPlanner.options];
 
-    objMistriaDataPlanner.layout.farm = objMistriaDataPlannerDefault.layout.farm;
+    objMistriaDataPlanner.layout[intSaveSlot].farm = objMistriaDataPlannerDefault.layout[intSaveSlot].farm;
 
     // do not draw default dugged up patch anymore
-    // delete objMistriaDataPlanner.layout.farm[1]
+    delete objMistriaDataPlanner.layout[intSaveSlot].farm[1];
 
     localStorage.setItem('mistria_data_planner', JSON.stringify(objMistriaDataPlanner));
     loadDataPlanner();
@@ -1711,7 +1732,7 @@ $(function () {
                     const buttons = e.data.originalEvent.buttons;
                     if (buttons === 4 ||
                         //  buttons === 2 || 
-                         strMode === 'dragging_mode') { // dragging with middle button, right button or drag mode activated
+                        strMode === 'dragging_mode') { // dragging with middle button, right button or drag mode activated
                         dragMap(objCurrentCellCoord);
                     } else if (buttons === 1) {
                         drawSelection(objCurrentCellCoord);
@@ -1810,7 +1831,7 @@ $(function () {
         drawCollision();
 
 
-        addTestData(4);
+        // addTestData(4);
 
         drawAllItems();
 

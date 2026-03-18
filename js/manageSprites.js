@@ -35,6 +35,13 @@ class SpriteStore {
             spriteSheetData[sheetKey].frames[cropKey] = { frame: { h, w, x, y } }      // populate spritesheet frames
             singleTextureData[cropKey] = { sheetKey, pivot: {x: targetX, y: targetY}, origin: {x: originX, y: originY}, itemOrigin: {x: itemOriginX, y: itemOriginY} } // map sprite to sheet
         })
+
+        let [itemOriginX, itemOriginY] = [8, 8]
+        const { sheet: sheetKey, h, w, x, y, targetX, targetY, originX, originY } = spriteMapping['spr_wilted_plant_1_stage1']['0']
+        spriteSheetData[sheetKey].frames['wilted_plant'] = { frame: { h, w, x, y } }      // populate spritesheet frames
+        singleTextureData['wilted_plant'] = { sheetKey, pivot: {x: targetX, y: targetY}, origin: {x: originX, y: originY}, itemOrigin: {x: itemOriginX, y: itemOriginY} } // map sprite to sheet
+       
+
         
         // FURNITURE
 
@@ -205,6 +212,37 @@ class SpriteStore {
         let fenceOrd = parseInt(`${o4}${o3}${o2}`, 2) * 2
 
         return this.get(`${fenceType}_${fenceOrd}`)}
+
+    getCrop(textureKey) {
+        let foundTexture = this.textures[textureKey]
+
+        if (objMistriaDataPlanner.options.has('mode_offseason') || objSpriteCategories[`crops_${objMistriaDataPlanner.season}`].includes(objSpriteKeyDict[textureKey])) {
+            foundTexture = this.textures[textureKey]
+        } else {
+            foundTexture = this.textures['wilted_plant']
+        }
+
+        if (!foundTexture) {
+            return this.get('snow_peas')
+        }
+
+        const {sprite: { texture }, pivot, origin, itemOrigin} = foundTexture
+        const sprite = new PIXI.Sprite(texture)
+         if (pivot && origin && itemOrigin) {
+            const { x, y } = pivot
+            const { x: originX, y: originY } = origin
+            const { x: itemOriginX, y: itemOriginY } = itemOrigin
+
+             
+            sprite.pivot.set(...[originX - itemOriginX - x, originY - itemOriginY - y])
+
+        } else if (pivot) {
+            const { x, y } = pivot
+            sprite.pivot.set(...[intGridCellSize/2 - x, intGridCellSize - y])
+        }
+        
+        return sprite
+    }
 
     get(textureKey) {
         const foundTexture = this.textures[textureKey]
