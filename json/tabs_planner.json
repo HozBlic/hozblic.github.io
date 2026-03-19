@@ -13,19 +13,19 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    "cabbage",
-                    "carrot",
-                    "chickpea",
-                    "daffodil",
-                    "lilac",
-                    "mystery_bag",
-                    "peas",
-                    "potato",
-                    "snowdrop_anemone",
-                    "strawberry",
-                    "temple_flower",
-                    "tulip",
-                    "turnip"
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
                 ]
             },
             "summer": {
@@ -36,27 +36,27 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    "basil",
-                    "catmint",
-                    "chili_pepper",
-                    "corn",
-                    "cosmos",
-                    "cucumber",
-                    "daisy",
-                    "dill",
-                    "iris",
-                    "marigold",
-                    "mystery_bag",
-                    "night_queen",
-                    "oregano",
-                    "sage",
-                    "sugar_cane",
-                    "sunflower",
-                    "tea",
-                    "temple_flower",
-                    "thyme",
-                    "tomato",
-                    "watermelon"
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    12,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    17,
+                    36,
+                    37,
+                    38
                 ]
             },
             "fall": {
@@ -67,22 +67,22 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    "broccoli",
-                    "celosia",
-                    "chrysanthemum",
-                    "cranberry",
-                    "garlic",
-                    "heather",
-                    "moon_fruit",
-                    "mystery_bag",
-                    "onion",
-                    "pumpkin",
-                    "rice",
-                    "rosemary",
-                    "sweet_potato",
-                    "temple_flower",
-                    "viola",
-                    "wheat"
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    12,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    17,
+                    51,
+                    52
                 ]
             },
             "winter": {
@@ -93,17 +93,29 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    "beet",
-                    "burdock_root",
-                    "cauliflower",
-                    "daikon_radish",
-                    "frost_lily",
-                    "jasmine",
-                    "mystery_bag",
-                    "poinsettia",
-                    "snapdragon",
-                    "snow_peas",
-                    "temple_flower"
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    12,
+                    59,
+                    60,
+                    61,
+                    17
+                ]
+            },
+            "all": {
+                "info": {
+                    "name": "All seasons",
+                    "img": "24px-Day_spring_clear",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    17,
+                    12
                 ]
             },
             "soil": {
@@ -113,10 +125,10 @@
                     "img_item_section_path": "items/"
                 },
                 "items": [
-                    "tile_main_exteriors",
-                    "tile_soil",
-                    "tile_soil_wet",
-                    "tile_grassautotile"
+                    1,
+                    2,
+                    3,
+                    4
                 ]
             },
             "trees": {
@@ -127,15 +139,15 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    "tree_apple",
-                    "tree_cherry",
-                    "tree_lemon",
-                    "tree_oak",
-                    "tree_orange",
-                    "tree_peach",
-                    "tree_pear",
-                    "tree_pine",
-                    "tree_pomegranate"
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70
                 ]
             }
         }

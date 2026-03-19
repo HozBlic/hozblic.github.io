@@ -35,6 +35,7 @@ let objMistriaDataPlannerDefault = {
 let strMode = 'dragging_mode'; // drawing_mode, selection_mode
 let intCurrentlyDrawing = false;
 let bolIsDragging = false;
+let bolIsDraggingSection = false;
 
 const intGridCellSize = 16;
 const objGrid = {
@@ -52,7 +53,9 @@ const objMinimapWrapperSize = {
 let objSpriteCategories;
 
 let objStartCellCoord = { x: 0, y: 0 };
+let objStartOffset = { x: 0, y: 0 };
 let objPrevCellCoord = { x: 0, y: 0 };
+let objSelectionSection = false
 let intMultiplierCanvas = 1;
 
 let objSpriteKeyDict = null;
@@ -327,8 +330,8 @@ function getMultiplierCoverScreen() {
 }
 
 function resize() {
+
     verifyZoomParameters();
-    calculateMultiplier();
     resizeContainers();
 }
 
@@ -528,7 +531,9 @@ async function addBackground() {
     $('#minimap').css('background-image', `url(textures/rooms/rm_farm_${objMistriaDataPlanner.season}_${objMistriaDataPlanner.house_upgrade}.png)`)
 }
 
-function drawSelection(objCellCoord = false) {
+function drawSelection(objStartCellCoordTemp = false, objCellCoord = false, bolHighlight = false) {
+
+    objSelectionSection = false;
     if (strMode != 'selection_mode' && strMode != 'drawing_mode') return;
 
     //destroy previously drawn elements
@@ -538,7 +543,6 @@ function drawSelection(objCellCoord = false) {
         objContainers.selection = null
     }
 
-    if (!bolIsDragging) return;
     if (!objCellCoord) return;
 
     //init container
@@ -546,36 +550,47 @@ function drawSelection(objCellCoord = false) {
     objContainer_Wrapper.addChild(objContainers.selection);
     objContainers.selection.zIndex = objZindexes.selection;
 
-    const objSelection = {
-        x0: Math.min(objStartCellCoord.x, objCellCoord.x),
-        y0: Math.min(objStartCellCoord.y, objCellCoord.y),
-        x1: Math.max(objStartCellCoord.x, objCellCoord.x),
-        y1: Math.max(objStartCellCoord.y, objCellCoord.y),
+    objSelectionSection = {
+        x0: Math.min(objStartCellCoordTemp.x, objCellCoord.x),
+        y0: Math.min(objStartCellCoordTemp.y, objCellCoord.y),
+        x1: Math.max(objStartCellCoordTemp.x, objCellCoord.x),
+        y1: Math.max(objStartCellCoordTemp.y, objCellCoord.y),
     }
 
     const objRectanglePx = {
-        x: objSelection.x0 * intGridCellSize,
-        y: objSelection.y0 * intGridCellSize,
-        w: (objSelection.x1 - objSelection.x0) * intGridCellSize + intGridCellSize,
-        h: (objSelection.y1 - objSelection.y0) * intGridCellSize + intGridCellSize,
+        x: objSelectionSection.x0 * intGridCellSize,
+        y: objSelectionSection.y0 * intGridCellSize,
+        w: (objSelectionSection.x1 - objSelectionSection.x0) * intGridCellSize + intGridCellSize,
+        h: (objSelectionSection.y1 - objSelectionSection.y0) * intGridCellSize + intGridCellSize,
     }
 
     objContainers.selection.rect(objRectanglePx.x, objRectanglePx.y, objRectanglePx.w, objRectanglePx.h);
-    objContainers.selection.fill(`rgba(255, 174, 0, 0.3)`);
+    if (strMode === 'selection_mode') {
+        if (bolHighlight) {
+            objContainers.selection.fill(`rgba(255, 174, 0, 0.5)`);
+        } else {
+            objContainers.selection.fill(`rgba(255, 174, 0, 0.3)`);
+        }
+
+    } else {
+        objContainers.selection.fill(`rgba(255, 174, 0, 0.1)`);
+    }
     objContainers.selection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
 
     resizeContainers();
-    //might be useful new Rectangle(100, 100, 200, 150);
+
     //highlight elements
 }
 
+function moveSelection(objCellCoord = false) {
+}
+
 function dragMap(objCellCoord) {
-    // if (strMode != 'dragging_mode') return;
     if (!bolIsDragging) return;
 
     objMistriaDataPlanner.offsetCanvas = {
-        x: objMistriaDataPlanner.offsetCanvas.x - ((objStartCellCoord.x - objCellCoord.x) * intMultiplierCanvas),
-        y: objMistriaDataPlanner.offsetCanvas.y - ((objStartCellCoord.y - objCellCoord.y) * intMultiplierCanvas),
+        x: objStartOffset.x - (objStartCellCoord.eventX - objCellCoord.eventX),
+        y: objStartOffset.y - (objStartCellCoord.eventY - objCellCoord.eventY),
     };
     resize();
 }
@@ -712,8 +727,7 @@ function drawCrops() {
 
     resizeContainers();
 }
-
-function drawCursor() {
+function clearCursor() {
     //destroy previously drawn elements
     if (objContainers.cursor !== null) {
         objContainer_Wrapper.removeChild(objContainers.cursor);
@@ -721,52 +735,71 @@ function drawCursor() {
         objContainers.cursor = null
     }
 
+}
+
+function drawCursor() {
+    clearCursor();
+
     //init container
     objContainers.cursor = new PIXI.Container();
     objContainer_Wrapper.addChild(objContainers.cursor);
     objContainers.cursor.zIndex = objZindexes.cursor;
 
+    //might be useful new Rectangle(100, 100, 200, 150);
+
     for (let y = 0; y < objGrids.cursor.length; y++) {
         for (let x = 0; x < objGrids.cursor[0].length; x++) {
             if (objGrids.cursor[y][x]) {
-                if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
-                    switch (intCurrentlyDrawing) {
-                        case 1: //ground
-                            const elemSpriteGround = sprites.get(`${getSpriteKeyByIndex(intCurrentlyDrawing)}_${objMistriaDataPlanner.season}`);
-                            elemSpriteGround.position.set(x * intGridCellSize, y * intGridCellSize);
-                            elemSpriteGround.alpha = 0.7;
-                            objContainers.cursor.addChild(elemSpriteGround);
-                            break;
-                        case 3: //tilled wet
-                            const textureWet = sprites.getSoil(`${getSpriteKeyByIndex(intCurrentlyDrawing)}_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
-                            const elemSpriteWet = new PIXI.Sprite(textureWet);
-                            elemSpriteWet.position.set(x * intGridCellSize, y * intGridCellSize);
-                            elemSpriteWet.alpha = 0.7;
-                            objContainers.cursor.addChild(elemSpriteWet);
-                        case 2: //tilled
-                            const elemSpriteTilled = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
-                            elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
-                            elemSpriteTilled.alpha = 0.7;
-                            objContainers.cursor.addChild(elemSpriteTilled);
-                            break;
-                        case 4: //grass
-                            const texture = sprites.getGrass(`tile_grassautotile_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
-                            const elemSprite = new PIXI.Sprite(texture);
-                            elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
-                            elemSprite.alpha = 0.7;
-                            objContainers.cursor.addChild(elemSprite);
-                            break;
+                if (intCurrentlyDrawing) {
+                    if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
+                        switch (intCurrentlyDrawing) {
+                            case 1: //ground
+                                const elemSpriteGround = sprites.get(`${getSpriteKeyByIndex(intCurrentlyDrawing)}_${objMistriaDataPlanner.season}`);
+                                elemSpriteGround.position.set(x * intGridCellSize, y * intGridCellSize);
+                                elemSpriteGround.alpha = 0.7;
+                                objContainers.cursor.addChild(elemSpriteGround);
+                                break;
+                            case 3: //tilled wet
+                                const textureWet = sprites.getSoil(`${getSpriteKeyByIndex(intCurrentlyDrawing)}_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
+                                const elemSpriteWet = new PIXI.Sprite(textureWet);
+                                elemSpriteWet.position.set(x * intGridCellSize, y * intGridCellSize);
+                                elemSpriteWet.alpha = 0.7;
+                                objContainers.cursor.addChild(elemSpriteWet);
+                            case 2: //tilled
+                                const elemSpriteTilled = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
+                                elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
+                                elemSpriteTilled.alpha = 0.7;
+                                objContainers.cursor.addChild(elemSpriteTilled);
+                                break;
+                            case 4: //grass
+                                const texture = sprites.getGrass(`tile_grassautotile_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
+                                const elemSprite = new PIXI.Sprite(texture);
+                                elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                                elemSprite.alpha = 0.7;
+                                objContainers.cursor.addChild(elemSprite);
+                                break;
+                        }
+                    } else if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
+                        const elemSprite = sprites.getCrop(`${getSpriteKeyByIndex(intCurrentlyDrawing)}`);
+                        elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                        elemSprite.alpha = 0.7;
+                        objContainers.cursor.addChild(elemSprite);
+                    } else {
+                        const elemSprite = sprites.get(`${getSpriteKeyByIndex(intCurrentlyDrawing)}`);
+                        elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                        elemSprite.alpha = 0.7;
+                        objContainers.cursor.addChild(elemSprite);
                     }
-                } else if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
-                    const elemSprite = sprites.getCrop(`${getSpriteKeyByIndex(intCurrentlyDrawing)}`);
-                    elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
-                    elemSprite.alpha = 0.7;
-                    objContainers.cursor.addChild(elemSprite);
                 } else {
-                    const elemSprite = sprites.get(`${getSpriteKeyByIndex(intCurrentlyDrawing)}`);
-                    elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
-                    elemSprite.alpha = 0.7;
-                    objContainers.cursor.addChild(elemSprite);
+                    let elemSelection = new PIXI.Graphics();
+
+                    elemSelection.rect(0, 0, intGridCellSize, intGridCellSize);
+                    elemSelection.fill(`rgba(255, 174, 0, 0.3)`);
+                    elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
+
+                    elemSelection.position.set(x * intGridCellSize, y * intGridCellSize);
+                    elemSelection.alpha = 0.7;
+                    objContainers.cursor.addChild(elemSelection);
                 }
             }
         }
@@ -867,10 +900,16 @@ function updateCropGrid(objCellCoord) {
 
 function updateCursorGrid(objCellCoord) {
 
-    if (strMode != 'drawing_mode') return;
+    //reverse highlight
+    if (objContainers.selection !== null && strMode === 'selection_mode') {
+        $('#game-container').css('cursor', '');
+        drawSelection({ x: objSelectionSection.x0, y: objSelectionSection.y0 }, { x: objSelectionSection.x1, y: objSelectionSection.y1 })
+    }
+
+    if (!(strMode === 'drawing_mode' || strMode === 'selection_mode')) return;
     objGrids.cursor = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
 
-    if (bolIsDragging) {
+    if (bolIsDragging && strMode === 'drawing_mode') {
         const objSelection = {
             x0: Math.min(objStartCellCoord.x, objCellCoord.x),
             y0: Math.min(objStartCellCoord.y, objCellCoord.y),
@@ -886,18 +925,36 @@ function updateCursorGrid(objCellCoord) {
                 }
             }
         }
-    } else {
-        objGrids.cursor[objCellCoord.y][objCellCoord.x] = 1;
+    } else if (!bolIsDragging) {
+        // highlight selection on hover
+        if (selectionHovered(objCellCoord)) {
+            $('#game-container').css('cursor', 'pointer');
+            drawSelection({ x: objSelectionSection.x0, y: objSelectionSection.y0 }, { x: objSelectionSection.x1, y: objSelectionSection.y1 }, true)
+        } else {
+            objGrids.cursor[objCellCoord.y][objCellCoord.x] = 1;
+        }
     }
 
     drawCursor();
 }
 
+function selectionHovered(objCellCoord) {
+    if (objContainers.selection !== null && strMode === 'selection_mode' &&
+        (
+            objCellCoord.x >= objSelectionSection.x0 &&
+            objCellCoord.x <= objSelectionSection.x1 &&
+            objCellCoord.y >= objSelectionSection.y0 &&
+            objCellCoord.y <= objSelectionSection.y1
+        )
+    ) {
+        return true;
+    }
+    return false;
+}
+
 function updateCurrentlyDrawing(intItemKey = false) {
     intCurrentlyDrawing = intItemKey;
-    updateCursorMode('drawing_mode')
-
-    //update cursor with transparent element
+    updateCursorMode('drawing_mode');
 }
 
 function updateCursorMode(strModeTemp = false) {
@@ -907,10 +964,16 @@ function updateCursorMode(strModeTemp = false) {
     $(`.tab[data-tab="${strMode}"]`).addClass('active');
     if (strMode == 'dragging_mode') {
         $('#page').addClass('dragging_mode');
+        clearCursor();
     } else {
         $('#page').removeClass('dragging_mode');
+
+        if (strMode !== 'drawing_mode') {
+            intCurrentlyDrawing = false;
+        }
     }
 }
+
 function checkTileHasCollision(objCell, bolUseDiggableGrid = true) {
     const objSelection = {
         x0: objCell.x * 2,
@@ -944,9 +1007,21 @@ function getClickedCell(event) {
     let x = (event.clientX - rect.left) * scaleX / intMultiplierCanvas;
     let y = (event.clientY - rect.top) * scaleY / intMultiplierCanvas;
 
+    // console.log('---')
+    // console.log((event.clientX - rect.left), (event.clientY - rect.top))
+    // console.log(x, y)
+
     let objCell = {
         x: Math.floor((x - objMistriaDataPlanner.offsetCanvas.x) / intGridCellSize),
         y: Math.floor((y - objMistriaDataPlanner.offsetCanvas.y) / intGridCellSize),
+    }
+
+    // do not allow out of bounds
+    objCell = {
+        x: Math.min(objCell.x, objGrid.x - 1),
+        y: Math.min(objCell.y, objGrid.y - 1),
+        eventX: x,
+        eventY: y,
     }
 
     // console.log(objCell)
@@ -1167,18 +1242,13 @@ async function loadMenuItems() {
 
         let $divDropdownWrapper = $('<div>', { 'class': 'dropdown_wrap', 'id': `tab_dropdown_${tabKey}` });
         $divDropdownWrapper.append(` 
-            <div class="button_item dropdown_button">
+            <div class="tab button_item dropdown_button">
                 <div class="icon">
                     <img src="images/${tabData.info.icon}">
                 </div>
                <span class="dropdown-section-name">${tabData.info.name}</span>
             </div>
         `);
-        // $divDropdown.append(` 
-        //     <div class="dropdown_search">
-
-        //     </div>
-        // `);
         let $divDropdown = $('<div>', { 'class': 'dropdown' });
         Object.entries(tabData.categories).forEach(([categoryKey, categoryData]) => {
 
@@ -1193,9 +1263,10 @@ async function loadMenuItems() {
 
             let $divDropdownSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
 
-            categoryData.items.forEach(function (strItemKey) {
+            categoryData.items.forEach(function (intIndex) {
                 let strName;
                 let strImage;
+                let strItemKey = getSpriteKeyByIndex(intIndex)
                 if (strItemKey in objItemsPlanner) {
                     strName = objItemsPlanner[strItemKey].name;
                     strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
@@ -1229,63 +1300,41 @@ async function loadMenuItems() {
 
     $('.dropdown-item-drawable').on('click', function (e) {
         const intItemKeySelected = objSpriteKeyDict[$(this).attr('data-key')];
-
-        console.log($(this).attr('data-key'))
-        console.log(intItemKeySelected)
         updateCurrentlyDrawing(intItemKeySelected);
         $('#page .dropdown').removeClass('searching');
     });
 
     //hide dropdowns on outside click
     $(document).on('click', function (e) {
-
         let jqTarget = e.target;
-        if (($(e.target).closest('.dropdown-section-name').length || $(e.target).closest('.icon').length) && $(e.target).closest('.dropdown-item').length) {
-            jqTarget = $(jqTarget).closest('.dropdown-item')
+        if (($(e.target).closest('.dropdown-section-name').length || $(e.target).closest('.icon').length)) {
+            if ($(e.target).closest('.dropdown-section-item').length) {
+                jqTarget = $(jqTarget).closest('.dropdown-section-item')
+            } else if ($(e.target).closest('.dropdown_button').length) {
+                jqTarget = $(jqTarget).closest('.dropdown_button')
+            }
         }
+
+        var jqDropdownWrap = $(jqTarget).closest('.dropdown_wrap');
         if ($(jqTarget).hasClass('dropdown-section-item')) {
-            var jqDropdownSectionWrap = $(jqTarget).closest('.dropdown-section');
+            jqDropdownWrap = $(jqTarget).closest('.dropdown-section');
+        }
 
-            if (jqDropdownSectionWrap.length === 0) {
-                if ($(window).width() > 550) {
-                    $('.dropdown-section').removeClass('open');
-                }
-            } else {
-                if ($(window).width() > 550) {
-                    $('.dropdown-section').not(jqDropdownSectionWrap).not(jqDropdownSectionWrap.parents('.dropdown-section')).removeClass('open');
-                }
-                $(jqDropdownSectionWrap).toggleClass('open');
-            }
-        } else {
-            var jqDropdownWrap = $(jqTarget).closest('.dropdown_wrap');
+        // close all other dropdowns
+        $('.dropdown_wrap').not($(jqTarget).closest('.dropdown_wrap')).removeClass('open');
 
-            if ($(jqDropdownWrap).closest('#tabs').length) {
-                if ($(window).width() > 550) {
-                    $(jqDropdownWrap).find('.dropdown').css({
-                        // 'top': $(jqDropdownWrap)[0].getBoundingClientRect().bottom + 10 + 'px',
-                        'left': $(jqDropdownWrap)[0].getBoundingClientRect().right - $(jqDropdownWrap).outerWidth() + 'px',
-                    })
-                } else {
-                    $(jqDropdownWrap).find('.dropdown').css('left', '')
-                }
+        // close all other subsections
+        if ($(window).width() > 550) {
+            const objParents = $('.dropdown-section').parents('.dropdown-section')
+            $('.dropdown-section').not(jqDropdownWrap).not(objParents).removeClass('open');
+        }
 
-            }
+        // toggle current dropdown
+        $(jqDropdownWrap).toggleClass('open');
 
-            if (jqDropdownWrap.length === 0) {
-                $('.dropdown_wrap').removeClass('open');
-            } else {
-                // $('.dropdown_wrap').not(jqDropdownWrap).removeClass('open');
-                //for mobile, if clicked outside mobile dropdown
-                if (!$(jqTarget).hasClass('dropdown-item') && $(jqTarget).closest('#tabs').length && $(jqTarget).closest('.dropdown').length) {
-                    return;
-                } else {
-                    if ($(jqTarget).is('input')) {
-                        $(jqDropdownWrap).addClass('open');
-                    } else {
-                        $(jqDropdownWrap).toggleClass('open');
-                    }
-                }
-            }
+        // close dropdown if item was selected
+        if (!$(jqTarget).hasClass('dropdown-section-item') && !$(jqTarget).hasClass('dropdown_button') && !$(jqTarget).is('input')) {
+            $(jqTarget).closest('.dropdown_wrap').removeClass('open');
         }
     });
 
@@ -1387,6 +1436,8 @@ function resetZoom(strDirection) {
 }
 
 function verifyZoomParameters() {
+    calculateMultiplier();
+
     if (objMistriaDataPlanner.zoom > 100) {
         const intOffsetX = objMistriaDataPlanner.offsetCanvas.x * -1
         const intViewportWidth = $('#game-container').width() / intMultiplierCanvas;
@@ -1467,8 +1518,8 @@ function updateMinimap() {
     $('#zoom_selection').css({
         width: objZoomSelectionSize.w,
         height: objZoomSelectionSize.h,
-        left: objMistriaDataPlanner.offsetCanvas.x * -objMinimapWrapperSize.w / (objGrid.x * intGridCellSize),
-        top: objMistriaDataPlanner.offsetCanvas.y * -objMinimapWrapperSize.h / (objGrid.y * intGridCellSize)
+        left: objMistriaDataPlanner.offsetCanvas.x * -(objMinimapSize.w * intMapScale) / (objGrid.x * intGridCellSize),
+        top: objMistriaDataPlanner.offsetCanvas.y * -(objMinimapSize.h * intMapScale) / (objGrid.y * intGridCellSize)
     })
 
     $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
@@ -1703,9 +1754,10 @@ $(function () {
 
                 bolIsDragging = false;
                 objStartCellCoord = { x: 0, y: 0 };
+                objStartOffset = { x: 0, y: 0 };
                 objPrevCellCoord = { x: 0, y: 0 };
                 drawSelection();
-                updateCursorGrid(objCurrentCellCoord)
+                updateCursorGrid(objCurrentCellCoord);
             }
         });
 
@@ -1717,10 +1769,20 @@ $(function () {
 
             bolIsDragging = true;
             objStartCellCoord = getClickedCell(e);
+            objStartOffset = { x: objMistriaDataPlanner.offsetCanvas.x, y: objMistriaDataPlanner.offsetCanvas.y };
+            objMistriaDataPlanner.offsetCanvas.x
             objPrevCellCoord = objStartCellCoord
 
             if (e.data.originalEvent.button === 0) {  // left click
-                drawSelection(objStartCellCoord);
+                if (selectionHovered(objStartCellCoord)) {
+                    bolIsDraggingSection = true;
+                } else {
+                    drawSelection(objStartCellCoord, objStartCellCoord);
+                }
+
+            }
+            if (e.data.originalEvent.button === 2) {  // right click
+                drawSelection();
             }
         });
 
@@ -1728,17 +1790,21 @@ $(function () {
             const objCurrentCellCoord = getClickedCell(e);
             if (bolIsDragging) {
                 if (objPrevCellCoord.x !== objCurrentCellCoord.x || objPrevCellCoord.y !== objCurrentCellCoord.y) {
-                    objPrevCellCoord = objCurrentCellCoord;
                     const buttons = e.data.originalEvent.buttons;
                     if (buttons === 4 ||
                         //  buttons === 2 || 
                         strMode === 'dragging_mode') { // dragging with middle button, right button or drag mode activated
                         dragMap(objCurrentCellCoord);
                     } else if (buttons === 1) {
-                        drawSelection(objCurrentCellCoord);
-                        updateCursorGrid(objCurrentCellCoord);
+                        if (bolIsDraggingSection) {
+                            dragSelection(objStartCellCoord, objCurrentCellCoord);
+                        } else {
+                            drawSelection(objStartCellCoord, objCurrentCellCoord);
+                            updateCursorGrid(objCurrentCellCoord);
+                        }
                     }
                 }
+                objPrevCellCoord = objCurrentCellCoord;
             } else {
                 updateCursorGrid(objCurrentCellCoord);
             }
@@ -1753,14 +1819,19 @@ $(function () {
             }
 
             if (strMode === 'dragging_mode') {
-                const objSelection = {
-                    x0: Math.min(objStartCellCoord.x, objCurrentCellCoord.x),
-                    y0: Math.min(objStartCellCoord.y, objCurrentCellCoord.y),
-                    x1: Math.max(objStartCellCoord.x, objCurrentCellCoord.x),
-                    y1: Math.max(objStartCellCoord.y, objCurrentCellCoord.y),
+
+                const rect = objPIXIapp.canvas.getBoundingClientRect();
+
+                let scaleX = objPIXIapp.screen.width / rect.width;
+                let scaleY = objPIXIapp.screen.height / rect.height;
+
+                const objMovement = {
+                    x: (Math.max(objStartCellCoord.eventX, objCurrentCellCoord.eventX) - Math.min(objStartCellCoord.eventX, objCurrentCellCoord.eventX)) / scaleX * intMultiplierCanvas,
+                    y: (Math.max(objStartCellCoord.eventY, objCurrentCellCoord.eventY) - Math.min(objStartCellCoord.eventY, objCurrentCellCoord.eventY)) / scaleY * intMultiplierCanvas,
                 }
 
-                if (e.data.originalEvent.button !== 1 && e.data.originalEvent.button !== 2 && (objSelection.x0 == objSelection.x1 && objSelection.y0 == objSelection.y1)) {
+                // clicked with left click and was not dragged more than 5px
+                if (e.data.originalEvent.button === 0 && (objMovement.x < 5 && objMovement.y < 5)) {
                     let objTopLeftCellCoord = getTopLeftCorner(objStartCellCoord)
 
                     objMistriaDataPlanner.offsetCanvas = {
@@ -1772,14 +1843,21 @@ $(function () {
             }
 
             bolIsDragging = false;
+            bolIsDraggingSection = false;
             objStartCellCoord = { x: 0, y: 0 };
+            objStartOffset = { x: 0, y: 0 };
             objPrevCellCoord = { x: 0, y: 0 };
-            drawSelection();
+
+            if (strMode === 'drawing_mode') {
+                drawSelection();
+            }
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
             bolIsDragging = false;
+            bolIsDraggingSection = false;
             objStartCellCoord = { x: 0, y: 0 };
+            objStartOffset = { x: 0, y: 0 };
             objPrevCellCoord = { x: 0, y: 0 };
             drawSelection();
         });
@@ -1825,11 +1903,8 @@ $(function () {
         addBackground();
         drawGrassFix();
 
-
-
         drawGrid();
         drawCollision();
-
 
         // addTestData(4);
 
