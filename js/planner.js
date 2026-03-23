@@ -9,26 +9,11 @@ let objMistriaDataPlannerDefault = {
     'layout': {
         0: {
             'farm': {
-                1: [ // dugged up field in front of house and path
-                    [47, 23], [48, 23], [49, 23], [50, 23], [51, 23], [52, 23], [53, 23],
-                    [46, 24], [47, 24], [48, 24], [49, 24], [50, 24], [51, 24], [52, 24], [53, 24], [54, 24],
-                    [46, 25], [47, 25], [48, 25], [49, 25], [50, 25], [51, 25], [52, 25], [53, 25], [54, 25],
-                    [46, 26], [47, 26], [48, 26], [49, 26], [50, 26], [51, 26], [52, 26], [53, 26], [54, 26],
-                    [46, 27], [47, 27], [48, 27], [49, 27], [50, 27], [51, 27], [52, 27], [53, 27], [54, 27],
-                    [46, 28], [47, 28], [48, 28], [49, 28], [50, 28], [51, 28], [52, 28], [53, 28], [54, 28],
-                    [47, 29], [48, 29], [49, 29], [50, 29], [51, 29], [52, 29], [53, 29],
-
-                    [64, 13],
-                    [63, 14], [64, 14], [65, 14],
-                    [62, 15], [63, 15], [64, 15],
-                    [61, 16], [62, 16], [63, 16],
-                    [62, 17],
-                ],
-                5: [[90, 12], [128, 12], [90, 13], [128, 13], [9, 14], [90, 14], [128, 14], [9, 15], [90, 15], [128, 15], [9, 16], [90, 16], [128, 16], [9, 17], [90, 17], [128, 17], [9, 18], [90, 18], [128, 18], [9, 19], [89, 19], [90, 19], [128, 19], [9, 20], [89, 20], [128, 20], [9, 21], [89, 21], [128, 21], [0, 22], [1, 22], [2, 22], [3, 22], [4, 22], [5, 22], [6, 22], [7, 22], [8, 22], [9, 22], [89, 22], [128, 22], [89, 23], [128, 23], [89, 24], [90, 24], [128, 24], [90, 25], [128, 25], [90, 26], [128, 26], [0, 27], [1, 27], [2, 27], [3, 27], [4, 27], [5, 27], [6, 27], [7, 27], [8, 27], [9, 27], [90, 27], [128, 27], [9, 28], [90, 28], [128, 28], [9, 29], [90, 29], [128, 29], [9, 30], [90, 30], [128, 30], [9, 31], [90, 31], [128, 31], [9, 32], [90, 32], [128, 32], [9, 33], [90, 33], [128, 33], [9, 34], [90, 34], [91, 34], [128, 34], [9, 35], [91, 35], [128, 35], [9, 36], [91, 36], [128, 36], [9, 37], [91, 37], [128, 37], [9, 38], [91, 38], [128, 38], [9, 39], [91, 39], [128, 39], [9, 40], [91, 40], [128, 40], [9, 41], [91, 41], [128, 41], [9, 42], [91, 42], [128, 42], [9, 43], [91, 43], [128, 43], [9, 44], [91, 44], [128, 44], [9, 45], [91, 45], [128, 45], [9, 46], [91, 46], [128, 46], [9, 47], [91, 47], [128, 47], [9, 48], [91, 48], [128, 48], [9, 49], [91, 49], [128, 49], [9, 50], [91, 50], [128, 50], [9, 51], [91, 51], [128, 51], [9, 52], [91, 52], [128, 52], [9, 53], [91, 53], [128, 53], [9, 54], [90, 54], [91, 54], [128, 54], [9, 55], [90, 55], [128, 55], [9, 56], [90, 56], [128, 56], [9, 57], [90, 57], [102, 57], [103, 57], [104, 57], [105, 57], [106, 57], [107, 57], [108, 57], [109, 57], [110, 57], [111, 57], [112, 57], [113, 57], [114, 57], [115, 57], [128, 57], [1, 58], [2, 58], [3, 58], [4, 58], [5, 58], [6, 58], [7, 58], [8, 58], [9, 58], [90, 58], [91, 58], [92, 58], [93, 58], [94, 58], [95, 58], [96, 58], [97, 58], [98, 58], [99, 58], [100, 58], [101, 58], [102, 58], [115, 58], [116, 58], [117, 58], [118, 58], [119, 58], [120, 58], [121, 58], [122, 58], [123, 58], [124, 58], [125, 58], [126, 58], [127, 58], [128, 58], [129, 58], [130, 58], [131, 58], [132, 58], [133, 58], [134, 58], [135, 58], [136, 58], [11, 65], [12, 65], [13, 65], [14, 65], [15, 65], [16, 65], [17, 65], [18, 65], [19, 65], [20, 65], [105, 65], [106, 65], [107, 65], [108, 65], [109, 65], [110, 65], [111, 65], [112, 65], [1, 66], [2, 66], [3, 66], [4, 66], [5, 66], [6, 66], [7, 66], [8, 66], [9, 66], [10, 66], [11, 66], [20, 66], [21, 66], [22, 66], [23, 66], [24, 66], [25, 66], [26, 66], [27, 66], [28, 66], [29, 66], [30, 66], [31, 66], [32, 66], [33, 66], [34, 66], [35, 66], [36, 66], [37, 66], [38, 66], [39, 66], [40, 66], [60, 66], [61, 66], [62, 66], [63, 66], [64, 66], [65, 66], [73, 66], [74, 66], [75, 66], [76, 66], [77, 66], [78, 66], [79, 66], [80, 66], [81, 66], [82, 66], [83, 66], [84, 66], [85, 66], [86, 66], [87, 66], [88, 66], [89, 66], [90, 66], [91, 66], [92, 66], [93, 66], [94, 66], [95, 66], [96, 66], [97, 66], [98, 66], [99, 66], [100, 66], [101, 66], [102, 66], [103, 66], [104, 66], [105, 66], [112, 66], [113, 66], [114, 66], [115, 66], [116, 66], [117, 66], [118, 66], [119, 66], [120, 66], [121, 66], [122, 66], [123, 66], [124, 66], [125, 66], [126, 66], [127, 66], [128, 66], [129, 66], [130, 66], [131, 66], [132, 66], [133, 66], [134, 66], [135, 66], [136, 66], [9, 67], [40, 67], [41, 67], [42, 67], [43, 67], [44, 67], [45, 67], [56, 67], [57, 67], [58, 67], [59, 67], [60, 67], [65, 67], [73, 67], [128, 67], [9, 68], [45, 68], [46, 68], [47, 68], [48, 68], [49, 68], [50, 68], [51, 68], [52, 68], [53, 68], [54, 68], [55, 68], [56, 68], [65, 68], [73, 68], [128, 68], [9, 69], [65, 69], [73, 69], [128, 69], [9, 70], [65, 70], [73, 70], [128, 70], [9, 71], [65, 71], [73, 71], [128, 71], [9, 72], [65, 72], [73, 72], [128, 72], [9, 73], [65, 73], [73, 73], [128, 73], [9, 74], [65, 74], [73, 74], [128, 74], [9, 75], [65, 75], [73, 75], [128, 75], [9, 76], [65, 76], [73, 76], [128, 76], [9, 77], [65, 77], [73, 77], [128, 77], [9, 78], [65, 78], [73, 78], [128, 78], [9, 79], [65, 79], [73, 79], [128, 79], [9, 80], [65, 80], [73, 80], [128, 80], [9, 81], [65, 81], [73, 81], [128, 81], [9, 82], [65, 82], [73, 82], [128, 82], [9, 83], [65, 83], [73, 83], [128, 83], [9, 84], [65, 84], [73, 84], [128, 84], [9, 85], [65, 85], [73, 85], [128, 85], [9, 86], [65, 86], [73, 86], [128, 86], [9, 87], [65, 87], [73, 87], [128, 87], [9, 88], [65, 88], [73, 88], [128, 88], [9, 89], [65, 89], [73, 89], [128, 89], [9, 90], [65, 90], [73, 90], [128, 90], [9, 91], [10, 91], [11, 91], [12, 91], [13, 91], [14, 91], [15, 91], [16, 91], [17, 91], [18, 91], [19, 91], [20, 91], [21, 91], [22, 91], [23, 91], [24, 91], [25, 91], [26, 91], [27, 91], [28, 91], [29, 91], [30, 91], [31, 91], [32, 91], [33, 91], [34, 91], [35, 91], [36, 91], [37, 91], [38, 91], [39, 91], [40, 91], [41, 91], [42, 91], [43, 91], [44, 91], [45, 91], [46, 91], [47, 91], [48, 91], [49, 91], [50, 91], [51, 91], [52, 91], [53, 91], [54, 91], [55, 91], [56, 91], [57, 91], [58, 91], [59, 91], [60, 91], [61, 91], [62, 91], [63, 91], [64, 91], [65, 91], [73, 91], [74, 91], [75, 91], [76, 91], [77, 91], [78, 91], [79, 91], [80, 91], [81, 91], [82, 91], [83, 91], [84, 91], [85, 91], [86, 91], [87, 91], [88, 91], [89, 91], [90, 91], [91, 91], [92, 91], [93, 91], [94, 91], [95, 91], [96, 91], [97, 91], [98, 91], [99, 91], [100, 91], [101, 91], [102, 91], [103, 91], [104, 91], [105, 91], [106, 91], [107, 91], [108, 91], [109, 91], [110, 91], [111, 91], [112, 91], [113, 91], [114, 91], [115, 91], [116, 91], [117, 91], [118, 91], [119, 91], [120, 91], [121, 91], [122, 91], [123, 91], [124, 91], [125, 91], [126, 91], [127, 91], [128, 91]],
-                6: [[62, 0], [62, 1], [62, 2], [62, 3], [62, 4], [62, 5], [62, 6], [66, 0], [66, 1], [66, 2], [66, 3], [66, 4], [66, 5], [66, 6]]
+                1: [[94, 46], [96, 46], [98, 46], [100, 46], [102, 46], [104, 46], [106, 46], [92, 48], [94, 48], [96, 48], [98, 48], [100, 48], [102, 48], [104, 48], [106, 48], [108, 48], [92, 50], [94, 50], [96, 50], [98, 50], [100, 50], [102, 50], [104, 50], [106, 50], [108, 50], [92, 52], [94, 52], [96, 52], [98, 52], [100, 52], [102, 52], [104, 52], [106, 52], [108, 52], [92, 54], [94, 54], [96, 54], [98, 54], [100, 54], [102, 54], [104, 54], [106, 54], [108, 54], [92, 56], [94, 56], [96, 56], [98, 56], [100, 56], [102, 56], [104, 56], [106, 56], [108, 56], [94, 58], [96, 58], [98, 58], [100, 58], [102, 58], [104, 58], [106, 58], [128, 26], [126, 28], [128, 28], [130, 28], [124, 30], [126, 30], [128, 30], [122, 32], [124, 32], [126, 32], [124, 34]],
+                5: [[180, 24], [256, 24], [180, 26], [256, 26], [18, 28], [180, 28], [256, 28], [18, 30], [180, 30], [256, 30], [18, 32], [180, 32], [256, 32], [18, 34], [180, 34], [256, 34], [18, 36], [180, 36], [256, 36], [18, 38], [178, 38], [180, 38], [256, 38], [18, 40], [178, 40], [256, 40], [18, 42], [178, 42], [256, 42], [0, 44], [2, 44], [4, 44], [6, 44], [8, 44], [10, 44], [12, 44], [14, 44], [16, 44], [18, 44], [178, 44], [256, 44], [178, 46], [256, 46], [178, 48], [180, 48], [256, 48], [180, 50], [256, 50], [180, 52], [256, 52], [0, 54], [2, 54], [4, 54], [6, 54], [8, 54], [10, 54], [12, 54], [14, 54], [16, 54], [18, 54], [180, 54], [256, 54], [18, 56], [180, 56], [256, 56], [18, 58], [180, 58], [256, 58], [18, 60], [180, 60], [256, 60], [18, 62], [180, 62], [256, 62], [18, 64], [180, 64], [256, 64], [18, 66], [180, 66], [256, 66], [18, 68], [180, 68], [182, 68], [256, 68], [18, 70], [182, 70], [256, 70], [18, 72], [182, 72], [256, 72], [18, 74], [182, 74], [256, 74], [18, 76], [182, 76], [256, 76], [18, 78], [182, 78], [256, 78], [18, 80], [182, 80], [256, 80], [18, 82], [182, 82], [256, 82], [18, 84], [182, 84], [256, 84], [18, 86], [182, 86], [256, 86], [18, 88], [182, 88], [256, 88], [18, 90], [182, 90], [256, 90], [18, 92], [182, 92], [256, 92], [18, 94], [182, 94], [256, 94], [18, 96], [182, 96], [256, 96], [18, 98], [182, 98], [256, 98], [18, 100], [182, 100], [256, 100], [18, 102], [182, 102], [256, 102], [18, 104], [182, 104], [256, 104], [18, 106], [182, 106], [256, 106], [18, 108], [180, 108], [182, 108], [256, 108], [18, 110], [180, 110], [256, 110], [18, 112], [180, 112], [256, 112], [18, 114], [180, 114], [204, 114], [206, 114], [208, 114], [210, 114], [212, 114], [214, 114], [216, 114], [218, 114], [220, 114], [222, 114], [224, 114], [226, 114], [228, 114], [230, 114], [256, 114], [2, 116], [4, 116], [6, 116], [8, 116], [10, 116], [12, 116], [14, 116], [16, 116], [18, 116], [180, 116], [182, 116], [184, 116], [186, 116], [188, 116], [190, 116], [192, 116], [194, 116], [196, 116], [198, 116], [200, 116], [202, 116], [204, 116], [230, 116], [232, 116], [234, 116], [236, 116], [238, 116], [240, 116], [242, 116], [244, 116], [246, 116], [248, 116], [250, 116], [252, 116], [254, 116], [256, 116], [258, 116], [260, 116], [262, 116], [264, 116], [266, 116], [268, 116], [270, 116], [272, 116], [22, 130], [24, 130], [26, 130], [28, 130], [30, 130], [32, 130], [34, 130], [36, 130], [38, 130], [40, 130], [210, 130], [212, 130], [214, 130], [216, 130], [218, 130], [220, 130], [222, 130], [224, 130], [2, 132], [4, 132], [6, 132], [8, 132], [10, 132], [12, 132], [14, 132], [16, 132], [18, 132], [20, 132], [22, 132], [40, 132], [42, 132], [44, 132], [46, 132], [48, 132], [50, 132], [52, 132], [54, 132], [56, 132], [58, 132], [60, 132], [62, 132], [64, 132], [66, 132], [68, 132], [70, 132], [72, 132], [74, 132], [76, 132], [78, 132], [80, 132], [120, 132], [122, 132], [124, 132], [126, 132], [128, 132], [130, 132], [146, 132], [148, 132], [150, 132], [152, 132], [154, 132], [156, 132], [158, 132], [160, 132], [162, 132], [164, 132], [166, 132], [168, 132], [170, 132], [172, 132], [174, 132], [176, 132], [178, 132], [180, 132], [182, 132], [184, 132], [186, 132], [188, 132], [190, 132], [192, 132], [194, 132], [196, 132], [198, 132], [200, 132], [202, 132], [204, 132], [206, 132], [208, 132], [210, 132], [224, 132], [226, 132], [228, 132], [230, 132], [232, 132], [234, 132], [236, 132], [238, 132], [240, 132], [242, 132], [244, 132], [246, 132], [248, 132], [250, 132], [252, 132], [254, 132], [256, 132], [258, 132], [260, 132], [262, 132], [264, 132], [266, 132], [268, 132], [270, 132], [272, 132], [18, 134], [80, 134], [82, 134], [84, 134], [86, 134], [88, 134], [90, 134], [112, 134], [114, 134], [116, 134], [118, 134], [120, 134], [130, 134], [146, 134], [256, 134], [18, 136], [90, 136], [92, 136], [94, 136], [96, 136], [98, 136], [100, 136], [102, 136], [104, 136], [106, 136], [108, 136], [110, 136], [112, 136], [130, 136], [146, 136], [256, 136], [18, 138], [130, 138], [146, 138], [256, 138], [18, 140], [130, 140], [146, 140], [256, 140], [18, 142], [130, 142], [146, 142], [256, 142], [18, 144], [130, 144], [146, 144], [256, 144], [18, 146], [130, 146], [146, 146], [256, 146], [18, 148], [130, 148], [146, 148], [256, 148], [18, 150], [130, 150], [146, 150], [256, 150], [18, 152], [130, 152], [146, 152], [256, 152], [18, 154], [130, 154], [146, 154], [256, 154], [18, 156], [130, 156], [146, 156], [256, 156], [18, 158], [130, 158], [146, 158], [256, 158], [18, 160], [130, 160], [146, 160], [256, 160], [18, 162], [130, 162], [146, 162], [256, 162], [18, 164], [130, 164], [146, 164], [256, 164], [18, 166], [130, 166], [146, 166], [256, 166], [18, 168], [130, 168], [146, 168], [256, 168], [18, 170], [130, 170], [146, 170], [256, 170], [18, 172], [130, 172], [146, 172], [256, 172], [18, 174], [130, 174], [146, 174], [256, 174], [18, 176], [130, 176], [146, 176], [256, 176], [18, 178], [130, 178], [146, 178], [256, 178], [18, 180], [130, 180], [146, 180], [256, 180], [18, 182], [20, 182], [22, 182], [24, 182], [26, 182], [28, 182], [30, 182], [32, 182], [34, 182], [36, 182], [38, 182], [40, 182], [42, 182], [44, 182], [46, 182], [48, 182], [50, 182], [52, 182], [54, 182], [56, 182], [58, 182], [60, 182], [62, 182], [64, 182], [66, 182], [68, 182], [70, 182], [72, 182], [74, 182], [76, 182], [78, 182], [80, 182], [82, 182], [84, 182], [86, 182], [88, 182], [90, 182], [92, 182], [94, 182], [96, 182], [98, 182], [100, 182], [102, 182], [104, 182], [106, 182], [108, 182], [110, 182], [112, 182], [114, 182], [116, 182], [118, 182], [120, 182], [122, 182], [124, 182], [126, 182], [128, 182], [130, 182], [146, 182], [148, 182], [150, 182], [152, 182], [154, 182], [156, 182], [158, 182], [160, 182], [162, 182], [164, 182], [166, 182], [168, 182], [170, 182], [172, 182], [174, 182], [176, 182], [178, 182], [180, 182], [182, 182], [184, 182], [186, 182], [188, 182], [190, 182], [192, 182], [194, 182], [196, 182], [198, 182], [200, 182], [202, 182], [204, 182], [206, 182], [208, 182], [210, 182], [212, 182], [214, 182], [216, 182], [218, 182], [220, 182], [222, 182], [224, 182], [226, 182], [228, 182], [230, 182], [232, 182], [234, 182], [236, 182], [238, 182], [240, 182], [242, 182], [244, 182], [246, 182], [248, 182], [250, 182], [252, 182], [254, 182], [256, 182]],
+                6: [[124, 0], [124, 2], [124, 4], [124, 6], [124, 8], [124, 10], [124, 12], [132, 0], [132, 2], [132, 4], [132, 6], [132, 8], [132, 10], [132, 12]],
             }
         }
-
     }
 }
 
@@ -37,10 +22,10 @@ let intCurrentlyDrawing = false;
 let bolIsDragging = false;
 let bolIsDraggingSection = false;
 
-const intGridCellSize = 16;
+const intGridCellSize = 16 / 2;
 const objGrid = {
-    x: 138,
-    y: 103
+    x: 138 * 2,
+    y: 103 * 2
 }
 const objCanvasDefault = {
     width: objGrid.x * intGridCellSize,
@@ -61,35 +46,24 @@ let intMultiplierCanvas = 1;
 let objSpriteKeyDict = null;
 let arrGrid_Collision = null;
 let arrGrid_Diggable = null;
-let arrGrassFixCoord = [
-    [47, 23], [48, 23], [49, 23], [50, 23], [51, 23], [52, 23], [53, 23],
-    [46, 24], [47, 24], [48, 24], [49, 24], [50, 24], [51, 24], [52, 24], [53, 24], [54, 24],
-    [46, 25], [47, 25], [48, 25], [49, 25], [50, 25], [51, 25], [52, 25], [53, 25], [54, 25],
-    [46, 26], [47, 26], [48, 26], [49, 26], [50, 26], [51, 26], [52, 26], [53, 26], [54, 26],
-    [46, 27], [47, 27], [48, 27], [49, 27], [50, 27], [51, 27], [52, 27], [53, 27], [54, 27],
-    [46, 28], [47, 28], [48, 28], [49, 28], [50, 28], [51, 28], [52, 28], [53, 28], [54, 28],
-    [47, 29], [48, 29], [49, 29], [50, 29], [51, 29], [52, 29], [53, 29],
-
-    [63, 12], [64, 12], [65, 12],
-    [62, 13], [63, 13], [64, 13], [65, 13], [66, 13],
-    [61, 14], [62, 14], [63, 14], [64, 14], [65, 14], [66, 14],
-    [60, 15], [61, 15], [62, 15], [63, 15], [64, 15], [65, 15], [66, 15],
-    [60, 16], [61, 16], [62, 16], [63, 16], [64, 16], [65, 16],
-    [60, 17], [61, 17], [62, 17], [63, 17], [64, 17],
-    [61, 18], [62, 18], [63, 18]
-];
+let arrGrassFixCoord = [[94, 46], [96, 46], [98, 46], [100, 46], [102, 46], [104, 46], [106, 46], [92, 48], [94, 48], [96, 48], [98, 48], [100, 48], [102, 48], [104, 48], [106, 48], [108, 48], [92, 50], [94, 50], [96, 50], [98, 50], [100, 50], [102, 50], [104, 50], [106, 50], [108, 50], [92, 52], [94, 52], [96, 52], [98, 52], [100, 52], [102, 52], [104, 52], [106, 52], [108, 52], [92, 54], [94, 54], [96, 54], [98, 54], [100, 54], [102, 54], [104, 54], [106, 54], [108, 54], [92, 56], [94, 56], [96, 56], [98, 56], [100, 56], [102, 56], [104, 56], [106, 56], [108, 56], [94, 58], [96, 58], [98, 58], [100, 58], [102, 58], [104, 58], [106, 58], [126, 24], [128, 24], [130, 24], [124, 26], [126, 26], [128, 26], [130, 26], [132, 26], [122, 28], [124, 28], [126, 28], [128, 28], [130, 28], [132, 28], [120, 30], [122, 30], [124, 30], [126, 30], [128, 30], [130, 30], [132, 30], [120, 32], [122, 32], [124, 32], [126, 32], [128, 32], [130, 32], [120, 34], [122, 34], [124, 34], [126, 34], [128, 34], [122, 36], [124, 36], [126, 36]];
 
 let objPlannerDiv;
 let objPIXIapp;
 let sprites = null;
 let objGraphics_Grid = null;
+let objGraphics_subGrid = null;
 let objContainer_Wrapper = null;
 
-let objGrids = {
-    'cursor': [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0)),
-    'soil': [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0)),
-    'crops': [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0)),
-    'fences': [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0)),
+let objGridCombined = {
+    'main': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
+    'move': false,
+    'cursor': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
+}
+let objGridCombinedPrev = {
+    'main': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
+    'move': false,
+    'cursor': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
 }
 
 let objContainers = {
@@ -136,6 +110,12 @@ function addTestData(intTest) {
             if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
                 objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
+            if (intCurrentlyDrawingSoil === 3) {
+                if (!(2 in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[2] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                }
+            }
+
 
             var intCurrentlyDrawingTemp = objSpriteKeyDict['snow_peas'];
             if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
@@ -151,8 +131,9 @@ function addTestData(intTest) {
                         case (y == intRows - 1 && x == intColumns - 1):
                             break;
                         default:
-                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[2][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
                             break;
                     }
                 }
@@ -169,6 +150,11 @@ function addTestData(intTest) {
             if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
                 objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
+            if (intCurrentlyDrawingSoil === 3) {
+                if (!(2 in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[2] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                }
+            }
 
             var intCurrentlyDrawingTemp = objSpriteKeyDict['snow_peas'];
             if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
@@ -184,8 +170,9 @@ function addTestData(intTest) {
                         case (y == intRows - 1 && x == intColumns - 1):
                             break;
                         default:
-                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[2][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
                             break;
                     }
                 }
@@ -202,6 +189,11 @@ function addTestData(intTest) {
             if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
                 objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
             }
+            if (intCurrentlyDrawingSoil === 3) {
+                if (!(2 in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[2] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                }
+            }
 
             var intCurrentlyDrawingTemp = objSpriteKeyDict['snow_peas'];
             if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
@@ -210,8 +202,9 @@ function addTestData(intTest) {
 
             for (let y = 0; y < intRows; y++) {
                 for (let x = 0; x < intColumns; x++) {
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[2][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
                 }
             }
 
@@ -223,8 +216,9 @@ function addTestData(intTest) {
 
             for (let y = 0; y < intRows; y++) {
                 for (let x = 0; x < intColumns; x++) {
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[2][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
                 }
             }
 
@@ -237,6 +231,11 @@ function addTestData(intTest) {
             var intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
             if (!(intCurrentlyDrawingSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
                 objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+            }
+            if (intCurrentlyDrawingSoil === 3) {
+                if (!(2 in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[2] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                }
             }
 
             var intStartX = 11;
@@ -252,8 +251,9 @@ function addTestData(intTest) {
                         if (!(intCurrentlyDrawingTemp in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
                             objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
                         }
-                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY + y][intStartX + x] = 1;
-                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY + y][intStartX + x] = 1;
+                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingTemp][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                        objMistriaDataPlanner.layout[intSaveSlot].farm[2][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
+                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawingSoil][intStartY * 2 + y * 2][intStartX * 2 + x * 2] = 1;
                     }
                 }
             }
@@ -263,47 +263,58 @@ function addTestData(intTest) {
     populateItemGrids();
 }
 
-function convertGridToNeighbours(arrGrid, intValue = null) {
+const hasCommonElement = (arr1, arr2) => arr1.some(v => arr2.indexOf(v) !== -1);
+const getCommonElements = (arr1, arr2) => arr1.filter(v => arr2.includes(v));
+function convertGridToNeighbours(intItemIndex = null) {
     //clockwise NOT
     const directions = [
         [-1, -1], [0, -1], [1, -1],
         [-1, 0], [1, 0],
         [-1, 1], [0, 1], [1, 1]
     ];
+    const bolTwosOnly = (objSpriteCategories.soil.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex) || objSpriteCategories.fences.includes(intItemIndex)) ? true : false;
 
     let arrNeighbourGrid = [];
-    for (let row = 0; row < arrGrid.length; row++) {
+    for (let row = 0; row < objGridCombined.main.length; row++) {
         let arrNeighbourGrid_row = [];
-        for (let col = 0; col < arrGrid[0].length; col++) {
 
+        if (bolTwosOnly && row % 2) {
+            //skip this row
+            arrNeighbourGrid.push([...Array(objGrid.x)].map(e => Array(8).fill(0)));
+            continue;
+        }
+        for (let col = 0; col < objGridCombined.main[0].length; col++) {
+
+            if (bolTwosOnly && col % 2) {
+                //skip this column
+                arrNeighbourGrid_row.push(Array(8).fill(0))
+                continue;
+            }
 
             let arrNeighbourGrid_current = [];
 
             directions.forEach(([dx, dy]) => {
-                const newRow = row + dy;
-                const newCol = col + dx;
+                const newRow = row + (dy * 2); //item size instead of 2?
+                const newCol = col + (dx * 2);
 
-                const intCurrentValue = arrGrid[newRow]?.[newCol] || 0
+                const arrCurrentValues = objGridCombined.main[newRow]?.[newCol] || [];
 
-                switch (intValue) {
-                    case null:
-                        //checking if any tile is in neighbors - used for grass
-                        arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] ? 1 : 0)
-                        break;
-                    case 1:
-                        //checking for ground - will use the same sprite regardless of whether there is ground, soil or wet soil nearby
-                        arrNeighbourGrid_current.push(arrGrid[newRow]?.[newCol] ? 1 : 0)
-                        break;
+                switch (intItemIndex) {
                     case 2:
                         //checking for tilled soil - will use the same sprite regardless of whether there is soil or wet soil nearby
-                        arrNeighbourGrid_current.push((intCurrentValue == 2 || intCurrentValue == 3) ? 1 : 0)
+                        arrNeighbourGrid_current.push(hasCommonElement(arrCurrentValues, [2, 3]) ? 1 : 0)
                         break;
                     case 3:
                         //checking for wet tilled soil - sprite will change only with another wet soil sprite
-                        arrNeighbourGrid_current.push((intCurrentValue == 3) ? 1 : 0)
+                        arrNeighbourGrid_current.push(arrCurrentValues.includes(3) ? 1 : 0)
+                        break;
+                    case 4:
+                        //checking for grass - ground or any type of soil must be nearby
+                        arrNeighbourGrid_current.push(hasCommonElement(arrCurrentValues, [1, 2, 3]) ? 1 : 0)
                         break;
                     default:
-                        arrNeighbourGrid_current.push(intCurrentValue == intValue ? 1 : 0)
+                        //checking if same tile is in neighbors
+                        arrNeighbourGrid_current.push(arrCurrentValues.includes(intItemIndex) ? 1 : 0)
                         break;
                 }
             });
@@ -311,6 +322,7 @@ function convertGridToNeighbours(arrGrid, intValue = null) {
         }
         arrNeighbourGrid.push(arrNeighbourGrid_row)
     }
+
     return arrNeighbourGrid;
 }
 
@@ -340,30 +352,65 @@ function resizeContainers() {
     objContainer_Wrapper.position = new PIXI.Point(objMistriaDataPlanner.offsetCanvas.x * intMultiplierCanvas, objMistriaDataPlanner.offsetCanvas.y * intMultiplierCanvas);
 }
 
-function buildGrid() {
+function buildGrid(bolDashed = false) {
+    function drawLine(x1, y1, x2, y2) {
+        if (!bolDashed) {
+            graphics.moveTo(x1, y1).lineTo(x2, y2);
+            return;
+        }
+
+        const dash = 1;
+        const gap = 2;
+
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        const length = Math.hypot(dx, dy);
+        const angle = Math.atan2(dy, dx);
+        const step = dash + gap;
+
+        for (let dist = 0; dist < length; dist += step) {
+            const startX = x1 + Math.cos(angle) * dist;
+            const startY = y1 + Math.sin(angle) * dist;
+
+            const endDist = Math.min(dist + dash, length);
+            const endX = x1 + Math.cos(angle) * endDist;
+            const endY = y1 + Math.sin(angle) * endDist;
+
+            graphics.moveTo(startX, startY);
+            graphics.lineTo(endX, endY);
+        }
+    }
+
     const graphics = new PIXI.Graphics();
+    const intVertical = objGrid.x / 2 + (bolDashed ? 1 : 0);
+    const intHorizontal = objGrid.y / 2 + (bolDashed ? 1 : 0);
+    const intCellSize = intGridCellSize * 2;
 
-    // Draw vertical lines spaced 16 pixels apart
-    for (var i = 0; i < objGrid.x; i++) {
-        graphics
-            .moveTo(i * intGridCellSize, 0)
-            .lineTo(i * intGridCellSize, objGrid.y * intGridCellSize);
+    // Vertical lines
+    for (let i = 0; i < intVertical; i++) {
+        const x = i * intCellSize;
+        drawLine(x, 0, x, intHorizontal * intCellSize);
     }
 
-    graphics
-        .moveTo(objGrid.x * intGridCellSize, 0)
-        .lineTo(objGrid.x * intGridCellSize, objGrid.y * intGridCellSize);
+    drawLine(
+        intVertical * intCellSize,
+        0,
+        intVertical * intCellSize,
+        intHorizontal * intCellSize
+    );
 
-    // Draw horizontal lines spaced 16 pixels apart
-    for (var i = 0; i < objGrid.y; i++) {
-        graphics
-            .moveTo(0, i * intGridCellSize)
-            .lineTo(objGrid.x * intGridCellSize, i * intGridCellSize);
+    // Horizontal lines
+    for (let i = 0; i < intHorizontal; i++) {
+        const y = i * intCellSize;
+        drawLine(0, y, intVertical * intCellSize, y);
     }
 
-    graphics
-        .moveTo(0, objGrid.y * intGridCellSize)
-        .lineTo(objGrid.x * intGridCellSize, objGrid.y * intGridCellSize);
+    drawLine(
+        0,
+        intHorizontal * intCellSize,
+        intVertical * intCellSize,
+        intHorizontal * intCellSize
+    );
 
     return graphics;
 }
@@ -376,12 +423,16 @@ function drawGrid() {
     }
 
     if (objGraphics_Grid === null && objMistriaDataPlanner.options.has('mode_grid')) {
-        objGraphics_Grid = buildGrid().stroke({ color: 0x808080, pixelLine: true, width: 1 });
+        objGraphics_Grid = buildGrid().stroke({ color: 0x808080, alpha: 0.8, pixelLine: true });
+        objGraphics_subGrid = buildGrid(true).stroke({ color: 0x808080, alpha: 0.5, pixelLine: true });
+        objGraphics_subGrid.position.set(-intGridCellSize, -intGridCellSize);
         objContainers.grid.addChild(objGraphics_Grid);
+        objContainers.grid.addChild(objGraphics_subGrid);
     }
 
     if (objGraphics_Grid !== null && !objMistriaDataPlanner.options.has('mode_grid')) {
         objContainers.grid.removeChild(objGraphics_Grid);
+        objContainers.grid.removeChild(objGraphics_subGrid);
         objGraphics_Grid.destroy();
         objGraphics_Grid = null;
     }
@@ -394,7 +445,7 @@ function drawCollision(bolUseDiggableGrid = true) {
         if (objContainers.collision === null) {
             objContainers.collision = new PIXI.Container();
 
-            let intCellSize = intGridCellSize / 2;
+            let intCellSize = intGridCellSize;
             if (bolUseDiggableGrid) {
 
                 for (var y = 0; y < arrGrid_Diggable.length; y++) {
@@ -485,23 +536,19 @@ function drawFence() {
     let objFenceNeighbors = {}
 
     objSpriteCategories.fences.forEach((intIdx) => {
-        objFenceNeighbors[intIdx] = convertGridToNeighbours(objGrids.fences, intIdx)
+        objFenceNeighbors[intIdx] = convertGridToNeighbours(intIdx);
     });
 
-    for (let y = 0; y < objGrids.fences.length; y++) {
-        for (let x = 0; x < objGrids.fences[0].length; x++) {
-            if (objGrids.fences[y][x]) {
-                const intIdx = objGrids.fences[y][x];
+    for (let y = 0; y < objGridCombined.main.length; y++) {
+        for (let x = 0; x < objGridCombined.main[0].length; x++) {
+            if (hasCommonElement(objSpriteCategories.fences, objGridCombined.main[y][x])) {
+                const intIdx = getCommonElements(objSpriteCategories.fences, objGridCombined.main[y][x])[0];
 
                 let arrGridNeighbours = objFenceNeighbors[intIdx];
 
                 const elemSprite = sprites.getFence(getSpriteKeyByIndex(intIdx), arrGridNeighbours[y][x]);
                 elemSprite.position.set((x) * intGridCellSize, y * intGridCellSize);
                 objContainers.fences.addChild(elemSprite);
-
-                // const elemSpriteTilled = sprites.getSoil(`soil_fall`, arrGridNeighbours[y][x])
-                // elemSpriteTilled.position.set(x * intGridCellSize, y * intGridCellSize);
-                // objContainers.soil.addChild(elemSpriteTilled);
             }
         }
     }
@@ -531,62 +578,18 @@ async function addBackground() {
     $('#minimap').css('background-image', `url(textures/rooms/rm_farm_${objMistriaDataPlanner.season}_${objMistriaDataPlanner.house_upgrade}.png)`)
 }
 
-function drawSelection(objStartCellCoordTemp = false, objCellCoord = false, bolHighlight = false) {
 
-    objSelectionSection = false;
-    if (strMode != 'selection_mode' && strMode != 'drawing_mode') return;
-
-    //destroy previously drawn elements
-    if (objContainers.selection !== null) {
-        objContainer_Wrapper.removeChild(objContainers.selection);
-        objContainers.selection.destroy();
-        objContainers.selection = null
-    }
-
-    if (!objCellCoord) return;
-
-    //init container
-    objContainers.selection = new PIXI.Graphics();
-    objContainer_Wrapper.addChild(objContainers.selection);
-    objContainers.selection.zIndex = objZindexes.selection;
-
-    objSelectionSection = {
-        x0: Math.min(objStartCellCoordTemp.x, objCellCoord.x),
-        y0: Math.min(objStartCellCoordTemp.y, objCellCoord.y),
-        x1: Math.max(objStartCellCoordTemp.x, objCellCoord.x),
-        y1: Math.max(objStartCellCoordTemp.y, objCellCoord.y),
-    }
-
-    const objRectanglePx = {
-        x: objSelectionSection.x0 * intGridCellSize,
-        y: objSelectionSection.y0 * intGridCellSize,
-        w: (objSelectionSection.x1 - objSelectionSection.x0) * intGridCellSize + intGridCellSize,
-        h: (objSelectionSection.y1 - objSelectionSection.y0) * intGridCellSize + intGridCellSize,
-    }
-
-    objContainers.selection.rect(objRectanglePx.x, objRectanglePx.y, objRectanglePx.w, objRectanglePx.h);
-    if (strMode === 'selection_mode') {
-        if (bolHighlight) {
-            objContainers.selection.fill(`rgba(255, 174, 0, 0.5)`);
-        } else {
-            objContainers.selection.fill(`rgba(255, 174, 0, 0.3)`);
-        }
-
-    } else {
-        objContainers.selection.fill(`rgba(255, 174, 0, 0.1)`);
-    }
-    objContainers.selection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
-
-    resizeContainers();
-
-    //highlight elements
-}
 
 function moveSelection(objCellCoord = false) {
 }
 
 function dragMap(objCellCoord) {
     if (!bolIsDragging) return;
+    if (objPrevCellCoord.x === objCellCoord.x && objPrevCellCoord.y === objCellCoord.y) {
+        objPrevCellCoord = objCellCoord;
+        return;
+    }
+    objPrevCellCoord = objCellCoord;
 
     objMistriaDataPlanner.offsetCanvas = {
         x: objStartOffset.x - (objStartCellCoord.eventX - objCellCoord.eventX),
@@ -624,22 +627,29 @@ function drawGrassFix() {
 function populateItemGrids() {
     const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
 
-    Object.keys(objGrids).forEach(function (strGridKey) {
-        objGrids[strGridKey] = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
-    });
+    objGridCombined.main = Array.from({ length: objGrid.y }, () =>
+        Array.from({ length: objGrid.x }, () => [])
+    );
 
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
         const intItemKey = parseInt(strItemKey);
         const strGridKey = Object.entries(objSpriteCategories).find(([k, arr]) => arr.includes(intItemKey))?.[0];
-
         for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
             for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
                 if (objFarmLayout[intItemKey][y][x]) {
-                    objGrids[strGridKey][y][x] = intItemKey;
+                    objGridCombined.main[y][x].push(intItemKey);
                 }
             }
         }
     });
+
+    //     if (typeof objContainer_Wrapper !== 'undefined') {
+    //    drawContainers(['main']);
+    //     }
+
+
+
+
 }
 
 function drawSoil() {
@@ -657,16 +667,17 @@ function drawSoil() {
         objContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
     });
 
-    let arrGridNeighbours = convertGridToNeighbours(objGrids.soil)
-    let arrGridNeighbours_Soil = convertGridToNeighbours(objGrids.soil, 2)
-    let arrGridNeighbours_Wet = convertGridToNeighbours(objGrids.soil, 3)
+    let arrGridNeighbours = convertGridToNeighbours(4);
+    let arrGridNeighbours_Soil = convertGridToNeighbours(2);
+    let arrGridNeighbours_Wet = convertGridToNeighbours(3);
 
-    for (let y = 0; y < objGrids.soil.length; y++) {
-        for (let x = 0; x < objGrids.soil[0].length; x++) {
-            const intIdx = objGrids.soil[y][x];
+    for (let y = 0; y < objGridCombined.main.length; y += 2) {
+        for (let x = 0; x < objGridCombined.main[0].length; x += 2) {
 
-            if (objGrids.soil[y][x]) {
-                switch (objGrids.soil[y][x]) {
+            if (hasCommonElement(objSpriteCategories.soil, objGridCombined.main[y][x])) {
+                const intIdx = getCommonElements(objSpriteCategories.soil, objGridCombined.main[y][x])[0];
+
+                switch (intIdx) {
                     case 1: //ground
                         const elemSpriteGround = sprites.get(`${getSpriteKeyByIndex(intIdx)}_${objMistriaDataPlanner.season}`);
                         elemSpriteGround.position.set(x * intGridCellSize, y * intGridCellSize);
@@ -684,6 +695,7 @@ function drawSoil() {
                         objContainers.soil.addChild(elemSpriteTilled);
                         break;
                 }
+
             } else if (!checkTileHasCollision({ x: x, y: y })) {
                 if (!arrGridNeighbours[y][x].includes(1)) {
                     continue;
@@ -713,21 +725,49 @@ function drawCrops() {
     objContainer_Wrapper.addChild(objContainers.crops);
     objContainers.crops.zIndex = objZindexes.crops;
 
-    for (let y = 0; y < objGrids.crops.length; y++) {
-        for (let x = 0; x < objGrids.crops[0].length; x++) {
-            const intIdx = objGrids.crops[y][x];
+    for (let y = 0; y < objGridCombined.main.length; y += 2) {
+        for (let x = 0; x < objGridCombined.main[0].length; x += 2) {
 
-            if (objGrids.crops[y][x]) {
+            if (hasCommonElement(objSpriteCategories.crops, objGridCombined.main[y][x])) {
+                const intIdx = getCommonElements(objSpriteCategories.crops, objGridCombined.main[y][x])[0];
+
                 const elemSprite = sprites.getCrop(`${getSpriteKeyByIndex(intIdx)}`);
                 elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
                 objContainers.crops.addChild(elemSprite);
             }
+
         }
     }
 
     resizeContainers();
 }
-function clearCursor() {
+
+// function fillContainers(arrContainers = ['tile_main_exteriors', 'tile_soil', 'tile_soil_wet', 'tile_grassautotile']) {
+//     arrContainers.forEach((strContainerKey) => {
+//         //destroy previously drawn elements
+//         if (objContainers[strContainerKey] !== null) {
+//             objContainer_Wrapper.removeChild(objContainers[strContainerKey]);
+//             objContainers[strContainerKey].destroy();
+//             objContainers[strContainerKey] = null
+//         }
+
+//         //init container
+//         objContainers[strContainerKey] = new PIXI.Container();
+//         objContainer_Wrapper.addChild(objContainers[strContainerKey]);
+//         objContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
+
+//         let arrGridNeighbours;
+//         if (arrGroundContainers.includes(strContainerKey)) {
+//             arrGridNeighbours = convertGridToNeighbours(4);
+//         }
+
+//     });
+// }
+
+function clearOverlays() {
+    objGridCombined.cursor = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []));
+    objGridCombined.selection = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []));
+
     //destroy previously drawn elements
     if (objContainers.cursor !== null) {
         objContainer_Wrapper.removeChild(objContainers.cursor);
@@ -735,10 +775,18 @@ function clearCursor() {
         objContainers.cursor = null
     }
 
+    //destroy previously drawn elements
+    if (objContainers.selection !== null) {
+        objContainer_Wrapper.removeChild(objContainers.selection);
+        objContainers.selection.destroy();
+        objContainers.selection = null
+    }
 }
 
 function drawCursor() {
-    clearCursor();
+
+    return;
+    clearOverlays();
 
     //init container
     objContainers.cursor = new PIXI.Container();
@@ -747,9 +795,9 @@ function drawCursor() {
 
     //might be useful new Rectangle(100, 100, 200, 150);
 
-    for (let y = 0; y < objGrids.cursor.length; y++) {
-        for (let x = 0; x < objGrids.cursor[0].length; x++) {
-            if (objGrids.cursor[y][x]) {
+    for (let y = 0; y < objGridCombined.cursor.length; y++) {
+        for (let x = 0; x < objGridCombined.cursor[0].length; x++) {
+            if (objGridCombined.cursor[y][x].length) {
                 if (intCurrentlyDrawing) {
                     if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
                         switch (intCurrentlyDrawing) {
@@ -840,7 +888,7 @@ function updateSoilGrid(objCellCoord, bolUpdateCrops = false) {
     for (let y = objSelection.y0; y <= objSelection.y1; y++) {
         for (let x = objSelection.x0; x <= objSelection.x1; x++) {
             if (!checkTileHasCollision({ x: x, y: y })) {
-                if (checkTileHasCrop({ x: x, y: y }) && (bolGrass || bolGround)) continue;
+                if (hasCommonElement(objSpriteCategories.crops, objGridCombined.main[y][x]) && (bolGrass || bolGround)) continue;
                 objSpriteCategories.soil.forEach((intIdx) => {
                     if (intIdx in objMistriaDataPlanner.layout[intSaveSlot].farm && intIdx !== intCurrentlyDrawingTemp) {
                         delete objMistriaDataPlanner.layout[intSaveSlot].farm[intIdx][y][x];
@@ -898,8 +946,61 @@ function updateCropGrid(objCellCoord) {
     updateSoilGrid(objCellCoord, true);
 }
 
+function drawSelection(objStartCellCoordTemp = false, objCellCoord = false, bolHighlight = false) {
+
+    return;
+    objSelectionSection = false;
+    if (strMode != 'selection_mode' && strMode != 'drawing_mode') return;
+
+    //destroy previously drawn elements
+    if (objContainers.selection !== null) {
+        objContainer_Wrapper.removeChild(objContainers.selection);
+        objContainers.selection.destroy();
+        objContainers.selection = null
+    }
+
+    if (!objCellCoord) return;
+
+    //init container
+    objContainers.selection = new PIXI.Graphics();
+    objContainer_Wrapper.addChild(objContainers.selection);
+    objContainers.selection.zIndex = objZindexes.selection;
+
+    objSelectionSection = {
+        x0: Math.min(objStartCellCoordTemp.x, objCellCoord.x),
+        y0: Math.min(objStartCellCoordTemp.y, objCellCoord.y),
+        x1: Math.max(objStartCellCoordTemp.x, objCellCoord.x),
+        y1: Math.max(objStartCellCoordTemp.y, objCellCoord.y),
+    }
+
+    const objRectanglePx = {
+        x: objSelectionSection.x0 * intGridCellSize,
+        y: objSelectionSection.y0 * intGridCellSize,
+        w: (objSelectionSection.x1 - objSelectionSection.x0) * intGridCellSize + intGridCellSize,
+        h: (objSelectionSection.y1 - objSelectionSection.y0) * intGridCellSize + intGridCellSize,
+    }
+
+    objContainers.selection.rect(objRectanglePx.x, objRectanglePx.y, objRectanglePx.w, objRectanglePx.h);
+    if (strMode === 'selection_mode') {
+        if (bolHighlight) {
+            objContainers.selection.fill(`rgba(255, 174, 0, 0.5)`);
+        } else {
+            objContainers.selection.fill(`rgba(255, 174, 0, 0.3)`);
+        }
+
+    } else {
+        objContainers.selection.fill(`rgba(255, 174, 0, 0.1)`);
+    }
+    objContainers.selection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
+
+    resizeContainers();
+
+    //highlight elements
+}
 function updateCursorGrid(objCellCoord) {
 
+    // updateGrid(objCellCoord)
+    return;
     //reverse highlight
     if (objContainers.selection !== null && strMode === 'selection_mode') {
         $('#game-container').css('cursor', '');
@@ -907,7 +1008,7 @@ function updateCursorGrid(objCellCoord) {
     }
 
     if (!(strMode === 'drawing_mode' || strMode === 'selection_mode')) return;
-    objGrids.cursor = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
+    objGridCombined.cursor = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []));
 
     if (bolIsDragging && strMode === 'drawing_mode') {
         const objSelection = {
@@ -917,11 +1018,12 @@ function updateCursorGrid(objCellCoord) {
             y1: Math.max(objStartCellCoord.y, objCellCoord.y),
         }
 
-        objGrids.cursor = [...Array(objGrid.y)].map(e => Array(objGrid.x).fill(0));
         for (let y = objSelection.y0; y <= objSelection.y1; y++) {
             for (let x = objSelection.x0; x <= objSelection.x1; x++) {
                 if (!checkTileHasCollision({ x: x, y: y })) {
-                    objGrids.cursor[y][x] = 1;
+
+                    objGridCombined.cursor[y][x].push(intCurrentlyDrawing);
+
                 }
             }
         }
@@ -931,7 +1033,7 @@ function updateCursorGrid(objCellCoord) {
             $('#game-container').css('cursor', 'pointer');
             drawSelection({ x: objSelectionSection.x0, y: objSelectionSection.y0 }, { x: objSelectionSection.x1, y: objSelectionSection.y1 }, true)
         } else {
-            objGrids.cursor[objCellCoord.y][objCellCoord.x] = 1;
+            objGridCombined.cursor[objCellCoord.y][objCellCoord.x].push(intCurrentlyDrawing);
         }
     }
 
@@ -952,6 +1054,473 @@ function selectionHovered(objCellCoord) {
     return false;
 }
 
+function clearGrid() {
+}
+function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
+    let sprite;
+    // console.log(arrNeighbours)
+    if (objSpriteCategories.soil.includes(intItemIndex)) {
+        switch (intItemIndex) {
+            case 1: //ground
+                sprite = sprites.get(`${getSpriteKeyByIndex(intItemIndex)}_${objMistriaDataPlanner.season}`);
+                break;
+            case 3: //tilled wet
+                sprite = sprites.getSoil(`${getSpriteKeyByIndex(intItemIndex)}_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
+                break;
+            case 2: //tilled
+                sprite = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
+                break;
+            case 4: //grass
+                sprite = sprites.getGrass(`tile_grassautotile_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
+                break;
+        }
+    } else if (objSpriteCategories.crops.includes(intItemIndex)) {
+        sprite = sprites.getCrop(getSpriteKeyByIndex(intItemIndex))
+    } else if (objSpriteCategories.fences.includes(intItemIndex)) {
+        sprite = sprites.getFence(getSpriteKeyByIndex(intItemIndex), arrNeighbours)
+    } else {
+        sprite = sprites.get(getSpriteKeyByIndex(intItemIndex))
+    }
+
+    return sprite;
+}
+
+function getTopLeftCornerItem(objCellCoord) {
+
+    //snap to grid
+    const bolTwosOnly = (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.fences.includes(intCurrentlyDrawing)) ? true : false;
+    const sprite = getSprite(intCurrentlyDrawing);
+    const arrSize = sprite.meta.size;
+
+    let objCoord = {
+        x: objCellCoord.x,
+        y: objCellCoord.y,
+    };
+
+    if (bolTwosOnly) {
+        objCoord = {
+            x: objCoord.x - (objCoord.x % 2),
+            y: objCoord.y - (objCoord.y % 2)
+        };
+
+        // console.log(objCoord)
+    }
+
+    // do not allow out of bounds - top, left
+    objCoord = {
+        x: Math.max(0, objCoord.x),
+        y: Math.max(0, objCoord.y),
+    };
+
+    // do not allow out of bounds - bottom, right
+    if (objCoord.x + arrSize[0] > objGrid.x) {
+        objCoord.x = objGrid.x - arrSize[0];
+    }
+    if (objCoord.y + arrSize[1] > objGrid.y) {
+        objCoord.y = objGrid.y - arrSize[1];
+    }
+
+    return [objCoord, arrSize];
+}
+function getSelection(objCellCoord) {
+    let objSelectionStep = { x: 1, y: 1 }
+    let coordStart = objCellCoord;
+
+    if (strMode === 'drawing_mode') {
+        const [coord, arrSize] = getTopLeftCornerItem(bolIsDragging ? objStartCellCoord : objCellCoord);
+        coordStart = coord;
+        objSelectionStep = {
+            x: arrSize[0],
+            y: arrSize[1]
+        }
+    }
+
+    const dirX = (objCellCoord.x >= coordStart.x) ? +1 : -1
+    const dirY = (objCellCoord.y >= coordStart.y) ? +1 : -1
+
+    if (strMode === 'drawing_mode' && objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.fences.includes(intCurrentlyDrawing)) {
+        if (dirX < 0) {
+            coordStart.x = coordStart.x + 1;
+        }
+        if (dirY < 0) {
+            coordStart.y = coordStart.y + 1;
+        }
+    }
+
+    let objSelection = {
+        x0: Math.min(coordStart.x, objCellCoord.x),
+        y0: Math.min(coordStart.y, objCellCoord.y),
+        x1: Math.max(coordStart.x, objCellCoord.x),
+        y1: Math.max(coordStart.y, objCellCoord.y),
+    }
+
+    const intSelectionWidth = objSelection.x1 - objSelection.x0;
+    const intSelectionHeight = objSelection.y1 - objSelection.y0;
+
+    const cols = Math.floor(intSelectionWidth / objSelectionStep.x) + 1;
+    const rows = Math.floor(intSelectionHeight / objSelectionStep.y) + 1;
+
+    const intSeletctionWidthItem = cols * objSelectionStep.x;
+    const intSeletctionHeightItem = rows * objSelectionStep.y;
+
+    objCellCoord = {
+        x: objCellCoord.x + (intSeletctionWidthItem - intSelectionWidth - 1) * dirX,
+        y: objCellCoord.y + (intSeletctionHeightItem - intSelectionHeight - 1) * dirY
+    }
+
+    objSelection = {
+        x0: Math.min(coordStart.x, objCellCoord.x),
+        y0: Math.min(coordStart.y, objCellCoord.y),
+        x1: Math.max(coordStart.x, objCellCoord.x),
+        y1: Math.max(coordStart.y, objCellCoord.y),
+    }
+
+    return objSelection;
+}
+
+function compareGrids(arr1, arr2) {
+    let setDifferences = new Set();
+
+    for (let y = 0; y < arr1.length; y++) {
+        for (let x = 0; x < arr1[y].length; x++) {
+            const arrDifferences = [
+                ...arr1[y][x].filter(v => !arr2[y][x].includes(v)),
+                ...arr2[y][x].filter(v => !arr1[y][x].includes(v))
+            ];
+
+            if (arrDifferences.length) {
+                arrDifferences.forEach(v => setDifferences.add(v));
+            }
+        }
+    }
+
+    return setDifferences;
+}
+
+function drawContainers(arrGrids = false, objSelection = false, bolHighlight = false) {
+
+    // console.log('hoi')
+
+    $('#game-container').css('cursor', '');
+
+    let objSelectionTemp = {
+        x0: 0,
+        y0: 0,
+        x1: objGrid.x,
+        y1: objGrid.y,
+    }
+    if (objSelection !== false) {
+        objSelectionTemp = objSelection;
+    }
+
+    //draw yellow selection rectangle
+    if (!arrGrids.length) {
+
+        //destroy previously drawn elements
+        if (objContainers.selection !== null) {
+            objContainer_Wrapper.removeChild(objContainers.selection);
+            objContainers.selection.destroy();
+            objContainers.selection = null
+        }
+
+        //init container
+        objContainers.selection = new PIXI.Container();
+        objContainer_Wrapper.addChild(objContainers.selection);
+        objContainers.selection.zIndex = objZindexes.selection;
+
+        let elemSelection = new PIXI.Graphics();
+
+        elemSelection.rect(0, 0, (objSelectionTemp.x1 - objSelectionTemp.x0 + 1) * intGridCellSize, (objSelectionTemp.y1 - objSelectionTemp.y0 + 1) * intGridCellSize);
+        if (bolHighlight) {
+            elemSelection.fill(`rgba(255, 174, 0, 0.5)`);
+            $('#game-container').css('cursor', 'pointer');
+        } else if (strMode === 'selection_mode') {
+            elemSelection.fill(`rgba(255, 174, 0, 0.3)`);
+        }
+        elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
+        elemSelection.position.set(objSelectionTemp.x0 * intGridCellSize, objSelectionTemp.y0 * intGridCellSize);
+        objContainers.selection.addChild(elemSelection);
+    }
+
+    let objNeighbors = {};
+    if (arrGrids[0] == 'main') {
+        // const startTime = performance.now()
+        let setDifferences;
+        // if (1 || strGridKey === 'move' && objGridCombinedPrev.move === false) {
+        //     setDifferences = new Set(
+        //         objGridCombined[strGridKey].flatMap(layer =>
+        //             layer.flatMap(row =>
+        //                 row.flat()
+        //             )
+        //         )
+        //     );
+        // } else if (strGridKey === 'main' && objGridCombinedPrev.move !== false) {
+        //     setDifferences = compareGrids(objGridCombined[strGridKey], objGridCombinedPrev['move']);
+        // } else {
+        //     setDifferences = compareGrids(objGridCombined[strGridKey], objGridCombinedPrev[strGridKey]);
+        // }
+
+        setDifferences = new Set(
+            objGridCombined.main.flatMap(layer =>
+                layer.flatMap(row =>
+                    row.flat()
+                )
+            )
+        );
+
+        const arrDifferences = [...setDifferences];
+
+        const arrSeenFences = getCommonElements(arrDifferences, objSpriteCategories.fences)
+        const arrSeenGround = getCommonElements(arrDifferences, objSpriteCategories.soil)
+        // const arrSeenCrops = getCommonElements(arrDifferences, objSpriteCategories.crops)
+        let arrNeighborItems = getCommonElements(arrDifferences, [...arrSeenGround, ...arrSeenFences]);
+        arrNeighborItems.push(4);
+
+        // console.log(arrNeighborItems)
+        arrNeighborItems.forEach((intIdx) => {
+            objNeighbors[intIdx] = convertGridToNeighbours(intIdx, 'main');
+        });
+        const endTime = performance.now();
+
+        // console.log(objNeighbors)
+
+        // console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+    }
+
+    arrGrids.forEach((strGridKey) => {
+        let objContainersChanged = {};
+
+        if (strGridKey === 'cursor') {
+            objContainersChanged.cursor = [];
+        } else {
+            objContainersChanged.crops = objSpriteCategories.crops;
+            objContainersChanged.fences = objSpriteCategories.fences;
+            objContainersChanged.ground = [1];
+            objContainersChanged.soil = [2];
+            objContainersChanged.soilWet = [3];
+            objContainersChanged.grass = [4];
+        }
+
+        // console.log(strGridKey)
+        Object.keys(objContainersChanged).forEach(function (strContainerKey) {
+
+            //destroy previously drawn elements
+            if (objContainers[strContainerKey] !== null) {
+                objContainer_Wrapper.removeChild(objContainers[strContainerKey]);
+                objContainers[strContainerKey].destroy();
+                objContainers[strContainerKey] = null
+            }
+
+            //init container
+            objContainers[strContainerKey] = new PIXI.Container();
+            objContainer_Wrapper.addChild(objContainers[strContainerKey]);
+            objContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
+
+            if (strContainerKey === 'cursor') {
+                objContainers[strContainerKey].alpha = 0.5;
+            }
+
+            const bolTwosOnly = ['crops', 'fences', 'ground', 'soil', 'soilWet', 'grass'].includes(strContainerKey);
+
+            for (let y = objSelectionTemp.y0; y < objSelectionTemp.y1; (bolTwosOnly ? y += 2 : y++)) {
+                for (let x = objSelectionTemp.x0; x < objSelectionTemp.x1; (bolTwosOnly ? x += 2 : x++)) {
+                    // if (checkTileHasCollision({ x: x, y: y })) {
+                    //     continue;
+                    // }
+                    if (strContainerKey == 'grass') {
+                        if (checkTileHasCollision({ x: x, y: y })) {
+                            continue;
+                        }
+                        if (!hasCommonElement(objGridCombined[strGridKey][y][x], [1, 2, 3]) && objNeighbors[4][y][x].includes(1)) {
+                            const sprite = getSprite(4, objNeighbors[4][y][x]);
+                            sprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                            objContainers[strContainerKey].addChild(sprite);
+                        }
+                    }
+                    else if (objGridCombined[strGridKey][y][x].length) {
+                        let arrItems = objGridCombined[strGridKey][y][x];
+
+                        if (strGridKey !== 'cursor') {
+                            arrItems = getCommonElements(objGridCombined[strGridKey][y][x], objContainersChanged[strContainerKey])
+                        }
+
+                        arrItems.forEach((intItemIndex) => {
+                            const sprite = getSprite(intItemIndex, (intItemIndex in objNeighbors ? objNeighbors[intItemIndex][y][x] : [0, 0, 0, 0, 0, 0, 0, 0]));
+                            sprite.position.set(x * intGridCellSize, y * intGridCellSize);
+                            objContainers[strContainerKey].addChild(sprite);
+                        });
+                    }
+                }
+            }
+        });
+    });
+
+    if (arrGrids[0] == 'main') {
+        objGridCombinedPrev = JSON.parse(JSON.stringify(objGridCombined));
+    }
+
+
+    resizeContainers();
+}
+
+function updateGrid(objCellCoord, bolChange = false) {
+
+    if (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.fences.includes(intCurrentlyDrawing)) {
+        objCellCoord = {
+            x: objCellCoord.x - objCellCoord.x % 2,
+            y: objCellCoord.y - objCellCoord.y % 2,
+        }
+    }
+
+    if (!bolChange && objPrevCellCoord.x === objCellCoord.x && objPrevCellCoord.y === objCellCoord.y) {
+
+        objPrevCellCoord = objCellCoord;
+
+        return;
+    }
+    objPrevCellCoord = objCellCoord;
+    console.log("h");
+
+
+
+    // if (bolChange) {
+    //     if (objGridCombined.move) {
+
+    //     } else {
+
+    //     }
+
+    //     return;
+    // }
+
+    if (strMode === 'drawing_mode' && (!bolChange || (bolChange && bolIsDragging))) {
+        //  "ornate_rug_large_rectangle_red": 71
+        objGridCombined.cursor = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []))
+
+        const objSelection = getSelection(objCellCoord);
+        const sprite = getSprite(intCurrentlyDrawing);
+        const arrSize = sprite.meta.size;
+
+        for (let y = objSelection.y0; y < objSelection.y1; y++) {
+            if (y < 0 || y + arrSize[1] > objGrid.y) continue;
+            for (let x = objSelection.x0; x < objSelection.x1; x++) {
+                if (x < 0 || x + arrSize[0] > objGrid.x) continue;
+                if ((y - objSelection.y0) % arrSize[1] == 0 && (x - objSelection.x0) % arrSize[0] == 0) {
+                    if (checkTileHasCollision({ x: x, y: y })) {
+                        continue;
+                    }
+                    if (bolChange) {
+                        // if (checkTileHasCollision({ x: x, y: y })) {
+                        //     continue;
+                        // }
+                        let intSoil = false;
+                        if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
+
+                            //clear out crops in current tile
+                            objSpriteCategories.crops.forEach((intIdx) => {
+                                if (intIdx in objMistriaDataPlanner.layout[intSaveSlot].farm) {
+                                    objMistriaDataPlanner.layout[intSaveSlot].farm[intIdx][y][x] = 0;
+                                }
+                            });
+
+                            intSoil = objMistriaDataPlanner.options.has('mode_wet') ? 3 : 2;
+                        }
+
+                        if (intSoil || objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
+                            if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
+                                intSoil = intCurrentlyDrawing;
+                            }
+                            //clear out soil in current tile
+                            objSpriteCategories.soil.forEach((intIdx) => {
+                                if (intIdx in objMistriaDataPlanner.layout[intSaveSlot].farm) {
+                                    objMistriaDataPlanner.layout[intSaveSlot].farm[intIdx][y][x] = 0;
+                                }
+                            });
+                            //if doesnt have array for current soil type, create
+                            if (!(intSoil in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                                objMistriaDataPlanner.layout[intSaveSlot].farm[intSoil] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                            }
+                            //is soil is wet, dry soil needs to be drawn under anyways
+                            if (intSoil === 3) {
+                                if (!(2 in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                                    objMistriaDataPlanner.layout[intSaveSlot].farm[2] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                                }
+                                objMistriaDataPlanner.layout[intSaveSlot].farm[2][y][x] = 1;
+                            }
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intSoil][y][x] = 1;
+                        }
+
+                        if (!(intCurrentlyDrawing in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                            objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawing] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
+                        }
+                        objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawing][y][x] = 1;
+
+                    } else {
+                        objGridCombined['cursor'][y][x].push(intCurrentlyDrawing);
+                    }
+                }
+            }
+        }
+
+        if (bolChange) {
+            // console.log('save')
+            saveDataPlanner();
+            drawContainers(['main']);
+        } else {
+            drawContainers(['cursor']);
+        }
+    }
+
+    if (strMode === 'selection_mode') {
+
+        if (bolIsDraggingSection && bolIsDragging) {
+
+        } else if (bolIsDragging) {
+            const objSelection = {
+                x0: Math.min(objStartCellCoord.x, objCellCoord.x),
+                y0: Math.min(objStartCellCoord.y, objCellCoord.y),
+                x1: Math.max(objStartCellCoord.x, objCellCoord.x),
+                y1: Math.max(objStartCellCoord.y, objCellCoord.y),
+            }
+
+            drawContainers([], objSelection);
+            objSelectionSection = objSelection;
+        } else {
+            let objSelection = {
+                x0: objCellCoord.x,
+                y0: objCellCoord.y,
+                x1: objCellCoord.x,
+                y1: objCellCoord.y,
+            }
+            let bolHighlight = false;
+            if (selectionHovered(objCellCoord)) {
+                bolHighlight = true;
+            }
+            if (objSelectionSection !== false) {
+                objSelection = objSelectionSection;
+            }
+            drawContainers([], objSelection, bolHighlight);
+        }
+    }
+
+    //  objGridCombined.move = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []))
+
+    //moving mouse and drawing mode - update cursor, one object snaps to place (check if ittakestwo)
+    //draggong and drawing mode -update cursor (selection with repeat strcurrent)
+
+    //selection move - update cursor, one object snaps to place (
+    //selection drag - update cursor, (selection)
+    // selection item id - s?
+
+    //add -check if temp grid was used :
+    // get which is selection from cursor grid, update main grid with temp grid and coordinates, clear cursor grid, set temp grid t false
+    // else : get which is selection from cursor grid, update main grid with coordinates, clear cursor grid, set temp grid t false
+
+    //move - save start selection, get which is selection from cursor grid, fill temp grid with (main grid minus start selection ) update cursor grid with selection
+}
+
+
+
 function updateCurrentlyDrawing(intItemKey = false) {
     intCurrentlyDrawing = intItemKey;
     updateCursorMode('drawing_mode');
@@ -960,11 +1529,11 @@ function updateCurrentlyDrawing(intItemKey = false) {
 function updateCursorMode(strModeTemp = false) {
     // let strMode = 'dragging_mode'; // drawing_mode, selection_mode
     strMode = strModeTemp;
+    clearOverlays();
     $('.tab').removeClass('active');
     $(`.tab[data-tab="${strMode}"]`).addClass('active');
     if (strMode == 'dragging_mode') {
         $('#page').addClass('dragging_mode');
-        clearCursor();
     } else {
         $('#page').removeClass('dragging_mode');
 
@@ -976,10 +1545,10 @@ function updateCursorMode(strModeTemp = false) {
 
 function checkTileHasCollision(objCell, bolUseDiggableGrid = true) {
     const objSelection = {
-        x0: objCell.x * 2,
-        y0: objCell.y * 2,
-        x1: objCell.x * 2 + 1,
-        y1: objCell.y * 2 + 1,
+        x0: objCell.x,
+        y0: objCell.y,
+        x1: objCell.x + 1,
+        y1: objCell.y + 1,
     }
 
     if (bolUseDiggableGrid) {
@@ -991,10 +1560,6 @@ function checkTileHasCollision(objCell, bolUseDiggableGrid = true) {
         const setGrid_CollisionSliceValues = new Set(arrGrid_CollisionSlice.flat())
         return (setGrid_CollisionSliceValues.size === 1 && setGrid_CollisionSliceValues.has(0)) ? false : true;
     }
-}
-
-function checkTileHasCrop(objCell) {
-    return (objGrids.crops[objCell.y][objCell.x]) ? true : false;
 }
 
 function getClickedCell(event) {
@@ -1525,7 +2090,7 @@ function updateMinimap() {
     $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
 }
 
-function getTopLeftCorner(objCellCoord) {
+function getTopLeftCornerCanvas(objCellCoord) {
     const objCanvasSize = {
         w: $('#game-container').width(),
         h: $('#game-container').height()
@@ -1560,7 +2125,7 @@ function minimapInit() {
             y: Math.floor((e.pageY - objMinimapOffset.top) * objGrid.y / objMinimapWrapperSize.h),
         };
 
-        let objTopLeftCellCoord = getTopLeftCorner(objClickedCellCoord)
+        let objTopLeftCellCoord = getTopLeftCornerCanvas(objClickedCellCoord)
 
         objMistriaDataPlanner.offsetCanvas = {
             x: objTopLeftCellCoord.x * intGridCellSize * -1,
@@ -1677,7 +2242,7 @@ function clearMap() {
     localStorage.setItem('mistria_data_planner', JSON.stringify(objMistriaDataPlanner));
     loadDataPlanner();
 
-    drawAllItems();
+    drawContainers(['main']);
 }
 
 function drawAllItems() {
@@ -1770,55 +2335,35 @@ $(function () {
             bolIsDragging = true;
             objStartCellCoord = getClickedCell(e);
             objStartOffset = { x: objMistriaDataPlanner.offsetCanvas.x, y: objMistriaDataPlanner.offsetCanvas.y };
-            objMistriaDataPlanner.offsetCanvas.x
             objPrevCellCoord = objStartCellCoord
 
-            if (e.data.originalEvent.button === 0) {  // left click
-                if (selectionHovered(objStartCellCoord)) {
-                    bolIsDraggingSection = true;
-                } else {
-                    drawSelection(objStartCellCoord, objStartCellCoord);
-                }
+            if (e.data.originalEvent.button === 0 && selectionHovered(objStartCellCoord)) {  // left click
+                bolIsDraggingSection = true;
+            }
 
-            }
-            if (e.data.originalEvent.button === 2) {  // right click
-                drawSelection();
-            }
+            updateGrid(objStartCellCoord);
         });
 
         objPIXIapp.stage.on('pointermove', (e) => {
             const objCurrentCellCoord = getClickedCell(e);
-            if (bolIsDragging) {
-                if (objPrevCellCoord.x !== objCurrentCellCoord.x || objPrevCellCoord.y !== objCurrentCellCoord.y) {
-                    const buttons = e.data.originalEvent.buttons;
-                    if (buttons === 4 ||
-                        //  buttons === 2 || 
-                        strMode === 'dragging_mode') { // dragging with middle button, right button or drag mode activated
-                        dragMap(objCurrentCellCoord);
-                    } else if (buttons === 1) {
-                        if (bolIsDraggingSection) {
-                            dragSelection(objStartCellCoord, objCurrentCellCoord);
-                        } else {
-                            drawSelection(objStartCellCoord, objCurrentCellCoord);
-                            updateCursorGrid(objCurrentCellCoord);
-                        }
-                    }
-                }
-                objPrevCellCoord = objCurrentCellCoord;
+            const buttons = e.data.originalEvent.buttons;
+            if (buttons === 4 || strMode === 'dragging_mode') { // dragging with middle button or drag mode activated
+                dragMap(objCurrentCellCoord);
             } else {
-                updateCursorGrid(objCurrentCellCoord);
+                updateGrid(objCurrentCellCoord);
             }
         });
 
         objPIXIapp.stage.on('pointerup', (e) => {
             const objCurrentCellCoord = getClickedCell(e);
 
-            if (bolIsDragging && e.data.originalEvent.button === 0) {
-                updateSoilGrid(objCurrentCellCoord)
-                updateCropGrid(objCurrentCellCoord)
-            }
+            // if (bolIsDragging && e.data.originalEvent.button === 0) {
+            //     updateSoilGrid(objCurrentCellCoord)
+            //     updateCropGrid(objCurrentCellCoord)
+            // }
 
             if (strMode === 'dragging_mode') {
+                //click on map to jump around
 
                 const rect = objPIXIapp.canvas.getBoundingClientRect();
 
@@ -1832,7 +2377,7 @@ $(function () {
 
                 // clicked with left click and was not dragged more than 5px
                 if (e.data.originalEvent.button === 0 && (objMovement.x < 5 && objMovement.y < 5)) {
-                    let objTopLeftCellCoord = getTopLeftCorner(objStartCellCoord)
+                    let objTopLeftCellCoord = getTopLeftCornerCanvas(objStartCellCoord)
 
                     objMistriaDataPlanner.offsetCanvas = {
                         x: objTopLeftCellCoord.x * intGridCellSize * -1,
@@ -1840,6 +2385,8 @@ $(function () {
                     };
                     resize();
                 }
+            } else {
+                updateGrid(objCurrentCellCoord, true);
             }
 
             bolIsDragging = false;
@@ -1847,10 +2394,6 @@ $(function () {
             objStartCellCoord = { x: 0, y: 0 };
             objStartOffset = { x: 0, y: 0 };
             objPrevCellCoord = { x: 0, y: 0 };
-
-            if (strMode === 'drawing_mode') {
-                drawSelection();
-            }
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
@@ -1859,12 +2402,11 @@ $(function () {
             objStartCellCoord = { x: 0, y: 0 };
             objStartOffset = { x: 0, y: 0 };
             objPrevCellCoord = { x: 0, y: 0 };
-            drawSelection();
         });
 
         objPIXIapp.stage.on('wheel', (e) => {
             const intMultiplierFit = getMultiplierFitScreen();
-            const intMultiplierZoomMax = (5 / intMultiplierFit) * 100;
+            const intMultiplierZoomMax = (3 / intMultiplierFit) * 100;
 
             let intZoom = objMistriaDataPlanner.zoom + e.deltaY * -0.5;
             intZoom = Math.round(intZoom)
@@ -1882,7 +2424,7 @@ $(function () {
 
             // center against cursor location
             // const objCurrentCellCoord = getClickedCell(e);
-            // let objTopLeftCellCoord = getTopLeftCorner(objCurrentCellCoord)
+            // let objTopLeftCellCoord = getTopLeftCornerCanvas(objCurrentCellCoord)
 
             // objMistriaDataPlanner.offsetCanvas = {
             //     x: objTopLeftCellCoord.x * intGridCellSize * -1,
@@ -1907,10 +2449,9 @@ $(function () {
         drawCollision();
 
         // addTestData(4);
+        updateCurrentlyDrawing(71);
 
-        drawAllItems();
-
-
+        drawContainers(['main']);
 
         // objPIXIapp.renderer.extract.log(image);
 
