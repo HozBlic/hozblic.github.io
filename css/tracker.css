@@ -718,41 +718,46 @@ input[type="checkbox"].styled:checked+label {
     margin-bottom: 5px;
     position: relative;
     display: inline-flex;
-    gap: 5px;
+    gap: 7px;
+    align-items: center;
 }
 
 [data-tippy-root] .tippy-box .tippy-content .tip .tip_name:is(.donatable, .is_perk) {
     padding-left: 10px;
 }
 
+[data-tippy-root] .tippy-box .tippy-content .tip .tip_name:is(.donatable, .is_perk) img {
+    margin-left: 20px;
+    opacity: 0.8;
+    height: 18px;
+    width: 18px;
+}
+
+[data-tippy-root] .tippy-box .tippy-content .tip .tip_name:is(.donatable, .is_perk):before,
 [data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked:after {
     content: '';
     display: block;
     position: absolute;
-    right: 0;
+    right: 18px;
     top: 0;
     width: 20px;
     height: 100%;
     text-align: center;
-    background-image: url(../images/check.svg);
+    background-image: url(../images/checkbox.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 12px;
-    opacity: 0.7;
+    opacity: 1;
+}
+
+[data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked:after {
+    background-image: url(../images/check.svg);
+    opacity: 0.8;
 }
 
 [data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked.disabled:after {
     background-image: url(../images/close.svg);
 }
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked img {
-    opacity: 0.6;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name.is_perk:not(.checked) img {
-    display: none;
-}
-
 
 [data-tippy-root] .tippy-box .tippy-content .tip .tip_buff {
     width: 100%;

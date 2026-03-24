@@ -850,6 +850,7 @@ function loadScrapedTab(strTab) {
                     template.style.display = 'block';
                     tippy(`#label_${strCbxID}`, {
                         content: template,
+                        appendTo: () => document.body,
                         interactive: true,
                         maxWidth: 370,
                         delay: [500, 50],
@@ -2177,7 +2178,6 @@ function loadWrappedTab() {
             }
 
             arrTips.push(strID);
-
             arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
 
             if (strItemKey in objItems) {
@@ -3166,6 +3166,9 @@ function generateGenericTableGrid(objData, strTitle, bolAllData = false) {
         var i = 1;
         var prevValue = 0;
         Object.entries(objData).forEach(([strItemKey, intValue]) => {
+            if (strItemKey == 'starter_stone_path_single') {
+                strItemKey = 'starter_stone_path';
+            }
             if (intValue < intThirdLargest) {
                 return;
             }
@@ -3184,9 +3187,7 @@ function generateGenericTableGrid(objData, strTitle, bolAllData = false) {
             }
 
             arrTips.push(strID);
-
             arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems, strBuff));
-
 
             prevValue = intValue;
             i++;
@@ -4288,7 +4289,9 @@ function loadMenuItems() {
         content: 'Does not work in older browsers',
     });
     tippy('#unreleased_content', {
-        content: 'Content obtained via datamining, has not been implemented in the game yet',
+        content: `<p class="save_file">Content obtained via datamining, has not been implemented in the game yet</p>
+                  <p class="save_file">Can also contain released content from latest update (if it has no information in Wiki yet)</p>`,
+        allowHTML: true,
     });
     tippy('#save_file_icon', {
         content: `<p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>

@@ -251,7 +251,8 @@ svg:focus {
     gap: 24px;
     flex-direction: column;
     padding: 10px 15px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     height: 100%;
     border-top: 1px solid var(--color-bg-darkest);
 }
@@ -262,23 +263,28 @@ svg:focus {
 
 
 .button_item {
+    --button-height: 32px;
+    --button-font-size: 12px;
+    --button-padding-top: 5px;
+    --button-padding-side: 12px;
+    --button-border-radius: 5px;
     -webkit-user-select: none;
     /* Safari */
     -ms-user-select: none;
     /* IE 10 and IE 11 */
     user-select: none;
     /* Standard syntax */
-    border-radius: 5px;
-    min-height: 32px;
+    border-radius: var(--button-border-radius);
+    min-height: var(--button-height);
     cursor: pointer;
     display: flex;
     text-align: center;
     align-items: center;
+    text-decoration: none;
     overflow: hidden;
     flex-direction: row;
-    padding: 5px 12px 5px 0;
-    padding-right: 12px;
-    font-size: 12px;
+    padding: var(--button-padding-top) var(--button-padding-side) var(--button-padding-top) 0;
+    font-size: var(--button-font-size);
     background-color: var(--color-bg-darker);
     transition: fill 0.3s ease, color 0.3s ease, background-color 0.3s ease;
     width: 100%;
@@ -293,8 +299,16 @@ svg:focus {
     stroke: var(--color-bg);
 }
 
+.button_item.large {
+    --button-height: 42px;
+    --button-font-size: 13px;
+    --button-padding-top: 7px;
+    --button-padding-side: 15px;
+    --button-border-radius: 8px;
+}
+
 .button_item.no_icon {
-    padding-left: 12px;
+    padding-left: var(--button-padding-side);
 }
 
 .button_item.accent {
@@ -354,12 +368,23 @@ svg:focus {
 }
 
 .icon {
-    width: 32px;
+    --icon-wrapper-size: 32px;
+    width: var(--icon-wrapper-size);
     height: 100%;
-    min-width: 32px;
+    min-width: var(--icon-wrapper-size);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.large .icon {
+    --icon-wrapper-size: 42px;
+}
+
+
+.icon.original {
+    fill: none;
+    stroke: none;
 }
 
 .icon img {
@@ -370,18 +395,29 @@ svg:focus {
 }
 
 .icon svg {
-    height: 13px;
-    width: 13px;
+    --icon-size: 13px;
+    height: var(--icon-size);
+    width: var(--icon-size);
     overflow: visible;
 }
 
-.icon *[fill]:not([fill="none"]) {
+.large .icon svg {
+    --icon-size: 15px;
+}
+
+
+.icon:not(.original) *[fill]:not([fill="none"]) {
     fill: inherit !important;
 }
 
-.icon *[stroke]:not([stroke="none"]) {
+.icon:not(.original) *[stroke]:not([stroke="none"]) {
     stroke: inherit !important;
 }
+
+#page.mode_dark .icon.coffee *[fill]:is([fill="#0D0C22"]) {
+    fill: var(--color-txt) !important;
+}
+
 
 
 
@@ -462,12 +498,12 @@ textarea {
     }
 }
 
-.buttons .button_item {
+.bottom_info .buttons .button_item {
     opacity: 0.6;
     transition: opacity 0.3s ease;
 }
 
-.buttons .button_item:hover {
+.bottom_info .buttons .button_item:hover {
     opacity: 1;
 }
 
@@ -571,7 +607,6 @@ textarea {
 }
 
 /* END: Layout and sort dropdowns */
-
 
 /* Toggle switches */
 .switches {
@@ -740,7 +775,7 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: auto;
+    /* margin-top: auto; */
 }
 
 #json_button {
@@ -758,6 +793,33 @@ textarea {
     color: var(--color-txt);
     fill: var(--color-txt);
     stroke: var(--color-txt);
+}
+
+.donations {
+    border: 2px dashed var(--color-btn);
+    /* border: 2px dashed #8338ec50; */
+    border-radius: 5px;
+    padding: 6px;
+    width: calc(100% + 16px);
+    margin-top: 10px;
+    margin-left: -8px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.donations:hover {
+    opacity: 1;
+}
+
+.donations .donations-desc {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+.donations .buttons .button_item {
+    opacity: 1;
 }
 
 #suggestion {
@@ -936,6 +998,10 @@ textarea {
     justify-content: center;
 }
 
+.tab.dropdown_button {
+    padding-right: 25px;
+}
+
 .tab .icon {
     width: 20px;
     height: 100%;
@@ -1010,6 +1076,11 @@ textarea {
         padding: 5px 7px;
         padding-right: 12px;
         min-height: 34px;
+    }
+
+    .tab.dropdown_button,
+    .tab.dropdown_button:hover {
+        padding-right: 30px;
     }
 
     .tab:not(.button-notext) img {

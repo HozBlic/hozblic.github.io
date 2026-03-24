@@ -1,4 +1,3 @@
-
 .popup_wrapper {
     position: fixed;
     top: 0;
@@ -167,15 +166,32 @@
     align-items: center;
 }
 
-.popup_header_text .icon {
-    width: 32px;
-    min-width: 32px;
+.popup_header_text .icon,
+.popup_subtitle .icon {
+    --icon-wrapper-size: 32px;
+    width: var(--icon-wrapper-size);
+    min-width: var(--icon-wrapper-size);
     justify-content: flex-start;
 }
+.popup_subtitle .icon {
+    --icon-wrapper-size: 15px;
+}
 
-.popup_header_text .icon svg {
-    height: 21px;
-    width: 21px;
+.popup_subtitle .icon {
+    color: var(--color-txt);
+    fill: var(--color-txt);
+    stroke: var(--color-txt)
+}
+
+.popup_header_text .icon svg,
+.popup_subtitle .icon svg {
+    --icon-size: 20px;
+    height: var(--icon-size);
+    width: var(--icon-size);
+}
+
+.popup_subtitle .icon svg {
+    --icon-size: 15px;
 }
 
 .popup_header_desc, .popup_subdesc {
@@ -262,6 +278,7 @@
         padding: 0 25px 25px 25px;
     }
 }
+
 ul#changes li svg {
     height: 100%;
     width: 9px;
@@ -290,6 +307,7 @@ ul {
         --popup-top: 120px;
     }
 }
+
 #json_button_popup *::-webkit-scrollbar {
     width: 7px;
     height: 7px;
@@ -404,9 +422,11 @@ ul {
 #json_button_popup #additional_info_content a:visited {
     color: #cdb4db;
 }
+
 #json_button_popup #output {
     margin: 10px 0;
 }
+
 #save_input {
     display: none;
 }
@@ -471,7 +491,10 @@ pre {
 }
 
 
-
+#popup_donate .buttons {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
 
 
 #popup_move .popup_header_desc {
@@ -492,6 +515,41 @@ pre {
     object-fit: contain;
 }
 
+#popup_controls .icons {
+   display: flex;
+}
+
+#popup_controls ul {
+    padding-left: 20px;
+    list-style: disc;
+    margin: 10px 0;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+#popup_controls ul ul {
+    list-style: none;
+}
+
+#popup_controls ul ul li {
+    display: flex;
+    gap: 5px;
+}
+
+#popup_controls ul li .icon {
+    --icon-wrapper-size: 17px;
+    color: var(--color-txt);
+    fill: var(--color-txt);
+    stroke: var(--color-txt);
+    width: var(--icon-wrapper-size);
+    min-width: var(--icon-wrapper-size);
+}
+
+#popup_controls ul li .icon svg {
+    --icon-size: 14px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
 
 [data-tippy-root] .tippy-box .tippy-content .save_file {
     margin: 0;
