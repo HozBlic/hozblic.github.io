@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: var(--color-bg-darker);
+    background: var(--color-bg-darkest);
     justify-content: safe center;
     --multiplier-width: 1;
     --multiplier-height: 1;
@@ -65,6 +65,8 @@
     font-size: 12px;
     line-height: 12px;
     padding: 10px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .block.inner_grid {

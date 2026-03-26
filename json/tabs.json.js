@@ -4440,7 +4440,7 @@ var objTabs =
             "woodcrafting": {
                 "info": {
                     "name": "Woodcrafting",
-                    "img_mini": "fish_stew",
+                    "img_mini": "basic_bed_double_oak",
                     "wikilink": "Woodcrafting"
                 },
                 "subcategories": {
@@ -5941,7 +5941,7 @@ var objTabs =
             "cooking": {
                 "info": {
                     "name": "Cooking",
-                    "img_mini": "basic_bed_double_oak",
+                    "img_mini": "fish_stew",
                     "wikilink": "Cooking"
                 },
                 "subcategories": {

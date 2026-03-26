@@ -7,8 +7,7 @@
     <base target="_blank">
 
     <title>Fields of Mistria Progress Tracker</title>
-    <meta name="description"
-        content="Interactive visual progress tracker for Fields of Mistria" />
+    <meta name="description" content="Interactive visual progress tracker for Fields of Mistria" />
     <meta name="keywords"
         content="Fields of Mistria, gift guide, visual, almanac, checklist, interactive, gifting, museum, tracker, completion, donate, marriage, hearts, romance, Celine, March, Juniper, Adeline">
 
@@ -50,17 +49,17 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/style.css?v=47">
+    <link rel="stylesheet" href="css/style.css?v=48">
     <link rel="stylesheet" href="css/popups.css">
-    <link rel="stylesheet" href="css/tracker.css?v=2">
-    <link rel="stylesheet" href="css/wrapped.css">
+    <link rel="stylesheet" href="css/tracker.css?v=4">
+    <link rel="stylesheet" href="css/wrapped.css?v=2">
 
-    <script type="text/javascript" src="json/items.json.js?v=29"></script>
-    <script type="text/javascript" src="json/items_accessories.json.js?v=9"></script>
+    <script type="text/javascript" src="json/items.json.js?v=30"></script>
+    <script type="text/javascript" src="json/items_accessories.json.js?v=10"></script>
     <script type="text/javascript" src="json/items_animals.json.js?v=8"></script>
     <script type="text/javascript" src="json/items_perks.json.js?v=6"></script>
     <script type="text/javascript" src="json/build.json.js?v=6"></script>
-    <script type="text/javascript" src="json/tabs.json.js?v=9"></script>
+    <script type="text/javascript" src="json/tabs.json.js?v=10"></script>
 
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -116,6 +115,9 @@
                         </div>
                     </label>
                 </div>
+
+
+
 
                 <div class="dropdowns">
                     <div class="dropdown_wrap">
@@ -254,6 +256,7 @@
                     </div>
                 </div>
 
+                <input type='checkbox' class="styled" id="mode_chbexpand_switches"></input>
                 <div class="switches">
                     <div class="switch_wrap switch_wrap_dark">
                         <label class="switch mode_dark">
@@ -265,6 +268,23 @@
                         </label>
                         Dark mode
                     </div>
+                    <div class="switch_wrap switch_wrap_stars">
+                        <label class="switch mode_stars">
+                            <input type='checkbox' id="mode_stars"></input>
+                            <div class='toggler'>
+                                <div class='moon-icon'></div>
+                            </div>
+                        </label>
+                        Background stars
+                        <svg id="sparkle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24"
+                            width="24">
+                            <g>
+                                <path id="Union" fill="#ffffff"
+                                    d="M6.5 13.5c0.37877 0 0.72514 0.214 0.89453 0.5527l0.85059 1.7012 1.70215 0.8516c0.33873 0.1694 0.55273 0.5157 0.55273 0.8945s-0.214 0.7251 -0.55273 0.8945l-1.70215 0.8506 -0.85059 1.7022c-0.16939 0.3387 -0.51576 0.5527 -0.89453 0.5527s-0.72514 -0.214 -0.89453 -0.5527l-0.85156 -1.7022 -1.70118 -0.8506C2.71395 18.2251 2.5 17.8788 2.5 17.5s0.21395 -0.7251 0.55273 -0.8945l1.70118 -0.8516 0.85156 -1.7012 0.07129 -0.1211c0.18493 -0.2679 0.49178 -0.4316 0.82324 -0.4316M16 6c0.3788 0 0.7251 0.21395 0.8945 0.55273l1.3506 2.70118 2.7022 1.35159c0.3387 0.1694 0.5527 0.5157 0.5527 0.8945s-0.214 0.7251 -0.5527 0.8945l-2.7022 1.3506 -1.3506 2.7022C16.7251 16.786 16.3788 17 16 17s-0.7251 -0.214 -0.8945 -0.5527l-1.3516 -2.7022 -2.7012 -1.3506c-0.3387 -0.1694 -0.5527 -0.5157 -0.5527 -0.8945s0.214 -0.7251 0.5527 -0.8945l2.7012 -1.35159 1.3516 -2.70118 0.0713 -0.12109C15.3617 6.16367 15.6685 6 16 6m-0.6055 4.4473c-0.0967 0.1935 -0.2537 0.3505 -0.4472 0.4472l-1.211 0.6055 1.211 0.6055 0.1377 0.084c0.1302 0.094 0.237 0.2181 0.3095 0.3632L16 13.7637l0.6055 -1.211c0.0967 -0.1935 0.2537 -0.3505 0.4472 -0.4472l1.211 -0.6055 -1.211 -0.6055c-0.1935 -0.0967 -0.3505 -0.2537 -0.4472 -0.4472L16 9.23633zM6.5 2.5c0.37877 0 0.72514 0.21395 0.89453 0.55273l0.85059 1.70118 1.70215 0.85156c0.33873 0.16939 0.55273 0.51576 0.55273 0.89453s-0.214 0.72514 -0.55273 0.89453l-1.70215 0.85059 -0.85059 1.70215C7.22514 10.286 6.87877 10.5 6.5 10.5s-0.72514 -0.214 -0.89453 -0.55273l-0.85156 -1.70215 -1.70118 -0.85059C2.71395 7.22514 2.5 6.87877 2.5 6.5s0.21395 -0.72514 0.55273 -0.89453l1.70118 -0.85156 0.85156 -1.70118 0.07129 -0.12109C5.86169 2.66367 6.16854 2.5 6.5 2.5"
+                                    stroke-width="1"></path>
+                            </g>
+                        </svg>
+                    </div>
                     <div class="switch_wrap switch_wrap_name">
                         <label class="switch mode_name">
                             <input type='checkbox' id="mode_name"></input>
@@ -273,7 +293,7 @@
                         </label>
                         Show item names
                     </div>
-                    <div class="switch_wrap switch_wrap_mini">
+                    <div class="switch_wrap switch_wrap_mini secondary">
                         <label class="switch mode_mini">
                             <input type='checkbox' id="mode_mini"></input>
                             <div class='toggler'>
@@ -281,7 +301,7 @@
                         </label>
                         Minimize portraits
                     </div>
-                    <div class="switch_wrap">
+                    <div class="switch_wrap secondary">
                         <label class="switch mode_disable_tooltip">
                             <input type='checkbox' id="mode_disable_tooltip"></input>
                             <div class='toggler'>
@@ -289,7 +309,7 @@
                         </label>
                         Disable tooltips
                     </div>
-                    <div class="switch_wrap switch_wrap_mini_tooltip">
+                    <div class="switch_wrap switch_wrap_mini_tooltip secondary">
                         <label class="switch mode_mini_tooltip">
                             <input type='checkbox' id="mode_mini_tooltip"></input>
                             <div class='toggler'>
@@ -338,7 +358,28 @@
                             <line x1="12" x2="12.01" y1="17" y2="17" />
                         </svg>
                     </div>
+
+                    <label for="mode_chbexpand_switches">
+                        <div id="dropdowns_show">Show more
+                            <svg fill="none" height="15" viewBox="0 0 15 15" width="15"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M4.18179 6.18181C4.35753 6.00608 4.64245 6.00608 4.81819 6.18181L7.49999 8.86362L10.1818 6.18181C10.3575 6.00608 10.6424 6.00608 10.8182 6.18181C10.9939 6.35755 10.9939 6.64247 10.8182 6.81821L7.81819 9.81821C7.73379 9.9026 7.61934 9.95001 7.49999 9.95001C7.38064 9.95001 7.26618 9.9026 7.18179 9.81821L4.18179 6.81821C4.00605 6.64247 4.00605 6.35755 4.18179 6.18181Z"
+                                    fill="currentColor" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div id="dropdowns_collapse">Collapse
+                            <svg fill="none" height="15" viewBox="0 0 15 15" width="15"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M4.18179 8.81819C4.00605 8.64245 4.00605 8.35753 4.18179 8.18179L7.18179 5.18179C7.26618 5.0974 7.38064 5.04999 7.49999 5.04999C7.61933 5.04999 7.73379 5.0974 7.81819 5.18179L10.8182 8.18179C10.9939 8.35753 10.9939 8.64245 10.8182 8.81819C10.6424 8.99392 10.3575 8.99392 10.1818 8.81819L7.49999 6.13638L4.81819 8.81819C4.64245 8.99392 4.35753 8.99392 4.18179 8.81819Z"
+                                    fill="currentColor" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </label>
+
                 </div>
+
 
                 <div class="bottom_info">
                     <div class="statistics">

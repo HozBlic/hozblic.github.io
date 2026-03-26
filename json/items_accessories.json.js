@@ -899,9 +899,10 @@ var objItemsAccessories =
     },
     "head_bunny_ears": {
         "name": "Bunny Ears",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_spring.png?1c93f3\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> Only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "head_cap_basic": {
@@ -930,9 +931,10 @@ var objItemsAccessories =
     },
     "head_cherry_beret": {
         "name": "Cherry Beret",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_spring.png?1c93f3\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> Only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "head_clips_angel_wing": {
@@ -1021,9 +1023,10 @@ var objItemsAccessories =
     },
     "head_ear_muffs": {
         "name": "Ear Muffs",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon winter.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_winter.png?4b2fdb\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Winter\" title=\"Winter\">Winter</a></span> Only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "head_enchantern_hat": {
@@ -1177,9 +1180,10 @@ var objItemsAccessories =
     },
     "head_lemon_beret": {
         "name": "Lemon Beret",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_spring.png?1c93f3\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> Only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "head_lily_pad": {
@@ -1329,9 +1333,10 @@ var objItemsAccessories =
     },
     "head_strawberry_beret": {
         "name": "Strawberry Beret",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon spring.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_spring.png?1c93f3\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Spring\" title=\"Spring\">Spring</a></span> Only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "head_sprout_hat": {
@@ -1626,9 +1631,10 @@ var objItemsAccessories =
     },
     "shoes_boots_pumpkin": {
         "name": "Pumpkin Boots",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon autumn.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_autumn.png?b79477\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fall\" title=\"Fall\">Fall</a></span> only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "shoes_boots_short_basic": {

@@ -28,7 +28,7 @@
     --color-txt: white;
     --color-bg: #242424;
     --color-bg-darker: #1b1b1b;
-    --color-bg-darkest: #00000099;
+    --color-bg-darkest: #00000050;
     --color-bg-darkest-solid: #0e0e0e;
     --color-bg-darkest-solid-rgb: 14, 14, 14;
     --color-btn: #4a4e69;
@@ -40,6 +40,49 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#page.mode_stars::before {
+    --bkg-w: 400px;
+    --bkg-h: 448px;
+    --bkg-multi: 2;
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+    image-rendering: pixelated;
+    background-image: url('../images/background/spr_star_bkg_small.png'), url('../images/background/spr_star_bkg_medium.png'), url('../images/background/spr_star_bkg_large.png');
+    background-size: calc(var(--bkg-w) * var(--bkg-multi)) calc(var(--bkg-h) *var(--bkg-multi));
+    animation: scrollDiagonal calc(60s*6) linear infinite;
+}
+
+#page.mode_dark.mode_stars::before {
+    opacity: 0.7;
+}
+
+#page.mode_stars .alert_blur {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+@keyframes scrollDiagonal {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position:
+            calc(-1 * var(--bkg-w) * var(--bkg-multi)) calc(var(--bkg-h) * var(--bkg-multi)),
+            calc(-1 * 2 * var(--bkg-w) * var(--bkg-multi)) calc(2 * var(--bkg-h) * var(--bkg-multi)),
+            calc(-1 * 3 * var(--bkg-w) * var(--bkg-multi)) calc(3 * var(--bkg-h) * var(--bkg-multi))
+    }
 }
 
 #triangle {
@@ -248,7 +291,7 @@ svg:focus {
 
 #filter_content {
     display: flex;
-    gap: 24px;
+    gap: 14px;
     flex-direction: column;
     padding: 10px 15px;
     overflow-x: hidden;
@@ -256,6 +299,13 @@ svg:focus {
     height: 100%;
     border-top: 1px solid var(--color-bg-darkest);
 }
+
+@media screen and (min-width: 575px) {
+    #filter_content {
+        gap: 24px;
+    }
+}
+
 
 #filter_content .input-label label {
     background-color: rgba(var(--color-bg-darkest-solid-rgb));
@@ -708,26 +758,28 @@ textarea {
     --switch-toggler-offset: calc(var(--switch-toggler-left)*2);
 }
 
-.switch.mode_dark input+.toggler {
+.switch:is(.mode_dark) input+.toggler {
     background-color: white;
     border-color: var(--color-bg-darkest);
 }
 
-.switch.mode_dark input:checked+.toggler {
+.switch:is(.mode_dark, .mode_stars) input:checked+.toggler {
     background-color: var(--color-btn);
 }
 
-.switch.mode_dark .toggler:before {
+.switch:is(.mode_dark) .toggler:before {
     background-color: #ffeccf;
     border: 1.5px solid #ffbb52;
 }
 
-.switch.mode_dark input:checked~.toggler:before {
+.switch:is(.mode_dark, .mode_stars) input:checked~.toggler:before,
+.switch:is(.mode_dark, .mode_stars) input:checked~.toggler:before {
     background-color: var(--color-btn);
-    border: 1.5px solid var(--color-txt);
+    border: 1.5px solid white;
 }
 
-.switch.mode_dark .moon-icon, .switch.mode_dark .sun-icon {
+.switch:is(.mode_dark, .mode_stars) .moon-icon,
+.switch:is(.mode_dark, .mode_stars) .sun-icon {
     position: absolute;
     height: var(--switch-toggler-height);
     width: var(--switch-toggler-height);
@@ -737,33 +789,48 @@ textarea {
     background-size: 75%;
 }
 
-.switch.mode_dark .sun-icon {
+.switch:is(.mode_dark, .mode_stars) .sun-icon {
     background-image: url(../images/sun.svg);
     background-size: 90%;
 }
 
-.switch.mode_dark .sun-icon {
+.switch.mode_stars .moon-icon {
+    background-image: url(../images/sparkle_light.svg);
+    background-size: 90%;
+}
+
+
+.switch:is(.mode_dark, .mode_stars) .sun-icon {
     opacity: 1;
     transform: translate(calc(var(--switch-toggler-right) + var(--switch-toggler-left)), var(--switch-toggler-left)) rotate(-15deg);
     transform-origin: 50% 50%;
     transition: opacity 150ms, transform 500ms ease;
 }
 
-.switch.mode_dark input:checked~.toggler .moon-icon {
+.switch:is(.mode_dark, .mode_stars) input:checked~.toggler .moon-icon {
     opacity: 1;
     transform: translate(var(--switch-toggler-left), calc(var(--switch-toggler-left) * 1.2)) rotate(15deg);
 }
 
-.switch.mode_dark input:checked~.toggler .sun-icon {
+.switch.mode_stars input:checked~.toggler .moon-icon {
+    transform: translate(var(--switch-toggler-left), calc(var(--switch-toggler-left) * 1.2)) rotate(0);
+}
+
+
+.switch:is(.mode_dark, .mode_stars) input:checked~.toggler .sun-icon {
     opacity: 0;
     transform: translate(var(--switch-toggler-right), var(--switch-toggler-offset)) rotate(10deg);
 }
 
-.switch.mode_dark .moon-icon {
+.switch:is(.mode_dark, .mode_stars) .moon-icon {
     opacity: 0;
     transform: translate(calc(var(--switch-toggler-left) + var(--switch-toggler-left)), var(--switch-toggler-offset)) rotate(-10deg);
     transform-origin: 50% 50%;
     transition: opacity 150ms, transform 500ms ease;
+}
+
+.switch.mode_stars .moon-icon {
+    transform: translate(calc(var(--switch-toggler-left) + var(--switch-toggler-left)), var(--switch-toggler-offset)) rotate(-25deg);
 }
 
 /*** END: dark mode switch checkbox ***/

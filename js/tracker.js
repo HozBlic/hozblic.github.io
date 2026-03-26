@@ -522,7 +522,7 @@ function deleteData() {
 
     $('#popup-selete-data').off('click').on('click', function () {
         localStorage.clear();
-        localStorage.setItem('mistria_move', 1);
+        // localStorage.setItem('mistria_move', 1);
         window.location.reload();
     });
 }
@@ -951,7 +951,7 @@ function addSelectAllAndAlert(strTab, arrAllItems) {
 
     if (objMistriaData[strTab].size === 0 || (strTab === 'customization' && eqSet(objMistriaData['customization'], new Set(objMistriaDataDefault.customization)))) {
         var strAlert = `
-        <div class="alert show yellow alert_import" style="grid-column: 1/-1; height: min-content;">
+        <div class="alert show yellow alert_import alert_blur" style="grid-column: 1/-1; height: min-content;">
             <div class="icon yellow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
                     viewBox="0 0 24.002 24">
@@ -1040,7 +1040,6 @@ function loadWrappedTab() {
 
 
             $('#wrapped').append(strAlert);
-
 
             $('#wrapped').css('overflow', 'hidden');
             $('#wrapped').append('<div id="wrapped_charts"></div>');
@@ -3066,7 +3065,7 @@ function loadWrappedTab() {
         $(`.tab_content`).html('');
 
         var strAlert = `
-                <div class="alert show" style="width: 100%;">
+                <div class="alert show alert_blur" style="width: 100%;">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
                             viewBox="0 0 24.002 24">
@@ -4229,7 +4228,7 @@ function loadMenuItems() {
         checkScrapedTabVisibility();
     });
 
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
+    var arrModes = ['mode_dark','mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -4288,6 +4287,9 @@ function loadMenuItems() {
     tippy('#older_browsers', {
         content: 'Does not work in older browsers',
     });
+    tippy('#sparkle', {
+        content: 'Serves no purpose, just thought it was cute',
+    });
     tippy('#unreleased_content', {
         content: `<p class="save_file">Content obtained via datamining, has not been implemented in the game yet</p>
                   <p class="save_file">Can also contain released content from latest update (if it has no information in Wiki yet)</p>`,
@@ -4331,10 +4333,10 @@ $(function () {
     resizeObserver.observe(document.getElementById("wrapped"));
 
 
-    if (!localStorage.getItem('mistria_move')) {
-        localStorage.setItem('mistria_move', 1);
-        $('#popup_move').show();
-    }
+    // if (!localStorage.getItem('mistria_move')) {
+    //     localStorage.setItem('mistria_move', 1);
+    //     $('#popup_move').show();
+    // }
 });
 
 function throttle(fn, time) {
