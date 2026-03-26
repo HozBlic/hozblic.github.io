@@ -82,6 +82,7 @@ let objContainers = {
     'soilWet': null,
     'grass': null,
     'rug': null,
+    'counter': null,
     'grid': null,
     'fences': null,
     'crops': null,
@@ -97,12 +98,14 @@ const objZindexes = {
     'soil': 3,
     'soilWet': 4,
     'grass': 5,
-   
+
     'collision': 7,
     'grid': 8,
-     'rug': 9,
+    'rug': 9,
     'fences': 10,
+
     'crops': 11,
+    'counter': 12,
     'cursor': 98,
     'selection': 97,
 }
@@ -282,7 +285,7 @@ function convertGridToNeighbours(intItemIndex = null) {
         [-1, 0], [1, 0],
         [-1, 1], [0, 1], [1, 1]
     ];
-    const bolTwosOnly = (objSpriteCategories.soil.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex) || objSpriteCategories.fences.includes(intItemIndex)) ? true : false;
+    const bolTwosOnly = (objSpriteCategories.soil.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex) || objSpriteCategories.on_twos_only.includes(intItemIndex)) ? true : false;
 
     let arrNeighbourGrid = [];
     for (let row = 0; row < objGridCombined.main.length; row++) {
@@ -698,10 +701,9 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
         }
     } else if (objSpriteCategories.crops.includes(intItemIndex)) {
         sprite = sprites.getCrop(getSpriteKeyByIndex(intItemIndex));
-    } else if (objSpriteCategories.fences.includes(intItemIndex)) {
+    } else if (objSpriteCategories.fences.includes(intItemIndex) || objSpriteCategories.counter.includes(intItemIndex)) {
         sprite = sprites.getFence(getSpriteKeyByIndex(intItemIndex), arrNeighbours);
     } else {
-        console.log(getSpriteKeyByIndex(intItemIndex));
         sprite = sprites.get(getSpriteKeyByIndex(intItemIndex));
     }
 
@@ -710,7 +712,7 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
 
 function getTopLeftCornerItem(objCellCoord) {
     //snap to grid
-    const bolTwosOnly = (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.fences.includes(intCurrentlyDrawing)) ? true : false;
+    const bolTwosOnly = (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.on_twos_only.includes(intCurrentlyDrawing)) ? true : false;
     const sprite = getSprite(intCurrentlyDrawing);
     const arrSize = sprite.meta.size;
 
@@ -874,7 +876,8 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
         const arrItems = [...setItems];
         const arrSeenFences = getCommonElements(arrItems, objSpriteCategories.fences)
         const arrSeenGround = getCommonElements(arrItems, objSpriteCategories.soil)
-        let arrNeighborItems = getCommonElements(arrItems, [...arrSeenGround, ...arrSeenFences]);
+        const arrSeenCounters = getCommonElements(arrItems, objSpriteCategories.counter)
+        let arrNeighborItems = getCommonElements(arrItems, [...arrSeenGround, ...arrSeenFences, ...arrSeenCounters]);
         arrNeighborItems.push(4);
 
         arrNeighborItems.forEach((intIdx) => {
@@ -890,6 +893,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
         } else {
             objContainersChanged.crops = objSpriteCategories.crops;
             objContainersChanged.fences = objSpriteCategories.fences;
+            objContainersChanged.counter = objSpriteCategories.counter;
             objContainersChanged.ground = [1];
             objContainersChanged.soil = [2];
             objContainersChanged.soilWet = [3];
@@ -1001,10 +1005,31 @@ function updateGrid(objCellCoord, bolChange = false) {
                         const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
                         let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat())
 
-                        setGrid_CoveredSliceValues.delete(objSpriteCategories.soil);
+                        objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
+
+                        if (objSpriteCategories.depth_to_floor.includes(intCurrentlyDrawing)) {
+                            //rugs and stuff can be under other elements, but can not hit other rugs
+                            let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.depth_to_floor.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex)));
+                            setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
+                        } else {
+                            //elements can be over rugs
+                            objSpriteCategories.depth_to_floor.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
+                        }
 
                         if (setGrid_CoveredSliceValues.size) {
                             bolHitsElement = true;
+                        }
+                    }
+
+                    if (objSpriteCategories.fences.includes(intCurrentlyDrawing)) {
+                        //draw fences as border only for selection
+                        const isEdge =
+                            x === objSelection.x0 ||
+                            x === objSelection.x1 - 1 ||
+                            y === objSelection.y0 ||
+                            y === objSelection.y1 - 1;
+                        if (!isEdge) {
+                            continue;
                         }
                     }
 
@@ -1970,7 +1995,7 @@ $(function () {
                 objStartOffset = { x: 0, y: 0 };
                 objPrevCellCoord = { x: 0, y: 0 };
                 drawSelection();
-                updateCursorGrid(objCurrentCellCoord);
+                // updateCursorGrid(objCurrentCellCoord);
             }
         });
 
@@ -2099,7 +2124,7 @@ $(function () {
         drawCollision();
 
         // addTestData(4);
-        updateCurrentlyDrawing(71);
+        updateCurrentlyDrawing(975);
 
         drawContainers(['main']);
 
