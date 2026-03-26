@@ -168,9 +168,11 @@ canvas {
 .button_item.disabled {
     opacity: 0.4;
     cursor: auto;
+    background-color: var(--color-bg-darker);
 }
-.button_item.disabled:hover{
-      background-color: var(--color-bg-darker);
+
+.button_item.disabled:hover {
+    background-color: var(--color-bg-darker);
 }
 
 

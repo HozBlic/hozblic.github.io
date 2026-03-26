@@ -17,6 +17,9 @@ let objMistriaDataPlannerDefault = {
     }
 }
 
+let arrVersions = [];
+let intCurrentVersion = 0;
+const intAllowedVersions = 10;
 let strMode = 'dragging_mode'; // drawing_mode, selection_mode
 let intCurrentlyDrawing = false;
 let bolIsDragging = false;
@@ -78,6 +81,7 @@ let objContainers = {
     'soil': null,
     'soilWet': null,
     'grass': null,
+    'rug': null,
     'grid': null,
     'fences': null,
     'crops': null,
@@ -93,10 +97,12 @@ const objZindexes = {
     'soil': 3,
     'soilWet': 4,
     'grass': 5,
-    'collision': 6,
-    'grid': 7,
-    'fences': 8,
-    'crops': 9,
+   
+    'collision': 7,
+    'grid': 8,
+     'rug': 9,
+    'fences': 10,
+    'crops': 11,
     'cursor': 98,
     'selection': 97,
 }
@@ -609,14 +615,13 @@ function populateItemGrids(bolUpdateGrids) {
         Array.from({ length: objGrid.x }, () => ({}))
     );
 
-
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
         const intItemKey = parseInt(strItemKey);
         for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
             for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
                 if (objFarmLayout[intItemKey][y][x]) {
                     const sprite = getSprite(intItemKey);
-                    const arrSize = sprite.meta.size; 
+                    const arrSize = sprite.meta.size;
                     //size will depend on direction
                     objGridCombined.main[y][x].push(intItemKey);
                     const objSection = {
@@ -692,11 +697,12 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
                 break;
         }
     } else if (objSpriteCategories.crops.includes(intItemIndex)) {
-        sprite = sprites.getCrop(getSpriteKeyByIndex(intItemIndex))
+        sprite = sprites.getCrop(getSpriteKeyByIndex(intItemIndex));
     } else if (objSpriteCategories.fences.includes(intItemIndex)) {
-        sprite = sprites.getFence(getSpriteKeyByIndex(intItemIndex), arrNeighbours)
+        sprite = sprites.getFence(getSpriteKeyByIndex(intItemIndex), arrNeighbours);
     } else {
-        sprite = sprites.get(getSpriteKeyByIndex(intItemIndex))
+        console.log(getSpriteKeyByIndex(intItemIndex));
+        sprite = sprites.get(getSpriteKeyByIndex(intItemIndex));
     }
 
     return sprite;
@@ -888,6 +894,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
             objContainersChanged.soil = [2];
             objContainersChanged.soilWet = [3];
             objContainersChanged.grass = [4];
+            objContainersChanged.rug = objSpriteCategories.rug;
         }
 
         Object.keys(objContainersChanged).forEach(function (strContainerKey) {
@@ -949,7 +956,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
     });
 
     if (arrGrids[0] == 'main') {
-        objGridCombinedPrev = JSON.parse(JSON.stringify(objGridCombined));
+        // objGridCombinedPrev = JSON.parse(JSON.stringify(objGridCombined));
     }
 
 
@@ -970,6 +977,7 @@ function updateGrid(objCellCoord, bolChange = false) {
         return;
     }
     objPrevCellCoord = objCellCoord;
+    let bolAddedNew = false;
 
     if (strMode === 'drawing_mode' && (!bolChange || (bolChange && bolIsDragging && !bolIsDraggingMap))) {
         //  "ornate_rug_large_rectangle_red": 71
@@ -1045,7 +1053,7 @@ function updateGrid(objCellCoord, bolChange = false) {
                             objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawing] = [...Array(objGrid.y)].map(e => Array(objGrid.x));
                         }
                         objMistriaDataPlanner.layout[intSaveSlot].farm[intCurrentlyDrawing][y][x] = 1;
-
+                        bolAddedNew = true;
                     } else {
 
                         if (bolHitsElement) {
@@ -1059,8 +1067,10 @@ function updateGrid(objCellCoord, bolChange = false) {
         }
 
         if (bolChange) {
-            saveDataPlanner(true);
-            drawContainers(['main']);
+            if (bolAddedNew) {
+                saveDataPlanner(true);
+                drawContainers(['main']);
+            }
         } else {
             drawContainers(['cursor']);
         }
@@ -1415,7 +1425,7 @@ async function loadMenuItems() {
             categoryData.items.forEach(function (intIndex) {
                 let strName;
                 let strImage;
-                let strItemKey = getSpriteKeyByIndex(intIndex)
+                let strItemKey = getSpriteKeyByIndex(intIndex);
                 if (strItemKey in objItemsPlanner) {
                     strName = objItemsPlanner[strItemKey].name;
                     strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
@@ -1549,11 +1559,7 @@ function changeSeason(objElem) {
 
     addBackground();
     drawGrassFix();
-
-    drawSoil();
-    if (!objMistriaDataPlanner.options.has('mode_offseason')) {
-        drawCrops();
-    }
+    drawContainers(['main']);
 }
 
 function resetZoom(strDirection) {
@@ -1758,14 +1764,62 @@ function minimapInit() {
         event.preventDefault();
     });
 }
+function versionControl(strAction = false) {
 
-function loadDataPlanner(bolUpdateGrids = false) {
+    if ($(`#${strAction}`).hasClass('disabled')) {
+        return;
+    }
+    if (strAction === 'undo') {
+        if (intCurrentVersion) {
+            intCurrentVersion = intCurrentVersion - 1;
+        }
+    }
+
+    if (strAction === 'redo') {
+        if (intCurrentVersion < arrVersions.length - 1) {
+            intCurrentVersion = intCurrentVersion + 1;
+        }
+    }
+
+    saveDataPlanner(true, true);
+    drawContainers(['main']);
+}
+function loadDataPlanner(bolUpdateGrids = false, bolVersionChange = false) {
 
     objMistriaDataPlanner = JSON.parse(localStorage.getItem('mistria_data_planner'));
 
     if (objMistriaDataPlanner === null) {
         objMistriaDataPlanner = objMistriaDataPlannerDefault;
     }
+
+    if (bolUpdateGrids) {
+        if (!bolVersionChange) {
+            //if current version is not latest, split array
+            if (intCurrentVersion < arrVersions.length - 1) {
+                arrVersions = arrVersions.slice(0, intCurrentVersion + 1);
+            }
+
+            arrVersions.push(JSON.parse(JSON.stringify(objMistriaDataPlanner.layout[intSaveSlot].farm)));
+            if (arrVersions.length > intAllowedVersions) {
+                arrVersions.shift();
+            }
+
+            intCurrentVersion = arrVersions.length - 1;
+        }
+
+        $('#undo').addClass('disabled');
+        $('#redo').addClass('disabled');
+
+        if (intCurrentVersion) {
+            $('#undo').removeClass('disabled');
+        }
+
+        if (intCurrentVersion < arrVersions.length - 1) {
+            $('#redo').removeClass('disabled');
+        }
+    }
+    $('#delete').removeClass('disabled');
+
 
     const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
@@ -1787,35 +1841,44 @@ function loadDataPlanner(bolUpdateGrids = false) {
     populateItemGrids(bolUpdateGrids);
 }
 
-function saveDataPlanner(bolUpdateGrids = false) {
+function saveDataPlanner(bolUpdateGrids = false, bolVersionChange = false) {
 
     // convert to array since JSON.stringify does not work on sets
     objMistriaDataPlanner.options = [...objMistriaDataPlanner.options];
 
-    const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
-    Object.keys(objFarmLayout).forEach(function (strItemKey) {
-        const intItemKey = parseInt(strItemKey);
-        let arrTemp = [];
-        for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
-            for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
-                if (objFarmLayout[intItemKey][y][x]) {
-                    arrTemp.push([x, y]);
+    if (!bolVersionChange) {
+        const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
+        Object.keys(objFarmLayout).forEach(function (strItemKey) {
+            const intItemKey = parseInt(strItemKey);
+            let arrTemp = [];
+            for (var y = 0; y < objFarmLayout[intItemKey].length; y++) {
+                for (var x = 0; x < objFarmLayout[intItemKey][y].length; x++) {
+                    if (objFarmLayout[intItemKey][y][x]) {
+                        arrTemp.push([x, y]);
+                    }
                 }
             }
-        }
 
-        if (arrTemp.length) {
-            objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey] = arrTemp;
-        } else {
-            delete objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey];
-        }
-    });
+            if (arrTemp.length) {
+                objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey] = arrTemp;
+            } else {
+                delete objMistriaDataPlanner.layout[intSaveSlot].farm[intItemKey];
+            }
+        });
+    } else {
+        // console.log(intCurrentVersion, bolUpdateGrids)
+        objMistriaDataPlanner.layout[intSaveSlot].farm = arrVersions[intCurrentVersion];
+    }
 
     localStorage.setItem('mistria_data_planner', JSON.stringify(objMistriaDataPlanner));
-    loadDataPlanner(bolUpdateGrids);
+    loadDataPlanner(bolUpdateGrids, bolVersionChange);
 }
 
 function clearMap() {
+    if ($(`#delete`).hasClass('disabled')) {
+        return;
+    }
+
     // convert to array since JSON.stringify does not work on sets
     objMistriaDataPlanner.options = [...objMistriaDataPlanner.options];
 
@@ -1828,6 +1891,7 @@ function clearMap() {
     loadDataPlanner(true);
 
     drawContainers(['main']);
+    $('#delete').addClass('disabled');
 }
 
 function drawAllItems() {
@@ -1863,7 +1927,6 @@ $(function () {
 
         objSpriteKeyDict = await (await fetch('textures/dict.json')).json();
         objSpriteCategories = await (await fetch('textures/categories.json')).json();
-        objSpriteCategories['fences'] = [5, 6];
 
         arrGrid_Collision = await (await fetch('textures/collision.json')).json();
         arrCollisionUpgradeGrid = await (await fetch('textures/collision_houseupgrade.json')).json();
