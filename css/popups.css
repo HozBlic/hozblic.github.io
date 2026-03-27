@@ -533,9 +533,10 @@ pre {
     list-style: none;
 }
 
-#popup_controls ul ul li {
+#popup_controls ul .control-desc {
     display: flex;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 #popup_controls ul li .icon {

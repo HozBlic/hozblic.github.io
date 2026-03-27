@@ -433,7 +433,7 @@
                 </svg>
             </label>
             <div id="tabs">
-                <div class="tab button_item button-notext" data-tab="dragging_mode"
+                <div class="tab button_item button-notext" mode="dragging_mode" data-tab="dragging_mode"
                     onclick="updateCursorMode('dragging_mode')">
                     <div class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -461,8 +461,21 @@
                         </svg>
                     </div>
                 </div>
-                <div class="tab button_item button-notext" data-tab="selection_mode"
+                <div class="tab button_item button-notext" mode="selection_mode" data-tab="selection_mode"
                     onclick="updateCursorMode('selection_mode')">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000"
+                            stroke-linecap="round" stroke-linejoin="round" height="24" width="24">
+                            <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                            <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                            <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                            <path d="M14 4.1 12 6" stroke-width="2"></path>
+                            <path d="m6 12 -1.9 2" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="tab button_item button-notext" mode="selection_area_mode" data-tab="selection_area_mode"
+                    onclick="updateCursorMode('selection_area_mode')">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000"
                             stroke-linecap="round" stroke-linejoin="round" height="24" width="24">
@@ -662,136 +675,96 @@
                                 <li>Click anywhere on the map to
                                     <ul>
                                         <li>
-                                            <div class="icon">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z" stroke="black"
-                                                        stroke-width="1.3" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                    <g clip-path="url(#clip0_1_93)">
-                                                        <path d="M4.95833 8.125L2.58333 10.5L4.95833 12.875"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                            <div class="control-desc">
+                                                <div class="icon" mode="dragging_mode">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z"
+                                                            stroke="black" stroke-width="1.3" stroke-linecap="round"
                                                             stroke-linejoin="round" />
-                                                        <path d="M8.125 4.95833L10.5 2.58333L12.875 4.95833"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M12.875 16.0417L10.5 18.4167L8.125 16.0417"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M16.0417 8.125L18.4167 10.5L16.0417 12.875"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M2.58333 10.5H18.4167" stroke="black"
-                                                            stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M10.5 2.58333V18.4167" stroke="black"
-                                                            stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_1_93">
-                                                            <rect width="19" height="19" fill="white"
-                                                                transform="translate(1 1)" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
+                                                        <g clip-path="url(#clip0_1_93)">
+                                                            <path d="M4.95833 8.125L2.58333 10.5L4.95833 12.875"
+                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M8.125 4.95833L10.5 2.58333L12.875 4.95833"
+                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M12.875 16.0417L10.5 18.4167L8.125 16.0417"
+                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M16.0417 8.125L18.4167 10.5L16.0417 12.875"
+                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M2.58333 10.5H18.4167" stroke="black"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <path d="M10.5 2.58333V18.4167" stroke="black"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_1_93">
+                                                                <rect width="19" height="19" fill="white"
+                                                                    transform="translate(1 1)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                center it there
                                             </div>
-                                            center it there
                                         </li>
                                         <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="selection_mode">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" height="24" width="24">
+                                                        <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                                                        <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                                                        <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                                                        <path d="M14 4.1 12 6" stroke-width="2"></path>
+                                                        <path d="m6 12 -1.9 2" stroke-width="2"></path>
+                                                    </svg>
+                                                </div>
+                                                select the item
                                             </div>
-                                            select the tile
                                         </li>
                                         <li>
-                                            <div class="icon">
-                                                <img src="images/almanac/crops.png">
+                                            <div class="control-desc">
+                                                <div class="icon" mode="selection_area_mode">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" height="24" width="24">
+                                                        <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
+                                                        <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
+                                                        <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
+                                                        <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
+                                                        <path d="M9 3h1" stroke-width="2"></path>
+                                                        <path d="M9 21h2" stroke-width="2"></path>
+                                                        <path d="M14 3h1" stroke-width="2"></path>
+                                                        <path d="M3 9v1" stroke-width="2"></path>
+                                                        <path d="M21 9v2" stroke-width="2"></path>
+                                                        <path d="M3 14v1" stroke-width="2"></path>
+                                                    </svg>
+                                                </div>
+                                                select the tile
                                             </div>
-                                            draw selected item in the tile
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="drawing_mode">
+                                                    <img src="images/almanac/crops.png">
+                                                </div>
+                                                draw selected item in the tile
+                                            </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>Click and hold, then drag in any direction
                                     <ul>
                                         <li>
-                                            <div class="icon">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z" stroke="black"
-                                                        stroke-width="1.3" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                    <g clip-path="url(#clip0_1_93)">
-                                                        <path d="M4.95833 8.125L2.58333 10.5L4.95833 12.875"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M8.125 4.95833L10.5 2.58333L12.875 4.95833"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M12.875 16.0417L10.5 18.4167L8.125 16.0417"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M16.0417 8.125L18.4167 10.5L16.0417 12.875"
-                                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M2.58333 10.5H18.4167" stroke="black"
-                                                            stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M10.5 2.58333V18.4167" stroke="black"
-                                                            stroke-width="1.5" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_1_93">
-                                                            <rect width="19" height="19" fill="white"
-                                                                transform="translate(1 1)" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </div>
-                                            move map
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
-                                            </div>
-                                            select an area or move the selection
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <img src="images/almanac/crops.png">
-                                            </div>
-                                            draw in an area
-                                        </li>
-                                        <li>
-                                            <div class="icons">
-                                                <div class="icon">
+                                            <div class="control-desc">
+                                                <div class="icon" mode="dragging_mode">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z"
@@ -825,7 +798,28 @@
                                                         </defs>
                                                     </svg>
                                                 </div>
-                                                <div class="icon">
+                                                move map
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="selection_mode">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" height="24" width="24">
+                                                        <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                                                        <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                                                        <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                                                        <path d="M14 4.1 12 6" stroke-width="2"></path>
+                                                        <path d="m6 12 -1.9 2" stroke-width="2"></path>
+                                                    </svg>
+                                                </div>
+                                                move the selected item
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="selection_area_mode">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                         fill="none" stroke="#000000" stroke-linecap="round"
                                                         stroke-linejoin="round" height="24" width="24">
@@ -841,82 +835,112 @@
                                                         <path d="M3 14v1" stroke-width="2"></path>
                                                     </svg>
                                                 </div>
-                                                <div class="icon">
+                                                select an area or move the selection
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="drawing_mode">
                                                     <img src="images/almanac/crops.png">
                                                 </div>
+                                                draw in an area
                                             </div>
-                                            move map [with wheel]
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icons">
+                                                    <div class="icon" mode="dragging_mode">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z"
+                                                                stroke="black" stroke-width="1.3" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <g clip-path="url(#clip0_1_93)">
+                                                                <path d="M4.95833 8.125L2.58333 10.5L4.95833 12.875"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M8.125 4.95833L10.5 2.58333L12.875 4.95833"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M12.875 16.0417L10.5 18.4167L8.125 16.0417"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M16.0417 8.125L18.4167 10.5L16.0417 12.875"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M2.58333 10.5H18.4167" stroke="black"
+                                                                    stroke-width="1.5" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M10.5 2.58333V18.4167" stroke="black"
+                                                                    stroke-width="1.5" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_1_93">
+                                                                    <rect width="19" height="19" fill="white"
+                                                                        transform="translate(1 1)" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="icon" mode="selection_mode">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="none" stroke="#000000" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="24" width="24">
+                                                            <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                                                            <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                                                            <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                                                            <path d="M14 4.1 12 6" stroke-width="2"></path>
+                                                            <path d="m6 12 -1.9 2" stroke-width="2"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="icon" mode="selection_area_mode">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="none" stroke="#000000" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="24" width="24">
+                                                            <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
+                                                            <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
+                                                            <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2">
+                                                            </path>
+                                                            <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
+                                                            <path d="M9 3h1" stroke-width="2"></path>
+                                                            <path d="M9 21h2" stroke-width="2"></path>
+                                                            <path d="M14 3h1" stroke-width="2"></path>
+                                                            <path d="M3 9v1" stroke-width="2"></path>
+                                                            <path d="M21 9v2" stroke-width="2"></path>
+                                                            <path d="M3 14v1" stroke-width="2"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="icon" mode="drawing_mode">
+                                                        <img src="images/almanac/crops.png">
+                                                    </div>
+                                                </div>
+                                                move map [with wheel]
+                                            </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>Right click to
                                     <ul>
                                         <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
-                                            </div>
-                                            deselect or cancel current selection
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <img src="images/almanac/crops.png">
-                                            </div>
-                                            deselect item or cancel current selection
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>Scroll wheel to
-                                    <ul>
-                                        <li>
-                                            <div class="icons">
-                                                <div class="icon">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z"
-                                                            stroke="black" stroke-width="1.3" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <g clip-path="url(#clip0_1_93)">
-                                                            <path d="M4.95833 8.125L2.58333 10.5L4.95833 12.875"
-                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M8.125 4.95833L10.5 2.58333L12.875 4.95833"
-                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M12.875 16.0417L10.5 18.4167L8.125 16.0417"
-                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M16.0417 8.125L18.4167 10.5L16.0417 12.875"
-                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M2.58333 10.5H18.4167" stroke="black"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                            <path d="M10.5 2.58333V18.4167" stroke="black"
-                                                                stroke-width="1.5" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                        </g>
-                                                        <defs>
-                                                            <clipPath id="clip0_1_93">
-                                                                <rect width="19" height="19" fill="white"
-                                                                    transform="translate(1 1)" />
-                                                            </clipPath>
-                                                        </defs>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="selection_mode">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" height="24" width="24">
+                                                        <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                                                        <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                                                        <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                                                        <path d="M14 4.1 12 6" stroke-width="2"></path>
+                                                        <path d="m6 12 -1.9 2" stroke-width="2"></path>
                                                     </svg>
                                                 </div>
-                                                <div class="icon">
+                                                deselect item
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="selection_area_mode">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                         fill="none" stroke="#000000" stroke-linecap="round"
                                                         stroke-linejoin="round" height="24" width="24">
@@ -932,97 +956,146 @@
                                                         <path d="M3 14v1" stroke-width="2"></path>
                                                     </svg>
                                                 </div>
-                                                <div class="icon">
+                                                deselect or cancel current selection
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icon" mode="drawing_mode">
                                                     <img src="images/almanac/crops.png">
                                                 </div>
+                                                deselect item or cancel current selection
                                             </div>
-                                            zoom in or out map
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Scroll wheel to
+                                    <ul>
+                                        <li>
+                                            <div class="control-desc">
+                                                <div class="icons">
+                                                    <div class="icon" mode="dragging_mode">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M15 15L17.8 22L18.99 18.99L22 17.8L15 15Z"
+                                                                stroke="black" stroke-width="1.3" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                            <g clip-path="url(#clip0_1_93)">
+                                                                <path d="M4.95833 8.125L2.58333 10.5L4.95833 12.875"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M8.125 4.95833L10.5 2.58333L12.875 4.95833"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M12.875 16.0417L10.5 18.4167L8.125 16.0417"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M16.0417 8.125L18.4167 10.5L16.0417 12.875"
+                                                                    stroke="black" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M2.58333 10.5H18.4167" stroke="black"
+                                                                    stroke-width="1.5" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M10.5 2.58333V18.4167" stroke="black"
+                                                                    stroke-width="1.5" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_1_93">
+                                                                    <rect width="19" height="19" fill="white"
+                                                                        transform="translate(1 1)" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="icon" mode="selection_mode">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="none" stroke="#000000" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="24" width="24">
+                                                            <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                                                            <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                                                            <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                                                            <path d="M14 4.1 12 6" stroke-width="2"></path>
+                                                            <path d="m6 12 -1.9 2" stroke-width="2"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="icon" mode="selection_area_mode">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="none" stroke="#000000" stroke-linecap="round"
+                                                            stroke-linejoin="round" height="24" width="24">
+                                                            <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
+                                                            <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
+                                                            <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2">
+                                                            </path>
+                                                            <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
+                                                            <path d="M9 3h1" stroke-width="2"></path>
+                                                            <path d="M9 21h2" stroke-width="2"></path>
+                                                            <path d="M14 3h1" stroke-width="2"></path>
+                                                            <path d="M3 9v1" stroke-width="2"></path>
+                                                            <path d="M21 9v2" stroke-width="2"></path>
+                                                            <path d="M3 14v1" stroke-width="2"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="icon" mode="drawing_mode">
+                                                        <img src="images/almanac/crops.png">
+                                                    </div>
+                                                </div>
+                                                zoom in or out map
+                                            </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>Shortcuts
                                     <ul>
-                                        <li>[CTRL + Z] - undo</li>
-                                        <li>[CTRL + Y, CTRL + SHIFT + Z] - redo</li>
-                                        <li>[ESC] - same as right click</li>
-                                        <li>[Del] - delete selection (only
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
-                                            </div>
-                                            mode)
+                                        <li style="list-style: circle;">All modes
+                                            <ul>
+                                                <li>[CTRL + Z] - undo</li>
+                                                <li>[CTRL + Y, CTRL + SHIFT + Z] - redo</li>
+                                                <li>[ESC] - same as right click</li>
+                                            </ul>
                                         </li>
-                                        <li>[CTRL + C] - copy (only
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
+                                        <li style="list-style: circle;">
+                                            <div class="control-desc">
+                                                Shortcuts (
+                                                <div class="icon" mode="selection_mode">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" height="24" width="24">
+                                                        <path d="m9 9 5 12 1.8 -5.2L21 14Z" stroke-width="2"></path>
+                                                        <path d="M7.2 2.2 8 5.1" stroke-width="2"></path>
+                                                        <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
+                                                        <path d="M14 4.1 12 6" stroke-width="2"></path>
+                                                        <path d="m6 12 -1.9 2" stroke-width="2"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="icon" mode="selection_area_mode">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" height="24" width="24">
+                                                        <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
+                                                        <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
+                                                        <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
+                                                        <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
+                                                        <path d="M9 3h1" stroke-width="2"></path>
+                                                        <path d="M9 21h2" stroke-width="2"></path>
+                                                        <path d="M14 3h1" stroke-width="2"></path>
+                                                        <path d="M3 9v1" stroke-width="2"></path>
+                                                        <path d="M21 9v2" stroke-width="2"></path>
+                                                        <path d="M3 14v1" stroke-width="2"></path>
+                                                    </svg>
+                                                </div> mode only)
                                             </div>
-                                            mode)
-                                        </li>
-                                        <li>[CTRL + X] - cut (only
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
-                                            </div>
-                                            mode)
-                                        </li>
-                                        <li>[CTRL + V] - paste (only
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                    height="24" width="24">
-                                                    <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                    <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                    <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                    <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                    <path d="M9 3h1" stroke-width="2"></path>
-                                                    <path d="M9 21h2" stroke-width="2"></path>
-                                                    <path d="M14 3h1" stroke-width="2"></path>
-                                                    <path d="M3 9v1" stroke-width="2"></path>
-                                                    <path d="M21 9v2" stroke-width="2"></path>
-                                                    <path d="M3 14v1" stroke-width="2"></path>
-                                                </svg>
-                                            </div>
-                                            mode)
+                                            <ul>
+                                                <li>[Del] - delete selection </li>
+                                                <li>[CTRL + C] - copy </li>
+                                                <li>[CTRL + X] - cut </li>
+                                                <li>[CTRL + V] - paste </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
+
+
                             </ul>
                         </div>
                     </div>

@@ -20,11 +20,18 @@ let objMistriaDataPlannerDefault = {
 let arrVersions = [];
 let intCurrentVersion = 0;
 const intAllowedVersions = 10;
-let strMode = 'dragging_mode'; // drawing_mode, selection_mode
+let strMode = 'dragging_mode'; // drawing_mode, selection_area_mode
 let intCurrentlyDrawing = false;
+
 let bolIsDragging = false;
 let bolIsDraggingMap = false;
 let bolIsDraggingSection = false;
+let bolIsDraggingItem = false;
+let bolPreventDrawing = false;
+let objStartCellCoord = { x: 0, y: 0 };
+let objStartOffset = { x: 0, y: 0 };
+let objPrevCellCoord = { x: 0, y: 0 };
+let objSelectionSection = false;
 
 const intGridCellSize = 16 / 2;
 const objGrid = {
@@ -41,10 +48,7 @@ const objMinimapWrapperSize = {
 }
 let objSpriteCategories;
 
-let objStartCellCoord = { x: 0, y: 0 };
-let objStartOffset = { x: 0, y: 0 };
-let objPrevCellCoord = { x: 0, y: 0 };
-let objSelectionSection = false
+
 let intMultiplierCanvas = 1;
 
 let objSpriteKeyDict = null;
@@ -669,7 +673,7 @@ const slice2D = (arr, startX, endX, startY, endY) => {
 }
 
 function selectionHovered(objCellCoord) {
-    if (objContainers.selection !== null && strMode === 'selection_mode' &&
+    if (objContainers.selection !== null && strMode === 'selection_area_mode' &&
         (
             objCellCoord.x >= objSelectionSection.x0 &&
             objCellCoord.x <= objSelectionSection.x1 &&
@@ -680,6 +684,50 @@ function selectionHovered(objCellCoord) {
         return true;
     }
     return false;
+}
+
+function itemHovered(objCellCoord) {
+    if (strMode !== 'selection_mode') {
+        return false;
+    }
+
+    const objItemArea = { x0: objCellCoord.x, y0: objCellCoord.y, x1: objCellCoord.x, y1: objCellCoord.y }
+
+    if (checkTileHasCollision(objItemArea)) {
+        return false;
+    } else {
+        const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
+        let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat())
+
+        console.log(setGrid_CoveredSliceValues)
+
+        // objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
+
+        // if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
+        //     //soil can be under anything, but if there are crops, it must be tilled soil
+        //     if ([1, 4].includes(intCurrentlyDrawing)) {
+        //         let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.crops.includes(intItemIndex)));
+        //         setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
+        //         if (setGrid_CoveredSliceValues.size) {
+        //             bolHitsElement = true;
+        //         }
+        //     }
+        // } else {
+        //     if (objSpriteCategories.depth_to_floor.includes(intCurrentlyDrawing)) {
+        //         //rugs and stuff can be under other elements, but can not hit other rugs
+        //         let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.depth_to_floor.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex)));
+        //         setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
+        //     } else {
+        //         //elements can be over rugs
+        //         objSpriteCategories.depth_to_floor.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
+        //     }
+        //     if (setGrid_CoveredSliceValues.size) {
+        //         bolHitsElement = true;
+        //     }
+        // }
+    }
+    return false;
+
 }
 
 function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
@@ -854,7 +902,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
         if (bolHighlight) {
             elemSelection.fill(`rgba(255, 174, 0, 0.5)`);
             $('#game-container').css('cursor', 'pointer');
-        } else if (strMode === 'selection_mode') {
+        } else if (strMode === 'selection_area_mode') {
             elemSelection.fill(`rgba(255, 174, 0, 0.3)`);
         }
         elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
@@ -969,6 +1017,9 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
 
 function updateGrid(objCellCoord, bolChange = false) {
 
+    if (bolPreventDrawing) {
+        return;
+    }
     if (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.fences.includes(intCurrentlyDrawing)) {
         objCellCoord = {
             x: objCellCoord.x - objCellCoord.x % 2,
@@ -984,7 +1035,6 @@ function updateGrid(objCellCoord, bolChange = false) {
     let bolAddedNew = false;
 
     if (strMode === 'drawing_mode' && (!bolChange || (bolChange && bolIsDragging && !bolIsDraggingMap))) {
-        //  "ornate_rug_large_rectangle_red": 71
         objGridCombined.cursor = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []))
 
         const objSelection = getSelection(objCellCoord);
@@ -1004,20 +1054,29 @@ function updateGrid(objCellCoord, bolChange = false) {
                     } else {
                         const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
                         let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat())
-
                         objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
 
-                        if (objSpriteCategories.depth_to_floor.includes(intCurrentlyDrawing)) {
-                            //rugs and stuff can be under other elements, but can not hit other rugs
-                            let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.depth_to_floor.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex)));
-                            setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
+                        if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
+                            //soil can be under anything, but if there are crops, it must be tilled soil
+                            if ([1, 4].includes(intCurrentlyDrawing)) {
+                                let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.crops.includes(intItemIndex)));
+                                setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
+                                if (setGrid_CoveredSliceValues.size) {
+                                    bolHitsElement = true;
+                                }
+                            }
                         } else {
-                            //elements can be over rugs
-                            objSpriteCategories.depth_to_floor.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
-                        }
-
-                        if (setGrid_CoveredSliceValues.size) {
-                            bolHitsElement = true;
+                            if (objSpriteCategories.depth_to_floor.includes(intCurrentlyDrawing)) {
+                                //rugs and stuff can be under other elements, but can not hit other rugs
+                                let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.depth_to_floor.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex)));
+                                setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
+                            } else {
+                                //elements can be over rugs
+                                objSpriteCategories.depth_to_floor.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
+                            }
+                            if (setGrid_CoveredSliceValues.size) {
+                                bolHitsElement = true;
+                            }
                         }
                     }
 
@@ -1103,6 +1162,30 @@ function updateGrid(objCellCoord, bolChange = false) {
 
     if (strMode === 'selection_mode') {
 
+        if (bolIsDraggingItem && bolIsDragging) {
+
+        } else {
+            let objSelection = {
+                x0: objCellCoord.x,
+                y0: objCellCoord.y,
+                x1: objCellCoord.x,
+                y1: objCellCoord.y,
+            }
+            let bolHighlight = false;
+            itemHovered(objCellCoord)
+
+            // if (objSelectionSection !== false) {
+            //     objSelection = objSelectionSection;
+            //     if (itemHovered(objCellCoord)) {
+            //         bolHighlight = true;
+            //     }
+            //     drawContainers([], objSelection, bolHighlight);
+            // }
+        }
+    }
+
+    if (strMode === 'selection_area_mode') {
+
         if (bolIsDraggingSection && bolIsDragging) {
 
         } else if (bolIsDragging) {
@@ -1123,15 +1206,17 @@ function updateGrid(objCellCoord, bolChange = false) {
                 y1: objCellCoord.y,
             }
             let bolHighlight = false;
-            if (selectionHovered(objCellCoord)) {
-                bolHighlight = true;
-            }
+
             if (objSelectionSection !== false) {
                 objSelection = objSelectionSection;
+                if (selectionHovered(objCellCoord)) {
+                    bolHighlight = true;
+                }
+                drawContainers([], objSelection, bolHighlight);
             }
-            drawContainers([], objSelection, bolHighlight);
         }
     }
+
 
     //  objGridCombined.move = Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => []))
 
@@ -1149,7 +1234,17 @@ function updateGrid(objCellCoord, bolChange = false) {
     //move - save start selection, get which is selection from cursor grid, fill temp grid with (main grid minus start selection ) update cursor grid with selection
 }
 
+function resetDrawingVariables() {
+    bolIsDragging = false;
+    bolIsDraggingMap = false;
+    bolIsDraggingSection = false;
+    bolIsDraggingItem = false;
+    bolPreventDrawing = false;
 
+    objStartCellCoord = { x: 0, y: 0 };
+    objStartOffset = { x: 0, y: 0 };
+    objPrevCellCoord = { x: 0, y: 0 };
+}
 
 function updateCurrentlyDrawing(intItemKey = false) {
     intCurrentlyDrawing = intItemKey;
@@ -1157,7 +1252,7 @@ function updateCurrentlyDrawing(intItemKey = false) {
 }
 
 function updateCursorMode(strModeTemp = false) {
-    // let strMode = 'dragging_mode'; // drawing_mode, selection_mode
+    // let strMode = 'dragging_mode'; // drawing_mode, selection_area_mode
     strMode = strModeTemp;
     clearOverlays();
     $('.tab').removeClass('active');
@@ -1394,7 +1489,7 @@ async function loadMenuItems() {
                 drawCollision();
             }
             if (strMode === 'mode_offseason') {
-                drawCrops();
+                drawContainers(['main']);
             }
         });
     })
@@ -1528,11 +1623,17 @@ async function loadMenuItems() {
     tippy('#offseason', {
         content: 'Show healthy plant instead of a wilted one, even if that plant does not grow in chosen season',
     });
-    tippy('[data-tab="dragging_mode"]', {
+    tippy('[mode="dragging_mode"]', {
         content: 'Drag map',
     });
-    tippy('[data-tab="selection_mode"]', {
-        content: 'Select item or area',
+    tippy('[mode="selection_mode"]', {
+        content: 'Select item',
+    });
+    tippy('[mode="selection_area_mode"]', {
+        content: 'Select area',
+    });
+    tippy('[mode="drawing_mode"]', {
+        content: 'Drawing mode',
     });
     tippy('#undo', {
         content: 'Undo, up to 20 changes',
@@ -1919,12 +2020,6 @@ function clearMap() {
     $('#delete').addClass('disabled');
 }
 
-function drawAllItems() {
-    drawFence();
-    drawSoil();
-    drawCrops();
-}
-
 function throttle(fn, time) {
     let timeout = null;
     return function () {
@@ -1987,15 +2082,9 @@ $(function () {
 
 
         document.addEventListener('mousedown', (e) => {
-            if (e.button === 2 && (e.buttons & 1) && bolIsDragging && (strMode === 'drawing_mode' || strMode === 'selection_mode')) {
-                const objCurrentCellCoord = getClickedCell(e);
-
-                bolIsDragging = false;
-                objStartCellCoord = { x: 0, y: 0 };
-                objStartOffset = { x: 0, y: 0 };
-                objPrevCellCoord = { x: 0, y: 0 };
-                drawSelection();
-                // updateCursorGrid(objCurrentCellCoord);
+            if (e.button === 2 && (e.buttons & 1) && bolIsDragging && (strMode === 'drawing_mode' || strMode === 'selection_area_mode')) {
+                resetDrawingVariables();
+                objSelectionSection = false;
             }
         });
 
@@ -2005,16 +2094,22 @@ $(function () {
                 return;
             }
 
-            bolIsDragging = true;
             objStartCellCoord = getClickedCell(e);
             objStartOffset = { x: objMistriaDataPlanner.offsetCanvas.x, y: objMistriaDataPlanner.offsetCanvas.y };
             objPrevCellCoord = objStartCellCoord
 
             if (e.data.originalEvent.button === 0 && selectionHovered(objStartCellCoord)) {  // left click
                 bolIsDraggingSection = true;
+            } else if (e.data.originalEvent.button === 0 && itemHovered(objStartCellCoord)) {  // left click
+                bolIsDraggingItem = true;
+            } else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
+                bolIsDragging = true;
+                if (e.data.originalEvent.button === 1) {
+                    bolPreventDrawing = true;
+                }
+            } else {
+                bolPreventDrawing = true;
             }
-
-            updateGrid(objStartCellCoord);
         });
 
         objPIXIapp.stage.on('pointermove', (e) => {
@@ -2029,11 +2124,6 @@ $(function () {
 
         objPIXIapp.stage.on('pointerup', (e) => {
             const objCurrentCellCoord = getClickedCell(e);
-
-            // if (bolIsDragging && e.data.originalEvent.button === 0) {
-            //     updateSoilGrid(objCurrentCellCoord)
-            //     updateCropGrid(objCurrentCellCoord)
-            // }
 
             if (strMode === 'dragging_mode') {
                 //click on map to jump around
@@ -2059,24 +2149,18 @@ $(function () {
                     resize();
                 }
             } else {
+                if (bolPreventDrawing) {
+                    objSelectionSection = false;
+                    clearOverlays();
+                }
                 updateGrid(objCurrentCellCoord, true);
             }
 
-            bolIsDragging = false;
-            bolIsDraggingMap = false;
-            bolIsDraggingSection = false;
-            objStartCellCoord = { x: 0, y: 0 };
-            objStartOffset = { x: 0, y: 0 };
-            objPrevCellCoord = { x: 0, y: 0 };
+            resetDrawingVariables();
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
-            bolIsDragging = false;
-            bolIsDraggingMap = false;
-            bolIsDraggingSection = false;
-            objStartCellCoord = { x: 0, y: 0 };
-            objStartOffset = { x: 0, y: 0 };
-            objPrevCellCoord = { x: 0, y: 0 };
+            resetDrawingVariables();
         });
 
         objPIXIapp.stage.on('wheel', (e) => {
