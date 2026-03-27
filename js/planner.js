@@ -2080,11 +2080,29 @@ $(function () {
         objPIXIapp.sortableChildren = true;
         objContainer_Wrapper.interactiveChildren = false;
 
+        $(document).keyup(function (e) {
+
+            if (e.key === "Escape") {
+                resetDrawingVariables();
+                objSelectionSection = false;
+                clearOverlays();
+
+                //will need to be updated if there are highligt effects
+                // updateGrid(objPrevCellCoord, true);
+            } else if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'z' || e.key === 'Z')) {
+                versionControl('redo');
+            } else if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') ) {
+                versionControl('undo');
+            } else if ((e.ctrlKey || e.metaKey) && e.key === 'y') {
+                versionControl('redo');
+            }
+        });
 
         document.addEventListener('mousedown', (e) => {
             if (e.button === 2 && (e.buttons & 1) && bolIsDragging && (strMode === 'drawing_mode' || strMode === 'selection_area_mode')) {
                 resetDrawingVariables();
                 objSelectionSection = false;
+                clearOverlays();
             }
         });
 
