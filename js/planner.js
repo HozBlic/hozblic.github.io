@@ -5,7 +5,7 @@ let objMistriaDataPlannerDefault = {
     'house_upgrade': 0,
     'zoom': 100,
     'offsetCanvas': { x: 0, y: 0 },
-    'options': ['mode_grid', 'mode_collision'], // mode_wet, mode_offseason
+    'options': ['mode_grid', 'mode_collision'], // mode_wet, mode_offseason, mode_byset
     'layout': {
         0: {
             'farm': {
@@ -1468,7 +1468,7 @@ async function loadMenuItems() {
     })
 
 
-    arrModes = ['mode_grid', 'mode_collision', 'mode_soil', 'mode_wet', 'mode_offseason']
+    arrModes = ['mode_grid', 'mode_collision', 'mode_soil', 'mode_wet', 'mode_offseason', 'mode_byset']
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -1510,6 +1510,7 @@ async function loadMenuItems() {
     Object.entries(objTabs).forEach(([tabKey, tabData]) => {
 
         let $divDropdownSearchSection = $('<div>', { 'class': 'dropdown-section' });
+        $divDropdownSearchSection.attr('data-tab-dropdown', tabKey)
         let $divDropdownSearchSectionHeader = $('<div>', { 'class': 'dropdown-item dropdown-section-item' });
         $divDropdownSearchSectionHeader.append(` 
                 <div class="icon"><img src="images/${tabData.info.icon}"></div>
@@ -1518,8 +1519,9 @@ async function loadMenuItems() {
         $divDropdownSearchSection.append($divDropdownSearchSectionHeader);
         let $divDropdownSearchSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
 
-
         let $divDropdownWrapper = $('<div>', { 'class': 'dropdown_wrap', 'id': `tab_dropdown_${tabKey}` });
+        $divDropdownWrapper.attr('data-tab-dropdown', tabKey)
+
         $divDropdownWrapper.append(` 
             <div class="tab button_item dropdown_button">
                 <div class="icon">
@@ -1543,15 +1545,25 @@ async function loadMenuItems() {
             let $divDropdownSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
 
             categoryData.items.forEach(function (intIndex) {
+
+                if (intIndex == 'divider') {
+                    $divDropdownSectionItems.append(`<div class="divider"></div>`);
+                    $divDropdownSection.append($divDropdownSectionItems);
+                    return;
+                }
                 let strName;
                 let strImage;
                 let strItemKey = getSpriteKeyByIndex(intIndex);
+
                 if (strItemKey in objItemsPlanner) {
                     strName = objItemsPlanner[strItemKey].name;
                     strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
-                } else {
+                } else if (strItemKey in objItems) {
                     strName = objItems[strItemKey].name;
                     strImage = `images/${categoryData.info.img_item_path}${strItemKey}.png`;
+                } else {
+                    console.log(strItemKey);
+                    return;
                 }
                 $divDropdownSectionItems.append(` 
                     <div class="dropdown-item dropdown-item-drawable" data-key="${strItemKey}">
@@ -1586,13 +1598,14 @@ async function loadMenuItems() {
     //hide dropdowns on outside click
     $(document).on('click', function (e) {
         let jqTarget = e.target;
-        if (($(e.target).closest('.dropdown-section-name').length || $(e.target).closest('.icon').length)) {
+        if (($(e.target).closest('.dropdown-section-name').length || $(e.target).closest('.dropdown_button').length || $(e.target).closest('.icon').length)) {
             if ($(e.target).closest('.dropdown-section-item').length) {
                 jqTarget = $(jqTarget).closest('.dropdown-section-item')
             } else if ($(e.target).closest('.dropdown_button').length) {
                 jqTarget = $(jqTarget).closest('.dropdown_button')
             }
         }
+
 
         var jqDropdownWrap = $(jqTarget).closest('.dropdown_wrap');
         if ($(jqTarget).hasClass('dropdown-section-item')) {
@@ -1622,6 +1635,14 @@ async function loadMenuItems() {
     });
     tippy('#offseason', {
         content: 'Show healthy plant instead of a wilted one, even if that plant does not grow in chosen season',
+    });
+    tippy('#byset', {
+        content: 'Show furniture items categorized by sets (Basic set, Bathroom Set...) instead of categories (Beds, Tables...)',
+    });
+    tippy('[data-tab="dragging_mode"]', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Drag map</p>
+                  <p style="text-align: center;" class="save_file">You can also drag map with </br>scroll wheel in any other mode</p>`,
+        allowHTML: true,
     });
     tippy('[mode="dragging_mode"]', {
         content: 'Drag map',
@@ -2091,7 +2112,7 @@ $(function () {
                 // updateGrid(objPrevCellCoord, true);
             } else if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'z' || e.key === 'Z')) {
                 versionControl('redo');
-            } else if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') ) {
+            } else if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z')) {
                 versionControl('undo');
             } else if ((e.ctrlKey || e.metaKey) && e.key === 'y') {
                 versionControl('redo');

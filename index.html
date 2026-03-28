@@ -220,6 +220,21 @@
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>
                     </div>
+                    <div class="switch_wrap">
+                        <label class="switch mode_byset">
+                            <input type='checkbox' id="mode_byset"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        Furniture by set
+                        <svg id="byset" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
                     <div class="switch_wrap switch_wrap_dark">
                         <label class="switch mode_dark">
                             <input type='checkbox' id="mode_dark"></input>
@@ -433,7 +448,7 @@
                 </svg>
             </label>
             <div id="tabs">
-                <div class="tab button_item button-notext" mode="dragging_mode" data-tab="dragging_mode"
+                <div class="tab button_item button-notext" data-tab="dragging_mode"
                     onclick="updateCursorMode('dragging_mode')">
                     <div class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1049,14 +1064,16 @@
                                     <ul>
                                         <li style="list-style: circle;">All modes
                                             <ul>
-                                                <li class="control-desc"><code class="shortcut">CTRL + Z</code> - undo</li>
-                                                <li class="control-desc"><code class="shortcut">CTRL + Y</code>,<code class="shortcut">CTRL + SHIFT + Z</code> - redo</li>
-                                                <li class="control-desc"><code class="shortcut">ESC</code> - same as right click</li>
+                                                <li class="control-desc"><code class="shortcut">CTRL + Z</code> - undo
+                                                </li>
+                                                <li class="control-desc"><code class="shortcut">CTRL + Y</code>,<code
+                                                        class="shortcut">CTRL + SHIFT + Z</code> - redo</li>
+                                                <li class="control-desc"><code class="shortcut">ESC</code> - same as
+                                                    right click</li>
                                             </ul>
                                         </li>
                                         <li style="list-style: circle;">
                                             <div class="control-desc">
-                                                Shortcuts (
                                                 <div class="icon" mode="selection_mode">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                         fill="none" stroke="#000000" stroke-linecap="round"
@@ -1083,19 +1100,32 @@
                                                         <path d="M21 9v2" stroke-width="2"></path>
                                                         <path d="M3 14v1" stroke-width="2"></path>
                                                     </svg>
-                                                </div> mode only)
+                                                </div> mode only
                                             </div>
                                             <ul>
-                                                <li class="control-desc"><code class="shortcut">DEL</code> - delete selection </li>
-                                                <li class="control-desc"><code class="shortcut">CTRL + C</code> - copy </li>
-                                                <li class="control-desc"><code class="shortcut">CTRL + X</code> - cut </li>
-                                                <li class="control-desc"><code class="shortcut">CTRL + V</code> - paste </li>
+                                                <li class="control-desc"><code class="shortcut">DEL</code> - delete
+                                                    selection </li>
+                                                <li class="control-desc"><code class="shortcut">CTRL + C</code> - copy
+                                                </li>
+                                                <li class="control-desc"><code class="shortcut">CTRL + X</code> - cut
+                                                </li>
+                                                <li class="control-desc"><code class="shortcut">CTRL + V</code> - paste
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li style="list-style: circle;">
+                                            <div class="control-desc">
+                                                <div class="icon" mode="drawing_mode">
+                                                    <img src="images/almanac/crops.png">
+                                                </div>
+                                                mode only
+                                            </div>
+                                            <ul>
+                                                <li class="control-desc"><code class="shortcut">R</code> - rotate</li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>

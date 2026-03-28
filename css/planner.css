@@ -78,11 +78,28 @@
     stroke: var(--color-txt);
 }
 
+#search_items_wrapper .dropdown {
+    max-width: 100%;
+    width: 100%;
+}
+
 .dropdown-section {
     width: 100%
 }
 
 .dropdown-section .dropdown-item {}
+
+.dropdown-section .divider {
+    border-bottom: 1px solid var(--color-txt);
+    margin: 5px auto;
+    width: 80%;
+    pointer-events: none;
+}
+
+.dropdown-section .divider:last-child,
+.dropdown-section .divider+.divider {
+    display: none;
+}
 
 .dropdown-section .dropdown-section-item {
     background-image: url(../images/dropdown_grey.svg);
@@ -106,6 +123,11 @@
     background-image: url(../images/dropdown_white_transparent.svg);
 }
 
+#page.mode_byset [data-tab-dropdown="furniture_categories"],
+#page:not(.mode_byset) [data-tab-dropdown="furniture_sets"] {
+    display: none;
+}
+
 .dropdown-section-items {
     display: flex;
     max-height: 0;
@@ -120,13 +142,18 @@
 }
 
 .dropdown-section.open>.dropdown-section-items {
-    max-height: 1000px;
+    max-height: 10000px;
 }
 
 .dropdown_wrap .dropdown.searching {
-    max-height: 1000px;
+    max-height: calc(100dvh - 50px - 100px);
     opacity: 1;
     padding: 5px 0;
+    overflow: auto;
+}
+
+.dropdown_wrap .dropdown.searching .divider {
+    display: none;
 }
 
 .dropdown.searching .dropdown-section-items {
