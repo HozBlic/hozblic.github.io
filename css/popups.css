@@ -173,6 +173,7 @@
     min-width: var(--icon-wrapper-size);
     justify-content: flex-start;
 }
+
 .popup_subtitle .icon {
     --icon-wrapper-size: 15px;
 }
@@ -491,6 +492,7 @@ pre {
 }
 
 
+
 #popup_donate .buttons {
     margin-top: 0;
     margin-bottom: 20px;
@@ -516,24 +518,28 @@ pre {
 }
 
 #popup_controls .icons {
-   display: flex;
+    display: flex;
 }
 
 #popup_controls ul {
     padding-left: 20px;
     list-style: disc;
-    margin: 10px 0;
-    font-size: 13px;
-    line-height: 15px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
 }
+
 
 #popup_controls ul ul {
     list-style: none;
+    margin: 5px 0 15px;
 }
 
-#popup_controls ul ul li {
+#popup_controls ul .control-desc {
     display: flex;
     gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 #popup_controls ul li .icon {
@@ -550,6 +556,15 @@ pre {
     width: var(--icon-size);
     height: var(--icon-size);
 }
+
+#popup_controls code.shortcut {
+    background: var(--color-bg-darkest);
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-radius: 4px;
+    text-transform: lowercase;
+}
+
 
 [data-tippy-root] .tippy-box .tippy-content .save_file {
     margin: 0;

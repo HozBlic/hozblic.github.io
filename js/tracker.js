@@ -1080,16 +1080,44 @@ function loadWrappedTab() {
 
 
         intDataAvailable = objInfoGameStats['end_of_day_balance'].length;
-        var intDataAvailableLastDay = objInfoGameStats['end_of_day_balance'][intDataAvailable - 1]['day'];
-        intDayCountCharts = objInfoGameStats['end_of_day_balance'].length;
+        var arrDaysLabels = [];
+        if (intDataAvailable) {
+            var intDataAvailableLastDay = objInfoGameStats['end_of_day_balance'][intDataAvailable - 1]['day'];
+            intDayCountCharts = objInfoGameStats['end_of_day_balance'].length;
+
+            if (intDataAvailable >= 100) {
+                intDayCountCharts = 100;
+                intDataSkip = intDataAvailable - intDayCountCharts;
+            }
+            arrDaysLabels = [...Array(intDayCountCharts).keys()].map(i => intDataAvailableLastDay - i).reverse();
+
+        } else {
+            intDataAvailable = 0;
+            intDayCountCharts = 0;
 
 
-        if (intDataAvailable >= 100) {
-            intDayCountCharts = 100;
-            intDataSkip = intDataAvailable - intDayCountCharts;
+            var strAlert = `
+                <div class="alert show alert_blur yellow" style="width: 100%;">
+                    <div class="icon yellow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                            viewBox="0 0 24.002 24">
+                            <path
+                                d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                                transform="translate(1990.001 7446)" fill="#242424"></path>
+                        </svg>
+                    </div>
+                    <div class="info" style="line-height: 18px;">
+                        <b>Data for some of the charts is missing</b>
+                        <div style="font-size: 12px; line-height: 14px; padding-top: 2px;">
+                            Most likely there was an recent update to the game, all stats for previous days gets deleted then.
+                            </br>
+                            Play for longer and try to upload your save file again!
+                        </div>
+                    </div>
+                </div>`;
+
+            $('#wrapped').prepend(strAlert);
         }
-        var arrDaysLabels = [...Array(intDayCountCharts).keys()].map(i => intDataAvailableLastDay - i).reverse();
-
 
         /* Basic stats */
 
@@ -1285,464 +1313,472 @@ function loadWrappedTab() {
 
 
         /* Chart - Stamina */
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
-        var objCharactersSpokenAgo = {};
+        if (intDataAvailable) {
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            var objCharactersSpokenAgo = {};
 
-        // const arrInfoGameDataFactsKeys = Object.entries(objInfoGameDataFacts);
-        // const objCutscenesOnly = arrInfoGameDataFactsKeys.filter(([key, value]) => key.includes("cutscene_seen_"));
-        // const arrCutscenesKeys = Object.fromEntries(objCutscenesOnly);
-        // var objCharactersCutscenes = {};
+            // const arrInfoGameDataFactsKeys = Object.entries(objInfoGameDataFacts);
+            // const objCutscenesOnly = arrInfoGameDataFactsKeys.filter(([key, value]) => key.includes("cutscene_seen_"));
+            // const arrCutscenesKeys = Object.fromEntries(objCutscenesOnly);
+            // var objCharactersCutscenes = {};
 
-        Object.entries(objTabs.gifts.categories).forEach(([strCharKey, value]) => {
-            var intLastSpoken = objInfoGameDataFacts[strCharKey + '_was_last_spoken_to'];
-            if (!intLastSpoken) {
-                return;
+            Object.entries(objTabs.gifts.categories).forEach(([strCharKey, value]) => {
+                var intLastSpoken = objInfoGameDataFacts[strCharKey + '_was_last_spoken_to'];
+                if (!intLastSpoken) {
+                    return;
+                }
+
+                if (strCharKey == 'seridia' || strCharKey == 'seridia') {
+                    return;
+                }
+                var intDayLastSpoken = Math.round((intLastSpoken / 86400) + 1);
+                objCharactersSpokenAgo[strCharKey] = intDay - intDayLastSpoken + 1;
+
+                // var [totalCutscenes, seenCutscenes] = Object.entries(arrCutscenesKeys).reduce(([total, seen], [key, value]) => {
+                //     const matches = key.includes("cutscene_seen_" + strCharKey)
+                //     return matches ? [total + 1, seen + value] : [total, seen];
+                // }, [0, 0])
+                // objCharactersCutscenes[strCharKey] = [seenCutscenes, totalCutscenes];
+            });
+
+            var objItemsSold = {};
+            var arrBalance = [];
+            var arrStamina = [];
+            var arrHealth = [];
+            var arrSleeptime = [];
+
+            for (let i = 0; i < intDataAvailable; i++) {
+                if (intDataSkip && i < intDataSkip) {
+                    continue;
+                }
+
+                if (typeof (objInfoGameStats['end_of_day_balance'][i]) !== 'undefined') {
+                    arrBalance.push(objInfoGameStats['end_of_day_balance'][i]['balance'])
+                    arrStamina.push(objInfoGameStats['end_of_day_stats'][i]['stamina'])
+                    arrHealth.push(objInfoGameStats['end_of_day_stats'][i]['health'])
+                    arrSleeptime.push({ x: i, y: timetoint(objInfoGameStats['bedtimes'][i]) })
+                }
             }
 
-            if (strCharKey == 'seridia' || strCharKey == 'seridia') {
-                return;
-            }
-            var intDayLastSpoken = Math.round((intLastSpoken / 86400) + 1);
-            objCharactersSpokenAgo[strCharKey] = intDay - intDayLastSpoken + 1;
+            var datasets = [
+                {
+                    label: "Stamina",
+                    data: arrStamina,
+                    yAxisID: 'y',
+                },
+                {
+                    label: "Health",
+                    data: arrHealth,
+                    yAxisID: 'y',
+                },
+                {
+                    label: "Bedtime",
+                    data: arrSleeptime,
+                    yAxisID: 'y1',
+                }
+            ];
 
-            // var [totalCutscenes, seenCutscenes] = Object.entries(arrCutscenesKeys).reduce(([total, seen], [key, value]) => {
-            //     const matches = key.includes("cutscene_seen_" + strCharKey)
-            //     return matches ? [total + 1, seen + value] : [total, seen];
-            // }, [0, 0])
-            // objCharactersCutscenes[strCharKey] = [seenCutscenes, totalCutscenes];
-        });
-
-        var objItemsSold = {};
-        var arrBalance = [];
-        var arrStamina = [];
-        var arrHealth = [];
-        var arrSleeptime = [];
-
-        for (let i = 0; i < intDataAvailable; i++) {
-            if (intDataSkip && i < intDataSkip) {
-                continue;
-            }
-
-            if (typeof (objInfoGameStats['end_of_day_balance'][i]) !== 'undefined') {
-                arrBalance.push(objInfoGameStats['end_of_day_balance'][i]['balance'])
-                arrStamina.push(objInfoGameStats['end_of_day_stats'][i]['stamina'])
-                arrHealth.push(objInfoGameStats['end_of_day_stats'][i]['health'])
-                arrSleeptime.push({ x: i, y: timetoint(objInfoGameStats['bedtimes'][i]) })
-            }
-        }
-
-        var datasets = [
-            {
-                label: "Stamina",
-                data: arrStamina,
-                yAxisID: 'y',
-            },
-            {
-                label: "Health",
-                data: arrHealth,
-                yAxisID: 'y',
-            },
-            {
-                label: "Bedtime",
-                data: arrSleeptime,
-                yAxisID: 'y1',
-            }
-        ];
-
-        $divInfoBlockWrap.append(`<div class="info_title">Stamina, HP and bedtime</div>`);
-        $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
-        $($divInfoBlockWrap).append(`<div class="chart-container">
+            $divInfoBlockWrap.append(`<div class="info_title">Stamina, HP and bedtime</div>`);
+            $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
+            $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="Stamina"></canvas>
                         </div>
                         `);
-        $('#wrapped_charts').append($divInfoBlockWrap);
-        var data = {
-            labels: arrDaysLabels,
-            datasets: datasets
-        };
-        const chartStamina = new Chart('Stamina', {
-            type: 'line',
-            options: {
-                clip: false,
-                tension: 0.05,
-                aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                interaction: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                layout: {
-                    padding: {
-                        bottom: 15
-                    }
-                },
-                stacked: false,
-                plugins: {
-                    legend: {
-                        position: "bottom",
-                        align: "middle",
+            $('#wrapped_charts').append($divInfoBlockWrap);
+            var data = {
+                labels: arrDaysLabels,
+                datasets: datasets
+            };
+            const chartStamina = new Chart('Stamina', {
+                type: 'line',
+                options: {
+                    clip: false,
+                    tension: 0.05,
+                    aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
                     },
-                    colorschemes: {
-                        scheme: ["#6b9080", "#ce5070", "#b6b6b6"]
+                    elements: {
+                        point: {
+                            radius: 0
+                        }
                     },
-                    tooltip: {
-                        callbacks: {
-                            title: ctx => {
-                                return `Day ${ctx[0].label}`;
-                            },
-                            label: ctx => {
-                                return `${ctx.dataset.label}: ${ctx.dataset.label == 'Bedtime' ? inttotime(ctx.raw.y) : ctx.raw}`;
+                    layout: {
+                        padding: {
+                            bottom: 15
+                        }
+                    },
+                    stacked: false,
+                    plugins: {
+                        legend: {
+                            position: "bottom",
+                            align: "middle",
+                        },
+                        colorschemes: {
+                            scheme: ["#6b9080", "#ce5070", "#b6b6b6"]
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: ctx => {
+                                    return `Day ${ctx[0].label}`;
+                                },
+                                label: ctx => {
+                                    return `${ctx.dataset.label}: ${ctx.dataset.label == 'Bedtime' ? inttotime(ctx.raw.y) : ctx.raw}`;
+                                }
                             }
                         }
-                    }
-                },
-                scales: {
-                    x: {
-                        ticks: {
-                            display: false
-                        }
                     },
-                    y: {
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        min: 0,
-                        max: objInfoPlayer['stats']['base_stamina'],
+                    scales: {
+                        x: {
+                            ticks: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            min: 0,
+                            max: objInfoPlayer['stats']['base_stamina'],
 
-                    },
-                    y1: {
-                        min: timetoint("6:00am"),
-                        max: timetoint("2:00am"),
-                        type: 'linear',
-                        display: true,
-                        position: 'right',
-                        ticks: {
-                            stepSize: 2 * 60 * 60 * 1000,
-                            callback: function (value, index, ticks) {
-                                return inttotime(value);
+                        },
+                        y1: {
+                            min: timetoint("6:00am"),
+                            max: timetoint("2:00am"),
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            ticks: {
+                                stepSize: 2 * 60 * 60 * 1000,
+                                callback: function (value, index, ticks) {
+                                    return inttotime(value);
+                                }
                             }
                         }
                     }
-                }
-            },
-            data: data
-        });
-        allCharts['chartStamina'] = chartStamina;
+                },
+                data: data
+            });
+            allCharts['chartStamina'] = chartStamina;
+        }
         /* END: Chart - Stamina */
 
 
 
         /* Tables - Days spoken since */
-        var arrDaysSpoken = Object.values(objCharactersSpokenAgo);
-        const setDaysSpoken = new Set(arrDaysSpoken);
-        arrDaysSpoken = arrDaysSpoken.sort((a, b) => b - a);
+        if (intDataAvailable) {
+            var arrDaysSpoken = Object.values(objCharactersSpokenAgo);
+            const setDaysSpoken = new Set(arrDaysSpoken);
+            arrDaysSpoken = arrDaysSpoken.sort((a, b) => b - a);
 
-        if (setDaysSpoken.size > 6) {
-            var $divInfoBlockWrap = getBlock(8, 6, null, null, true);
-        } else if (setDaysSpoken.size > 3) {
-            var $divInfoBlockWrap = getBlock(4, 6, null, null, true);
-        }
+            if (setDaysSpoken.size > 6) {
+                var $divInfoBlockWrap = getBlock(8, 6, null, null, true);
+            } else if (setDaysSpoken.size > 3) {
+                var $divInfoBlockWrap = getBlock(4, 6, null, null, true);
+            }
 
-        if (setDaysSpoken.size > 3) {
-            var $divInfoBlockWrap2 = getBlock(4, 6, null, true);
-            var $divInfoBlock = $('<div>', { 'class': 'info' });
+            if (setDaysSpoken.size > 3) {
+                var $divInfoBlockWrap2 = getBlock(4, 6, null, true);
+                var $divInfoBlock = $('<div>', { 'class': 'info' });
 
-            const intThirdLargest = [...setDaysSpoken].sort((a, b) => b - a)[2]; // the third largest value
+                const intThirdLargest = [...setDaysSpoken].sort((a, b) => b - a)[2]; // the third largest value
 
-            var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
-            $divTableWrap.append('<div class="info_title">They miss you!</div>');
-            $divTableWrap.append('<div class="info_desc">days since last spoken</div>');
-            var strTableSpokenTo = '<table class="statistics_table">';
+                var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
+                $divTableWrap.append('<div class="info_title">They miss you!</div>');
+                $divTableWrap.append('<div class="info_desc">days since last spoken</div>');
+                var strTableSpokenTo = '<table class="statistics_table">';
 
-            objCharactersSpokenAgo = Object.fromEntries(
-                Object.entries(objCharactersSpokenAgo).sort(([, a], [, b]) => b - a)
-            );
-            var i = 1;
-            var prevValue = 0;
-            Object.entries(objCharactersSpokenAgo).forEach(([strCharacterKey, intValue]) => {
-                if (intValue < intThirdLargest) {
-                    return;
-                }
-                if (i > 3 && prevValue !== intValue) {
-                    return;
-                }
-                prevValue = intValue;
-                i++;
-                let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
-                strTableSpokenTo += `<tr>
+                objCharactersSpokenAgo = Object.fromEntries(
+                    Object.entries(objCharactersSpokenAgo).sort(([, a], [, b]) => b - a)
+                );
+                var i = 1;
+                var prevValue = 0;
+                Object.entries(objCharactersSpokenAgo).forEach(([strCharacterKey, intValue]) => {
+                    if (intValue < intThirdLargest) {
+                        return;
+                    }
+                    if (i > 3 && prevValue !== intValue) {
+                        return;
+                    }
+                    prevValue = intValue;
+                    i++;
+                    let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
+                    strTableSpokenTo += `<tr>
                                 <td><img data-tippy-content="${objCharInfo.name}" src="images/${objTabs.gifts.info.img_mini_path}${objCharInfo.img_mini}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
-            });
-            strTableSpokenTo += '</table>';
-            $divTableWrap.append(strTableSpokenTo);
+                });
+                strTableSpokenTo += '</table>';
+                $divTableWrap.append(strTableSpokenTo);
 
-            $($divInfoBlock).append($divTableWrap);
-            $($divInfoBlockWrap2).append($divInfoBlock);
-            $($divInfoBlockWrap).append($divInfoBlockWrap2);
-            $('#wrapped_charts').append($divInfoBlockWrap);
-        }
+                $($divInfoBlock).append($divTableWrap);
+                $($divInfoBlockWrap2).append($divInfoBlock);
+                $($divInfoBlockWrap).append($divInfoBlockWrap2);
+                $('#wrapped_charts').append($divInfoBlockWrap);
+            }
 
-        if (setDaysSpoken.size > 6) {
-            var $divInfoBlockWrap2 = getBlock(4, 6, null, true);
-            var $divInfoBlock = $('<div>', { 'class': 'info' });
+            if (setDaysSpoken.size > 6) {
+                var $divInfoBlockWrap2 = getBlock(4, 6, null, true);
+                var $divInfoBlock = $('<div>', { 'class': 'info' });
 
-            const intThirdSmallest = [...setDaysSpoken].sort((a, b) => a - b)[2]; // the third smallest value
+                const intThirdSmallest = [...setDaysSpoken].sort((a, b) => a - b)[2]; // the third smallest value
 
-            var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
-            $divTableWrap.append('<div class="info_title">Gossiping about something fun?</div>');
-            $divTableWrap.append('<div class="info_desc">days since last spoken</div>');
-            var strTableSpokenTo = '<table class="statistics_table">';
+                var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
+                $divTableWrap.append('<div class="info_title">Gossiping about something fun?</div>');
+                $divTableWrap.append('<div class="info_desc">days since last spoken</div>');
+                var strTableSpokenTo = '<table class="statistics_table">';
 
-            objCharactersSpokenAgo = Object.fromEntries(
-                Object.entries(objCharactersSpokenAgo).sort(([, a], [, b]) => a - b)
-            );
+                objCharactersSpokenAgo = Object.fromEntries(
+                    Object.entries(objCharactersSpokenAgo).sort(([, a], [, b]) => a - b)
+                );
 
-            var i = 1;
-            var prevValue = 0;
-            Object.entries(objCharactersSpokenAgo).forEach(([strCharacterKey, intValue]) => {
-                if (intValue > intThirdSmallest) {
-                    return;
-                }
-                if (i > 3 && prevValue !== intValue) {
-                    return;
-                }
-                prevValue = intValue;
-                i++;
-                let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
-                strTableSpokenTo += `<tr>
+                var i = 1;
+                var prevValue = 0;
+                Object.entries(objCharactersSpokenAgo).forEach(([strCharacterKey, intValue]) => {
+                    if (intValue > intThirdSmallest) {
+                        return;
+                    }
+                    if (i > 3 && prevValue !== intValue) {
+                        return;
+                    }
+                    prevValue = intValue;
+                    i++;
+                    let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
+                    strTableSpokenTo += `<tr>
                                 <td><img data-tippy-content="${objCharInfo.name}" src="images/${objTabs.gifts.info.img_mini_path}${objCharInfo.img_mini}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
-            });
-            strTableSpokenTo += '</table>';
-            $divTableWrap.append(strTableSpokenTo);
-            $($divInfoBlock).append($divTableWrap);
-            $($divInfoBlockWrap2).append($divInfoBlock);
-            $($divInfoBlockWrap).append($divInfoBlockWrap2);
+                });
+                strTableSpokenTo += '</table>';
+                $divTableWrap.append(strTableSpokenTo);
+                $($divInfoBlock).append($divTableWrap);
+                $($divInfoBlockWrap2).append($divInfoBlock);
+                $($divInfoBlockWrap).append($divInfoBlockWrap2);
+            }
         }
         /* END: Tables - Days spoken since */
 
 
 
         /* Chart - spoken to count */
+        if (intDataAvailable) {
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            $divInfoBlockWrap.css('display', 'none');
 
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
-        $divInfoBlockWrap.css('display', 'none');
+            var objSpokenCount = objInfoGameStats['npcs_spoken_to'];
+            delete objSpokenCount['seridia'];
+            delete objSpokenCount['zorel'];
 
-        var objSpokenCount = objInfoGameStats['npcs_spoken_to'];
-        delete objSpokenCount['seridia'];
-        delete objSpokenCount['zorel'];
+            objSpokenCount = Object.fromEntries(
+                Object.entries(objSpokenCount).sort(([, a], [, b]) => b - a)
+            );
 
-        objSpokenCount = Object.fromEntries(
-            Object.entries(objSpokenCount).sort(([, a], [, b]) => b - a)
-        );
-
-        var intSpokenTo = Object.keys(objSpokenCount).filter(el => objSpokenCount[el] > 0).length;
-        var data = {
-            labels: Object.keys(objSpokenCount).map((x) => objTabs.gifts.categories[x].info.name),
-            datasets: [{
-                data: Object.values(objSpokenCount),
-            }]
-        };
-        var intSpokenCount = Object.values(objSpokenCount).reduce((a, b) => a + b, 0);
-        $divInfoBlockWrap.append(`<div class="info_title">You have spoken ${intSpokenCount} times in total with ${intSpokenTo} npcs</div>`);
-        var $divDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
-        if (intDataSkip) {
-            $divDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
+            var intSpokenTo = Object.keys(objSpokenCount).filter(el => objSpokenCount[el] > 0).length;
+            var data = {
+                labels: Object.keys(objSpokenCount).map((x) => objTabs.gifts.categories[x].info.name),
+                datasets: [{
+                    data: Object.values(objSpokenCount),
+                }]
+            };
+            var intSpokenCount = Object.values(objSpokenCount).reduce((a, b) => a + b, 0);
+            $divInfoBlockWrap.append(`<div class="info_title">You have spoken ${intSpokenCount} times in total with ${intSpokenTo} npcs</div>`);
+            var $divDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
+            if (intDataSkip) {
+                $divDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>`);
-        }
-        $divInfoBlockWrap.append($divDesc)
-        $($divInfoBlockWrap).append(`<div class="chart-container">
+            }
+            $divInfoBlockWrap.append($divDesc)
+            $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_spoken_count"></canvas>
                         </div>
                         `);
-        $('#wrapped_charts').append($divInfoBlockWrap);
+            $('#wrapped_charts').append($divInfoBlockWrap);
 
-        var chart = new Chart('chart_spoken_count', {
-            data: data,
-            type: 'bar',
-            options: {
-                aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                indexAxis: 'y',
-                elements: {
-                    bar: {
-                        borderWidth: 2,
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false,
+            var chart = new Chart('chart_spoken_count', {
+                data: data,
+                type: 'bar',
+                options: {
+                    aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                    indexAxis: 'y',
+                    elements: {
+                        bar: {
+                            borderWidth: 2,
+                        }
                     },
-                    tooltip: {
-                        displayColors: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            displayColors: false,
 
-                        callbacks: {
+                            callbacks: {
 
-                            label: function (context) {
-                                return `Spoken ${context.raw} times`;
+                                label: function (context) {
+                                    return `Spoken ${context.raw} times`;
+                                }
                             }
                         }
-                    }
-                },
-                scales: {
-                    x: {
-                        stacked: true,
                     },
-                    y: {
-                        stacked: true
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true
+                        }
                     }
                 }
-            }
-        });
-        allCharts['chartSpokenCount'] = chart;
+            });
+            allCharts['chartSpokenCount'] = chart;
+        }
         /* END: Chart - spoken to count */
 
 
         /* Chart - gifts given */
+        if (intDataAvailable) {
+            var objCharacetsGivenGiftCount = {};
+            var objCharacetsGivenGiftCleaned = {};
+            var objItemsObtainedTableData = {};
 
-        var objCharacetsGivenGiftCount = {};
-        var objCharacetsGivenGiftCleaned = {};
-        var objItemsObtainedTableData = {};
+            var arrAspectRatio = [14, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
 
-        var arrAspectRatio = [14, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            for (const [i, objGiftsGiven] of Object.entries(objInfoGameStats['gifts_given'])) {
+                if (objGiftsGiven['day'] < arrDaysLabels[0] || objGiftsGiven['day'] > arrDaysLabels[intDayCountCharts - 1]) {
+                    continue;
+                }
 
-        for (const [i, objGiftsGiven] of Object.entries(objInfoGameStats['gifts_given'])) {
-            if (objGiftsGiven['day'] < arrDaysLabels[0] || objGiftsGiven['day'] > arrDaysLabels[intDayCountCharts - 1]) {
-                continue;
+                var strNPCKey = objGiftsGiven['npc'];
+
+                var strItemKey = objGiftsGiven['gift'];
+
+                if (!(strItemKey in objItemsObtainedTableData)) {
+                    objItemsObtainedTableData[strItemKey] = 0;
+                }
+                objItemsObtainedTableData[strItemKey]++;
+
+                if (!(strNPCKey in objCharacetsGivenGiftCount)) {
+                    objCharacetsGivenGiftCount[strNPCKey] = 0;
+                    objCharacetsGivenGiftCleaned[strNPCKey] = {
+                        'loved': 0,
+                        'loved_buff': 0,
+                        'liked': 0,
+                        'liked_buff': 0,
+                        'neutral': 0,
+                        'disliked': 0,
+                        'hated': 0,
+                    };
+                }
+
+                objCharacetsGivenGiftCount[strNPCKey]++;
+
+                if (objGiftsGiven['gift'].includes('&lt;loveable&gt;')) {
+                    objCharacetsGivenGiftCleaned[strNPCKey]['loved_buff']++;
+                } else if (objGiftsGiven['gift'].includes('&lt;likable&gt;')) {
+                    objCharacetsGivenGiftCleaned[strNPCKey]['liked_buff']++;
+                } else {
+                    objCharacetsGivenGiftCleaned[strNPCKey][objGiftsGiven['desire']]++;
+                }
             }
 
-            var strNPCKey = objGiftsGiven['npc'];
+            objCharacetsGivenGiftCount = Object.fromEntries(
+                Object.entries(objCharacetsGivenGiftCount).sort(([, a], [, b]) => b - a)
+            );
 
-            var strItemKey = objGiftsGiven['gift'];
-
-            if (!(strItemKey in objItemsObtainedTableData)) {
-                objItemsObtainedTableData[strItemKey] = 0;
-            }
-            objItemsObtainedTableData[strItemKey]++;
-
-            if (!(strNPCKey in objCharacetsGivenGiftCount)) {
-                objCharacetsGivenGiftCount[strNPCKey] = 0;
-                objCharacetsGivenGiftCleaned[strNPCKey] = {
-                    'loved': 0,
-                    'loved_buff': 0,
-                    'liked': 0,
-                    'liked_buff': 0,
-                    'neutral': 0,
-                    'disliked': 0,
-                    'hated': 0,
-                };
-            }
-
-            objCharacetsGivenGiftCount[strNPCKey]++;
-
-            if (objGiftsGiven['gift'].includes('&lt;loveable&gt;')) {
-                objCharacetsGivenGiftCleaned[strNPCKey]['loved_buff']++;
-            } else if (objGiftsGiven['gift'].includes('&lt;likable&gt;')) {
-                objCharacetsGivenGiftCleaned[strNPCKey]['liked_buff']++;
-            } else {
-                objCharacetsGivenGiftCleaned[strNPCKey][objGiftsGiven['desire']]++;
-            }
-        }
-
-        objCharacetsGivenGiftCount = Object.fromEntries(
-            Object.entries(objCharacetsGivenGiftCount).sort(([, a], [, b]) => b - a)
-        );
-
-        objCharacetsGivenGiftCleaned = Object.fromEntries(
-            Object.entries(objCharacetsGivenGiftCleaned).sort(([, a], [, b]) => Object.values(b).reduce((a1, b1) => a1 + b1, 0) - Object.values(a).reduce((a1, b1) => a1 + b1, 0))
-        );
+            objCharacetsGivenGiftCleaned = Object.fromEntries(
+                Object.entries(objCharacetsGivenGiftCleaned).sort(([, a], [, b]) => Object.values(b).reduce((a1, b1) => a1 + b1, 0) - Object.values(a).reduce((a1, b1) => a1 + b1, 0))
+            );
 
 
-        var arrDatasets = []
-        var arrDatasetItems = ['loved', 'loved_buff', 'liked', 'liked_buff', 'neutral', 'disliked', 'hated'];
+            var arrDatasets = []
+            var arrDatasetItems = ['loved', 'loved_buff', 'liked', 'liked_buff', 'neutral', 'disliked', 'hated'];
 
-        arrDatasetItems.forEach((item) => {
-            arrDatasets.push({
-                label: capitalizeFirstLetter(item).replace('_buff', ' (with buff)'),
-                data: Object.values(objCharacetsGivenGiftCleaned).map(a => a[item])
-            })
-        });
+            arrDatasetItems.forEach((item) => {
+                arrDatasets.push({
+                    label: capitalizeFirstLetter(item).replace('_buff', ' (with buff)'),
+                    data: Object.values(objCharacetsGivenGiftCleaned).map(a => a[item])
+                })
+            });
 
-        var data = {
-            labels: Object.keys(objCharacetsGivenGiftCount).map((x) => objTabs.gifts.categories[x].info.name),
-            datasets: arrDatasets
-        };
+            var data = {
+                labels: Object.keys(objCharacetsGivenGiftCount).map((x) => objTabs.gifts.categories[x].info.name),
+                datasets: arrDatasets
+            };
 
-        var intGiftCount = Object.values(objCharacetsGivenGiftCount).reduce((a, b) => a + b, 0);
-        $divInfoBlockWrap.append(`<div class="info_title">You have gifted ${intGiftCount} items for ${Object.keys(objCharacetsGivenGiftCount).length} npcs</div>`);
-        $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
-        $($divInfoBlockWrap).append(`<div class="chart-container">
+            var intGiftCount = Object.values(objCharacetsGivenGiftCount).reduce((a, b) => a + b, 0);
+            $divInfoBlockWrap.append(`<div class="info_title">You have gifted ${intGiftCount} items for ${Object.keys(objCharacetsGivenGiftCount).length} npcs</div>`);
+            $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
+            $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_gifts_given"></canvas>
                         </div>
                         `);
-        $('#wrapped_charts').append($divInfoBlockWrap);
+            $('#wrapped_charts').append($divInfoBlockWrap);
 
-        var chart = new Chart('chart_gifts_given', {
-            data: data,
-            type: 'bar',
-            options: {
-                aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                indexAxis: 'y',
-                elements: {
-                    bar: {
-                        borderWidth: 2,
-                    }
-                },
-                interaction: {
-                    mode: 'index',
-                },
-                plugins: {
-                    colorschemes: {
-                        scheme: ["#ce5070", "#da778c", "#fcab10", "#ffc857", "#b6b6b6", "#9d0208", "#6a040f"]
+            var chart = new Chart('chart_gifts_given', {
+                data: data,
+                type: 'bar',
+                options: {
+                    aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                    indexAxis: 'y',
+                    elements: {
+                        bar: {
+                            borderWidth: 2,
+                        }
                     },
-                    legend: {
-                        // display: false,
-                        position: "right",
-                        align: "middle",
+                    interaction: {
+                        mode: 'index',
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function (context) {
-                                if (!context.raw) {
-                                    return null;
+                    plugins: {
+                        colorschemes: {
+                            scheme: ["#ce5070", "#da778c", "#fcab10", "#ffc857", "#b6b6b6", "#9d0208", "#6a040f"]
+                        },
+                        legend: {
+                            // display: false,
+                            position: "right",
+                            align: "middle",
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    if (!context.raw) {
+                                        return null;
+                                    }
                                 }
                             }
                         }
-                    }
-                },
-                scales: {
-                    x: {
-                        stacked: true,
                     },
-                    y: {
-                        stacked: true
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+                    ticks: {
+                        precision: 0
                     }
-                },
-                ticks: {
-                    precision: 0
                 }
-            }
-        });
-        allCharts['chartGiftsGiven'] = chart;
+            });
+            allCharts['chartGiftsGiven'] = chart;
+        }
         /* END: Chart - gifts given */
 
         /* Table - gifts given */
-        generateGenericTableGrid(
-            objItemsObtainedTableData,
-            'Gifts given',
-        );
+        if (intDataAvailable) {
+            generateGenericTableGrid(
+                objItemsObtainedTableData,
+                'Gifts given',
+            );
+        }
         /* END: Table - gifts given */
 
 
@@ -1978,67 +2014,68 @@ function loadWrappedTab() {
 
 
         // Table - top used perks 
-        var $divInfoBlockWrap2 = getBlock(6, 6, null, true);
-        var $divInfoBlock = $('<div>', { 'class': 'info' });
+        if (intDataAvailable) {
+            var $divInfoBlockWrap2 = getBlock(6, 6, null, true);
+            var $divInfoBlock = $('<div>', { 'class': 'info' });
 
-        var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
-        $divTableWrap.append('<div class="info_title">Top used perks (times used)</div>');
+            var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
+            $divTableWrap.append('<div class="info_title">Top used perks (times used)</div>');
 
-        var $divTableDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
-        if (intDataSkip) {
-            $divTableDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
+            var $divTableDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
+            if (intDataSkip) {
+                $divTableDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>`);
-        }
-        $divTableWrap.append($divTableDesc)
-        var strTableSold = '<table class="statistics_table" style="width: calc(100% - 10px);">';
+            }
+            $divTableWrap.append($divTableDesc)
+            var strTableSold = '<table class="statistics_table" style="width: calc(100% - 10px);">';
 
-        const objPerksStats = objInfoGameStats['perks'];
-        var objPerksSorted = Object.keys(objPerksStats).reduce((p, c) => {
-            p[c.replace('_two', '2').replace('_three', '3').replace('_four', '4')] = objPerksStats[c];
-            return p;
-        }, {});
-        objPerksSorted = Object.fromEntries(
-            Object.entries(objPerksSorted).sort(([, a], [, b]) => b - a)
-        );
+            const objPerksStats = objInfoGameStats['perks'];
+            var objPerksSorted = Object.keys(objPerksStats).reduce((p, c) => {
+                p[c.replace('_two', '2').replace('_three', '3').replace('_four', '4')] = objPerksStats[c];
+                return p;
+            }, {});
+            objPerksSorted = Object.fromEntries(
+                Object.entries(objPerksSorted).sort(([, a], [, b]) => b - a)
+            );
 
-        // if peec kaartas ir vienaadas keys (bez cipara)
-        // atstāt tikai vienu no keys, ar augstaako numuru
-        // ['time_to_eat3', 'time_to_eat', 'time_to_eat2'].sort().reverse()
-        var arrCleaned = [];
-        Object.entries(objPerksSorted).forEach(([key, value]) => {
-            if (arrCleaned.length) {
-                if (key.replace(/[0-9]/g, '') == arrCleaned.at(-1).replace(/[0-9]/g, '') && value == objPerksSorted[arrCleaned.at(-1)]) {
-                    var strKeyToKeep = [key, arrCleaned.at(-1)].sort().reverse()[0];
-                    if (strKeyToKeep == key) {
-                        arrCleaned.pop();
+            // if peec kaartas ir vienaadas keys (bez cipara)
+            // atstāt tikai vienu no keys, ar augstaako numuru
+            // ['time_to_eat3', 'time_to_eat', 'time_to_eat2'].sort().reverse()
+            var arrCleaned = [];
+            Object.entries(objPerksSorted).forEach(([key, value]) => {
+                if (arrCleaned.length) {
+                    if (key.replace(/[0-9]/g, '') == arrCleaned.at(-1).replace(/[0-9]/g, '') && value == objPerksSorted[arrCleaned.at(-1)]) {
+                        var strKeyToKeep = [key, arrCleaned.at(-1)].sort().reverse()[0];
+                        if (strKeyToKeep == key) {
+                            arrCleaned.pop();
+                            arrCleaned.push(key);
+                        }
+                    } else {
                         arrCleaned.push(key);
                     }
                 } else {
                     arrCleaned.push(key);
                 }
-            } else {
-                arrCleaned.push(key);
-            }
-        });
-        const objTopPerks = arrCleaned.slice(0, 3).reduce((acc, curr) => (acc[curr.replace('2', '_two').replace('3', '_three').replace('4', '_four')] = objPerksSorted[curr], acc), {});
+            });
+            const objTopPerks = arrCleaned.slice(0, 3).reduce((acc, curr) => (acc[curr.replace('2', '_two').replace('3', '_three').replace('4', '_four')] = objPerksSorted[curr], acc), {});
 
-        Object.entries(objTopPerks).forEach(([strPerkKey, intValue]) => {
-            strTableSold += `<tr>
+            Object.entries(objTopPerks).forEach(([strPerkKey, intValue]) => {
+                strTableSold += `<tr>
                                 <td>${capitalizeFirstLetter(strPerkKey.replaceAll('_', ' '))}</td>
                                 <td>${intValue}</td>
                             </tr>`;
-        });
-        strTableSold += '</table>';
-        $divTableWrap.append(strTableSold);
+            });
+            strTableSold += '</table>';
+            $divTableWrap.append(strTableSold);
 
-        $($divInfoBlock).append($divTableWrap);
-        $($divInfoBlockWrap2).append($divInfoBlock);
-        $($divInfoBlockWrap).append($divInfoBlockWrap2);
-
+            $($divInfoBlock).append($divTableWrap);
+            $($divInfoBlockWrap2).append($divInfoBlock);
+            $($divInfoBlockWrap).append($divInfoBlockWrap2);
+        }
         /* END: Chart and table - perks */
 
 
@@ -2157,362 +2194,365 @@ function loadWrappedTab() {
         );
 
         // Table - most sold last ${intDayCountCharts}
-        var $divInfoBlockWrap2 = getBlock(4, 6, null, true);
-        var $divInfoBlock = $('<div>', { 'class': 'info' });
-        var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
-        $divTableWrap.append('<div class="info_title">Top sold items</div>');
-        $divTableWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
-        var strTableSold = '<table class="statistics_table wrap">';
+        if (intDataAvailable) {
+            var $divInfoBlockWrap2 = getBlock(4, 6, null, true);
+            var $divInfoBlock = $('<div>', { 'class': 'info' });
+            var $divTableWrap = $('<div>', { 'class': 'table_wrap' });
+            $divTableWrap.append('<div class="info_title">Top sold items</div>');
+            $divTableWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
+            var strTableSold = '<table class="statistics_table wrap">';
 
-        Object.entries(objSoldSortedFirst).forEach(([strItemKey, intValue]) => {
+            Object.entries(objSoldSortedFirst).forEach(([strItemKey, intValue]) => {
 
-            strID = 'most_sold_last_' + strItemKey;
-            var strBuff = false;
-            if (strItemKey.includes('&lt;')) {
-                [strItemKey, strBuff] = strItemKey.split('&lt;');
-                strBuff = strBuff.replace('&gt;', '')
-            }
-            if (strBuff) {
-                strID = strID + '_' + strBuff;
-            }
+                strID = 'most_sold_last_' + strItemKey;
+                var strBuff = false;
+                if (strItemKey.includes('&lt;')) {
+                    [strItemKey, strBuff] = strItemKey.split('&lt;');
+                    strBuff = strBuff.replace('&gt;', '')
+                }
+                if (strBuff) {
+                    strID = strID + '_' + strBuff;
+                }
 
-            arrTips.push(strID);
-            arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
+                arrTips.push(strID);
+                arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
 
-            if (strItemKey in objItems) {
-                strTableSold += `<tr>
+                if (strItemKey in objItems) {
+                    strTableSold += `<tr>
                                 <td><img id="item_${strID}" src="images/items/${strItemKey}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
-            }
-            else {
-                strTableSold += `<tr>
+                }
+                else {
+                    strTableSold += `<tr>
                                 <td>${strItemKey}</td>
                                 <td>${intValue}</td>
                             </tr>`;
-            }
-        });
-        strTableSold += '</table>';
-        $divTableWrap.append(strTableSold);
-        $($divInfoBlock).append($divTableWrap);
-        $($divInfoBlockWrap2).append($divInfoBlock);
-        $($divInfoBlockWrap).append($divInfoBlockWrap2);
+                }
+            });
+            strTableSold += '</table>';
+            $divTableWrap.append(strTableSold);
+            $($divInfoBlock).append($divTableWrap);
+            $($divInfoBlockWrap2).append($divInfoBlock);
+            $($divInfoBlockWrap).append($divInfoBlockWrap2);
 
-        // Chart - sold last ${intDayCountCharts}
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            // Chart - sold last ${intDayCountCharts}
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
 
-        var datasets = [{
-            data: arrSoldCountPerDay,
-        }];
-        $divInfoBlockWrap.append(`<div class="info_title">Sold items</div>`);
-        $divInfoBlockWrap.append(`<div class="info_desc">You have sold ${intSoldCount} items, from which ${intSoldDistinct} are distinct (last ${intDayCountCharts} days)</div>`);
+            var datasets = [{
+                data: arrSoldCountPerDay,
+            }];
+            $divInfoBlockWrap.append(`<div class="info_title">Sold items</div>`);
+            $divInfoBlockWrap.append(`<div class="info_desc">You have sold ${intSoldCount} items, from which ${intSoldDistinct} are distinct (last ${intDayCountCharts} days)</div>`);
 
-        $($divInfoBlockWrap).append(`<div class="chart-container">
+            $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_sold"></canvas>
                         </div>
                         `);
-        $('#wrapped_charts').append($divInfoBlockWrap);
-        var data = {
-            labels: arrDaysLabels,
-            datasets: datasets
-        };
-        const chartSold = new Chart('chart_sold', {
-            type: 'line',
-            options: {
-                clip: false,
-                tension: 0.05,
-                aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                interaction: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                layout: {
-                    padding: {
-                        bottom: 15
-                    }
-                },
-                stacked: false,
-                plugins: {
-                    legend: {
-                        display: false,
+            $('#wrapped_charts').append($divInfoBlockWrap);
+            var data = {
+                labels: arrDaysLabels,
+                datasets: datasets
+            };
+            const chartSold = new Chart('chart_sold', {
+                type: 'line',
+                options: {
+                    clip: false,
+                    tension: 0.05,
+                    aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
                     },
-                    tooltip: {
-                        displayColors: false,
-                        callbacks: {
-                            title: ctx => {
-                                return `Day ${ctx[0].label}`;
-
-                            },
-                            label: ctx => {
-                                return `Sold items: ${ctx.raw}`;
-                            },
-                        },
-                    }
-                },
-
-                scales: {
-                    x: {
-                        ticks: {
-                            display: false
+                    elements: {
+                        point: {
+                            radius: 0
                         }
                     },
-                },
-                ticks: {
-                    precision: 0
-                }
+                    layout: {
+                        padding: {
+                            bottom: 15
+                        }
+                    },
+                    stacked: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            displayColors: false,
+                            callbacks: {
+                                title: ctx => {
+                                    return `Day ${ctx[0].label}`;
 
-            },
-            data: data
-        });
-        allCharts['chartSold'] = chartSold;
+                                },
+                                label: ctx => {
+                                    return `Sold items: ${ctx.raw}`;
+                                },
+                            },
+                        }
+                    },
+
+                    scales: {
+                        x: {
+                            ticks: {
+                                display: false
+                            }
+                        },
+                    },
+                    ticks: {
+                        precision: 0
+                    }
+
+                },
+                data: data
+            });
+            allCharts['chartSold'] = chartSold;
+        }
         /* END: Blocks and table - sold total */
 
 
 
         /* Chart - location visits */
+        if (intDataAvailable) {
+            var $divInfoBlockWrap = getBlock(14, 8);
 
-        var $divInfoBlockWrap = getBlock(14, 8);
+            var datasets = generateMapChartData();
 
-        var datasets = generateMapChartData();
+            const image = new window.Image();
+            image.src = 'images/V0.13_map_unlocked.png';
+            const plugin = {
+                id: 'customCanvasBackgroundImage',
+                beforeDraw: (chart) => {
+                    if (image.complete) {
+                        var ctx = chart.ctx;
+                        ctx.save();
+                        if (objMistriaData.options.has('mode_dark')) {
+                            ctx.globalAlpha = 0.5;
+                        } else {
+                            ctx.globalAlpha = 0.8;
+                        }
 
-        const image = new window.Image();
-        image.src = 'images/V0.13_map_unlocked.png';
-        const plugin = {
-            id: 'customCanvasBackgroundImage',
-            beforeDraw: (chart) => {
-                if (image.complete) {
-                    var ctx = chart.ctx;
-                    ctx.save();
-                    if (objMistriaData.options.has('mode_dark')) {
-                        ctx.globalAlpha = 0.5;
+                        ctx.drawImage(image, chart.chartArea.left, chart.chartArea.top, chart.chartArea.width, chart.chartArea.height);
+                        ctx.globalAlpha = 1;
+                        ctx.restore();
                     } else {
-                        ctx.globalAlpha = 0.8;
+                        image.onload = () => chart.draw();
                     }
-
-                    ctx.drawImage(image, chart.chartArea.left, chart.chartArea.top, chart.chartArea.width, chart.chartArea.height);
-                    ctx.globalAlpha = 1;
-                    ctx.restore();
-                } else {
-                    image.onload = () => chart.draw();
                 }
-            }
-        };
+            };
 
 
 
-        $divInfoBlockWrap.append('<div class="info_title">Location visits</div>');
-        var $divDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
-        if (intDataSkip) {
-            $divDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
+            $divInfoBlockWrap.append('<div class="info_title">Location visits</div>');
+            var $divDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
+            if (intDataSkip) {
+                $divDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>`);
-        }
-        $divInfoBlockWrap.append($divDesc)
-        $($divInfoBlockWrap).append(`<div class="chart-container">
+            }
+            $divInfoBlockWrap.append($divDesc)
+            $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_map"></canvas>
                         </div>
                         `);
 
-        $('#wrapped_charts').append($divInfoBlockWrap);
-        var data = {
-            datasets: datasets
-        };
-        const chartMap = new Chart('chart_map', {
-            type: 'bubble',
-            options: {
-                layout: {
-                    autoPadding: false,
-                    padding: {
-                        left: -10,
-                        bottom: 15
-                    }
-                },
+            $('#wrapped_charts').append($divInfoBlockWrap);
+            var data = {
+                datasets: datasets
+            };
+            const chartMap = new Chart('chart_map', {
+                type: 'bubble',
+                options: {
+                    layout: {
+                        autoPadding: false,
+                        padding: {
+                            left: -10,
+                            bottom: 15
+                        }
+                    },
 
-                aspectRatio: 5426 / 2866,
-                clip: false,
+                    aspectRatio: 5426 / 2866,
+                    clip: false,
 
-                gridLines: {
-                    display: false
-                },
+                    gridLines: {
+                        display: false
+                    },
 
-                plugins: {
-                    tooltip: {
-                        displayColors: false,
-                        callbacks: {
-                            title: function (ctx) {
-                                var strLocationKey = ctx[0].dataset.label;
-                                return capitalizeFirstLetter(strLocationKey.replaceAll('_', ' '));
+                    plugins: {
+                        tooltip: {
+                            displayColors: false,
+                            callbacks: {
+                                title: function (ctx) {
+                                    var strLocationKey = ctx[0].dataset.label;
+                                    return capitalizeFirstLetter(strLocationKey.replaceAll('_', ' '));
+                                },
+                                label: function (ctx) {
+                                    var strLocationKey = ctx.dataset.label;
+                                    return `Visited ${objInfoGameStats['location_visits'][strLocationKey]} times`;
+                                }
+                            }
+                        },
+                        legend: { display: false },
+                        title: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            min: 0,
+                            max: 136,
+                            grid: {
+                                display: false
                             },
-                            label: function (ctx) {
-                                var strLocationKey = ctx.dataset.label;
-                                return `Visited ${objInfoGameStats['location_visits'][strLocationKey]} times`;
+                            ticks: {
+                                display: false,
+                            }
+                        },
+                        y: {
+                            min: 0,
+                            max: 72,
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                display: false
                             }
                         }
                     },
-                    legend: { display: false },
-                    title: { display: false }
                 },
-                scales: {
-                    x: {
-                        min: 0,
-                        max: 136,
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            display: false,
-                        }
-                    },
-                    y: {
-                        min: 0,
-                        max: 72,
-                        grid: {
-                            display: false
-                        },
-                        ticks: {
-                            display: false
-                        }
-                    }
-                },
-            },
 
-            plugins: [plugin],
-            data: data
-        });
-        allCharts['chartMap'] = chartMap;
-
+                plugins: [plugin],
+                data: data
+            });
+            allCharts['chartMap'] = chartMap;
+        }
         /* END: Chart - location visits */
 
 
 
         /* Chart - animal EOD */
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+        if (intDataAvailable) {
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
 
 
-        var arrAnimalCount = [];
-        var arrPet = [];
-        var arrFed = [];
-        var arrInside = [];
+            var arrAnimalCount = [];
+            var arrPet = [];
+            var arrFed = [];
+            var arrInside = [];
 
-        for (const [i, objAnimalData] of Object.entries(objInfoGameStats['animal_eod_statuses'])) {
-            if (objAnimalData['day'] < arrDaysLabels[0] || objAnimalData['day'] > arrDaysLabels[intDayCountCharts - 1]) {
-                continue;
+            for (const [i, objAnimalData] of Object.entries(objInfoGameStats['animal_eod_statuses'])) {
+                if (objAnimalData['day'] < arrDaysLabels[0] || objAnimalData['day'] > arrDaysLabels[intDayCountCharts - 1]) {
+                    continue;
+                }
+                arrAnimalCount.push(objAnimalData['fed'] + objAnimalData['not_fed'])
+                arrPet.push(objAnimalData['pet'])
+                arrFed.push(objAnimalData['fed'])
+                arrInside.push(objAnimalData['inside'])
             }
-            arrAnimalCount.push(objAnimalData['fed'] + objAnimalData['not_fed'])
-            arrPet.push(objAnimalData['pet'])
-            arrFed.push(objAnimalData['fed'])
-            arrInside.push(objAnimalData['inside'])
-        }
 
-        var datasets = [
-            {
-                type: 'line',
-                label: "Fed",
-                data: arrPet,
-                yAxisID: 'y',
-            },
-            {
-                type: 'line',
-                label: "Pet",
-                data: arrPet,
-                yAxisID: 'y',
-            },
-            {
-                type: 'line',
-                label: "Slept inside",
-                data: arrInside,
-                yAxisID: 'y',
-            },
-            {
-                type: 'bar',
-                label: "Animal count",
-                data: arrAnimalCount,
-                yAxisID: 'y',
-            }
-        ];
+            var datasets = [
+                {
+                    type: 'line',
+                    label: "Fed",
+                    data: arrPet,
+                    yAxisID: 'y',
+                },
+                {
+                    type: 'line',
+                    label: "Pet",
+                    data: arrPet,
+                    yAxisID: 'y',
+                },
+                {
+                    type: 'line',
+                    label: "Slept inside",
+                    data: arrInside,
+                    yAxisID: 'y',
+                },
+                {
+                    type: 'bar',
+                    label: "Animal count",
+                    data: arrAnimalCount,
+                    yAxisID: 'y',
+                }
+            ];
 
-        $divInfoBlockWrap.append(`<div class="info_title">Animal EOD statuses</div>`);
-        $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
-        $($divInfoBlockWrap).append(`<div class="chart-container">
+            $divInfoBlockWrap.append(`<div class="info_title">Animal EOD statuses</div>`);
+            $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
+            $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_animalEOD"></canvas>
                         </div>
                         `);
-        $('#wrapped_charts').append($divInfoBlockWrap);
-        var data = {
-            labels: arrDaysLabels,
-            datasets: datasets
-        };
-        const chartAnimalEOD = new Chart('chart_animalEOD', {
-            type: 'line',
-            options: {
-                clip: false,
-                tension: 0.05,
-                aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                interaction: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                layout: {
-                    padding: {
-                        bottom: 15
-                    }
-                },
-                stacked: false,
-                plugins: {
-                    legend: {
-                        position: "bottom",
-                        align: "middle",
+            $('#wrapped_charts').append($divInfoBlockWrap);
+            var data = {
+                labels: arrDaysLabels,
+                datasets: datasets
+            };
+            const chartAnimalEOD = new Chart('chart_animalEOD', {
+                type: 'line',
+                options: {
+                    clip: false,
+                    tension: 0.05,
+                    aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
                     },
-                    colorschemes: {
-                        scheme: [arrPalette[0], arrPalette[1], arrPalette[2], "#b6b6b607"]
+                    elements: {
+                        point: {
+                            radius: 0
+                        }
                     },
-                    tooltip: {
-                        callbacks: {
-                            title: ctx => {
-                                return `Day ${ctx[0].label}`;
-                            },
-                            label: ctx => {
-                                return `${ctx.dataset.label}: ${ctx.raw}`;
+                    layout: {
+                        padding: {
+                            bottom: 15
+                        }
+                    },
+                    stacked: false,
+                    plugins: {
+                        legend: {
+                            position: "bottom",
+                            align: "middle",
+                        },
+                        colorschemes: {
+                            scheme: [arrPalette[0], arrPalette[1], arrPalette[2], "#b6b6b607"]
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: ctx => {
+                                    return `Day ${ctx[0].label}`;
+                                },
+                                label: ctx => {
+                                    return `${ctx.dataset.label}: ${ctx.raw}`;
+                                }
                             }
                         }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            min: 0,
+                        },
+                    },
+                    ticks: {
+                        precision: 0
                     }
                 },
-                scales: {
-                    x: {
-                        ticks: {
-                            display: false
-                        }
-                    },
-                    y: {
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        min: 0,
-                    },
-                },
-                ticks: {
-                    precision: 0
-                }
-            },
-            data: data
-        });
-        allCharts['chartAnimalEOD'] = chartAnimalEOD;
-
+                data: data
+            });
+            allCharts['chartAnimalEOD'] = chartAnimalEOD;
+        }
         /* END: Chart - animal EOD */
 
 
@@ -2561,31 +2601,30 @@ function loadWrappedTab() {
 
 
         /*  Mini blocks - fish and bugs missed */
+        if (intDataAvailable) {
+            var intBugsMissed = objInfoGameStats['bugs_missed'];
+            var intFishMissed = objInfoGameStats['fish_missed'];
+            if (intBugsMissed && intFishMissed) {
+                var $divInfoBlockWrap = getBlock(2, 4, true, null, true);
+            }
+            else {
+                var $divInfoBlockWrap = getBlock(2, 2, true, null, true);
+            }
 
-        var intBugsMissed = objInfoGameStats['bugs_missed'];
-        var intFishMissed = objInfoGameStats['fish_missed'];
-        if (intBugsMissed && intFishMissed) {
-            var $divInfoBlockWrap = getBlock(2, 4, true, null, true);
+            // bugs missed
+            if (intBugsMissed) {
+                $($divInfoBlockWrap).append(getMiniBlock(intBugsMissed, 'bugs missed'))
+            }
+
+            // fish missed
+            if (intFishMissed) {
+                $($divInfoBlockWrap).append(getMiniBlock(intFishMissed, 'fish missed'))
+            }
+
+            if (intBugsMissed || intFishMissed) {
+                $('#wrapped_charts').append($divInfoBlockWrap);
+            }
         }
-        else {
-            var $divInfoBlockWrap = getBlock(2, 2, true, null, true);
-        }
-
-        // bugs missed
-        if (intBugsMissed) {
-            $($divInfoBlockWrap).append(getMiniBlock(intBugsMissed, 'bugs missed'))
-        }
-
-        // fish missed
-        if (intFishMissed) {
-            $($divInfoBlockWrap).append(getMiniBlock(intFishMissed, 'fish missed'))
-        }
-
-        if (intBugsMissed || intFishMissed) {
-            $('#wrapped_charts').append($divInfoBlockWrap);
-        }
-
-
         /* END: Mini blocks - fish and bugs missed */
 
 
@@ -2678,102 +2717,104 @@ function loadWrappedTab() {
 
 
         /* Chart - renown level up */
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
-        $divInfoBlockWrap.css('display', 'none');
+        if (intDataAvailable) {
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            $divInfoBlockWrap.css('display', 'none');
 
-        var arrRenownLevel = [...Array(intDayCountCharts).keys()].fill(0);
+            var arrRenownLevel = [...Array(intDayCountCharts).keys()].fill(0);
 
-        for (const [i, objRenownLevel] of Object.entries(objInfoGameStats['renown_level_ups'])) {
-            if (objRenownLevel['day'] < arrDaysLabels[0] || objRenownLevel['day'] > arrDaysLabels[intDayCountCharts - 1]) {
-                continue;
-            }
-            arrRenownLevel[arrDaysLabels.indexOf(objRenownLevel['day'])] = objRenownLevel['level']
-        }
-        var lastValue = arrRenownLevel.find(v => v) - 1;
-        arrRenownLevel = arrRenownLevel.map(v => { if (v) { lastValue = v; return v } return lastValue })
-
-        if (!isNaN(lastValue)) {
-            var datasets = [
-                {
-                    type: 'line',
-                    label: "level",
-                    data: arrRenownLevel,
-                    yAxisID: 'y',
+            for (const [i, objRenownLevel] of Object.entries(objInfoGameStats['renown_level_ups'])) {
+                if (objRenownLevel['day'] < arrDaysLabels[0] || objRenownLevel['day'] > arrDaysLabels[intDayCountCharts - 1]) {
+                    continue;
                 }
-            ];
+                arrRenownLevel[arrDaysLabels.indexOf(objRenownLevel['day'])] = objRenownLevel['level']
+            }
+            var lastValue = arrRenownLevel.find(v => v) - 1;
+            arrRenownLevel = arrRenownLevel.map(v => { if (v) { lastValue = v; return v } return lastValue })
 
-            $divInfoBlockWrap.append(`<div class="info_title">Renown level</div>`);
-            $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
-            $($divInfoBlockWrap).append(`<div class="chart-container">
+            if (!isNaN(lastValue)) {
+                var datasets = [
+                    {
+                        type: 'line',
+                        label: "level",
+                        data: arrRenownLevel,
+                        yAxisID: 'y',
+                    }
+                ];
+
+                $divInfoBlockWrap.append(`<div class="info_title">Renown level</div>`);
+                $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
+                $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_level"></canvas>
                         </div>
                         `);
-            $('#wrapped_charts').append($divInfoBlockWrap);
-            var data = {
-                labels: arrDaysLabels,
-                datasets: datasets
-            };
-            const chartLevel = new Chart('chart_level', {
-                type: 'line',
-                options: {
-                    clip: false,
-                    tension: 0.05,
-                    aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                    interaction: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    elements: {
-                        point: {
-                            radius: 0
-                        }
-                    },
-                    layout: {
-                        padding: {
-                            bottom: 15
-                        }
-                    },
-                    stacked: false,
-                    plugins: {
-                        legend: {
-                            display: false,
+                $('#wrapped_charts').append($divInfoBlockWrap);
+                var data = {
+                    labels: arrDaysLabels,
+                    datasets: datasets
+                };
+                const chartLevel = new Chart('chart_level', {
+                    type: 'line',
+                    options: {
+                        clip: false,
+                        tension: 0.05,
+                        aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
                         },
-                        colorschemes: {
-                            scheme: [arrPalette[0], arrPalette[1], arrPalette[2], "#b6b6b607"]
+                        elements: {
+                            point: {
+                                radius: 0
+                            }
                         },
-                        tooltip: {
-                            displayColors: false,
-                            callbacks: {
-                                title: ctx => {
-                                    return `Day ${ctx[0].label}`;
-                                },
-                                label: ctx => {
-                                    return `${ctx.dataset.label}: ${ctx.raw}`;
+                        layout: {
+                            padding: {
+                                bottom: 15
+                            }
+                        },
+                        stacked: false,
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            colorschemes: {
+                                scheme: [arrPalette[0], arrPalette[1], arrPalette[2], "#b6b6b607"]
+                            },
+                            tooltip: {
+                                displayColors: false,
+                                callbacks: {
+                                    title: ctx => {
+                                        return `Day ${ctx[0].label}`;
+                                    },
+                                    label: ctx => {
+                                        return `${ctx.dataset.label}: ${ctx.raw}`;
+                                    }
                                 }
                             }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                min: 0,
+                            },
+                        },
+                        ticks: {
+                            precision: 0
                         }
                     },
-                    scales: {
-                        x: {
-                            ticks: {
-                                display: false
-                            }
-                        },
-                        y: {
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            min: 0,
-                        },
-                    },
-                    ticks: {
-                        precision: 0
-                    }
-                },
-                data: data
-            });
-            allCharts['chartLevel'] = chartLevel;
+                    data: data
+                });
+                allCharts['chartLevel'] = chartLevel;
+            }
         }
         /* END: Chart - renown level up */
 
@@ -2791,98 +2832,182 @@ function loadWrappedTab() {
 
 
         /* Chart - sets completed */
-        var intSetsCompletedCount = 0;
-        var objSetsCompletedCleaned = {};
-        var arrSetsCompletedColorScheme = [];
-        var arrDatasets = [];
-        arrDaysLabels.forEach((intDay) => {
-            objSetsCompletedCleaned[intDay] = []
-        });
+        if (intDataAvailable) {
+            var intSetsCompletedCount = 0;
+            var objSetsCompletedCleaned = {};
+            var arrSetsCompletedColorScheme = [];
+            var arrDatasets = [];
+            arrDaysLabels.forEach((intDay) => {
+                objSetsCompletedCleaned[intDay] = []
+            });
 
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
-        $divInfoBlockWrap.css('display', 'none');
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            $divInfoBlockWrap.css('display', 'none');
 
-        for (const [i, objSetCompletion] of Object.entries(objInfoGameStats['set_completions'])) {
-            if (objSetCompletion['day'] < arrDaysLabels[0] || objSetCompletion['day'] > arrDaysLabels[intDayCountCharts - 1]) {
-                continue;
+            for (const [i, objSetCompletion] of Object.entries(objInfoGameStats['set_completions'])) {
+                if (objSetCompletion['day'] < arrDaysLabels[0] || objSetCompletion['day'] > arrDaysLabels[intDayCountCharts - 1]) {
+                    continue;
+                }
+
+                strDay = objSetCompletion['day'];
+
+                var strWingKey = objSetCompletion['wing'];
+                var strSetKey = objSetCompletion['set'];
+                var strColorCode = objSetsColorCodes[strWingKey];
+
+                var intDayIndex = arrDaysLabels.indexOf(strDay);
+                var arrSetsPerDay = [...Array(intDayCountCharts).keys()].fill(0);
+                arrSetsPerDay[intDayIndex] = 1;
+
+                arrDatasets.push({
+                    label: strSetKey,
+                    data: arrSetsPerDay
+                })
+
+                arrSetsCompletedColorScheme.push(strColorCode);
+                intSetsCompletedCount++;
             }
 
-            strDay = objSetCompletion['day'];
 
-            var strWingKey = objSetCompletion['wing'];
-            var strSetKey = objSetCompletion['set'];
-            var strColorCode = objSetsColorCodes[strWingKey];
+            if (intSetsCompletedCount) {
+                var data = {
+                    labels: arrDaysLabels,
+                    datasets: arrDatasets
+                };
 
-            var intDayIndex = arrDaysLabels.indexOf(strDay);
-            var arrSetsPerDay = [...Array(intDayCountCharts).keys()].fill(0);
-            arrSetsPerDay[intDayIndex] = 1;
-
-            arrDatasets.push({
-                label: strSetKey,
-                data: arrSetsPerDay
-            })
-
-            arrSetsCompletedColorScheme.push(strColorCode);
-            intSetsCompletedCount++;
-        }
-
-
-        if (intSetsCompletedCount) {
-            var data = {
-                labels: arrDaysLabels,
-                datasets: arrDatasets
-            };
-
-            $divInfoBlockWrap.append(`<div class="info_title">You have completed ${intSetsCompletedCount} sets</div>`);
-            $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
-            $($divInfoBlockWrap).append(`<div class="chart-container">
+                $divInfoBlockWrap.append(`<div class="info_title">You have completed ${intSetsCompletedCount} sets</div>`);
+                $divInfoBlockWrap.append(`<div class="info_desc">last ${intDayCountCharts} days</div>`);
+                $($divInfoBlockWrap).append(`<div class="chart-container">
                             <canvas id="chart_sets_completed"></canvas>
                         </div>
                         `);
 
-            $('#wrapped_charts').append($divInfoBlockWrap);
-            $('#chart_sets_completed').after(`<div id="chart_sets_completed_legend_container" class="chart-legend-container"></div>`);
+                $('#wrapped_charts').append($divInfoBlockWrap);
+                $('#chart_sets_completed').after(`<div id="chart_sets_completed_legend_container" class="chart-legend-container"></div>`);
 
-            var chart = new Chart('chart_sets_completed', {
+                var chart = new Chart('chart_sets_completed', {
+                    data: data,
+                    type: 'bar',
+                    plugins: [htmlLegendPlugin],
+                    options: {
+                        aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                        elements: {
+                            bar: {
+                                borderWidth: 2,
+                            }
+                        },
+                        interaction: {
+                            mode: 'index',
+                        },
+                        layout: {
+                            padding: {
+                                right: 110,
+                                bottom: 15
+                            }
+                        },
+                        plugins: {
+                            colorschemes: {
+                                scheme: arrSetsCompletedColorScheme
+                            },
+
+                            htmlLegend: {
+                                containerID: 'chart_sets_completed_legend_container',
+                            },
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: ctx => {
+                                        return `Day ${ctx[0].label}`;
+                                    },
+                                    label: function (context) {
+                                        let label = capitalizeFirstLetter(context.dataset.label.replaceAll('_', ' '));
+                                        return label;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                stacked: true,
+                                display: false
+                            },
+                            y: {
+                                stacked: true
+                            }
+                        },
+                        ticks: {
+                            precision: 0
+                        }
+                    }
+                });
+                allCharts['chartSetsCompleted'] = chart;
+            }
+        }
+        /* END: Chart - sets completed */
+
+
+        /* Chart - Menu opens */
+        if (intDataAvailable) {
+            var arrAspectRatio = [12, 6];
+            var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
+            $divInfoBlockWrap.css('display', 'none');
+
+            var objMenuOpenCount = objInfoGameStats['menu_opens'];
+            delete objMenuOpenCount['popup'];
+            objMenuOpenCount = Object.fromEntries(
+                Object.entries(objMenuOpenCount).sort(([, a], [, b]) => b - a)
+            );
+
+            var intDistinctMenu = Object.keys(objMenuOpenCount).filter(el => objMenuOpenCount[el] > 0).length;
+            var data = {
+                labels: Object.keys(objMenuOpenCount).map((x) => capitalizeFirstLetter(x.replaceAll('_', ' '))),
+                datasets: [{
+                    data: Object.values(objMenuOpenCount),
+                }]
+            };
+            var intMenuOpenCount = Object.values(objMenuOpenCount).reduce((a, b) => a + b, 0);
+            $divInfoBlockWrap.append(`<div class="info_title">You have opened ${intDistinctMenu} different menus ${intMenuOpenCount} times</div>`);
+            var $divDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
+            if (intDataSkip) {
+                $divDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>`);
+            }
+            $divInfoBlockWrap.append($divDesc)
+            $($divInfoBlockWrap).append(`<div class="chart-container">
+                            <canvas id="chart_menu_opens"></canvas>
+                        </div>
+                        `);
+            $('#wrapped_charts').append($divInfoBlockWrap);
+
+            var chart = new Chart('chart_menu_opens', {
                 data: data,
                 type: 'bar',
-                plugins: [htmlLegendPlugin],
                 options: {
                     aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
+                    indexAxis: 'y',
                     elements: {
                         bar: {
                             borderWidth: 2,
                         }
                     },
-                    interaction: {
-                        mode: 'index',
-                    },
-                    layout: {
-                        padding: {
-                            right: 110,
-                            bottom: 15
-                        }
-                    },
                     plugins: {
-                        colorschemes: {
-                            scheme: arrSetsCompletedColorScheme
-                        },
-
-                        htmlLegend: {
-                            containerID: 'chart_sets_completed_legend_container',
-                        },
                         legend: {
                             display: false,
                         },
                         tooltip: {
+                            displayColors: false,
+
                             callbacks: {
-                                title: ctx => {
-                                    return `Day ${ctx[0].label}`;
-                                },
+
                                 label: function (context) {
-                                    let label = capitalizeFirstLetter(context.dataset.label.replaceAll('_', ' '));
-                                    return label;
+                                    return `Opened ${context.raw} times`;
                                 }
                             }
                         }
@@ -2890,96 +3015,15 @@ function loadWrappedTab() {
                     scales: {
                         x: {
                             stacked: true,
-                            display: false
                         },
                         y: {
                             stacked: true
                         }
-                    },
-                    ticks: {
-                        precision: 0
                     }
                 }
             });
-            allCharts['chartSetsCompleted'] = chart;
+            allCharts['chartMenuOpens'] = chart;
         }
-
-        /* END: Chart - sets completed */
-
-
-        /* Chart - Menu opens */
-        var arrAspectRatio = [12, 6];
-        var $divInfoBlockWrap = getBlock(arrAspectRatio[0], arrAspectRatio[1]);
-        $divInfoBlockWrap.css('display', 'none');
-
-        var objMenuOpenCount = objInfoGameStats['menu_opens'];
-        delete objMenuOpenCount['popup'];
-        objMenuOpenCount = Object.fromEntries(
-            Object.entries(objMenuOpenCount).sort(([, a], [, b]) => b - a)
-        );
-
-        var intDistinctMenu = Object.keys(objMenuOpenCount).filter(el => objMenuOpenCount[el] > 0).length;
-        var data = {
-            labels: Object.keys(objMenuOpenCount).map((x) => capitalizeFirstLetter(x.replaceAll('_', ' '))),
-            datasets: [{
-                data: Object.values(objMenuOpenCount),
-            }]
-        };
-        var intMenuOpenCount = Object.values(objMenuOpenCount).reduce((a, b) => a + b, 0);
-        $divInfoBlockWrap.append(`<div class="info_title">You have opened ${intDistinctMenu} different menus ${intMenuOpenCount} times</div>`);
-        var $divDesc = $('<div>', { 'class': 'info_desc' }).text(`last ${intDataAvailable} days`);
-        if (intDataSkip) {
-            $divDesc.append(`<svg data-tippy-content="Showing all available data, extracting data for only last ${intDayCountCharts} days was not possible"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                        </svg>`);
-        }
-        $divInfoBlockWrap.append($divDesc)
-        $($divInfoBlockWrap).append(`<div class="chart-container">
-                            <canvas id="chart_menu_opens"></canvas>
-                        </div>
-                        `);
-        $('#wrapped_charts').append($divInfoBlockWrap);
-
-        var chart = new Chart('chart_menu_opens', {
-            data: data,
-            type: 'bar',
-            options: {
-                aspectRatio: arrAspectRatio[0] / (arrAspectRatio[1] - (arrAspectRatio[1] * 0.25)),
-                indexAxis: 'y',
-                elements: {
-                    bar: {
-                        borderWidth: 2,
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false,
-                    },
-                    tooltip: {
-                        displayColors: false,
-
-                        callbacks: {
-
-                            label: function (context) {
-                                return `Opened ${context.raw} times`;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        stacked: true,
-                    },
-                    y: {
-                        stacked: true
-                    }
-                }
-            }
-        });
-        allCharts['chartMenuOpens'] = chart;
         /* END: Chart - Menu opens */
 
 
@@ -3015,30 +3059,30 @@ function loadWrappedTab() {
         }
 
 
-
-        var $divMoreButtonWrap = $('<div>', { 'class': 'more_charts' });
-        var $divMoreButton = $('<div>', { 'class': 'button_item more_charts_button accent' });
-        $divMoreButton.append(` <div class="icon">
+        if (intDataAvailable) {
+            var $divMoreButtonWrap = $('<div>', { 'class': 'more_charts' });
+            var $divMoreButton = $('<div>', { 'class': 'button_item more_charts_button accent' });
+            $divMoreButton.append(` <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                                     <line x1="12" y1="8" x2="12" y2="16"></line>
                                     <line x1="8" y1="12" x2="16" y2="12"></line>
                                 </svg>
                             </div>`);
-        $divMoreButton.append(`<div class="text">Generate more charts</div>`);
-        $divMoreButton.click(function () {
-            (this).remove()
-            $('#wrapped_charts .block').css('display', '');
+            $divMoreButton.append(`<div class="text">Generate more charts</div>`);
+            $divMoreButton.click(function () {
+                (this).remove()
+                $('#wrapped_charts .block').css('display', '');
 
-            setTimeout(() => {
-                for (const [key, chart] of Object.entries(allCharts)) {
-                    chart.resize();
-                }
-            }, 50);
-        });
-        $divMoreButtonWrap.append($divMoreButton);
-        $('#wrapped_charts').append($divMoreButtonWrap);
-
+                setTimeout(() => {
+                    for (const [key, chart] of Object.entries(allCharts)) {
+                        chart.resize();
+                    }
+                }, 50);
+            });
+            $divMoreButtonWrap.append($divMoreButton);
+            $('#wrapped_charts').append($divMoreButtonWrap);
+        }
 
 
         arrTipsHtml.forEach((strTipHtml) => {
@@ -3075,7 +3119,7 @@ function loadWrappedTab() {
                         </svg>
                     </div>
                     <div class="info" style="line-height: 18px;">
-                        <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Unfortunately an error happened while rendering charts</b></br>
+                        <b>Unfortunately an error happened while rendering charts</b></br>
                         <div style="font-size: 12px; line-height: 14px; padding-top: 2px;">
                             You can <a style="color: inherit;" href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">contact me</a>, I will try to help :)
                             </br>
@@ -3213,6 +3257,7 @@ function generateGenericTableGrid(objData, strTitle, bolAllData = false) {
     }
 }
 function generateGenericGameStatsChart(objData, strItemKey, strChartID, arrDaysLabels, strTitle, strSubtitle, strAdditionalKey = false, strAdditionalLabel, strTitleMini, strSubTitleMini, bolLineChart = false, bolTableGrid = false) {
+    if (!intDataAvailable) return;
     var objItemsObtainedCleaned = {};
 
     arrDaysLabels.forEach((intDay) => {
@@ -4228,7 +4273,7 @@ function loadMenuItems() {
         checkScrapedTabVisibility();
     });
 
-    var arrModes = ['mode_dark','mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
+    var arrModes = ['mode_dark', 'mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {

@@ -955,9 +955,10 @@ var objItemsAccessories =
     },
     "head_clips_fin": {
         "name": "Fin Hair Clips",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "Unlocked",
+        "tip_extra": {
+            "price": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Museum#Rewards\" title=\"Museum\"><img alt=\"Fp wiki museum.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_museum.png?ee0ba4\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Museum#Rewards\" title=\"Museum\">Museum</a> Donations, <img alt=\"Museum fish wing.png\" data-file-height=\"224\" data-file-width=\"256\" decoding=\"async\" height=\"19\" loading=\"lazy\" src=\"images/tooltip/22px-Museum_fish_wing.png?9d374b\" width=\"22\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Fish_Wing\" title=\"Fish Wing\">Fish Wing</a> 21 Sets"
+        },
         "url": ""
     },
     "head_clips_moon": {
@@ -1705,9 +1706,10 @@ var objItemsAccessories =
     },
     "shorts_swimtrunks": {
         "name": "Swim Trunks",
-        "spoiler": 1,
-        "tip": "",
-        "tip_extra": {},
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\"><img alt=\"Fp wiki event saturday market.png\" data-file-height=\"44\" data-file-width=\"44\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Fp_wiki_event_saturday_market.png?75261f\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Saturday_Market#Louis'_Stall\" title=\"Saturday Market\">Louis' Stall</a> <small>(<span style=\"display:inline; margin-right:0;\"><img alt=\"Season icon summer.png\" data-file-height=\"40\" data-file-width=\"40\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Season_icon_summer.png?f826d4\" width=\"18\"/>\u00a0<a href=\"https://fieldsofmistria.wiki.gg/wiki/Summer\" title=\"Summer\">Summer</a></span> only)</small>",
+        "tip_extra": {
+            "price": "<span class=\"no-wrap\"><img alt=\"Tesserae Icon.png\" data-file-height=\"36\" data-file-width=\"36\" decoding=\"async\" height=\"18\" loading=\"lazy\" src=\"images/tooltip/18px-Tesserae_Icon.png?53bf34\" width=\"18\"/>500t</span>"
+        },
         "url": ""
     },
     "skirt_ancient_witch": {
