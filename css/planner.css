@@ -81,6 +81,7 @@
 #search_items_wrapper .dropdown {
     max-width: 100%;
     width: 100%;
+    overflow: auto;
 }
 
 .dropdown-section {

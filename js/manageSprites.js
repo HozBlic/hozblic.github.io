@@ -80,18 +80,19 @@ class SpriteStore {
                         meta: {...objectData.furniture.default, ...furnitureData}
                     } // map sprite to sheet
                 })
-            }
-
-            if (furnitureData.rug) {
-                const rugSprite = spriteMapping[furnitureData.south.sprite]["0"]
+            } else  {
+                if (!(furnitureData.south || furnitureData.east)) { // skips default
+                    return
+                }
+                const furnitureSprite = spriteMapping[(furnitureData.south || furnitureData.east).sprite]["0"]
 
                 let itemOriginX = 0, itemOriginY = 0
-                if (furnitureData.south.offset) {
-                    itemOriginX = furnitureData.south.offset[0]
-                    itemOriginY = furnitureData.south.offset[1]
+                if ((furnitureData.south || furnitureData.east).offset) {
+                    itemOriginX = (furnitureData.south || furnitureData.east).offset[0]
+                    itemOriginY = (furnitureData.south || furnitureData.east).offset[1]
                 }
                 
-                const { sheet: sheetKey, h, w, x, y, targetX, targetY, originX, originY } = rugSprite
+                const { sheet: sheetKey, h, w, x, y, targetX, targetY, originX, originY } = furnitureSprite
 
                 spriteSheetData[sheetKey].frames[furnitureKey] = { frame: { h, w, x, y } }      // populate spritesheet frames
                 singleTextureData[furnitureKey] = { 
@@ -237,15 +238,15 @@ class SpriteStore {
             d3, o4, d4
         ] = neighbors
 
-        // Fences are ordered with ordinals as bits (times two for some reason)
-        let fenceOrd = parseInt(`${o4}${o3}${o2}`, 2) * 2
+        // Fences are ordered with ordinals as bits
+        let fenceOrd = parseInt(`${o4}${o3}${o2}${o1}`, 2)
 
         return this.get(`${fenceType}_${fenceOrd}`)}
 
     getCrop(textureKey) {
         let foundTexture = this.textures[textureKey]
 
-        if (objMistriaDataPlanner.options.has('mode_offseason') || objSpriteCategories[`crops_${objMistriaDataPlanner.season}`].includes(objSpriteKeyDict[textureKey])) {
+        if (objMistriaDataPlanner.options.has('mode_offseason') || objSpriteCategories[`crops_${objMistriaDataPlanner.season}`].includes( getIndexBySpriteKey(textureKey))) {
             foundTexture = this.textures[textureKey]
         } else {
             foundTexture = this.textures['wilted_plant']
