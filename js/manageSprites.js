@@ -287,7 +287,7 @@ class SpriteStore {
 
         const {sprite: { texture }, pivot, origin, itemOrigin, meta} = foundTexture
         const sprite = new PIXI.Sprite(texture)
-         if (pivot && origin && itemOrigin) {
+        if (pivot && origin && itemOrigin) {
             const { x, y } = pivot
             const { x: originX, y: originY } = origin
             const { x: itemOriginX, y: itemOriginY } = itemOrigin
