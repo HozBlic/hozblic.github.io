@@ -3084,7 +3084,6 @@ function loadWrappedTab() {
             $('#wrapped_charts').append($divMoreButtonWrap);
         }
 
-
         arrTipsHtml.forEach((strTipHtml) => {
             $('#wrapped_charts').append(strTipHtml);
         });
@@ -3095,6 +3094,7 @@ function loadWrappedTab() {
 
             tippy(`#item_${strID}`, {
                 content: template,
+                appendTo: () => document.body,
                 interactive: true,
                 maxWidth: 370
             });
