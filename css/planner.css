@@ -78,6 +78,35 @@
     stroke: var(--color-txt);
 }
 
+#search_items_wrapper #search_items {
+    padding-right: 40px;
+}
+#search_items_wrapper #cancel_search {
+    position: absolute;
+    width: 35px;
+    right: 0;
+    bottom: 0;
+    top: 8px;
+    cursor: pointer;
+    fill: var(--color-txt);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+    display: none;
+}
+
+#search_items_wrapper #cancel_search svg {
+    --icon-size: 15px;
+}
+
+#search_items_wrapper #cancel_search:hover {
+    opacity: 1;
+}
+
+#search_items_wrapper.searching #cancel_search {
+    display: block;
+}
+
 #search_items_wrapper .dropdown {
     max-width: 100%;
     width: 100%;
