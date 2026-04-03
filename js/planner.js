@@ -534,14 +534,13 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
 
     //TODO: delete old sprites (clear cell want called in outer ring)
 
-    console.log(objSection)
     objSection = {
         x0: Math.max(objSection.x0 - 2, 0),
         y0: Math.max(objSection.y0 - 2, 0),
         x1: Math.min(objSection.x1 + 2 + 1, objGrid.x),
         y1: Math.min(objSection.y1 + 2 + 1, objGrid.y),
     }
-    console.log(objSection)
+  
 
     const arrGrid_Slice2D = slice2D(objGridCombined.main_corner, objSection.x0, objSection.x1, objSection.y0, objSection.y1);
     const arrSeenItems = [...new Set(arrGrid_Slice2D.flat().flat().flatMap(obj => Object.keys(obj)).map(strIndex => parseInt(strIndex)))];
@@ -934,8 +933,6 @@ function itemHovered(objCellCoord) {
     } else {
         const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
         let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat())
-
-        console.log(setGrid_CoveredSliceValues)
 
         // objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
 
@@ -1891,7 +1888,6 @@ function placeTempSection(objCellCoord) {
                     if (intItemKey in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x] && 'sprite' in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey]) {
                         const spritePrev = objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey].sprite;
                         if (spritePrev.parent !== null) {
-                            console.log('remove grass')
                             spritePrev.parent.removeChild(spritePrev);
                         }
                     }
@@ -1985,7 +1981,7 @@ function updateTempCollisions(objPosition = false) {
                     const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
                     let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat().flatMap(obj => Object.keys(obj)).map(strIndex => parseInt(strIndex)))
                     objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
-                    console.log(setGrid_CoveredSliceValues)
+               
                     if (objSpriteCategories.soil.includes(intItemKey)) {
                         //soil can be under anything, but if there are crops, it must be tilled soil
                         if ([1, 4].includes(intItemKey)) {
@@ -3165,7 +3161,7 @@ $(function () {
         drawCollision();
 
         addTestData(4);
-        updateCurrentlyDrawing(7);
+        updateCurrentlyDrawing(456);
 
         drawPlanner();
 
