@@ -1,7 +1,33 @@
+const tileMaskSoil = [
+    [null             , [0,1,0,0,0,0,0,0], [0,0,0,1,0,0,0,0], [0,1,0,1,0,0,0,0], [1,1,0,1,0,0,0,0], [0,0,0,0,1,0,0,0], [0,1,0,0,1,0,0,0]], 
+    [[0,1,1,0,1,0,0,0], [0,0,0,1,1,0,0,0], [0,1,0,1,1,0,0,0], [1,1,0,1,1,0,0,0], [0,1,1,1,1,0,0,0], [1,1,1,1,1,0,0,0], [0,0,0,0,0,0,1,0]], 
+    [[0,1,0,0,0,0,1,0], [0,0,0,1,0,0,1,0], [0,1,0,1,0,0,1,0], [1,1,0,1,0,0,1,0], [0,0,0,0,1,0,1,0], [0,1,0,0,1,0,1,0], [0,1,1,0,1,0,1,0]], 
+    [[0,0,0,1,1,0,1,0], [0,1,0,1,1,0,1,0], [1,1,0,1,1,0,1,0], [0,1,1,1,1,0,1,0], [1,1,1,1,1,0,1,0], [0,0,0,1,0,1,1,0], [0,1,0,1,0,1,1,0]], 
+    [[1,1,0,1,0,1,1,0], [0,0,0,1,1,1,1,0], [0,1,0,1,1,1,1,0], [1,1,0,1,1,1,1,0], [0,1,1,1,1,1,1,0], [1,1,1,1,1,1,1,0], [0,0,0,0,1,0,1,1]], 
+    [[0,1,0,0,1,0,1,1], [0,1,1,0,1,0,1,1], [0,0,0,1,1,0,1,1], [0,1,0,1,1,0,1,1], [1,1,0,1,1,0,1,1], [0,1,1,1,1,0,1,1], [1,1,1,1,1,0,1,1]], 
+    [[0,0,0,1,1,1,1,1], [0,1,0,1,1,1,1,1], [1,1,0,1,1,1,1,1], [0,1,1,1,1,1,1,1], [1,1,1,1,1,1,1,1], [0,0,0,0,0,0,0,0], null,            ]
+]
+
+const tileMaskGrass = [
+    [null             , [1,0,0,0,0,0,0,0], [1,1,1,0,0,0,0,0], [0,0,1,0,0,0,0,0], [0,0,1,0,1,0,0,1], [0,0,0,0,0,0,0,1], [0,0,0,0,0,1,1,1]],
+    [[0,0,0,0,0,1,0,0], [1,0,0,1,0,1,0,0], [1,0,1,0,0,0,0,0], [0,0,1,0,0,0,0,1], [0,0,0,0,0,1,0,1], [1,0,0,0,0,1,0,0], [1,1,1,0,1,0,0,1]],
+    [[0,0,1,0,1,1,1,1], [1,0,0,1,0,1,1,1], [1,1,1,1,0,1,0,0], [1,1,1,1,1,1,0,1], [1,1,1,0,1,1,1,1], [1,0,1,1,1,1,1,1], [1,1,1,1,0,1,1,1]],
+    [[1,1,1,0,1,1,0,1], [1,0,1,0,1,1,1,1], [1,0,1,1,0,1,1,1], [1,1,1,1,0,1,0,1], [1,1,1,0,0,1,0,0], [1,0,1,0,1,0,0,1], [0,0,1,0,0,1,1,1]],
+    [[1,0,0,1,0,1,0,1], [1,1,1,0,0,0,0,1], [0,0,1,0,1,1,0,1], [1,0,0,0,0,1,1,1], [1,0,1,1,0,1,0,0], [1,1,1,0,0,1,0,1], [1,0,1,0,1,1,0,1]],
+    [[1,0,1,0,0,1,1,1], [1,0,1,1,0,1,0,1], [1,1,1,0,0,1,1,1], [1,0,1,1,1,1,0,1], [1,0,0,0,0,0,0,1], [0,0,1,0,0,1,0,0], [1,0,1,0,0,1,0,0]],
+    [[1,0,1,0,0,0,0,1], [0,0,1,0,0,1,0,1], [1,0,0,0,0,1,0,1], [1,0,1,0,0,1,0,1], [0,0,0,0,0,0,0,0], [1,1,1,1,1,1,1,1], null,            ]
+]
+
+const directions = ['north', 'east', 'south', 'west']
+const seasons = ['spring', 'summer', 'fall', 'winter']
+
 class SpriteStore {
     textures
     singleTextureData = {}
     spriteSheetData
+    tileSize = 20
+    tilePadding = 2
+
     constructor(test) {
         if (test !== "I know what I'm doing") { throw new Error('use static initializer await SpriteStore.getInstance()')}
     }
@@ -12,20 +38,22 @@ class SpriteStore {
         return instance 
     }
 
-    setSingleSpriteData({name, sheet: sheetKey, h, w, x, y, targetX, targetY, originX, originY, itemOriginX, itemOriginY, ...meta}, children) {
+    setSingleObjectData({name, sheet: sheetKey, h, w, x, y, targetX, targetY, originX, originY, itemOriginX, itemOriginY, children, ...meta}) {
         this.spriteSheetData[sheetKey].frames[name] = { frame: { h, w, x, y } }      // populate spritesheet frames
         this.singleTextureData[name] = { 
             sheetKey, 
             meta: meta
         }
 
-        if (targetX || targetY) {
+        console.log(targetX)
+
+        if ((targetX || targetY) !== undefined) {
             this.singleTextureData[name].pivot = {x: targetX, y: targetY}
         }
-        if (originX || originY) {
+        if ((originX || originY) !== undefined) {
             this.singleTextureData[name].origin = {x: originX, y: originY}
         }
-        if (itemOriginX || itemOriginY) {
+        if ((itemOriginX || itemOriginY) !== undefined) {
             this.singleTextureData[name].itemOrigin = {x: itemOriginX, y: itemOriginY}
         }
 
@@ -34,46 +62,34 @@ class SpriteStore {
 
             children.forEach(child => {
                 this.singleTextureData[name].children.push({name: child.name, offset: child.offset})
-                this.setSingleSpriteData(child)
+                this.setSingleObjectData(child)
             })
         }
     }
 
-    async loadTextures() {
-        this.logStage('loading data')
-        const spriteMapping = await (await fetch('textures/planner_sprites.json')).json()
-        const spriteSheetMeta = await (await fetch('textures/sheet_sprites.json')).json()
-        const objectData = await (await fetch('textures/fiddle_sprites.json')).json()
-        const tileSpriteMeta = await (await fetch('textures/tiles_sprites.json')).json()
+    #findVariations(object) {
+        const variations = []
+        
+        directions.forEach(direction => {
+            const selectedDirection = object[direction]
+            if (selectedDirection) {
 
-        this.logStage('initializing data')
+            }
+        })
+    }
 
-        this.spriteSheetData = this.initializeSheetData(spriteSheetMeta)
-        const parsedSheets = {}
-
-        this.logStage('tilesheet textures')
-
-        // CROPS
-
-        Object.entries(objectData.crop).forEach(([cropKey, cropData]) => {
-            if (cropKey === 'default') return
-            
-            let [itemOriginX, itemOriginY] = objectData.crop.default.offset
+    #mapCrops({default: defaults, ...crops}, spriteMapping) {
+        Object.entries(crops).forEach(([cropKey, cropData]) => {            
+            let [itemOriginX, itemOriginY] = defaults.offset
 
             const sprite = spriteMapping[cropData.sprites.at(-1)]['0']
 
-            this.setSingleSpriteData({name: cropKey, itemOriginX, itemOriginY, ...objectData.crop.default, ...sprite})
+            this.setSingleObjectData({name: cropKey, itemOriginX, itemOriginY, ...defaults, ...sprite, ...cropData})
         })
-        
+    }
 
-        let [itemOriginX, itemOriginY] = [8, 8]
-        const sprite = spriteMapping['spr_wilted_plant_1_stage1']['0']
-
-        this.setSingleSpriteData({name: 'wilted_plant', itemOriginX, itemOriginY, ...objectData.breakable.default, ...sprite})       
-        
-        // FURNITURE
-
-        Object.entries(objectData.furniture).forEach(([furnitureKey, furnitureData]) => {
+    #mapFurniture({default: defaults, ...furniture}, spriteMapping) {
+        Object.entries(furniture).forEach(([furnitureKey, furnitureData]) => {
             if (furnitureData.fence) {
                 const fenceSprites = spriteMapping[furnitureData.south.sprite]
 
@@ -87,73 +103,57 @@ class SpriteStore {
                 Object.entries(fenceSprites).forEach(([fenceOrd, sprite]) => {
                     const fenceKey = `${furnitureKey}_${fenceOrd}`
 
-                    this.setSingleSpriteData({name: fenceKey, itemOriginX, itemOriginY, ...objectData.furniture.default, ...sprite})
+                    this.setSingleObjectData({name: fenceKey, itemOriginX, itemOriginY, ...defaults, ...sprite, ...furnitureData})
                 })
             } else  {
-                if (furnitureKey === "default") return
-
                 const sprite = spriteMapping[(furnitureData.south || furnitureData.east).sprite]["0"]
                 let topSprite
                                 
-                let itemOriginX = 0, itemOriginY = 0
+                let itemOriginX, itemOriginY
+                if (!(furnitureData.south || furnitureData.east).offset) {
+                    console.log(furnitureData)
+                }
                 if ((furnitureData.south || furnitureData.east).offset) {
                     itemOriginX = (furnitureData.south || furnitureData.east).offset[0]
                     itemOriginY = (furnitureData.south || furnitureData.east).offset[1]
                 }
 
-                const spriteBasics = {itemOriginX, itemOriginY, ...objectData.furniture.default}
+                let spriteBasics = {...defaults}
+
+                if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY,}
 
                 if ((furnitureData.south || furnitureData.east).top_sprite) {
                     topSprite = {
                         ...spriteBasics,
                         name: (furnitureData.south || furnitureData.east).top_sprite,
-                        ...spriteMapping[(furnitureData.south || furnitureData.east).top_sprite]["0"], 
-                        offset: [0, (furnitureData.south || furnitureData.east).top_sprite_depth_offset]
+                        ...spriteMapping[(furnitureData.south || furnitureData.east).top_sprite]["0"],
+                        ...furnitureData,
+                        // offset: [0, (furnitureData.south || furnitureData.east).top_sprite_depth_offset]
                     }
                 }
                 
-                this.setSingleSpriteData({name: furnitureKey, ...spriteBasics, ...sprite}, topSprite ? [topSprite] : undefined)
+                this.setSingleObjectData({
+                    name: furnitureKey, ...spriteBasics, ...sprite, ...furnitureData, 
+                    children: topSprite ? [topSprite] : undefined
+                })
             }
         })
+    }
 
-        // TILES
-
-        const tileSize = 20
-        const tilePadding = 2
-
-        const tileMaskSoil = [
-            [null             , [0,1,0,0,0,0,0,0], [0,0,0,1,0,0,0,0], [0,1,0,1,0,0,0,0], [1,1,0,1,0,0,0,0], [0,0,0,0,1,0,0,0], [0,1,0,0,1,0,0,0]], 
-            [[0,1,1,0,1,0,0,0], [0,0,0,1,1,0,0,0], [0,1,0,1,1,0,0,0], [1,1,0,1,1,0,0,0], [0,1,1,1,1,0,0,0], [1,1,1,1,1,0,0,0], [0,0,0,0,0,0,1,0]], 
-            [[0,1,0,0,0,0,1,0], [0,0,0,1,0,0,1,0], [0,1,0,1,0,0,1,0], [1,1,0,1,0,0,1,0], [0,0,0,0,1,0,1,0], [0,1,0,0,1,0,1,0], [0,1,1,0,1,0,1,0]], 
-            [[0,0,0,1,1,0,1,0], [0,1,0,1,1,0,1,0], [1,1,0,1,1,0,1,0], [0,1,1,1,1,0,1,0], [1,1,1,1,1,0,1,0], [0,0,0,1,0,1,1,0], [0,1,0,1,0,1,1,0]], 
-            [[1,1,0,1,0,1,1,0], [0,0,0,1,1,1,1,0], [0,1,0,1,1,1,1,0], [1,1,0,1,1,1,1,0], [0,1,1,1,1,1,1,0], [1,1,1,1,1,1,1,0], [0,0,0,0,1,0,1,1]], 
-            [[0,1,0,0,1,0,1,1], [0,1,1,0,1,0,1,1], [0,0,0,1,1,0,1,1], [0,1,0,1,1,0,1,1], [1,1,0,1,1,0,1,1], [0,1,1,1,1,0,1,1], [1,1,1,1,1,0,1,1]], 
-            [[0,0,0,1,1,1,1,1], [0,1,0,1,1,1,1,1], [1,1,0,1,1,1,1,1], [0,1,1,1,1,1,1,1], [1,1,1,1,1,1,1,1], [0,0,0,0,0,0,0,0], null,            ]
-        ]
-
-        const tileMaskGrass = [
-            [null             , [1,0,0,0,0,0,0,0], [1,1,1,0,0,0,0,0], [0,0,1,0,0,0,0,0], [0,0,1,0,1,0,0,1], [0,0,0,0,0,0,0,1], [0,0,0,0,0,1,1,1]],
-            [[0,0,0,0,0,1,0,0], [1,0,0,1,0,1,0,0], [1,0,1,0,0,0,0,0], [0,0,1,0,0,0,0,1], [0,0,0,0,0,1,0,1], [1,0,0,0,0,1,0,0], [1,1,1,0,1,0,0,1]],
-            [[0,0,1,0,1,1,1,1], [1,0,0,1,0,1,1,1], [1,1,1,1,0,1,0,0], [1,1,1,1,1,1,0,1], [1,1,1,0,1,1,1,1], [1,0,1,1,1,1,1,1], [1,1,1,1,0,1,1,1]],
-            [[1,1,1,0,1,1,0,1], [1,0,1,0,1,1,1,1], [1,0,1,1,0,1,1,1], [1,1,1,1,0,1,0,1], [1,1,1,0,0,1,0,0], [1,0,1,0,1,0,0,1], [0,0,1,0,0,1,1,1]],
-            [[1,0,0,1,0,1,0,1], [1,1,1,0,0,0,0,1], [0,0,1,0,1,1,0,1], [1,0,0,0,0,1,1,1], [1,0,1,1,0,1,0,0], [1,1,1,0,0,1,0,1], [1,0,1,0,1,1,0,1]],
-            [[1,0,1,0,0,1,1,1], [1,0,1,1,0,1,0,1], [1,1,1,0,0,1,1,1], [1,0,1,1,1,1,0,1], [1,0,0,0,0,0,0,1], [0,0,1,0,0,1,0,0], [1,0,1,0,0,1,0,0]],
-            [[1,0,1,0,0,0,0,1], [0,0,1,0,0,1,0,1], [1,0,0,0,0,1,0,1], [1,0,1,0,0,1,0,1], [0,0,0,0,0,0,0,0], [1,1,1,1,1,1,1,1], null,            ]
-        ]
-
-        Object.entries(tileSpriteMeta).forEach(([tileSheetKey, {'0': tileData}]) => {
+    #mapTiles(tileMeta) {
+        Object.entries(tileMeta).forEach(([tileSheetKey, {'0': tileData}]) => {
             const origin = { x: tileData.x, y: tileData.y }
 
             if (tileSheetKey.includes('exteriors')) {
                 const x = 0 // only get the basic exterior tile
                 const y = 1
 
-                this.setSingleSpriteData({
+                this.setSingleObjectData({
                     name: tileSheetKey,
-                    h: tileSize,
-                    w: tileSize,
-                    x: origin.x + x * tileSize,
-                    y: origin.y + y * tileSize,
+                    h: this.tileSize,
+                    w: this.tileSize,
+                    x: origin.x + x * this.tileSize,
+                    y: origin.y + y * this.tileSize,
                     sheet: tileData.sheet, 
                     size: [2,2]
                 })
@@ -174,20 +174,54 @@ class SpriteStore {
 
                 const tileKey = `${tileSheetKey}_${coords}`
 
-                this.setSingleSpriteData({
+                this.setSingleObjectData({
                     name: tileKey,
-                    h: tileSize - tilePadding * 2,
-                    w: tileSize - tilePadding * 2,
-                    x: origin.x + x * tileSize + tilePadding,
-                    y: origin.y + y * tileSize + tilePadding,
+                    h: this.tileSize - this.tilePadding * 2,
+                    w: this.tileSize - this.tilePadding * 2,
+                    x: origin.x + x * this.tileSize + this.tilePadding,
+                    y: origin.y + y * this.tileSize + this.tilePadding,
                     sheet: tileData.sheet, 
                     size: [2,2]
                 })
             }))
         })
+    }
 
-        this.logStage('loading sprites')
+    async loadTextures() {
+        this.#logStage('LOADING DATA')
+        const spriteMapping = await (await fetch('textures/planner_sprites.json')).json()
+        const spriteSheetMeta = await (await fetch('textures/sheet_sprites.json')).json()
+        const objectData = await (await fetch('textures/fiddle_sprites.json')).json()
+        const tileSpriteMeta = await (await fetch('textures/tiles_sprites.json')).json()
 
+        this.#logStage('INITIALIZING DATA')
+
+        this.spriteSheetData = this.#initializeSheetData(spriteSheetMeta)
+        const parsedSheets = {}
+
+        this.#logStage('TILESHEET TEXTURES')
+
+        // CROPS
+
+        this.#mapCrops(objectData.crop, spriteMapping)
+        
+        // TODO BREAKABLE
+
+        let [itemOriginX, itemOriginY] = [8, 8]
+        const sprite = spriteMapping['spr_wilted_plant_1_stage1']['0']
+
+        this.setSingleObjectData({name: 'wilted_plant', itemOriginX, itemOriginY, ...objectData.breakable.default, ...sprite})       
+        
+        // FURNITURE
+
+        this.#mapFurniture(objectData.furniture, spriteMapping)
+
+        // TILES
+
+        this.#mapTiles(tileSpriteMeta)
+
+        // LOAD SPRITES TO MEMORY
+        this.#logStage('LOADING SPRITES')
         await Promise.all(Object.entries(this.spriteSheetData).map(async ([sheetKey, sheetData]) => {
             const sheetTexture = await PIXI.Assets.load(`textures/sheets/${sheetKey}.png`)
             sheetTexture.source.scaleMode = PIXI.SCALE_MODES.NEAREST
@@ -202,15 +236,15 @@ class SpriteStore {
                 this.singleTextureData[textureKey].sprite = sprite
             })
         }))
-
-        // DRAW ALL SPRITES IN PILE
-        // Object.values(this.singleTextureData).forEach(({sprite}) => {
-        //     app.stage.addChild(sprite)
-        // })
     
-        this.logStage('sprite loading done')
+        this.#logStage('SPRITE LOADING DONE')
 
         this.textures = this.singleTextureData
+        
+        // DEBUG: DRAW ALL SPRITES IN PILE
+        // Object.values(this.singleTextureData).forEach(({sprite}) => {
+        //     objPIXIapp.stage.addChild(sprite)
+        // })
     }
 
     #getTile(tileSheet, neighbors, isGrass) {
@@ -222,13 +256,13 @@ class SpriteStore {
 
     
         if (isGrass) {
-            // treating otrhogonals as a full line
+            // treating orthogonals as a full line
             if (o1) {d1=1; d2=1}
             if (o2) {d1=1; d3=1}
             if (o3) {d2=1; d4=1}
             if (o4) {d3=1; d4=1}
         } else {
-            // un-neighbored diagnonals have no separate case
+            // un-neighbored diagonals have no separate case
             if (!o1 || !o2) {d1 = 0}
             if (!o1 || !o3) {d2 = 0}
             if (!o2 || !o4) {d3 = 0}
@@ -237,7 +271,7 @@ class SpriteStore {
 
         const combinedNeighbors = [d1, o1, d2, o2, o3, d3, o4, d4]
 
-        return this.get(`${tileSheet}_${Object.values(combinedNeighbors)}`)    }
+        return this.get(`${tileSheet}_${combinedNeighbors}`)}
 
     getGrass(...args) {
         return this.#getTile(...args, true)
@@ -254,47 +288,20 @@ class SpriteStore {
             d3, o4, d4
         ] = neighbors
 
-        // Fences are ordered with otrhogonals as bits
+        // Fences are ordered with orthogonals as bits
         let fenceOrd = parseInt(`${o4}${o3}${o2}${o1}`, 2)
 
         return this.get(`${fenceType}_${fenceOrd}`)}
 
     getCrop(textureKey) {
-        let foundTexture = this.textures[textureKey]
-
-        if (objMistriaDataPlanner.options.has('mode_offseason') || objSpriteCategories[`crops_${objMistriaDataPlanner.season}`].includes( getIndexBySpriteKey(textureKey))) {
-            foundTexture = this.textures[textureKey]
+        if (objMistriaDataPlanner.options.has('mode_offseason') || objSpriteCategories[`crops_${objMistriaDataPlanner.season}`].includes(objItemKeyDict[textureKey][0])) {
+            return this.get(textureKey)
         } else {
-            foundTexture = this.textures['wilted_plant']
+            return this.get('wilted_plant')
         }
-
-        if (!foundTexture) {
-            return this.get('snow_peas')
-        }
-
-        const {sprite: { texture }, pivot, origin, itemOrigin, meta} = foundTexture
-        const sprite = new PIXI.Sprite(texture)
-         if (pivot && origin && itemOrigin) {
-            const { x, y } = pivot
-            const { x: originX, y: originY } = origin
-            const { x: itemOriginX, y: itemOriginY } = itemOrigin
-
-             
-            sprite.pivot.set(...[originX - itemOriginX - x, originY - itemOriginY - y])
-
-        } else if (pivot) {
-            const { x, y } = pivot
-            sprite.pivot.set(...[intGridCellSize/2 - x, intGridCellSize - y])
-        }
-
-        if (meta) {
-            sprite.meta = meta
-        }
-        
-        return sprite
     }
 
-    get(textureKey) {
+    get(textureKey, {direction, season} = {}) {
         const foundTexture = this.textures[textureKey]
 
         if (!foundTexture) {
@@ -308,21 +315,19 @@ class SpriteStore {
 
         container.addChild(baseSprite)
         
-        if (pivot && origin && itemOrigin) {
+        if (pivot && origin) {
             const { x, y } = pivot
             const { x: originX, y: originY } = origin
-            const { x: itemOriginX, y: itemOriginY } = itemOrigin
+            const { x: itemOriginX, y: itemOriginY } = itemOrigin || {x: 0, y: 0}
 
             baseSprite.pivot.set(originX - itemOriginX - x, originY - itemOriginY - y)
         } else if (pivot) {
             const { x, y } = pivot
-            baseSprite.pivot.set(intGridCellSize/2 - x, intGridCellSize - y)
+            baseSprite.pivot.set(intGridCellSize/2 - x*2, intGridCellSize/2 - y*2)
         }
 
-        if (meta) {
-            container.meta = meta
-        }
-
+        if (meta) { container.meta = meta }
+        
         if (children) {
             children.forEach(child => {
                 const childSprite = this.get(child.name)
@@ -334,7 +339,7 @@ class SpriteStore {
         return container
 }
 
-    initializeSheetData(spriteSheetMeta) {
+    #initializeSheetData(spriteSheetMeta) {
         const initialized = {}
 
         Object.entries(spriteSheetMeta).forEach(([sheetKey, sheetData]) => (
@@ -350,9 +355,7 @@ class SpriteStore {
         return initialized
     }
 
-    logStage(text) {
+    #logStage(text) {
         console.log(`%c${text}`, 'font-size: 1.5em;color: #62893e;padding: 0 5px;margin: 0 10px;border: 5px ridge #22c813;background: #444444')
     }
 }
-
-

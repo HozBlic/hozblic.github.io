@@ -38,8 +38,13 @@ let objSpriteCategories;
 
 let intMultiplierCanvas = 1;
 
+let objKeyItemDict = null;
 let objItemKeyDict = null;
-let objZindexDict = null;
+
+let objSoilIndex = {}
+
+
+let objZindex_Items = null;
 let arrGrid_Collision = null;
 let arrGrid_Diggable = null;
 
@@ -53,20 +58,7 @@ let objContainer_Wrapper = null;
 let objGridCombined = {
     'main_corner': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
     'main_extend': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
-
     'cursor_corner': false,
-
-
-    'move': false,
-    'cursor': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
-    'rules': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => ({}))),
-
-}
-
-let objGridCombinedPrev = {
-    'main_corner': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
-    'move': false,
-    'cursor': Array.from({ length: objGrid.y }, () => Array.from({ length: objGrid.x }, () => [])),
 }
 
 let objContainers = {
@@ -78,29 +70,22 @@ let objContainers = {
     'grid': null,
 
     'cursor': null,
-
-
 }
-const arrGroundContainers = ['ground', 'soil', 'soilWet', 'grass'];
-const objZindexes = {
+
+const objZindex_Containers = {
     'background': 0,
     'grassFix': 1,
 
+    'ee': 2,
 
+    'collision': 3,
+    'grid': 4,
 
-    'ee': 13,
-
-    'collision': 14,
-    'grid': 15,
-
-
-    'cursor': 98,
+    'cursor': 5,
 }
 
 function addTestData(intTest) {
-    const intSoilIndex = getIndexBySpriteKey('tile_soil');
-    const intWetSoilIndex = getIndexBySpriteKey('tile_soil_wet');
-    const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? intWetSoilIndex : intSoilIndex;
+    const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
     let objSection = {}
     switch (intTest) {
         case 1: //add test soil in front of the house
@@ -110,7 +95,7 @@ function addTestData(intTest) {
             var intStartX = 46;
             var intStartY = 23;
 
-            var intCurrentlyDrawingTemp = getIndexBySpriteKey('snow_peas');
+            var intCurrentlyDrawingTemp = objItemKeyDict['snow_peas'][0];
 
             objSection = {
                 x0: intStartX * 2 + 0 * 2,
@@ -152,7 +137,7 @@ function addTestData(intTest) {
                                 }
                             }
 
-                            const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                            const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoil.eventMode = 'static';
                             spriteSoil.on('pointerover', () => {
                                 highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -162,16 +147,16 @@ function addTestData(intTest) {
                             });
 
                             spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                            spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                            spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                            objGridCombined.main_corner[tempY][tempX][intSoilIndex] = { 'sprite': spriteSoil };
+                            objGridCombined.main_corner[tempY][tempX][objSoilIndex.soil] = { 'sprite': spriteSoil };
                             for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                                 for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                    objGridCombined.main_extend[y1][x1][intSoilIndex] = { 'coord': [tempX, tempY] };
+                                    objGridCombined.main_extend[y1][x1][objSoilIndex.soil] = { 'coord': [tempX, tempY] };
                                 }
                             }
-                            if (intCurrentlyDrawingSoil === intWetSoilIndex) {
-                                const spriteSoilWet = getSprite(intWetSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                            if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                                const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                                 spriteSoilWet.eventMode = 'static';
                                 spriteSoilWet.on('pointerover', () => {
                                     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -181,12 +166,12 @@ function addTestData(intTest) {
                                 });
 
                                 spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                                spriteSoilWet.zIndex = getZindexbySpriteIndex(intWetSoilIndex);
+                                spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
-                                objGridCombined.main_corner[tempY][tempX][intWetSoilIndex] = { 'sprite': spriteSoilWet };
+                                objGridCombined.main_corner[tempY][tempX][objSoilIndex.wetSoil] = { 'sprite': spriteSoilWet };
                                 for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                                     for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                        objGridCombined.main_extend[y1][x1][intWetSoilIndex] = { 'coord': [tempX, tempY] };
+                                        objGridCombined.main_extend[y1][x1][objSoilIndex.wetSoil] = { 'coord': [tempX, tempY] };
                                     }
                                 }
                             }
@@ -205,7 +190,7 @@ function addTestData(intTest) {
             var intStartX = 11;
             var intStartY = 14;
 
-            var intCurrentlyDrawingTemp = getIndexBySpriteKey('snow_peas');
+            var intCurrentlyDrawingTemp = objItemKeyDict['snow_peas'][0];
 
             objSection = {
                 x0: intStartX * 2 + 0 * 2,
@@ -247,7 +232,7 @@ function addTestData(intTest) {
                                 }
                             }
 
-                            const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                            const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoil.eventMode = 'static';
                             spriteSoil.on('pointerover', () => {
                                 highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -256,31 +241,31 @@ function addTestData(intTest) {
                                 highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                             });
                             spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                            spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                            spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                            objGridCombined.main_corner[tempY][tempX][intSoilIndex] = { 'sprite': spriteSoil };
+                            objGridCombined.main_corner[tempY][tempX][objSoilIndex.soil] = { 'sprite': spriteSoil };
                             for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                                 for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                    objGridCombined.main_extend[y1][x1][intSoilIndex] = { 'coord': [tempX, tempY] };
+                                    objGridCombined.main_extend[y1][x1][objSoilIndex.soil] = { 'coord': [tempX, tempY] };
                                 }
                             }
 
-                            if (intCurrentlyDrawingSoil === intWetSoilIndex) {
-                                const spriteSoilWet = getSprite(intWetSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
-                                intWetSoilIndex.eventMode = 'static';
-                                intWetSoilIndex.on('pointerover', () => {
+                            if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                                const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
+                                objSoilIndex.wetSoil.eventMode = 'static';
+                                objSoilIndex.wetSoil.on('pointerover', () => {
                                     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
                                 });
-                                intWetSoilIndex.on('pointerleave', () => {
+                                objSoilIndex.wetSoil.on('pointerleave', () => {
                                     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                                 });
                                 spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                                spriteSoilWet.zIndex = getZindexbySpriteIndex(intWetSoilIndex);
+                                spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
-                                objGridCombined.main_corner[tempY][tempX][intWetSoilIndex] = { 'sprite': spriteSoilWet };
+                                objGridCombined.main_corner[tempY][tempX][objSoilIndex.wetSoil] = { 'sprite': spriteSoilWet };
                                 for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                                     for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                        objGridCombined.main_extend[y1][x1][intWetSoilIndex] = { 'coord': [tempX, tempY] };
+                                        objGridCombined.main_extend[y1][x1][objSoilIndex.wetSoil] = { 'coord': [tempX, tempY] };
                                     }
                                 }
                             }
@@ -299,7 +284,7 @@ function addTestData(intTest) {
             var intStartX = 11;
             var intStartY = 14;
 
-            var intCurrentlyDrawingTemp = getIndexBySpriteKey('snow_peas');
+            var intCurrentlyDrawingTemp = objItemKeyDict['snow_peas'][0];
 
             objSection = {
                 x0: intStartX * 2 + 0 * 2,
@@ -333,7 +318,7 @@ function addTestData(intTest) {
                         }
                     }
 
-                    const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
 
                     spriteSoil.eventMode = 'static';
                     spriteSoil.on('pointerover', () => {
@@ -343,17 +328,17 @@ function addTestData(intTest) {
                         highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                     });
                     spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                    spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                    spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                    objGridCombined.main_corner[tempY][tempX][intSoilIndex] = { 'sprite': spriteSoil };
+                    objGridCombined.main_corner[tempY][tempX][objSoilIndex.soil] = { 'sprite': spriteSoil };
                     for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                         for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                            objGridCombined.main_extend[y1][x1][intSoilIndex] = { 'coord': [tempX, tempY] };
+                            objGridCombined.main_extend[y1][x1][objSoilIndex.soil] = { 'coord': [tempX, tempY] };
                         }
                     }
 
-                    if (intCurrentlyDrawingSoil === intWetSoilIndex) {
-                        const spriteSoilWet = getSprite(intWetSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                        const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
 
                         spriteSoilWet.eventMode = 'static';
                         spriteSoilWet.on('pointerover', () => {
@@ -363,12 +348,12 @@ function addTestData(intTest) {
                             highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                         });
                         spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                        spriteSoilWet.zIndex = getZindexbySpriteIndex(intWetSoilIndex);
+                        spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
-                        objGridCombined.main_corner[tempY][tempX][intWetSoilIndex] = { 'sprite': spriteSoilWet };
+                        objGridCombined.main_corner[tempY][tempX][objSoilIndex.wetSoil] = { 'sprite': spriteSoilWet };
                         for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                             for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                objGridCombined.main_extend[y1][x1][intWetSoilIndex] = { 'coord': [tempX, tempY] };
+                                objGridCombined.main_extend[y1][x1][objSoilIndex.wetSoil] = { 'coord': [tempX, tempY] };
                             }
                         }
                     }
@@ -378,7 +363,7 @@ function addTestData(intTest) {
             intStartX = 14;
             objSection.x1 = intStartX * 2 + (intColumns - 1) * 2;
 
-            intCurrentlyDrawingTemp = getIndexBySpriteKey('tea');
+            intCurrentlyDrawingTemp = objItemKeyDict['tea'][0];
 
             for (let y = 0; y < intRows; y++) {
                 for (let x = 0; x < intColumns; x++) {
@@ -405,7 +390,7 @@ function addTestData(intTest) {
                         }
                     }
 
-                    const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                     spriteSoil.eventMode = 'static';
                     spriteSoil.on('pointerover', () => {
                         highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -414,17 +399,17 @@ function addTestData(intTest) {
                         highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                     });
                     spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                    spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                    spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                    objGridCombined.main_corner[tempY][tempX][intSoilIndex] = { 'sprite': spriteSoil };
+                    objGridCombined.main_corner[tempY][tempX][objSoilIndex.soil] = { 'sprite': spriteSoil };
                     for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                         for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                            objGridCombined.main_extend[y1][x1][intSoilIndex] = { 'coord': [tempX, tempY] };
+                            objGridCombined.main_extend[y1][x1][objSoilIndex.soil] = { 'coord': [tempX, tempY] };
                         }
                     }
 
-                    if (intCurrentlyDrawingSoil === intWetSoilIndex) {
-                        const spriteSoilWet = getSprite(intWetSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                        const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteSoilWet.eventMode = 'static';
                         spriteSoilWet.on('pointerover', () => {
                             highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -433,12 +418,12 @@ function addTestData(intTest) {
                             highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                         });
                         spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                        spriteSoilWet.zIndex = getZindexbySpriteIndex(intWetSoilIndex);
+                        spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
-                        objGridCombined.main_corner[tempY][tempX][intWetSoilIndex] = { 'sprite': spriteSoilWet };
+                        objGridCombined.main_corner[tempY][tempX][objSoilIndex.wetSoil] = { 'sprite': spriteSoilWet };
                         for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                             for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                objGridCombined.main_extend[y1][x1][intWetSoilIndex] = { 'coord': [tempX, tempY] };
+                                objGridCombined.main_extend[y1][x1][objSoilIndex.wetSoil] = { 'coord': [tempX, tempY] };
                             }
                         }
                     }
@@ -498,7 +483,7 @@ function addTestData(intTest) {
                             }
                         }
 
-                        const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                        const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteSoil.eventMode = 'static';
                         spriteSoil.on('pointerover', () => {
                             highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -507,17 +492,17 @@ function addTestData(intTest) {
                             highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                         });
                         spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                        spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                        spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                        objGridCombined.main_corner[tempY][tempX][intSoilIndex] = { 'sprite': spriteSoil };
+                        objGridCombined.main_corner[tempY][tempX][objSoilIndex.soil] = { 'sprite': spriteSoil };
                         for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                             for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                objGridCombined.main_extend[y1][x1][intSoilIndex] = { 'coord': [tempX, tempY] };
+                                objGridCombined.main_extend[y1][x1][objSoilIndex.soil] = { 'coord': [tempX, tempY] };
                             }
                         }
 
-                        if (intCurrentlyDrawingSoil === intWetSoilIndex) {
-                            const spriteSoilWet = getSprite(intWetSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                        if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                            const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoilWet.eventMode = 'static';
                             spriteSoilWet.on('pointerover', () => {
                                 highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
@@ -526,12 +511,12 @@ function addTestData(intTest) {
                                 highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
                             });
                             spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
-                            spriteSoilWet.zIndex = getZindexbySpriteIndex(intWetSoilIndex);
+                            spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
-                            objGridCombined.main_corner[tempY][tempX][intWetSoilIndex] = { 'sprite': spriteSoilWet };
+                            objGridCombined.main_corner[tempY][tempX][objSoilIndex.wetSoil] = { 'sprite': spriteSoilWet };
                             for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                                 for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                    objGridCombined.main_extend[y1][x1][intWetSoilIndex] = { 'coord': [tempX, tempY] };
+                                    objGridCombined.main_extend[y1][x1][objSoilIndex.wetSoil] = { 'coord': [tempX, tempY] };
                                 }
                             }
                         }
@@ -614,7 +599,6 @@ function convertGridToNeighbours(intItemIndex = null, objSelection = { x0: 0, y0
 function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y }) {
     const startTime = performance.now()
 
-    const intGrassIndex = getIndexBySpriteKey('tile_grassautotile');
 
     //add 1 big cell (2x2) frame to section
     //all items that change their sprite depending on neighbors are 2x2 big
@@ -652,10 +636,10 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
             let bolHasSoil = false;
             arrNeighborItems.forEach((intIdx) => {
                 if (intIdx in objGridCombined.main_corner[y][x]) {
-                    if (intIdx == intGrassIndex) {
+                    if (intIdx == objSoilIndex.grass) {
                         bolHasGrass = true;
                     }
-                    if ([getIndexBySpriteKey('tile_main_exteriors'), getIndexBySpriteKey('tile_soil'), getIndexBySpriteKey('tile_soil_wet')].includes(intIdx)) {
+                    if ([objItemKeyDict['tile_main_exteriors'][0], objItemKeyDict['tile_soil'][0], objItemKeyDict['tile_soil_wet'][0]].includes(intIdx)) {
                         bolHasSoil = true;
                     }
 
@@ -684,9 +668,9 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
 
             //outer layer might need grass
             if (!bolHasGrass && !bolHasSoil) {
-                const arrNeigbors = objNeighbors[intGrassIndex][y - objSection.y0][x - objSection.x0]
+                const arrNeigbors = objNeighbors[objSoilIndex.grass][y - objSection.y0][x - objSection.x0]
                 if (arrNeigbors.includes(1)) {
-                    const sprite = getSprite(intGrassIndex, arrNeigbors);
+                    const sprite = getSprite(objSoilIndex.grass, arrNeigbors);
                     sprite.eventMode = 'static';
                     sprite.on('pointerover', () => {
                         highlightSection({ x0: x, x1: x, y0: y, y1: y })
@@ -695,27 +679,27 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
                         highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
                     });
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
-                    sprite.zIndex = getZindexbySpriteIndex(intGrassIndex);
+                    sprite.zIndex = getZindexbySpriteIndex(objSoilIndex.grass);
 
                     //remove previous sprite if exists
-                    if (intGrassIndex in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][intGrassIndex]) {
-                        const spritePrev = objGridCombined.main_corner[y][x][intGrassIndex].sprite;
+                    if (objSoilIndex.grass in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][objSoilIndex.grass]) {
+                        const spritePrev = objGridCombined.main_corner[y][x][objSoilIndex.grass].sprite;
                         if (spritePrev.parent !== null) {
                             spritePrev.parent.removeChild(spritePrev);
                         }
                     }
-                    objGridCombined.main_corner[y][x][intGrassIndex] = { 'sprite': sprite, 'neigbors': arrNeigbors };
+                    objGridCombined.main_corner[y][x][objSoilIndex.grass] = { 'sprite': sprite, 'neigbors': arrNeigbors };
                 }
             }
 
             if (bolHasGrass && bolHasSoil) {
-                if (intGrassIndex in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][intGrassIndex]) {
-                    const spriteGrass = objGridCombined.main_corner[y][x][intGrassIndex].sprite;
+                if (objSoilIndex.grass in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][objSoilIndex.grass]) {
+                    const spriteGrass = objGridCombined.main_corner[y][x][objSoilIndex.grass].sprite;
                     if (spriteGrass.parent !== null) {
                         spriteGrass.parent.removeChild(spriteGrass);
                     }
                 }
-                delete objGridCombined.main_corner[y][x][intGrassIndex];
+                delete objGridCombined.main_corner[y][x][objSoilIndex.grass];
             }
         }
     }
@@ -817,7 +801,7 @@ function drawGrid() {
     if (objContainers.grid === null) {
         objContainers.grid = new PIXI.Container();
         objContainer_Wrapper.addChild(objContainers.grid);
-        objContainers.grid.zIndex = objZindexes.grid;
+        objContainers.grid.zIndex = objZindex_Containers.grid;
     }
 
     if (objGraphics_Grid === null && objMistriaDataPlanner.options.has('mode_grid')) {
@@ -901,7 +885,7 @@ function drawCollision(bolUseDiggableGrid = true) {
         }
 
         objContainer_Wrapper.addChild(objContainers.collision);
-        objContainers.collision.zIndex = objZindexes.grid;
+        objContainers.collision.zIndex = objZindex_Containers.grid;
         resizeContainers();
     } else {
         //remove if exists
@@ -913,26 +897,14 @@ function drawCollision(bolUseDiggableGrid = true) {
 }
 
 function getZindexbySpriteIndex(intItemIndex) {
-    return Object.keys(objZindexDict).find(k => objZindexDict[k].includes(intItemIndex)) || "99";
-}
-
-function getIndexBySpriteKey(strItemKey) {
-    const entry = Object.entries(objItemKeyDict).find(([k, v]) => {
-        if (!v || v.length === 0) return false;
-        // check 2nd element first
-        if (v.length > 1 && v[1] === strItemKey) return true;
-        // fallback to first element
-        if (v[0] === strItemKey) return true;
-        return false;
-    });
-    return entry ? parseInt(entry[0]) : null;
+    return Object.keys(objZindex_Items).find(k => objZindex_Items[k].includes(intItemIndex)) || "99";
 }
 
 async function addBackground() {
     if (objContainers.background === null) {
         objContainers.background = new PIXI.Container();
         objContainer_Wrapper.addChild(objContainers.background);
-        objContainers.background.zIndex = objZindexes.background;
+        objContainers.background.zIndex = objZindex_Containers.background;
     }
 
     if (objContainers.background.children.length) {
@@ -945,7 +917,7 @@ async function addBackground() {
     objSprite_Background = new PIXI.Sprite(backgroundTexture);
     objContainers.background.addChild(objSprite_Background);
 
-    objSprite_Background.zIndex = objZindexes.background;
+    objSprite_Background.zIndex = objZindex_Containers.background;
 
     $('#minimap').css('background-image', `url(textures/rooms/rm_farm_${objMistriaDataPlanner.season}_${objMistriaDataPlanner.house_upgrade}.png)`)
 }
@@ -981,7 +953,7 @@ function drawGrassFix() {
     //init container
     objContainers.grassFix = new PIXI.Container();
     objContainer_Wrapper.addChild(objContainers.grassFix);
-    objContainers.grassFix.zIndex = objZindexes.grassFix;
+    objContainers.grassFix.zIndex = objZindex_Containers.grassFix;
 
     arrGrassFixCoord.forEach(function (arrTileCoord) {
         const x = arrTileCoord[0];
@@ -1079,7 +1051,8 @@ function itemHovered(objCellCoord) {
 
 function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
     let sprite;
-    const strSpriteKey = objItemKeyDict[intItemIndex][1] ?? objItemKeyDict[intItemIndex][0];
+    const strSpriteKey = objKeyItemDict[intItemIndex].at(-1);
+
     if (objSpriteCategories.soil.includes(intItemIndex)) {
         switch (intItemIndex) {
             case 1: //ground
@@ -1096,11 +1069,11 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
                 break;
         }
     } else if (objSpriteCategories.crops.includes(intItemIndex)) {
-        sprite = sprites.getCrop(strSpriteKey);
+        sprite = sprites.getCrop(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
     } else if (objSpriteCategories.fences.includes(intItemIndex) || objSpriteCategories.counter.includes(intItemIndex)) {
-        sprite = sprites.getFence(strSpriteKey, arrNeighbours);
+        sprite = sprites.getFence(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
     } else {
-        sprite = sprites.get(strSpriteKey);
+        sprite = sprites.get(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
     }
 
     return sprite;
@@ -1250,7 +1223,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
         //init container
         objContainers.selection = new PIXI.Container();
         objContainer_Wrapper.addChild(objContainers.selection);
-        objContainers.selection.zIndex = objZindexes.selection;
+        objContainers.selection.zIndex = objZindex_Containers.selection;
 
         let elemSelection = new PIXI.Graphics();
 
@@ -1317,7 +1290,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
             //init container
             objContainers[strContainerKey] = new PIXI.Container();
             objContainer_Wrapper.addChild(objContainers[strContainerKey]);
-            objContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
+            objContainers[strContainerKey].zIndex = objZindex_Containers[strContainerKey];
 
             if (strContainerKey === 'cursor') {
                 objContainers[strContainerKey].alpha = 0.5;
@@ -1401,6 +1374,7 @@ function drawContainers(arrGrids = false, objSelection = false, bolHighlight = f
 }
 
 function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid = 'main_corner', strContainer = 'ee') {
+    const startTime = performance.now()
 
 
     //destroy previously drawn elements
@@ -1414,7 +1388,7 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
         //init container
         objContainers[strContainer] = new PIXI.Container();
         objContainer_Wrapper.addChild(objContainers[strContainer]);
-        objContainers[strContainer].zIndex = objZindexes[strContainer];
+        objContainers[strContainer].zIndex = objZindex_Containers[strContainer];
 
         if (strContainer === 'cursor') {
             objContainers[strContainer].alpha = 0.5;
@@ -1430,6 +1404,13 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
                 objContainers[strContainer].addChild(sprite);
             });
         }
+    }
+
+    const endTime = performance.now()
+    console.log(`drawPlanner - ${endTime - startTime} milliseconds`)
+
+    if (strContainer == 'ee') {
+        testValidate()
     }
 
     return;
@@ -1462,7 +1443,7 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
             // //init container
             // objContainers[strContainerKey] = new PIXI.Container();
             // objContainer_Wrapper.addChild(objContainers[strContainerKey]);
-            // objContainers[strContainerKey].zIndex = objZindexes[strContainerKey];
+            // objContainers[strContainerKey].zIndex = objZindex_Containers[strContainerKey];
 
             // if (strContainerKey === 'cursor') {
             //     objContainers[strContainerKey].alpha = 0.5;
@@ -1866,11 +1847,8 @@ function getClickedCell(event) {
 }
 
 function generateTempSection(objSection = false, objCellCoord = false) {
-    console.log('generate')
 
-    const intSoilIndex = getIndexBySpriteKey('tile_soil');
-    const intWetSoilIndex = getIndexBySpriteKey('tile_soil_wet');
-    const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? intWetSoilIndex : intSoilIndex;
+    const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
 
     let objSize = {}
     if (!objSection) {
@@ -1885,7 +1863,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
 
     if (strMode === 'drawing_mode') {
         const arrSize = getSprite(intCurrentlyDrawing).meta.size;
-        console.log(arrSize)
+
         for (let y = 0; y < objSize.y; y++) {
             for (let x = 0; x < objSize.x; x++) {
                 if (y % arrSize[1] == 0 && x % arrSize[0] == 0) {
@@ -1907,27 +1885,27 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                     objGridCombined.cursor_corner[y][x][intCurrentlyDrawing] = { 'sprite': sprite }
 
                     if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
-                        const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                        const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteSoil.position.set(x * intGridCellSize, y * intGridCellSize);
-                        spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                        spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                        objGridCombined.cursor_corner[y][x][intSoilIndex] = { 'sprite': spriteSoil };
+                        objGridCombined.cursor_corner[y][x][objSoilIndex.soil] = { 'sprite': spriteSoil };
 
-                        if (intCurrentlyDrawingSoil === intWetSoilIndex) {
-                            const spriteSoilWet = getSprite(intWetSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                        if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                            const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoilWet.position.set(x * intGridCellSize, y * intGridCellSize);
-                            spriteSoilWet.zIndex = getZindexbySpriteIndex(intWetSoilIndex);
+                            spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
-                            objGridCombined.cursor_corner[y][x][intWetSoilIndex] = { 'sprite': spriteSoilWet };
+                            objGridCombined.cursor_corner[y][x][objSoilIndex.wetSoil] = { 'sprite': spriteSoilWet };
                         }
                     }
 
-                    if (intCurrentlyDrawing === intWetSoilIndex) {
-                        const spriteSoil = getSprite(intSoilIndex, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    if (intCurrentlyDrawing === objSoilIndex.wetSoil) {
+                        const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteSoil.position.set(x * intGridCellSize, y * intGridCellSize);
-                        spriteSoil.zIndex = getZindexbySpriteIndex(intSoilIndex);
+                        spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
-                        objGridCombined.cursor_corner[y][x][intSoilIndex] = { 'sprite': spriteSoil };
+                        objGridCombined.cursor_corner[y][x][objSoilIndex.soil] = { 'sprite': spriteSoil };
                     }
                 }
             }
@@ -1981,14 +1959,16 @@ function getSectionLocation(objCellCoord) {
 
     return [objPosition, arrSize];
 }
+function testValidate() {
+    if (objContainers['ee'] !== null) {
+        const intSpritesDrawn = objContainers['ee'].children.length;
+        const intSpritesGrid = objGridCombined.main_corner.flat().flat().flatMap(obj => Object.keys(obj)).length;
+        console.log('test count', intSpritesDrawn == intSpritesGrid ? true : false)
+    }
+}
 function placeTempSection(objCellCoord) {
 
     const [objPosition, arrSize] = getSectionLocation(objCellCoord);
-
-    const intGrassIndex = getIndexBySpriteKey('tile_grassautotile');
-    const intSoilIndex = getIndexBySpriteKey('tile_soil');
-    const intWetSoilIndex = getIndexBySpriteKey('tile_soil_wet');
-    const intExtIndex = getIndexBySpriteKey('tile_main_exteriors');
 
     const objSize = {
         x: objGridCombined.cursor_corner[0].length,
@@ -2029,40 +2009,33 @@ function placeTempSection(objCellCoord) {
 
                     //if placing soil, destroy other soil types
                     if (objSpriteCategories.soil.includes(intItemKey)) {
+
                         const objSectionCell = { x0: objRealPosition.x, y0: objRealPosition.y, x1: objRealPosition.x + arrSize[0], y1: objRealPosition.y + arrSize[1] };
 
                         let arrRemoveTiles = [];
 
                         //if placing soil, remove grass and ext
-                        if ([intSoilIndex, intWetSoilIndex].includes(intItemKey)) {
-                            arrRemoveTiles = [intGrassIndex, intExtIndex];
+                        if ([objSoilIndex.soil, objSoilIndex.wetSoil].includes(intItemKey)) {
+                            arrRemoveTiles = [objSoilIndex.grass, objSoilIndex.exterior];
+
+                            //if placing soil, remove wet soil
+                            if (intItemKey == objSoilIndex.soil) {
+                                arrRemoveTiles.push(objSoilIndex.wetSoil);
+                            }
                         }
 
                         //if placing grass, remove soil and ext
-                        if (intItemKey == intGrassIndex) {
-                            arrRemoveTiles = [intExtIndex, intSoilIndex, intWetSoilIndex];
+                        if (intItemKey == objSoilIndex.grass) {
+                            arrRemoveTiles = [objSoilIndex.exterior, objSoilIndex.soil, objSoilIndex.wetSoil];
                         }
 
                         //if placing ext, remove soil and grass
-                        if (intItemKey == intExtIndex) {
-                            arrRemoveTiles = [intGrassIndex, intSoilIndex, intWetSoilIndex];
+                        if (intItemKey == objSoilIndex.exterior) {
+                            arrRemoveTiles = [objSoilIndex.grass, objSoilIndex.soil, objSoilIndex.wetSoil];
                         }
 
-                        //change to clearCell?
-                        arrRemoveTiles.forEach(function (intItemKeyTemp) {
-                            if (intItemKeyTemp in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x] && 'sprite' in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKeyTemp]) {
-                                const spriteTemp = objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKeyTemp].sprite;
-                                if (spriteTemp.parent !== null) {
-                                    spriteTemp.parent.removeChild(spriteTemp);
-                                }
-                            }
-                            delete objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKeyTemp];
-                            for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
-                                for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                                    delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
-                                }
-                            }
-                        })
+                        clearSection(objSectionCell, arrRemoveTiles)
+
                     }
 
                     //remove previous sprite if exists
@@ -2117,6 +2090,21 @@ function moveTempSection(objCellCoord) {
     updateTempCollisions(objPosition);
 }
 
+function getMaxZindexInCell(arrItems) {
+    if (!arrItems.length) {
+        return 0;
+    }
+    const lookup = {};
+
+    for (const z in objZindex_Items) {
+        for (const el of objZindex_Items[z]) {
+            lookup[el] = Number(z);
+        }
+    }
+
+    return Math.max(...arrItems.map(el => lookup[el] ?? 99));
+}
+
 function updateTempCollisions(objPosition = false) {
     const objSize = {
         x: objGridCombined.cursor_corner[0].length,
@@ -2133,6 +2121,9 @@ function updateTempCollisions(objPosition = false) {
             }
 
             const objCell = objGridCombined.cursor_corner[y][x];
+
+            let intMaxZindexTemp = getMaxZindexInCell(Object.keys(objCell));
+
             Object.keys(objCell).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
                 let sprite = objCell[intItemKey].sprite;
@@ -2146,36 +2137,29 @@ function updateTempCollisions(objPosition = false) {
                 }
                 let bolHitsElement = false;
                 if (checkTileHasCollision(objItemArea)) {
+                    //hits predefined untouchable cells
                     bolHitsElement = true;
 
                 } else if (objRealPosition.x + arrSize[0] > objGrid.x || objRealPosition.y + arrSize[1] > objGrid.y) {
+                    //goes out of bounds
                     bolHitsElement = true;
                 } else {
                     const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
                     let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat().flatMap(obj => Object.keys(obj)).map(strIndex => parseInt(strIndex)))
-                    objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
+                    let arrGrid_Crops = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.crops.includes(intItemIndex)));
 
+                    let intMaxZindex = getMaxZindexInCell([...setGrid_CoveredSliceValues]);
+
+                    //soil can be under anything, but if there are crops, it must be tilled soil
                     if (objSpriteCategories.soil.includes(intItemKey)) {
-                        //soil can be under anything, but if there are crops, it must be tilled soil
-                        if ([1, 4].includes(intItemKey)) {
-                            let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.crops.includes(intItemIndex)));
-                            setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
-                            if (setGrid_CoveredSliceValues.size) {
-                                bolHitsElement = true;
-                            }
-                        }
-                    } else {
-                        if (objSpriteCategories.depth_to_floor.includes(intItemKey)) {
-                            //rugs and stuff can be under other elements, but can not hit other rugs
-                            let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.depth_to_floor.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex)));
-                            setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
-                        } else {
-                            //elements can be over rugs
-                            objSpriteCategories.depth_to_floor.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
-                        }
-                        if (setGrid_CoveredSliceValues.size) {
+                        if ([objSoilIndex.exterior, objSoilIndex.grass].includes(intItemKey) && arrGrid_Crops.length) {
                             bolHitsElement = true;
                         }
+                    } else if (arrGrid_Crops.length) {
+                        //nothing can be placed on crops
+                        bolHitsElement = true;
+                    } else if (intMaxZindexTemp <= intMaxZindex) {
+                        bolHitsElement = true;
                     }
                 }
 
@@ -2219,14 +2203,13 @@ function highlightSection(objSection, bolReverse = false) {
 
 
 
-    // const intGrassIndex = getIndexBySpriteKey('tile_grassautotile');
     // console.log("jhi")
     // for (let y = objSection.y0; y <= objSection.y1; y++) {
     //     for (let x = objSection.x0; x <= objSection.x1; x++) {
     //         const objCell = objGridCombined.main_corner[y][x];
     //         Object.keys(objCell).forEach(function (strItemKey) {
 
-    //             if (intGrassIndex === parseInt(strItemKey)) {
+    //             if (objSoilIndex.grass === parseInt(strItemKey)) {
     //                 return;
     //             }
     //             const sprite = objGridCombined.main_corner[y][x][strItemKey].sprite;
@@ -2498,7 +2481,7 @@ async function loadMenuItems() {
                 }
                 let strName;
                 let strImage;
-                let strItemKey = objItemKeyDict[intIndex][0];
+                let strItemKey = objKeyItemDict[intIndex][0];
 
                 if (strItemKey in objItemsPlanner) {
                     strName = objItemsPlanner[strItemKey].name;
@@ -2886,7 +2869,7 @@ function prepareGridsForSaving() {
             arrCurrentValues.forEach((strItemKey) => {
                 const intItemKey = parseInt(strItemKey);
 
-                if (intItemKey === getIndexBySpriteKey('tile_grassautotile')) {
+                if (intItemKey === objItemKeyDict['tile_grassautotile'][0]) {
                     return;
                 }
 
@@ -2898,8 +2881,41 @@ function prepareGridsForSaving() {
         }
     }
 }
-function clearSection(objSection) {
-    //needs to grab items that end in the cll as well, clear extend array..
+function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y }, arrItems = false) {
+    let arrRemoveItems = arrItems;
+
+    //TODO: needs to grab items that end in the cell as well
+    for (var y = objSection.y0; y < objSection.y1; y++) {
+        for (var x = objSection.x0; x < objSection.x1; x++) {
+
+            if (!arrItems) {
+                const objCurrentItems = objGridCombined.main_corner[y][x] || {};
+                arrRemoveItems = Object.keys(objCurrentItems).map(strIndex => parseInt(strIndex));
+            }
+
+            arrRemoveItems.forEach(function (intItemKeyTemp) {
+                if (intItemKeyTemp in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][intItemKeyTemp]) {
+                    const spriteTemp = objGridCombined.main_corner[y][x][intItemKeyTemp].sprite;
+                    if (spriteTemp.parent !== null) {
+                        spriteTemp.parent.removeChild(spriteTemp);
+                    }
+                }
+                delete objGridCombined.main_corner[y][x][intItemKeyTemp];
+
+                const sprite = getSprite(intItemKeyTemp);
+                const arrSize = sprite.meta.size;
+                const objSectionCell = { x0: x, y0: y, x1: x + arrSize[0], y1: y + arrSize[1] };
+
+                for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
+                    for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
+                        delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
+                    }
+                }
+            })
+        }
+    }
+
+
 }
 function recalculateSectionNeighbors() {
 }
@@ -2947,6 +2963,8 @@ function changeSeasonInGrids(bolOnlyCrops = false) {
 }
 function populateItemGrids() {
 
+    console.log('populate')
+
     const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
     let setItems = new Set();
     let objNeighbors = {};
@@ -2962,6 +2980,7 @@ function populateItemGrids() {
 
     Object.keys(objFarmLayout).forEach(function (strItemKey) {
         const intItemKey = parseInt(strItemKey);
+
         setItems.add(intItemKey)
         const sprite = getSprite(intItemKey);
         const arrSize = sprite.meta.size;
@@ -2988,13 +3007,12 @@ function populateItemGrids() {
 
     const arrItems = [...setItems];
 
-    const intGrassIndex = getIndexBySpriteKey('tile_grassautotile');
     const arrSeenFences = getCommonElements(arrItems, objSpriteCategories.fences)
     const arrSeenGround = getCommonElements(arrItems, objSpriteCategories.soil)
     const arrSeenCounters = getCommonElements(arrItems, objSpriteCategories.counter)
 
     const arrNeighborItems = [...arrSeenGround, ...arrSeenFences, ...arrSeenCounters];
-    arrNeighborItems.push(intGrassIndex);
+    arrNeighborItems.push(objSoilIndex.grass);
 
     arrNeighborItems.forEach((intIdx) => {
         objNeighbors[intIdx] = convertGridToNeighbours(intIdx);
@@ -3035,9 +3053,9 @@ function populateItemGrids() {
             }
 
             //add grass item
-            if (!hasCommonElement(arrCellItems, [getIndexBySpriteKey('tile_main_exteriors'), getIndexBySpriteKey('tile_soil'), getIndexBySpriteKey('tile_soil_wet')]) && objNeighbors[intGrassIndex][y][x].includes(1)) {
-                const arrNeigbors = objNeighbors[intGrassIndex][y][x];
-                const sprite = getSprite(intGrassIndex, arrNeigbors);
+            if (!hasCommonElement(arrCellItems, [objItemKeyDict['tile_main_exteriors'][0], objItemKeyDict['tile_soil'][0], objItemKeyDict['tile_soil_wet'][0]]) && objNeighbors[objSoilIndex.grass][y][x].includes(1)) {
+                const arrNeigbors = objNeighbors[objSoilIndex.grass][y][x];
+                const sprite = getSprite(objSoilIndex.grass, arrNeigbors);
                 sprite.eventMode = 'static';
                 sprite.on('pointerover', () => {
                     highlightSection({ x0: x, x1: x, y0: y, y1: y })
@@ -3047,8 +3065,8 @@ function populateItemGrids() {
                 });
 
                 sprite.position.set(x * intGridCellSize, y * intGridCellSize);
-                sprite.zIndex =  getZindexbySpriteIndex(intGrassIndex);
-                objGridCombined.main_corner[y][x][intGrassIndex] = { 'sprite': sprite, 'neigbors': arrNeigbors };
+                sprite.zIndex = getZindexbySpriteIndex(objSoilIndex.grass);
+                objGridCombined.main_corner[y][x][objSoilIndex.grass] = { 'sprite': sprite, 'neigbors': arrNeigbors };
             }
         }
     }
@@ -3174,9 +3192,18 @@ const resizeObserver = new ResizeObserver((entries) => {
 $(function () {
     (async () => {
 
-        objItemKeyDict = await (await fetch('textures/dict.json')).json();
+        objKeyItemDict = await (await fetch('textures/dict.json')).json();
+        objItemKeyDict = await (await fetch('textures/dict_reverse.json')).json();
+
+        objSoilIndex = {
+            'grass': objItemKeyDict['tile_grassautotile'][0],
+            'soil': objItemKeyDict['tile_soil'][0],
+            'wetSoil': objItemKeyDict['tile_soil_wet'][0],
+            'exterior': objItemKeyDict['tile_main_exteriors'][0],
+        }
+
         objSpriteCategories = await (await fetch('textures/categories.json')).json();
-        objZindexDict =  await (await fetch('textures/zindexes.json')).json();
+        objZindex_Items = await (await fetch('textures/zindexes.json')).json();
 
         arrGrid_Collision = await (await fetch('textures/collision.json')).json();
         arrCollisionUpgradeGrid = await (await fetch('textures/collision_houseupgrade.json')).json();
@@ -3388,7 +3415,6 @@ $(function () {
         //     objGraphics_Grid.scale = 1 + (Math.sin(count) + 1) * 2;
         // });
 
-
         addBackground();
         drawGrassFix();
 
@@ -3399,6 +3425,7 @@ $(function () {
         updateCurrentlyDrawing(416);
 
         drawPlanner();
+
 
         // objPIXIapp.renderer.extract.log(image);
 
