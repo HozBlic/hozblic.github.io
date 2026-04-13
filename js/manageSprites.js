@@ -45,8 +45,6 @@ class SpriteStore {
             meta: meta
         }
 
-        console.log(targetX)
-
         if ((targetX || targetY) !== undefined) {
             this.singleTextureData[name].pivot = {x: targetX, y: targetY}
         }
@@ -73,9 +71,23 @@ class SpriteStore {
         directions.forEach(direction => {
             const selectedDirection = object[direction]
             if (selectedDirection) {
-
+                if (selectedDirection.sprite) variations.push(selectedDirection.sprite)
+                
+                seasons.forEach(season => {
+                    console.log(season, direction, selectedDirection[`${season}_sprite`])
+                    if (selectedDirection[`${season}_sprite`]) variations.push(selectedDirection[`${season}_sprite`])
+                })
             }
         })
+
+        if (object.sprites) {
+            seasons.forEach(season => {
+                console.log(season, object.sprites[season])
+                if (object.sprites[season]) variations.push(object.sprites[season])
+            })
+        }
+        
+        return variations.length ? variations : null
     }
 
     #mapCrops({default: defaults, ...crops}, spriteMapping) {
@@ -90,6 +102,10 @@ class SpriteStore {
 
     #mapFurniture({default: defaults, ...furniture}, spriteMapping) {
         Object.entries(furniture).forEach(([furnitureKey, furnitureData]) => {
+            const variations = this.#findVariations(furnitureData)
+
+            if (variations) console.log(variations, variations.length)
+
             if (furnitureData.fence) {
                 const fenceSprites = spriteMapping[furnitureData.south.sprite]
 

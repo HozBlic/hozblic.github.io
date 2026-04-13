@@ -1082,15 +1082,18 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
 function getTopLeftCornerItem(objCellCoord, bolForceTwosOnly = false) {
     //snap to grid
     let bolTwosOnly = false;
-
+    let arrSize = [0, 0];
     if (bolForceTwosOnly) {
         bolTwosOnly = true;
-
-    } else {
-        bolTwosOnly = (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.on_twos_only.includes(intCurrentlyDrawing)) ? true : false;
     }
-    const sprite = getSprite(intCurrentlyDrawing);
-    const arrSize = sprite.meta.size;
+
+    if (strMode === 'drawing_mode') {
+        if (!bolForceTwosOnly) {
+            bolTwosOnly = (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.on_twos_only.includes(intCurrentlyDrawing)) ? true : false;
+        }
+        const sprite = getSprite(intCurrentlyDrawing);
+        arrSize = sprite.meta.size;
+    }
 
     let objCoord = {
         x: objCellCoord.x,
@@ -1123,7 +1126,7 @@ function getTopLeftCornerItem(objCellCoord, bolForceTwosOnly = false) {
 
 function getSelection(objCellCoord) {
     let objSelectionStep = { x: 1, y: 1 }
-    let coordStart = objCellCoord;
+    let coordStart = bolIsDragging ? objStartCellCoord : objCellCoord;
 
     if (strMode === 'drawing_mode') {
         const [coord, arrSize] = getTopLeftCornerItem(bolIsDragging ? objStartCellCoord : objCellCoord);
@@ -1390,9 +1393,9 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
         objContainer_Wrapper.addChild(objContainers[strContainer]);
         objContainers[strContainer].zIndex = objZindex_Containers[strContainer];
 
-        if (strContainer === 'cursor') {
-            objContainers[strContainer].alpha = 0.5;
-        }
+        // if (strContainer === 'cursor') {
+        //     objContainers[strContainer].alpha = 0.5;
+        // }
     }
 
     for (let y = objTopCorner.y; y < objSize.y; y++) {
@@ -1849,7 +1852,7 @@ function getClickedCell(event) {
 function generateTempSection(objSection = false, objCellCoord = false) {
 
     const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
-
+    let bolDraw = false;
     let objSize = {}
     if (!objSection) {
         objSize = { x: 1, y: 1 };
@@ -1862,6 +1865,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
     objGridCombined.cursor_corner = Array.from({ length: objSize.y }, () => Array.from({ length: objSize.x }, () => ({})))
 
     if (strMode === 'drawing_mode') {
+        bolDraw = true;
         const arrSize = getSprite(intCurrentlyDrawing).meta.size;
 
         for (let y = 0; y < objSize.y; y++) {
@@ -1880,12 +1884,14 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                     }
 
                     const sprite = getSprite(intCurrentlyDrawing);
+                    sprite.alpha = 0.5;
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intCurrentlyDrawing);
                     objGridCombined.cursor_corner[y][x][intCurrentlyDrawing] = { 'sprite': sprite }
 
                     if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
                         const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
+                        spriteSoil.alpha = 0.5;
                         spriteSoil.position.set(x * intGridCellSize, y * intGridCellSize);
                         spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
@@ -1893,6 +1899,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
 
                         if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
                             const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
+                            spriteSoilWet.alpha = 0.5;
                             spriteSoilWet.position.set(x * intGridCellSize, y * intGridCellSize);
                             spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
@@ -1902,6 +1909,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
 
                     if (intCurrentlyDrawing === objSoilIndex.wetSoil) {
                         const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
+                        spriteSoil.alpha = 0.5;
                         spriteSoil.position.set(x * intGridCellSize, y * intGridCellSize);
                         spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
@@ -1910,19 +1918,91 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                 }
             }
         }
-    } else if (strMode === 'selection_mode') {
-        for (let y = 0; y < objSize.y; y++) {
-            for (let x = 0; x < objSize.x; x++) {
+    } else if (strMode === 'selection_mode' && objCellCoord) {
+        console.log(objSelectionSection)
+        let arrCoordsX = [];
+        let arrCoordsY = [];
+
+        const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSection.x0, objSection.x1, objSection.y0, objSection.y1);
+
+
+        const objAllSeenItems = arrGrid_CoveredSlice2D
+            .flat()
+            .reduce((acc, obj) => (
+                Object.entries(obj).forEach(([k, { coord }]) => {
+                    acc[k] ??= []; //questionable chatgpt stuff
+                    const key = coord.join(','); // "x,y"
+
+                    if (!acc[k].some(c => c.join(',') === key)) {
+                        acc[k].push(coord);
+                        arrCoordsX.push(coord[0])
+                        arrCoordsY.push(coord[1])
+                    }
+                }),
+                acc
+            ), {});
+
+        console.log(objAllSeenItems)
+
+        if (Object.keys(objAllSeenItems).length) {
+            bolDraw = true;
+            objSection = {
+                x0: Math.min(...arrCoordsX),
+                y0: Math.min(...arrCoordsY),
+                x1: Math.max(...arrCoordsX),
+                y1: Math.max(...arrCoordsY),
             }
+
+            objSize = {
+                x: objSection.x1 - objSection.x0 + 1,
+                y: objSection.y1 - objSection.y0 + 1
+            };
+
+            objGridCombined.cursor_corner = Array.from({ length: objSize.y }, () => Array.from({ length: objSize.x }, () => ({})))
+
+            Object.keys(objAllSeenItems).forEach(function (strItemKey) {
+                const intItemKey = parseInt(strItemKey);
+
+                objAllSeenItems[intItemKey].forEach(function (arrCoord) {
+
+                    const objTempPosition = {
+                        x: arrCoord[0] - objSection.x0,
+                        y: arrCoord[1] - objSection.y0,
+                    }
+
+                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0]);
+
+                    const outline = new PIXI.filters.OutlineFilter({
+                        thickness: 2,
+                        color: 0xffffff,
+                        // knockout: true,
+                    });
+
+                    const overlay = new PIXI.filters.ColorOverlayFilter({
+                        color: 0xffffff,
+                        alpha: 0.5
+                    });
+
+                    // Apply it to the sprite
+                    sprite.filters = [overlay, outline];
+
+                    sprite.position.set(objTempPosition.x * intGridCellSize, objTempPosition.y * intGridCellSize);
+                    sprite.zIndex = getZindexbySpriteIndex(intItemKey);
+
+                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemKey] = { 'sprite': sprite };
+                });
+            });
         }
     }
+    if (bolDraw) {
+        drawPlanner(objSize, objTopCorner = { x: 0, y: 0 }, strGrid = 'cursor_corner', strContainer = 'cursor');
 
-    drawPlanner(objSize, objTopCorner = { x: 0, y: 0 }, strGrid = 'cursor_corner', strContainer = 'cursor');
-
-    if (objCellCoord !== false) {
-        moveTempSection(objCellCoord);
+        if (strMode === 'selection_mode') {
+            moveTempSection({ x: objSection.x0, y: objSection.y0 });
+        } else if (objCellCoord !== false) {
+            moveTempSection(objCellCoord);
+        }
     }
-
 }
 function getSectionLocation(objCellCoord) {
 
@@ -1974,6 +2054,7 @@ function placeTempSection(objCellCoord) {
         x: objGridCombined.cursor_corner[0].length,
         y: objGridCombined.cursor_corner.length
     }
+
     let bolHasChanged = false;
 
     for (let y = 0; y < objSize.y; y++) {
@@ -1996,13 +2077,14 @@ function placeTempSection(objCellCoord) {
 
                     const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0]);
 
-                    sprite.eventMode = 'static';
-                    sprite.on('pointerover', () => {
-                        highlightSection({ x0: objRealPosition.x1, x1: objRealPosition.x, y0: objRealPosition.y1, y1: objRealPosition.y })
-                    });
-                    sprite.on('pointerleave', () => {
-                        highlightSection({ x0: objRealPosition.x1, x1: objRealPosition.x, y0: objRealPosition.y1, y1: objRealPosition.y }, true)
-                    });
+                    // sprite.eventMode = 'static';
+                    // sprite.on('pointerover', () => {
+                    //     highlightSection({ x0: objRealPosition.x1, x1: objRealPosition.x, y0: objRealPosition.y1, y1: objRealPosition.y })
+                    // });
+                    // sprite.on('pointerleave', () => {
+                    //     highlightSection({ x0: objRealPosition.x1, x1: objRealPosition.x, y0: objRealPosition.y1, y1: objRealPosition.y }, true)
+                    // });
+
                     const arrSize = sprite.meta.size;
                     sprite.position.set(objRealPosition.x * intGridCellSize, objRealPosition.y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intItemKey);
@@ -2085,9 +2167,13 @@ function clearTempSection() {
 }
 
 function moveTempSection(objCellCoord) {
-    const [objPosition, arrSize] = getSectionLocation(objCellCoord);
-    objContainers['cursor'].position.set(objPosition.x * intGridCellSize, objPosition.y * intGridCellSize);
-    updateTempCollisions(objPosition);
+    if (strMode === 'drawing_mode') {
+        const [objPosition, arrSize] = getSectionLocation(objCellCoord);
+        objContainers['cursor'].position.set(objPosition.x * intGridCellSize, objPosition.y * intGridCellSize);
+        updateTempCollisions(objPosition);
+    } else {
+        objContainers['cursor'].position.set(objCellCoord.x * intGridCellSize, objCellCoord.y * intGridCellSize);
+    }
 }
 
 function getMaxZindexInCell(arrItems) {
@@ -3257,7 +3343,7 @@ $(function () {
         });
 
         document.addEventListener('mousedown', (e) => {
-            if (e.button === 2 && (e.buttons & 1) && bolIsDragging && (strMode === 'drawing_mode' || strMode === 'selection_area_mode')) {
+            if (e.button === 2 && (e.buttons & 1) && bolIsDragging && (strMode === 'drawing_mode' || strMode === 'selection_mode')) {
                 resetDrawingVariables();
                 bolPreventDrawing = true;
                 // objSelectionSection = false;
@@ -3268,6 +3354,9 @@ $(function () {
                     clearTempSection();
 
                     if (strMode === 'drawing_mode') {
+                        generateTempSection();
+                    } else {
+                        objGridCombined.cursor_corner = [];
                         generateTempSection();
                     }
                 }
@@ -3299,13 +3388,16 @@ $(function () {
         });
 
         objPIXIapp.stage.on('pointermove', (e) => {
+
+
             const objCurrentCellCoord = getClickedCell(e);
             const buttons = e.data.originalEvent.buttons;
             if (buttons === 4 || strMode === 'dragging_mode') { // dragging with middle button or drag mode activated
                 dragMap(objCurrentCellCoord);
             } else {
                 if (objGridCombined.cursor_corner !== false) {
-                    if ((bolIsDragging && !bolPreventDrawing) || strMode == "selection_mode") {
+                    if ((strMode == "drawing_mode" && bolIsDragging && !bolPreventDrawing) ||
+                        (strMode == "selection_mode" && !bolPreventDrawing)) {
 
                         const objSelection = getSelection(objCurrentCellCoord);
 
@@ -3317,7 +3409,7 @@ $(function () {
 
                         clearTempSection();
                         generateTempSection(objSelection, objCurrentCellCoord);
-                        // console.log(objSelection)
+
                     }
                     else {
                         moveTempSection(objCurrentCellCoord);
@@ -3355,10 +3447,21 @@ $(function () {
                     };
                     resize();
                 }
+
             } else {
                 if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
+                    if (strMode === 'drawing_mode') {
+                        placeTempSection(objCurrentCellCoord);
 
-                    placeTempSection(objCurrentCellCoord);
+                    } else if (strMode === 'selection_mode') {
+                        objSelectionSection = {
+                            x0: Math.min(objStartCellCoord.x, objCurrentCellCoord.x),
+                            y0: Math.min(objStartCellCoord.y, objCurrentCellCoord.y),
+                            x1: Math.max(objStartCellCoord.x, objCurrentCellCoord.x),
+                            y1: Math.max(objStartCellCoord.y, objCurrentCellCoord.y),
+                        }
+                    }
+
                     // objSelectionSection = false;
                     // clearOverlays();
                     // if (objGridCombined.cursor_corner !== false) {
@@ -3422,7 +3525,9 @@ $(function () {
         drawCollision();
 
         addTestData(4);
-        updateCurrentlyDrawing(416);
+        // updateCurrentlyDrawing(416);
+
+        updateCursorMode('selection_mode');
 
         drawPlanner();
 
