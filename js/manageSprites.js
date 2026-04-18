@@ -18,13 +18,33 @@ const tileMaskGrass = [
     [[1,0,1,0,0,0,0,1], [0,0,1,0,0,1,0,1], [1,0,0,0,0,1,0,1], [1,0,1,0,0,1,0,1], [0,0,0,0,0,0,0,0], [1,1,1,1,1,1,1,1], null,            ]
 ]
 
-const directions = ['north', 'east', 'south', 'west']
-const seasons = ['spring', 'summer', 'fall', 'winter']
+const directions = ['south', 'east', 'west', 'north']
+const seasons = ['spring', 'winter', 'summer', 'fall']
+const directionSeasonCombos = [...directions, ...seasons]
+
+directions.forEach(direction => {
+    seasons.forEach(season => {
+        directionSeasonCombos.push(`${direction}_${season}`)
+    })
+})
+
+const lastSprite = (data) => {
+    if (Array.isArray(data)) {
+        console.log(data)
+        return data.at(-1)
+    }
+
+    return data
+}
 
 class SpriteStore {
     textures
     singleTextureData = {}
     spriteSheetData
+    spriteMapping
+    spriteSheetMeta
+    objectData
+    tileSpriteMeta
     tileSize = 20
     tilePadding = 2
 
@@ -66,98 +86,143 @@ class SpriteStore {
     }
 
     #findVariations(object) {
-        const variations = []
+        const variations = {}
         
         directions.forEach(direction => {
             const selectedDirection = object[direction]
             if (selectedDirection) {
-                if (selectedDirection.sprite) variations.push(selectedDirection.sprite)
+                if (selectedDirection.sprite) variations[direction] = selectedDirection
                 
                 seasons.forEach(season => {
-                    console.log(season, direction, selectedDirection[`${season}_sprite`])
-                    if (selectedDirection[`${season}_sprite`]) variations.push(selectedDirection[`${season}_sprite`])
+                    if (selectedDirection[`${season}_sprite`]) {
+                        variations[[`${direction}_${season}`]] = {
+                            ...selectedDirection, 
+                            sprite: selectedDirection[`${season}_sprite`], 
+                            top_sprite: selectedDirection[`${season}_top_sprite`],
+                            floor_sprite: selectedDirection[`${season}_floor_sprite`]
+                        }
+                    }
                 })
             }
         })
 
         if (object.sprites) {
             seasons.forEach(season => {
-                console.log(season, object.sprites[season])
-                if (object.sprites[season]) variations.push(object.sprites[season])
+                if (object.sprites[season]) variations[`south_${season}`] = object.sprites[season]
             })
         }
         
-        return variations.length ? variations : null
+        return variations
     }
 
-    #mapCrops({default: defaults, ...crops}, spriteMapping) {
+    #mapSingleFence(variations, furnitureKey, furnitureData, defaults) {
+        Object.entries(variations).forEach(([variationKey, variation]) => {
+            const fenceSprites = this.spriteMapping[variation.sprite]
+
+            let itemOriginX = 0, itemOriginY = 0
+            if (variation.offset) {
+                itemOriginX = variation.offset[0]
+                itemOriginY = variation.offset[1]
+            }
+
+            Object.entries(fenceSprites).forEach(([fenceOrd, sprite]) => {
+                const fenceKey = `${furnitureKey}_${fenceOrd}`
+                this.setSingleObjectData({name: `${fenceKey}_${variationKey}`, itemOriginX, itemOriginY, ...defaults, ...sprite, ...furnitureData})
+            })
+        })
+    }
+
+    #mapSingleFurniture(variations, furnitureKey, furnitureData, defaults) {
+        Object.entries(variations).forEach(([variationKey, variation]) => {
+            const sprite = this.spriteMapping[variation.sprite]["0"]
+            let topSprite
+                            
+            let itemOriginX, itemOriginY
+            if (variation.offset) {
+                itemOriginX = variation.offset[0]
+                itemOriginY = variation.offset[1]
+            }
+
+            let spriteBasics = {...defaults}
+
+            if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY,}
+
+            if (variation.top_sprite) {
+                topSprite = {
+                    ...spriteBasics,
+                    name: variation.top_sprite,
+                    ...this.spriteMapping[variation.top_sprite]["0"],
+                    ...furnitureData,
+                    // offset: [0, variation.top_sprite_depth_offset] /// Z-INDEXES, NOT NEEDED CURRENTLY
+                }
+            }
+            
+            this.setSingleObjectData({
+                name: `${furnitureKey}_${variationKey}`, ...spriteBasics, ...sprite, ...furnitureData, 
+                children: topSprite ? [topSprite] : undefined
+            })
+        })
+
+
+        // OLD
+        const sprite = this.spriteMapping[(furnitureData.south || furnitureData.east).sprite]["0"]
+        let topSprite
+                        
+        let itemOriginX, itemOriginY
+        if ((furnitureData.south || furnitureData.east).offset) {
+            itemOriginX = (furnitureData.south || furnitureData.east).offset[0]
+            itemOriginY = (furnitureData.south || furnitureData.east).offset[1]
+        }
+
+        let spriteBasics = {...defaults}
+
+        if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY,}
+
+        if ((furnitureData.south || furnitureData.east).top_sprite) {
+            topSprite = {
+                ...spriteBasics,
+                name: (furnitureData.south || furnitureData.east).top_sprite,
+                ...this.spriteMapping[(furnitureData.south || furnitureData.east).top_sprite]["0"],
+                ...furnitureData,
+                // offset: [0, (furnitureData.south || furnitureData.east).top_sprite_depth_offset] *** Z-INDEXES, NOT NEEDED CURRENTLY
+            }
+        }
+        
+        this.setSingleObjectData({
+            name: furnitureKey, ...spriteBasics, ...sprite, ...furnitureData, 
+            children: topSprite ? [topSprite] : undefined
+        })
+    }
+
+    #mapCrops() {
+        const {default: defaults, ...crops} = this.objectData.crop
+
         Object.entries(crops).forEach(([cropKey, cropData]) => {            
             let [itemOriginX, itemOriginY] = defaults.offset
 
-            const sprite = spriteMapping[cropData.sprites.at(-1)]['0']
+            const sprite = this.spriteMapping[cropData.sprites.at(-1)]['0']
 
             this.setSingleObjectData({name: cropKey, itemOriginX, itemOriginY, ...defaults, ...sprite, ...cropData})
         })
     }
 
-    #mapFurniture({default: defaults, ...furniture}, spriteMapping) {
+    #mapFurniture() {
+        const {default: defaults, ...furniture} = this.objectData.furniture
         Object.entries(furniture).forEach(([furnitureKey, furnitureData]) => {
             const variations = this.#findVariations(furnitureData)
 
             if (variations) console.log(variations, variations.length)
 
             if (furnitureData.fence) {
-                const fenceSprites = spriteMapping[furnitureData.south.sprite]
-
-                let itemOriginX = 0, itemOriginY = 0
-                if (furnitureData.south.offset) {
-                    itemOriginX = furnitureData.south.offset[0]
-                    itemOriginY = furnitureData.south.offset[1]
-                }
-                
-
-                Object.entries(fenceSprites).forEach(([fenceOrd, sprite]) => {
-                    const fenceKey = `${furnitureKey}_${fenceOrd}`
-
-                    this.setSingleObjectData({name: fenceKey, itemOriginX, itemOriginY, ...defaults, ...sprite, ...furnitureData})
-                })
-            } else  {
-                const sprite = spriteMapping[(furnitureData.south || furnitureData.east).sprite]["0"]
-                let topSprite
-                                
-                let itemOriginX, itemOriginY
-                if (!(furnitureData.south || furnitureData.east).offset) {
-                    console.log(furnitureData)
-                }
-                if ((furnitureData.south || furnitureData.east).offset) {
-                    itemOriginX = (furnitureData.south || furnitureData.east).offset[0]
-                    itemOriginY = (furnitureData.south || furnitureData.east).offset[1]
-                }
-
-                let spriteBasics = {...defaults}
-
-                if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY,}
-
-                if ((furnitureData.south || furnitureData.east).top_sprite) {
-                    topSprite = {
-                        ...spriteBasics,
-                        name: (furnitureData.south || furnitureData.east).top_sprite,
-                        ...spriteMapping[(furnitureData.south || furnitureData.east).top_sprite]["0"],
-                        ...furnitureData,
-                        // offset: [0, (furnitureData.south || furnitureData.east).top_sprite_depth_offset]
-                    }
-                }
-                
-                this.setSingleObjectData({
-                    name: furnitureKey, ...spriteBasics, ...sprite, ...furnitureData, 
-                    children: topSprite ? [topSprite] : undefined
-                })
+                this.#mapSingleFence(variations, furnitureKey, furnitureData, defaults)
+            } else {
+                this.#mapSingleFurniture(variations, furnitureKey, furnitureData, defaults)
             }
         })
     }
 
-    #mapTiles(tileMeta) {
-        Object.entries(tileMeta).forEach(([tileSheetKey, {'0': tileData}]) => {
+    #mapTiles() {
+        Object.entries(this.tileSpriteMeta).forEach(([tileSheetKey, {'0': tileData}]) => {
             const origin = { x: tileData.x, y: tileData.y }
 
             if (tileSheetKey.includes('exteriors')) {
@@ -205,36 +270,36 @@ class SpriteStore {
 
     async loadTextures() {
         this.#logStage('LOADING DATA')
-        const spriteMapping = await (await fetch('textures/planner_sprites.json')).json()
-        const spriteSheetMeta = await (await fetch('textures/sheet_sprites.json')).json()
-        const objectData = await (await fetch('textures/fiddle_sprites.json')).json()
-        const tileSpriteMeta = await (await fetch('textures/tiles_sprites.json')).json()
+        this.spriteMapping = await (await fetch('textures/planner_sprites.json')).json()
+        this.spriteSheetMeta = await (await fetch('textures/sheet_sprites.json')).json()
+        this.objectData = await (await fetch('textures/fiddle_sprites.json')).json()
+        this.tileSpriteMeta = await (await fetch('textures/tiles_sprites.json')).json()
 
         this.#logStage('INITIALIZING DATA')
 
-        this.spriteSheetData = this.#initializeSheetData(spriteSheetMeta)
+        this.spriteSheetData = this.#initializeSheetData(this.spriteSheetMeta)
         const parsedSheets = {}
 
         this.#logStage('TILESHEET TEXTURES')
 
         // CROPS
 
-        this.#mapCrops(objectData.crop, spriteMapping)
+        this.#mapCrops()
         
         // TODO BREAKABLE
 
         let [itemOriginX, itemOriginY] = [8, 8]
-        const sprite = spriteMapping['spr_wilted_plant_1_stage1']['0']
+        const sprite = this.spriteMapping['spr_wilted_plant_1_stage1']['0']
 
-        this.setSingleObjectData({name: 'wilted_plant', itemOriginX, itemOriginY, ...objectData.breakable.default, ...sprite})       
+        this.setSingleObjectData({name: 'wilted_plant', itemOriginX, itemOriginY, ...this.objectData.breakable.default, ...sprite})       
         
         // FURNITURE
 
-        this.#mapFurniture(objectData.furniture, spriteMapping)
+        this.#mapFurniture()
 
         // TILES
 
-        this.#mapTiles(tileSpriteMeta)
+        this.#mapTiles()
 
         // LOAD SPRITES TO MEMORY
         this.#logStage('LOADING SPRITES')
@@ -244,8 +309,6 @@ class SpriteStore {
             const sheet = new PIXI.Spritesheet(sheetTexture, sheetData)
             await sheet.parse()
             parsedSheets[sheetKey] = sheet
-
-            console.log({sheetKey, sheetData})
 
             Object.entries(sheet.textures).forEach(([textureKey, texture]) => {
                 const sprite = new PIXI.Sprite(texture)
@@ -297,7 +360,7 @@ class SpriteStore {
         return this.#getTile(...args, false)
     }
 
-    getFence(fenceType, neighbors) {
+    getFence(fenceType, neighbors, season) {
         let [
             d1, o1, d2,
             o2,     o3,
@@ -307,22 +370,36 @@ class SpriteStore {
         // Fences are ordered with orthogonals as bits
         let fenceOrd = parseInt(`${o4}${o3}${o2}${o1}`, 2)
 
-        return this.get(`${fenceType}_${fenceOrd}`)}
+        return this.get(`${fenceType}_${fenceOrd}`, season, "south")}
 
     getCrop(textureKey) {
-        if (objMistriaDataPlanner.options.has('mode_offseason') || objSpriteCategories[`crops_${objMistriaDataPlanner.season}`].includes(objItemKeyDict[textureKey][0])) {
-            return this.get(textureKey)
-        } else {
+        const crop = this.get(textureKey);
+        if (!objMistriaDataPlanner.options.has('mode_offseason') && !crop.meta.seasons.includes(objMistriaDataPlanner.season)) {
             return this.get('wilted_plant')
         }
+
+        return crop
     }
 
-    get(textureKey, {direction, season} = {}) {
-        const foundTexture = this.textures[textureKey]
+    get(textureKey, season, direction) {
+        // Build possible keys from most specific to least
+        let possibleKeys = []
 
-        if (!foundTexture) {
+        if (direction && season) possibleKeys.push(`${textureKey}_${direction}_${season}`)
+        if (direction) possibleKeys.push(`${textureKey}_${direction}`)
+        if (season) possibleKeys.push(`${textureKey}_${season}`)
+
+        possibleKeys = Array.from(new Set([...possibleKeys, ...directionSeasonCombos.map(combo => `${textureKey}_${combo}`), textureKey])) // dedupe
+
+        const foundKey = possibleKeys.find(key => this.textures[key])
+
+        console.log(foundKey)
+
+        if (!foundKey) {
             return this.get('snow_peas')
         }
+
+        const foundTexture = this.textures[foundKey]
 
         const {sprite: { texture }, pivot, origin, itemOrigin, children, meta} = foundTexture
 

@@ -1049,7 +1049,7 @@ function itemHovered(objCellCoord) {
 
 }
 
-function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
+function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDirection = 'south') {
     let sprite;
     const strSpriteKey = objKeyItemDict[intItemIndex].at(-1);
 
@@ -1073,7 +1073,7 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0]) {
     } else if (objSpriteCategories.fences.includes(intItemIndex) || objSpriteCategories.counter.includes(intItemIndex)) {
         sprite = sprites.getFence(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
     } else {
-        sprite = sprites.get(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
+        sprite = sprites.get(strSpriteKey, objMistriaDataPlanner.season, 'east');
     }
 
     return sprite;
@@ -3525,9 +3525,9 @@ $(function () {
         drawCollision();
 
         addTestData(4);
-        // updateCurrentlyDrawing(416);
+        updateCurrentlyDrawing(416);
 
-        updateCursorMode('selection_mode');
+        // updateCursorMode('selection_mode');
 
         drawPlanner();
 
