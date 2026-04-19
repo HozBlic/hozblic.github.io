@@ -30,7 +30,6 @@ directions.forEach(direction => {
 
 const lastSprite = (data) => {
     if (Array.isArray(data)) {
-        console.log(data)
         return data.at(-1)
     }
 
@@ -134,6 +133,7 @@ class SpriteStore {
 
     #mapSingleFurniture(variations, furnitureKey, furnitureData, defaults) {
         Object.entries(variations).forEach(([variationKey, variation]) => {
+            console.log(variation)
             const sprite = this.spriteMapping[variation.sprite]["0"]
             let topSprite
                             
@@ -162,36 +162,6 @@ class SpriteStore {
                 children: topSprite ? [topSprite] : undefined
             })
         })
-
-
-        // OLD
-        const sprite = this.spriteMapping[(furnitureData.south || furnitureData.east).sprite]["0"]
-        let topSprite
-                        
-        let itemOriginX, itemOriginY
-        if ((furnitureData.south || furnitureData.east).offset) {
-            itemOriginX = (furnitureData.south || furnitureData.east).offset[0]
-            itemOriginY = (furnitureData.south || furnitureData.east).offset[1]
-        }
-
-        let spriteBasics = {...defaults}
-
-        if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY,}
-
-        if ((furnitureData.south || furnitureData.east).top_sprite) {
-            topSprite = {
-                ...spriteBasics,
-                name: (furnitureData.south || furnitureData.east).top_sprite,
-                ...this.spriteMapping[(furnitureData.south || furnitureData.east).top_sprite]["0"],
-                ...furnitureData,
-                // offset: [0, (furnitureData.south || furnitureData.east).top_sprite_depth_offset] *** Z-INDEXES, NOT NEEDED CURRENTLY
-            }
-        }
-        
-        this.setSingleObjectData({
-            name: furnitureKey, ...spriteBasics, ...sprite, ...furnitureData, 
-            children: topSprite ? [topSprite] : undefined
-        })
     }
 
     #mapCrops() {
@@ -200,18 +170,50 @@ class SpriteStore {
         Object.entries(crops).forEach(([cropKey, cropData]) => {            
             let [itemOriginX, itemOriginY] = defaults.offset
 
-            const sprite = this.spriteMapping[cropData.sprites.at(-1)]['0']
+            const sprite = this.spriteMapping[lastSprite(cropData.sprites)]['0']
 
             this.setSingleObjectData({name: cropKey, itemOriginX, itemOriginY, ...defaults, ...sprite, ...cropData})
         })
+    }
+
+    #mapGrass() {
+        // const {default: defaults, ...grass} = this.objectData.grass
+
+        // Object.entries(grass).forEach(([grassKey, grassData]) => {
+        //     const variations = this.#findVariations(grassData)
+
+        //     this.#mapSingleFurniture(variations, grassKey, grassData, defaults)
+        // })
+    }
+
+    #mapTrees() {
+        // TODO: map tree objects
+    }
+
+    #mapDigSites() {
+        // TODO: map dig_site objects
+    }
+
+    #mapRocks() {
+        // TODO: map rock objects
+    }
+
+    #mapStumps() {
+        // TODO: map stump objects
+    }
+
+    #mapBreakables() {
+        // TODO: map breakable objects
+    }
+
+    #mapBuildings() {
+        // TODO: map building objects
     }
 
     #mapFurniture() {
         const {default: defaults, ...furniture} = this.objectData.furniture
         Object.entries(furniture).forEach(([furnitureKey, furnitureData]) => {
             const variations = this.#findVariations(furnitureData)
-
-            if (variations) console.log(variations, variations.length)
 
             if (furnitureData.fence) {
                 this.#mapSingleFence(variations, furnitureKey, furnitureData, defaults)
@@ -296,6 +298,14 @@ class SpriteStore {
         // FURNITURE
 
         this.#mapFurniture()
+
+        this.#mapGrass()
+        this.#mapTrees()
+        this.#mapDigSites()
+        this.#mapRocks()
+        this.#mapStumps()
+        this.#mapBreakables()
+        this.#mapBuildings()
 
         // TILES
 
@@ -386,14 +396,15 @@ class SpriteStore {
         let possibleKeys = []
 
         if (direction && season) possibleKeys.push(`${textureKey}_${direction}_${season}`)
+        if (direction === "west" && season) possibleKeys.push(`${textureKey}_east_${season}`)
         if (direction) possibleKeys.push(`${textureKey}_${direction}`)
+        if (direction === "west") possibleKeys.push(`${textureKey}_east`)
         if (season) possibleKeys.push(`${textureKey}_${season}`)
 
-        possibleKeys = Array.from(new Set([...possibleKeys, ...directionSeasonCombos.map(combo => `${textureKey}_${combo}`), textureKey])) // dedupe
+        // TODO remove fallback
+        possibleKeys = Array.from(new Set([textureKey, ...possibleKeys, ...directionSeasonCombos.map(combo => `${textureKey}_${combo}`)])) // dedupe
 
         const foundKey = possibleKeys.find(key => this.textures[key])
-
-        console.log(foundKey)
 
         if (!foundKey) {
             return this.get('snow_peas')
@@ -402,6 +413,7 @@ class SpriteStore {
         const foundTexture = this.textures[foundKey]
 
         const {sprite: { texture }, pivot, origin, itemOrigin, children, meta} = foundTexture
+
 
         let container = new PIXI.Container()
         const baseSprite = new PIXI.Sprite(texture)
@@ -419,7 +431,17 @@ class SpriteStore {
             baseSprite.pivot.set(intGridCellSize/2 - x*2, intGridCellSize/2 - y*2)
         }
 
-        if (meta) { container.meta = meta }
+        if (meta) {
+            if (direction === "west" && meta.mirror_west && foundKey.includes('east')) {
+                baseSprite.anchor.x = 1;
+                baseSprite.scale.x *= -1;
+            }
+            container.meta = {...meta}
+            if (foundKey.includes('east') || foundKey.includes('west') ) {
+                container.meta.size = [container.meta.size[1], container.meta.size[0]]
+            }
+
+         }
         
         if (children) {
             children.forEach(child => {

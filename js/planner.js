@@ -4,6 +4,7 @@ const arrGrassFixCoord = objBuild.arrGrassFixCoord
 
 let strMode = 'dragging_mode'; // drawing_mode, selection_area_mode
 let intCurrentlyDrawing = false;
+let strCurrentDirection = false;
 
 let intSaveSlot = 0;
 let arrVersions = [];
@@ -592,7 +593,7 @@ function convertGridToNeighbours(intItemIndex = null, objSelection = { x0: 0, y0
         arrNeighbourGrid.push(arrNeighbourGrid_row)
     }
     const endTime = performance.now()
-    console.log(`convertGridToNeighbours - ${endTime - startTime} milliseconds`)
+    // console.log(`convertGridToNeighbours - ${endTime - startTime} milliseconds`)
     return arrNeighbourGrid;
 }
 
@@ -705,7 +706,7 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
     }
 
     const endTime = performance.now()
-    console.log(`recalculateNeigborSprites - ${endTime - startTime} milliseconds`)
+    // console.log(`recalculateNeigborSprites - ${endTime - startTime} milliseconds`)
 }
 
 function calculateMultiplier() {
@@ -1049,7 +1050,7 @@ function itemHovered(objCellCoord) {
 
 }
 
-function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDirection = 'south') {
+function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDirection = strCurrentDirection) {
     let sprite;
     const strSpriteKey = objKeyItemDict[intItemIndex].at(-1);
 
@@ -1073,7 +1074,7 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDi
     } else if (objSpriteCategories.fences.includes(intItemIndex) || objSpriteCategories.counter.includes(intItemIndex)) {
         sprite = sprites.getFence(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
     } else {
-        sprite = sprites.get(strSpriteKey, objMistriaDataPlanner.season, 'east');
+        sprite = sprites.get(strSpriteKey, objMistriaDataPlanner.season, strDirection);
     }
 
     return sprite;
@@ -1410,7 +1411,7 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
     }
 
     const endTime = performance.now()
-    console.log(`drawPlanner - ${endTime - startTime} milliseconds`)
+    // console.log(`drawPlanner - ${endTime - startTime} milliseconds`)
 
     if (strContainer == 'ee') {
         testValidate()
@@ -1772,8 +1773,9 @@ function resetDrawingVariables() {
     objPrevCellCoord = { x: 0, y: 0 };
 }
 
-function updateCurrentlyDrawing(intItemKey = false) {
+function updateCurrentlyDrawing(intItemKey = false, strDirection = false) {
     intCurrentlyDrawing = intItemKey;
+    strCurrentDirection = strDirection;
     $(`[data-key]`).removeClass('selected');
     $(`[data-key="${intCurrentlyDrawing}"]`).addClass('selected');
 
@@ -1795,6 +1797,7 @@ function updateCursorMode(strModeTemp = false) {
 
         if (strMode !== 'drawing_mode') {
             intCurrentlyDrawing = false;
+            strCurrentDirection = false;
             $(`[data-key]`).removeClass('selected');
 
         }
@@ -1887,7 +1890,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                     sprite.alpha = 0.5;
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intCurrentlyDrawing);
-                    objGridCombined.cursor_corner[y][x][intCurrentlyDrawing] = { 'sprite': sprite }
+                    objGridCombined.cursor_corner[y][x][intCurrentlyDrawing] = { 'sprite': sprite, 'direction': strCurrentDirection }
 
                     if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
                         const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
@@ -1919,18 +1922,20 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             }
         }
     } else if (strMode === 'selection_mode' && objCellCoord) {
-        console.log(objSelectionSection)
+        // console.log(objSelectionSection)
         let arrCoordsX = [];
         let arrCoordsY = [];
 
         const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSection.x0, objSection.x1, objSection.y0, objSection.y1);
 
-
+        // console.log(arrGrid_CoveredSlice2D[0][0][416])
         const objAllSeenItems = arrGrid_CoveredSlice2D
             .flat()
             .reduce((acc, obj) => (
                 Object.entries(obj).forEach(([k, { coord }]) => {
                     acc[k] ??= []; //questionable chatgpt stuff
+
+                    // console.log('k')
                     const key = coord.join(','); // "x,y"
 
                     if (!acc[k].some(c => c.join(',') === key)) {
@@ -1941,8 +1946,6 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                 }),
                 acc
             ), {});
-
-        console.log(objAllSeenItems)
 
         if (Object.keys(objAllSeenItems).length) {
             bolDraw = true;
@@ -1970,7 +1973,9 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                         y: arrCoord[1] - objSection.y0,
                     }
 
-                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    const strDirection = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemKey]?.direction;
+
+                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
 
                     const outline = new PIXI.filters.OutlineFilter({
                         thickness: 2,
@@ -1989,11 +1994,12 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                     sprite.position.set(objTempPosition.x * intGridCellSize, objTempPosition.y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intItemKey);
 
-                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemKey] = { 'sprite': sprite };
+                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
                 });
             });
         }
     }
+
     if (bolDraw) {
         drawPlanner(objSize, objTopCorner = { x: 0, y: 0 }, strGrid = 'cursor_corner', strContainer = 'cursor');
 
@@ -2003,6 +2009,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             moveTempSection(objCellCoord);
         }
     }
+
 }
 function getSectionLocation(objCellCoord) {
 
@@ -2047,7 +2054,6 @@ function testValidate() {
     }
 }
 function placeTempSection(objCellCoord) {
-
     const [objPosition, arrSize] = getSectionLocation(objCellCoord);
 
     const objSize = {
@@ -2073,9 +2079,11 @@ function placeTempSection(objCellCoord) {
 
                 if (!('coll' in objCell[intItemKey])) {
 
+                    const strDirection = objCell[intItemKey]?.direction;
+
                     bolHasChanged = true;
 
-                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0]);
+                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
 
                     // sprite.eventMode = 'static';
                     // sprite.on('pointerover', () => {
@@ -2127,7 +2135,8 @@ function placeTempSection(objCellCoord) {
                             spritePrev.parent.removeChild(spritePrev);
                         }
                     }
-                    objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite };
+
+                    objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
 
                     for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                         for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
@@ -2212,6 +2221,7 @@ function updateTempCollisions(objPosition = false) {
 
             Object.keys(objCell).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
+                const strDirection = objGridCombined.cursor_corner[y][x][strItemKey]?.direction
                 let sprite = objCell[intItemKey].sprite;
                 const arrSize = sprite.meta.size;
 
@@ -2264,7 +2274,7 @@ function updateTempCollisions(objPosition = false) {
                         sprite.filters = [];
                     }
 
-                    objGridCombined.cursor_corner[y][x][intItemKey] = { 'sprite': sprite };
+                    objGridCombined.cursor_corner[y][x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
                     if (bolHitsElement) {
                         objGridCombined.cursor_corner[y][x][intItemKey].coll = true;
                     }
@@ -2339,6 +2349,24 @@ function checkDropdownVisibility(searchDiv) {
     });
 }
 
+function createTipDirection(intItemIndex) {
+
+    let strTipHTML = $(`
+        <div id="tip_drawable_${intItemIndex}" class="tip_wrap">
+            <div class="tip">
+                <div class="direction_icons">
+                    ${objSpriteCategories.south.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="south"></div>` : ''}
+                    ${objSpriteCategories.east.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="east"></div>` : ''}
+                    ${objSpriteCategories.north.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="north"></div>` : ''}
+                    ${objSpriteCategories.west.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="west"></div>` : ''}
+                </div>
+            </div>
+        </div>`);
+
+    let $objTip = $(strTipHTML);
+
+    return $objTip.prop('outerHTML');
+}
 
 async function loadMenuItems() {
 
@@ -2520,6 +2548,8 @@ async function loadMenuItems() {
     const objTabs = await (await fetch('json/tabs_planner.json')).json();
     const objItemsPlanner = await (await fetch('json/items_planner.json')).json();
 
+    var setTips = new Set();
+    var setTipsHtml = new Set();
     let $divDropdownSearch = $('<div>', { 'class': 'dropdown' });
     Object.entries(objTabs).forEach(([tabKey, tabData]) => {
 
@@ -2585,6 +2615,10 @@ async function loadMenuItems() {
                         <span class="dropdown-section-name">${strName}</span>
                     </div>
                 `);
+
+                setTips.add(intIndex);
+                setTipsHtml.add(createTipDirection(intIndex));
+
                 $divDropdownSection.append($divDropdownSectionItems);
             });
 
@@ -2603,12 +2637,41 @@ async function loadMenuItems() {
 
     $('#search_items_wrapper').append($divDropdownSearch);
 
-    $('.dropdown-item-drawable').on('click', function (e) {
-        const intItemKeySelected = parseInt($(this).attr('data-key'));
-        updateCurrentlyDrawing(intItemKeySelected);
-        // $('#page .dropdown').removeClass('searching');
-        //   $('#page #search_items_wrapper').removeClass('searching');
+    setTipsHtml.forEach((strTipHtml) => {
+        $('#planner').append(strTipHtml);
     });
+
+    setTips.forEach((intItemIndex) => {
+        if ($(`#tip_drawable_${intItemIndex}`).find('.direction_icon').length < 2) {
+            return;
+        }
+
+        const template = $(`#tip_drawable_${intItemIndex}`)[0];
+
+        tippy(`.dropdown-item[data-key="${intItemIndex}"]`, {
+            content() {
+                const clone = template.cloneNode(true);
+                clone.style.display = 'block';
+                return clone;
+            },
+            appendTo: () => document.body,
+            interactive: true,
+            maxWidth: 370,
+            delay: [500, 50],
+        });
+    });
+
+    $('body').on('click', '.dropdown-item-drawable', function (e) {
+        const intItemKeySelected = parseInt($(this).attr('data-key'));
+        const strDirection = $(this).attr('data-direction');
+
+        updateCurrentlyDrawing(intItemKeySelected, strDirection);
+    });
+
+    // $('.dropdown-item-drawable').on('click', function (e) {
+    //     const intItemKeySelected = parseInt($(this).attr('data-key'));
+    //     updateCurrentlyDrawing(intItemKeySelected);
+    // });
 
     //hide dropdowns on outside click
     $(document).on('click', function (e) {
@@ -3525,7 +3588,7 @@ $(function () {
         drawCollision();
 
         addTestData(4);
-        updateCurrentlyDrawing(416);
+        updateCurrentlyDrawing(416, 'east');
 
         // updateCursorMode('selection_mode');
 

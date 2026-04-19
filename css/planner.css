@@ -81,6 +81,7 @@
 #search_items_wrapper #search_items {
     padding-right: 40px;
 }
+
 #search_items_wrapper #cancel_search {
     position: absolute;
     width: 35px;
@@ -358,4 +359,53 @@ canvas {
 .highlight {
     background-color: #8338ec;
     color: white;
+}
+
+.tip_wrap {
+    display: none;
+}
+.direction_icons {
+    display: flex;
+    gap: 5px;
+}
+
+.direction_icon {
+
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+    border-radius: 5px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+
+    padding: 0;
+    background-color: #1b1b1b;
+    transition: background-color 0.3s ease;
+
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.direction_icon:hover {
+    background-color: #4a4e69;
+}
+
+.direction_icon[data-direction="south"] {
+    background-image: url(../images/arrow-down.svg);
+}
+
+.direction_icon[data-direction="east"] {
+    background-image: url(../images/arrow-right.svg);
+}
+
+.direction_icon[data-direction="north"] {
+    background-image: url(../images/arrow-up.svg);
+}
+
+.direction_icon[data-direction="west"] {
+    background-image: url(../images/arrow-left.svg);
 }
