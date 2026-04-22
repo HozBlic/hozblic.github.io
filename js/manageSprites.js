@@ -93,10 +93,10 @@ class SpriteStore {
                 if (selectedDirection.sprite) variations[direction] = selectedDirection
                 
                 seasons.forEach(season => {
-                    if (selectedDirection[`${season}_sprite`]) {
+                    if (selectedDirection[`${season}_sprite`] || selectedDirection[`${season}_sprites`]) {
                         variations[[`${direction}_${season}`]] = {
                             ...selectedDirection, 
-                            sprite: selectedDirection[`${season}_sprite`], 
+                            sprite: selectedDirection[`${season}_sprite`] || selectedDirection[`${season}_sprites`], 
                             top_sprite: selectedDirection[`${season}_top_sprite`],
                             floor_sprite: selectedDirection[`${season}_floor_sprite`]
                         }
@@ -105,13 +105,60 @@ class SpriteStore {
             }
         })
 
+        seasons.forEach(season => {
+            if (object[`${season}_sprites`]) variations[`south_${season}`] = object[`${season}_sprites`]
+        })
+
         if (object.sprites) {
-            seasons.forEach(season => {
-                if (object.sprites[season]) variations[`south_${season}`] = object.sprites[season]
-            })
+            if (typeof object.sprites === "string" || Array.isArray(object.sprites)) {
+                variations[`south`] = object.sprites
+            } else {
+                seasons.forEach(season => {
+                    if (object.sprites[season]) variations[`south_${season}`] = object.sprites[season]
+                })
+            }
+        }
+
+        if (object.sprite) {
+            variations[`south`] = object.sprite
         }
         
         return variations
+    }
+
+    #mapSingleGeneric(variations, objectKey, objectData, defaults) {
+        Object.entries(variations).forEach(([variationKey, variation]) => {
+            const sprite = this.spriteMapping[variation.sprite ? variation.sprite : lastSprite(variation)]["0"]
+            let topSprite
+                            
+            let itemOriginX, itemOriginY
+            if (variation.offset) {
+                itemOriginX = variation.offset[0]
+                itemOriginY = variation.offset[1]
+            } else {
+                itemOriginX = 8
+                itemOriginY = 8
+            }
+
+            let spriteBasics = {...defaults}
+
+            if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY}
+
+            if (variation.top_sprite) {
+                topSprite = {
+                    ...spriteBasics,
+                    name: variation.top_sprite,
+                    ...this.spriteMapping[variation.top_sprite]["0"],
+                    ...objectData,
+                    // offset: [0, variation.top_sprite_depth_offset] /// Z-INDEXES, NOT NEEDED CURRENTLY
+                }
+            }
+            
+            this.setSingleObjectData({
+                name: `${objectKey}_${variationKey}`, ...spriteBasics, ...sprite, ...objectData, 
+                children: topSprite ? [topSprite] : undefined
+            })
+        })
     }
 
     #mapSingleFence(variations, furnitureKey, furnitureData, defaults) {
@@ -131,79 +178,40 @@ class SpriteStore {
         })
     }
 
-    #mapSingleFurniture(variations, furnitureKey, furnitureData, defaults) {
-        Object.entries(variations).forEach(([variationKey, variation]) => {
-            console.log(variation)
-            const sprite = this.spriteMapping[variation.sprite]["0"]
-            let topSprite
-                            
-            let itemOriginX, itemOriginY
-            if (variation.offset) {
-                itemOriginX = variation.offset[0]
-                itemOriginY = variation.offset[1]
-            }
+    #mapGeneric({default: defaults, ...genericObjects}) {
+        Object.entries(genericObjects).forEach(([genericObjectsKey, genericObjectsData]) => {
+            const variations = this.#findVariations(genericObjectsData)
 
-            let spriteBasics = {...defaults}
-
-            if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY,}
-
-            if (variation.top_sprite) {
-                topSprite = {
-                    ...spriteBasics,
-                    name: variation.top_sprite,
-                    ...this.spriteMapping[variation.top_sprite]["0"],
-                    ...furnitureData,
-                    // offset: [0, variation.top_sprite_depth_offset] /// Z-INDEXES, NOT NEEDED CURRENTLY
-                }
-            }
-            
-            this.setSingleObjectData({
-                name: `${furnitureKey}_${variationKey}`, ...spriteBasics, ...sprite, ...furnitureData, 
-                children: topSprite ? [topSprite] : undefined
-            })
+            this.#mapSingleGeneric(variations, genericObjectsKey, genericObjectsData, defaults)
         })
+    }
+
+    #mapDigSites() {
+        this.#mapGeneric(this.objectData.dig_site)
+    }
+
+    #mapRocks() {
+        this.#mapGeneric(this.objectData.rock)
+    }
+
+    #mapStumps() {
+        this.#mapGeneric(this.objectData.stump)
+    }
+
+    #mapBreakables() {
+        this.#mapGeneric(this.objectData.breakable)
     }
 
     #mapCrops() {
-        const {default: defaults, ...crops} = this.objectData.crop
-
-        Object.entries(crops).forEach(([cropKey, cropData]) => {            
-            let [itemOriginX, itemOriginY] = defaults.offset
-
-            const sprite = this.spriteMapping[lastSprite(cropData.sprites)]['0']
-
-            this.setSingleObjectData({name: cropKey, itemOriginX, itemOriginY, ...defaults, ...sprite, ...cropData})
-        })
+        this.#mapGeneric(this.objectData.crop)
     }
 
     #mapGrass() {
-        // const {default: defaults, ...grass} = this.objectData.grass
-
-        // Object.entries(grass).forEach(([grassKey, grassData]) => {
-        //     const variations = this.#findVariations(grassData)
-
-        //     this.#mapSingleFurniture(variations, grassKey, grassData, defaults)
-        // })
+        this.#mapGeneric(this.objectData.grass)
     }
 
     #mapTrees() {
         // TODO: map tree objects
-    }
-
-    #mapDigSites() {
-        // TODO: map dig_site objects
-    }
-
-    #mapRocks() {
-        // TODO: map rock objects
-    }
-
-    #mapStumps() {
-        // TODO: map stump objects
-    }
-
-    #mapBreakables() {
-        // TODO: map breakable objects
     }
 
     #mapBuildings() {
@@ -218,7 +226,7 @@ class SpriteStore {
             if (furnitureData.fence) {
                 this.#mapSingleFence(variations, furnitureKey, furnitureData, defaults)
             } else {
-                this.#mapSingleFurniture(variations, furnitureKey, furnitureData, defaults)
+                this.#mapSingleGeneric(variations, furnitureKey, furnitureData, defaults)
             }
         })
     }
@@ -284,21 +292,8 @@ class SpriteStore {
 
         this.#logStage('TILESHEET TEXTURES')
 
-        // CROPS
-
         this.#mapCrops()
-        
-        // TODO BREAKABLE
-
-        let [itemOriginX, itemOriginY] = [8, 8]
-        const sprite = this.spriteMapping['spr_wilted_plant_1_stage1']['0']
-
-        this.setSingleObjectData({name: 'wilted_plant', itemOriginX, itemOriginY, ...this.objectData.breakable.default, ...sprite})       
-        
-        // FURNITURE
-
         this.#mapFurniture()
-
         this.#mapGrass()
         this.#mapTrees()
         this.#mapDigSites()
@@ -426,21 +421,21 @@ class SpriteStore {
             const { x: itemOriginX, y: itemOriginY } = itemOrigin || {x: 0, y: 0}
 
             baseSprite.pivot.set(originX - itemOriginX - x, originY - itemOriginY - y)
-        } else if (pivot) {
+        } /* else if (pivot) { 
             const { x, y } = pivot
             baseSprite.pivot.set(intGridCellSize/2 - x*2, intGridCellSize/2 - y*2)
-        }
+        } PROBABLY NOT NEEDED ANYMORE? */
 
         if (meta) {
             if (direction === "west" && meta.mirror_west && foundKey.includes('east')) {
                 baseSprite.anchor.x = 1;
                 baseSprite.scale.x *= -1;
             }
+
             container.meta = {...meta}
             if (foundKey.includes('east') || foundKey.includes('west') ) {
                 container.meta.size = [container.meta.size[1], container.meta.size[0]]
             }
-
          }
         
         if (children) {
