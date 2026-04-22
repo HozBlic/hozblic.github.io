@@ -961,7 +961,7 @@ function addSelectAllAndAlert(strTab, arrAllItems) {
                 </svg>
             </div>
             <div class="info" style="line-height: 18px;">
-                <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a> to get aquired items! </br>
+                <a href="javascript:void(0)" target="_self" style="color: inherit; text-decoration: unset;" onclick="openJsonPopup();"><b>Import save file</b></a> to get acquired items! </br>
             </div>
         </div>`;
 
