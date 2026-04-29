@@ -316,7 +316,7 @@ class SpriteStore {
             parsedSheets[sheetKey] = sheet
 
             Object.entries(sheet.textures).forEach(([textureKey, texture]) => {
-                const sprite = new PIXI.Sprite(texture)
+                const sprite = new PIXI.Sprite(texture) // TODO: only create sprites for textures we actually need, not every single one in the sheet
                 this.singleTextureData[textureKey].sprite = sprite
             })
         }))
