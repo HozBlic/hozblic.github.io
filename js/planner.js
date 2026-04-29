@@ -972,7 +972,13 @@ const slice2D = (arr, startX, endX, startY, endY) => {
 }
 
 function selectionHovered(objCellCoord) {
-    if (objContainers.selection !== null && strMode === 'selection_area_mode' &&
+
+    if (!objSelectionSection) {
+        return false;
+    }
+
+
+    if (strMode === 'selection_mode' &&
         (
             objCellCoord.x >= objSelectionSection.x0 &&
             objCellCoord.x <= objSelectionSection.x1 &&
@@ -983,48 +989,6 @@ function selectionHovered(objCellCoord) {
         return true;
     }
     return false;
-}
-
-function itemHovered(objCellCoord) {
-    if (strMode !== 'selection_mode') {
-        return false;
-    }
-
-    const objItemArea = { x0: objCellCoord.x, y0: objCellCoord.y, x1: objCellCoord.x, y1: objCellCoord.y }
-
-    if (checkTileHasCollision(objItemArea)) {
-        return false;
-    } else {
-        const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objItemArea.x0, objItemArea.x1, objItemArea.y0, objItemArea.y1);
-        let setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSlice2D.flat().flat())
-
-        // objSpriteCategories.soil.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
-
-        // if (objSpriteCategories.soil.includes(intCurrentlyDrawing)) {
-        //     //soil can be under anything, but if there are crops, it must be tilled soil
-        //     if ([1, 4].includes(intCurrentlyDrawing)) {
-        //         let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.crops.includes(intItemIndex)));
-        //         setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
-        //         if (setGrid_CoveredSliceValues.size) {
-        //             bolHitsElement = true;
-        //         }
-        //     }
-        // } else {
-        //     if (objSpriteCategories.depth_to_floor.includes(intCurrentlyDrawing)) {
-        //         //rugs and stuff can be under other elements, but can not hit other rugs
-        //         let arrGrid_CoveredSliceValues = [...setGrid_CoveredSliceValues].filter((intItemIndex) => (objSpriteCategories.depth_to_floor.includes(intItemIndex) || objSpriteCategories.crops.includes(intItemIndex)));
-        //         setGrid_CoveredSliceValues = new Set(arrGrid_CoveredSliceValues);
-        //     } else {
-        //         //elements can be over rugs
-        //         objSpriteCategories.depth_to_floor.forEach(intItemIndex => setGrid_CoveredSliceValues.delete(intItemIndex));
-        //     }
-        //     if (setGrid_CoveredSliceValues.size) {
-        //         bolHitsElement = true;
-        //     }
-        // }
-    }
-    return false;
-
 }
 
 function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDirection = strCurrentDirection) {
@@ -1103,6 +1067,11 @@ function getTopLeftCornerItem(objCellCoord, bolForceTwosOnly = false) {
 }
 
 function getSelection(objCellCoord) {
+
+    if (objSelectionSection) {
+        return objSelectionSection;
+    }
+
     let objSelectionStep = { x: 1, y: 1 }
     let coordStart = bolIsDragging ? objStartCellCoord : objCellCoord;
 
@@ -1257,6 +1226,8 @@ function updateCursorMode(strModeTemp = false) {
 }
 
 function checkTileHasCollision(objSelection, bolUseDiggableGrid = true) {
+    return false;
+
     if (bolUseDiggableGrid) {
         const arrGrid_DiggableSlice = slice2D(arrGrid_Diggable, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
         const setGrid_DiggableSliceValues = new Set(arrGrid_DiggableSlice.flat())
@@ -1367,8 +1338,6 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             }
         }
     } else if (strMode === 'selection_mode' && objCellCoord) {
-
-
         //   if (objSelectionSection) {
         //         return;
         //     }
@@ -1436,7 +1405,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
 
                     const overlay = new PIXI.filters.ColorOverlayFilter({
                         color: 0xffffff,
-                        alpha: 0.5
+                        alpha: selectionHovered(objCellCoord) ? 0.7 : 0.5
                     });
 
                     // Apply it to the sprite
@@ -1460,6 +1429,9 @@ function generateTempSection(objSection = false, objCellCoord = false) {
         } else if (objCellCoord !== false) {
             moveTempSection(objCellCoord);
         }
+    } else {
+        objGridCombined.cursor_corner = false;
+        objSelectionSection = false;
     }
 
 }
@@ -1629,6 +1601,9 @@ function clearTempSection() {
 }
 
 function moveTempSection(objCellCoord) {
+    if (objGridCombined.cursor_corner === false) {
+        return;
+    }
     if (strMode === 'drawing_mode') {
         const [objPosition, arrSize] = getSectionLocation(objCellCoord);
         console.log(objPosition)
@@ -2580,7 +2555,7 @@ function populateItemGrids() {
             const intItemKey = parseInt(strItemKey);
 
             setItems.add(intItemKey)
-            const sprite = getSprite(intItemKey);
+            const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
             const arrSize = sprite.meta.size;
 
             objFarmLayout[strDirection][intItemKey].forEach((arrCoord) => {
@@ -2923,22 +2898,25 @@ $(function () {
             if ($('#tabs .dropdown_wrap.open').length) {
                 return;
             }
-            //  objSelectionSection = false;
-
             objStartCellCoord = getClickedCell(e);
             objStartOffset = { x: objMistriaDataPlanner.offsetCanvas.x, y: objMistriaDataPlanner.offsetCanvas.y };
             objPrevCellCoord = objStartCellCoord
 
-            if (e.data.originalEvent.button === 0 && selectionHovered(objStartCellCoord)) {  // left click
-                bolIsDraggingSection = true;
+            if (strMode == "selection_mode" && e.data.originalEvent.button === 0) {
+                if (selectionHovered(objStartCellCoord)) { //if already has a selection and is hovered
+                    bolIsDraggingSection = true;
+                    bolIsDragging = true;
+                } else {
+                    //clear out previous selection
+                    clearTempSection();
+                    objSelectionSection = false;
+
+                    bolIsDragging = true;
+                }
             }
-            // else if (e.data.originalEvent.button === 0 && itemHovered(objStartCellCoord)) {  // left click
-            //     bolIsDraggingItem = true;
-            // } 
             else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
                 bolIsDragging = true;
-                if (e.data.originalEvent.button === 1) {
-
+                if (e.data.originalEvent.button === 1) { //if was dragged with middle click
                     bolPreventDrawing = true;
                 }
             } else {
@@ -2953,33 +2931,31 @@ $(function () {
             if (buttons === 4 || strMode === 'dragging_mode') { // dragging with middle button or dragging mode activated
                 dragMap(objCurrentCellCoord);
             } else {
-                if (objGridCombined.cursor_corner !== false) {
-                    if ((strMode == "drawing_mode" && bolIsDragging && !bolPreventDrawing) ||
-                        (strMode == "selection_mode" && !bolPreventDrawing)) {
+                if (objPrevCellCoord.x === objCurrentCellCoord.x && objPrevCellCoord.y === objCurrentCellCoord.y) {
+                    return;
+                }
 
-                        let objSelection = getSelection(objCurrentCellCoord);
+                if (!bolPreventDrawing) {
+                    let objSelection = getSelection(objCurrentCellCoord);
 
-                        if (objSelectionSection) {
-                            objSelection = objSelectionSection;
-                        }
-
-                        if (objPrevCellCoord.x === objCurrentCellCoord.x && objPrevCellCoord.y === objCurrentCellCoord.y) {
-                            // objPrevCellCoord = objCurrentCellCoord;
-                            return;
-                        }
-                        objPrevCellCoord = objCurrentCellCoord;
-
+                    if (strMode == "drawing_mode" && bolIsDragging) {
                         clearTempSection();
                         generateTempSection(objSelection, objCurrentCellCoord);
-                    }
-                    else {
-                        console.log(objCurrentCellCoord)
+                    } else if (strMode == "selection_mode") {
+                        if (objSelectionSection) {
+                            if (objSelectionSection && selectionHovered(objCurrentCellCoord) !== selectionHovered(objPrevCellCoord)) {
+                                clearTempSection();
+                                generateTempSection(objSelection, objCurrentCellCoord);
+                            }
+                        } else {
+                            clearTempSection();
+                            generateTempSection(objSelection, objCurrentCellCoord);
+                        }
+                    } else {
                         moveTempSection(objCurrentCellCoord);
                     }
                 }
-
-                // updateGrid(objCurrentCellCoord);
-
+                objPrevCellCoord = objCurrentCellCoord;
             }
         });
 
@@ -3019,25 +2995,10 @@ $(function () {
                     } else if (strMode === 'selection_mode') {
                         objSelectionSection = getSelection(objCurrentCellCoord);
                     }
-
-                    // 
-
-                    // if (objGridCombined.cursor_corner !== false) {
-                    //     clearTempSection();
-                    //     generateTempSection();
-
-                    //     console.log('clear,', objGridCombined.cursor_corner)
-                    // }
-                }
-                else {
+                } else {
                     resetDrawingVariables();
                 }
-                // updateGrid(objCurrentCellCoord, true);
             }
-
-            // bolPreventDrawing = false;
-
-
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
@@ -3088,9 +3049,9 @@ $(function () {
         drawCollision();
 
         // addTestData(4);
-        updateCurrentlyDrawing(416, 'east');
+        // updateCurrentlyDrawing(416, 'east');
 
-        // updateCursorMode('selection_mode');
+        updateCursorMode('selection_mode');
 
         drawPlanner();
 
