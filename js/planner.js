@@ -1226,7 +1226,7 @@ function updateCursorMode(strModeTemp = false) {
 }
 
 function checkTileHasCollision(objSelection, bolUseDiggableGrid = true) {
-    return false;
+    // return false;
 
     if (bolUseDiggableGrid) {
         const arrGrid_DiggableSlice = slice2D(arrGrid_Diggable, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
