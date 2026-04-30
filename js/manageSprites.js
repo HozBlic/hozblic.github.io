@@ -241,10 +241,10 @@ class SpriteStore {
 
                 this.setSingleObjectData({
                     name: tileSheetKey,
-                    h: this.tileSize,
-                    w: this.tileSize,
-                    x: origin.x + x * this.tileSize,
-                    y: origin.y + y * this.tileSize,
+                    h: this.tileSize - this.tilePadding * 2,
+                    w: this.tileSize - this.tilePadding * 2,
+                    x: origin.x + x * this.tileSize + this.tilePadding,
+                    y: origin.y + y * this.tileSize + this.tilePadding,
                     sheet: tileData.sheet, 
                     size: [2,2]
                 })

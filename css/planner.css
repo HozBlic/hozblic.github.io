@@ -352,6 +352,48 @@ canvas {
     width: 18px;
 }
 
+#drawn_elements {}
+
+.drawn_element_container {
+    border: 1px solid var(--color-btn);
+    border-radius: 5px;
+    padding: 6px;
+    width: calc(100% + 16px);
+    margin-top: 10px;
+    margin-left: -8px;
+}
+
+.drawn_elements_title {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.drawn_elements_list {
+    max-height: 100px;
+    font-size: 11px;
+    line-height: 11px;
+    overflow: auto;
+    margin-top: 8px;
+}
+
+.drawn_elements_item {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.drawn_elements_item .icon {
+    --icon-wrapper-size: 15px;
+}
+
+.drawn_elements_name {}
+
+.drawn_elements_count {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+
 .icon img {
     image-rendering: pixelated;
 }
@@ -364,6 +406,7 @@ canvas {
 .tip_wrap {
     display: none;
 }
+
 .direction_icons {
     display: flex;
     gap: 5px;

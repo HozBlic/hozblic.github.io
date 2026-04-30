@@ -1,6 +1,7 @@
 let objMistriaDataPlanner;
 let objMistriaDataPlannerDefault = objBuild.objMistriaDataPlannerDefault;
 const arrGrassFixCoord = objBuild.arrGrassFixCoord
+let objItemsPlanner = {}
 
 let strMode = 'dragging_mode'; // drawing_mode, selection_area_mode
 let intCurrentlyDrawing = false;
@@ -19,6 +20,7 @@ let objStartCellCoord = { x: 0, y: 0 };
 let objStartOffset = { x: 0, y: 0 };
 let objPrevCellCoord = { x: 0, y: 0 };
 let objSelectionSection = false;
+let objSelectionItems = false;
 
 const intGridCellSize = 16 / 2;
 const objGrid = {
@@ -972,22 +974,24 @@ const slice2D = (arr, startX, endX, startY, endY) => {
 }
 
 function selectionHovered(objCellCoord) {
-
-    if (!objSelectionSection) {
+    if (!objSelectionSection || strMode !== 'selection_mode') {
         return false;
     }
 
-
-    if (strMode === 'selection_mode' &&
-        (
-            objCellCoord.x >= objSelectionSection.x0 &&
-            objCellCoord.x <= objSelectionSection.x1 &&
-            objCellCoord.y >= objSelectionSection.y0 &&
-            objCellCoord.y <= objSelectionSection.y1
-        )
-    ) {
+    if (objSelectionItems.arrCoords.includes(JSON.stringify([objCellCoord.x, objCellCoord.y]))) {
         return true;
     }
+
+    // if (strMode === 'selection_mode' &&
+    //     (
+    //         objCellCoord.x >= objSelectionSection.x0 &&
+    //         objCellCoord.x <= objSelectionSection.x1 &&
+    //         objCellCoord.y >= objSelectionSection.y0 &&
+    //         objCellCoord.y <= objSelectionSection.y1
+    //     )
+    // ) {
+    //     return true;
+    // }
     return false;
 }
 
@@ -1171,7 +1175,7 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
     // console.log(`drawPlanner - ${endTime - startTime} milliseconds`)
 
     if (strContainer == 'ee') {
-        testValidate()
+        testValidate();
     }
 }
 
@@ -1223,6 +1227,8 @@ function updateCursorMode(strModeTemp = false) {
     } else {
         // objContainer_Wrapper.interactiveChildren = false;
     }
+
+    updateChecklist();
 }
 
 function checkTileHasCollision(objSelection, bolUseDiggableGrid = true) {
@@ -1268,11 +1274,11 @@ function getClickedCell(event) {
 }
 
 function generateTempSection(objSection = false, objCellCoord = false) {
-
-
     const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
+    const bolGenerateSectionArrays = !objSelectionItems || bolIsDragging;
     let bolDraw = false;
     let objSize = {}
+    let objSectionTemp = {};
     if (!objSection) {
         objSize = { x: 1, y: 1 };
     } else {
@@ -1283,6 +1289,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
     }
     objGridCombined.cursor_corner = Array.from({ length: objSize.y }, () => Array.from({ length: objSize.x }, () => ({})))
 
+    // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
         const arrSize = getSprite(intCurrentlyDrawing).meta.size;
@@ -1338,16 +1345,12 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             }
         }
     } else if (strMode === 'selection_mode' && objCellCoord) {
-        //   if (objSelectionSection) {
-        //         return;
-        //     }
-
-        // console.log(objSelectionSection)
         let arrCoordsX = [];
         let arrCoordsY = [];
 
         const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSection.x0, objSection.x1, objSection.y0, objSection.y1);
 
+        // console.log(arrGrid_CoveredSlice2D)
         // console.log(arrGrid_CoveredSlice2D[0][0][416])
         const objAllSeenItems = arrGrid_CoveredSlice2D
             .flat()
@@ -1366,10 +1369,10 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                 }),
                 acc
             ), {});
-
+        // console.log(objAllSeenItems)
         if (Object.keys(objAllSeenItems).length) {
             bolDraw = true;
-            objSection = {
+            objSectionTemp = {
                 x0: Math.min(...arrCoordsX),
                 y0: Math.min(...arrCoordsY),
                 x1: Math.max(...arrCoordsX),
@@ -1377,31 +1380,65 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             }
 
             objSize = {
-                x: objSection.x1 - objSection.x0 + 1,
-                y: objSection.y1 - objSection.y0 + 1
+                x: objSectionTemp.x1 - objSectionTemp.x0 + 1,
+                y: objSectionTemp.y1 - objSectionTemp.y0 + 1
             };
 
             objGridCombined.cursor_corner = Array.from({ length: objSize.y }, () => Array.from({ length: objSize.x }, () => ({})))
 
+
+
+            console.log('generate', bolGenerateSectionArrays)
+
+            if (bolGenerateSectionArrays) {
+
+                objSelectionItems = {
+                    'arrCoords': [],
+                    'objItemCounts': objAllSeenItems
+                };
+            }
+
             Object.keys(objAllSeenItems).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
+                if (bolGenerateSectionArrays) {
 
+                    // objSelectionItems.objItemCounts[intItemKey] = 0;
+                }
                 objAllSeenItems[intItemKey].forEach(function (arrCoord) {
 
                     const objTempPosition = {
-                        x: arrCoord[0] - objSection.x0,
-                        y: arrCoord[1] - objSection.y0,
+                        x: arrCoord[0] - objSectionTemp.x0,
+                        y: arrCoord[1] - objSectionTemp.y0,
                     }
 
                     const strDirection = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemKey]?.direction;
 
                     const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
 
+                    if (bolGenerateSectionArrays) {
+
+                        const arrSize = sprite.meta.size;
+
+                        const objSectionCell = {
+                            x0: objTempPosition.x + objSectionTemp.x0,
+                            y0: objTempPosition.y + objSectionTemp.y0,
+                            x1: objTempPosition.x + objSectionTemp.x0 + arrSize[0],
+                            y1: objTempPosition.y + objSectionTemp.y0 + arrSize[1]
+                        };
+                        for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
+                            for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
+                                objSelectionItems.arrCoords.push(JSON.stringify([x1, y1]))
+                            }
+                        }
+                        // objSelectionItems.objItemCounts[intItemKey]++;
+                    }
                     const outline = new PIXI.filters.OutlineFilter({
                         thickness: 2,
                         color: 0xffffff,
                         // knockout: true,
                     });
+
+                    // console.log(selectionHovered(objCellCoord))
 
                     const overlay = new PIXI.filters.ColorOverlayFilter({
                         color: 0xffffff,
@@ -1419,21 +1456,108 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             });
         }
     }
+    if (bolGenerateSectionArrays) {
+        updateChecklist()
+    }
 
 
     if (bolDraw) {
         drawPlanner(objSize, objTopCorner = { x: 0, y: 0 }, strGrid = 'cursor_corner', strContainer = 'cursor');
 
         if (strMode === 'selection_mode') {
-            moveTempSection({ x: objSection.x0, y: objSection.y0 });
+            moveTempSection({ x: objSectionTemp.x0, y: objSectionTemp.y0 });
+
+
+            //draw square around drawn selection
+            // let objRectangleCoord = objSection;
+            // if (objSelectionSection) {
+            //     objRectangleCoord = objSelectionSection;
+            // }
+
+            // if (
+            //     objRectangleCoord.x1 - objRectangleCoord.x0 > 0 ||
+            //     objRectangleCoord.y1 - objRectangleCoord.y0 > 0
+            // )
+            // {
+            //     let elemSelection = new PIXI.Graphics();
+            //     elemSelection.rect(0, 0, (objRectangleCoord.x1 - objRectangleCoord.x0 + 1) * intGridCellSize, (objRectangleCoord.y1 - objRectangleCoord.y0 + 1) * intGridCellSize);
+            //     elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
+            //     elemSelection.zIndex = 99;
+            //     elemSelection.position.set(
+            //         (objRectangleCoord.x0 - objSectionTemp.x0) * intGridCellSize,
+            //         (objRectangleCoord.y0 - objSectionTemp.y0) * intGridCellSize
+            //     );
+            //     objContainers['cursor'].addChild(elemSelection);
+            // }
+
         } else if (objCellCoord !== false) {
             moveTempSection(objCellCoord);
         }
     } else {
         objGridCombined.cursor_corner = false;
         objSelectionSection = false;
+        objSelectionItems = false;
     }
 
+}
+
+function updateChecklist() {
+    $('.drawn_element_container').hide();
+    let objItemsForChecklist = {};
+    let $elemChecklistWrapper = null;
+    if (strMode === 'selection_mode') {
+        $elemChecklistWrapper = $('#drawn_elements_selected')
+        if (objSelectionItems) {
+            objItemsForChecklist = objSelectionItems.objItemCounts;
+        }
+    } else {
+        $elemChecklistWrapper = $('#drawn_elements_all')
+        objItemsForChecklist = {};
+
+        Object.keys(arrVersions[intCurrentVersion]).forEach(function (strDirection) {
+            Object.keys(arrVersions[intCurrentVersion][strDirection]).forEach(function (strItemKey) {
+                const intItemKey = parseInt(strItemKey);
+                if (!(intItemKey in objItemsForChecklist)) {
+                    objItemsForChecklist[intItemKey] = []
+                }
+                arrVersions[intCurrentVersion][strDirection][intItemKey].forEach((arrCoord) => {
+                    objItemsForChecklist[intItemKey].push(arrCoord)
+                });
+            });
+        });
+    }
+
+    $elemChecklistWrapper.css('display', '');
+    let $elemChecklistList = $elemChecklistWrapper.find('.drawn_elements_list');
+    $elemChecklistList.html('')
+
+    Object.keys(objItemsForChecklist).forEach(function (strItemIndex) {
+        //filter out elements behind collisions and soil?
+
+        const intItemIndex = parseInt(strItemIndex);
+
+        let strName;
+        let strImage;
+        let strItemKey = objKeyItemDict[intItemIndex][0];
+
+        if (strItemKey in objItemsPlanner) {
+            strName = objItemsPlanner[strItemKey].name;
+            strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
+        } else if (strItemKey in objItems) {
+            strName = objItems[strItemKey].name;
+            strImage = `images/items/${strItemKey}.png`;
+        } else {
+            console.log(1, strItemKey);
+            return;
+        }
+
+        $elemChecklistList.append(`
+            <div class="drawn_elements_item">
+                <div class="icon"><img src="${strImage}"></div>
+                <span class="drawn_elements_name">${strName}:</span>
+                <div class="drawn_elements_count">${objItemsForChecklist[intItemIndex].length}</div>
+            </div>`);
+    });
 }
 function getSectionLocation(objCellCoord) {
 
@@ -1474,7 +1598,7 @@ function testValidate() {
     if (objContainers['ee'] !== null) {
         const intSpritesDrawn = objContainers['ee'].children.length;
         const intSpritesGrid = objGridCombined.main_corner.flat().flat().flatMap(obj => Object.keys(obj)).length;
-        console.log('test count', intSpritesDrawn == intSpritesGrid ? true : false)
+        console.log('all sprites accessable', intSpritesDrawn == intSpritesGrid ? true : false)
     }
 }
 function placeTempSection(objCellCoord) {
@@ -1582,6 +1706,7 @@ function placeTempSection(objCellCoord) {
         recalculateNeigborSprites(objSection);
         drawPlanner();
         saveDataPlanner(true);
+        updateChecklist();
     }
 
     clearTempSection();
@@ -1606,7 +1731,7 @@ function moveTempSection(objCellCoord) {
     }
     if (strMode === 'drawing_mode') {
         const [objPosition, arrSize] = getSectionLocation(objCellCoord);
-        console.log(objPosition)
+        // console.log(objPosition)
         objContainers['cursor'].position.set(objPosition.x * intGridCellSize, objPosition.y * intGridCellSize);
         updateTempCollisions(objPosition);
     } else {
@@ -1715,48 +1840,6 @@ function updateTempCollisions(objPosition = false) {
     if (bolHasChanged) {
         drawPlanner(objSize, objTopCorner = { x: 0, y: 0 }, strGrid = 'cursor_corner', strContainer = 'cursor');
     }
-}
-
-function highlightSection(objSection, bolReverse = false) {
-
-
-    if (strMode !== 'selection_mode') {
-        return false;
-    }
-
-    // copy cell to temp selectionHovered, add outline filter and place directly on top
-
-
-
-    // console.log("jhi")
-    // for (let y = objSection.y0; y <= objSection.y1; y++) {
-    //     for (let x = objSection.x0; x <= objSection.x1; x++) {
-    //         const objCell = objGridCombined.main_corner[y][x];
-    //         Object.keys(objCell).forEach(function (strItemKey) {
-
-    //             if (objSoilIndex.grass === parseInt(strItemKey)) {
-    //                 return;
-    //             }
-    //             const sprite = objGridCombined.main_corner[y][x][strItemKey].sprite;
-    //             objContainers['ee'].removeChild(sprite);
-    //             if (bolReverse) {
-    //                 // sprite.filters = [];
-    //             } else {
-    //                 const outline = new PIXI.filters.OutlineFilter({
-    //                     thickness: 3,
-    //                     color: 0xff0000,
-    //                     // quality: 0.5
-    //                 });
-
-    //                 // Apply it to the sprite
-    //                 sprite.filters = [outline];
-    //             }
-    //             objContainers['ee'].addChild(sprite);
-    //         });
-    //     }
-    // }
-
-    // drawPlanner(objSize, objTopCorner = { x: objSection.x0, y: objSection.y1 });
 }
 
 function checkDropdownVisibility(searchDiv) {
@@ -1975,7 +2058,7 @@ async function loadMenuItems() {
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
     const objTabs = await (await fetch('json/tabs_planner.json')).json();
-    const objItemsPlanner = await (await fetch('json/items_planner.json')).json();
+    objItemsPlanner = await (await fetch('json/items_planner.json')).json();
 
     var setTips = new Set();
     var setTipsHtml = new Set();
@@ -2699,6 +2782,7 @@ function versionControl(strAction = false) {
     }
 
     drawPlanner();
+    updateChecklist();
 }
 
 function saveDataPlanner(bolUpdateGrids = false, bolVersionChange = false) {
@@ -2762,6 +2846,7 @@ function clearMap() {
     }
 
     drawPlanner();
+    updateChecklist();
 
     $('#delete').addClass('disabled');
 }
@@ -2812,6 +2897,7 @@ function preventAction() {
     resetDrawingVariables();
     bolPreventDrawing = true;
     objSelectionSection = false;
+    objSelectionItems = false;
 
     console.log('bolPreventDrawing')
     if (objGridCombined.cursor_corner !== false) {
@@ -2907,9 +2993,14 @@ $(function () {
                     bolIsDraggingSection = true;
                     bolIsDragging = true;
                 } else {
-                    //clear out previous selection
-                    clearTempSection();
-                    objSelectionSection = false;
+                    if (objSelectionSection) {
+                        //clear out previous selection
+                        clearTempSection();
+                        objSelectionSection = false;
+                        objSelectionItems = false;
+                        let objSelection = getSelection(objStartCellCoord);
+                        generateTempSection(objSelection, objStartCellCoord);
+                    }
 
                     bolIsDragging = true;
                 }
@@ -2942,13 +3033,16 @@ $(function () {
                         clearTempSection();
                         generateTempSection(objSelection, objCurrentCellCoord);
                     } else if (strMode == "selection_mode") {
+
                         if (objSelectionSection) {
-                            if (objSelectionSection && selectionHovered(objCurrentCellCoord) !== selectionHovered(objPrevCellCoord)) {
+                            if (selectionHovered(objCurrentCellCoord) !== selectionHovered(objPrevCellCoord)) {
                                 clearTempSection();
                                 generateTempSection(objSelection, objCurrentCellCoord);
                             }
                         } else {
                             clearTempSection();
+                            objSelectionSection = false;
+                            objSelectionItems = false;
                             generateTempSection(objSelection, objCurrentCellCoord);
                         }
                     } else {
@@ -2985,15 +3079,18 @@ $(function () {
                     };
                     resize();
                 }
+                resetDrawingVariables();
             } else {
                 if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
                     if (strMode === 'drawing_mode') {
                         placeTempSection(objCurrentCellCoord);
                         resetDrawingVariables();
                         objSelectionSection = false;
+                        objSelectionItems = false;
 
                     } else if (strMode === 'selection_mode') {
                         objSelectionSection = getSelection(objCurrentCellCoord);
+                        bolIsDragging = false;
                     }
                 } else {
                     resetDrawingVariables();
@@ -3049,11 +3146,12 @@ $(function () {
         drawCollision();
 
         // addTestData(4);
-        // updateCurrentlyDrawing(416, 'east');
+        // updateCurrentlyDrawing(1, 'east');
 
         updateCursorMode('selection_mode');
 
         drawPlanner();
+        updateChecklist();
 
 
         // objPIXIapp.renderer.extract.log(image);
