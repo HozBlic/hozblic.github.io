@@ -17,6 +17,7 @@ let bolIsDraggingMap = false;
 let bolIsDraggingSection = false;
 let objDraggingSectionOffset = { x: 0, y: 0 };
 let bolPreventDrawing = false;
+let bolPickup = false;
 let objStartCellCoord = { x: 0, y: 0 };
 let objStartOffset = { x: 0, y: 0 };
 let objPrevCellCoord = { x: 0, y: 0 };
@@ -1201,6 +1202,7 @@ function resetDrawingVariables() {
     bolIsDraggingSection = false;
     objDraggingSectionOffset = { x: 0, y: 0 };
     bolPreventDrawing = false;
+    bolPickup = false;
 
     objStartCellCoord = { x: 0, y: 0 };
     objStartOffset = { x: 0, y: 0 };
@@ -3172,27 +3174,13 @@ $(function () {
 
                     bolIsDragging = true;
                 }
-            } else if (strMode == "selection_mode" && e.data.originalEvent.button === 1) {
-                let objSelection = getSelection(objStartCellCoord);
-                const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
-                const arrAllSeenItems = arrGrid_CoveredSlice2D
-                    .flat()
-                    .flatMap(obj => Object.keys(obj).map(Number));
-
-                const { id: highestId } = arrAllSeenItems.reduce((highestFound, itemId) => {
-                    const checkZ = getZindexbySpriteIndex(itemId);
-                    if (checkZ > highestFound.zIndex) { return { id: itemId, zIndex: checkZ } }
-                    return highestFound;
-                }, { id: 0, zIndex: 0 });
-                // TODO: get direction as well
-                updateCurrentlyDrawing(highestId);
-                bolPreventDrawing = true;
-
             } else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
                 bolIsDragging = true;
                 if (e.data.originalEvent.button === 1) { //if was dragged with middle click
                     bolPreventDrawing = true;
-
+                    if (strMode == "selection_mode") {
+                        bolPickup = true;
+                    }
                 }
             } else {
 
@@ -3210,7 +3198,12 @@ $(function () {
 
             const buttons = e.data.originalEvent.buttons;
             if (buttons === 4 || strMode === 'dragging_mode') { // dragging with middle button or dragging mode activated
+                if (objPrevCellCoord.x === objCurrentCellCoord.x && objPrevCellCoord.y === objCurrentCellCoord.y) {
+                    return;
+                }
+                console.log("hui")
                 dragMap(objCurrentCellCoord);
+                bolPickup = false;
             } else {
                 if (objPrevCellCoord.x === objCurrentCellCoord.x && objPrevCellCoord.y === objCurrentCellCoord.y) {
                     return;
@@ -3277,9 +3270,24 @@ $(function () {
                 }
                 resetDrawingVariables();
             } else {
+                if (bolPickup) {
+                    let objSelection = getSelection(objCurrentCellCoord);
+                    const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
+                    const arrAllSeenItems = arrGrid_CoveredSlice2D
+                        .flat()
+                        .flatMap(obj => Object.keys(obj).map(Number));
 
-                console.log(bolPreventDrawing, objGridCombined.cursor_corner)
-                if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
+                    const { id: highestId } = arrAllSeenItems.reduce((highestFound, itemId) => {
+                        const checkZ = getZindexbySpriteIndex(itemId);
+                        if (checkZ > highestFound.zIndex) { return { id: itemId, zIndex: checkZ } }
+                        return highestFound;
+                    }, { id: 0, zIndex: 0 });
+
+                    // TODO: get direction as well
+                    resetDrawingVariables();
+                    updateCurrentlyDrawing(highestId);
+                }
+                else if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
                     if (strMode === 'drawing_mode') {
                         placeTempSection(objCurrentCellCoord);
                         resetDrawingVariables();
