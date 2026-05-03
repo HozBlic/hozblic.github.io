@@ -3172,13 +3172,33 @@ $(function () {
 
                     bolIsDragging = true;
                 }
-            }
-            else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
+            } else if (strMode == "selection_mode" && e.data.originalEvent.button === 1) {
+                let objSelection = getSelection(objStartCellCoord);
+                const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
+                const arrAllSeenItems = arrGrid_CoveredSlice2D
+                    .flat()
+                    .flatMap(obj => Object.keys(obj).map(Number));
+
+                const { id: highestId } = arrAllSeenItems.reduce((highestFound, itemId) => {
+                    const checkZ = getZindexbySpriteIndex(itemId);
+                    if (checkZ > highestFound.zIndex) { return { id: itemId, zIndex: checkZ } }
+                    return highestFound;
+                }, { id: 0, zIndex: 0 });
+                // TODO: get direction as well
+                updateCurrentlyDrawing(highestId);
+                bolPreventDrawing = true;
+
+            } else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
                 bolIsDragging = true;
                 if (e.data.originalEvent.button === 1) { //if was dragged with middle click
                     bolPreventDrawing = true;
+
                 }
             } else {
+
+                if (e.data.originalEvent.button === 2 && strMode == "drawing_mode") {
+                    updateCursorMode('selection_mode');
+                }
                 preventAction();
                 bolPreventDrawing = true;
             }

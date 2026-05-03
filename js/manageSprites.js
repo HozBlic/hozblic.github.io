@@ -211,7 +211,12 @@ class SpriteStore {
     }
 
     #mapTrees() {
-        // TODO: map tree objects
+        const {default: defaults, ...tree} = this.objectData.tree
+        Object.entries(tree).forEach(([treeKey, treeData]) => {
+            const variations = seasons.reduce((acc, season) => ({...acc, [season]: treeData.sprites.stage5[season]}), {})
+
+            this.#mapSingleGeneric(variations, treeKey, treeData, defaults)
+        })
     }
 
     #mapBuildings() {
@@ -378,7 +383,7 @@ class SpriteStore {
         return this.get(`${fenceType}_${fenceOrd}`, season, "south")}
 
     getCrop(textureKey) {
-        const crop = this.get(textureKey);
+        const crop = this.get(textureKey)
         if (!objMistriaDataPlanner.options.has('mode_offseason') && !crop.meta.seasons.includes(objMistriaDataPlanner.season)) {
             return this.get('wilted_plant')
         }
@@ -409,10 +414,10 @@ class SpriteStore {
 
         const {sprite: { texture }, pivot, origin, itemOrigin, children, meta} = foundTexture
 
-
         let container = new PIXI.Container()
         const baseSprite = new PIXI.Sprite(texture)
 
+        container.sortableChildren = true
         container.addChild(baseSprite)
         
         if (pivot && origin) {
@@ -428,15 +433,28 @@ class SpriteStore {
 
         if (meta) {
             if (direction === "west" && meta.mirror_west && foundKey.includes('east')) {
-                baseSprite.anchor.x = 1;
-                baseSprite.scale.x *= -1;
+                baseSprite.anchor.x = 1
+                baseSprite.scale.x *= -1
             }
 
             container.meta = {...meta}
             if (foundKey.includes('east') || foundKey.includes('west') ) {
                 container.meta.size = [container.meta.size[1], container.meta.size[0]]
             }
-         }
+
+            if (meta.stump_id) {
+                const stumpSprite = this.get(meta.stump_id)
+                stumpSprite.zIndex = -1;
+
+                container.meta.size = [2, 2];
+
+                container.addChild(stumpSprite)
+            }
+
+            if (meta.fruit_data?.harvest) {
+
+            }
+        }
         
         if (children) {
             children.forEach(child => {
