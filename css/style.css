@@ -796,7 +796,7 @@ textarea {
 }
 
 .donations {
-    border: 2px dashed var(--color-btn);
+    border: 2px dashed var(--color-btn2);
     /* border: 2px dashed #8338ec50; */
     border-radius: 5px;
     padding: 6px;

@@ -125,23 +125,6 @@
                     </div>
                 </div>
 
-                <div id="drawn_elements">
-                    <div class="drawn_element_container" id="drawn_elements_all">
-                        <div class="drawn_elements_title">
-                            Elements on map
-                        </div>
-                        <div class="drawn_elements_list">
-                        </div>
-                    </div>
-                    <div class="drawn_element_container" id="drawn_elements_selected">
-                        <div class="drawn_elements_title">
-                            Selected elements
-                        </div>
-                        <div class="drawn_elements_list">
-                        </div>
-                    </div>
-                </div>
-
                 <div class="dropdowns">
                     <div class="dropdown_wrap">
                         <div class="button_item dropdown_button">
@@ -215,8 +198,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="switches">
                     <div class="switch_wrap">
@@ -292,7 +273,26 @@
                     </div>
                 </div>
 
+
                 <div class="bottom_info">
+
+                    <div id="drawn_elements">
+                        <div class="drawn_element_container" id="drawn_elements_all">
+                            <div class="drawn_elements_title">
+                                Elements on map
+                            </div>
+                            <div class="drawn_elements_list">
+                            </div>
+                        </div>
+                        <div class="drawn_element_container" id="drawn_elements_selected" style="display: none;">
+                            <div class="drawn_elements_title">
+                                Selected elements
+                            </div>
+                            <div class="drawn_elements_list">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="buttons">
                         <div id="json_button" class="button_item" onclick="openJsonPopup();">
                             <div class="icon">
@@ -534,7 +534,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="tab button_item button-notext" mode="selection_area_mode" data-tab="selection_area_mode"
+                <!-- <div class="tab button_item button-notext" mode="selection_area_mode" data-tab="selection_area_mode"
                     onclick="updateCursorMode('selection_area_mode')">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000"
@@ -551,7 +551,7 @@
                             <path d="M3 14v1" stroke-width="2"></path>
                         </svg>
                     </div>
-                </div>
+                </div> -->
                 <div class="tab button_item button-notext disabled" id="undo" onclick="versionControl('undo')">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -791,27 +791,6 @@
                                         </li>
                                         <li>
                                             <div class="control-desc">
-                                                <div class="icon" mode="selection_area_mode">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="none" stroke="#000000" stroke-linecap="round"
-                                                        stroke-linejoin="round" height="24" width="24">
-                                                        <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                        <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                        <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                        <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                        <path d="M9 3h1" stroke-width="2"></path>
-                                                        <path d="M9 21h2" stroke-width="2"></path>
-                                                        <path d="M14 3h1" stroke-width="2"></path>
-                                                        <path d="M3 9v1" stroke-width="2"></path>
-                                                        <path d="M21 9v2" stroke-width="2"></path>
-                                                        <path d="M3 14v1" stroke-width="2"></path>
-                                                    </svg>
-                                                </div>
-                                                select the tile
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="control-desc">
                                                 <div class="icon" mode="drawing_mode">
                                                     <img src="images/almanac/crops.png">
                                                 </div>
@@ -874,28 +853,7 @@
                                                         <path d="m6 12 -1.9 2" stroke-width="2"></path>
                                                     </svg>
                                                 </div>
-                                                move the selected item
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="control-desc">
-                                                <div class="icon" mode="selection_area_mode">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="none" stroke="#000000" stroke-linecap="round"
-                                                        stroke-linejoin="round" height="24" width="24">
-                                                        <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                        <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                        <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                        <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                        <path d="M9 3h1" stroke-width="2"></path>
-                                                        <path d="M9 21h2" stroke-width="2"></path>
-                                                        <path d="M14 3h1" stroke-width="2"></path>
-                                                        <path d="M3 9v1" stroke-width="2"></path>
-                                                        <path d="M21 9v2" stroke-width="2"></path>
-                                                        <path d="M3 14v1" stroke-width="2"></path>
-                                                    </svg>
-                                                </div>
-                                                select an area or move the selection
+                                                move the selected item or select an area
                                             </div>
                                         </li>
                                         <li>
@@ -954,23 +912,6 @@
                                                             <path d="m6 12 -1.9 2" stroke-width="2"></path>
                                                         </svg>
                                                     </div>
-                                                    <div class="icon" mode="selection_area_mode">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="none" stroke="#000000" stroke-linecap="round"
-                                                            stroke-linejoin="round" height="24" width="24">
-                                                            <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                            <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                            <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2">
-                                                            </path>
-                                                            <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                            <path d="M9 3h1" stroke-width="2"></path>
-                                                            <path d="M9 21h2" stroke-width="2"></path>
-                                                            <path d="M14 3h1" stroke-width="2"></path>
-                                                            <path d="M3 9v1" stroke-width="2"></path>
-                                                            <path d="M21 9v2" stroke-width="2"></path>
-                                                            <path d="M3 14v1" stroke-width="2"></path>
-                                                        </svg>
-                                                    </div>
                                                     <div class="icon" mode="drawing_mode">
                                                         <img src="images/almanac/crops.png">
                                                     </div>
@@ -996,27 +937,6 @@
                                                     </svg>
                                                 </div>
                                                 deselect item
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="control-desc">
-                                                <div class="icon" mode="selection_area_mode">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="none" stroke="#000000" stroke-linecap="round"
-                                                        stroke-linejoin="round" height="24" width="24">
-                                                        <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                        <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                        <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                        <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                        <path d="M9 3h1" stroke-width="2"></path>
-                                                        <path d="M9 21h2" stroke-width="2"></path>
-                                                        <path d="M14 3h1" stroke-width="2"></path>
-                                                        <path d="M3 9v1" stroke-width="2"></path>
-                                                        <path d="M21 9v2" stroke-width="2"></path>
-                                                        <path d="M3 14v1" stroke-width="2"></path>
-                                                    </svg>
-                                                </div>
-                                                deselect or cancel current selection
                                             </div>
                                         </li>
                                         <li>
@@ -1079,23 +999,6 @@
                                                             <path d="m6 12 -1.9 2" stroke-width="2"></path>
                                                         </svg>
                                                     </div>
-                                                    <div class="icon" mode="selection_area_mode">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="none" stroke="#000000" stroke-linecap="round"
-                                                            stroke-linejoin="round" height="24" width="24">
-                                                            <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                            <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                            <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2">
-                                                            </path>
-                                                            <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                            <path d="M9 3h1" stroke-width="2"></path>
-                                                            <path d="M9 21h2" stroke-width="2"></path>
-                                                            <path d="M14 3h1" stroke-width="2"></path>
-                                                            <path d="M3 9v1" stroke-width="2"></path>
-                                                            <path d="M21 9v2" stroke-width="2"></path>
-                                                            <path d="M3 14v1" stroke-width="2"></path>
-                                                        </svg>
-                                                    </div>
                                                     <div class="icon" mode="drawing_mode">
                                                         <img src="images/almanac/crops.png">
                                                     </div>
@@ -1128,22 +1031,6 @@
                                                         <path d="m5.1 8 -2.9 -0.8" stroke-width="2"></path>
                                                         <path d="M14 4.1 12 6" stroke-width="2"></path>
                                                         <path d="m6 12 -1.9 2" stroke-width="2"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="icon" mode="selection_area_mode">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="none" stroke="#000000" stroke-linecap="round"
-                                                        stroke-linejoin="round" height="24" width="24">
-                                                        <path d="M5 3a2 2 0 0 0 -2 2" stroke-width="2"></path>
-                                                        <path d="M19 3a2 2 0 0 1 2 2" stroke-width="2"></path>
-                                                        <path d="m12 12 4 10 1.7 -4.3L22 16Z" stroke-width="2"></path>
-                                                        <path d="M5 21a2 2 0 0 1 -2 -2" stroke-width="2"></path>
-                                                        <path d="M9 3h1" stroke-width="2"></path>
-                                                        <path d="M9 21h2" stroke-width="2"></path>
-                                                        <path d="M14 3h1" stroke-width="2"></path>
-                                                        <path d="M3 9v1" stroke-width="2"></path>
-                                                        <path d="M21 9v2" stroke-width="2"></path>
-                                                        <path d="M3 14v1" stroke-width="2"></path>
                                                     </svg>
                                                 </div> mode only
                                             </div>

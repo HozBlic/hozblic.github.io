@@ -3,7 +3,7 @@ let objMistriaDataPlannerDefault = objBuild.objMistriaDataPlannerDefault;
 const arrGrassFixCoord = objBuild.arrGrassFixCoord
 let objItemsPlanner = {}
 
-let strMode = 'dragging_mode'; // drawing_mode, selection_area_mode
+let strMode = 'dragging_mode'; // drawing_mode, selection_mode
 let intCurrentlyDrawing = false;
 let strCurrentDirection = false;
 
@@ -15,12 +15,16 @@ const intAllowedVersions = 10;
 let bolIsDragging = false;
 let bolIsDraggingMap = false;
 let bolIsDraggingSection = false;
+let objDraggingSectionOffset = { x: 0, y: 0 };
 let bolPreventDrawing = false;
 let objStartCellCoord = { x: 0, y: 0 };
 let objStartOffset = { x: 0, y: 0 };
 let objPrevCellCoord = { x: 0, y: 0 };
 let objSelectionSection = false;
 let objSelectionItems = false;
+
+let lastMousePosition = { x: 0, y: 0 };
+
 
 const intGridCellSize = 16 / 2;
 const objGrid = {
@@ -973,6 +977,18 @@ const slice2D = (arr, startX, endX, startY, endY) => {
     return arr.slice(startY, endY + 1).map(subArr => subArr.slice(startX, endX + 1))
 }
 
+
+function calculateOffsetSection(objCellCoord) {
+    if (!objSelectionSection || strMode !== 'selection_mode') {
+        return { x: 0, y: 0 };
+    }
+
+    const smallest = objSelectionItems.arrCoords
+        .map(c => c.replace(/[\[\]\s]/g, "").split(",").map(Number))
+        .sort((a, b) => a[0] - b[0] || a[1] - b[1])[0];
+
+    return { x: smallest[0] - objCellCoord.x, y: smallest[1] - objCellCoord.y };
+}
 function selectionHovered(objCellCoord) {
     if (!objSelectionSection || strMode !== 'selection_mode') {
         return false;
@@ -1183,6 +1199,7 @@ function resetDrawingVariables() {
     bolIsDragging = false;
     bolIsDraggingMap = false;
     bolIsDraggingSection = false;
+    objDraggingSectionOffset = { x: 0, y: 0 };
     bolPreventDrawing = false;
 
     objStartCellCoord = { x: 0, y: 0 };
@@ -1201,10 +1218,15 @@ function updateCurrentlyDrawing(intItemKey = false, strDirection = false) {
 }
 
 function updateCursorMode(strModeTemp = false) {
-    // let strMode = 'dragging_mode'; // drawing_mode, selection_area_mode
+    // let strMode = 'dragging_mode'; // drawing_mode, selection_mode
     strMode = strModeTemp;
 
     clearTempSection();
+    objSelectionSection = false;
+    $('#game-container').css('cursor', '');
+    objSelectionItems = false;
+
+
     $('.tab').removeClass('active');
     $(`.tab[data-tab="${strMode}"]`).addClass('active');
     if (strMode == 'dragging_mode') {
@@ -1273,7 +1295,7 @@ function getClickedCell(event) {
     return objCell;
 }
 
-function generateTempSection(objSection = false, objCellCoord = false) {
+function generateTempSection(objSection = false, objCellCoord = false, bolHighlight = false) {
     const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
     const bolGenerateSectionArrays = !objSelectionItems || bolIsDragging;
     let bolDraw = false;
@@ -1386,12 +1408,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
 
             objGridCombined.cursor_corner = Array.from({ length: objSize.y }, () => Array.from({ length: objSize.x }, () => ({})))
 
-
-
-            console.log('generate', bolGenerateSectionArrays)
-
             if (bolGenerateSectionArrays) {
-
                 objSelectionItems = {
                     'arrCoords': [],
                     'objItemCounts': objAllSeenItems
@@ -1401,7 +1418,6 @@ function generateTempSection(objSection = false, objCellCoord = false) {
             Object.keys(objAllSeenItems).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
                 if (bolGenerateSectionArrays) {
-
                     // objSelectionItems.objItemCounts[intItemKey] = 0;
                 }
                 objAllSeenItems[intItemKey].forEach(function (arrCoord) {
@@ -1438,12 +1454,18 @@ function generateTempSection(objSection = false, objCellCoord = false) {
                         // knockout: true,
                     });
 
-                    // console.log(selectionHovered(objCellCoord))
+                    // console.log(bolHighlight)
 
                     const overlay = new PIXI.filters.ColorOverlayFilter({
                         color: 0xffffff,
-                        alpha: selectionHovered(objCellCoord) ? 0.7 : 0.5
+                        alpha: bolHighlight ? 0.7 : 0.5
                     });
+
+                    if (bolHighlight) {
+                        $('#game-container').css('cursor', 'pointer');
+                    } else {
+                        $('#game-container').css('cursor', '');
+                    }
 
                     // Apply it to the sprite
                     sprite.filters = [overlay, outline];
@@ -1497,6 +1519,7 @@ function generateTempSection(objSection = false, objCellCoord = false) {
         objGridCombined.cursor_corner = false;
         objSelectionSection = false;
         objSelectionItems = false;
+        $('#game-container').css('cursor', '');
     }
 
 }
@@ -1531,33 +1554,41 @@ function updateChecklist() {
     let $elemChecklistList = $elemChecklistWrapper.find('.drawn_elements_list');
     $elemChecklistList.html('')
 
-    Object.keys(objItemsForChecklist).forEach(function (strItemIndex) {
-        //filter out elements behind collisions and soil?
+    if (Object.keys(objItemsForChecklist).length) {
+        Object.keys(objItemsForChecklist).forEach(function (strItemIndex) {
+            //filter out elements behind collisions and soil?
 
-        const intItemIndex = parseInt(strItemIndex);
+            const intItemIndex = parseInt(strItemIndex);
 
-        let strName;
-        let strImage;
-        let strItemKey = objKeyItemDict[intItemIndex][0];
+            let strName;
+            let strImage;
+            let strItemKey = objKeyItemDict[intItemIndex][0];
 
-        if (strItemKey in objItemsPlanner) {
-            strName = objItemsPlanner[strItemKey].name;
-            strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
-        } else if (strItemKey in objItems) {
-            strName = objItems[strItemKey].name;
-            strImage = `images/items/${strItemKey}.png`;
-        } else {
-            console.log(1, strItemKey);
-            return;
-        }
+            if (strItemKey in objItemsPlanner) {
+                strName = objItemsPlanner[strItemKey].name;
+                strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
+            } else if (strItemKey in objItems) {
+                strName = objItems[strItemKey].name;
+                strImage = `images/items/${strItemKey}.png`;
+            } else {
+                console.log(1, strItemKey);
+                return;
+            }
 
-        $elemChecklistList.append(`
+            $elemChecklistList.append(`
             <div class="drawn_elements_item">
                 <div class="icon"><img src="${strImage}"></div>
                 <span class="drawn_elements_name">${strName}:</span>
                 <div class="drawn_elements_count">${objItemsForChecklist[intItemIndex].length}</div>
             </div>`);
-    });
+        });
+    } else {
+        $elemChecklistList.append(`
+            <div class="drawn_elements_item">
+               <span class="drawn_elements_name">none</span>
+            </div>`);
+    }
+
 }
 function getSectionLocation(objCellCoord) {
 
@@ -1601,7 +1632,7 @@ function testValidate() {
         console.log('all sprites accessable', intSpritesDrawn == intSpritesGrid ? true : false)
     }
 }
-function placeTempSection(objCellCoord) {
+function placeTempSection(objCellCoord, bolClearTemp = true) {
     const [objPosition, arrSize] = getSectionLocation(objCellCoord);
 
     const objSize = {
@@ -1623,7 +1654,12 @@ function placeTempSection(objCellCoord) {
 
             Object.keys(objCell).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
-                const objSectionCell = { x0: objRealPosition.x, y0: objRealPosition.y, x1: objRealPosition.x + arrSize[0], y1: objRealPosition.y + arrSize[1] };
+                const objSectionCell = {
+                    x0: objRealPosition.x,
+                    y0: objRealPosition.y,
+                    x1: objRealPosition.x + arrSize[0],
+                    y1: objRealPosition.y + arrSize[1]
+                };
 
                 if (!('coll' in objCell[intItemKey])) {
 
@@ -1648,7 +1684,7 @@ function placeTempSection(objCellCoord) {
                     //if placing soil, destroy other soil types
                     if (objSpriteCategories.soil.includes(intItemKey)) {
 
-                        const objSectionCell = { x0: objRealPosition.x, y0: objRealPosition.y, x1: objRealPosition.x + arrSize[0], y1: objRealPosition.y + arrSize[1] };
+                        const objSectionCellTemp = { x0: objRealPosition.x, y0: objRealPosition.y, x1: objRealPosition.x + arrSize[0], y1: objRealPosition.y + arrSize[1] };
 
                         let arrRemoveTiles = [];
 
@@ -1672,8 +1708,7 @@ function placeTempSection(objCellCoord) {
                             arrRemoveTiles = [objSoilIndex.grass, objSoilIndex.soil, objSoilIndex.wetSoil];
                         }
 
-                        clearSection(objSectionCell, arrRemoveTiles)
-
+                        clearSection(objSectionCellTemp, arrRemoveTiles)
                     }
 
                     //remove previous sprite if exists
@@ -1686,8 +1721,8 @@ function placeTempSection(objCellCoord) {
 
                     objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
 
-                    for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
-                        for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
+                    for (var y1 = objSectionCell.y0; y1 < objSectionCell.y0 + arrSize[1]; y1++) {
+                        for (var x1 = objSectionCell.x0; x1 < objSectionCell.x0 + arrSize[0]; x1++) {
                             objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [objRealPosition.x, objRealPosition.y] };
                         }
                     }
@@ -1709,7 +1744,10 @@ function placeTempSection(objCellCoord) {
         updateChecklist();
     }
 
-    clearTempSection();
+    if (bolClearTemp) {
+        clearTempSection();
+    }
+
     if (strMode === 'drawing_mode') {
         generateTempSection();
     }
@@ -1729,9 +1767,8 @@ function moveTempSection(objCellCoord) {
     if (objGridCombined.cursor_corner === false) {
         return;
     }
-    if (strMode === 'drawing_mode') {
+    if (strMode === 'drawing_mode' || bolIsDraggingSection) {
         const [objPosition, arrSize] = getSectionLocation(objCellCoord);
-        // console.log(objPosition)
         objContainers['cursor'].position.set(objPosition.x * intGridCellSize, objPosition.y * intGridCellSize);
         updateTempCollisions(objPosition);
     } else {
@@ -2240,9 +2277,6 @@ async function loadMenuItems() {
     tippy('[mode="selection_mode"]', {
         content: 'Select item',
     });
-    tippy('[mode="selection_area_mode"]', {
-        content: 'Select area',
-    });
     tippy('[mode="drawing_mode"]', {
         content: 'Drawing mode',
     });
@@ -2568,8 +2602,6 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
             })
         }
     }
-
-
 }
 function recalculateSectionNeighbors() {
 }
@@ -2771,6 +2803,11 @@ function versionControl(strAction = false) {
         }
     }
 
+    clearTempSection();
+    objSelectionSection = false;
+    $('#game-container').css('cursor', '');
+    objSelectionItems = false;
+
     saveDataPlanner(true, true);
     populateItemGrids();
 
@@ -2832,6 +2869,12 @@ function clearMap() {
     if ($(`#delete`).hasClass('disabled')) {
         return;
     }
+
+    clearTempSection();
+    objSelectionSection = false;
+    $('#game-container').css('cursor', '');
+    objSelectionItems = false;
+
     objMistriaDataPlanner.layout[intSaveSlot].farm = objMistriaDataPlannerDefault.layout[intSaveSlot].farm;
     delete objMistriaDataPlanner.layout[intSaveSlot].farm['none']['1'];
     populateItemGrids();
@@ -2897,6 +2940,7 @@ function preventAction() {
     resetDrawingVariables();
     bolPreventDrawing = true;
     objSelectionSection = false;
+    $('#game-container').css('cursor', '');
     objSelectionItems = false;
 
     console.log('bolPreventDrawing')
@@ -2911,6 +2955,29 @@ function preventAction() {
             // generateTempSection();
         }
     }
+}
+
+function saveImage() {
+    const canvas = objPIXIapp.renderer.extract.canvas(objPIXIapp.stage);
+
+    canvas.toBlob((blob) => {
+        if (!blob) {
+            console.error("Blob creation failed");
+            return;
+        }
+
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'canvas.png';
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        URL.revokeObjectURL(url);
+    });
 }
 
 $(function () {
@@ -2964,18 +3031,85 @@ $(function () {
         $(document).keyup(function (e) {
             if (e.key === "Escape") {
                 preventAction()
-            } else if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'z' || e.key === 'Z')) {
-                versionControl('redo');
-            } else if ((e.ctrlKey || e.metaKey) && e.key === 'y') {
-                versionControl('redo');
-            } else if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z')) {
-                versionControl('undo');
+            }
+            else if (e.key == "Delete" && strMode == "selection_mode" && objSelectionSection) {
+                const arrCoords = [...new Set(objSelectionItems.arrCoords)];
+                arrCoords.forEach((strCoord) => {
+                    arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
+                    clearSection({
+                        x0: arrCoord[0],
+                        x1: arrCoord[0] + 1,
+                        y0: arrCoord[1],
+                        y1: arrCoord[1] + 1
+
+                    }, Object.keys(objSelectionItems.objItemCounts));
+                });
+
+                recalculateNeigborSprites();
+                drawPlanner();
+
+                clearTempSection();
+                objSelectionSection = false;
+                $('#game-container').css('cursor', '');
+                objSelectionItems = false;
+            }
+
+            else if ((e.ctrlKey || e.metaKey)) {
+                if (e.shiftKey && (e.key === 'z' || e.key === 'Z')) {
+                    versionControl('redo');
+                } else if (e.key === 'y') {
+                    versionControl('redo');
+                } else if ((e.key === 'z' || e.key === 'Z')) {
+                    versionControl('undo');
+                } else if (e.key === 'c' || e.key === 'x') {
+                    if (strMode == "selection_mode" && objSelectionSection) {
+                        bolIsDraggingSection = true;
+                        if (selectionHovered(lastMousePosition)) {
+                            objDraggingSectionOffset = calculateOffsetSection(lastMousePosition);
+                        }
+
+                        let objSelection = getSelection(lastMousePosition);
+                        clearTempSection();
+                        generateTempSection(objSelection, lastMousePosition, false);
+                        moveTempSection({
+                            x: lastMousePosition.x + objDraggingSectionOffset.x,
+                            y: lastMousePosition.y + objDraggingSectionOffset.y
+                        });
+
+                        if (e.key === 'x') {
+                            const arrCoords = [...new Set(objSelectionItems.arrCoords)];
+                            arrCoords.forEach((strCoord) => {
+                                arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
+                                clearSection({
+                                    x0: arrCoord[0],
+                                    x1: arrCoord[0] + 1,
+                                    y0: arrCoord[1],
+                                    y1: arrCoord[1] + 1
+
+                                }, Object.keys(objSelectionItems.objItemCounts));
+                            });
+
+                            recalculateNeigborSprites();
+                            drawPlanner();
+
+                            saveDataPlanner(true);
+                            updateChecklist();
+                        }
+                    }
+                } else if (e.key === 'v') {
+                    if (strMode == "selection_mode" && objSelectionSection && bolIsDraggingSection) {
+                        placeTempSection({
+                            x: lastMousePosition.x + objDraggingSectionOffset.x,
+                            y: lastMousePosition.y + objDraggingSectionOffset.y
+                        }, false);
+                    }
+                }
             }
         });
 
         document.addEventListener('mousedown', (e) => {
-            if (e.button === 2 && (e.buttons & 1) && bolIsDragging && (strMode === 'drawing_mode' || strMode === 'selection_mode')) {
-                preventAction()
+            if (e.button === 2 && (e.buttons & 1) && (bolIsDragging || bolIsDraggingSection) && (strMode === 'drawing_mode' || strMode === 'selection_mode')) {
+                preventAction();
             }
         });
 
@@ -2989,14 +3123,48 @@ $(function () {
             objPrevCellCoord = objStartCellCoord
 
             if (strMode == "selection_mode" && e.data.originalEvent.button === 0) {
-                if (selectionHovered(objStartCellCoord)) { //if already has a selection and is hovered
+                if (bolIsDraggingSection) {
+                    placeTempSection({
+                        x: objStartCellCoord.x + objDraggingSectionOffset.x,
+                        y: objStartCellCoord.y + objDraggingSectionOffset.y
+                    })
+
+                    resetDrawingVariables();
+                    objSelectionSection = false;
+                    $('#game-container').css('cursor', '');
+                    objSelectionItems = false;
+                } else if (selectionHovered(objStartCellCoord)) { //if already has a selection and is hovered
                     bolIsDraggingSection = true;
-                    bolIsDragging = true;
+                    objDraggingSectionOffset = calculateOffsetSection(objStartCellCoord);
+
+                    clearTempSection();
+                    let objSelection = getSelection(objStartCellCoord);
+                    generateTempSection(objSelection, objStartCellCoord, false);
+
+                    const arrCoords = [...new Set(objSelectionItems.arrCoords)];
+                    arrCoords.forEach((strCoord) => {
+                        arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
+                        clearSection({
+                            x0: arrCoord[0],
+                            x1: arrCoord[0] + 1,
+                            y0: arrCoord[1],
+                            y1: arrCoord[1] + 1
+
+                        }, Object.keys(objSelectionItems.objItemCounts));
+                    });
+
+                    recalculateNeigborSprites();
+                    drawPlanner();
+
+
+                    saveDataPlanner(true);
+                    updateChecklist();
                 } else {
                     if (objSelectionSection) {
                         //clear out previous selection
                         clearTempSection();
                         objSelectionSection = false;
+                        $('#game-container').css('cursor', '');
                         objSelectionItems = false;
                         let objSelection = getSelection(objStartCellCoord);
                         generateTempSection(objSelection, objStartCellCoord);
@@ -3018,6 +3186,8 @@ $(function () {
 
         objPIXIapp.stage.on('pointermove', (e) => {
             const objCurrentCellCoord = getClickedCell(e);
+            lastMousePosition = objCurrentCellCoord;
+
             const buttons = e.data.originalEvent.buttons;
             if (buttons === 4 || strMode === 'dragging_mode') { // dragging with middle button or dragging mode activated
                 dragMap(objCurrentCellCoord);
@@ -3033,15 +3203,21 @@ $(function () {
                         clearTempSection();
                         generateTempSection(objSelection, objCurrentCellCoord);
                     } else if (strMode == "selection_mode") {
-
                         if (objSelectionSection) {
-                            if (selectionHovered(objCurrentCellCoord) !== selectionHovered(objPrevCellCoord)) {
+                            if (bolIsDraggingSection) {
+                                moveTempSection({
+                                    x: objCurrentCellCoord.x + objDraggingSectionOffset.x,
+                                    y: objCurrentCellCoord.y + objDraggingSectionOffset.y
+                                });
+
+                            } else if (selectionHovered(objCurrentCellCoord) !== selectionHovered(objPrevCellCoord)) {
                                 clearTempSection();
-                                generateTempSection(objSelection, objCurrentCellCoord);
+                                generateTempSection(objSelection, objCurrentCellCoord, selectionHovered(objCurrentCellCoord));
                             }
                         } else {
                             clearTempSection();
                             objSelectionSection = false;
+                            $('#game-container').css('cursor', '');
                             objSelectionItems = false;
                             generateTempSection(objSelection, objCurrentCellCoord);
                         }
@@ -3081,15 +3257,30 @@ $(function () {
                 }
                 resetDrawingVariables();
             } else {
+
+                console.log(bolPreventDrawing, objGridCombined.cursor_corner)
                 if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
                     if (strMode === 'drawing_mode') {
                         placeTempSection(objCurrentCellCoord);
                         resetDrawingVariables();
                         objSelectionSection = false;
+                        $('#game-container').css('cursor', '');
                         objSelectionItems = false;
 
                     } else if (strMode === 'selection_mode') {
-                        objSelectionSection = getSelection(objCurrentCellCoord);
+                        if (bolIsDraggingSection) {
+                            placeTempSection({
+                                x: objCurrentCellCoord.x + objDraggingSectionOffset.x,
+                                y: objCurrentCellCoord.y + objDraggingSectionOffset.y
+                            })
+                            resetDrawingVariables();
+                            objSelectionSection = false;
+                            $('#game-container').css('cursor', '');
+                            objSelectionItems = false;
+                        } else {
+                            objSelectionSection = getSelection(objCurrentCellCoord);
+                        }
+
                         bolIsDragging = false;
                     }
                 } else {

@@ -88,7 +88,6 @@
     right: 0;
     bottom: 0;
     top: 8px;
-    cursor: pointer;
     fill: var(--color-txt);
     cursor: pointer;
     transition: opacity 0.3s ease;
@@ -352,15 +351,22 @@ canvas {
     width: 18px;
 }
 
-#drawn_elements {}
+#drawn_elements {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+#drawn_elements:hover {
+    opacity: 1;
+}
 
 .drawn_element_container {
-    border: 1px solid var(--color-btn);
+    border: 1px dashed var(--color-btn2);
     border-radius: 5px;
     padding: 6px;
-    width: calc(100% + 16px);
+    /* width: calc(100% + 16px); */
     margin-top: 10px;
-    margin-left: -8px;
+    /* margin-left: -8px; */
 }
 
 .drawn_elements_title {
@@ -374,6 +380,7 @@ canvas {
     line-height: 11px;
     overflow: auto;
     margin-top: 8px;
+    min-height: 12px;
 }
 
 .drawn_elements_item {
