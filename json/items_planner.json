@@ -54,5 +54,121 @@
     "tree_pomegranate": {
         "name": "Pomegranate",
         "img": "items/pomegranate"
+    },
+    "weed": {
+        "name": "weed",
+        "img": "items/weed"
+    },
+    "leaf_pile": {
+        "name": "leaf_pile",
+        "img": "items/leaf_pile"
+    },
+    "barrel": {
+        "name": "barrel",
+        "img": "items/barrel"
+    },
+    "crate": {
+        "name": "crate",
+        "img": "items/crate"
+    },
+    "box": {
+        "name": "box",
+        "img": "items/box"
+    },
+    "debris": {
+        "name": "debris",
+        "img": "items/debris"
+    },
+    "coral_small": {
+        "name": "coral_small",
+        "img": "items/coral_small"
+    },
+    "coral_large": {
+        "name": "coral_large",
+        "img": "items/coral_large"
+    },
+    "crystal_small": {
+        "name": "crystal_small",
+        "img": "items/crystal_small"
+    },
+    "crystal_large": {
+        "name": "crystal_large",
+        "img": "items/crystal_large"
+    },
+    "obsidian_small": {
+        "name": "obsidian_small",
+        "img": "items/obsidian_small"
+    },
+    "obsidian_large": {
+        "name": "obsidian_large",
+        "img": "items/obsidian_large"
+    },
+    "voidite_small": {
+        "name": "voidite_small",
+        "img": "items/voidite_small"
+    },
+    "voidite_large": {
+        "name": "voidite_large",
+        "img": "items/voidite_large"
+    },
+    "ruins_pot_white": {
+        "name": "ruins_pot_white",
+        "img": "items/ruins_pot_white"
+    },
+    "ruins_pot_red": {
+        "name": "ruins_pot_red",
+        "img": "items/ruins_pot_red"
+    },
+    "ruins_pot_purple": {
+        "name": "ruins_pot_purple",
+        "img": "items/ruins_pot_purple"
+    },
+    "treasure_chest_wood": {
+        "name": "treasure_chest_wood",
+        "img": "items/treasure_chest_wood"
+    },
+    "treasure_chest_copper": {
+        "name": "treasure_chest_copper",
+        "img": "items/treasure_chest_copper"
+    },
+    "treasure_chest_silver": {
+        "name": "treasure_chest_silver",
+        "img": "items/treasure_chest_silver"
+    },
+    "treasure_chest_gold": {
+        "name": "treasure_chest_gold",
+        "img": "items/treasure_chest_gold"
+    },
+    "wilted_plant": {
+        "name": "wilted_plant",
+        "img": "items/wilted_plant"
+    },
+    "treasure_chest_secret": {
+        "name": "treasure_chest_secret",
+        "img": "items/treasure_chest_secret"
+    },
+    "grass_small": {
+        "name": "grass_small",
+        "img": "items/grass_small"
+    },
+    "grass_medium": {
+        "name": "grass_medium",
+        "img": "items/grass_medium"
+    },
+    "grass_large": {
+        "name": "grass_large",
+        "img": "items/grass_large"
+    },
+    "marsh_grass_small": {
+        "name": "marsh_grass_small",
+        "img": "items/marsh_grass_small"
+    },
+    "marsh_grass_medium": {
+        "name": "marsh_grass_medium",
+        "img": "items/marsh_grass_medium"
+    },
+    "marsh_grass_large": {
+        "name": "marsh_grass_large",
+        "img": "items/marsh_grass_large"
     }
 }

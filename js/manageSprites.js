@@ -452,7 +452,12 @@ class SpriteStore {
             }
 
             if (meta.fruit_data?.harvest) {
+                meta.fruit_data.positions.forEach(([x, y]) => {
+                    const fruit = this.get(`spr_fruit_${meta.fruit_data.harvest}_produce`)
+                    fruit.pivot.set(x, -y)
 
+                    container.addChild(fruit)
+                })
             }
         }
         

@@ -114,8 +114,8 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    15,
-                    10
+                    10,
+                    15
                 ]
             },
             "soil": {
@@ -3787,6 +3787,63 @@
                     1468,
                     1352,
                     1281
+                ]
+            }
+        }
+    },
+    "misc": {
+        "info": {
+            "name": "Miscellaneous",
+            "icon": "almanac/crops.png"
+        },
+        "categories": {
+            "breakables": {
+                "info": {
+                    "name": "Breakables",
+                    "img": "24px-Day_spring_clear",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    1538,
+                    1539,
+                    1540,
+                    1541,
+                    1542,
+                    1543,
+                    1544,
+                    1545,
+                    1546,
+                    1547,
+                    1548,
+                    1549,
+                    1550,
+                    1551,
+                    1552,
+                    1553,
+                    1554,
+                    1555,
+                    1556,
+                    1557,
+                    1558,
+                    1559,
+                    1560
+                ]
+            },
+            "grass": {
+                "info": {
+                    "name": "Grass",
+                    "img": "24px-Day_spring_clear",
+                    "img_item_section_path": "tooltip/",
+                    "img_item_path": "items/"
+                },
+                "items": [
+                    1561,
+                    1562,
+                    1563,
+                    1564,
+                    1565,
+                    1566
                 ]
             }
         }

@@ -606,7 +606,6 @@ function convertGridToNeighbours(intItemIndex = null, objSelection = { x0: 0, y0
 function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y }) {
     const startTime = performance.now()
 
-
     //add 1 big cell (2x2) frame to section
     //all items that change their sprite depending on neighbors are 2x2 big
 
@@ -619,7 +618,6 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
         y1: Math.min(objSection.y1 + 2 + 1, objGrid.y),
     }
 
-
     const arrGrid_Slice2D = slice2D(objGridCombined.main_corner, objSection.x0, objSection.x1, objSection.y0, objSection.y1);
     const arrSeenItems = [...new Set(arrGrid_Slice2D.flat().flat().flatMap(obj => Object.keys(obj)).map(strIndex => parseInt(strIndex)))];
 
@@ -630,7 +628,6 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
     arrNeighborItems.push(4);
 
     let objNeighbors = {}
-
 
     arrNeighborItems.forEach((intIdx) => {
         objNeighbors[intIdx] = convertGridToNeighbours(intIdx, objSection);
@@ -1316,7 +1313,11 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
     // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
-        const arrSize = getSprite(intCurrentlyDrawing).meta.size;
+        let arrSize = getSprite(intCurrentlyDrawing).meta.size;
+
+        if (objSpriteCategories.trees.includes(intCurrentlyDrawing)) {
+            arrSize = [arrSize[0] * 3, arrSize[0] * 3];
+        }
 
         for (let y = 0; y < objSize.y; y++) {
             for (let x = 0; x < objSize.x; x++) {
@@ -1374,15 +1375,12 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
 
         const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSection.x0, objSection.x1, objSection.y0, objSection.y1);
 
-        // console.log(arrGrid_CoveredSlice2D)
-        // console.log(arrGrid_CoveredSlice2D[0][0][416])
         const objAllSeenItems = arrGrid_CoveredSlice2D
             .flat()
             .reduce((acc, obj) => (
                 Object.entries(obj).forEach(([k, { coord }]) => {
                     acc[k] ??= []; //questionable chatgpt stuff
 
-                    // console.log('k')
                     const key = coord.join(','); // "x,y"
 
                     if (!acc[k].some(c => c.join(',') === key)) {
@@ -1393,7 +1391,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                 }),
                 acc
             ), {});
-        // console.log(objAllSeenItems)
+
         if (Object.keys(objAllSeenItems).length) {
             bolDraw = true;
             objSectionTemp = {
@@ -1455,8 +1453,6 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                         color: 0xffffff,
                         // knockout: true,
                     });
-
-                    // console.log(bolHighlight)
 
                     const overlay = new PIXI.filters.ColorOverlayFilter({
                         color: 0xffffff,
@@ -1573,7 +1569,7 @@ function updateChecklist() {
                 strName = objItems[strItemKey].name;
                 strImage = `images/items/${strItemKey}.png`;
             } else {
-                console.log(1, strItemKey);
+                // console.log(1, strItemKey);
                 return;
             }
 
@@ -1721,13 +1717,50 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
                         }
                     }
 
+                    if (intItemKey === objSoilIndex.grass) {
+                        return;
+                    }
+
                     objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
 
-                    for (var y1 = objSectionCell.y0; y1 < objSectionCell.y0 + arrSize[1]; y1++) {
-                        for (var x1 = objSectionCell.x0; x1 < objSectionCell.x0 + arrSize[0]; x1++) {
-                            objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [objRealPosition.x, objRealPosition.y] };
+                    if (objSpriteCategories.trees.includes(intItemKey)) {
+                        const intTreeSize = arrSize[0] * 3;
+                        const objSectionCell = {
+                            x0: objRealPosition.x - arrSize[0],
+                            y0: objRealPosition.y - arrSize[0],
+                            x1: objRealPosition.x - arrSize[0] + intTreeSize,
+                            y1: objRealPosition.y - arrSize[0] + intTreeSize,
+                        }
+
+                        const edge = objSectionCell.x1 - objSectionCell.x0;
+                        const k = arrSize[0];
+
+                        for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
+                            for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
+                                const localX = x1 - objSectionCell.x0;
+                                const localY = y1 - objSectionCell.y0;
+
+                                const inCorner =
+                                    (localY < k && localX < k) ||
+                                    (localY < k && localX >= edge - k) ||
+                                    (localY >= edge - k && localX < k) ||
+                                    (localY >= edge - k && localX >= edge - k);
+
+                                if (inCorner) {
+                                    continue;
+                                }
+
+                                objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [objRealPosition.x, objRealPosition.y] };
+                            }
+                        }
+                    } else {
+                        for (var y1 = objSectionCell.y0; y1 < objSectionCell.y0 + arrSize[1]; y1++) {
+                            for (var x1 = objSectionCell.x0; x1 < objSectionCell.x0 + arrSize[0]; x1++) {
+                                objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [objRealPosition.x, objRealPosition.y] };
+                            }
                         }
                     }
+
                 }
             });
         }
@@ -1818,12 +1851,22 @@ function updateTempCollisions(objPosition = false) {
                 let sprite = objCell[intItemKey].sprite;
                 const arrSize = sprite.meta.size;
 
-                const objItemArea = {
+                let objItemArea = {
                     x0: objRealPosition.x,
                     y0: objRealPosition.y,
                     x1: objRealPosition.x + arrSize[0] - 1,
                     y1: objRealPosition.y + arrSize[1] - 1
                 }
+                if (objSpriteCategories.trees.includes(intItemKey)) {
+                    const intTreeSize = arrSize[0] * 3;
+                    objItemArea = {
+                        x0: objRealPosition.x - arrSize[0],
+                        x1: objRealPosition.x - arrSize[0] + intTreeSize - 1,
+                        y0: objRealPosition.y - arrSize[0],
+                        y1: objRealPosition.y - arrSize[0] + intTreeSize - 1,
+                    }
+                }
+
                 let bolHitsElement = false;
                 if (checkTileHasCollision(objItemArea)) {
                     //hits predefined untouchable cells
@@ -2067,7 +2110,6 @@ async function loadMenuItems() {
             let bolChecked = $(this).is(':checked');
             if (bolChecked) {
                 $('#page').addClass(strMode);
-                console.log(objMistriaDataPlanner.options)
                 objMistriaDataPlanner.options.add(strMode);
             } else {
                 $('#page').removeClass(strMode);
@@ -2299,9 +2341,6 @@ async function loadMenuItems() {
     });
 }
 
-function openDonatePopup() {
-    $('#popup_donate').show();
-}
 function openControlsPopup() {
     $('#popup_controls').show();
 }
@@ -2572,6 +2611,7 @@ function prepareGridsForSaving() {
     }
 }
 function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y }, arrItems = false) {
+
     let arrRemoveItems = arrItems;
 
     //TODO: needs to grab items that end in the cell as well
@@ -2590,22 +2630,69 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                         spriteTemp.parent.removeChild(spriteTemp);
                     }
                 }
+
                 delete objGridCombined.main_corner[y][x][intItemKeyTemp];
 
                 const sprite = getSprite(intItemKeyTemp);
                 const arrSize = sprite.meta.size;
-                const objSectionCell = { x0: x, y0: y, x1: x + arrSize[0], y1: y + arrSize[1] };
+                const objSectionCell = {
+                    x0: x,
+                    y0: y,
+                    x1: x + arrSize[0],
+                    y1: y + arrSize[1]
+                };
 
-                for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
-                    for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                        delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
+                if (objSpriteCategories.trees.includes(parseInt(intItemKeyTemp))) {
+                    const intTreeSize = arrSize[0] * 3;
+                    const objSectionCell = {
+                        x0: x - arrSize[0],
+                        x1: x - arrSize[0] + intTreeSize,
+                        y0: y - arrSize[0],
+                        y1: y - arrSize[0] + intTreeSize,
+                    }
+
+                    const edge = objSectionCell.x1 - objSectionCell.x0;
+                    const k = arrSize[0];
+
+                    for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
+                        for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
+                            const localX = x1 - objSectionCell.x0;
+                            const localY = y1 - objSectionCell.y0;
+
+                            const inCorner =
+                                (localY < k && localX < k) ||
+                                (localY < k && localX >= edge - k) ||
+                                (localY >= edge - k && localX < k) ||
+                                (localY >= edge - k && localX >= edge - k);
+
+                            if (inCorner) {
+                                continue;
+                            }
+
+                            if (typeof objGridCombined.main_extend[y1][x1][intItemKeyTemp] !== 'undefined') {
+                                const arrCoord = objGridCombined.main_extend[y1][x1][intItemKeyTemp].coord;
+                                if (arrCoord[0] == x && arrCoord[1] == y) {
+                                    delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
+                        for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
+                            if (typeof objGridCombined.main_extend[y1][x1][intItemKeyTemp] !== 'undefined') {
+                                const arrCoord = objGridCombined.main_extend[y1][x1][intItemKeyTemp].coord;
+                                if (arrCoord[0] == x && arrCoord[1] == y) {
+                                    delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
+                                }
+                            }
+                        }
                     }
                 }
+
             })
         }
     }
-}
-function recalculateSectionNeighbors() {
 }
 function changeSeasonInGrids(bolOnlyCrops = false) {
     for (let y = 0; y < objGridCombined.main_corner.length; y++) {
@@ -2684,18 +2771,51 @@ function populateItemGrids() {
                     objGridCombined.main_corner[y][x][intItemKey].direction = strDirection
                 }
 
-                // console.log(objGridCombined.main_corner[y][x][intItemKey])
-                const objSection = {
-                    x0: x,
-                    x1: x + arrSize[0],
-                    y0: y,
-                    y1: y + arrSize[1],
-                }
-                for (var y1 = objSection.y0; y1 < objSection.y1; y1++) {
-                    for (var x1 = objSection.x0; x1 < objSection.x1; x1++) {
-                        objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [x, y] };
+                if (objSpriteCategories.trees.includes(intItemKey)) {
+                    const intTreeSize = arrSize[0] * 3;
+                    const objSection = {
+                        x0: x - arrSize[0],
+                        x1: x - arrSize[0] + intTreeSize,
+                        y0: y - arrSize[0],
+                        y1: y - arrSize[0] + intTreeSize,
+                    }
+
+                    const edge = objSection.x1 - objSection.x0;
+                    const k = arrSize[0];
+
+                    for (var y1 = objSection.y0; y1 < objSection.y1; y1++) {
+                        for (var x1 = objSection.x0; x1 < objSection.x1; x1++) {
+                            const localX = x1 - objSection.x0;
+                            const localY = y1 - objSection.y0;
+
+                            const inCorner =
+                                (localY < k && localX < k) ||
+                                (localY < k && localX >= edge - k) ||
+                                (localY >= edge - k && localX < k) ||
+                                (localY >= edge - k && localX >= edge - k);
+
+                            if (inCorner) {
+                                continue;
+                            }
+
+                            objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [x, y] };
+                        }
+                    }
+                } else {
+                    const objSection = {
+                        x0: x,
+                        x1: x + arrSize[0],
+                        y0: y,
+                        y1: y + arrSize[1],
+                    }
+                    for (var y1 = objSection.y0; y1 < objSection.y1; y1++) {
+                        for (var x1 = objSection.x0; x1 < objSection.x1; x1++) {
+                            objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [x, y] };
+                        }
                     }
                 }
+
+
             });
         });
     });
@@ -3033,8 +3153,7 @@ $(function () {
         $(document).keyup(function (e) {
             if (e.key === "Escape") {
                 preventAction()
-            }
-            else if (e.key == "Delete" && strMode == "selection_mode" && objSelectionSection) {
+            } else if (e.key == "Delete" && strMode == "selection_mode" && objSelectionSection) {
                 const arrCoords = [...new Set(objSelectionItems.arrCoords)];
                 arrCoords.forEach((strCoord) => {
                     arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
@@ -3054,9 +3173,10 @@ $(function () {
                 objSelectionSection = false;
                 $('#game-container').css('cursor', '');
                 objSelectionItems = false;
-            }
 
-            else if ((e.ctrlKey || e.metaKey)) {
+                saveDataPlanner(true);
+                updateChecklist();
+            } else if ((e.ctrlKey || e.metaKey)) {
                 if (e.shiftKey && (e.key === 'z' || e.key === 'Z')) {
                     versionControl('redo');
                 } else if (e.key === 'y') {
@@ -3126,6 +3246,8 @@ $(function () {
 
             if (strMode == "selection_mode" && e.data.originalEvent.button === 0) {
                 if (bolIsDraggingSection) {
+
+
                     placeTempSection({
                         x: objStartCellCoord.x + objDraggingSectionOffset.x,
                         y: objStartCellCoord.y + objDraggingSectionOffset.y
@@ -3157,7 +3279,6 @@ $(function () {
 
                     recalculateNeigborSprites();
                     drawPlanner();
-
 
                     saveDataPlanner(true);
                     updateChecklist();
@@ -3201,7 +3322,6 @@ $(function () {
                 if (objPrevCellCoord.x === objCurrentCellCoord.x && objPrevCellCoord.y === objCurrentCellCoord.y) {
                     return;
                 }
-                console.log("hui")
                 dragMap(objCurrentCellCoord);
                 bolPickup = false;
             } else {
@@ -3216,13 +3336,13 @@ $(function () {
                         clearTempSection();
                         generateTempSection(objSelection, objCurrentCellCoord);
                     } else if (strMode == "selection_mode") {
+
                         if (objSelectionSection) {
                             if (bolIsDraggingSection) {
                                 moveTempSection({
                                     x: objCurrentCellCoord.x + objDraggingSectionOffset.x,
                                     y: objCurrentCellCoord.y + objDraggingSectionOffset.y
                                 });
-
                             } else if (selectionHovered(objCurrentCellCoord) !== selectionHovered(objPrevCellCoord)) {
                                 clearTempSection();
                                 generateTempSection(objSelection, objCurrentCellCoord, selectionHovered(objCurrentCellCoord));
@@ -3297,6 +3417,9 @@ $(function () {
 
                     } else if (strMode === 'selection_mode') {
                         if (bolIsDraggingSection) {
+                            if (objStartCellCoord.x === objCurrentCellCoord.x && objStartCellCoord.y === objCurrentCellCoord.y) {
+                                return;
+                            }
                             placeTempSection({
                                 x: objCurrentCellCoord.x + objDraggingSectionOffset.x,
                                 y: objCurrentCellCoord.y + objDraggingSectionOffset.y
