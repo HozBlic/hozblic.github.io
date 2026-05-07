@@ -658,6 +658,37 @@ textarea {
 
 /* END: Layout and sort dropdowns */
 
+#mode_chbexpand_switches {
+  display: none;
+}
+
+#mode_chbexpand_switches:not(:checked)+.switches .secondary {
+    display: none;
+}
+
+label[for="mode_chbexpand_switches"] svg {
+    height: 25px;
+    width: 21px;
+}
+
+
+.switches #dropdowns_show,
+.switches #dropdowns_collapse {
+    cursor: pointer;
+    display: none;
+    gap: 3px;
+    white-space: nowrap;
+    align-items: center;
+}
+
+#mode_chbexpand_switches:not(:checked)+.switches #dropdowns_show {
+    display: flex;
+}
+
+#mode_chbexpand_switches:checked+.switches #dropdowns_collapse {
+    display: flex;
+}
+
 /* Toggle switches */
 .switches {
     display: flex;
@@ -1127,6 +1158,11 @@ textarea {
         padding: 5px 7px;
         padding-right: 12px;
         min-height: 34px;
+    }
+
+    .tab.dropdown_button,
+    .tab.dropdown_button:hover {
+        padding-right: 30px;
     }
 
     .tab:not(.button-notext).active img,

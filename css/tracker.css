@@ -182,35 +182,6 @@ input[type="checkbox"].styled:checked+label {
 
 /* End: Left menu, filter checkboxes */
 
-
-#mode_chbexpand_switches:not(:checked)+.switches .secondary {
-    display: none;
-}
-
-label[for="mode_chbexpand_switches"] svg {
-    height: 25px;
-    width: 21px;
-}
-
-
-.switches #dropdowns_show,
-.switches #dropdowns_collapse {
-    cursor: pointer;
-    display: none;
-    gap: 3px;
-    white-space: nowrap;
-    align-items: center;
-}
-
-#mode_chbexpand_switches:not(:checked)+.switches #dropdowns_show {
-    display: flex;
-}
-
-#mode_chbexpand_switches:checked+.switches #dropdowns_collapse {
-    display: flex;
-}
-
-
 /* Left menu, statistics */
 .statistics {
     display: flex;
@@ -893,7 +864,7 @@ label[for="mode_chbexpand_switches"] svg {
     margin: 5px;
 }
 
-#page.mode_mini_tooltip [data-tippy-root] .tippy-box .tippy-content .tip table {
+#page.mode_mini_tooltip [data-tippy-root] + .tippy-box .tippy-content .tip table {
     display: none;
 }
 

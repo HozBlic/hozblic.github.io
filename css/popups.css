@@ -575,3 +575,15 @@ pre {
 [data-tippy-root] .tippy-box .tippy-content .save_file+.save_file {
     margin-top: 5px;
 }
+
+#spent_time_total span {
+    font-weight: bold;
+}
+#spent_time {
+    height: 120px;
+}
+#spent_time_chart {
+    height: 100%;
+    width: 100%;
+    border: unset;
+}

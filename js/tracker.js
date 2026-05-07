@@ -4340,6 +4340,10 @@ function loadMenuItems() {
                   <p class="save_file">Can also contain released content from latest update (if it has no information in Wiki yet)</p>`,
         allowHTML: true,
     });
+    tippy('#minimaze_tooltips', {
+        content: 'Hides table in tooltips (price, museum set, recipe source, location..)',
+    });
+
     tippy('#save_file_icon', {
         content: `<p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>
                   <p class="save_file">Tested and should work on v.0.15.0 save files</p>`,

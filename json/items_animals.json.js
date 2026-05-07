@@ -57,7 +57,7 @@ var objItemsAnimals =
     },
     "cow_cheese_hat": {
         "name": "Cow Cheese Hat",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\"><img alt=\"Quests story icon.png\" data-file-height=\"56\" data-file-width=\"56\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_story_icon.png?d99acd\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\">Story Quest</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>\"Restocking Mistria's Food Reserves 2\"</span></span>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\"><img alt=\"Quests story icon.png\" data-file-height=\"56\" data-file-width=\"56\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_story_icon.png?d99acd\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\">Story Quest</a> <span class=\"spoiler-content\" style=\"\"><span>\"Restocking Mistria's Food Reserves 2\"</span></span>",
         "url": "/wiki/Cow_Cheese_Hat"
     },
     "cow_cowboy_hat": {
@@ -412,7 +412,7 @@ var objItemsAnimals =
     },
     "chicken_egg_hat": {
         "name": "Chicken Egg Hat",
-        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\"><img alt=\"Quests story icon.png\" data-file-height=\"56\" data-file-width=\"56\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_story_icon.png?d99acd\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\">Story Quest</a> <span class=\"spoiler-content\" id=\"\" style=\"\"><span>\"Restocking Mistria's Food Reserves 2\"</span></span>",
+        "tip": "<a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\"><img alt=\"Quests story icon.png\" data-file-height=\"56\" data-file-width=\"56\" decoding=\"async\" height=\"20\" loading=\"lazy\" src=\"images/tooltip/20px-Quests_story_icon.png?d99acd\" width=\"20\"/></a> <a href=\"https://fieldsofmistria.wiki.gg/wiki/Quests#restockingmistriasfoodreserves2\" title=\"Quests\">Story Quest</a> <span class=\"spoiler-content\" style=\"\"><span>\"Restocking Mistria's Food Reserves 2\"</span></span>",
         "url": "/wiki/Chicken_Egg_Hat"
     },
     "chicken_sunglasses": {
