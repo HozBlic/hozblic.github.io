@@ -22,6 +22,20 @@ const directions = ['south', 'east', 'west', 'north']
 const seasons = ['spring', 'winter', 'summer', 'fall']
 const directionSeasonCombos = [...directions, ...seasons]
 
+const fruits = [
+    'apple',
+    'cherry',
+    'lemon',
+    'acorn',
+    'peach',
+    'pear',
+    'pinecone',
+    'pomegranate',
+    'orange'
+]
+const buildingColors = ['black', 'red', 'white', 'wood']
+const childCategories = ['top_sprite', 'door_closed', 'farm_plate']
+
 directions.forEach(direction => {
     seasons.forEach(season => {
         directionSeasonCombos.push(`${direction}_${season}`)
@@ -85,7 +99,7 @@ class SpriteStore {
     }
 
     #findVariations(object) {
-        const variations = {}
+        let variations = {}
         
         directions.forEach(direction => {
             const selectedDirection = object[direction]
@@ -113,9 +127,33 @@ class SpriteStore {
             if (typeof object.sprites === "string" || Array.isArray(object.sprites)) {
                 variations[`south`] = object.sprites
             } else {
-                seasons.forEach(season => {
-                    if (object.sprites[season]) variations[`south_${season}`] = object.sprites[season]
-                })
+                if (object.sprites.spring) { // likely a building
+                    const matchedColors = buildingColors.reduce(
+                        (found, color) => {
+                            const index = object.sprites.spring?.findIndex(sprite => sprite.includes(`_${color}_`));
+                            // console.log(index, object.sprites.spring)
+                            return index !== -1 ? [...found, [color, index]] : found
+                        }
+                    ,[])
+
+                    seasons.forEach(season => {
+                        if (object.sprites[season] && matchedColors.length) {
+                            matchedColors.forEach(([color, index]) => {
+                                variations[`${color}_south_${season}`] = {
+                                    sprite: object.sprites[season][index],
+                                    door_closed: object.door_closed[index],
+                                    farm_plate: object.farm_plate.sprite
+                                }
+                            })
+                        }
+                    })
+                } else {
+                    seasons.forEach(season => {
+                        if (object.sprites[season]) {
+                            variations[`south_${season}`] = object.sprites[season]
+                        }
+                    })
+                }
             }
         }
 
@@ -144,19 +182,24 @@ class SpriteStore {
 
             if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY}
 
-            if (variation.top_sprite) {
-                topSprite = {
-                    ...spriteBasics,
-                    name: variation.top_sprite,
-                    ...this.spriteMapping[variation.top_sprite]["0"],
-                    ...objectData,
-                    // offset: [0, variation.top_sprite_depth_offset] /// Z-INDEXES, NOT NEEDED CURRENTLY
+            const children = []
+
+            childCategories.forEach(category => {
+                if (variation[category]) {
+                    children.push({
+                        ...spriteBasics,
+                        ...this.spriteMapping[variation[category]]["0"],
+                        ...objectData,
+                        name: variation[category],
+                        // offset: [0, variation.top_sprite_depth_offset] /// Z-INDEXES, NOT NEEDED CURRENTLY
+                    })
                 }
-            }
+            })
             
             this.setSingleObjectData({
-                name: `${objectKey}_${variationKey}`, ...spriteBasics, ...sprite, ...objectData, 
-                children: topSprite ? [topSprite] : undefined
+                ...spriteBasics, ...sprite, ...objectData,
+                name: `${objectKey}_${variationKey}`,
+                children: children.length ? children : undefined
             })
         })
     }
@@ -211,16 +254,28 @@ class SpriteStore {
     }
 
     #mapTrees() {
-        const {default: defaults, ...tree} = this.objectData.tree
-        Object.entries(tree).forEach(([treeKey, treeData]) => {
+        const {default: defaults, ...trees} = this.objectData.tree
+        Object.entries(trees).forEach(([treeKey, treeData]) => {
             const variations = seasons.reduce((acc, season) => ({...acc, [season]: treeData.sprites.stage5[season]}), {})
 
             this.#mapSingleGeneric(variations, treeKey, treeData, defaults)
         })
+
+        fruits.forEach(fruit => { // adding produce sprites manually
+            this.setSingleObjectData({name: `${fruit}_produce`, ...this.spriteMapping[`spr_ui_item_${fruit}`]["0"]})
+        })
     }
 
     #mapBuildings() {
-        // TODO: map building objects
+        const {default: defaults, ...buildings} = this.objectData.building
+
+        Object.entries(buildings).forEach(([buildingKey, buildingData]) => {
+            const matchedColors = buildingColors.filter(color => buildingData.sprites.spring.find(sprite => sprite.includes(`_${color}_`)))
+            const variations = this.#findVariations(buildingData)
+
+            this.#mapSingleGeneric(variations, buildingKey, buildingData, defaults)
+            // console.log(buildingKey, variations)
+        })
     }
 
     #mapFurniture() {
@@ -311,6 +366,8 @@ class SpriteStore {
 
         this.#mapTiles()
 
+        this.setSingleObjectData({name: 'illegal', ...this.spriteMapping['spr_cast_cursor_tile_blocked_tick']["0"]})
+
         // LOAD SPRITES TO MEMORY
         this.#logStage('LOADING SPRITES')
         await Promise.all(Object.entries(this.spriteSheetData).map(async ([sheetKey, sheetData]) => {
@@ -321,8 +378,7 @@ class SpriteStore {
             parsedSheets[sheetKey] = sheet
 
             Object.entries(sheet.textures).forEach(([textureKey, texture]) => {
-                const sprite = new PIXI.Sprite(texture) // TODO: only create sprites for textures we actually need, not every single one in the sheet
-                this.singleTextureData[textureKey].sprite = sprite
+                this.singleTextureData[textureKey].texture = texture
             })
         }))
     
@@ -380,7 +436,7 @@ class SpriteStore {
         // Fences are ordered with orthogonals as bits
         let fenceOrd = parseInt(`${o4}${o3}${o2}${o1}`, 2)
 
-        return this.get(`${fenceType}_${fenceOrd}`, season, "south")}
+        return this.get(`${fenceType}_${fenceOrd}`, {season, direction: "south"})}
 
     getCrop(textureKey) {
         const crop = this.get(textureKey)
@@ -391,10 +447,18 @@ class SpriteStore {
         return crop
     }
 
-    get(textureKey, season, direction) {
+    get(textureKey, {direction, season, color} = {}) {
+        // console.log(textureKey)
+        // if (textureKey === 'tree_apple') {
+        //     textureKey = 'large_greenhouse'
+        //     color = 'wood'
+        //     season = 'spring'
+        // }
+        
         // Build possible keys from most specific to least
         let possibleKeys = []
 
+        if (color && season) possibleKeys.push(`${textureKey}_${color}_south_${season}`)
         if (direction && season) possibleKeys.push(`${textureKey}_${direction}_${season}`)
         if (direction === "west" && season) possibleKeys.push(`${textureKey}_east_${season}`)
         if (direction) possibleKeys.push(`${textureKey}_${direction}`)
@@ -407,12 +471,12 @@ class SpriteStore {
         const foundKey = possibleKeys.find(key => this.textures[key])
 
         if (!foundKey) {
-            return this.get('snow_peas')
+            return this.get('illegal')
         }
 
         const foundTexture = this.textures[foundKey]
 
-        const {sprite: { texture }, pivot, origin, itemOrigin, children, meta} = foundTexture
+        const {texture, pivot, origin, itemOrigin, children, meta} = foundTexture
 
         let container = new PIXI.Container()
         const baseSprite = new PIXI.Sprite(texture)
@@ -451,10 +515,10 @@ class SpriteStore {
                 container.addChild(stumpSprite)
             }
 
-            if (meta.fruit_data?.harvest) {
+            if (meta.fruit_data?.harvest && objMistriaDataPlanner.options.has('mode_treefruit') && (objMistriaDataPlanner.options.has('mode_offseason') || meta.fruit_data.seasons.includes(objMistriaDataPlanner.season))) {
                 meta.fruit_data.positions.forEach(([x, y]) => {
-                    const fruit = this.get(`spr_fruit_${meta.fruit_data.harvest}_produce`)
-                    fruit.pivot.set(x, -y)
+                    const fruit = this.get(`${meta.fruit_data.harvest}_produce`)
+                    fruit.pivot.set(x - 8, -y)
 
                     container.addChild(fruit)
                 })

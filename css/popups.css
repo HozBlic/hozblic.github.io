@@ -576,8 +576,16 @@ pre {
     margin-top: 5px;
 }
 
+#popup_donate .button_item.large {
+    justify-content: center;
+    --button-font-size: 16px;
+}
+#popup_donate .button_item.large .icon svg {
+    --icon-size: 17px;
+}
+
 #spent_time_total span {
-    font-weight: bold;
+    font-weight: bold;    
 }
 #spent_time {
     height: 120px;

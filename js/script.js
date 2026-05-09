@@ -8,6 +8,7 @@ if ($(window).width() < 700) {
 }
 var arrTabs = objBuild.tabsOrder;
 
+
 function loadData() {
     objMistriaData = JSON.parse(localStorage.getItem('mistria_data'));
 
@@ -34,7 +35,8 @@ function loadData() {
         objMistriaData.tab = 'gifts';
     }
 
-    if ($('#spent_time_total').length) {
+    const existingChart = Chart.getChart('spent_time_chart');
+    if ($('#spent_time_total').length && !existingChart) {
         const minutesToTime = (minutes) => {
             if (!minutes) {
                 return '0min'
@@ -100,7 +102,7 @@ function loadData() {
             });
         }
 
-        var ctx = document.getElementById("spent_time_chart").getContext('2d');
+        let ctx = document.getElementById("spent_time_chart").getContext('2d');
         objWakatimeChart = new Chart(ctx, {
             type: 'line',
             data: objBuild.spent_time,

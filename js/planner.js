@@ -6,6 +6,7 @@ let objItemsPlanner = {}
 let strMode = 'dragging_mode'; // drawing_mode, selection_mode
 let intCurrentlyDrawing = false;
 let strCurrentDirection = false;
+let strCurrentColor = false;
 
 let intSaveSlot = 0;
 let arrVersions = [];
@@ -1009,7 +1010,7 @@ function selectionHovered(objCellCoord) {
     return false;
 }
 
-function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDirection = strCurrentDirection) {
+function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDirection = strCurrentDirection, strColor = strCurrentColor) {
     let sprite;
     const strSpriteKey = objKeyItemDict[intItemIndex].at(-1);
 
@@ -1029,11 +1030,11 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDi
                 break;
         }
     } else if (objSpriteCategories.crops.includes(intItemIndex)) {
-        sprite = sprites.getCrop(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
+        sprite = sprites.getCrop(strSpriteKey);
     } else if (objSpriteCategories.fences.includes(intItemIndex) || objSpriteCategories.counter.includes(intItemIndex)) {
         sprite = sprites.getFence(strSpriteKey, arrNeighbours, objMistriaDataPlanner.season);
     } else {
-        sprite = sprites.get(strSpriteKey, objMistriaDataPlanner.season, strDirection);
+        sprite = sprites.get(strSpriteKey, { season: objMistriaDataPlanner.season, direction: strDirection, color: strColor });
     }
 
     return sprite;
@@ -1051,7 +1052,7 @@ function getTopLeftCornerItem(objCellCoord, bolForceTwosOnly = false) {
         if (!bolForceTwosOnly) {
             bolTwosOnly = (objSpriteCategories.soil.includes(intCurrentlyDrawing) || objSpriteCategories.crops.includes(intCurrentlyDrawing) || objSpriteCategories.on_twos_only.includes(intCurrentlyDrawing)) ? true : false;
         }
-        const sprite = getSprite(intCurrentlyDrawing);
+        const sprite = getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor);
         arrSize = sprite.meta.size;
     }
 
@@ -1206,9 +1207,10 @@ function resetDrawingVariables() {
     objPrevCellCoord = { x: 0, y: 0 };
 }
 
-function updateCurrentlyDrawing(intItemKey = false, strDirection = false) {
+function updateCurrentlyDrawing(intItemKey = false, strDirection = false, strColor = false) {
     intCurrentlyDrawing = intItemKey;
     strCurrentDirection = strDirection;
+    strCurrentColor = strColor;
     $(`[data-key]`).removeClass('selected');
     $(`[data-key="${intCurrentlyDrawing}"]`).addClass('selected');
 
@@ -1236,8 +1238,8 @@ function updateCursorMode(strModeTemp = false) {
         if (strMode !== 'drawing_mode') {
             intCurrentlyDrawing = false;
             strCurrentDirection = false;
+            strCurrentColor = false;
             $(`[data-key]`).removeClass('selected');
-
         }
     }
 
@@ -1313,7 +1315,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
     // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
-        let arrSize = getSprite(intCurrentlyDrawing).meta.size;
+        let arrSize = getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor).meta.size;
 
         if (objSpriteCategories.trees.includes(intCurrentlyDrawing)) {
             arrSize = [arrSize[0] * 3, arrSize[0] * 3];
@@ -1338,7 +1340,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                     sprite.alpha = 0.5;
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intCurrentlyDrawing);
-                    objGridCombined.cursor_corner[y][x][intCurrentlyDrawing] = { 'sprite': sprite, 'direction': strCurrentDirection }
+                    objGridCombined.cursor_corner[y][x][intCurrentlyDrawing] = { 'sprite': sprite, 'direction': strCurrentDirection, 'color': strCurrentColor }
 
                     if (objSpriteCategories.crops.includes(intCurrentlyDrawing)) {
                         const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
@@ -1428,8 +1430,9 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                     }
 
                     const strDirection = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemKey]?.direction;
+                    const strColor = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemKey]?.color;
 
-                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
+                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
 
                     if (bolGenerateSectionArrays) {
 
@@ -1471,7 +1474,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                     sprite.position.set(objTempPosition.x * intGridCellSize, objTempPosition.y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intItemKey);
 
-                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
+                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
                 });
             });
         }
@@ -1523,6 +1526,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
 }
 
 function updateChecklist() {
+
     $('.drawn_element_container').hide();
     let objItemsForChecklist = {};
     let $elemChecklistWrapper = null;
@@ -1535,13 +1539,13 @@ function updateChecklist() {
         $elemChecklistWrapper = $('#drawn_elements_all')
         objItemsForChecklist = {};
 
-        Object.keys(arrVersions[intCurrentVersion]).forEach(function (strDirection) {
-            Object.keys(arrVersions[intCurrentVersion][strDirection]).forEach(function (strItemKey) {
+        Object.keys(arrVersions[intCurrentVersion]).forEach(function (strDirection_Color) {
+            Object.keys(arrVersions[intCurrentVersion][strDirection_Color]).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
                 if (!(intItemKey in objItemsForChecklist)) {
                     objItemsForChecklist[intItemKey] = []
                 }
-                arrVersions[intCurrentVersion][strDirection][intItemKey].forEach((arrCoord) => {
+                arrVersions[intCurrentVersion][strDirection_Color][intItemKey].forEach((arrCoord) => {
                     objItemsForChecklist[intItemKey].push(arrCoord)
                 });
             });
@@ -1557,28 +1561,65 @@ function updateChecklist() {
             //filter out elements behind collisions and soil?
 
             const intItemIndex = parseInt(strItemIndex);
+            let strItemKey = objKeyItemDict[intItemIndex][0];
 
             let strName;
             let strImage;
-            let strItemKey = objKeyItemDict[intItemIndex][0];
+            let bolImage = false;
 
-            if (strItemKey in objItemsPlanner) {
-                strName = objItemsPlanner[strItemKey].name;
-                strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
-            } else if (strItemKey in objItems) {
-                strName = objItems[strItemKey].name;
-                strImage = `images/items/${strItemKey}.png`;
+            if (objSpriteCategories.building.includes(intItemIndex)) {
+                let objColors = {};
+
+                objItemsForChecklist[strItemIndex].forEach(function (arrCoords) {
+                    const strColor = objGridCombined.main_corner[arrCoords[1]][arrCoords[0]][intItemIndex]?.color
+
+                    if (!(strColor in objColors)) {
+                        objColors[strColor] = 0;
+                    }
+
+                    objColors[strColor] = objColors[strColor] + 1;
+                });
+
+                Object.keys(objColors).forEach(function (strColor) {
+                    strName = `${objItemsPlanner[strItemKey].name} (${strColor})`;
+                    const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
+
+                    bolImage = true;
+                    strImage = `images/items/${strSpriteKey}.png`;
+
+                    $elemChecklistList.append(`
+                        <div class="drawn_elements_item">
+                            ${bolImage ? '<div class="icon"><img src="' + strImage + '"></div>' : ''}
+                            <span class="drawn_elements_name">${strName}:</span>
+                            <div class="drawn_elements_count">${objColors[strColor]}</div>
+                        </div>`);
+                });
             } else {
-                // console.log(1, strItemKey);
-                return;
+                if (strItemKey in objItemsPlanner) {
+                    strName = objItemsPlanner[strItemKey].name;
+                    if (typeof objItemsPlanner[strItemKey].img !== 'undefined') {
+                        bolImage = true;
+                        strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
+                    }
+                } else if (strItemKey in objItems) {
+                    strName = objItems[strItemKey].name;
+                    bolImage = true;
+                    strImage = `images/items/${strItemKey}.png`;
+                } else {
+                    // console.log(1, strItemKey);
+                    return;
+                }
+
+                $elemChecklistList.append(`
+                <div class="drawn_elements_item">
+                    ${bolImage ? '<div class="icon"><img src="' + strImage + '"></div>' : ''}
+                    <span class="drawn_elements_name">${strName}:</span>
+                    <div class="drawn_elements_count">${objItemsForChecklist[intItemIndex].length}</div>
+                </div>`);
+
             }
 
-            $elemChecklistList.append(`
-            <div class="drawn_elements_item">
-                <div class="icon"><img src="${strImage}"></div>
-                <span class="drawn_elements_name">${strName}:</span>
-                <div class="drawn_elements_count">${objItemsForChecklist[intItemIndex].length}</div>
-            </div>`);
+
         });
     } else {
         $elemChecklistList.append(`
@@ -1662,10 +1703,11 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
                 if (!('coll' in objCell[intItemKey])) {
 
                     const strDirection = objCell[intItemKey]?.direction;
+                    const strColor = objCell[intItemKey]?.color;
 
                     bolHasChanged = true;
 
-                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
+                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
 
                     // sprite.eventMode = 'static';
                     // sprite.on('pointerover', () => {
@@ -1721,7 +1763,7 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
                         return;
                     }
 
-                    objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
+                    objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
 
                     if (objSpriteCategories.trees.includes(intItemKey)) {
                         const intTreeSize = arrSize[0] * 3;
@@ -1848,6 +1890,7 @@ function updateTempCollisions(objPosition = false) {
             Object.keys(objCell).forEach(function (strItemKey) {
                 const intItemKey = parseInt(strItemKey);
                 const strDirection = objGridCombined.cursor_corner[y][x][strItemKey]?.direction
+                const strColor = objGridCombined.cursor_corner[y][x][strItemKey]?.color
                 let sprite = objCell[intItemKey].sprite;
                 const arrSize = sprite.meta.size;
 
@@ -1910,7 +1953,7 @@ function updateTempCollisions(objPosition = false) {
                         sprite.filters = [];
                     }
 
-                    objGridCombined.cursor_corner[y][x][intItemKey] = { 'sprite': sprite, 'direction': strDirection };
+                    objGridCombined.cursor_corner[y][x][intItemKey] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
                     if (bolHitsElement) {
                         objGridCombined.cursor_corner[y][x][intItemKey].coll = true;
                     }
@@ -2103,7 +2146,7 @@ async function loadMenuItems() {
     })
 
 
-    arrModes = ['mode_grid', 'mode_collision', 'mode_soil', 'mode_wet', 'mode_offseason', 'mode_byset']
+    arrModes = ['mode_grid', 'mode_collision', 'mode_soil', 'mode_wet', 'mode_offseason', 'mode_treefruit', 'mode_byset']
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -2123,7 +2166,7 @@ async function loadMenuItems() {
             if (strMode === 'mode_collision') {
                 drawCollision();
             }
-            if (strMode === 'mode_offseason') {
+            if (strMode === 'mode_offseason' || strMode === 'mode_treefruit') {
                 changeSeasonInGrids(true);
             }
         });
@@ -2168,6 +2211,8 @@ async function loadMenuItems() {
             </div>
         `);
         let $divDropdown = $('<div>', { 'class': 'dropdown' });
+        const intCategoriesCount = Object.keys(tabData.categories).length;
+
         Object.entries(tabData.categories).forEach(([categoryKey, categoryData]) => {
 
             let $divDropdownSection = $('<div>', { 'class': 'dropdown-section' });
@@ -2190,35 +2235,72 @@ async function loadMenuItems() {
                 }
                 let strName;
                 let strImage;
+                let bolImage = false;
                 let strItemKey = objKeyItemDict[intIndex][0];
 
-                if (strItemKey in objItemsPlanner) {
-                    strName = objItemsPlanner[strItemKey].name;
-                    strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
-                } else if (strItemKey in objItems) {
-                    strName = objItems[strItemKey].name;
-                    strImage = `images/${categoryData.info.img_item_path}${strItemKey}.png`;
+                if (strItemKey in objItemsPlanner && 'colors' in objItemsPlanner[strItemKey]) {
+                    objItemsPlanner[strItemKey].colors.forEach(function (strColor) {
+                        strName = `${objItemsPlanner[strItemKey].name} (${strColor})`;
+                        const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
+
+                        bolImage = true;
+                        strImage = `images/items/${strSpriteKey}.png`;
+
+                        $divDropdownSectionItems.append(` 
+                        <div class="dropdown-item dropdown-item-drawable" data-key="${intIndex}" data-color="${strColor}">
+                            ${bolImage ? '<div class="icon"><img src="' + strImage + '"></div>' : ''}
+                            <span class="dropdown-section-name">${strName}</span>
+                        </div>
+                    `);
+
+                        setTips.add(intIndex);
+                        setTipsHtml.add(createTipDirection(intIndex));
+
+                        if (intCategoriesCount != 1) {
+                            $divDropdownSection.append($divDropdownSectionItems);
+                        } else {
+                            $divDropdown.append($divDropdownSectionItems.children());
+                        }
+                    });
                 } else {
-                    // console.log(strItemKey);
-                    return;
+                    if (strItemKey in objItemsPlanner) {
+                        strName = objItemsPlanner[strItemKey].name;
+                        if (typeof objItemsPlanner[strItemKey].img !== 'undefined') {
+                            bolImage = true;
+                            strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
+                        }
+                    } else if (strItemKey in objItems) {
+                        bolImage = true;
+                        strName = objItems[strItemKey].name;
+                        strImage = `images/${categoryData.info.img_item_path}${strItemKey}.png`;
+                    } else {
+                        // console.log(strItemKey);
+                        return;
+                    }
+                    $divDropdownSectionItems.append(` 
+                        <div class="dropdown-item dropdown-item-drawable" data-key="${intIndex}">
+                            ${bolImage ? '<div class="icon"><img src="' + strImage + '"></div>' : ''}
+                            <span class="dropdown-section-name">${strName}</span>
+                        </div>
+                    `);
+
+                    setTips.add(intIndex);
+                    setTipsHtml.add(createTipDirection(intIndex));
+
+                    if (intCategoriesCount != 1) {
+                        $divDropdownSection.append($divDropdownSectionItems);
+                    } else {
+                        $divDropdown.append($divDropdownSectionItems.children());
+                    }
                 }
-                $divDropdownSectionItems.append(` 
-                    <div class="dropdown-item dropdown-item-drawable" data-key="${intIndex}">
-                        <div class="icon"><img src="${strImage}"></div>
-                        <span class="dropdown-section-name">${strName}</span>
-                    </div>
-                `);
-
-                setTips.add(intIndex);
-                setTipsHtml.add(createTipDirection(intIndex));
-
-                $divDropdownSection.append($divDropdownSectionItems);
             });
 
-            $divDropdownSearchSectionItems.append($divDropdownSection.clone());
-
-            $divDropdown.append($divDropdownSection);
-
+            if (intCategoriesCount != 1) {
+                $divDropdownSearchSectionItems.append($divDropdownSection.clone());
+                $divDropdown.append($divDropdownSection);
+            } else {
+                $divDropdownSearchSectionItems.append($divDropdown.clone().children());
+            }
         });
 
         $divDropdownSearchSection.append($divDropdownSearchSectionItems);
@@ -2257,8 +2339,9 @@ async function loadMenuItems() {
     $('body').on('click', '.dropdown-item-drawable', function (e) {
         const intItemKeySelected = parseInt($(this).attr('data-key'));
         const strDirection = $(this).attr('data-direction');
+        const strColor = $(this).attr('data-color');
 
-        updateCurrentlyDrawing(intItemKeySelected, strDirection);
+        updateCurrentlyDrawing(intItemKeySelected, strDirection, strColor);
     });
 
     // $('.dropdown-item-drawable').on('click', function (e) {
@@ -2374,7 +2457,7 @@ function changeSeason(objElem) {
     changeSeasonInGrids();
 }
 
-function resetZoom(strDirection) {
+function resetZoom(strZoomDirection) {
     const objCanvasSize = {
         w: $('#game-container').width(),
         h: $('#game-container').height()
@@ -2385,11 +2468,11 @@ function resetZoom(strDirection) {
 
     let intZoom = (intMultiplierCover * 100 / intMultiplierFit).toFixed();
 
-    if (strDirection === 'vertical') {
+    if (strZoomDirection === 'vertical') {
         if (objCanvasSize.w > objCanvasSize.h) {
             intZoom = 100;
         }
-    } else if (strDirection === 'horizontal') {
+    } else if (strZoomDirection === 'horizontal') {
         if (objCanvasSize.w < objCanvasSize.h) {
             intZoom = 100;
         }
@@ -2593,25 +2676,39 @@ function prepareGridsForSaving() {
                 }
 
                 let strDirection = objGridCombined.main_corner[y][x][intItemKey]?.direction;
+                let strColor = objGridCombined.main_corner[y][x][intItemKey]?.color;
 
-                if (typeof strDirection === 'undefined') {
+                if (typeof strDirection === 'undefined' || !strDirection) {
                     strDirection = 'none';
                 }
-
-                if (!(strDirection in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection] = {}
+                if (typeof strColor === 'undefined' || !strColor) {
+                    strColor = 'none';
                 }
 
-                if (!(intItemKey in objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection])) {
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection][intItemKey] = []
+                let strDirection_Color = 'none';
+
+                if (strColor !== 'none' && strDirection !== 'none') {
+                    strDirection_Color = strDirection + '_' + strColor;
+                } else if (strColor !== 'none') {
+                    strDirection_Color = strColor;
+                } else if (strDirection !== 'none') {
+                    strDirection_Color = strDirection;
                 }
-                objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection][intItemKey].push([x, y])
+
+                if (!(strDirection_Color in objMistriaDataPlanner.layout[intSaveSlot].farm)) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color] = {}
+                }
+
+                if (!(intItemKey in objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color])) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color][intItemKey] = []
+                }
+                objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color][intItemKey].push([x, y])
             });
         }
     }
 }
 function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y }, arrItems = false) {
-
+    console.log('clear')
     let arrRemoveItems = arrItems;
 
     //TODO: needs to grab items that end in the cell as well
@@ -2624,6 +2721,9 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
             }
 
             arrRemoveItems.forEach(function (intItemKeyTemp) {
+                if (typeof objGridCombined.main_corner[y][x][intItemKeyTemp] === 'undefined') {
+                    return;
+                }
                 if (intItemKeyTemp in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][intItemKeyTemp]) {
                     const spriteTemp = objGridCombined.main_corner[y][x][intItemKeyTemp].sprite;
                     if (spriteTemp.parent !== null) {
@@ -2631,9 +2731,12 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                     }
                 }
 
+                const strColor = objGridCombined.main_corner[y][x][intItemKeyTemp]?.color;
+                const strDirection = objGridCombined.main_corner[y][x][intItemKeyTemp]?.direction;
+
                 delete objGridCombined.main_corner[y][x][intItemKeyTemp];
 
-                const sprite = getSprite(intItemKeyTemp);
+                const sprite = getSprite(intItemKeyTemp, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
                 const arrSize = sprite.meta.size;
                 const objSectionCell = {
                     x0: x,
@@ -2694,7 +2797,7 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
         }
     }
 }
-function changeSeasonInGrids(bolOnlyCrops = false) {
+function changeSeasonInGrids(bolOnlyPlants = false) {
     for (let y = 0; y < objGridCombined.main_corner.length; y++) {
         for (let x = 0; x < objGridCombined.main_corner[0].length; x++) {
             const objCurrentItems = objGridCombined.main_corner[y][x] || {};
@@ -2702,15 +2805,14 @@ function changeSeasonInGrids(bolOnlyCrops = false) {
 
             if (arrCellItems.length) {
                 arrCellItems.forEach(function (intItemIndex) {
-                    if (bolOnlyCrops && !objSpriteCategories.crops.includes(intItemIndex)) {
-                        //skip if not crop
+                    if (bolOnlyPlants && !(objSpriteCategories.crops.includes(intItemIndex) || objSpriteCategories.trees.includes(intItemIndex))) {
+                        //skip if not crop or tree
                         return;
-                    } else if (!bolOnlyCrops && objSpriteCategories.crops.includes(intItemIndex) && objMistriaDataPlanner.options.has('mode_offseason')) {
-                        //skip if crop, but off seasonal ones are allowed
+                    } else if (!bolOnlyPlants && (objSpriteCategories.crops.includes(intItemIndex) || objSpriteCategories.trees.includes(intItemIndex)) && objMistriaDataPlanner.options.has('mode_offseason')) {
+                        //skip if crop or tree, but off seasonal ones are allowed
                         return;
-                    } else if (0) { //TODO: skip if not seasonal sprite
-
                     }
+
 
                     const arrNeigbors = ('neigbors' in objGridCombined.main_corner[y][x][intItemIndex] ? objGridCombined.main_corner[y][x][intItemIndex].neigbors : [0, 0, 0, 0, 0, 0, 0, 0])
 
@@ -2737,8 +2839,12 @@ function changeSeasonInGrids(bolOnlyCrops = false) {
     }
 }
 function populateItemGrids() {
-
     console.log('populate')
+
+    const matchColor = (colors, strDirection_Color) =>
+        colors.find(color =>
+            (strDirection_Color.includes(`_${color}`) || strDirection_Color == color)
+        );
 
     const objFarmLayout = objMistriaDataPlanner.layout[intSaveSlot].farm;
     let setItems = new Set();
@@ -2749,26 +2855,36 @@ function populateItemGrids() {
     objGridCombined.main_extend = Array.from({ length: objGrid.y }, () =>
         Array.from({ length: objGrid.x }, () => ({}))
     );
-    // objGridCombined.rules = Array.from({ length: objGrid.y }, () =>
-    //     Array.from({ length: objGrid.x }, () => ({}))
-    // );
 
-    Object.keys(objFarmLayout).forEach(function (strDirection) {
-
-        Object.keys(objFarmLayout[strDirection]).forEach(function (strItemKey) {
+    Object.keys(objFarmLayout).forEach(function (strDirection_Color) {
+        Object.keys(objFarmLayout[strDirection_Color]).forEach(function (strItemKey) {
             const intItemKey = parseInt(strItemKey);
+            const strColor = matchColor(buildingColors, strDirection_Color);
+            let strDirection = '';
+
+            if (typeof strColor === 'undefined') {
+                strDirection = strDirection_Color;
+            } else if (strDirection_Color.includes('_')) {
+                strDirection = strDirection_Color.split('_')[0];
+            } else {
+                strDirection = 'none';
+            }
 
             setItems.add(intItemKey)
-            const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection);
+            const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
             const arrSize = sprite.meta.size;
 
-            objFarmLayout[strDirection][intItemKey].forEach((arrCoord) => {
+            objFarmLayout[strDirection_Color][intItemKey].forEach((arrCoord) => {
                 const x = arrCoord[0];
                 const y = arrCoord[1];
 
                 objGridCombined.main_corner[y][x][intItemKey] = {};
                 if (strDirection !== 'none') {
-                    objGridCombined.main_corner[y][x][intItemKey].direction = strDirection
+                    objGridCombined.main_corner[y][x][intItemKey].direction = strDirection;
+                }
+
+                if (typeof strColor !== 'undefined') {
+                    objGridCombined.main_corner[y][x][intItemKey].color = strColor;
                 }
 
                 if (objSpriteCategories.trees.includes(intItemKey)) {
@@ -2814,8 +2930,6 @@ function populateItemGrids() {
                         }
                     }
                 }
-
-
             });
         });
     });
@@ -2853,8 +2967,9 @@ function populateItemGrids() {
                     // const intItemIndex = parseInt(strItemIndex);
                     const arrNeigbors = (intItemIndex in objNeighbors ? objNeighbors[intItemIndex][y][x] : [0, 0, 0, 0, 0, 0, 0, 0])
                     const strDirection = objGridCombined.main_corner[y][x][intItemIndex]?.direction;
+                    const strColor = objGridCombined.main_corner[y][x][intItemIndex]?.color;
 
-                    const sprite = getSprite(intItemIndex, arrNeigbors, strDirection);
+                    const sprite = getSprite(intItemIndex, arrNeigbors, strDirection, strColor);
                     sprite.eventMode = 'static';
                     sprite.on('pointerover', () => {
                         highlightSection({ x0: x, x1: x, y0: y, y1: y })
@@ -3247,7 +3362,6 @@ $(function () {
             if (strMode == "selection_mode" && e.data.originalEvent.button === 0) {
                 if (bolIsDraggingSection) {
 
-
                     placeTempSection({
                         x: objStartCellCoord.x + objDraggingSectionOffset.x,
                         y: objStartCellCoord.y + objDraggingSectionOffset.y
@@ -3257,7 +3371,20 @@ $(function () {
                     objSelectionSection = false;
                     $('#game-container').css('cursor', '');
                     objSelectionItems = false;
-                } else if (selectionHovered(objStartCellCoord)) { //if already has a selection and is hovered
+                } else if (selectionHovered(objStartCellCoord) || (typeof objSelectionItems.objItemCounts !== 'undefined' && !objSelectionSection)) {
+                    //if already has a selection and is hovered or is hovered but has not been selected
+                    if (!selectionHovered(objStartCellCoord)) {
+                        //clear out previous selection
+                        clearTempSection();
+                        objSelectionSection = false;
+                        $('#game-container').css('cursor', '');
+                        objSelectionItems = false;
+                        let objSelection = getSelection(objStartCellCoord);
+                        generateTempSection(objSelection, objStartCellCoord);
+
+                        objSelectionSection = getSelection(objStartCellCoord);
+                    }
+
                     bolIsDraggingSection = true;
                     objDraggingSectionOffset = calculateOffsetSection(objStartCellCoord);
 
@@ -3393,9 +3520,26 @@ $(function () {
                 if (bolPickup) {
                     let objSelection = getSelection(objCurrentCellCoord);
                     const arrGrid_CoveredSlice2D = slice2D(objGridCombined.main_extend, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
-                    const arrAllSeenItems = arrGrid_CoveredSlice2D
+
+                    const objAllSeenItems = arrGrid_CoveredSlice2D
                         .flat()
-                        .flatMap(obj => Object.keys(obj).map(Number));
+                        .reduce((acc, obj) => (
+                            Object.entries(obj).forEach(([k, { coord }]) => {
+                                acc[k] ??= []; //questionable chatgpt stuff
+
+                                const key = coord.join(','); // "x,y"
+
+                                if (!acc[k].some(c => c.join(',') === key)) {
+                                    acc[k].push(coord);
+                                }
+                            }),
+                            acc
+                        ), {});
+
+                    const arrAllSeenItems = Object.keys(objAllSeenItems);
+                    // const arrAllSeenItems = arrGrid_CoveredSlice2D
+                    //     .flat()
+                    //     .flatMap(obj => Object.keys(obj).map(Number));
 
                     const { id: highestId } = arrAllSeenItems.reduce((highestFound, itemId) => {
                         const checkZ = getZindexbySpriteIndex(itemId);
@@ -3403,9 +3547,15 @@ $(function () {
                         return highestFound;
                     }, { id: 0, zIndex: 0 });
 
-                    // TODO: get direction as well
-                    resetDrawingVariables();
-                    updateCurrentlyDrawing(highestId);
+                    if (highestId) {
+                        // only one element of each type should be here
+                        const arrCoord = objAllSeenItems[highestId][0];
+                        const strDirection = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][highestId]?.direction;
+                        const strColor = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][highestId]?.color;
+
+                        resetDrawingVariables();
+                        updateCurrentlyDrawing(highestId, strDirection, strColor);
+                    }
                 }
                 else if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
                     if (strMode === 'drawing_mode') {
