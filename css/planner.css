@@ -140,6 +140,10 @@
     padding-right: 30px;
 }
 
+.dropdown-section .dropdown-section-item.no_icon {
+    padding-left: 10px;
+}
+
 .dropdown-section.open>.dropdown-section-item,
 .dropdown-section .dropdown-section-item:hover {
     background-color: var(--color-btn);
@@ -199,27 +203,36 @@
     padding-left: 30px;
 }
 
-#app {
+#canvas_wrapper {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
-#game-container {
-    height: 100%;
-    width: 100%;
-
-    /* --var-multiplier: 9;
-    max-width: calc(138px * var(--var-multiplier));
-    max-height: calc(103px * var(--var-multiplier)); */
+#canvas_wrapper.loading:before {
+    --loader-height: 70px;
+    content: '';
+    background-image: url(../images/loader.gif), url(../images/loader.gif), url(../images/loader.gif);
+    height: var(--loader-height);
+    width: calc(var(--loader-height) * 2);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-position: left, center, right;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    z-index: 0;
 }
 
-#page.dragging_mode #game-container {
-
+#page.dragging_mode #canvas_wrapper {
     cursor: move;
 }
 
-canvas {
-    border: 1px solid white;
+#canvas_wrapper canvas {
+    z-index: 1;
+    position: relative;
 }
 
 .button_item.disabled {
@@ -378,7 +391,7 @@ canvas {
 .drawn_elements_list {
     max-height: 100px;
     font-size: 11px;
-    line-height: 11px;
+    line-height: 13px;
     overflow: auto;
     min-height: 12px;
 }
@@ -455,7 +468,6 @@ canvas {
 }
 
 .direction_icon {
-
     -webkit-user-select: none;
     /* Safari */
     -ms-user-select: none;

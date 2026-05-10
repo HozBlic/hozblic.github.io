@@ -63,6 +63,65 @@ const getMondaysSince = (startDateStr) => {
 
     return result;
 };
+
+const verticalLinePlugin = {
+    getLinePosition(chart, pointIndex) {
+        const meta = chart.getDatasetMeta(0);
+        return meta.data[pointIndex].x;
+    },
+
+    renderVerticalLineBetween(chart, startIndex, endIndex, text) {
+        const ctx = chart.ctx;
+        const yScale = chart.scales.y;
+
+        const startX = this.getLinePosition(chart, startIndex);
+        const endX = this.getLinePosition(chart, endIndex);
+
+        const middleX = (startX + endX) / 2;
+
+        ctx.save();
+
+        // line
+        ctx.beginPath();
+        ctx.setLineDash([2, 2]);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#b6b6b6';
+
+        ctx.moveTo(middleX, yScale.top);
+        ctx.lineTo(middleX, yScale.bottom);
+
+        ctx.stroke();
+
+        // text
+        ctx.fillStyle = '#b6b6b6';
+        ctx.font = '10px Arial';
+        ctx.textAlign = 'center';
+
+        ctx.fillText(
+            text,
+            middleX,
+            yScale.top - 7
+        );
+
+        ctx.restore();
+    },
+
+    beforeDatasetsDraw(chart) {
+        const config = chart.config._config;
+
+        if (config.lineBetweenIndexes) {
+            config.lineBetweenIndexes.forEach(item => {
+                this.renderVerticalLineBetween(
+                    chart,
+                    item.start,
+                    item.end,
+                    item.text
+                );
+            });
+        }
+    }
+};
+
 function createChartConfig(objData) {
     const lastDate = objData.labels.at(-1).split(" - ")[0];
     const arrWeeks = getMondaysSince(lastDate);
@@ -75,9 +134,22 @@ function createChartConfig(objData) {
         });
     }
 
+    const index = objData.labels.findIndex(str => str.startsWith('2026/05/18'));
+    let arrLineBetweenIndexes = [];
+
+    if (index !== -1) {
+        arrLineBetweenIndexes.push({
+            start: index - 1,
+            end: index,
+            text: 'Planner v1'
+        },)
+    }
+
     return {
         type: 'line',
         data: objData,
+        lineBetweenIndexes: arrLineBetweenIndexes,
+        plugins: [verticalLinePlugin],
         options: {
             clip: false,
             animation: false,
@@ -95,6 +167,11 @@ function createChartConfig(objData) {
                     radius: 0
                 },
             },
+            layout: {
+                padding: {
+                    top: 25,
+                }
+            },
             plugins: {
                 legend: {
                     position: "right",
@@ -108,6 +185,7 @@ function createChartConfig(objData) {
                         boxHeight: 10,
                     }
                 },
+                // verticalLinePlugin,
                 colorschemes: {
                     scheme: ["#ce5070", "#6b9080", "#fcab10", "#b6b6b650"]
                 },
@@ -148,7 +226,7 @@ function createChartConfig(objData) {
                         }
                     }
                 },
-            }
+            },
         }
     }
 }
@@ -236,31 +314,14 @@ function saveData() {
     loadData();
 }
 
-
-function loadChangelogTab(strTabKey) {
-    if ($('#changelog_content').hasClass(strTabKey)) {
-        return;
-    }
-
-    $('#changelog_content').removeClass(['tracker', 'planner'].join(' '));
-    $('#changelog_content').addClass(strTabKey);
-}
-
-$(function () {
-    loadData();
+function loadChangelog() {
 
     $('.changelog_tab').on('click', function () {
         loadChangelogTab($(this).attr('data-tab'));
     });
 
     Object.keys(objChangelog).forEach(function (strTab) {
-
-        console.log(objChangelog[strTab])
         let $divWrapper = $(`#changelog_tab_${strTab} .plan_section_list`);
-
-        // objChangelog[strTab].future.forEach(function (strPlan) {
-        //     $divWrapper.find('.plan_section.future .plan_section_items').append(`<li class="plan_section_item">${strPlan}</li>`)
-        // });
 
         objChangelog[strTab].forEach(function (objPlan) {
             let $divPlanItem = $('<li>', { 'class': 'plan_section' });
@@ -309,8 +370,20 @@ $(function () {
             $divWrapper.append($divPlanItem);
         });
     });
+}
 
-    openChangelogPopup();
+function loadChangelogTab(strTabKey) {
+    if ($('#changelog_content').hasClass(strTabKey)) {
+        return;
+    }
+
+    $('#changelog_content').removeClass(['tracker', 'planner'].join(' '));
+    $('#changelog_content').addClass(strTabKey);
+}
+
+$(function () {
+    loadData();
+    loadChangelog();
 
     tippy('#triangle img', {
         content: 'Red bull, please?',

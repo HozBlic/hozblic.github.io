@@ -55,56 +55,67 @@
         "name": "Pomegranate",
         "img": "items/pomegranate"
     },
+    "small_barn": {
+        "name": "Small Barn",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "medium_barn": {
+        "name": "Medium Barn",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "large_barn": {
+        "name": "Large Barn",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "small_coop": {
+        "name": "Small Coop",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "medium_coop": {
+        "name": "Medium Coop",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "large_coop": {
+        "name": "Large Coop",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "small_greenhouse": {
+        "name": "Small Greenhouse",
+        "colors": [
+            "white",
+            "wood"
+        ]
+    },
+    "large_greenhouse": {
+        "name": "Large Greenhouse",
+        "colors": [
+            "white",
+            "wood"
+        ]
+    },
     "weed": {
         "name": "weed"
     },
     "leaf_pile": {
         "name": "leaf_pile"
-    },
-    "barrel": {
-        "name": "barrel"
-    },
-    "crate": {
-        "name": "crate"
-    },
-    "box": {
-        "name": "box"
-    },
-    "debris": {
-        "name": "debris"
-    },
-    "coral_small": {
-        "name": "coral_small"
-    },
-    "coral_large": {
-        "name": "coral_large"
-    },
-    "crystal_small": {
-        "name": "crystal_small"
-    },
-    "crystal_large": {
-        "name": "crystal_large"
-    },
-    "obsidian_small": {
-        "name": "obsidian_small"
-    },
-    "obsidian_large": {
-        "name": "obsidian_large"
-    },
-    "voidite_small": {
-        "name": "voidite_small"
-    },
-    "voidite_large": {
-        "name": "voidite_large"
-    },
-    "ruins_pot_white": {
-        "name": "ruins_pot_white"
-    },
-    "ruins_pot_red": {
-        "name": "ruins_pot_red"
-    },
-    "ruins_pot_purple": {
-        "name": "ruins_pot_purple"
     },
     "treasure_chest_wood": {
         "name": "treasure_chest_wood"
@@ -327,61 +338,5 @@
     },
     "rock_void": {
         "name": "rock_void"
-    },
-    "small_barn": {
-        "name": "Small Barn",
-        "colors": [
-            "red",
-            "black"
-        ]
-    },
-    "medium_barn": {
-        "name": "Medium Barn",
-        "colors": [
-            "red",
-            "black"
-        ]
-    },
-    "large_barn": {
-        "name": "Large Barn",
-        "colors": [
-            "red",
-            "black"
-        ]
-    },
-    "small_coop": {
-        "name": "Small Coop",
-        "colors": [
-            "red",
-            "black"
-        ]
-    },
-    "medium_coop": {
-        "name": "Medium Coop",
-        "colors": [
-            "red",
-            "black"
-        ]
-    },
-    "large_coop": {
-        "name": "Large Coop",
-        "colors": [
-            "red",
-            "black"
-        ]
-    },
-    "small_greenhouse": {
-        "name": "Small Greenhouse",
-        "colors": [
-            "white",
-            "wood"
-        ]
-    },
-    "large_greenhouse": {
-        "name": "Large Greenhouse",
-        "colors": [
-            "white",
-            "wood"
-        ]
     }
 }

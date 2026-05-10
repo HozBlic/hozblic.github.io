@@ -5,7 +5,7 @@ let arrDefaultElements = []
 const arrGrassFixCoord = objBuild.arrGrassFixCoord
 let objItemsPlanner = {}
 
-let strMode = 'dragging_mode'; // drawing_mode, selection_mode
+let strMode = 'selection_mode'; // drawing_mode, dragging_mode, selection_mode
 let intCurrentlyDrawing = false;
 let strCurrentDirection = false;
 let strCurrentColor = false;
@@ -13,7 +13,7 @@ let strCurrentColor = false;
 let intSaveSlot = 0;
 let arrVersions = [];
 let intCurrentVersion = 0;
-const intAllowedVersions = 10;
+const intAllowedVersions = 15;
 
 let bolIsDragging = false;
 let bolIsDraggingMap = false;
@@ -26,10 +26,10 @@ let objStartOffset = { x: 0, y: 0 };
 let objPrevCellCoord = { x: 0, y: 0 };
 let objSelectionSection = false;
 let objSelectionItems = false;
+let objNameDict = {};
 let arrChecklistItems = [];
 
 let lastMousePosition = { x: 0, y: 0 };
-
 
 const intGridCellSize = 16 / 2;
 const objGrid = {
@@ -721,13 +721,13 @@ function calculateMultiplier() {
 }
 
 function getMultiplierFitScreen() {
-    const intContainerWidth = document.querySelector('#game-container').offsetWidth;
-    const intContainerHeight = document.querySelector('#game-container').offsetHeight;
+    const intContainerWidth = document.querySelector('#canvas_wrapper').offsetWidth;
+    const intContainerHeight = document.querySelector('#canvas_wrapper').offsetHeight;
     return Math.min(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
 }
 function getMultiplierCoverScreen() {
-    const intContainerWidth = document.querySelector('#game-container').offsetWidth;
-    const intContainerHeight = document.querySelector('#game-container').offsetHeight;
+    const intContainerWidth = document.querySelector('#canvas_wrapper').offsetWidth;
+    const intContainerHeight = document.querySelector('#canvas_wrapper').offsetHeight;
     return Math.max(intContainerWidth / objCanvasDefault.width, intContainerHeight / objCanvasDefault.height);
 }
 
@@ -1227,7 +1227,7 @@ function updateCursorMode(strModeTemp = false) {
 
     clearTempSection();
     objSelectionSection = false;
-    $('#game-container').css('cursor', '');
+    $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
 
 
@@ -1248,7 +1248,6 @@ function updateCursorMode(strModeTemp = false) {
 
     if (strMode == 'selection_mode') {
         // objContainer_Wrapper.interactiveChildren = true;
-
         generateTempSection();
     } else {
         // objContainer_Wrapper.interactiveChildren = false;
@@ -1257,6 +1256,18 @@ function updateCursorMode(strModeTemp = false) {
     updateChecklist();
 }
 
+function canPlaceBridge(objSelection) {
+
+    const strBrigeGap = '[0,0,2,2,4,4,4,4,4,4,4,4,2,2,0,0]';
+
+    const arrGrid_CollisionSlice = slice2D(arrGrid_Collision, objSelection.x0, objSelection.x1, objSelection.y0, objSelection.y1);
+    const intBridgeWidth = arrGrid_CollisionSlice.length;
+
+    if (strBrigeGap === JSON.stringify(arrGrid_CollisionSlice[0]) && strBrigeGap === JSON.stringify(arrGrid_CollisionSlice[intBridgeWidth - 1])) {
+        return true;
+    }
+    return false;
+}
 function checkTileHasCollision(objSelection, bolUseDiggableGrid = true) {
     // return false;
 
@@ -1318,6 +1329,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
     // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
+        console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
         let arrSize = getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor).meta.size;
 
         if (objSpriteCategories.trees.includes(intCurrentlyDrawing)) {
@@ -1469,9 +1481,9 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                     });
 
                     if (bolHighlight) {
-                        $('#game-container').css('cursor', 'pointer');
+                        $('#canvas_wrapper').css('cursor', 'pointer');
                     } else {
-                        $('#game-container').css('cursor', '');
+                        $('#canvas_wrapper').css('cursor', '');
                     }
 
                     // Apply it to the sprite
@@ -1489,15 +1501,13 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
         updateChecklist()
     }
 
-
     if (bolDraw) {
         drawPlanner(objSize, objTopCorner = { x: 0, y: 0 }, strGrid = 'cursor_corner', strContainer = 'cursor');
 
         if (strMode === 'selection_mode') {
             moveTempSection({ x: objSectionTemp.x0, y: objSectionTemp.y0 });
 
-
-            //draw square around drawn selection
+            // // draw square around drawn selection
             // let objRectangleCoord = objSection;
             // if (objSelectionSection) {
             //     objRectangleCoord = objSelectionSection;
@@ -1506,8 +1516,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
             // if (
             //     objRectangleCoord.x1 - objRectangleCoord.x0 > 0 ||
             //     objRectangleCoord.y1 - objRectangleCoord.y0 > 0
-            // )
-            // {
+            // ) {
             //     let elemSelection = new PIXI.Graphics();
             //     elemSelection.rect(0, 0, (objRectangleCoord.x1 - objRectangleCoord.x0 + 1) * intGridCellSize, (objRectangleCoord.y1 - objRectangleCoord.y0 + 1) * intGridCellSize);
             //     elemSelection.stroke({ color: `rgba(255, 174, 0, 0.8)`, width: 2, alignment: 1 });
@@ -1518,7 +1527,6 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
             //     );
             //     objContainers['cursor'].addChild(elemSelection);
             // }
-
         } else if (objCellCoord !== false) {
             moveTempSection(objCellCoord);
         }
@@ -1526,9 +1534,8 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
         objGridCombined.cursor_corner = false;
         objSelectionSection = false;
         objSelectionItems = false;
-        $('#game-container').css('cursor', '');
+        $('#canvas_wrapper').css('cursor', '');
     }
-
 }
 
 function copyChecklist(objElem) {
@@ -1547,7 +1554,6 @@ function copyChecklist(objElem) {
 }
 
 function updateChecklist() {
-
     $('.drawn_element_container').hide();
     $('#drawn_elements .copy_button').hide();
 
@@ -1612,7 +1618,8 @@ function updateChecklist() {
                 });
 
                 Object.keys(objColors).forEach(function (strColor) {
-                    strName = `${objItemsPlanner[strItemKey].name} (${strColor})`;
+
+                    strName = `${objNameDict[strItemKey]} (${strColor})`;
                     const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
 
                     bolImage = true;
@@ -1627,14 +1634,15 @@ function updateChecklist() {
                     arrChecklistItems.push(`${strName}: ${objColors[strColor]}`)
                 });
             } else {
+
+                strName = objNameDict[strItemKey];
                 if (strItemKey in objItemsPlanner) {
-                    strName = objItemsPlanner[strItemKey].name;
+
                     if (typeof objItemsPlanner[strItemKey].img !== 'undefined') {
                         bolImage = true;
                         strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
                     }
                 } else if (strItemKey in objItems) {
-                    strName = objItems[strItemKey].name;
                     bolImage = true;
                     strImage = `images/items/${strItemKey}.png`;
                 } else {
@@ -1661,7 +1669,6 @@ function updateChecklist() {
     if (arrChecklistItems.length) {
         $('#drawn_elements .copy_button').css('display', '');
     }
-
 }
 function getSectionLocation(objCellCoord) {
 
@@ -1944,7 +1951,14 @@ function updateTempCollisions(objPosition = false) {
                 }
 
                 let bolHitsElement = false;
-                if (checkTileHasCollision(objItemArea)) {
+                if (objSpriteCategories.bridge.includes(intItemIndex)) {
+
+                    if (!canPlaceBridge(objItemArea)) {
+                        //bridge can not be placed
+                        bolHitsElement = true;
+                    }
+
+                } else if (checkTileHasCollision(objItemArea)) {
                     //hits predefined untouchable cells
                     bolHitsElement = true;
 
@@ -2249,12 +2263,14 @@ async function loadMenuItems() {
         Object.entries(tabData.categories).forEach(([categoryKey, categoryData]) => {
 
             let $divDropdownSection = $('<div>', { 'class': 'dropdown-section' });
-
             let $divDropdownSectionHeader = $('<div>', { 'class': 'dropdown-item dropdown-section-item' });
-            $divDropdownSectionHeader.append(` 
-                <div class="icon"><img src="images/${categoryData.info.img_item_section_path}${categoryData.info.img}.png"></div>
-                <span class="dropdown-section-name">${categoryData.info.name}</span>
-            `);
+
+            if (typeof categoryData.info.img !== 'undefined') {
+                $divDropdownSectionHeader.append(`<div class="icon"><img src="images/${categoryData.info.img_item_section_path}${categoryData.info.img}.png"></div>`);
+            } else {
+                $divDropdownSectionHeader.addClass('no_icon');
+            }
+            $divDropdownSectionHeader.append(`<span class="dropdown-section-name">${categoryData.info.name}</span>`);
             $divDropdownSection.append($divDropdownSectionHeader);
 
             let $divDropdownSectionItems = $('<div>', { 'class': 'dropdown-section-items' });
@@ -2274,6 +2290,7 @@ async function loadMenuItems() {
                 if (strItemKey in objItemsPlanner && 'colors' in objItemsPlanner[strItemKey]) {
                     objItemsPlanner[strItemKey].colors.forEach(function (strColor) {
                         strName = `${objItemsPlanner[strItemKey].name} (${strColor})`;
+                        objNameDict[strItemKey] = strName;
                         const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
 
                         bolImage = true;
@@ -2298,6 +2315,7 @@ async function loadMenuItems() {
                 } else {
                     if (strItemKey in objItemsPlanner) {
                         strName = objItemsPlanner[strItemKey].name;
+                        objNameDict[strItemKey] = strName;
                         if (typeof objItemsPlanner[strItemKey].img !== 'undefined') {
                             bolImage = true;
                             strImage = `images/${objItemsPlanner[strItemKey].img}.png`;
@@ -2305,6 +2323,7 @@ async function loadMenuItems() {
                     } else if (strItemKey in objItems) {
                         bolImage = true;
                         strName = objItems[strItemKey].name;
+                        objNameDict[strItemKey] = strName;
                         strImage = `images/${categoryData.info.img_item_path}${strItemKey}.png`;
                     } else {
                         // console.log(strItemKey);
@@ -2428,7 +2447,7 @@ async function loadMenuItems() {
     });
     tippy('[data-tab="dragging_mode"]', {
         content: `<p style="text-align: center; font-size: 14px;" class="save_file">Drag map</p>
-                  <p style="text-align: center;" class="save_file">You can also drag map with </br>scroll wheel in any other mode</p>`,
+                  <p style="text-align: center;" class="save_file">drag with wheel in all modes</p>`,
         allowHTML: true,
     });
     tippy('[mode="dragging_mode"]', {
@@ -2441,19 +2460,25 @@ async function loadMenuItems() {
         content: 'Drawing mode',
     });
     tippy('#undo', {
-        content: 'Undo, up to 20 changes',
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Undo, up to ${intAllowedVersions} changes</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">CTRL + Z</code></p>`,
+        allowHTML: true,
     });
     tippy('#redo', {
-        content: 'Redo',
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Redo, up to ${intAllowedVersions} changes</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">CTRL + Y</code>,<code class="shortcut">CTRL + SHIFT + Z</code></p>`,
+        allowHTML: true,
+    });
+    tippy('#delete', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Clear map</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">del</code></p>`,
+        allowHTML: true,
     });
     tippy('#save_image', {
         content: 'Save as image',
     });
     tippy('#upload_file', {
         content: 'Upload save file',
-    });
-    tippy('#delete', {
-        content: 'Clear map',
     });
 }
 
@@ -2488,8 +2513,8 @@ function changeSeason(objElem) {
 
 function resetZoom(strZoomDirection) {
     const objCanvasSize = {
-        w: $('#game-container').width(),
-        h: $('#game-container').height()
+        w: $('#canvas_wrapper').width(),
+        h: $('#canvas_wrapper').height()
     }
 
     const intMultiplierFit = getMultiplierFitScreen();
@@ -2519,7 +2544,7 @@ function verifyZoomParameters() {
 
     if (objMistriaDataPlanner.zoom > 100) {
         const intOffsetX = objMistriaDataPlanner.offsetCanvas.x * -1
-        const intViewportWidth = $('#game-container').width() / intMultiplierCanvas;
+        const intViewportWidth = $('#canvas_wrapper').width() / intMultiplierCanvas;
         if (intOffsetX + intViewportWidth > objCanvasDefault.width) {
             objMistriaDataPlanner.offsetCanvas.x = (objCanvasDefault.width - intViewportWidth) * -1
         }
@@ -2528,7 +2553,7 @@ function verifyZoomParameters() {
         }
 
         const intOffsetY = objMistriaDataPlanner.offsetCanvas.y * -1
-        const intViewportHeight = $('#game-container').height() / intMultiplierCanvas;
+        const intViewportHeight = $('#canvas_wrapper').height() / intMultiplierCanvas;
         if (intOffsetY + intViewportHeight > objCanvasDefault.height) {
             objMistriaDataPlanner.offsetCanvas.y = (objCanvasDefault.height - intViewportHeight) * -1
         }
@@ -2560,8 +2585,8 @@ function fitSize(container, content) {
 
 function updateMinimap() {
     const objCanvasSize = {
-        w: $('#game-container').width(),
-        h: $('#game-container').height()
+        w: $('#canvas_wrapper').width(),
+        h: $('#canvas_wrapper').height()
     }
 
     let objSelectionSize = fitSize(objMinimapWrapperSize, objCanvasSize);
@@ -2606,8 +2631,8 @@ function updateMinimap() {
 
 function getTopLeftCornerCanvas(objCellCoord) {
     const objCanvasSize = {
-        w: $('#game-container').width(),
-        h: $('#game-container').height()
+        w: $('#canvas_wrapper').width(),
+        h: $('#canvas_wrapper').height()
     }
     const objCanvasCellCount = {
         x: objCanvasSize.w / intMultiplierCanvas / intGridCellSize,
@@ -2737,10 +2762,8 @@ function prepareGridsForSaving() {
     }
 }
 function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y }, arrItems = false) {
-    console.log('clear')
     let arrRemoveItems = arrItems;
 
-    //TODO: needs to grab items that end in the cell as well
     for (var y = objSection.y0; y < objSection.y1; y++) {
         for (var x = objSection.x0; x < objSection.x1; x++) {
 
@@ -2749,7 +2772,9 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                 arrRemoveItems = Object.keys(objCurrentItems).map(strIndex => parseInt(strIndex));
             }
 
-            arrRemoveItems.forEach(function (intItemIndexTemp) {
+            arrRemoveItems.forEach(function (strItemIndexTemp) {
+                const intItemIndexTemp = parseInt(strItemIndexTemp);
+
                 if (typeof objGridCombined.main_corner[y][x][intItemIndexTemp] === 'undefined') {
                     return;
                 }
@@ -2842,7 +2867,6 @@ function changeSeasonInGrids(bolOnlyPlants = false) {
                         return;
                     }
 
-
                     const arrNeigbors = ('neigbors' in objGridCombined.main_corner[y][x][intItemIndex] ? objGridCombined.main_corner[y][x][intItemIndex].neigbors : [0, 0, 0, 0, 0, 0, 0, 0])
 
                     let sprite = objGridCombined.main_corner[y][x][intItemIndex].sprite
@@ -2868,8 +2892,6 @@ function changeSeasonInGrids(bolOnlyPlants = false) {
     }
 }
 function populateItemGrids() {
-    console.log('populate')
-
     const matchColor = (colors, strDirection_Color) =>
         colors.find(color =>
             (strDirection_Color.includes(`_${color}`) || strDirection_Color == color)
@@ -2983,14 +3005,6 @@ function populateItemGrids() {
             const objCurrentItems = objGridCombined.main_corner[y][x] || {};
             const arrCellItems = Object.keys(objCurrentItems).map(strIndex => parseInt(strIndex));
 
-            // wont draw default fences then
-            // if (checkTileHasCollision({ x0: x, y0: y, x1: x + 1, y1: y + 1 })) {
-            //     if (arrCellItems.length) {
-            //         console.log(arrCellItems)
-            //     }
-            //     continue;
-            // }
-
             if (arrCellItems.length) {
                 arrCellItems.forEach(function (intItemIndex) {
                     // const intItemIndex = parseInt(strItemIndex);
@@ -3035,7 +3049,6 @@ function populateItemGrids() {
 }
 
 function loadDataPlanner() {
-
     objMistriaDataPlanner = JSON.parse(localStorage.getItem('mistria_data_planner'));
 
     if (objMistriaDataPlanner === null) {
@@ -3049,7 +3062,7 @@ function loadDataPlanner() {
 
     // convert arrays to sets for to remove duplicates 
     objMistriaDataPlanner.options = ('options' in objMistriaDataPlanner ? new Set(objMistriaDataPlanner.options) : new Set(objMistriaDataPlannerDefault.options));
-    populateItemGrids();
+
 }
 
 function versionControl(strAction = false) {
@@ -3071,7 +3084,7 @@ function versionControl(strAction = false) {
 
     clearTempSection();
     objSelectionSection = false;
-    $('#game-container').css('cursor', '');
+    $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
 
     saveDataPlanner(true, true);
@@ -3138,7 +3151,7 @@ function clearMap() {
 
     clearTempSection();
     objSelectionSection = false;
-    $('#game-container').css('cursor', '');
+    $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
 
     objMistriaDataPlanner.layout[intSaveSlot].farm = objMistriaDataPlannerDefault.layout[intSaveSlot].farm;
@@ -3193,6 +3206,7 @@ const handleResize = () => {
         objMistriaDataPlanner.zoom = intZoom;
     }
     $('#zoomSlider').val(intZoom);
+    $('#zoomSlider').attr('max', Math.round(intMultiplierZoomMax));
 
     resize();
     objPIXIapp.resize();
@@ -3206,7 +3220,7 @@ function preventAction() {
     resetDrawingVariables();
     bolPreventDrawing = true;
     objSelectionSection = false;
-    $('#game-container').css('cursor', '');
+    $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
 
     console.log('bolPreventDrawing')
@@ -3247,8 +3261,8 @@ function saveImage() {
 }
 
 $(function () {
-    (async () => {
 
+    (async () => {
         objKeyItemDict = await (await fetch('textures/dict.json')).json();
         objItemKeyDict = await (await fetch('textures/dict_reverse.json')).json();
 
@@ -3271,7 +3285,12 @@ $(function () {
         arrCollisionUpgradeGrid = await (await fetch('textures/collision_houseupgrade.json')).json();
         arrGrid_Diggable = await (await fetch('textures/diggable.json')).json();
 
-        objPlannerDiv = document.getElementById('game-container');
+        objPlannerDiv = document.getElementById('canvas_wrapper');
+
+        await loadDataPlanner();
+        await loadMenuItems();
+
+        // return;
 
         // Create a new application
         objPIXIapp = new PIXI.Application();
@@ -3289,15 +3308,14 @@ $(function () {
         //load textures
         sprites = await SpriteStore.getInstance();
 
-        loadDataPlanner(true);
-        loadMenuItems();
-        minimapInit();
-
         objPIXIapp.stage.eventMode = 'static';
         objPIXIapp.stage.hitArea = objPIXIapp.screen;
 
         objPIXIapp.sortableChildren = true;
         objContainer_Wrapper.interactiveChildren = false;
+
+        populateItemGrids();
+        minimapInit();
 
         $(document).keyup(function (e) {
             if (e.key === "Escape") {
@@ -3320,7 +3338,7 @@ $(function () {
 
                 clearTempSection();
                 objSelectionSection = false;
-                $('#game-container').css('cursor', '');
+                $('#canvas_wrapper').css('cursor', '');
                 objSelectionItems = false;
 
                 saveDataPlanner(true);
@@ -3403,7 +3421,7 @@ $(function () {
 
                     resetDrawingVariables();
                     objSelectionSection = false;
-                    $('#game-container').css('cursor', '');
+                    $('#canvas_wrapper').css('cursor', '');
                     objSelectionItems = false;
                 } else if (selectionHovered(objStartCellCoord) || (typeof objSelectionItems.objItemCounts !== 'undefined' && !objSelectionSection)) {
                     //if already has a selection and is hovered or is hovered but has not been selected
@@ -3411,9 +3429,10 @@ $(function () {
                         //clear out previous selection
                         clearTempSection();
                         objSelectionSection = false;
-                        $('#game-container').css('cursor', '');
+                        $('#canvas_wrapper').css('cursor', '');
                         objSelectionItems = false;
                         let objSelection = getSelection(objStartCellCoord);
+
                         generateTempSection(objSelection, objStartCellCoord);
 
                         objSelectionSection = getSelection(objStartCellCoord);
@@ -3429,6 +3448,7 @@ $(function () {
                     const arrCoords = [...new Set(objSelectionItems.arrCoords)];
                     arrCoords.forEach((strCoord) => {
                         arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
+                        console.log(arrCoord)
                         clearSection({
                             x0: arrCoord[0],
                             x1: arrCoord[0] + 1,
@@ -3448,7 +3468,7 @@ $(function () {
                         //clear out previous selection
                         clearTempSection();
                         objSelectionSection = false;
-                        $('#game-container').css('cursor', '');
+                        $('#canvas_wrapper').css('cursor', '');
                         objSelectionItems = false;
                         let objSelection = getSelection(objStartCellCoord);
                         generateTempSection(objSelection, objStartCellCoord);
@@ -3511,7 +3531,7 @@ $(function () {
                         } else {
                             clearTempSection();
                             objSelectionSection = false;
-                            $('#game-container').css('cursor', '');
+                            $('#canvas_wrapper').css('cursor', '');
                             objSelectionItems = false;
                             generateTempSection(objSelection, objCurrentCellCoord);
                         }
@@ -3599,7 +3619,7 @@ $(function () {
                         placeTempSection(objCurrentCellCoord);
                         resetDrawingVariables();
                         objSelectionSection = false;
-                        $('#game-container').css('cursor', '');
+                        $('#canvas_wrapper').css('cursor', '');
                         objSelectionItems = false;
 
                     } else if (strMode === 'selection_mode') {
@@ -3613,7 +3633,7 @@ $(function () {
                             })
                             resetDrawingVariables();
                             objSelectionSection = false;
-                            $('#game-container').css('cursor', '');
+                            $('#canvas_wrapper').css('cursor', '');
                             objSelectionItems = false;
                         } else {
                             objSelectionSection = getSelection(objCurrentCellCoord);
@@ -3660,14 +3680,6 @@ $(function () {
             resize();
         });
 
-
-        // let count = 0;
-        // // Listen for animate update
-        // objPIXIapp.ticker.add((time) => {
-        //     count += 0.01;
-        //     objGraphics_Grid.scale = 1 + (Math.sin(count) + 1) * 2;
-        // });
-
         addBackground();
         drawGrassFix();
 
@@ -3675,35 +3687,18 @@ $(function () {
         drawCollision();
 
         // addTestData(4);
-        // updateCurrentlyDrawing(1, 'east');
-
-        updateCursorMode('selection_mode');
+        // updateCurrentlyDrawing(90);
+        // updateCursorMode('selection_mode');
 
         drawPlanner();
         updateChecklist();
 
+        resizeObserver.observe(document.getElementById('canvas_wrapper'));
 
-        // objPIXIapp.renderer.extract.log(image);
-
-        // console.log(sprites)
-        // console.log(sprites['snow_peas'])
-
-        // if (objContainer_Soil === null) {
-        //     objContainer_Soil = new PIXI.Container();
-
-        //     let elemSprite = sprites['snow_peas'].sprite;
-        //     objContainer_Soil.addChild(elemSprite);
-        //     // elemSprite.scale = 1
-
-        //     objPIXIapp.stage.addChild(objContainer_Soil);
-        // }
-
-        resizeObserver.observe(document.getElementById('app'));
+        $('#canvas_wrapper').removeClass('loading');
 
         setTimeout(() => {
             handleResize();
         }, 150);
-
     })();
-
 });

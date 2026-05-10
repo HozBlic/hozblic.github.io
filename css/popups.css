@@ -561,7 +561,7 @@ pre {
     height: var(--icon-size);
 }
 
-#popup_controls code.shortcut {
+code.shortcut {
     background: var(--color-bg-darkest);
     padding: 2px 5px;
     margin: 2px 0;
@@ -569,6 +569,10 @@ pre {
     text-transform: lowercase;
 }
 
+[data-tippy-root] code.shortcut {
+    background: #00000050;
+    font-size: 10px;
+}
 
 [data-tippy-root] .tippy-box .tippy-content .save_file {
     margin: 0;
@@ -642,7 +646,7 @@ pre {
     border-bottom-right-radius: 0;
 }
 
-#popup_changelog #changelog_content .changelog_tab  .icon {
+#popup_changelog #changelog_content .changelog_tab .icon {
     --icon-wrapper-size: 24px;
 }
 

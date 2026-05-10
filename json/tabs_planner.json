@@ -1761,8 +1761,6 @@
             "54": {
                 "info": {
                     "name": "Not crafted",
-                    "img": "54",
-                    "img_item_section_path": "sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -3465,8 +3463,6 @@
             "15": {
                 "info": {
                     "name": "Not crafted",
-                    "img": "15",
-                    "img_item_section_path": "categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -3791,37 +3787,45 @@
             }
         }
     },
-    "misc": {
+    "building": {
         "info": {
-            "name": "Miscellaneous",
-            "icon": "almanac/crops.png"
+            "name": "Buildings",
+            "icon": "items/large_barn_red_blueprint.png"
         },
         "categories": {
-            "breakables": {
+            "all": {
                 "info": {
-                    "name": "Breakables",
+                    "name": "All",
                     "img": "24px-Day_spring_clear",
                     "img_item_section_path": "tooltip/",
                     "img_item_path": "items/"
                 },
                 "items": [
+                    1629,
+                    1630,
+                    1631,
+                    1632,
+                    1633,
+                    1634,
+                    1635,
+                    1636
+                ]
+            }
+        }
+    },
+    "misc": {
+        "info": {
+            "name": "Miscellaneous",
+            "icon": "items/basic_wood.png"
+        },
+        "categories": {
+            "breakables": {
+                "info": {
+                    "name": "Breakables"
+                },
+                "items": [
                     1538,
                     1539,
-                    1540,
-                    1541,
-                    1542,
-                    1543,
-                    1544,
-                    1545,
-                    1546,
-                    1547,
-                    1548,
-                    1549,
-                    1550,
-                    1551,
-                    1552,
-                    1553,
-                    1554,
                     1555,
                     1556,
                     1557,
@@ -3832,10 +3836,7 @@
             },
             "grass": {
                 "info": {
-                    "name": "Grass",
-                    "img": "24px-Day_spring_clear",
-                    "img_item_section_path": "tooltip/",
-                    "img_item_path": "items/"
+                    "name": "Grass"
                 },
                 "items": [
                     1561,
@@ -3848,10 +3849,7 @@
             },
             "dig_site": {
                 "info": {
-                    "name": "Dig site",
-                    "img": "24px-Day_spring_clear",
-                    "img_item_section_path": "tooltip/",
-                    "img_item_path": "items/"
+                    "name": "Dig site"
                 },
                 "items": [
                     1567,
@@ -3860,10 +3858,7 @@
             },
             "stump": {
                 "info": {
-                    "name": "Stump",
-                    "img": "24px-Day_spring_clear",
-                    "img_item_section_path": "tooltip/",
-                    "img_item_path": "items/"
+                    "name": "Stump"
                 },
                 "items": [
                     1569,
@@ -3885,10 +3880,7 @@
             },
             "rock": {
                 "info": {
-                    "name": "Rock",
-                    "img": "24px-Day_spring_clear",
-                    "img_item_section_path": "tooltip/",
-                    "img_item_path": "items/"
+                    "name": "Rock"
                 },
                 "items": [
                     1584,
@@ -3936,32 +3928,6 @@
                     1626,
                     1627,
                     1628
-                ]
-            }
-        }
-    },
-    "building": {
-        "info": {
-            "name": "Buildings",
-            "icon": "items/large_barn_red_blueprint.png"
-        },
-        "categories": {
-            "all": {
-                "info": {
-                    "name": "All",
-                    "img": "24px-Day_spring_clear",
-                    "img_item_section_path": "tooltip/",
-                    "img_item_path": "items/"
-                },
-                "items": [
-                    1629,
-                    1630,
-                    1631,
-                    1632,
-                    1633,
-                    1634,
-                    1635,
-                    1636
                 ]
             }
         }

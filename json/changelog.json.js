@@ -94,6 +94,7 @@ var objChangelog =
         {
             "date": "30/07/2025",
             "info": ["added save file import"],
+            "tags": ["star"]
         },
         {
             "date": "27/07/2025",
@@ -121,7 +122,7 @@ var objChangelog =
         },
         {
             "date": "28/12/2024",
-            "info": ["v01"],
+            "info": ["first version"],
             "tags": ["star"]
         },
     ],
@@ -133,13 +134,15 @@ var objChangelog =
                 "show sprinkler radius",
                 "room planning",
                 "colors and outline for grass",
+                "add mobile support",
+                "filter out items that can not be placed on farm (autopetter, wallpapers..)",
                 `optimization: </br>
                 combine sprite sheets,</br>
                 run manageScripts from Python</br>`,
             ],
         }, {
             "date": "??/??/2026",
-            "info": ["v01"],
+            "info": ["first version"],
             "tags": ["star"]
         },
     ],

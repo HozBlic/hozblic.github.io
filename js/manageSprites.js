@@ -34,7 +34,7 @@ const fruits = [
     'orange'
 ]
 const buildingColors = ['black', 'red', 'white', 'wood']
-const childCategories = ['top_sprite', 'door_closed', 'farm_plate']
+const childCategories = ['top_sprite', 'door_closed', 'farm_plate', 'floor_sprite']
 
 directions.forEach(direction => {
     seasons.forEach(season => {
@@ -112,7 +112,7 @@ class SpriteStore {
                             ...selectedDirection, 
                             sprite: selectedDirection[`${season}_sprite`] || selectedDirection[`${season}_sprites`], 
                             top_sprite: selectedDirection[`${season}_top_sprite`],
-                            floor_sprite: selectedDirection[`${season}_floor_sprite`]
+                            floor_sprite: selectedDirection[`${season}_floor_sprite`],
                         }
                     }
                 })
@@ -131,7 +131,6 @@ class SpriteStore {
                     const matchedColors = buildingColors.reduce(
                         (found, color) => {
                             const index = object.sprites.spring?.findIndex(sprite => sprite.includes(`_${color}_`));
-                            // console.log(index, object.sprites.spring)
                             return index !== -1 ? [...found, [color, index]] : found
                         }
                     ,[])
@@ -142,7 +141,13 @@ class SpriteStore {
                                 variations[`${color}_south_${season}`] = {
                                     sprite: object.sprites[season][index],
                                     door_closed: object.door_closed[index],
-                                    farm_plate: object.farm_plate.sprite
+                                    farm_plate: object.farm_plate.sprite,
+                                }
+                            })
+                        } else {
+                            seasons.forEach(season => {
+                                if (object.sprites[season]) {
+                                    variations[`south_${season}`] = object.sprites[season]
                                 }
                             })
                         }
@@ -159,6 +164,10 @@ class SpriteStore {
 
         if (object.sprite) {
             variations[`south`] = object.sprite
+        }
+
+        if (object.chest) {
+            variations[`south`] = object.chest.closed_sprite
         }
         
         return variations
@@ -274,7 +283,6 @@ class SpriteStore {
             const variations = this.#findVariations(buildingData)
 
             this.#mapSingleGeneric(variations, buildingKey, buildingData, defaults)
-            // console.log(buildingKey, variations)
         })
     }
 
@@ -448,7 +456,6 @@ class SpriteStore {
     }
 
     get(textureKey, {direction, season, color} = {}) {
-        // console.log(textureKey)
         // if (textureKey === 'tree_apple') {
         //     textureKey = 'large_greenhouse'
         //     color = 'wood'
@@ -464,6 +471,7 @@ class SpriteStore {
         if (direction) possibleKeys.push(`${textureKey}_${direction}`)
         if (direction === "west") possibleKeys.push(`${textureKey}_east`)
         if (season) possibleKeys.push(`${textureKey}_${season}`)
+        if (season) possibleKeys.push(`${textureKey}_south_${season}`)
 
         // TODO remove fallback
         possibleKeys = Array.from(new Set([textureKey, ...possibleKeys, ...directionSeasonCombos.map(combo => `${textureKey}_${combo}`)])) // dedupe

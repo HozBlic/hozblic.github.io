@@ -340,7 +340,7 @@
                     </div>
 
                     <div class="buttons">
-                        <div id="json_button" class="button_item" onclick="openJsonPopup();">
+                        <div style="display: none;" id="json_button" class="button_item" onclick="openJsonPopup();">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -430,7 +430,7 @@
                         </div>
 
                         <div class="buttons">
-                            <a class="button_item" href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US">
+                            <a class="button_item accent" href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US">
                                 <div class="icon original">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         id="Paypal--Streamline-Svg-Logos" height="24" width="24">
@@ -451,7 +451,7 @@
                                 <div class="text">Paypal</div>
                             </a>
 
-                            <a class="button_item" href="https://buymeacoffee.com/hozblic">
+                            <a class="button_item accent" href="https://buymeacoffee.com/hozblic">
                                 <div class="icon original coffee">
                                     <svg width="884" height="1279" viewBox="0 0 884 1279" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -540,9 +540,7 @@
         </div>
         <div id="content">
             <div id="planner" class="tab_content planner_show">
-                <div id="app" oncontextmenu="return false;">
-                    <div id="game-container"></div>
-                </div>
+                <div id="canvas_wrapper" class="loading" oncontextmenu="return false;"></div>
             </div>
         </div>
         <div id="header">
@@ -657,7 +655,8 @@
                         </svg>
                     </div>
                 </div>
-                <div class="tab button_item button-notext" id="upload_file" onclick="openJsonPopup()">
+                <div style="display: none;" class="tab button_item button-notext" id="upload_file"
+                    onclick="openJsonPopup()">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1181,13 +1180,10 @@
                     </div>
                 </div>
                 <div class="popup_content">
-                   
-                    <div class="inner_divider tracker" id="changelog_content">
-                        <div class="popup_subtitle">
-                            Changelog
-                        </div>
+                    <div class="inner_divider planner" id="changelog_content">
                         <div class="popup_subdesc">
-                            For full list of changes, you can visit <a href="https://github.com/HozBlic/hozblic.github.io"> GitHub repo</a>
+                            For full list of changes, you can visit <a
+                                href="https://github.com/HozBlic/hozblic.github.io"> GitHub repo</a>
                         </div>
                         <div id="changelog_tabs">
                             <div data-tab="tracker" class="changelog_tab button_item">
@@ -1209,7 +1205,7 @@
                         </div>
                     </div>
 
-                     <div class="inner_divider">
+                    <div class="inner_divider">
                         <div class="popup_subtitle spent_time_total">Coding time: <span></span>
                             <svg class="wakatime_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
