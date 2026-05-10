@@ -352,8 +352,10 @@ canvas {
 }
 
 #drawn_elements {
+    --margin-top: 10px;
     opacity: 0.5;
     transition: opacity 0.3s ease;
+    position: relative;
 }
 
 #drawn_elements:hover {
@@ -364,14 +366,13 @@ canvas {
     border: 1px dashed var(--color-btn2);
     border-radius: 5px;
     padding: 6px;
-    /* width: calc(100% + 16px); */
-    margin-top: 10px;
-    /* margin-left: -8px; */
+    padding-top: 0;
+    margin-top: var(--margin-top);
 }
 
 .drawn_elements_title {
     font-size: 12px;
-    line-height: 16px;
+    line-height: 30px;
 }
 
 .drawn_elements_list {
@@ -379,7 +380,6 @@ canvas {
     font-size: 11px;
     line-height: 11px;
     overflow: auto;
-    margin-top: 8px;
     min-height: 12px;
 }
 
@@ -399,6 +399,41 @@ canvas {
     margin-left: 5px;
     font-weight: bold;
 }
+
+#drawn_elements .copy_button {
+    position: absolute;
+    right: 4px;
+    top: calc(var(--margin-top) + 4px);
+    padding: 5px 0;
+    width: unset;
+    --button-height: 24px;
+    --button-font-size: 10px;
+}
+
+#drawn_elements .copy_button span {
+    font-size: var(--button-font-size);
+}
+
+#drawn_elements .copy_button .icon {
+    --icon-wrapper-size: 24px;
+}
+
+#drawn_elements .copy_button .icon svg {
+    --icon-size: 10px;
+}
+
+#drawn_elements .copy_button .copied {
+    padding: 5px 10px 5px 0;
+}
+
+#drawn_elements .copy_button:not(.copied):hover {
+    padding: 5px 10px 5px 0;
+
+    .hover {
+        display: inline;
+    }
+}
+
 
 
 .icon img {

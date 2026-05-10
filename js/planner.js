@@ -1,5 +1,7 @@
 let objMistriaDataPlanner;
 let objMistriaDataPlannerDefault = objBuild.objMistriaDataPlannerDefault;
+let arrDefaultElements = []
+
 const arrGrassFixCoord = objBuild.arrGrassFixCoord
 let objItemsPlanner = {}
 
@@ -24,6 +26,7 @@ let objStartOffset = { x: 0, y: 0 };
 let objPrevCellCoord = { x: 0, y: 0 };
 let objSelectionSection = false;
 let objSelectionItems = false;
+let arrChecklistItems = [];
 
 let lastMousePosition = { x: 0, y: 0 };
 
@@ -1178,9 +1181,9 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
     for (let y = objTopCorner.y; y < objSize.y; y++) {
         for (let x = objTopCorner.x; x < objSize.x; x++) {
             const objCell = objGridCombined[strGrid][y - objTopCorner.y][x - objTopCorner.x];
-            Object.keys(objCell).forEach(function (strItemKey) {
-                const intItemKey = parseInt(strItemKey);
-                const sprite = objCell[intItemKey].sprite;
+            Object.keys(objCell).forEach(function (strItemIndex) {
+                const intItemIndex = parseInt(strItemIndex);
+                const sprite = objCell[intItemIndex].sprite;
                 objContainers[strContainer].addChild(sprite);
             });
         }
@@ -1207,8 +1210,8 @@ function resetDrawingVariables() {
     objPrevCellCoord = { x: 0, y: 0 };
 }
 
-function updateCurrentlyDrawing(intItemKey = false, strDirection = false, strColor = false) {
-    intCurrentlyDrawing = intItemKey;
+function updateCurrentlyDrawing(intItemIndex = false, strDirection = false, strColor = false) {
+    intCurrentlyDrawing = intItemIndex;
     strCurrentDirection = strDirection;
     strCurrentColor = strColor;
     $(`[data-key]`).removeClass('selected');
@@ -1381,9 +1384,12 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
             .flat()
             .reduce((acc, obj) => (
                 Object.entries(obj).forEach(([k, { coord }]) => {
-                    acc[k] ??= []; //questionable chatgpt stuff
-
                     const key = coord.join(','); // "x,y"
+                    if (arrDefaultElements.includes(key)) {
+                        return;
+                    }
+
+                    acc[k] ??= []; //questionable chatgpt stuff
 
                     if (!acc[k].some(c => c.join(',') === key)) {
                         acc[k].push(coord);
@@ -1417,22 +1423,22 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                 };
             }
 
-            Object.keys(objAllSeenItems).forEach(function (strItemKey) {
-                const intItemKey = parseInt(strItemKey);
+            Object.keys(objAllSeenItems).forEach(function (strItemIndex) {
+                const intItemIndex = parseInt(strItemIndex);
                 if (bolGenerateSectionArrays) {
-                    // objSelectionItems.objItemCounts[intItemKey] = 0;
+                    // objSelectionItems.objItemCounts[intItemIndex] = 0;
                 }
-                objAllSeenItems[intItemKey].forEach(function (arrCoord) {
+                objAllSeenItems[intItemIndex].forEach(function (arrCoord) {
 
                     const objTempPosition = {
                         x: arrCoord[0] - objSectionTemp.x0,
                         y: arrCoord[1] - objSectionTemp.y0,
                     }
 
-                    const strDirection = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemKey]?.direction;
-                    const strColor = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemKey]?.color;
+                    const strDirection = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemIndex]?.direction;
+                    const strColor = objGridCombined.main_corner[arrCoord[1]][arrCoord[0]][intItemIndex]?.color;
 
-                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
+                    const sprite = getSprite(intItemIndex, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
 
                     if (bolGenerateSectionArrays) {
 
@@ -1449,7 +1455,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                                 objSelectionItems.arrCoords.push(JSON.stringify([x1, y1]))
                             }
                         }
-                        // objSelectionItems.objItemCounts[intItemKey]++;
+                        // objSelectionItems.objItemCounts[intItemIndex]++;
                     }
                     const outline = new PIXI.filters.OutlineFilter({
                         thickness: 2,
@@ -1472,9 +1478,9 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
                     sprite.filters = [overlay, outline];
 
                     sprite.position.set(objTempPosition.x * intGridCellSize, objTempPosition.y * intGridCellSize);
-                    sprite.zIndex = getZindexbySpriteIndex(intItemKey);
+                    sprite.zIndex = getZindexbySpriteIndex(intItemIndex);
 
-                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
+                    objGridCombined.cursor_corner[objTempPosition.y][objTempPosition.x][intItemIndex] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
                 });
             });
         }
@@ -1525,9 +1531,27 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
 
 }
 
+function copyChecklist(objElem) {
+    strText = arrChecklistItems.join('\n')
+
+    var el = document.createElement('textarea');
+    el.value = strText;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    $(objElem).addClass('copied').delay(3000).queue(function (next) {
+        $(this).removeClass('copied');
+    });
+}
+
 function updateChecklist() {
 
     $('.drawn_element_container').hide();
+    $('#drawn_elements .copy_button').hide();
+
+    arrChecklistItems = [];
     let objItemsForChecklist = {};
     let $elemChecklistWrapper = null;
     if (strMode === 'selection_mode') {
@@ -1540,14 +1564,21 @@ function updateChecklist() {
         objItemsForChecklist = {};
 
         Object.keys(arrVersions[intCurrentVersion]).forEach(function (strDirection_Color) {
-            Object.keys(arrVersions[intCurrentVersion][strDirection_Color]).forEach(function (strItemKey) {
-                const intItemKey = parseInt(strItemKey);
-                if (!(intItemKey in objItemsForChecklist)) {
-                    objItemsForChecklist[intItemKey] = []
+            Object.keys(arrVersions[intCurrentVersion][strDirection_Color]).forEach(function (strItemIndex) {
+                const intItemIndex = parseInt(strItemIndex);
+                if (!(intItemIndex in objItemsForChecklist)) {
+                    objItemsForChecklist[intItemIndex] = []
                 }
-                arrVersions[intCurrentVersion][strDirection_Color][intItemKey].forEach((arrCoord) => {
-                    objItemsForChecklist[intItemKey].push(arrCoord)
+                arrVersions[intCurrentVersion][strDirection_Color][intItemIndex].forEach((arrCoord) => {
+                    const key = arrCoord.join(','); // "x,y"
+                    if (arrDefaultElements.includes(key)) {
+                        return;
+                    }
+                    objItemsForChecklist[intItemIndex].push(arrCoord)
                 });
+                if (!objItemsForChecklist[intItemIndex].length) {
+                    delete objItemsForChecklist[intItemIndex];
+                }
             });
         });
     }
@@ -1593,6 +1624,7 @@ function updateChecklist() {
                             <span class="drawn_elements_name">${strName}:</span>
                             <div class="drawn_elements_count">${objColors[strColor]}</div>
                         </div>`);
+                    arrChecklistItems.push(`${strName}: ${objColors[strColor]}`)
                 });
             } else {
                 if (strItemKey in objItemsPlanner) {
@@ -1616,16 +1648,18 @@ function updateChecklist() {
                     <span class="drawn_elements_name">${strName}:</span>
                     <div class="drawn_elements_count">${objItemsForChecklist[intItemIndex].length}</div>
                 </div>`);
-
+                arrChecklistItems.push(`${strName}: ${objItemsForChecklist[intItemIndex].length}`)
             }
-
-
         });
     } else {
         $elemChecklistList.append(`
             <div class="drawn_elements_item">
                <span class="drawn_elements_name">none</span>
             </div>`);
+    }
+
+    if (arrChecklistItems.length) {
+        $('#drawn_elements .copy_button').css('display', '');
     }
 
 }
@@ -1691,8 +1725,8 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
 
             const objCell = objGridCombined.cursor_corner[y][x];
 
-            Object.keys(objCell).forEach(function (strItemKey) {
-                const intItemKey = parseInt(strItemKey);
+            Object.keys(objCell).forEach(function (strItemIndex) {
+                const intItemIndex = parseInt(strItemIndex);
                 const objSectionCell = {
                     x0: objRealPosition.x,
                     y0: objRealPosition.y,
@@ -1700,14 +1734,14 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
                     y1: objRealPosition.y + arrSize[1]
                 };
 
-                if (!('coll' in objCell[intItemKey])) {
+                if (!('coll' in objCell[intItemIndex])) {
 
-                    const strDirection = objCell[intItemKey]?.direction;
-                    const strColor = objCell[intItemKey]?.color;
+                    const strDirection = objCell[intItemIndex]?.direction;
+                    const strColor = objCell[intItemIndex]?.color;
 
                     bolHasChanged = true;
 
-                    const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
+                    const sprite = getSprite(intItemIndex, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
 
                     // sprite.eventMode = 'static';
                     // sprite.on('pointerover', () => {
@@ -1719,32 +1753,32 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
 
                     const arrSize = sprite.meta.size;
                     sprite.position.set(objRealPosition.x * intGridCellSize, objRealPosition.y * intGridCellSize);
-                    sprite.zIndex = getZindexbySpriteIndex(intItemKey);
+                    sprite.zIndex = getZindexbySpriteIndex(intItemIndex);
 
                     //if placing soil, destroy other soil types
-                    if (objSpriteCategories.soil.includes(intItemKey)) {
+                    if (objSpriteCategories.soil.includes(intItemIndex)) {
 
                         const objSectionCellTemp = { x0: objRealPosition.x, y0: objRealPosition.y, x1: objRealPosition.x + arrSize[0], y1: objRealPosition.y + arrSize[1] };
 
                         let arrRemoveTiles = [];
 
                         //if placing soil, remove grass and ext
-                        if ([objSoilIndex.soil, objSoilIndex.wetSoil].includes(intItemKey)) {
+                        if ([objSoilIndex.soil, objSoilIndex.wetSoil].includes(intItemIndex)) {
                             arrRemoveTiles = [objSoilIndex.grass, objSoilIndex.exterior];
 
                             //if placing soil, remove wet soil
-                            if (intItemKey == objSoilIndex.soil) {
+                            if (intItemIndex == objSoilIndex.soil) {
                                 arrRemoveTiles.push(objSoilIndex.wetSoil);
                             }
                         }
 
                         //if placing grass, remove soil and ext
-                        if (intItemKey == objSoilIndex.grass) {
+                        if (intItemIndex == objSoilIndex.grass) {
                             arrRemoveTiles = [objSoilIndex.exterior, objSoilIndex.soil, objSoilIndex.wetSoil];
                         }
 
                         //if placing ext, remove soil and grass
-                        if (intItemKey == objSoilIndex.exterior) {
+                        if (intItemIndex == objSoilIndex.exterior) {
                             arrRemoveTiles = [objSoilIndex.grass, objSoilIndex.soil, objSoilIndex.wetSoil];
                         }
 
@@ -1752,20 +1786,20 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
                     }
 
                     //remove previous sprite if exists
-                    if (intItemKey in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x] && 'sprite' in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey]) {
-                        const spritePrev = objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey].sprite;
+                    if (intItemIndex in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x] && 'sprite' in objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemIndex]) {
+                        const spritePrev = objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemIndex].sprite;
                         if (spritePrev.parent !== null) {
                             spritePrev.parent.removeChild(spritePrev);
                         }
                     }
 
-                    if (intItemKey === objSoilIndex.grass) {
+                    if (intItemIndex === objSoilIndex.grass) {
                         return;
                     }
 
-                    objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemKey] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
+                    objGridCombined.main_corner[objRealPosition.y][objRealPosition.x][intItemIndex] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
 
-                    if (objSpriteCategories.trees.includes(intItemKey)) {
+                    if (objSpriteCategories.trees.includes(intItemIndex)) {
                         const intTreeSize = arrSize[0] * 3;
                         const objSectionCell = {
                             x0: objRealPosition.x - arrSize[0],
@@ -1792,17 +1826,16 @@ function placeTempSection(objCellCoord, bolClearTemp = true) {
                                     continue;
                                 }
 
-                                objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [objRealPosition.x, objRealPosition.y] };
+                                objGridCombined.main_extend[y1][x1][intItemIndex] = { 'coord': [objRealPosition.x, objRealPosition.y] };
                             }
                         }
                     } else {
                         for (var y1 = objSectionCell.y0; y1 < objSectionCell.y0 + arrSize[1]; y1++) {
                             for (var x1 = objSectionCell.x0; x1 < objSectionCell.x0 + arrSize[0]; x1++) {
-                                objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [objRealPosition.x, objRealPosition.y] };
+                                objGridCombined.main_extend[y1][x1][intItemIndex] = { 'coord': [objRealPosition.x, objRealPosition.y] };
                             }
                         }
                     }
-
                 }
             });
         }
@@ -1887,11 +1920,11 @@ function updateTempCollisions(objPosition = false) {
 
             let intMaxZindexTemp = getMaxZindexInCell(Object.keys(objCell));
 
-            Object.keys(objCell).forEach(function (strItemKey) {
-                const intItemKey = parseInt(strItemKey);
-                const strDirection = objGridCombined.cursor_corner[y][x][strItemKey]?.direction
-                const strColor = objGridCombined.cursor_corner[y][x][strItemKey]?.color
-                let sprite = objCell[intItemKey].sprite;
+            Object.keys(objCell).forEach(function (strItemIndex) {
+                const intItemIndex = parseInt(strItemIndex);
+                const strDirection = objGridCombined.cursor_corner[y][x][intItemIndex]?.direction
+                const strColor = objGridCombined.cursor_corner[y][x][intItemIndex]?.color
+                let sprite = objCell[intItemIndex].sprite;
                 const arrSize = sprite.meta.size;
 
                 let objItemArea = {
@@ -1900,7 +1933,7 @@ function updateTempCollisions(objPosition = false) {
                     x1: objRealPosition.x + arrSize[0] - 1,
                     y1: objRealPosition.y + arrSize[1] - 1
                 }
-                if (objSpriteCategories.trees.includes(intItemKey)) {
+                if (objSpriteCategories.trees.includes(intItemIndex)) {
                     const intTreeSize = arrSize[0] * 3;
                     objItemArea = {
                         x0: objRealPosition.x - arrSize[0],
@@ -1926,8 +1959,8 @@ function updateTempCollisions(objPosition = false) {
                     let intMaxZindex = getMaxZindexInCell([...setGrid_CoveredSliceValues]);
 
                     //soil can be under anything, but if there are crops, it must be tilled soil
-                    if (objSpriteCategories.soil.includes(intItemKey)) {
-                        if ([objSoilIndex.exterior, objSoilIndex.grass].includes(intItemKey) && arrGrid_Crops.length) {
+                    if (objSpriteCategories.soil.includes(intItemIndex)) {
+                        if ([objSoilIndex.exterior, objSoilIndex.grass].includes(intItemIndex) && arrGrid_Crops.length) {
                             bolHitsElement = true;
                         }
                     } else if (arrGrid_Crops.length) {
@@ -1938,8 +1971,8 @@ function updateTempCollisions(objPosition = false) {
                     }
                 }
 
-                if (bolHitsElement && !('coll' in objCell[intItemKey]) ||
-                    !bolHitsElement && ('coll' in objCell[intItemKey])) {
+                if (bolHitsElement && !('coll' in objCell[intItemIndex]) ||
+                    !bolHitsElement && ('coll' in objCell[intItemIndex])) {
                     bolHasChanged = true;
 
                     if (bolHitsElement) {
@@ -1953,9 +1986,9 @@ function updateTempCollisions(objPosition = false) {
                         sprite.filters = [];
                     }
 
-                    objGridCombined.cursor_corner[y][x][intItemKey] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
+                    objGridCombined.cursor_corner[y][x][intItemIndex] = { 'sprite': sprite, 'direction': strDirection, 'color': strColor };
                     if (bolHitsElement) {
-                        objGridCombined.cursor_corner[y][x][intItemKey].coll = true;
+                        objGridCombined.cursor_corner[y][x][intItemIndex].coll = true;
                     }
                 }
             });
@@ -2337,16 +2370,16 @@ async function loadMenuItems() {
     });
 
     $('body').on('click', '.dropdown-item-drawable', function (e) {
-        const intItemKeySelected = parseInt($(this).attr('data-key'));
+        const intItemIndexSelected = parseInt($(this).attr('data-key'));
         const strDirection = $(this).attr('data-direction');
         const strColor = $(this).attr('data-color');
 
-        updateCurrentlyDrawing(intItemKeySelected, strDirection, strColor);
+        updateCurrentlyDrawing(intItemIndexSelected, strDirection, strColor);
     });
 
     // $('.dropdown-item-drawable').on('click', function (e) {
-    //     const intItemKeySelected = parseInt($(this).attr('data-key'));
-    //     updateCurrentlyDrawing(intItemKeySelected);
+    //     const intItemIndexSelected = parseInt($(this).attr('data-key'));
+    //     updateCurrentlyDrawing(intItemIndexSelected);
     // });
 
     //hide dropdowns on outside click
@@ -2422,10 +2455,6 @@ async function loadMenuItems() {
     tippy('#delete', {
         content: 'Clear map',
     });
-}
-
-function openControlsPopup() {
-    $('#popup_controls').show();
 }
 
 function changeHouseUpgrade(objElem) {
@@ -2667,16 +2696,16 @@ function prepareGridsForSaving() {
 
             const objCurrentItems = objGridCombined.main_corner[y][x] || {};
 
-            Object.keys(objCurrentItems).forEach(function (strItemKey) {
+            Object.keys(objCurrentItems).forEach(function (strItemIndex) {
 
-                const intItemKey = parseInt(strItemKey);
+                const intItemIndex = parseInt(strItemIndex);
 
-                if (intItemKey === objSoilIndex.grass) {
+                if (intItemIndex === objSoilIndex.grass) {
                     return;
                 }
 
-                let strDirection = objGridCombined.main_corner[y][x][intItemKey]?.direction;
-                let strColor = objGridCombined.main_corner[y][x][intItemKey]?.color;
+                let strDirection = objGridCombined.main_corner[y][x][intItemIndex]?.direction;
+                let strColor = objGridCombined.main_corner[y][x][intItemIndex]?.color;
 
                 if (typeof strDirection === 'undefined' || !strDirection) {
                     strDirection = 'none';
@@ -2699,10 +2728,10 @@ function prepareGridsForSaving() {
                     objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color] = {}
                 }
 
-                if (!(intItemKey in objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color])) {
-                    objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color][intItemKey] = []
+                if (!(intItemIndex in objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color])) {
+                    objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color][intItemIndex] = []
                 }
-                objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color][intItemKey].push([x, y])
+                objMistriaDataPlanner.layout[intSaveSlot].farm[strDirection_Color][intItemIndex].push([x, y])
             });
         }
     }
@@ -2720,23 +2749,23 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                 arrRemoveItems = Object.keys(objCurrentItems).map(strIndex => parseInt(strIndex));
             }
 
-            arrRemoveItems.forEach(function (intItemKeyTemp) {
-                if (typeof objGridCombined.main_corner[y][x][intItemKeyTemp] === 'undefined') {
+            arrRemoveItems.forEach(function (intItemIndexTemp) {
+                if (typeof objGridCombined.main_corner[y][x][intItemIndexTemp] === 'undefined') {
                     return;
                 }
-                if (intItemKeyTemp in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][intItemKeyTemp]) {
-                    const spriteTemp = objGridCombined.main_corner[y][x][intItemKeyTemp].sprite;
+                if (intItemIndexTemp in objGridCombined.main_corner[y][x] && 'sprite' in objGridCombined.main_corner[y][x][intItemIndexTemp]) {
+                    const spriteTemp = objGridCombined.main_corner[y][x][intItemIndexTemp].sprite;
                     if (spriteTemp.parent !== null) {
                         spriteTemp.parent.removeChild(spriteTemp);
                     }
                 }
 
-                const strColor = objGridCombined.main_corner[y][x][intItemKeyTemp]?.color;
-                const strDirection = objGridCombined.main_corner[y][x][intItemKeyTemp]?.direction;
+                const strColor = objGridCombined.main_corner[y][x][intItemIndexTemp]?.color;
+                const strDirection = objGridCombined.main_corner[y][x][intItemIndexTemp]?.direction;
 
-                delete objGridCombined.main_corner[y][x][intItemKeyTemp];
+                delete objGridCombined.main_corner[y][x][intItemIndexTemp];
 
-                const sprite = getSprite(intItemKeyTemp, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
+                const sprite = getSprite(intItemIndexTemp, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
                 const arrSize = sprite.meta.size;
                 const objSectionCell = {
                     x0: x,
@@ -2745,7 +2774,7 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                     y1: y + arrSize[1]
                 };
 
-                if (objSpriteCategories.trees.includes(parseInt(intItemKeyTemp))) {
+                if (objSpriteCategories.trees.includes(parseInt(intItemIndexTemp))) {
                     const intTreeSize = arrSize[0] * 3;
                     const objSectionCell = {
                         x0: x - arrSize[0],
@@ -2772,10 +2801,10 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                                 continue;
                             }
 
-                            if (typeof objGridCombined.main_extend[y1][x1][intItemKeyTemp] !== 'undefined') {
-                                const arrCoord = objGridCombined.main_extend[y1][x1][intItemKeyTemp].coord;
+                            if (typeof objGridCombined.main_extend[y1][x1][intItemIndexTemp] !== 'undefined') {
+                                const arrCoord = objGridCombined.main_extend[y1][x1][intItemIndexTemp].coord;
                                 if (arrCoord[0] == x && arrCoord[1] == y) {
-                                    delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
+                                    delete objGridCombined.main_extend[y1][x1][intItemIndexTemp];
                                 }
                             }
                         }
@@ -2783,10 +2812,10 @@ function clearSection(objSection = { x0: 0, y0: 0, x1: objGrid.x, y1: objGrid.y 
                 } else {
                     for (var y1 = objSectionCell.y0; y1 < objSectionCell.y1; y1++) {
                         for (var x1 = objSectionCell.x0; x1 < objSectionCell.x1; x1++) {
-                            if (typeof objGridCombined.main_extend[y1][x1][intItemKeyTemp] !== 'undefined') {
-                                const arrCoord = objGridCombined.main_extend[y1][x1][intItemKeyTemp].coord;
+                            if (typeof objGridCombined.main_extend[y1][x1][intItemIndexTemp] !== 'undefined') {
+                                const arrCoord = objGridCombined.main_extend[y1][x1][intItemIndexTemp].coord;
                                 if (arrCoord[0] == x && arrCoord[1] == y) {
-                                    delete objGridCombined.main_extend[y1][x1][intItemKeyTemp];
+                                    delete objGridCombined.main_extend[y1][x1][intItemIndexTemp];
                                 }
                             }
                         }
@@ -2857,8 +2886,8 @@ function populateItemGrids() {
     );
 
     Object.keys(objFarmLayout).forEach(function (strDirection_Color) {
-        Object.keys(objFarmLayout[strDirection_Color]).forEach(function (strItemKey) {
-            const intItemKey = parseInt(strItemKey);
+        Object.keys(objFarmLayout[strDirection_Color]).forEach(function (strItemIndex) {
+            const intItemIndex = parseInt(strItemIndex);
             const strColor = matchColor(buildingColors, strDirection_Color);
             let strDirection = '';
 
@@ -2870,24 +2899,24 @@ function populateItemGrids() {
                 strDirection = 'none';
             }
 
-            setItems.add(intItemKey)
-            const sprite = getSprite(intItemKey, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
+            setItems.add(intItemIndex)
+            const sprite = getSprite(intItemIndex, [0, 0, 0, 0, 0, 0, 0, 0], strDirection, strColor);
             const arrSize = sprite.meta.size;
 
-            objFarmLayout[strDirection_Color][intItemKey].forEach((arrCoord) => {
+            objFarmLayout[strDirection_Color][intItemIndex].forEach((arrCoord) => {
                 const x = arrCoord[0];
                 const y = arrCoord[1];
 
-                objGridCombined.main_corner[y][x][intItemKey] = {};
+                objGridCombined.main_corner[y][x][intItemIndex] = {};
                 if (strDirection !== 'none') {
-                    objGridCombined.main_corner[y][x][intItemKey].direction = strDirection;
+                    objGridCombined.main_corner[y][x][intItemIndex].direction = strDirection;
                 }
 
                 if (typeof strColor !== 'undefined') {
-                    objGridCombined.main_corner[y][x][intItemKey].color = strColor;
+                    objGridCombined.main_corner[y][x][intItemIndex].color = strColor;
                 }
 
-                if (objSpriteCategories.trees.includes(intItemKey)) {
+                if (objSpriteCategories.trees.includes(intItemIndex)) {
                     const intTreeSize = arrSize[0] * 3;
                     const objSection = {
                         x0: x - arrSize[0],
@@ -2914,7 +2943,7 @@ function populateItemGrids() {
                                 continue;
                             }
 
-                            objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [x, y] };
+                            objGridCombined.main_extend[y1][x1][intItemIndex] = { 'coord': [x, y] };
                         }
                     }
                 } else {
@@ -2926,7 +2955,7 @@ function populateItemGrids() {
                     }
                     for (var y1 = objSection.y0; y1 < objSection.y1; y1++) {
                         for (var x1 = objSection.x0; x1 < objSection.x1; x1++) {
-                            objGridCombined.main_extend[y1][x1][intItemKey] = { 'coord': [x, y] };
+                            objGridCombined.main_extend[y1][x1][intItemIndex] = { 'coord': [x, y] };
                         }
                     }
                 }
@@ -3230,6 +3259,11 @@ $(function () {
             'exterior': objItemKeyDict['tile_main_exteriors'][0],
         }
 
+        const intBorderFenceIndex = objItemKeyDict['border_fence'][0];
+        const intStarterFenceIndex = objItemKeyDict['starter_wood_fence'][0];
+        const objDefaultItems = objMistriaDataPlannerDefault.layout[0].farm.none;
+        arrDefaultElements = objDefaultItems[intBorderFenceIndex].concat(objDefaultItems[intStarterFenceIndex]).map(arrCoord => arrCoord.join(","));
+
         objSpriteCategories = await (await fetch('textures/categories.json')).json();
         objZindex_Items = await (await fetch('textures/zindexes.json')).json();
 
@@ -3525,9 +3559,12 @@ $(function () {
                         .flat()
                         .reduce((acc, obj) => (
                             Object.entries(obj).forEach(([k, { coord }]) => {
-                                acc[k] ??= []; //questionable chatgpt stuff
-
                                 const key = coord.join(','); // "x,y"
+                                if (arrDefaultElements.includes(key)) {
+                                    return;
+                                }
+
+                                acc[k] ??= []; //questionable chatgpt stuff
 
                                 if (!acc[k].some(c => c.join(',') === key)) {
                                     acc[k].push(coord);
