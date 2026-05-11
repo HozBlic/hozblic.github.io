@@ -6,34 +6,35 @@
     <meta charset="UTF-8">
     <base target="_blank">
     <meta name="theme-color" content="#4a4e69">
-    <title>Fields of Mistria Greenhouse tutorial</title>
-    <meta name="description"
-        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file." />
-    <meta name="keywords" content="Fields of Mistria, herb, seeds, tutorial, save file, edit, modification">
+    <title>Fields of Mistria Layout Planner</title>
+    <meta name="description" content="Interactive farm planner for Fields of Mistria." />
+    <meta name="keywords" content="Fields of Mistria, layout, planner, map, farm">
+
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="Fields of Mistria Greenhouse tutorial" />
-    <meta itemprop="description"
-        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
-    <meta itemprop="image" content="https://mistria.app/images/greenhouse/meta.png" /> <!-- Facebook Meta Tags -->
+    <meta itemprop="name" content="Fields of Mistria Layout Planner" />
+    <meta itemprop="description" content="Interactive farm planner for Fields of Mistria" />
+    <meta itemprop="image" content="https://mistria.app/images/planner/meta.png" /> <!-- Facebook Meta Tags -->
+
+    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://mistria.app/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Fields of Mistria Greenhouse tutorial" />
-    <meta property="og:description"
-        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
-    <meta property="og:image" content="https://mistria.app/images/greenhouse/meta.png" />
+    <meta property="og:title" content="Fields of Mistria Layout Planner" />
+    <meta property="og:description" content="Interactive farm planner for Fields of Mistria" />
+    <meta property="og:image" content="https://mistria.app/images/planner/meta.png" />
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fields of Mistria Greenhouse tutorial" />
-    <meta name="twitter:description"
-        content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
-    <meta name="twitter:image" content="https://mistria.app/images/greenhouse/meta.png" />
+    <meta name="twitter:title" content="Fields of Mistria Layout Planner" />
+    <meta name="twitter:description" content="Interactive farm planner for Fields of Mistria" />
+    <meta name="twitter:image" content="https://mistria.app/images/planner/meta.png" />
+
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
+
     <link rel="icon" type="image/png" href="./images/favicon/favicon-96px.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon-96px.svg" />
     <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="./images/favicon/favicon-96px.png">
-
 
     <link rel="stylesheet" href="css/style.css?v=45">
     <link rel="stylesheet" href="css/popups.css">
@@ -49,12 +50,14 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/tippy-bundle.umd.min.js?v=2"></script>
     <script type="text/javascript" src="js/jquery.highlight-5.js?v=1"></script>
+    <script type="text/javascript" src="js/pako.min.js"></script>
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
     <script type="text/javascript" src="js/script.js?v=53"></script>
     <script type="text/javascript" src="js/planner.js"></script>
     <script type="text/javascript" src="js/manageSprites.js"></script>
+    <script type="text/javascript" src="js/save_file.js?v=23"></script>
 </head>
 
 <body>
@@ -340,7 +343,7 @@
                     </div>
 
                     <div class="buttons">
-                        <div style="display: none;" id="json_button" class="button_item" onclick="openJsonPopup();">
+                        <div id="json_button" class="button_item" onclick="openJsonPopup();">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -655,7 +658,7 @@
                         </svg>
                     </div>
                 </div>
-                <div style="display: none;" class="tab button_item button-notext" id="upload_file"
+                <div class="tab button_item button-notext" id="upload_file"
                     onclick="openJsonPopup()">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1229,6 +1232,394 @@
             </div>
             <div class="popup_close" onclick="$(this).parent().hide();"></div>
         </div>
+
+        <div id="json_button_popup" class="popup_wrapper" data-page="planner">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-upload">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        Import / Export data
+                    </div>
+
+                    <div class="button_item accent" onclick="saveJson()">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
+                                viewBox="0 0 20 14.738">
+                                <path
+                                    d="M4974.754-7257.7l-5.321-5.341a1.5,1.5,0,0,1,0-2.108,1.477,1.477,0,0,1,1.053-.436,1.474,1.474,0,0,1,1.051.436l4.27,4.285,10.653-10.7a1.481,1.481,0,0,1,1.051-.437,1.482,1.482,0,0,1,1.053.438,1.5,1.5,0,0,1,0,2.108l-11.7,11.752a1.482,1.482,0,0,1-1.054.44A1.473,1.473,0,0,1,4974.754-7257.7Z"
+                                    transform="translate(-4968.999 7272)" fill="#FFFFFF" />
+                            </svg>
+                        </div>
+                        <div class="text">Save</div>
+                    </div>
+
+                    <div class="alerts">
+                        <div id="json_alert" class="alert">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="icon green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.001" stroke="none"
+                                    viewBox="0 0 24 24.001">
+                                    <path
+                                        d="M4969-7260a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1,4969-7260Zm12,9.5a9.51,9.51,0,0,0,9.5-9.5,9.512,9.512,0,0,0-9.5-9.5,9.513,9.513,0,0,0-9.5,9.5A9.512,9.512,0,0,0,4981-7250.5Zm-.773-3.96a1.421,1.421,0,0,1-.292-.961v-5.043a1.369,1.369,0,0,1,.292-.953.983.983,0,0,1,.761-.319,1.019,1.019,0,0,1,.774.319,1.236,1.236,0,0,1,.3.891v5.1a1.37,1.37,0,0,1-.3.969,1.006,1.006,0,0,1-.774.329A.966.966,0,0,1,4980.227-7254.46Zm.023-9.6a.964.964,0,0,1-.315-.773.962.962,0,0,1,.323-.747,1.092,1.092,0,0,1,.754-.294,1.121,1.121,0,0,1,.735.267.946.946,0,0,1,.319.774.972.972,0,0,1-.312.768,1.076,1.076,0,0,1-.743.277A1.131,1.131,0,0,1,4980.25-7264.062Z"
+                                        transform="translate(-4969 7272)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="icon yellow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                                    viewBox="0 0 24.002 24">
+                                    <path
+                                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                                        transform="translate(1990.001 7446)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="info"> There seems to be an issue with the JSON code. Please check and try
+                                again.
+                            </div>
+                        </div>
+
+                        <div id="extracting_alert" class="alert">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="icon green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.001" stroke="none"
+                                    viewBox="0 0 24 24.001">
+                                    <path
+                                        d="M4969-7260a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1,4969-7260Zm12,9.5a9.51,9.51,0,0,0,9.5-9.5,9.512,9.512,0,0,0-9.5-9.5,9.513,9.513,0,0,0-9.5,9.5A9.512,9.512,0,0,0,4981-7250.5Zm-.773-3.96a1.421,1.421,0,0,1-.292-.961v-5.043a1.369,1.369,0,0,1,.292-.953.983.983,0,0,1,.761-.319,1.019,1.019,0,0,1,.774.319,1.236,1.236,0,0,1,.3.891v5.1a1.37,1.37,0,0,1-.3.969,1.006,1.006,0,0,1-.774.329A.966.966,0,0,1,4980.227-7254.46Zm.023-9.6a.964.964,0,0,1-.315-.773.962.962,0,0,1,.323-.747,1.092,1.092,0,0,1,.754-.294,1.121,1.121,0,0,1,.735.267.946.946,0,0,1,.319.774.972.972,0,0,1-.312.768,1.076,1.076,0,0,1-.743.277A1.131,1.131,0,0,1,4980.25-7264.062Z"
+                                        transform="translate(-4969 7272)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="icon yellow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24.002" height="24" stroke="none"
+                                    viewBox="0 0 24.002 24">
+                                    <path
+                                        d="M-1990-7434a12,12,0,0,1,12-12,12,12,0,0,1,12,12,12,12,0,0,1-12,12A12,12,0,0,1-1990-7434Zm2.5,0a9.51,9.51,0,0,0,9.5,9.5,9.51,9.51,0,0,0,9.5-9.5,9.511,9.511,0,0,0-9.5-9.5A9.511,9.511,0,0,0-1987.5-7434Zm8.181,4.414A1.3,1.3,0,0,1-1978-7430.9a1.325,1.325,0,0,1,1.3,1.315,1.342,1.342,0,0,1-1.3,1.315A1.317,1.317,0,0,1-1979.319-7429.585Zm.269-3c0-.938-.056-2.1-.11-3.223s-.11-2.293-.11-3.233a1.106,1.106,0,0,1,1.252-1.063,1.109,1.109,0,0,1,1.235,1.063c0,.942-.056,2.106-.11,3.233s-.11,2.285-.11,3.223c0,.578-.622.792-1.015.792C-1978.656-7431.792-1979.05-7432.1-1979.05-7432.585Z"
+                                        transform="translate(1990.001 7446)" fill="#242424" />
+                                </svg>
+                            </div>
+                            <div class="info"></div>
+                        </div>
+
+                        <div id="parsing_alert" class="alert">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="info"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="popup_content">
+                    <div class="inner_divider">
+                        <div class="popup_subtitle">
+                            Upload save file
+                            <svg id="save_file_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="popup_subdesc">
+                            <p>You can upload your save file here to extract information about given gifts and donated
+                                items.</p>
+                            <p style="opacity: 0.8;">Please, use your <b>auto save</b> file</p>
+                            <div class="code_copy_block">
+                                <pre>C:\Users\%USERNAME%\AppData\Local\FieldsOfMistria\saves</pre>
+                                <div class="button_item copy_button"
+                                    onclick="copyClipboard(this, `C:\\Users\\%USERNAME%\\AppData\\Local\\FieldsOfMistria\\saves`)">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
+                                            viewBox="0 0 20.278 24" stroke="none">
+                                            <path
+                                                d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                transform="translate(-4969 7272.001)" fill="#FFFFFF" />
+                                        </svg>
+                                    </div>
+                                    <div class="text">
+                                        <span class="default"></span>
+                                        <span class="hover">Copy</span>
+                                        <span class="copied">Copied</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="additional_info_wrap">
+                                <input id="checkbox_additional_info" type='checkbox'></input>
+                                <label for="checkbox_additional_info">
+                                    Can't find your save file folder?
+                                    <svg fill="none" height="15" viewBox="0 0 15 15" width="15"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
+                                            d="M4.18179 6.18181C4.35753 6.00608 4.64245 6.00608 4.81819 6.18181L7.49999 8.86362L10.1818 6.18181C10.3575 6.00608 10.6424 6.00608 10.8182 6.18181C10.9939 6.35755 10.9939 6.64247 10.8182 6.81821L7.81819 9.81821C7.73379 9.9026 7.61934 9.95001 7.49999 9.95001C7.38064 9.95001 7.26618 9.9026 7.18179 9.81821L4.18179 6.81821C4.00605 6.64247 4.00605 6.35755 4.18179 6.18181Z"
+                                            fill="currentColor" fill-rule="evenodd" />
+                                    </svg>
+                                </label>
+
+                                <div id="additional_info">
+                                    <div id="additional_info_content">
+                                        <p>
+                                            For Windows, usually it's located in this folder shown above. If you didn't
+                                            find your save file there, you can try:
+                                        </p>
+                                        <ol>
+                                            <li>AppData is a hidden folder, you must turn on "show hidden files"
+                                                manually,
+                                                if you haven't already done so.</li>
+                                            <li>
+                                                <p>
+                                                    If previous step didn't help, press
+                                                    <span class="win_span">
+                                                        <svg fill="#000000" version="1.1" id="Icons"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                            viewBox="0 0 32 32" xml:space="preserve">
+                                                            <g>
+                                                                <g>
+                                                                    <path
+                                                                        d="M30,15H17c-0.6,0-1-0.4-1-1V3.3c0-0.5,0.4-0.9,0.8-1l13-2.3c0.3,0,0.6,0,0.8,0.2C30.9,0.4,31,0.7,31,1v13C31,14.6,30.6,15,30,15z" />
+                                                                </g>
+                                                                <g>
+                                                                    <path
+                                                                        d="M13,15H1c-0.6,0-1-0.4-1-1V6c0-0.5,0.4-0.9,0.8-1l12-2c0.3,0,0.6,0,0.8,0.2C13.9,3.4,14,3.7,14,4v10C14,14.6,13.6,15,13,15z" />
+                                                                </g>
+                                                                <g>
+                                                                    <path
+                                                                        d="M30,32c-0.1,0-0.1,0-0.2,0l-13-2.3c-0.5-0.1-0.8-0.5-0.8-1V18c0-0.6,0.4-1,1-1h13c0.6,0,1,0.4,1,1v13c0,0.3-0.1,0.6-0.4,0.8C30.5,31.9,30.2,32,30,32z" />
+                                                                </g>
+                                                                <g>
+                                                                    <path
+                                                                        d="M13,29c-0.1,0-0.1,0-0.2,0l-12-2C0.4,26.9,0,26.5,0,26v-8c0-0.6,0.4-1,1-1h12c0.6,0,1,0.4,1,1v10c0,0.3-0.1,0.6-0.4,0.8C13.5,28.9,13.2,29,13,29z" />
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                        + R
+                                                    </span>
+                                                    [Windows logo key + R] and paste command below, save file folder
+                                                    should appear
+                                                </p>
+
+                                                <div class="code_copy_block">
+                                                    <pre>%LocalAppData%\FieldsOfMistria</pre>
+                                                    <div class="button_item copy_button"
+                                                        onclick="copyClipboard(this, `%LocalAppData%\\FieldsOfMistria`)">
+                                                        <div class="icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20.278"
+                                                                height="24" viewBox="0 0 20.278 24" stroke="none">
+                                                                <path
+                                                                    d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                                                    transform="translate(-4969 7272.001)"
+                                                                    fill="#FFFFFF" />
+                                                            </svg>
+                                                        </div>
+                                                        <div class="text">
+                                                            <span class="default"></span>
+                                                            <span class="hover">Copy</span>
+                                                            <span class="copied">Copied</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>If that fails, you can go to <a
+                                                    href="https://store.steampowered.com/account/remotestorage">Steam
+                                                    Cloud manager</a> and download your save file there</li>
+                                        </ol>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre id="output" style="display: none"></pre>
+                        <div class="button_set">
+                            <label for="save_input" class="button_item">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22.499" height="24.004" stroke="none"
+                                        viewBox="0 0 22.499 24.004">
+                                        <path id="upload"
+                                            d="M4974.038-7248a5.05,5.05,0,0,1-5.037-5.037v-4.214a1.252,1.252,0,0,1,1.25-1.25,1.251,1.251,0,0,1,1.248,1.25v4.214a2.546,2.546,0,0,0,2.539,2.537h12.425a2.544,2.544,0,0,0,2.537-2.537v-4.214a1.253,1.253,0,0,1,1.25-1.25,1.252,1.252,0,0,1,1.25,1.25v4.214a5.049,5.049,0,0,1-5.037,5.037Zm5.022-7.539v-12.173l-5.415,5.469a1.247,1.247,0,0,1-1.767.011,1.253,1.253,0,0,1-.011-1.767l7.552-7.634s0,0,0,0,0,0,.005,0a.028.028,0,0,1,.009-.009,1.258,1.258,0,0,1,.319-.228l.013-.005a.246.246,0,0,1,.035-.015l.024-.011c.007,0,.017-.006.023-.009l.037-.015.015-.005.046-.015a.007.007,0,0,0,.005,0h0a.4.4,0,0,0,.051-.015h.005s0,0,0,0l.053-.011h0l.009,0a.385.385,0,0,0,.047-.009h0a.034.034,0,0,0,.015,0,.332.332,0,0,1,.043,0h0a.1.1,0,0,1,.024,0,.2.2,0,0,1,.035,0h.06c.02,0,.042,0,.061,0h0l.027,0,.033,0h0a.17.17,0,0,1,.031,0l.027,0h0v0a.1.1,0,0,1,.033.005l.029,0,.031.007a.152.152,0,0,0,.027.007.211.211,0,0,1,.033.009l.025.005a.213.213,0,0,0,.033.011.078.078,0,0,0,.022.007l0,0,.033.013.018.007.005,0c.013.005.024.011.037.015s.007,0,.013.007.006,0,.007,0l.035.017.022.013a.211.211,0,0,1,.027.015l.027.017.02.011a.352.352,0,0,1,.033.024.014.014,0,0,1,.007,0,1.347,1.347,0,0,1,.186.153l7.548,7.634a1.248,1.248,0,0,1-.011,1.767,1.247,1.247,0,0,1-1.767-.011l-5.411-5.469v12.173a1.248,1.248,0,0,1-1.252,1.247A1.248,1.248,0,0,1,4979.06-7255.535Z"
+                                            transform="translate(-4969 7272)" fill="#242424" />
+                                    </svg>
+
+                                </div>
+                                <div class="text"> Upload .sav file</div>
+                            </label>
+                            <input type="file" id="save_input" accept=".sav" />
+                        </div>
+                    </div>
+
+                    <div class="inner_divider">
+                        <div class="popup_subtitle">Edit saved data</div>
+                        <div class="popup_subdesc">
+                            <p>All of your settings - created layouts, customization choices, etc. - are saved
+                                locally in your browser.</p>
+                            <p>If you decide to clear your browser storage or use a different device or browser, you can
+                                restore your settings by pasting your saved JSON here.</p>
+                        </div>
+
+                        <div class="input-label">
+                            <label for="settings_json">JSON code</label>
+                            <textarea id="settings_json"></textarea>
+                        </div>
+
+                        <div class="button_set">
+                            <div class="button_item" id="save_file" onclick="saveAsJsonFile('settings_json')">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="19.421" height="24.002" stroke="none"
+                                        viewBox="0 0 19.421 24.002">
+                                        <path id="download"
+                                            d="M4970.245-7247.994a1.245,1.245,0,0,1-1.247-1.247,1.245,1.245,0,0,1,1.247-1.243h16.928a1.245,1.245,0,0,1,1.247,1.243,1.245,1.245,0,0,1-1.247,1.247Zm8.584-6.367h-.125a.1.1,0,0,1-.033,0h-.025a.2.2,0,0,1-.043-.007h-.015a.331.331,0,0,0-.048-.007s-.008,0-.012,0l-.054-.011h0a.235.235,0,0,0-.056-.015s0,0-.007,0-.029-.011-.043-.015-.012,0-.015,0a.162.162,0,0,0-.037-.015l-.022-.011-.025-.012a.1.1,0,0,1-.033-.015s-.011,0-.015,0a1.221,1.221,0,0,1-.315-.227l-.012-.011h0s0,0,0,0l-7.522-7.606a1.248,1.248,0,0,1,.012-1.76,1.245,1.245,0,0,1,1.759.011l5.392,5.45v-12.122a1.244,1.244,0,0,1,1.243-1.243,1.245,1.245,0,0,1,1.247,1.243v12.119l5.389-5.447a1.245,1.245,0,0,1,1.759-.011,1.245,1.245,0,0,1,.011,1.76l-7.519,7.606a1.442,1.442,0,0,1-.187.149l0,0a.106.106,0,0,1-.036.022s-.012.007-.015.015a.063.063,0,0,0-.03.015.2.2,0,0,0-.025.015l-.025.011a.34.34,0,0,1-.033.018s0,0-.008,0-.007,0-.015.007a.192.192,0,0,0-.033.015h-.007a.029.029,0,0,1-.018.008l-.033.015h0c-.007,0-.015,0-.021.008l-.033.011a.131.131,0,0,1-.026.007c-.007,0-.021,0-.033.008a.245.245,0,0,1-.025.007c-.011,0-.022,0-.033.008a.059.059,0,0,1-.025,0c-.012,0-.022,0-.033.007h0a.063.063,0,0,0-.025,0c-.012,0-.022,0-.033,0a.091.091,0,0,0-.033,0Z"
+                                            transform="translate(-4968.999 7271.996)" fill="#242424" />
+                                    </svg>
+                                </div>
+                                <div class="text">Save as JSON file</div>
+                            </div>
+
+                            <div class="button_item copy_button" id="copy_json" onclick="copyClipboardJSON(this)">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24"
+                                        viewBox="0 0 20.278 24" stroke="none">
+                                        <path
+                                            d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                            transform="translate(-4969 7272.001)" fill="#FFFFFF" />
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    <span class="default">Copy to clipboard</span>
+                                    <span class="copied">Copied</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="inner_divider">
+                        <div class="popup_subtitle">Delete saved data</div>
+                        <div class="popup_subdesc">
+                            <p style="display: inline;">Delete all your saved data. This will include <b style="text-decoration: underline;">tracker</b> and <b style="text-decoration: underline;">planner</b> data. If you use multiple browsers and / or devices, only current
+                                browser on current device will be affected.
+                            </p>
+                        </div>
+                        <div class="button_set">
+                            <div class="button_item delete" id="delete_data" onclick="deleteData()">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-trash-2">
+                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                        <path
+                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                        </path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <div class="text">Delete data</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
+        </div>
+
+        <div id="accept_changes" class="popup_wrapper">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        Confirm Changes
+                    </div>
+                    <div class="popup_header_desc">
+                        After saving page will be reloaded
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="popup_content">
+                    <ul id="changes"></ul>
+                    <div class="button_set">
+                        <div onclick="$('#accept_changes').hide();" class="button_item no_icon">Cancel</div>
+                        <div id="popup-accept" class="button_item accent">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.738" stroke="none"
+                                    viewBox="0 0 20 14.738">
+                                    <path
+                                        d="M4974.754-7257.7l-5.321-5.341a1.5,1.5,0,0,1,0-2.108,1.477,1.477,0,0,1,1.053-.436,1.474,1.474,0,0,1,1.051.436l4.27,4.285,10.653-10.7a1.481,1.481,0,0,1,1.051-.437,1.482,1.482,0,0,1,1.053.438,1.5,1.5,0,0,1,0,2.108l-11.7,11.752a1.482,1.482,0,0,1-1.054.44A1.473,1.473,0,0,1,4974.754-7257.7Z"
+                                        transform="translate(-4968.999 7272)" fill="#FFFFFF" />
+                                </svg>
+                            </div>
+                            <div class="text">Save</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
+        </div>
+
+        <div id="accept_delete_data" class="popup_wrapper">
+            <div class="popup_inner">
+                <div class="popup_header">
+                    <div class="popup_header_text">
+                        Confirm data deletion
+                    </div>
+                    <div class="popup_header_desc">
+                        After deletion page will be reloaded
+                    </div>
+                    <div class="alert"></div>
+                </div>
+                <div class="popup_content">
+                    <ul id="changes"></ul>
+                    <div class="button_set">
+                        <div onclick="$('#accept_delete_data').hide();" class="button_item no_icon">Cancel</div>
+                        <div id="popup-selete-data" class="button_item delete">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-trash-2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path
+                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                    </path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                            </div>
+                            <div class="text">Delete data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_close" onclick="$(this).parent().hide();"></div>
+        </div>
+
     </div>
 </body>
 

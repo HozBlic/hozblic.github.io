@@ -37,6 +37,16 @@ var objBuild =
         "customization": ["back_gear_basic_backpack", "back_gear_basic_cape", "beard_basic", "beard_thick", "facial_hair_handlebar_moustache", "facial_hair_moustache", "facial_hair_short_beard", "facial_hair_soul_patch", "facial_hair_stubble", "dress_modest", "dress_sleeveless_basic", "face_gear_blush", "face_gear_glasses", "hair_afro", "hair_blown_out_twist", "hair_braided_pigtails", "hair_buzzcut", "hair_cowlick", "hair_curly_high_top", "hair_curly_medium", "hair_curly_medium_fringe", "hair_curly_shaved_side", "hair_curly_short", "hair_curly_shorter", "hair_curly_updo", "hair_dreadlocks_bun", "hair_dreadlocks_long", "hair_fade", "hair_medium_boyish", "hair_mohawk", "hair_mushroom", "hair_parted_mushroom", "hair_pixie", "hair_straight_long", "hair_straight_long_fringed", "hair_straight_long_tucked", "hair_straight_medium", "hair_straight_medium_ponytail", "hair_straight_medium_ponytail_fluffy_bangs", "hair_straight_shaved_side", "hair_textured_buzzcut", "hair_wavy_long", "hair_wavy_long_fringed", "hair_wavy_medium", "hair_wavy_medium_fringed", "head_aviator_goggles", "head_bandana", "head_baseball_cap", "head_beret", "head_cowboy_hat_basic", "head_fighter_headband", "head_hijab", "head_rain_hat", "head_ribbons_basic", "head_short_bow", "head_sunhat_straw", "head_witch_hat", "overalls_basic", "overalls_skirt", "pants_basic", "shoes_boots", "shoes_boots_short_basic", "shorts_basic", "skirt_long_basic", "skirt_short_basic", "top_cami", "top_jacket_and_tee_basic", "top_long_sleeve_baseball", "top_long_sleeve_basic", "top_long_sleeve_basic_cropped", "top_tanktop", "top_tee_basic", "underwear_bottoms_polkadot", "underwear_bra", "underwear_bra_small", "underwear_briefs", "underwear_shorts", "underwear_tank", "head_cloth_helmet", "pants_cloth_armor", "shoes_boots_cloth_armor", "top_cloth_armor"],
         "options": ["mode_dark"]
     },
+    "objVariants": {
+        "small_barn": ["red", "black"],
+        "medium_barn": ["red", "black"],
+        "large_barn": ["red", "black"],
+        "small_coop": ["red", "black"],
+        "medium_coop": ["red", "black"],
+        "large_coop": ["red", "black"],
+        "small_greenhouse": ["white", "wood"],
+        "large_greenhouse": ["white", "wood"],
+    },
     "objMistriaDataPlannerDefault": {
         "season": "spring",
         "house_upgrade": 0,
