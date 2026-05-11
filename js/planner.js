@@ -130,12 +130,12 @@ function addTestData(intTest) {
                             const objSectionCell = { x0: tempX, y0: tempY, x1: tempX + 2, y1: tempY + 2 };
                             const spriteCrop = getSprite(intCurrentlyDrawingTemp, [0, 0, 0, 0, 0, 0, 0, 0]);
                             sprite.eventMode = 'static';
-                            sprite.on('pointerover', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                            });
-                            sprite.on('pointerleave', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                            });
+                            // sprite.on('pointerover', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                            // });
+                            // sprite.on('pointerleave', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                            // });
 
                             spriteCrop.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                             spriteCrop.zIndex = getZindexbySpriteIndex(intCurrentlyDrawingTemp);
@@ -150,12 +150,12 @@ function addTestData(intTest) {
 
                             const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoil.eventMode = 'static';
-                            spriteSoil.on('pointerover', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                            });
-                            spriteSoil.on('pointerleave', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                            });
+                            // spriteSoil.on('pointerover', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                            // });
+                            // spriteSoil.on('pointerleave', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                            // });
 
                             spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                             spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
@@ -169,12 +169,12 @@ function addTestData(intTest) {
                             if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
                                 const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                                 spriteSoilWet.eventMode = 'static';
-                                spriteSoilWet.on('pointerover', () => {
-                                    highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                                });
-                                spriteSoilWet.on('pointerleave', () => {
-                                    highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                                });
+                                // spriteSoilWet.on('pointerover', () => {
+                                //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                                // });
+                                // spriteSoilWet.on('pointerleave', () => {
+                                //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                                // });
 
                                 spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                                 spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
@@ -226,12 +226,12 @@ function addTestData(intTest) {
                             const spriteCrop = getSprite(intCurrentlyDrawingTemp, [0, 0, 0, 0, 0, 0, 0, 0]);
 
                             spriteCrop.eventMode = 'static';
-                            spriteCrop.on('pointerover', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                            });
-                            spriteCrop.on('pointerleave', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                            });
+                            // spriteCrop.on('pointerover', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                            // });
+                            // spriteCrop.on('pointerleave', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                            // });
                             spriteCrop.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                             spriteCrop.zIndex = getZindexbySpriteIndex(intCurrentlyDrawingTemp);
 
@@ -245,12 +245,12 @@ function addTestData(intTest) {
 
                             const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoil.eventMode = 'static';
-                            spriteSoil.on('pointerover', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                            });
-                            spriteSoil.on('pointerleave', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                            });
+                            // spriteSoil.on('pointerover', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                            // });
+                            // spriteSoil.on('pointerleave', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                            // });
                             spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                             spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
@@ -264,12 +264,12 @@ function addTestData(intTest) {
                             if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
                                 const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                                 objSoilIndex.wetSoil.eventMode = 'static';
-                                objSoilIndex.wetSoil.on('pointerover', () => {
-                                    highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                                });
-                                objSoilIndex.wetSoil.on('pointerleave', () => {
-                                    highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                                });
+                                // objSoilIndex.wetSoil.on('pointerover', () => {
+                                //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                                // });
+                                // objSoilIndex.wetSoil.on('pointerleave', () => {
+                                //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                                // });
                                 spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                                 spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
@@ -312,12 +312,12 @@ function addTestData(intTest) {
                     const objSectionCell = { x0: tempX, y0: tempY, x1: tempX + 2, y1: tempY + 2 };
                     const spriteCrop = getSprite(intCurrentlyDrawingTemp, [0, 0, 0, 0, 0, 0, 0, 0]);
                     spriteCrop.eventMode = 'static';
-                    spriteCrop.on('pointerover', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                    });
-                    spriteCrop.on('pointerleave', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                    });
+                    // spriteCrop.on('pointerover', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                    // });
+                    // spriteCrop.on('pointerleave', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                    // });
                     spriteCrop.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                     spriteCrop.zIndex = getZindexbySpriteIndex(intCurrentlyDrawingTemp);
 
@@ -332,12 +332,12 @@ function addTestData(intTest) {
                     const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
 
                     spriteSoil.eventMode = 'static';
-                    spriteSoil.on('pointerover', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                    });
-                    spriteSoil.on('pointerleave', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                    });
+                    // spriteSoil.on('pointerover', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                    // });
+                    // spriteSoil.on('pointerleave', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                    // });
                     spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                     spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
@@ -352,12 +352,12 @@ function addTestData(intTest) {
                         const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
 
                         spriteSoilWet.eventMode = 'static';
-                        spriteSoilWet.on('pointerover', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                        });
-                        spriteSoilWet.on('pointerleave', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                        });
+                        // spriteSoilWet.on('pointerover', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                        // });
+                        // spriteSoilWet.on('pointerleave', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                        // });
                         spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                         spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
@@ -384,12 +384,12 @@ function addTestData(intTest) {
                     const objSectionCell = { x0: tempX, y0: tempY, x1: tempX + 2, y1: tempY + 2 };
                     const spriteCrop = getSprite(intCurrentlyDrawingTemp, [0, 0, 0, 0, 0, 0, 0, 0]);
                     spriteCrop.eventMode = 'static';
-                    spriteCrop.on('pointerover', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                    });
-                    spriteCrop.on('pointerleave', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                    });
+                    // spriteCrop.on('pointerover', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                    // });
+                    // spriteCrop.on('pointerleave', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                    // });
                     spriteCrop.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                     spriteCrop.zIndex = getZindexbySpriteIndex(intCurrentlyDrawingTemp);
 
@@ -403,12 +403,12 @@ function addTestData(intTest) {
 
                     const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                     spriteSoil.eventMode = 'static';
-                    spriteSoil.on('pointerover', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                    });
-                    spriteSoil.on('pointerleave', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                    });
+                    // spriteSoil.on('pointerover', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                    // });
+                    // spriteSoil.on('pointerleave', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                    // });
                     spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                     spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
@@ -422,12 +422,12 @@ function addTestData(intTest) {
                     if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
                         const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteSoilWet.eventMode = 'static';
-                        spriteSoilWet.on('pointerover', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                        });
-                        spriteSoilWet.on('pointerleave', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                        });
+                        // spriteSoilWet.on('pointerover', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                        // });
+                        // spriteSoilWet.on('pointerleave', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                        // });
                         spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                         spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
@@ -470,21 +470,21 @@ function addTestData(intTest) {
                         const objSectionCell = { x0: tempX, y0: tempY, x1: tempX + 2, y1: tempY + 2 };
                         const spriteCrop = getSprite(intCurrentlyDrawingTemp, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteCrop.eventMode = 'static';
-                        spriteCrop.on('pointerover', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                        });
-                        spriteCrop.on('pointerleave', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                        });
+                        // spriteCrop.on('pointerover', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                        // });
+                        // spriteCrop.on('pointerleave', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                        // });
                         spriteCrop.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                         spriteCrop.zIndex = getZindexbySpriteIndex(intCurrentlyDrawingTemp);
                         spriteCrop.eventMode = 'static';
-                        spriteCrop.on('pointerover', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                        });
-                        spriteCrop.on('pointerleave', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                        });
+                        // spriteCrop.on('pointerover', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                        // });
+                        // spriteCrop.on('pointerleave', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                        // });
 
                         clearSection(objSectionCell);
                         objGridCombined.main_corner[tempY][tempX][intCurrentlyDrawingTemp] = { 'sprite': spriteCrop };
@@ -496,12 +496,12 @@ function addTestData(intTest) {
 
                         const spriteSoil = getSprite(objSoilIndex.soil, [0, 0, 0, 0, 0, 0, 0, 0]);
                         spriteSoil.eventMode = 'static';
-                        spriteSoil.on('pointerover', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                        });
-                        spriteSoil.on('pointerleave', () => {
-                            highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                        });
+                        // spriteSoil.on('pointerover', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                        // });
+                        // spriteSoil.on('pointerleave', () => {
+                        //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                        // });
                         spriteSoil.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                         spriteSoil.zIndex = getZindexbySpriteIndex(objSoilIndex.soil);
 
@@ -515,12 +515,12 @@ function addTestData(intTest) {
                         if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
                             const spriteSoilWet = getSprite(objSoilIndex.wetSoil, [0, 0, 0, 0, 0, 0, 0, 0]);
                             spriteSoilWet.eventMode = 'static';
-                            spriteSoilWet.on('pointerover', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                            });
-                            spriteSoilWet.on('pointerleave', () => {
-                                highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                            });
+                            // spriteSoilWet.on('pointerover', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                            // });
+                            // spriteSoilWet.on('pointerleave', () => {
+                            //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                            // });
                             spriteSoilWet.position.set(tempX * intGridCellSize, tempY * intGridCellSize);
                             spriteSoilWet.zIndex = getZindexbySpriteIndex(objSoilIndex.wetSoil);
 
@@ -613,8 +613,6 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
     //add 1 big cell (2x2) frame to section
     //all items that change their sprite depending on neighbors are 2x2 big
 
-    //TODO: delete old sprites (clear cell want called in outer ring)
-
     objSection = {
         x0: Math.max(objSection.x0 - 2, 0),
         y0: Math.max(objSection.y0 - 2, 0),
@@ -654,12 +652,12 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
                     const arrNeigbors = objNeighbors[intIdx][y - objSection.y0][x - objSection.x0]
                     const sprite = getSprite(intIdx, arrNeigbors);
                     sprite.eventMode = 'static';
-                    sprite.on('pointerover', () => {
-                        highlightSection({ x0: x, x1: x, y0: y, y1: y })
-                    });
-                    sprite.on('pointerleave', () => {
-                        highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
-                    });
+                    // sprite.on('pointerover', () => {
+                    //     highlightSection({ x0: x, x1: x, y0: y, y1: y })
+                    // });
+                    // sprite.on('pointerleave', () => {
+                    //     highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
+                    // });
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intIdx);
 
@@ -680,12 +678,12 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
                 if (arrNeigbors.includes(1)) {
                     const sprite = getSprite(objSoilIndex.grass, arrNeigbors);
                     sprite.eventMode = 'static';
-                    sprite.on('pointerover', () => {
-                        highlightSection({ x0: x, x1: x, y0: y, y1: y })
-                    });
-                    sprite.on('pointerleave', () => {
-                        highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
-                    });
+                    // sprite.on('pointerover', () => {
+                    //     highlightSection({ x0: x, x1: x, y0: y, y1: y })
+                    // });
+                    // sprite.on('pointerleave', () => {
+                    //     highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
+                    // });
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(objSoilIndex.grass);
 
@@ -1215,7 +1213,7 @@ function updateCurrentlyDrawing(intItemIndex = false, strDirection = false, strC
     strCurrentDirection = strDirection;
     strCurrentColor = strColor;
     $(`[data-key]`).removeClass('selected');
-    $(`[data-key="${intCurrentlyDrawing}"]`).addClass('selected');
+    $(`[data-key="${intCurrentlyDrawing}"]${strColor ? '[data-color="' + strColor + '"]' : ''}`).addClass('selected');
 
     updateCursorMode('drawing_mode');
     generateTempSection();
@@ -1329,7 +1327,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
     // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
-        console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
+        // console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
         let arrSize = getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor).meta.size;
 
         if (objSpriteCategories.trees.includes(intCurrentlyDrawing)) {
@@ -1554,17 +1552,25 @@ function copyChecklist(objElem) {
 }
 
 function updateChecklist() {
+
+    // console.log('update')
     $('.drawn_element_container').hide();
     $('#drawn_elements .copy_button').hide();
 
-    arrChecklistItems = [];
+    let arrChecklistItems = [];
     let objItemsForChecklist = {};
     let $elemChecklistWrapper = null;
+    let bolShowCopyButton = true;
     if (strMode === 'selection_mode') {
-        $elemChecklistWrapper = $('#drawn_elements_selected')
+        $elemChecklistWrapper = $('#drawn_elements_selected');
         if (objSelectionItems) {
             objItemsForChecklist = objSelectionItems.objItemCounts;
         }
+        if (!objSelectionSection) {
+            bolShowCopyButton = false;
+        }
+
+        // console.log(objSelectionSection)
     } else {
         $elemChecklistWrapper = $('#drawn_elements_all')
         objItemsForChecklist = {};
@@ -1608,22 +1614,30 @@ function updateChecklist() {
                 let objColors = {};
 
                 objItemsForChecklist[strItemIndex].forEach(function (arrCoords) {
-                    const strColor = objGridCombined.main_corner[arrCoords[1]][arrCoords[0]][intItemIndex]?.color
-
-                    if (!(strColor in objColors)) {
-                        objColors[strColor] = 0;
+                    if (bolIsDraggingSection) {
+                        const strColor = 'all'
+                        if (!(strColor in objColors)) {
+                            objColors[strColor] = 0;
+                        }
+                        objColors[strColor] = objColors[strColor] + 1;
+                    } else {
+                        const strColor = objGridCombined.main_corner[arrCoords[1]][arrCoords[0]][intItemIndex]?.color
+                        if (!(strColor in objColors)) {
+                            objColors[strColor] = 0;
+                        }
+                        objColors[strColor] = objColors[strColor] + 1;
                     }
-
-                    objColors[strColor] = objColors[strColor] + 1;
                 });
 
                 Object.keys(objColors).forEach(function (strColor) {
-
                     strName = `${objNameDict[strItemKey]} (${strColor})`;
                     const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
 
                     bolImage = true;
                     strImage = `images/items/${strSpriteKey}.png`;
+                    if (strColor == 'all') {
+                        bolImage = false;
+                    }
 
                     $elemChecklistList.append(`
                         <div class="drawn_elements_item">
@@ -1664,9 +1678,10 @@ function updateChecklist() {
             <div class="drawn_elements_item">
                <span class="drawn_elements_name">none</span>
             </div>`);
+        bolShowCopyButton = false;
     }
 
-    if (arrChecklistItems.length) {
+    if (bolShowCopyButton) {
         $('#drawn_elements .copy_button').css('display', '');
     }
 }
@@ -2290,7 +2305,7 @@ async function loadMenuItems() {
                 if (strItemKey in objItemsPlanner && 'colors' in objItemsPlanner[strItemKey]) {
                     objItemsPlanner[strItemKey].colors.forEach(function (strColor) {
                         strName = `${objItemsPlanner[strItemKey].name} (${strColor})`;
-                        objNameDict[strItemKey] = strName;
+                        objNameDict[strItemKey] = objItemsPlanner[strItemKey].name;
                         const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
 
                         bolImage = true;
@@ -2859,6 +2874,7 @@ function changeSeasonInGrids(bolOnlyPlants = false) {
 
             if (arrCellItems.length) {
                 arrCellItems.forEach(function (intItemIndex) {
+
                     if (bolOnlyPlants && !(objSpriteCategories.crops.includes(intItemIndex) || objSpriteCategories.trees.includes(intItemIndex))) {
                         //skip if not crop or tree
                         return;
@@ -2868,19 +2884,21 @@ function changeSeasonInGrids(bolOnlyPlants = false) {
                     }
 
                     const arrNeigbors = ('neigbors' in objGridCombined.main_corner[y][x][intItemIndex] ? objGridCombined.main_corner[y][x][intItemIndex].neigbors : [0, 0, 0, 0, 0, 0, 0, 0])
+                    const strDirection = objGridCombined.main_corner[y][x][intItemIndex]?.direction;
+                    const strColor = objGridCombined.main_corner[y][x][intItemIndex]?.color;
 
-                    let sprite = objGridCombined.main_corner[y][x][intItemIndex].sprite
-
+                    let sprite = objGridCombined.main_corner[y][x][intItemIndex].sprite;
                     objContainers['ee'].removeChild(sprite);
 
-                    sprite = getSprite(intItemIndex, arrNeigbors);
+                    sprite = getSprite(intItemIndex, arrNeigbors, strDirection, strColor);
                     sprite.eventMode = 'static';
-                    sprite.on('pointerover', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
-                    });
-                    sprite.on('pointerleave', () => {
-                        highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
-                    });
+
+                    // sprite.on('pointerover', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY })
+                    // });
+                    // sprite.on('pointerleave', () => {
+                    //     highlightSection({ x0: tempX, x1: tempX, y0: tempY, y1: tempY }, true)
+                    // });
 
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intItemIndex);
@@ -3014,12 +3032,12 @@ function populateItemGrids() {
 
                     const sprite = getSprite(intItemIndex, arrNeigbors, strDirection, strColor);
                     sprite.eventMode = 'static';
-                    sprite.on('pointerover', () => {
-                        highlightSection({ x0: x, x1: x, y0: y, y1: y })
-                    });
-                    sprite.on('pointerleave', () => {
-                        highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
-                    });
+                    // sprite.on('pointerover', () => {
+                    //     highlightSection({ x0: x, x1: x, y0: y, y1: y })
+                    // });
+                    // sprite.on('pointerleave', () => {
+                    //     highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
+                    // });
 
                     sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                     sprite.zIndex = getZindexbySpriteIndex(intItemIndex);
@@ -3033,12 +3051,12 @@ function populateItemGrids() {
                 const arrNeigbors = objNeighbors[objSoilIndex.grass][y][x];
                 const sprite = getSprite(objSoilIndex.grass, arrNeigbors);
                 sprite.eventMode = 'static';
-                sprite.on('pointerover', () => {
-                    highlightSection({ x0: x, x1: x, y0: y, y1: y })
-                });
-                sprite.on('pointerleave', () => {
-                    highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
-                });
+                // sprite.on('pointerover', () => {
+                //     highlightSection({ x0: x, x1: x, y0: y, y1: y })
+                // });
+                // sprite.on('pointerleave', () => {
+                //     highlightSection({ x0: x, x1: x, y0: y, y1: y }, true)
+                // });
 
                 sprite.position.set(x * intGridCellSize, y * intGridCellSize);
                 sprite.zIndex = getZindexbySpriteIndex(objSoilIndex.grass);
@@ -3436,6 +3454,7 @@ $(function () {
                         generateTempSection(objSelection, objStartCellCoord);
 
                         objSelectionSection = getSelection(objStartCellCoord);
+                        updateChecklist();
                     }
 
                     bolIsDraggingSection = true;
@@ -3593,7 +3612,7 @@ $(function () {
                             acc
                         ), {});
 
-                    const arrAllSeenItems = Object.keys(objAllSeenItems);
+                    const arrAllSeenItems = Object.keys(objAllSeenItems).map(Number);
                     // const arrAllSeenItems = arrGrid_CoveredSlice2D
                     //     .flat()
                     //     .flatMap(obj => Object.keys(obj).map(Number));
@@ -3637,6 +3656,7 @@ $(function () {
                             objSelectionItems = false;
                         } else {
                             objSelectionSection = getSelection(objCurrentCellCoord);
+                            updateChecklist()
                         }
 
                         bolIsDragging = false;

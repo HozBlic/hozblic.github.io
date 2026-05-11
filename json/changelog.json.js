@@ -4,13 +4,22 @@ var objChangelog =
         {
             "date": "Future",
             "info": [
-                "add animals and their heart levels to wrapped tab",
-                "add pet appearances",
-                "apply layout settings to each tab separately",
-                "add seasons and missing events to checkbox filter",
-                "Gossip mode (show only gifts that are revealed by gossip mechanic)",
-                `figure out a way to deal with spoilers (feedback about this would be appreciated). </br>
-                    Maybe each time new content is added, show a warning popup?`,
+                "{{feedback}}add animals and their heart levels to wrapped tab",
+                "{{feedback}}add pet appearances",
+                "{{feedback}}apply layout settings to each tab separately",
+                `checkbox filter
+                <ul>
+                    <li>{{feedback}}add seasons</li>
+                    <li>add missing events</li>
+                </ul>`,
+                "add missing locations for wrapped tab",
+                "{{feedback}}Gossip mode (show only gifts that are revealed by gossip mechanic)",
+                "{{feedback}}Check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)",
+                `{{feedback}}figure out a way to deal with spoilers
+                <ul>
+                    <li>feedback about this would be appreciated</li>
+                    <li>Maybe each time new content is added, show a warning popup?</li>
+                </ul>`,
             ],
         },
         {
@@ -131,14 +140,18 @@ var objChangelog =
             "date": "Future",
             "info": [
                 "placing items on things (tables)",
-                "show sprinkler radius",
-                "room planning",
-                "colors and outline for grass",
                 "add mobile support",
+                "show Water Sprite Statue radius",
+                "colors (variants) and outline for grass",
                 "filter out items that can not be placed on farm (autopetter, wallpapers..)",
-                `optimization: </br>
-                combine sprite sheets,</br>
-                run manageScripts from Python</br>`,
+                "room planning",
+                "multiple saved layouts slots",
+                `optimization
+                <ul>
+                    <li>combine sprite sheets</li>
+                    <li>run manageScripts.js from Python</li>
+                </ul>`,
+
             ],
         }, {
             "date": "??/??/2026",

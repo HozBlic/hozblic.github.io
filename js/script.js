@@ -123,16 +123,16 @@ const verticalLinePlugin = {
 };
 
 function createChartConfig(objData) {
-    const lastDate = objData.labels.at(-1).split(" - ")[0];
-    const arrWeeks = getMondaysSince(lastDate);
-    const intWeeks = arrWeeks.length
-    if (intWeeks) {
-        objData.labels = objData.labels.concat(arrWeeks);
+    // const lastDate = objData.labels.at(-1).split(" - ")[0];
+    // const arrWeeks = getMondaysSince(lastDate);
+    // const intWeeks = arrWeeks.length
+    // if (intWeeks) {
+    //     objData.labels = objData.labels.concat(arrWeeks);
 
-        objData.datasets.forEach(function (objData) {
-            objData.data = objData.data.concat(Array(intWeeks).fill(0));
-        });
-    }
+    //     objData.datasets.forEach(function (objData) {
+    //         objData.data = objData.data.concat(Array(intWeeks).fill(0));
+    //     });
+    // }
 
     const index = objData.labels.findIndex(str => str.startsWith('2026/05/18'));
     let arrLineBetweenIndexes = [];
@@ -364,6 +364,13 @@ function loadChangelog() {
             $divPlanItem.append(`<ul class="plan_section_items"></ul>`);
 
             objPlan.info.forEach(function (strPlan) {
+                strPlan = strPlan.replace('{{feedback}}', `
+                    <div class="icon changelog_feedback">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Message-Circle-Heart--Streamline-Lucide" height="24" width="24">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" stroke-width="2"></path>
+                            <path d="M15.8 9.2a2.5 2.5 0 0 0 -3.5 0l-0.3 0.4 -0.35 -0.3a2.42 2.42 0 1 0 -3.2 3.6l3.6 3.5 3.6 -3.5c1.2 -1.2 1.1 -2.7 0.2 -3.7" stroke-width="2"></path>
+                        </svg>
+                    </div>`);
                 $divPlanItem.find('.plan_section_items').append(`<li class="plan_section_item">${strPlan}</li>`);
             });
 
@@ -396,4 +403,10 @@ $(function () {
     tippy('.changelog_feedback', {
         content: 'Based on feedback',
     });
+
+    //remove trailing slash
+    if (window.location.pathname.length > 1 && window.location.pathname.endsWith('/')) {
+        const newPath = window.location.pathname.replace(/\/+$/, '');
+        window.history.replaceState({}, '', newPath + window.location.search + window.location.hash);
+    }
 });

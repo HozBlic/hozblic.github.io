@@ -598,7 +598,7 @@ code.shortcut {
 }
 
 .spent_time {
-    height: 120px;
+    height: 140px;
 }
 
 .spent_time_chart {
@@ -673,6 +673,18 @@ code.shortcut {
 #popup_changelog ul ul {
     list-style: circle;
     padding-left: 20px;
+}
+#popup_changelog ul ul .plan_section_item li {
+    list-style-type: '-  ';
+}
+
+#popup_changelog ul ul .plan_section_item .icon {
+    display: inline;
+    --icon-wrapper-size: 14px;
+}
+
+#popup_changelog ul ul .plan_section_item .icon svg {
+    --icon-size: 12px;
 }
 
 #popup_changelog .plan_section_date {
