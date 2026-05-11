@@ -139,6 +139,15 @@
     }
 }
 
+.popup_wrapper a:not(.button_item) {
+    text-decoration: unset;
+    color: #a2d2ff;
+}
+
+.popup_wrapper a:not(.button_item):visited {
+    color: #cdb4db;
+}
+
 .inner_divider+.inner_divider {
     border-top: 1px solid var(--color-bg-darkest);
     margin-top: 20px;
@@ -147,7 +156,7 @@
 
 .popup_header {
     background: var(--color-bg);
-    padding: 30px 16px;
+    padding: 20px 16px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -415,15 +424,6 @@ ul {
     line-height: 13px;
 }
 
-#json_button_popup #additional_info_content a {
-    text-decoration: unset;
-    color: #a2d2ff;
-}
-
-#json_button_popup #additional_info_content a:visited {
-    color: #cdb4db;
-}
-
 #json_button_popup #output {
     margin: 10px 0;
 }
@@ -517,10 +517,12 @@ pre {
     object-fit: contain;
 }
 
+#popup_changelog .icons,
 #popup_controls .icons {
     display: flex;
 }
 
+#popup_changelog ul,
 #popup_controls ul {
     padding-left: 20px;
     list-style: disc;
@@ -529,7 +531,7 @@ pre {
     line-height: 16px;
 }
 
-
+#popup_changelog ul ul,
 #popup_controls ul ul {
     list-style: none;
     margin: 5px 0 15px;
@@ -542,6 +544,7 @@ pre {
     align-items: center;
 }
 
+#popup_changelog ul li .icon,
 #popup_controls ul li .icon {
     --icon-wrapper-size: 17px;
     color: var(--color-txt);
@@ -551,13 +554,14 @@ pre {
     min-width: var(--icon-wrapper-size);
 }
 
+#popup_changelog ul li .icon svg,
 #popup_controls ul li .icon svg {
     --icon-size: 14px;
     width: var(--icon-size);
     height: var(--icon-size);
 }
 
-#popup_controls code.shortcut {
+code.shortcut {
     background: var(--color-bg-darkest);
     padding: 2px 5px;
     margin: 2px 0;
@@ -565,6 +569,10 @@ pre {
     text-transform: lowercase;
 }
 
+[data-tippy-root] code.shortcut {
+    background: #00000050;
+    font-size: 10px;
+}
 
 [data-tippy-root] .tippy-box .tippy-content .save_file {
     margin: 0;
@@ -576,14 +584,124 @@ pre {
     margin-top: 5px;
 }
 
-#spent_time_total span {
+#popup_donate .button_item.large {
+    justify-content: center;
+    --button-font-size: 16px;
+}
+
+#popup_donate .button_item.large .icon svg {
+    --icon-size: 17px;
+}
+
+.spent_time_total span {
     font-weight: bold;
 }
-#spent_time {
-    height: 120px;
+
+.spent_time {
+    height: 140px;
 }
-#spent_time_chart {
+
+.spent_time_chart {
     height: 100%;
     width: 100%;
     border: unset;
+}
+
+
+#popup_changelog .changelog_tab_content {
+    display: none;
+}
+
+#popup_changelog #changelog_content.planner #changelog_tab_planner,
+#popup_changelog #changelog_content.tracker #changelog_tab_tracker {
+    display: block;
+}
+
+#popup_changelog #changelog_content.planner .changelog_tab[data-tab="planner"],
+#popup_changelog #changelog_content.tracker .changelog_tab[data-tab="tracker"] {
+    background-color: var(--color-btn);
+}
+
+#page:not(.mode_dark) #popup_changelog #changelog_content.planner .changelog_tab[data-tab="planner"],
+#page:not(.mode_dark) #popup_changelog #changelog_content.tracker .changelog_tab[data-tab="tracker"] {
+    color: var(--color-bg);
+    fill: var(--color-bg);
+    stroke: var(--color-bg);
+}
+
+#popup_changelog #changelog_tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px 5px;
+    margin-top: 15px;
+}
+
+#popup_changelog #changelog_content .changelog_tab {
+    --button-height: 24px;
+    --button-font-size: 11px;
+    --button-padding-top: 4px;
+    --button-padding-side: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#popup_changelog #changelog_content .changelog_tab .icon {
+    --icon-wrapper-size: 24px;
+}
+
+#popup_changelog #changelog_tab_content {
+    border: 1px solid var(--color-btn);
+    padding: 10px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+}
+
+
+@media screen and (min-width: 575px) {
+    #popup_changelog #changelog_tab_content {
+        overflow: auto;
+        max-height: 200px;
+    }
+}
+
+#popup_changelog ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+#popup_changelog ul ul {
+    list-style: circle;
+    padding-left: 20px;
+}
+#popup_changelog ul ul .plan_section_item li {
+    list-style-type: '-  ';
+}
+
+#popup_changelog ul ul .plan_section_item .icon {
+    display: inline;
+    --icon-wrapper-size: 14px;
+}
+
+#popup_changelog ul ul .plan_section_item .icon svg {
+    --icon-size: 12px;
+}
+
+#popup_changelog .plan_section_date {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#popup_changelog .plan_section {
+    opacity: 0.7;
+}
+
+#popup_changelog .plan_section.bold {
+    opacity: 1;
+}
+
+#popup_changelog .plan_section.bold .plan_section_date {
+    font-weight: bold;
 }
