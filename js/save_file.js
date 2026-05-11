@@ -214,6 +214,103 @@ function extractPerksData(objPlayerData, boolDisabled = false) {
     }
 }
 
+function objLOCATION(obj, strLocationID) {
+    if (obj && typeof obj === 'object') {
+        if ('location_id' in obj && typeof obj['location_id'] === 'string' && obj['location_id'] === strLocationID) {
+            return obj;
+        }
+        for (const key in obj) {
+            if (objLOCATION(obj[key], strLocationID)) {
+                return obj[key];
+            }
+        }
+    }
+    return false;
+}
+
+function extractPlannerData(jsonBlocks, strLocation) {
+
+    const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
+
+    const directions = ['east', 'north', 'west', 'south']
+    const objLocation = objLOCATION(jsonBlocks, strLocation);
+    let objLayout = {};
+    let setItems = new Set();
+    let intCountTotal = 0;
+    if (objLocation) {
+        objLocation['object_list'].forEach(function (objItem) {
+
+            const strItemKey = objItem['object_id'];
+
+            setItems.add(strItemKey)
+            const intItemIndex = objItemKeyDict[strItemKey][0];
+
+            let strDirection = false;
+            let strColor = false;
+
+            const x = objItem['top_left_x'];
+            const y = objItem['top_left_y'];
+
+            //draw soil underneath
+            if (objSpriteCategories.crops.includes(intItemIndex)) {
+
+                if (!('none' in objLayout)) {
+                    objLayout['none'] = {}
+                }
+
+                if (!(objSoilIndex.soil in objLayout['none'])) {
+                    objLayout['none'][objSoilIndex.soil] = []
+                }
+                objLayout['none'][objSoilIndex.soil].push([x, y]);
+
+                if (intCurrentlyDrawingSoil === objSoilIndex.wetSoil) {
+                    if (!(objSoilIndex.wetSoil in objLayout['none'])) {
+                        objLayout['none'][objSoilIndex.wetSoil] = []
+                    }
+                    objLayout['none'][objSoilIndex.wetSoil].push([x, y]);
+                }
+            }
+
+            if (typeof objItem["cardinal_index"] !== 'undefined') {
+                strDirection = directions[objItem["cardinal_index"]];
+            }
+            if (typeof objItem["variant"] !== 'undefined') {
+                strColor = objBuild.objVariants[strItemKey][objItem["variant"]];
+            }
+
+            if (typeof strDirection === 'undefined' || !strDirection) {
+                strDirection = 'none';
+            }
+            if (typeof strColor === 'undefined' || !strColor) {
+                strColor = 'none';
+            }
+
+            let strDirection_Color = 'none';
+
+            if (strColor !== 'none' && strDirection !== 'none') {
+                strDirection_Color = strDirection + '_' + strColor;
+            } else if (strColor !== 'none') {
+                strDirection_Color = strColor;
+            } else if (strDirection !== 'none') {
+                strDirection_Color = strDirection;
+            }
+
+            if (!(strDirection_Color in objLayout)) {
+                objLayout[strDirection_Color] = {}
+            }
+
+            if (!(intItemIndex in objLayout[strDirection_Color])) {
+                objLayout[strDirection_Color][intItemIndex] = []
+            }
+            objLayout[strDirection_Color][intItemIndex].push([x, y]);
+            intCountTotal++;
+        });
+
+        return [objLayout, setItems.size, intCountTotal];
+    }
+    return [false, 0];
+}
+
 $(function () {
     $("#save_input").on("change", function (event) {
         $('#parsing_alert').removeClass('show');
@@ -254,50 +351,95 @@ $(function () {
                 $("#json_button_popup").removeClass("loading");
 
                 if (cleaned) {
-
+                    const strPage = $('#json_button_popup').attr('data-page');
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
-                    console.log(jsonBlocks);
-                    let objMistriaDataExtracted = {
-                        gifts: extractGiftKeys(objNPC(jsonBlocks)) || false,
-                        museum: objMUSEUM(jsonBlocks) || false,
-                        almanac: extractAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']) || false,
-                        scrolls: objPLAYER(jsonBlocks)['morning_recipe_unlocks'] || false,
-                        animals: extractAnimalData(objPLAYER(jsonBlocks)) || false,
-                        customization: objPLAYER(jsonBlocks)['seen_cosmetics'] || false,
-                        perks: extractPerksData(objPLAYER(jsonBlocks)) || false,
-                        perks_disabled: extractPerksData(objPLAYER(jsonBlocks), true) || false,
-                    }
 
                     let objOldData = {};
-                    arrTabs.forEach(function (strTab) {
-                        if (strTab in objMistriaData) {
-                            objOldData[strTab] = [...objMistriaData[strTab]];
-                        }
-                    });
-                    objOldData.options = [...objMistriaData.options];
-                    objOldData.favorites = [...objMistriaData.favorites];
-                    if ('sort' in objMistriaData) {
-                        objOldData.sort = objMistriaData.sort;
-                    }
-                    if ('tab' in objMistriaData) {
-                        objOldData.tab = objMistriaData.tab;
-                    }
-
                     let arrFound = [];
                     let bolShowError = false;
-                    arrTabs.forEach(function (strTab) {
-                        if (objMistriaDataExtracted[strTab]) {
-                            arrFound.push(`${objMistriaDataExtracted[strTab].length} ${strTab} items were found`);
-                            objOldData[strTab] = [...new Set(objMistriaDataExtracted[strTab])];
-                            $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
-                        } else {
-                            bolShowError = true;
-                            $('#extracting_alert').addClass('show');
-                            $('#extracting_alert .info').append(`Couldn't find ${strTab} data`);
-                            $('#extracting_alert .info').append('</br>');
-                        }
-                    });
+                    switch (strPage) {
+                        case "tracker":
+                            let objMistriaDataExtracted = {
+                                gifts: extractGiftKeys(objNPC(jsonBlocks)) || false,
+                                museum: objMUSEUM(jsonBlocks) || false,
+                                almanac: extractAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']) || false,
+                                scrolls: objPLAYER(jsonBlocks)['morning_recipe_unlocks'] || false,
+                                animals: extractAnimalData(objPLAYER(jsonBlocks)) || false,
+                                customization: objPLAYER(jsonBlocks)['seen_cosmetics'] || false,
+                                perks: extractPerksData(objPLAYER(jsonBlocks)) || false,
+                                perks_disabled: extractPerksData(objPLAYER(jsonBlocks), true) || false,
+                            }
+
+                            arrTabs.forEach(function (strTab) {
+                                if (strTab in objMistriaData) {
+                                    objOldData[strTab] = [...objMistriaData[strTab]];
+                                }
+                            });
+                            objOldData.options = [...objMistriaData.options];
+                            objOldData.favorites = [...objMistriaData.favorites];
+                            if ('sort' in objMistriaData) {
+                                objOldData.sort = objMistriaData.sort;
+                            }
+                            if ('tab' in objMistriaData) {
+                                objOldData.tab = objMistriaData.tab;
+                            }
+
+                            arrTabs.forEach(function (strTab) {
+                                if (objMistriaDataExtracted[strTab]) {
+                                    arrFound.push(`${objMistriaDataExtracted[strTab].length} ${strTab} items were found`);
+                                    objOldData[strTab] = [...new Set(objMistriaDataExtracted[strTab])];
+                                    $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+                                } else {
+                                    bolShowError = true;
+                                    $('#extracting_alert').addClass('show');
+                                    $('#extracting_alert .info').append(`Couldn't find ${strTab} data`);
+                                    $('#extracting_alert .info').append('</br>');
+                                }
+                            });
+                            break;
+                        case "planner":
+                            objOldData.options = [...objMistriaDataPlanner.options];
+
+                            if ('season' in objMistriaDataPlanner) {
+                                objOldData.season = objMistriaDataPlanner.season;
+                            }
+
+                            if ('house_upgrade' in objMistriaDataPlanner) {
+                                objOldData.house_upgrade = objMistriaDataPlanner.house_upgrade;
+                            }
+
+                            if ('zoom' in objMistriaDataPlanner) {
+                                objOldData.zoom = objMistriaDataPlanner.zoom;
+                            }
+
+                            if ('offsetCanvas' in objMistriaDataPlanner) {
+                                objOldData.offsetCanvas = JSON.parse(JSON.stringify(objMistriaDataPlanner.offsetCanvas));
+                            }
+
+                            if ('layout' in objMistriaDataPlanner) {
+                                objOldData.layout = JSON.parse(JSON.stringify(objMistriaDataPlanner.layout));
+                            }
+
+                            const [objLayout, intCountItems, intCountTotal] = extractPlannerData(jsonBlocks, 'farm');
+
+                            if (objLayout) {
+                                objOldData.layout[intSaveSlot].farm = objLayout;
+
+                                arrFound.push(`${intCountItems} different items were found, ${intCountTotal} in total`);
+                                // objOldData[strTab] = [...new Set(objMistriaDataExtracted[strTab])];
+                                $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
+
+                            } else {
+                                bolShowError = true;
+                                $('#extracting_alert').addClass('show');
+                                $('#extracting_alert .info').append(`Couldn't find layout data`);
+                                $('#extracting_alert .info').append('</br>');
+                            }
+
+                            break;
+                    }
 
                     if (bolShowError) {
                         showParsingError();
@@ -308,7 +450,7 @@ $(function () {
                     }
 
                     if (arrFound.length) {
-                        $('#json_alert .info').html(`Data extraction was ${arrFound.length == arrTabs.length ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
+                        $('#json_alert .info').html(`Data extraction was ${strPage === 'planner' || arrFound.length == arrTabs.length ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
                             ${arrFound.join('</br>')}`
                         );
                         $('#json_alert').addClass('show').addClass('yellow');
