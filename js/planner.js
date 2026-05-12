@@ -16,7 +16,6 @@ let intCurrentVersion = 0;
 const intAllowedVersions = 15;
 
 let bolIsDragging = false;
-let bolIsDraggingMap = false;
 let bolIsDraggingSection = false;
 let objDraggingSectionOffset = { x: 0, y: 0 };
 let bolPreventDrawing = false;
@@ -1369,7 +1368,6 @@ function dragMap(objCellCoord) {
         x: objStartOffset.x - (objStartCellCoord.eventX - objCellCoord.eventX),
         y: objStartOffset.y - (objStartCellCoord.eventY - objCellCoord.eventY),
     };
-    bolIsDraggingMap = true;
     resize();
 }
 
@@ -1414,6 +1412,31 @@ function calculateOffsetSection(objCellCoord) {
         .sort((a, b) => a[0] - b[0] || a[1] - b[1])[0];
 
     return { x: smallest[0] - objCellCoord.x, y: smallest[1] - objCellCoord.y };
+}
+
+function toggleAdditionalControls() {
+    if ((!objSelectionSection || strMode !== 'selection_mode' || bolIsDraggingSection) && strMode !== 'drawing_mode') {
+        ;
+        $('#section_controls').removeClass('has_section').removeClass('has_item');
+    } else if (strMode === 'selection_mode') {
+        $('#section_controls').addClass('has_section');
+    } else if (strMode === 'drawing_mode') {
+        $('#section_rotate_button').hide();
+        $('#section_controls').addClass('has_item');
+
+        const directions = ['east', 'north', 'west', 'south'];
+        const arrAvailableDirections = [];
+        directions.forEach((strDirection) => {
+            if (objSpriteCategories[strDirection].includes(intCurrentlyDrawing)) {
+                arrAvailableDirections.push(strDirection);
+            }
+        });
+
+        const intAvailableDirectionsCount = arrAvailableDirections.length;
+        if (intAvailableDirectionsCount > 1) {
+            $('#section_rotate_button').show();
+        }
+    }
 }
 function selectionHovered(objCellCoord) {
     if (!objSelectionSection || strMode !== 'selection_mode') {
@@ -1623,7 +1646,6 @@ function drawPlanner(objSize = objGrid, objTopCorner = { x: 0, y: 0 }, strGrid =
 
 function resetDrawingVariables() {
     bolIsDragging = false;
-    bolIsDraggingMap = false;
     bolIsDraggingSection = false;
     objDraggingSectionOffset = { x: 0, y: 0 };
     bolPreventDrawing = false;
@@ -1643,6 +1665,7 @@ function updateCurrentlyDrawing(intItemIndex = false, strDirection = false, strC
 
     updateCursorMode('drawing_mode');
     generateTempSection();
+    toggleAdditionalControls();
 }
 
 function updateCursorMode(strModeTemp = false) {
@@ -1653,6 +1676,7 @@ function updateCursorMode(strModeTemp = false) {
     objSelectionSection = false;
     $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
+    toggleAdditionalControls();
 
 
     $('.tab').removeClass('active');
@@ -2480,10 +2504,10 @@ function createTipDirection(intItemIndex) {
         <div id="tip_drawable_${intItemIndex}" class="tip_wrap">
             <div class="tip">
                 <div class="direction_icons">
-                    ${objSpriteCategories.south.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="south"></div>` : ''}
                     ${objSpriteCategories.east.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="east"></div>` : ''}
                     ${objSpriteCategories.north.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="north"></div>` : ''}
                     ${objSpriteCategories.west.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="west"></div>` : ''}
+                    ${objSpriteCategories.south.includes(intItemIndex) ? `<div class="direction_icon dropdown-item-drawable" data-key="${intItemIndex}" data-direction="south"></div>` : ''}
                 </div>
             </div>
         </div>`);
@@ -2888,7 +2912,7 @@ async function loadMenuItems() {
     });
     tippy('[data-tab="dragging_mode"]', {
         content: `<p style="text-align: center; font-size: 14px;" class="save_file">Drag map</p>
-                  <p style="text-align: center;" class="save_file">drag with wheel in all modes</p>`,
+                  <p style="text-align: center;" class="save_file">drag with <code class="shortcut">wheel</code> in all modes</p>`,
         allowHTML: true,
     });
     tippy('[mode="dragging_mode"]', {
@@ -2920,6 +2944,33 @@ async function loadMenuItems() {
     });
     tippy('#upload_file', {
         content: 'Upload save file',
+    });
+    tippy('#section_copy_button', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Copy section</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">CTRL + C</code></p>`,
+        allowHTML: true,
+    });
+    tippy('#section_cut_button', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Cut section</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">CTRL + X</code></p>`,
+        allowHTML: true,
+    });
+    tippy('#section_delete_button', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Delete section</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">del</code></p>`,
+        allowHTML: true,
+    });
+
+    tippy('#section_deselect_button', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Deselect</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">esc</code>, <code class="shortcut">right click</code></p>`,
+        allowHTML: true,
+    });
+
+    tippy('#section_rotate_button', {
+        content: `<p style="text-align: center; font-size: 14px;" class="save_file">Rotate</p>
+                  <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">R</code></p>`,
+        allowHTML: true,
     });
 }
 
@@ -3532,6 +3583,7 @@ function versionControl(strAction = false) {
     objSelectionSection = false;
     $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
+    toggleAdditionalControls();
 
     saveDataPlanner(true, true);
     populateItemGrids();
@@ -3602,6 +3654,7 @@ function clearMap() {
     objSelectionSection = false;
     $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
+    toggleAdditionalControls();
 
     objMistriaDataPlanner.layout[intSaveSlot].farm = objMistriaDataPlannerDefault.layout[intSaveSlot].farm;
     delete objMistriaDataPlanner.layout[intSaveSlot].farm['none']['1'];
@@ -3671,6 +3724,7 @@ function preventAction() {
     objSelectionSection = false;
     $('#canvas_wrapper').css('cursor', '');
     objSelectionItems = false;
+    toggleAdditionalControls();
 
     console.log('bolPreventDrawing')
     if (objGridCombined.cursor_corner !== false) {
@@ -3684,6 +3738,7 @@ function preventAction() {
             // generateTempSection();
         }
     }
+
 }
 
 function saveImage() {
@@ -3707,6 +3762,100 @@ function saveImage() {
 
         URL.revokeObjectURL(url);
     });
+}
+
+function sectionActions(strAction) {
+    switch (strAction) {
+        case "copy":
+        case "cut":
+            bolIsDraggingSection = true;
+            if (selectionHovered(lastMousePosition)) {
+                objDraggingSectionOffset = calculateOffsetSection(lastMousePosition);
+            }
+
+            let objSelection = getSelection(lastMousePosition);
+            clearTempSection();
+            generateTempSection(objSelection, lastMousePosition, false);
+            moveTempSection({
+                x: lastMousePosition.x + objDraggingSectionOffset.x,
+                y: lastMousePosition.y + objDraggingSectionOffset.y
+            });
+
+            if (strAction === 'cut') {
+                const arrCoords = [...new Set(objSelectionItems.arrCoords)];
+                arrCoords.forEach((strCoord) => {
+                    arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
+                    clearSection({
+                        x0: arrCoord[0],
+                        x1: arrCoord[0] + 1,
+                        y0: arrCoord[1],
+                        y1: arrCoord[1] + 1
+
+                    }, Object.keys(objSelectionItems.objItemCounts));
+                });
+
+                recalculateNeigborSprites();
+                drawPlanner();
+
+                saveDataPlanner(true);
+                updateChecklist();
+            }
+            break;
+        case "delete":
+            const arrCoords = [...new Set(objSelectionItems.arrCoords)];
+            arrCoords.forEach((strCoord) => {
+                arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
+                clearSection({
+                    x0: arrCoord[0],
+                    x1: arrCoord[0] + 1,
+                    y0: arrCoord[1],
+                    y1: arrCoord[1] + 1
+
+                }, Object.keys(objSelectionItems.objItemCounts));
+            });
+
+            recalculateNeigborSprites();
+            drawPlanner();
+
+            clearTempSection();
+            objSelectionSection = false;
+            $('#canvas_wrapper').css('cursor', '');
+            objSelectionItems = false;
+            toggleAdditionalControls();
+
+            saveDataPlanner(true);
+            updateChecklist();
+
+            break;
+        case "deselect":
+            updateCursorMode('selection_mode');
+            toggleAdditionalControls();
+            break;
+        case "rotate":
+            const directions = ['east', 'north', 'west', 'south'];
+            const arrAvailableDirections = [];
+            directions.forEach((strDirection) => {
+                if (objSpriteCategories[strDirection].includes(intCurrentlyDrawing)) {
+                    arrAvailableDirections.push(strDirection);
+                }
+            });
+
+            const intAvailableDirectionsCount = arrAvailableDirections.length;
+
+            if (intAvailableDirectionsCount > 1) {
+                const intCurrentIndex = arrAvailableDirections.indexOf(strCurrentDirection);
+                let intNextDirectionIndex = intCurrentIndex + 1;
+
+                if (intNextDirectionIndex === intAvailableDirectionsCount) {
+                    intNextDirectionIndex = 0;
+                }
+
+                updateCurrentlyDrawing(intCurrentlyDrawing, arrAvailableDirections[intNextDirectionIndex], strCurrentColor);
+                moveTempSection(lastMousePosition);
+            }
+
+            break;
+    }
 }
 
 $(function () {
@@ -3768,30 +3917,11 @@ $(function () {
 
         $(document).keyup(function (e) {
             if (e.key === "Escape") {
-                preventAction()
+                sectionActions('deselect');
+            } if ((e.key === 'r' || e.key === 'R')) {
+                sectionActions('rotate');
             } else if (e.key == "Delete" && strMode == "selection_mode" && objSelectionSection) {
-                const arrCoords = [...new Set(objSelectionItems.arrCoords)];
-                arrCoords.forEach((strCoord) => {
-                    arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
-                    clearSection({
-                        x0: arrCoord[0],
-                        x1: arrCoord[0] + 1,
-                        y0: arrCoord[1],
-                        y1: arrCoord[1] + 1
-
-                    }, Object.keys(objSelectionItems.objItemCounts));
-                });
-
-                recalculateNeigborSprites();
-                drawPlanner();
-
-                clearTempSection();
-                objSelectionSection = false;
-                $('#canvas_wrapper').css('cursor', '');
-                objSelectionItems = false;
-
-                saveDataPlanner(true);
-                updateChecklist();
+                sectionActions('delete');
             } else if ((e.ctrlKey || e.metaKey)) {
                 if (e.shiftKey && (e.key === 'z' || e.key === 'Z')) {
                     versionControl('redo');
@@ -3799,41 +3929,10 @@ $(function () {
                     versionControl('redo');
                 } else if ((e.key === 'z' || e.key === 'Z')) {
                     versionControl('undo');
-                } else if (e.key === 'c' || e.key === 'x') {
-                    if (strMode == "selection_mode" && objSelectionSection) {
-                        bolIsDraggingSection = true;
-                        if (selectionHovered(lastMousePosition)) {
-                            objDraggingSectionOffset = calculateOffsetSection(lastMousePosition);
-                        }
-
-                        let objSelection = getSelection(lastMousePosition);
-                        clearTempSection();
-                        generateTempSection(objSelection, lastMousePosition, false);
-                        moveTempSection({
-                            x: lastMousePosition.x + objDraggingSectionOffset.x,
-                            y: lastMousePosition.y + objDraggingSectionOffset.y
-                        });
-
-                        if (e.key === 'x') {
-                            const arrCoords = [...new Set(objSelectionItems.arrCoords)];
-                            arrCoords.forEach((strCoord) => {
-                                arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
-                                clearSection({
-                                    x0: arrCoord[0],
-                                    x1: arrCoord[0] + 1,
-                                    y0: arrCoord[1],
-                                    y1: arrCoord[1] + 1
-
-                                }, Object.keys(objSelectionItems.objItemCounts));
-                            });
-
-                            recalculateNeigborSprites();
-                            drawPlanner();
-
-                            saveDataPlanner(true);
-                            updateChecklist();
-                        }
-                    }
+                } else if ((e.key === 'c' || e.key === 'C')) {
+                    sectionActions('copy');
+                } else if ((e.key === 'x' || e.key === 'X')) {
+                    sectionActions('cut');
                 } else if (e.key === 'v') {
                     if (strMode == "selection_mode" && objSelectionSection && bolIsDraggingSection) {
                         placeTempSection({
@@ -3898,7 +3997,7 @@ $(function () {
                     const arrCoords = [...new Set(objSelectionItems.arrCoords)];
                     arrCoords.forEach((strCoord) => {
                         arrCoord = strCoord.replace(/[\[\]\s]/g, "").split(",").map(Number);
-                        console.log(arrCoord)
+                        // console.log(arrCoord)
                         clearSection({
                             x0: arrCoord[0],
                             x1: arrCoord[0] + 1,
@@ -3929,19 +4028,21 @@ $(function () {
             } else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
                 bolIsDragging = true;
                 if (e.data.originalEvent.button === 1) { //if was dragged with middle click
+                    $('#canvas_wrapper').css('cursor', 'move');
+
                     bolPreventDrawing = true;
                     if (strMode == "selection_mode") {
                         bolPickup = true;
                     }
                 }
             } else {
-
                 if (e.data.originalEvent.button === 2 && strMode == "drawing_mode") {
                     updateCursorMode('selection_mode');
                 }
                 preventAction();
                 bolPreventDrawing = true;
             }
+            toggleAdditionalControls();
         });
 
         objPIXIapp.stage.on('pointermove', (e) => {
@@ -4063,8 +4164,7 @@ $(function () {
                         resetDrawingVariables();
                         updateCurrentlyDrawing(highestId, strDirection, strColor);
                     }
-                }
-                else if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
+                } else if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
                     if (strMode === 'drawing_mode') {
                         placeTempSection(objCurrentCellCoord);
                         resetDrawingVariables();
@@ -4087,19 +4187,28 @@ $(function () {
                             objSelectionItems = false;
                         } else {
                             objSelectionSection = getSelection(objCurrentCellCoord);
-                            updateChecklist()
+                            updateChecklist();
+
+                            //go in hovered state
+                            clearTempSection();
+                            generateTempSection(objSelectionSection, objCurrentCellCoord, selectionHovered(objCurrentCellCoord));
                         }
 
                         bolIsDragging = false;
                     }
                 } else {
+                    $('#canvas_wrapper').css('cursor', '');
                     resetDrawingVariables();
                 }
             }
+
+            toggleAdditionalControls();
         });
 
         objPIXIapp.stage.on('pointerupoutside', (e) => {
             resetDrawingVariables();
+            $('#canvas_wrapper').css('cursor', '');
+            toggleAdditionalControls();
         });
 
         objPIXIapp.stage.on('wheel', (e) => {
@@ -4138,7 +4247,7 @@ $(function () {
         drawCollision();
 
         // addTestData(4);
-        // updateCurrentlyDrawing(90);
+        // updateCurrentlyDrawing(416);
         // updateCursorMode('selection_mode');
 
         drawPlanner();

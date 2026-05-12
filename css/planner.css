@@ -17,6 +17,7 @@
 #planner {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .dropdown-item.hide_search {
@@ -257,6 +258,7 @@
 
 #minimap_wrapper {
     position: relative;
+    min-height: 170px;
 }
 
 #minimap {
@@ -505,4 +507,36 @@
 
 .direction_icon[data-direction="west"] {
     background-image: url(../images/arrow-left.svg);
+}
+
+#section_controls {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    top: calc(50px + 8px + 3px);
+    gap: 2px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    max-height: 0;
+    opacity: 0;
+    padding: 0 2px;
+    overflow: hidden;
+}
+
+#section_controls:is(.has_section, .has_item) {
+    max-height: 500px;
+    opacity: 0.7;
+}
+
+#section_controls:is(.has_section, .has_item):hover {
+    opacity: 1;
+}
+
+#section_controls .button_item {
+    display: none;
+}
+
+#section_controls.has_section .button_item.section_button,
+#section_controls.has_item .button_item.item_button {
+    display: flex;
 }

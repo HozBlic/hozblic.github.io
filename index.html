@@ -543,6 +543,103 @@
         </div>
         <div id="content">
             <div id="planner" class="tab_content planner_show">
+                <div id="section_controls">
+                    <div id="section_copy_button" class="section_button tab button_item button-notext"
+                        onclick="sectionActions('copy');">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20.278" height="24" viewBox="0 0 20.278 24"
+                                stroke="none">
+                                <path
+                                    d="M4972.909-7248a3.914,3.914,0,0,1-3.909-3.91v-12.458a3.914,3.914,0,0,1,3.909-3.91h8.779a3.914,3.914,0,0,1,3.91,3.91v12.458a3.914,3.914,0,0,1-3.91,3.91Zm-1.61-16.368v12.458a1.612,1.612,0,0,0,1.61,1.612h8.779a1.614,1.614,0,0,0,1.612-1.612v-12.458a1.61,1.61,0,0,0-1.612-1.606h-8.779A1.609,1.609,0,0,0,4971.3-7264.369Zm15.677,10.163v-13.885a1.612,1.612,0,0,0-1.608-1.612h-10.207a1.151,1.151,0,0,1-1.15-1.148,1.151,1.151,0,0,1,1.15-1.15h10.207a3.915,3.915,0,0,1,3.91,3.91v13.885a1.153,1.153,0,0,1-1.153,1.148A1.15,1.15,0,0,1,4986.977-7254.206Z"
+                                    transform="translate(-4969 7272.001)" fill="#FFFFFF" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="section_cut_button" class="section_button tab button_item button-notext"
+                        onclick="sectionActions('cut');">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-scissors">
+                                <circle cx="6" cy="6" r="3"></circle>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="section_delete_button" class="section_button tab button_item button-notext"
+                        onclick="sectionActions('delete');">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-trash-2">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path
+                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                </path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="section_rotate_button" class="item_button tab button_item button-notext"
+                        onclick="sectionActions('rotate');">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000"
+                                stroke-linecap="round" stroke-linejoin="round" id="Rotate-3d--Streamline-Lucide"
+                                height="24" width="24">
+                                <path
+                                    d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c0.342 0 0.677 -0.069 1 -0.2"
+                                    stroke-width="2"></path>
+                                <path d="m15.194 13.707 3.814 1.86 -1.86 3.814" stroke-width="2"></path>
+                                <path
+                                    d="M19 15.57c-1.804 0.885 -4.274 1.43 -7 1.43 -5.523 0 -10 -2.239 -10 -5s4.477 -5 10 -5c4.838 0 8.873 1.718 9.8 4"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="section_deselect_button" class="section_button item_button tab button_item button-notext"
+                        onclick="sectionActions('deselect');">
+                        <div class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 7.5L7.5 12.5" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7.5 7.5L12.5 12.5" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M3 1C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M17 1C17.5304 1 18.0391 1.21071 18.4142 1.58579C18.7893 1.96086 19 2.46957 19 3"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M19 17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3 19C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M7 1H8" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7 19H8" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 1H13" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M12 19H13" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M1 7V8" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M19 7V8" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M1 12V13" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M19 12V13" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
                 <div id="canvas_wrapper" class="loading" oncontextmenu="return false;"></div>
             </div>
         </div>
@@ -658,8 +755,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="tab button_item button-notext" id="upload_file"
-                    onclick="openJsonPopup()">
+                <div class="tab button_item button-notext" id="upload_file" onclick="openJsonPopup()">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -881,7 +977,7 @@
                                                         <path d="m6 12 -1.9 2" stroke-width="2"></path>
                                                     </svg>
                                                 </div>
-                                                select the item for drawing [with wheel]
+                                                select the item for drawing [with <code class="shortcut">wheel</code>]
                                             </div>
                                         </li>
                                         <li>
@@ -1011,7 +1107,7 @@
                                                         <img src="images/almanac/crops.png">
                                                     </div>
                                                 </div>
-                                                move map [with wheel]
+                                                move map [with <code class="shortcut">wheel</code>]
                                             </div>
                                         </li>
                                     </ul>
@@ -1525,7 +1621,10 @@
                     <div class="inner_divider">
                         <div class="popup_subtitle">Delete saved data</div>
                         <div class="popup_subdesc">
-                            <p style="display: inline;">Delete all your saved data. This will include <b style="text-decoration: underline;">tracker</b> and <b style="text-decoration: underline;">planner</b> data. If you use multiple browsers and / or devices, only current
+                            <p style="display: inline;">Delete all your saved data. This will include <b
+                                    style="text-decoration: underline;">tracker</b> and <b
+                                    style="text-decoration: underline;">planner</b> data. If you use multiple browsers
+                                and / or devices, only current
                                 browser on current device will be affected.
                             </p>
                         </div>

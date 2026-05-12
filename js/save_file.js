@@ -232,7 +232,7 @@ function extractPlannerData(jsonBlocks, strLocation) {
 
     const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
 
-    const directions = ['east', 'north', 'west', 'south']
+    const directions = ['east', 'north', 'west', 'south'];
     const objLocation = objLOCATION(jsonBlocks, strLocation);
     let objLayout = {};
     let setItems = new Set();
