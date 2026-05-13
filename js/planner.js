@@ -47,6 +47,7 @@ let objSpriteCategories;
 
 
 let intMultiplierCanvas = 1;
+const intMaxSize = 5; //5 times the original picture
 
 let objKeyItemDict = null;
 let objItemKeyDict = null;
@@ -873,7 +874,7 @@ function saveJson() {
                 case "planner":
                     objMistriaDataPlanner = objNewData;
                     // convert arrays to sets for to remove duplicates
-                    objMistriaDataPlanner.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set(objMistriaDataDefault.options));
+                    objMistriaDataPlanner.options = ('options' in objMistriaDataPlanner ? new Set(objMistriaDataPlanner.options) : new Set(objMistriaDataPlannerDefault.options));
 
                     saveDataPlanner();
                     break;
@@ -1777,7 +1778,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
     // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
-        // console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
+        console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
         let arrSize = getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor).meta.size;
 
         if (objSpriteCategories.trees.includes(intCurrentlyDrawing)) {
@@ -3692,7 +3693,7 @@ const handleResize = () => {
 
     //make map stay the same size
     const intMultiplierFit = getMultiplierFitScreen();
-    const intMultiplierZoomMax = (3 / intMultiplierFit) * 100;
+    const intMultiplierZoomMax = (intMaxSize / intMultiplierFit) * 100;
     const intCurrentMultiplier = intMultiplierCanvas
     const intNewMultiplier = getMultiplierFitScreen() * (objMistriaDataPlanner.zoom / 100)
 
@@ -4164,6 +4165,7 @@ $(function () {
                         resetDrawingVariables();
                         updateCurrentlyDrawing(highestId, strDirection, strColor);
                     }
+                    $('#canvas_wrapper').css('cursor', '');
                 } else if (!bolPreventDrawing && objGridCombined.cursor_corner !== false) {
                     if (strMode === 'drawing_mode') {
                         placeTempSection(objCurrentCellCoord);
@@ -4173,6 +4175,7 @@ $(function () {
                         objSelectionItems = false;
 
                     } else if (strMode === 'selection_mode') {
+
                         if (bolIsDraggingSection) {
                             if (objStartCellCoord.x === objCurrentCellCoord.x && objStartCellCoord.y === objCurrentCellCoord.y) {
                                 return;
@@ -4188,6 +4191,7 @@ $(function () {
                         } else {
                             objSelectionSection = getSelection(objCurrentCellCoord);
                             updateChecklist();
+                            $('#canvas_wrapper').css('cursor', '');
 
                             //go in hovered state
                             clearTempSection();
@@ -4201,7 +4205,6 @@ $(function () {
                     resetDrawingVariables();
                 }
             }
-
             toggleAdditionalControls();
         });
 
@@ -4213,7 +4216,7 @@ $(function () {
 
         objPIXIapp.stage.on('wheel', (e) => {
             const intMultiplierFit = getMultiplierFitScreen();
-            const intMultiplierZoomMax = (3 / intMultiplierFit) * 100;
+            const intMultiplierZoomMax = (intMaxSize / intMultiplierFit) * 100;
 
             let intZoom = objMistriaDataPlanner.zoom + e.deltaY * -0.5;
             intZoom = Math.round(intZoom)

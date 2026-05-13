@@ -534,6 +534,15 @@
 
 #section_controls .button_item {
     display: none;
+    background-color: var(--color-bg);
+}
+
+#section_controls .button_item:hover {
+    background-color: var(--color-btn);
+}
+
+#page:not(.mode_dark) #section_controls .button_item:hover {
+    background-color: var(--color-btn);
 }
 
 #section_controls.has_section .button_item.section_button,
