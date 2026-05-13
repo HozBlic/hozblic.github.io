@@ -410,8 +410,8 @@ $(function () {
                                 objOldData.house_upgrade = objMistriaDataPlanner.house_upgrade;
                             }
 
-                            if ('zoom' in objMistriaDataPlanner) {
-                                objOldData.zoom = objMistriaDataPlanner.zoom;
+                            if ('multiplier' in objMistriaDataPlanner) {
+                                objOldData.multiplier = objMistriaDataPlanner.multiplier;
                             }
 
                             if ('offsetCanvas' in objMistriaDataPlanner) {

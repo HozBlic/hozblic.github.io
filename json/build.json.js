@@ -50,7 +50,6 @@ var objBuild =
     "objMistriaDataPlannerDefault": {
         "season": "spring",
         "house_upgrade": 0,
-        "zoom": 100,
         "offsetCanvas": {
             "x": 0,
             "y": 0

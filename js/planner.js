@@ -698,8 +698,8 @@ function compareData(strJson) {
                 objOldData.house_upgrade = objMistriaDataPlanner.house_upgrade;
             }
 
-            if ('zoom' in objMistriaDataPlanner) {
-                objOldData.zoom = objMistriaDataPlanner.zoom;
+            if ('multiplier' in objMistriaDataPlanner) {
+                objOldData.multiplier = objMistriaDataPlanner.multiplier;
             }
 
             if ('offsetCanvas' in objMistriaDataPlanner) {
@@ -750,25 +750,25 @@ function compareData(strJson) {
                                 </svg>
                                 ${objNewData.house_upgrade}</b>`);
             }
-            if (objOldData.zoom === objNewData.zoom) {
-                arrChanges.push(`Zoom: ${objOldData.zoom} 
+            if (objOldData.multiplier === objNewData.multiplier) {
+                arrChanges.push(`Zoom: ${objOldData.multiplier} 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
                                     viewBox="0 0 16 15.9">
                                     <path id="arrow_right"
                                         d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
                                         transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
                                 </svg>
-                                ${objNewData.zoom}`);
+                                ${objNewData.multiplier}`);
             } else {
                 bolChangesDetected = true;
-                arrChanges.push(`<b>Zoom: ${objOldData.zoom} 
+                arrChanges.push(`<b>Zoom: ${objOldData.multiplier} 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
                                     viewBox="0 0 16 15.9">
                                     <path id="arrow_right"
                                         d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
                                         transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
                                 </svg>
-                                ${objNewData.zoom}</b>`);
+                                ${objNewData.multiplier}</b>`);
             }
             if (objOldData.offsetCanvas === JSON.stringify(objNewData.offsetCanvas)) {
                 arrChanges.push(`Map offset: ${objOldData.offsetCanvas} 
@@ -1140,9 +1140,6 @@ function recalculateNeigborSprites(objSection = { x0: 0, y0: 0, x1: objGrid.x, y
     // console.log(`recalculateNeigborSprites - ${endTime - startTime} milliseconds`)
 }
 
-function calculateMultiplier() {
-    intMultiplierCanvas = getMultiplierFitScreen() * (objMistriaDataPlanner.zoom / 100);
-}
 
 function getMultiplierFitScreen() {
     const intContainerWidth = document.querySelector('#canvas_wrapper').offsetWidth;
@@ -1156,7 +1153,6 @@ function getMultiplierCoverScreen() {
 }
 
 function resize() {
-
     verifyZoomParameters();
     resizeContainers();
 }
@@ -1778,7 +1774,7 @@ function generateTempSection(objSection = false, objCellCoord = false, bolHighli
     // console.log(objCellCoord);
     if (strMode === 'drawing_mode') {
         bolDraw = true;
-        console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
+        // console.log(intCurrentlyDrawing, getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor))
         let arrSize = getSprite(intCurrentlyDrawing, [0, 0, 0, 0, 0, 0, 0, 0], strCurrentDirection, strCurrentColor).meta.size;
 
         if (objSpriteCategories.trees.includes(intCurrentlyDrawing)) {
@@ -3013,29 +3009,33 @@ function resetZoom(strZoomDirection) {
     const intMultiplierFit = getMultiplierFitScreen();
     const intMultiplierCover = getMultiplierCoverScreen();
 
-    let intZoom = (intMultiplierCover * 100 / intMultiplierFit).toFixed();
+    let intZoomPercent = (intMultiplierCover * 100 / intMultiplierFit).toFixed();
 
     if (strZoomDirection === 'vertical') {
         if (objCanvasSize.w > objCanvasSize.h) {
-            intZoom = 100;
+            intZoomPercent = 100;
         }
     } else if (strZoomDirection === 'horizontal') {
         if (objCanvasSize.w < objCanvasSize.h) {
-            intZoom = 100;
+            intZoomPercent = 100;
         }
     } else {
-        intZoom = 100;
+        intZoomPercent = 100;
     }
 
-    $('#zoomSlider').val(intZoom);
-    objMistriaDataPlanner.zoom = intZoom;
+    $('#zoomSlider').val(intZoomPercent);
+
+    objMistriaDataPlanner.multiplier = (intZoomPercent * getMultiplierFitScreen()) / 100;
+
     resize();
 }
 
 function verifyZoomParameters() {
-    calculateMultiplier();
+    console.log('verifyZoomParameters')
 
-    if (objMistriaDataPlanner.zoom > 100) {
+    intMultiplierCanvas = objMistriaDataPlanner.multiplier;
+
+    if (intMultiplierCanvas > getMultiplierFitScreen()) {
         const intOffsetX = objMistriaDataPlanner.offsetCanvas.x * -1
         const intViewportWidth = $('#canvas_wrapper').width() / intMultiplierCanvas;
         if (intOffsetX + intViewportWidth > objCanvasDefault.width) {
@@ -3082,9 +3082,12 @@ function updateMinimap() {
         h: $('#canvas_wrapper').height()
     }
 
+
+
+    const intZoomPercent = (objMistriaDataPlanner.multiplier * 100) / getMultiplierFitScreen();
     let objSelectionSize = fitSize(objMinimapWrapperSize, objCanvasSize);
     let objMinimapSize = fitSize({ w: objSelectionSize.w, h: objSelectionSize.h }, objMinimapWrapperSize);
-    let intMapScale = objMistriaDataPlanner.zoom / 100;
+    let intMapScale = intZoomPercent / 100;
 
     let intSelectionScale = 1;
 
@@ -3119,7 +3122,9 @@ function updateMinimap() {
         top: objMistriaDataPlanner.offsetCanvas.y * -(objMinimapSize.h * intMapScale) / (objGrid.y * intGridCellSize)
     })
 
-    $('#zoom_precent').html(objMistriaDataPlanner.zoom + '%')
+    $('#zoom_precent').html(parseInt(intZoomPercent) + '%')
+
+
 }
 
 function getTopLeftCornerCanvas(objCellCoord) {
@@ -3136,12 +3141,12 @@ function getTopLeftCornerCanvas(objCellCoord) {
 }
 
 function minimapInit() {
+    let bolDraggingMinimap = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    const intZoomPercent = (objMistriaDataPlanner.multiplier * 100) / getMultiplierFitScreen();
 
-    let bolDraggingMinimap = false
-    let dragOffsetX = 0
-    let dragOffsetY = 0
-
-    $('#zoomSlider').val(objMistriaDataPlanner.zoom);
+    $('#zoomSlider').val(intZoomPercent);
     updateMinimap();
 
     $('#minimap_wrapper').css({
@@ -3166,7 +3171,8 @@ function minimapInit() {
         resize();
     })
     $('#zoomSlider').on('input', function () {
-        objMistriaDataPlanner.zoom = parseInt($(this).val());
+        const intZoomPercent = parseInt($(this).val());
+        objMistriaDataPlanner.multiplier = (intZoomPercent * getMultiplierFitScreen()) / 100;
         resize();
     })
 
@@ -3549,12 +3555,14 @@ function loadDataPlanner() {
 
     if (objMistriaDataPlanner === null) {
         objMistriaDataPlanner = objMistriaDataPlannerDefault;
+        objMistriaDataPlanner.multiplier = getMultiplierFitScreen();
     }
 
     arrVersions = [objMistriaDataPlanner.layout[intSaveSlot].farm]
     intCurrentVersion = 0;
 
-    objMistriaDataPlanner.zoom = parseInt(objMistriaDataPlanner.zoom);
+    objMistriaDataPlanner.multiplier = parseFloat(objMistriaDataPlanner.multiplier);
+    intMultiplierCanvas = objMistriaDataPlanner.multiplier;
 
     // convert arrays to sets for to remove duplicates 
     objMistriaDataPlanner.options = ('options' in objMistriaDataPlanner ? new Set(objMistriaDataPlanner.options) : new Set(objMistriaDataPlannerDefault.options));
@@ -3690,25 +3698,27 @@ function throttle(fn, time) {
     }
 }
 const handleResize = () => {
-
     //make map stay the same size
     const intMultiplierFit = getMultiplierFitScreen();
     const intMultiplierZoomMax = (intMaxSize / intMultiplierFit) * 100;
     const intCurrentMultiplier = intMultiplierCanvas
-    const intNewMultiplier = getMultiplierFitScreen() * (objMistriaDataPlanner.zoom / 100)
+    const intNewMultiplier = objMistriaDataPlanner.multiplier;
+
+    let intZoomPercent = (intCurrentMultiplier * 100) / getMultiplierFitScreen();
 
     if (intCurrentMultiplier !== intNewMultiplier) {
-        intZoom = (intCurrentMultiplier * 100) / getMultiplierFitScreen()
-        intZoom = Math.round(intZoom)
-        if (intZoom < 50) {
-            intZoom = 50;
+        intZoomPercent = (intCurrentMultiplier * 100) / getMultiplierFitScreen();
+        intZoomPercent = Math.round(intZoomPercent)
+        if (intZoomPercent < 50) {
+            intZoomPercent = 50;
         }
-        if (intZoom > intMultiplierZoomMax) {
-            intZoom = Math.round(intMultiplierZoomMax);
+        if (intZoomPercent > intMultiplierZoomMax) {
+            intZoomPercent = Math.round(intMultiplierZoomMax);
         }
-        objMistriaDataPlanner.zoom = intZoom;
+
+        objMistriaDataPlanner.multiplier = (intZoomPercent * getMultiplierFitScreen()) / 100;
     }
-    $('#zoomSlider').val(intZoom);
+    $('#zoomSlider').val(intZoomPercent);
     $('#zoomSlider').attr('max', Math.round(intMultiplierZoomMax));
 
     resize();
@@ -4218,19 +4228,21 @@ $(function () {
             const intMultiplierFit = getMultiplierFitScreen();
             const intMultiplierZoomMax = (intMaxSize / intMultiplierFit) * 100;
 
-            let intZoom = objMistriaDataPlanner.zoom + e.deltaY * -0.5;
-            intZoom = Math.round(intZoom)
+            let intZoomPercent = objMistriaDataPlanner.multiplier * 100 / intMultiplierFit;
 
-            if (intZoom < 50) {
-                intZoom = 50;
+            intZoomPercent = intZoomPercent + e.deltaY * -0.5;
+            intZoomPercent = Math.round(intZoomPercent);
+
+            if (intZoomPercent < 50) {
+                intZoomPercent = 50;
             }
 
-            if (intZoom > intMultiplierZoomMax) {
-                intZoom = Math.round(intMultiplierZoomMax);
+            if (intZoomPercent > intMultiplierZoomMax) {
+                intZoomPercent = Math.round(intMultiplierZoomMax);
             }
 
-            objMistriaDataPlanner.zoom = intZoom;
-            $('#zoomSlider').val(intZoom);
+            objMistriaDataPlanner.multiplier = (intZoomPercent * getMultiplierFitScreen()) / 100;
+            $('#zoomSlider').val(intZoomPercent);
 
             // center against cursor location
             // const objCurrentCellCoord = getClickedCell(e);
