@@ -139,19 +139,25 @@ var objChangelog =
         {
             "date": "Future",
             "info": [
-                "placing items on things (tables)",
-                "add mobile support",
-                "show Water Sprite Statue radius",
-                "colors (variants) and outline for grass",
-                "filter out items that can not be placed on farm (autopetter, wallpapers..)",
-                "room planning",
-                "multiple saved layouts slots",
+                `new features
+                <ul>
+                    <li>room planning</li>
+                    <li>multiple saved layout slots</li>
+                    <li>placing items on things (tables, counters..)</li>
+                </ul>`,
+                `UI/UX
+                <ul>
+                    <li>mobile support</li>
+                    <li>do not treat moving action as two separate ones (when you move an item, you have to click undo button two times to reverse that action)</li>
+                    <li>filter out items that can not be placed on farm (autopetter, wallpapers..)</li>
+                    <li>show Water Sprite Statue radius</li>
+                    <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
+                </ul>`,
                 `optimization
                 <ul>
                     <li>combine sprite sheets</li>
                     <li>run manageScripts.js from Python</li>
                 </ul>`,
-
             ],
         }, {
             "date": "??/??/2026",

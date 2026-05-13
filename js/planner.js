@@ -2916,7 +2916,7 @@ async function loadMenuItems() {
         content: 'Drag map',
     });
     tippy('[mode="selection_mode"]', {
-        content: 'Select item',
+        content: 'Select item or area',
     });
     tippy('[mode="drawing_mode"]', {
         content: 'Drawing mode',
@@ -2957,16 +2957,19 @@ async function loadMenuItems() {
                   <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">del</code></p>`,
         allowHTML: true,
     });
-
     tippy('#section_deselect_button', {
         content: `<p style="text-align: center; font-size: 14px;" class="save_file">Deselect</p>
                   <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">esc</code>, <code class="shortcut">right click</code></p>`,
         allowHTML: true,
     });
-
     tippy('#section_rotate_button', {
         content: `<p style="text-align: center; font-size: 14px;" class="save_file">Rotate</p>
                   <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">R</code></p>`,
+        allowHTML: true,
+    });
+    tippy('#save_file_icon', {
+        content: `<p class="save_file">Your save file is processed only in your browser and is never uploaded or sent anywhere else.</p>
+                  <p class="save_file">Tested and should work on v.0.15.0 save files</p>`,
         allowHTML: true,
     });
 }
@@ -3031,8 +3034,6 @@ function resetZoom(strZoomDirection) {
 }
 
 function verifyZoomParameters() {
-    console.log('verifyZoomParameters')
-
     intMultiplierCanvas = objMistriaDataPlanner.multiplier;
 
     if (intMultiplierCanvas > getMultiplierFitScreen()) {
