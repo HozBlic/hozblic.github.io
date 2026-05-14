@@ -574,16 +574,6 @@ code.shortcut {
     font-size: 10px;
 }
 
-[data-tippy-root] .tippy-box .tippy-content .save_file {
-    margin: 0;
-    font-size: 12px;
-    line-height: 14px;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .save_file+.save_file {
-    margin-top: 5px;
-}
-
 #popup_donate .button_item.large {
     justify-content: center;
     --button-font-size: 16px;
@@ -674,6 +664,7 @@ code.shortcut {
     list-style: circle;
     padding-left: 20px;
 }
+
 #popup_changelog ul ul .plan_section_item li {
     list-style-type: '-  ';
 }

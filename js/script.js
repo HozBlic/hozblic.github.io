@@ -274,8 +274,22 @@ function loadData() {
                 I began tracking time in March 2026, and since then <span style="white-space: nowrap;">${minutesToTime((objBuild.spent_time_total))}</span> has been recorded. 
                 Before that, I had already spent ~120 hours on the project.
             </p>
-            <p class="save_file">
-                The project was originally created on December 28, 2024.
+            <p class="save_file with_icon">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="44" viewBox="0 0 48 44">
+                    <path d="M0 0 C7.92 0 15.84 0 24 0 C24 1.32 24 2.64 24 4 C25.32 4 26.64 4 28 4 C28 6.64 28 9.28 28 12 C29.32 12 30.64 12 32 12 C32 18.6 32 25.2 32 32 C30.68 32 29.36 32 28 32 C28 33.32 28 34.64 28 36 C17.44 36 6.88 36 -4 36 C-4 34.68 -4 33.36 -4 32 C-5.32 32 -6.64 32 -8 32 C-8 25.4 -8 18.8 -8 12 C-6.68 12 -5.36 12 -4 12 C-4 9.36 -4 6.72 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#62A1BD" transform="translate(12,4)"/>
+                    <path d="M0 0 C7.92 0 15.84 0 24 0 C24 1.32 24 2.64 24 4 C25.32 4 26.64 4 28 4 C28 9.28 28 14.56 28 20 C17.44 20 6.88 20 -4 20 C-4 14.72 -4 9.44 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#FA87BC" transform="translate(12,4)"/>
+                    <path d="M0 0 C1.32 0 2.64 0 4 0 C4 2.64 4 5.28 4 8 C14.56 8 25.12 8 36 8 C36 5.36 36 2.72 36 0 C37.32 0 38.64 0 40 0 C40 6.6 40 13.2 40 20 C38.68 20 37.36 20 36 20 C36 17.36 36 14.72 36 12 C25.44 12 14.88 12 4 12 C4 14.64 4 17.28 4 20 C2.68 20 1.36 20 0 20 C0 13.4 0 6.8 0 0 Z " fill="#A53A60" transform="translate(4,16)"/>
+                    <path d="M0 0 C7.92 0 15.84 0 24 0 C24 1.32 24 2.64 24 4 C25.32 4 26.64 4 28 4 C28 6.64 28 9.28 28 12 C26.68 12 25.36 12 24 12 C24 10.68 24 9.36 24 8 C16.08 8 8.16 8 0 8 C0 9.32 0 10.64 0 12 C-1.32 12 -2.64 12 -4 12 C-4 9.36 -4 6.72 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#E0AA47" transform="translate(12,4)"/>
+                    <path d="M0 0 C10.56 0 21.12 0 32 0 C32 1.32 32 2.64 32 4 C21.44 4 10.88 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#010100" transform="translate(8,36)"/>
+                    <path d="M0 0 C10.56 0 21.12 0 32 0 C32 1.32 32 2.64 32 4 C21.44 4 10.88 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#FEDCC4" transform="translate(8,28)"/>
+                    <path d="M0 0 C7.92 0 15.84 0 24 0 C24 1.32 24 2.64 24 4 C16.08 4 8.16 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#7CBDDB" transform="translate(12,12)"/>
+                    <path d="M0 0 C7.92 0 15.84 0 24 0 C24 1.32 24 2.64 24 4 C16.08 4 8.16 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#000100" transform="translate(12,4)"/>
+                    <path d="M0 0 C1.32 0 2.64 0 4 0 C4 6.6 4 13.2 4 20 C2.68 20 1.36 20 0 20 C0 13.4 0 6.8 0 0 Z " fill="#010101" transform="translate(40,16)"/>
+                    <path d="M0 0 C1.32 0 2.64 0 4 0 C4 6.6 4 13.2 4 20 C2.68 20 1.36 20 0 20 C0 13.4 0 6.8 0 0 Z " fill="#010101" transform="translate(4,16)"/>
+                    <path d="M0 0 C1.32 0 2.64 0 4 0 C4 2.64 4 5.28 4 8 C2.68 8 1.36 8 0 8 C0 5.36 0 2.72 0 0 Z " fill="#010101" transform="translate(36,8)"/>
+                    <path d="M0 0 C1.32 0 2.64 0 4 0 C4 2.64 4 5.28 4 8 C2.68 8 1.36 8 0 8 C0 5.36 0 2.72 0 0 Z " fill="#010101" transform="translate(8,8)"/>
+                </svg>
+                December 28, 2024.
             </p>`,
             allowHTML: true,
         });

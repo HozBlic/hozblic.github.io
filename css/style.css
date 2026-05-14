@@ -1245,6 +1245,28 @@ label[for="mode_chbexpand_switches"] svg {
     align-items: center;
 }
 
+[data-tippy-root] .tippy-box .tippy-content .save_file {
+    margin: 0;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+[data-tippy-root] .tippy-box .tippy-content .save_file.with_icon {
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+[data-tippy-root] .tippy-box .tippy-content .save_file.with_icon svg {
+    width: 17px;
+    height: 17px; 
+}
+
+[data-tippy-root] .tippy-box .tippy-content .save_file+.save_file {
+    margin-top: 5px;
+}
+
 
 .alerts {
     width: 100%;
