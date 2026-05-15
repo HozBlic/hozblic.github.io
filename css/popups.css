@@ -664,6 +664,9 @@ code.shortcut {
     list-style: circle;
     padding-left: 20px;
 }
+#popup_changelog ul ul ul {
+    margin-bottom: 5px;
+}
 
 #popup_changelog ul ul .plan_section_item li {
     list-style-type: '-  ';

@@ -35,6 +35,9 @@ const fruits = [
 ]
 const buildingColors = ['black', 'red', 'white', 'wood']
 const childCategories = ['top_sprite', 'door_closed', 'farm_plate', 'floor_sprite']
+const childOffsetKey = {
+    door_closed: 'door_offset',
+}
 
 directions.forEach(direction => {
     seasons.forEach(season => {
@@ -71,29 +74,48 @@ class SpriteStore {
         return instance 
     }
 
-    setSingleObjectData({name, sheet: sheetKey, h, w, x, y, targetX, targetY, originX, originY, itemOriginX, itemOriginY, children, ...meta}) {
-        this.spriteSheetData[sheetKey].frames[name] = { frame: { h, w, x, y } }      // populate spritesheet frames
-        this.singleTextureData[name] = { 
+    setSingleObjectData(objectData) {
+        const {
+            name, sheet: sheetKey, h, w, x, y, targetX = 0, targetY = 0, originX = 0, originY = 0, children, isBuilding, isChild, parent, ...meta
+        } = objectData
+        this.spriteSheetData[sheetKey].frames[name] = { frame: { h, w, x, y } }
+        this.singleTextureData[name] = {
             sheetKey, 
             meta: meta
         }
 
-        if ((targetX || targetY) !== undefined) {
-            this.singleTextureData[name].pivot = {x: targetX, y: targetY}
+        let pivot
+
+        const origin = {x: originX - targetX, y: originY - targetY}
+
+        if (isChild){
+            pivot = {
+                // x: originX - targetX - (meta?.offset?.[0] || 0) - parent.w/2 + parent.pivot.x,
+                // // y:  h + parent?.pivot?.y - parent?.h - (meta?.offset?.[1] || 0)
+                // y: parent?.pivot?.y - parent?.h + originY - targetY + 2 - (meta?.offset?.[1] || 0)
+                // // y: h - parent.h - parent.pivot.y + 3
+                x: origin.x - parent.origin.x + parent.pivot.x - (meta?.offset?.[0] || 0),
+                y: origin.y - parent.origin.y + parent.pivot.y - (meta?.offset?.[1] || 0),
+            }
+
+        console.log(name, 'y', originY, targetY, (meta?.offset?.[1] || 0), h, parent?.pivot?.y, parent?.h, {result : pivot.y})
+        } else { // is a base object
+            pivot = {
+                x: originX - (meta?.offset?.[0] || 0) - targetX,
+                y: originY - (meta?.offset?.[1] || 0) - targetY
+                // x: originX - targetX - (meta?.offset?.[0] || 0),
+                // y: originY - targetY - (meta?.offset?.[1] || 0)
+            }
         }
-        if ((originX || originY) !== undefined) {
-            this.singleTextureData[name].origin = {x: originX, y: originY}
-        }
-        if ((itemOriginX || itemOriginY) !== undefined) {
-            this.singleTextureData[name].itemOrigin = {x: itemOriginX, y: itemOriginY}
-        }
+
+        this.singleTextureData[name].pivot = { x: pivot.x, y: pivot.y }
 
         if (children) {
             this.singleTextureData[name].children = []
 
             children.forEach(child => {
-                this.singleTextureData[name].children.push({name: child.name, offset: child.offset})
-                this.setSingleObjectData(child)
+                this.singleTextureData[name].children.push(child)
+                this.setSingleObjectData({...child, isChild: true, parent: {...objectData, pivot, origin}})
             })
         }
     }
@@ -175,38 +197,49 @@ class SpriteStore {
 
     #mapSingleGeneric(variations, objectKey, objectData, defaults) {
         Object.entries(variations).forEach(([variationKey, variation]) => {
+            const variationName = `${objectKey}_${variationKey}`
             const sprite = this.spriteMapping[variation.sprite ? variation.sprite : lastSprite(variation)]["0"]
             let topSprite
                             
-            let itemOriginX, itemOriginY
-            if (variation.offset) {
-                itemOriginX = variation.offset[0]
-                itemOriginY = variation.offset[1]
-            } else {
-                itemOriginX = 8
-                itemOriginY = 8
-            }
-
             let spriteBasics = {...defaults}
-
-            if (itemOriginX || itemOriginY) spriteBasics = {...spriteBasics, itemOriginX, itemOriginY}
 
             const children = []
 
             childCategories.forEach(category => {
                 if (variation[category]) {
-                    children.push({
-                        ...spriteBasics,
+                    const offsetLookup = childOffsetKey[category]
+
+                    console.log(variation[category])
+                    
+                    const child = {
+                        ...objectData[category],
                         ...this.spriteMapping[variation[category]]["0"],
-                        ...objectData,
-                        name: variation[category],
-                        // offset: [0, variation.top_sprite_depth_offset] /// Z-INDEXES, NOT NEEDED CURRENTLY
-                    })
+                        name: `${variationName}_${variation[category]}`,
+                    }
+
+                    if (offsetLookup && objectData[offsetLookup]) {
+                        // console.log(objectKey, category, {
+                        //     s_ghouse: '40,33'
+                        // }, objectData.offset[0], objectData[offsetLookup][0], child.w, objectData.size[0], '',
+                        //     objectData.offset[1], objectData[offsetLookup][1], child.h, objectData.size[1])
+                        // const combinedPivot = [
+                        //     // 60,
+                        //     // 60
+                        //     objectData.offset[0] + objectData[offsetLookup][0],
+                        //     objectData.offset[1] + objectData[offsetLookup][1] - (child.size[1] * 2)
+                        // ]
+                        // // console.log(combinedPivot, child.originX, child.w)
+                        child.offset = objectData[offsetLookup]
+                    }
+
+                    children.push(child)
                 }
             })
+
+            console.log(objectKey, variationKey)
             
             this.setSingleObjectData({
-                ...spriteBasics, ...sprite, ...objectData,
+                ...variation, ...spriteBasics, ...sprite, ...objectData,
                 name: `${objectKey}_${variationKey}`,
                 children: children.length ? children : undefined
             })
@@ -217,15 +250,9 @@ class SpriteStore {
         Object.entries(variations).forEach(([variationKey, variation]) => {
             const fenceSprites = this.spriteMapping[variation.sprite]
 
-            let itemOriginX = 0, itemOriginY = 0
-            if (variation.offset) {
-                itemOriginX = variation.offset[0]
-                itemOriginY = variation.offset[1]
-            }
-
             Object.entries(fenceSprites).forEach(([fenceOrd, sprite]) => {
                 const fenceKey = `${furnitureKey}_${fenceOrd}`
-                this.setSingleObjectData({name: `${fenceKey}_${variationKey}`, itemOriginX, itemOriginY, ...defaults, ...sprite, ...furnitureData})
+                this.setSingleObjectData({name: `${fenceKey}_${variationKey}`, ...defaults, ...sprite, ...furnitureData, ...variation})
             })
         })
     }
@@ -267,7 +294,7 @@ class SpriteStore {
         Object.entries(trees).forEach(([treeKey, treeData]) => {
             const variations = seasons.reduce((acc, season) => ({...acc, [season]: treeData.sprites.stage5[season]}), {})
 
-            this.#mapSingleGeneric(variations, treeKey, treeData, defaults)
+            this.#mapSingleGeneric(variations, treeKey, {...treeData, offset: [8, 9]}, defaults)
         })
 
         fruits.forEach(fruit => { // adding produce sprites manually
@@ -282,7 +309,7 @@ class SpriteStore {
             const matchedColors = buildingColors.filter(color => buildingData.sprites.spring.find(sprite => sprite.includes(`_${color}_`)))
             const variations = this.#findVariations(buildingData)
 
-            this.#mapSingleGeneric(variations, buildingKey, buildingData, defaults)
+            this.#mapSingleGeneric(variations, buildingKey, {...buildingData, isBuilding: true}, defaults)
         })
     }
 
@@ -455,13 +482,7 @@ class SpriteStore {
         return crop
     }
 
-    get(textureKey, {direction, season, color} = {}) {
-        // if (textureKey === 'tree_apple') {
-        //     textureKey = 'large_greenhouse'
-        //     color = 'wood'
-        //     season = 'spring'
-        // }
-        
+    get(textureKey, {direction, season, color} = {}) {        
         // Build possible keys from most specific to least
         let possibleKeys = []
 
@@ -484,7 +505,7 @@ class SpriteStore {
 
         const foundTexture = this.textures[foundKey]
 
-        const {texture, pivot, origin, itemOrigin, children, meta} = foundTexture
+        const {texture, pivot, children, meta} = foundTexture
 
         let container = new PIXI.Container()
         const baseSprite = new PIXI.Sprite(texture)
@@ -492,16 +513,12 @@ class SpriteStore {
         container.sortableChildren = true
         container.addChild(baseSprite)
         
-        if (pivot && origin) {
+        if (pivot) {
             const { x, y } = pivot
-            const { x: originX, y: originY } = origin
-            const { x: itemOriginX, y: itemOriginY } = itemOrigin || {x: 0, y: 0}
+            console.log(textureKey, pivot)
 
-            baseSprite.pivot.set(originX - itemOriginX - x, originY - itemOriginY - y)
-        } /* else if (pivot) { 
-            const { x, y } = pivot
-            baseSprite.pivot.set(intGridCellSize/2 - x*2, intGridCellSize/2 - y*2)
-        } PROBABLY NOT NEEDED ANYMORE? */
+            baseSprite.pivot.set(x, y)
+        }
 
         if (meta) {
             if (direction === "west" && meta.mirror_west && foundKey.includes('east')) {
@@ -526,7 +543,7 @@ class SpriteStore {
             if (meta.fruit_data?.harvest && objMistriaDataPlanner.options.has('mode_treefruit') && (objMistriaDataPlanner.options.has('mode_offseason') || meta.fruit_data.seasons.includes(objMistriaDataPlanner.season))) {
                 meta.fruit_data.positions.forEach(([x, y]) => {
                     const fruit = this.get(`${meta.fruit_data.harvest}_produce`)
-                    fruit.pivot.set(x - 8, -y)
+                    fruit.pivot.set(x - 8, -y - 8)
 
                     container.addChild(fruit)
                 })

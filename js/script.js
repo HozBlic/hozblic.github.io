@@ -134,12 +134,12 @@ function createChartConfig(objData) {
     //     });
     // }
 
-    const index = objData.labels.findIndex(str => str.startsWith('2026/05/18'));
+    const index = objData.labels.findIndex(str => str.startsWith('2026/05/11'));
     let arrLineBetweenIndexes = [];
 
     if (index !== -1) {
         arrLineBetweenIndexes.push({
-            start: index - 1,
+            start: index,
             end: index,
             text: 'Planner v1'
         },)
@@ -185,11 +185,13 @@ function createChartConfig(objData) {
                         boxHeight: 10,
                     }
                 },
-                // verticalLinePlugin,
                 colorschemes: {
                     scheme: ["#ce5070", "#6b9080", "#fcab10", "#b6b6b650"]
                 },
                 tooltip: {
+                    filter: function (tooltipItem) {
+                        return tooltipItem.raw !== 0;
+                    },
                     callbacks: {
                         title: ctx => {
                             return ctx[0].label;
