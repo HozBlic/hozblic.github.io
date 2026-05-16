@@ -2926,6 +2926,9 @@ async function loadMenuItems() {
     tippy('#offseason', {
         content: 'Show healthy plant instead of a wilted one, even if that plant does not grow in chosen season',
     });
+    tippy('#fruittrees', {
+        content: 'Show trees with fruit. If off-season toggle is off, fruit appears only during the correct season',
+    });
     tippy('#byset', {
         content: 'Show furniture items categorized by sets (Basic set, Bathroom Set...) instead of categories (Beds, Tables...)',
     });

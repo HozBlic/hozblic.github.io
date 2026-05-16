@@ -366,6 +366,14 @@
     width: 18px;
 }
 
+.dropdowns.row {
+    flex-direction: row;
+}
+
+.dropdowns.row .dropdown_wrap {
+    flex: 1;
+}
+
 #drawn_elements {
     --margin-top: 10px;
     opacity: 0.5;

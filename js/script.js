@@ -134,7 +134,7 @@ function createChartConfig(objData) {
     //     });
     // }
 
-    const index = objData.labels.findIndex(str => str.startsWith('2026/05/11'));
+    const index = objData.labels.findIndex(str => str.startsWith('2026/05/18'));
     let arrLineBetweenIndexes = [];
 
     if (index !== -1) {
@@ -380,7 +380,7 @@ function loadChangelog() {
             $divPlanItem.append(`<ul class="plan_section_items"></ul>`);
 
             objPlan.info.forEach(function (strPlan) {
-                strPlan = strPlan.replace('{{feedback}}', `
+                strPlan = strPlan.replaceAll('{{feedback}}', `
                     <div class="icon changelog_feedback">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Message-Circle-Heart--Streamline-Lucide" height="24" width="24">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" stroke-width="2"></path>

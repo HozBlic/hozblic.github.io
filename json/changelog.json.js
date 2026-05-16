@@ -4,21 +4,30 @@ var objChangelog =
         {
             "date": "Future",
             "info": [
-                "{{feedback}}add animals and their heart levels to wrapped tab",
-                "{{feedback}}add pet appearances",
-                "{{feedback}}apply layout settings to each tab separately",
-                `checkbox filter
+                `filters
                 <ul>
-                    <li>{{feedback}}add seasons</li>
-                    <li>add missing events</li>
+                    <li>{{feedback}}add seasons (checkbox)</li>
+                    <li>add missing events (checkbox)</li>
+                    <li>{{feedback}}Gossip mode (show only gifts that are revealed by gossip mechanic) (toggle)</li>
+                    <li>{{feedback}}figure out a way to deal with spoilers (toggle)
+                        <ul>
+                            <li>how to determine that something is spoiler? Feedback about this would be appreciated</li>
+                        </ul>
+                    </li>
                 </ul>`,
-                "add missing locations for wrapped tab",
-                "{{feedback}}Gossip mode (show only gifts that are revealed by gossip mechanic)",
-                "{{feedback}}Check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)",
-                `{{feedback}}figure out a way to deal with spoilers
+                `wrapped tab
                 <ul>
-                    <li>feedback about this would be appreciated</li>
-                    <li>Maybe each time new content is added, show a warning popup?</li>
+                    <li>{{feedback}}add animals and their heart levels</li>
+                    <li>add missing locations</li>
+                </ul>`,
+                `animal tab
+                <ul>
+                    <li>{{feedback}}add pet appearances</li>
+                </ul>`,
+                `UI/UX
+                <ul>
+                    <li>{{feedback}}Check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)</li>
+                    <li>{{feedback}}apply layout settings to each tab separately</li>
                 </ul>`,
             ],
         },
