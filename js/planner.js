@@ -95,6 +95,28 @@ const objZindex_Containers = {
     'cursor': 5,
 }
 
+function testAllItems() {
+    Object.keys(objKeyItemDict).forEach(function (strItemIndex) {
+        const intItemIndex = parseInt(strItemIndex);
+        if (
+            objSpriteCategories.building.includes(intItemIndex) ||
+            objSpriteCategories.flooring.includes(intItemIndex) ||
+            objSpriteCategories.wallpaper.includes(intItemIndex)
+        ) {
+            return;
+        }
+
+        try {
+            const sprite = getSprite(intItemIndex);
+            if (typeof sprite.meta.size === 'undefined') {
+                // console.log(objKeyItemDict[intItemIndex][0], 'no size')
+            }
+        } catch (e) {
+            console.log(objKeyItemDict[intItemIndex][0], e)
+        }
+    });
+}
+
 function addTestData(intTest) {
     const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
     let objSection = {}
