@@ -2196,7 +2196,7 @@ async function loadMenuItems() {
     });
 
 
-    var arrModes = ['mode_dark', 'mode_collapse'];
+    var arrModes = ['mode_dark', 'mode_stars', 'mode_collapse'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -2286,7 +2286,7 @@ async function loadMenuItems() {
     $('.dropdown-item.house_upgrade').removeClass('selected');
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
-    const objTabs = await (await fetch('json/tabs_planner.json')).json();
+    const objTabs = await (await fetch('json/tabs_planner.json?v=2')).json();
     objItemsPlanner = await (await fetch('json/items_planner.json')).json();
 
     var setTips = new Set();

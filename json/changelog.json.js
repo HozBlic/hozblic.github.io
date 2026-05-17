@@ -158,15 +158,21 @@ var objChangelog =
                 <ul>
                     <li>mobile support</li>
                     <li>do not treat moving action as two separate ones (when you move an item, you have to click undo button two times to reverse that action)</li>
+                    <li>after trying to place an item in an illegal place, do not deselect </li>
+                    <li>import soil and grass info (decode farm.bin)</li>
                     <li>dropdowns
                         <ul>
                             <li>filter out items that can not be placed on farm (autopetter, wallpapers..)</li>
                             <li>recently used items</li>
                         </ul>
                     </li>
-                    <li>show Water Sprite Statue radius</li>
-                    <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
-                    <li>import soil and grass info (decode farm.bin)</li>
+                    <li>visuals
+                        <ul>
+                            <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
+                            <li>item layering fixes</li>
+                            <li>show Water Sprite Statue radius</li>
+                        </ul>
+                    </li>
                 </ul>`,
                 `optimization
                 <ul>
