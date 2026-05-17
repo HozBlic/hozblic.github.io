@@ -4,21 +4,30 @@ var objChangelog =
         {
             "date": "Future",
             "info": [
-                "{{feedback}}add animals and their heart levels to wrapped tab",
-                "{{feedback}}add pet appearances",
-                "{{feedback}}apply layout settings to each tab separately",
-                `checkbox filter
+                `filters
                 <ul>
-                    <li>{{feedback}}add seasons</li>
-                    <li>add missing events</li>
+                    <li>{{feedback}}add seasons (checkbox)</li>
+                    <li>add missing events (checkbox)</li>
+                    <li>{{feedback}}Gossip mode (show only gifts that are revealed by gossip mechanic) (toggle)</li>
+                    <li>{{feedback}}figure out a way to deal with spoilers (toggle)
+                        <ul>
+                            <li>how to determine that something is spoiler? Feedback about this would be appreciated</li>
+                        </ul>
+                    </li>
                 </ul>`,
-                "add missing locations for wrapped tab",
-                "{{feedback}}Gossip mode (show only gifts that are revealed by gossip mechanic)",
-                "{{feedback}}Check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)",
-                `{{feedback}}figure out a way to deal with spoilers
+                `wrapped tab
                 <ul>
-                    <li>feedback about this would be appreciated</li>
-                    <li>Maybe each time new content is added, show a warning popup?</li>
+                    <li>{{feedback}}add animals and their heart levels</li>
+                    <li>add missing locations</li>
+                </ul>`,
+                `animal tab
+                <ul>
+                    <li>{{feedback}}add pet appearances</li>
+                </ul>`,
+                `UI/UX
+                <ul>
+                    <li>{{feedback}}Check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)</li>
+                    <li>{{feedback}}apply layout settings to each tab separately</li>
                 </ul>`,
             ],
         },
@@ -139,22 +148,34 @@ var objChangelog =
         {
             "date": "Future",
             "info": [
-                "placing items on things (tables)",
-                "add mobile support",
-                "show Water Sprite Statue radius",
-                "colors (variants) and outline for grass",
-                "filter out items that can not be placed on farm (autopetter, wallpapers..)",
-                "room planning",
-                "multiple saved layouts slots",
+                `new features
+                <ul>
+                    <li>room planning</li>
+                    <li>multiple saved layout slots</li>
+                    <li>placing items on things (tables, counters..)</li>
+                </ul>`,
+                `UI/UX
+                <ul>
+                    <li>mobile support</li>
+                    <li>do not treat moving action as two separate ones (when you move an item, you have to click undo button two times to reverse that action)</li>
+                    <li>dropdowns
+                        <ul>
+                            <li>filter out items that can not be placed on farm (autopetter, wallpapers..)</li>
+                            <li>recently used items</li>
+                        </ul>
+                    </li>
+                    <li>show Water Sprite Statue radius</li>
+                    <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
+                    <li>import soil and grass info (decode farm.bin)</li>
+                </ul>`,
                 `optimization
                 <ul>
                     <li>combine sprite sheets</li>
                     <li>run manageScripts.js from Python</li>
                 </ul>`,
-
             ],
         }, {
-            "date": "??/??/2026",
+            "date": "17/05/2026",
             "info": ["first version"],
             "tags": ["star"]
         },

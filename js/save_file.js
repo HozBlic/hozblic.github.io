@@ -228,11 +228,431 @@ function objLOCATION(obj, strLocationID) {
     return false;
 }
 
+function copyClipboard(objElem, strText) {
+    var el = document.createElement('textarea');
+    el.value = strText;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    $(objElem).addClass('copied').delay(3000).queue(function (next) {
+        $(this).removeClass('copied');
+    });
+}
+
+function copyClipboardJSON(objElem) {
+    var strJson = $('#settings_json').val();
+    if (isJsonString(strJson)) {
+
+        const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson);
+
+        if (bolChangesDetected) {
+            $('#json_alert').addClass('show').addClass('yellow');
+            $('#json_alert .info').html('You have copied JSON code that contains unsaved changes');
+        }
+
+        var el = document.createElement('textarea');
+        el.value = strJson;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        $(objElem).addClass('copied').delay(3000).queue(function (next) {
+            $(this).removeClass('copied');
+        });
+
+    } else {
+        $('#json_alert').addClass('show');
+        $('#json_alert .info').html('JSON code is invalid');
+    }
+}
+
+function openJsonPopup() {
+    $('#extracting_alert').removeClass('show').removeClass('green').removeClass('yellow');
+    $('#json_alert').removeClass('show').removeClass('green').removeClass('yellow');
+    $('#json_button_popup').show();
+}
+
+function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+function compareData(strJson) {
+
+    const strPage = $('#json_button_popup').attr('data-page');
+
+    let objNewData = JSON.parse(strJson);
+    var bolChangesDetected = false;
+    let arrChanges = [];
+    let objOldData = {};
+
+    switch (strPage) {
+        case "tracker":
+            arrTabs.forEach(function (strTab) {
+                if (strTab in objMistriaData) {
+                    objOldData[strTab] = [...objMistriaData[strTab]];
+                }
+            });
+            objOldData.options = [...objMistriaData.options];
+            objOldData.favorites = [...objMistriaData.favorites];
+            if ('sort' in objMistriaData) {
+                objOldData.sort = objMistriaData.sort;
+            }
+            if ('tab' in objMistriaData) {
+                objOldData.tab = objMistriaData.tab;
+            }
+
+            //remove duplicates for new data
+            arrTabs.forEach(function (strTab) {
+                if (strTab in objMistriaData) {
+                    objNewData[strTab] = [...new Set(objNewData[strTab])];
+                }
+            });
+            objNewData.options = [...new Set(objNewData.options)];
+
+            //sort arrays for comparison
+            arrTabs.forEach(function (strTab) {
+                if (strTab in objOldData) {
+                    objOldData[strTab].sort();
+                }
+                if (strTab in objNewData) {
+                    objNewData[strTab].sort();
+                }
+            });
+
+            // Compare old and new data
+            var strOldSort = '';
+            var strNewSort = '';
+            switch (objOldData.sort) {
+                case 'az':
+                    strOldSort = 'Alphabetical (A-Z)';
+                    break;
+                case 'za':
+                    strOldSort = 'Alphabetical (Z-A)';
+                    break;
+                default:
+                    strOldSort = 'In game';
+            }
+
+            switch (objNewData.sort) {
+                case 'az':
+                    strNewSort = 'Alphabetical (A-Z)';
+                    break;
+                case 'za':
+                    strNewSort = 'Alphabetical (Z-A)';
+                    break;
+                default:
+                    strNewSort = 'In game';
+            }
+
+            arrTabs.forEach(function (strTab) {
+                if (objOldData[strTab].length === objNewData[strTab].length && objOldData[strTab].every((value, index) => value === objNewData[strTab][index])) {
+                    arrChanges.push(`${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData[strTab].length}`);
+                } else {
+                    bolChangesDetected = true;
+                    arrChanges.push(`<b>${capitalizeFirstLetter(strTab)}: ${objOldData[strTab].length} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData[strTab].length}</b>`);
+                }
+            });
+
+            if (objOldData.options.length === objNewData.options.length && objOldData.options.every((value, index) => value === objNewData.options[index])) {
+                arrChanges.push(`Layout toggles: ${objOldData.options.length} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.options.length}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Layout toggles: ${objOldData.options.length} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.options.length}</b>`);
+            }
+
+            if (strOldSort === strNewSort) {
+                arrChanges.push(`Sort settings: ${strOldSort} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${strNewSort}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Sort settings: ${strOldSort} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${strNewSort}</b>`);
+            }
+            break;
+        case "planner":
+            objOldData.options = [...objMistriaDataPlanner.options];
+
+            if ('season' in objMistriaDataPlanner) {
+                objOldData.season = objMistriaDataPlanner.season;
+            }
+
+            if ('house_upgrade' in objMistriaDataPlanner) {
+                objOldData.house_upgrade = objMistriaDataPlanner.house_upgrade;
+            }
+
+            if ('multiplier' in objMistriaDataPlanner) {
+                objOldData.multiplier = objMistriaDataPlanner.multiplier;
+            }
+
+            if ('offsetCanvas' in objMistriaDataPlanner) {
+                objOldData.offsetCanvas = JSON.stringify(objMistriaDataPlanner.offsetCanvas);
+            }
+
+            if ('layout' in objMistriaDataPlanner) {
+                objOldData.layout = JSON.stringify(objMistriaDataPlanner.layout);
+            }
+
+            if (objOldData.season === objNewData.season) {
+                arrChanges.push(`Season: ${objOldData.season} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.season}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Season: ${objOldData.season} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.season}</b>`);
+            }
+            if (objOldData.house_upgrade === objNewData.house_upgrade) {
+                arrChanges.push(`House Upgrade: ${objOldData.house_upgrade} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.house_upgrade}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>House Upgrade: ${objOldData.house_upgrade} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.house_upgrade}</b>`);
+            }
+            if (objOldData.multiplier === objNewData.multiplier) {
+                arrChanges.push(`Zoom: ${objOldData.multiplier} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.multiplier}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Zoom: ${objOldData.multiplier} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.multiplier}</b>`);
+            }
+            if (objOldData.offsetCanvas === JSON.stringify(objNewData.offsetCanvas)) {
+                arrChanges.push(`Map offset: ${objOldData.offsetCanvas} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${JSON.stringify(objNewData.offsetCanvas)}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Map offset: ${objOldData.offsetCanvas} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${JSON.stringify(objNewData.offsetCanvas)}</b>`);
+            }
+
+            if (objOldData.layout === JSON.stringify(objNewData.layout)) {
+                arrChanges.push(`Layout: unchanged`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Layout: changed</b>`);
+            }
+
+            if (objOldData.options.length === objNewData.options.length && objOldData.options.every((value, index) => value === objNewData.options[index])) {
+                arrChanges.push(`Layout toggles: ${objOldData.options.length} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.options.length}`);
+            } else {
+                bolChangesDetected = true;
+                arrChanges.push(`<b>Layout toggles: ${objOldData.options.length} 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.9"
+                                    viewBox="0 0 16 15.9">
+                                    <path id="arrow_right"
+                                        d="M2985.922-7255h-.083l-.017,0h-.01l-.018,0h-.009l-.019,0h-.008l-.02,0h-.008l-.019,0-.009,0-.018,0-.01,0a.056.056,0,0,1-.016,0l-.012,0-.014,0-.014,0-.011,0-.017,0-.008,0-.02-.006-.006,0-.021-.009h0l-.023-.01h0l-.014-.005h0l-.01,0h0l-.012,0-.007,0a.072.072,0,0,1-.017-.008l-.014-.007-.009,0-.021-.012h0a1.147,1.147,0,0,1-.257-.194l-6.82-6.9a1.129,1.129,0,0,1,.008-1.6,1.129,1.129,0,0,1,1.6.009l4.888,4.943v-11a1.131,1.131,0,0,1,1.129-1.129,1.131,1.131,0,0,1,1.13,1.129v10.993l4.889-4.94a1.128,1.128,0,0,1,1.6-.009,1.129,1.129,0,0,1,.008,1.6l-6.8,6.88a1.235,1.235,0,0,1-.108.1l0,0-.012.009,0,0h0l-.008.005-.009.007,0,0-.011.008s0,0-.006,0l-.005,0-.013.009,0,0h0l0,0-.014.009h0l0,0,0,0a1.089,1.089,0,0,1-.135.072h0a.144.144,0,0,1-.022.01l0,0-.02.008-.009,0-.016.006-.013,0-.012,0-.016.005-.009,0-.019.006h-.006l-.021.006h0l-.023.005h0l-.024.005h0l-.024,0h0l-.024,0h0l-.024,0h0l-.022,0h-.007l-.02,0h-.137Z"
+                                        transform="translate(7271.001 2993.899) rotate(-90)" fill="#242424" />
+                                </svg>
+                                ${objNewData.options.length}</b>`);
+            }
+            break;
+    }
+
+    if (!bolChangesDetected) {
+        return [false, [], objNewData];
+    } else {
+        return [true, arrChanges, objNewData];
+    }
+}
+
+function deleteData() {
+    $('#accept_delete_data').show();
+
+    $('#popup-selete-data').off('click').on('click', function () {
+        localStorage.clear();
+        // localStorage.setItem('mistria_move', 1);
+        window.location.reload();
+    });
+}
+function saveJson() {
+    const strPage = $('#json_button_popup').attr('data-page');
+    var strJson = $('#settings_json').val();
+    if (isJsonString(strJson)) {
+        const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson, strPage);
+        $('#accept_changes').show();
+
+        $('#changes').html(
+            arrChanges.map(c => `<li>${c}</li>`).join('')
+        );
+
+        $('#popup-accept').off('click').on('click', function () {
+            if (isJsonString($('#output').html())) {
+                var jsonBlocks = JSON.parse($('#output').html());
+                cleanForWrapped(jsonBlocks);
+            }
+
+            switch (strPage) {
+                case "tracker":
+                    objMistriaData = objNewData;
+
+                    // convert arrays to sets for to remove duplicates 
+                    arrTabs.forEach(function (strTab) {
+                        if (strTab in objMistriaData) {
+                            objMistriaData[strTab] = new Set(objMistriaData[strTab]);
+                        } else {
+                            objMistriaData[strTab] = new Set(objMistriaDataDefault[strTab]);
+                        }
+                    });
+                    objMistriaData.options = ('options' in objMistriaData ? new Set(objMistriaData.options) : new Set(objMistriaDataDefault.options));
+                    objMistriaData.favorites = ('favorites' in objMistriaData ? new Set(objMistriaData.favorites) : new Set());
+
+                    saveData();
+                    break;
+                case "planner":
+                    objMistriaDataPlanner = objNewData;
+                    // convert arrays to sets for to remove duplicates
+                    objMistriaDataPlanner.options = ('options' in objMistriaDataPlanner ? new Set(objMistriaDataPlanner.options) : new Set(objMistriaDataPlannerDefault.options));
+
+                    saveDataPlanner();
+                    break;
+            }
+
+            window.location.reload();
+        });
+    } else {
+        $('#json_alert').addClass('show');
+        $('#json_alert .info').html('JSON code is invalid');
+    }
+}
+
+function saveAsJsonFile(strElemID) {
+
+    const strPage = $('#json_button_popup').attr('data-page');
+
+    var strJson = $('#' + strElemID).val();
+    if (isJsonString(strJson)) {
+        const [bolChangesDetected, arrChanges, objNewData] = compareData(strJson);
+
+        if (bolChangesDetected) {
+            $('#json_alert').addClass('show').addClass('yellow');
+            $('#json_alert .info').html('You have saved JSON file that contains unsaved changes');
+        }
+
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(objNewData, undefined, 4)));
+        element.setAttribute('download', `mistria_${strPage}.json`);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+
+    } else {
+        $('#json_alert').addClass('show');
+        $('#json_alert .info').html('JSON code is invalid');
+    }
+}
+
 function extractPlannerData(jsonBlocks, strLocation) {
 
     const intCurrentlyDrawingSoil = objMistriaDataPlanner.options.has('mode_wet') ? objSoilIndex.wetSoil : objSoilIndex.soil;
 
-    const directions = ['east', 'north', 'west', 'south']
+    const directions = ['east', 'north', 'west', 'south'];
     const objLocation = objLOCATION(jsonBlocks, strLocation);
     let objLayout = {};
     let setItems = new Set();
@@ -248,8 +668,8 @@ function extractPlannerData(jsonBlocks, strLocation) {
             let strDirection = false;
             let strColor = false;
 
-            const x = objItem['top_left_x'];
-            const y = objItem['top_left_y'];
+            let x = objItem['top_left_x'];
+            let y = objItem['top_left_y'];
 
             //draw soil underneath
             if (objSpriteCategories.crops.includes(intItemIndex)) {
@@ -269,6 +689,12 @@ function extractPlannerData(jsonBlocks, strLocation) {
                     }
                     objLayout['none'][objSoilIndex.wetSoil].push([x, y]);
                 }
+            }
+
+            if (objSpriteCategories.trees.includes(intItemIndex)) {
+                //no clue why
+                x = x + 2;
+                y = y + 2;
             }
 
             if (typeof objItem["cardinal_index"] !== 'undefined') {
@@ -410,8 +836,8 @@ $(function () {
                                 objOldData.house_upgrade = objMistriaDataPlanner.house_upgrade;
                             }
 
-                            if ('zoom' in objMistriaDataPlanner) {
-                                objOldData.zoom = objMistriaDataPlanner.zoom;
+                            if ('multiplier' in objMistriaDataPlanner) {
+                                objOldData.multiplier = objMistriaDataPlanner.multiplier;
                             }
 
                             if ('offsetCanvas' in objMistriaDataPlanner) {

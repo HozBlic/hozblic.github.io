@@ -49,17 +49,17 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/style.css?v=50">
-    <link rel="stylesheet" href="css/popups.css?v=3">
-    <link rel="stylesheet" href="css/tracker.css?v=9">
+    <link rel="stylesheet" href="css/style.css?v=51">
+    <link rel="stylesheet" href="css/popups.css?v=4">
+    <link rel="stylesheet" href="css/tracker.css?v=10">
     <link rel="stylesheet" href="css/wrapped.css?v=2">
 
     <script type="text/javascript" src="json/items.json.js?v=32"></script>
     <script type="text/javascript" src="json/items_accessories.json.js?v=12"></script>
     <script type="text/javascript" src="json/items_animals.json.js?v=9"></script>
     <script type="text/javascript" src="json/items_perks.json.js?v=6"></script>
-    <script type="text/javascript" src="json/build.json.js?v=8"></script>
-    <script type="text/javascript" src="json/changelog.json.js"></script>
+    <script type="text/javascript" src="json/build.json.js?v=9"></script>
+    <script type="text/javascript" src="json/changelog.json.js?v=2"></script>
     <script type="text/javascript" src="json/tabs.json.js?v=10"></script>
 
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
@@ -72,10 +72,10 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=55"></script>
-    <script type="text/javascript" src="js/tracker.js?v=5"></script>
+    <script type="text/javascript" src="js/script.js?v=56"></script>
+    <script type="text/javascript" src="js/tracker.js?v=6"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
-    <script type="text/javascript" src="js/save_file.js?v=24"></script>
+    <script type="text/javascript" src="js/save_file.js?v=25"></script>
 </head>
 
 <body>
@@ -83,8 +83,21 @@
         <div id="triangle">
             <a href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US"><img src="images/items/rose_tea.png"></a>
         </div>
+        <label class="mode_collapse side_menu_btn">
+            <input type='checkbox' id="mode_collapse"></input>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path fill="#fff" fill-rule="evenodd"
+                    d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
+                </path>
+            </svg>
+        </label>
         <div id="side_menu">
-            <div id="title">Fields of Mistria<span class="version">v.0.14.2</span></div>
+            <div id="title">
+                <div class="text">
+                    Fields of Mistria<span class="version"></span>
+                </div>
+            </div>
+
             <div id="filter_content">
 
                 <div class="input-label">
@@ -116,9 +129,6 @@
                         </div>
                     </label>
                 </div>
-
-
-
 
                 <div class="dropdowns">
                     <div class="dropdown_wrap">
@@ -522,15 +532,6 @@
             <div id="wrapped" class="tab_content"></div>
         </div>
         <div id="header">
-            <label class="mode_collapse side_menu_btn">
-                <input type='checkbox' id="mode_collapse"></input>
-                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <path fill="#fff" fill-rule="evenodd"
-                        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
-                    </path>
-                </svg>
-            </label>
-
             <div id="tabs"></div>
         </div>
 

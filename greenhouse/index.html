@@ -10,13 +10,13 @@
     <meta name="description"
         content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file." />
     <meta name="keywords" content="Fields of Mistria, herb, seeds, tutorial, save file, edit, modification, modding">
-    
+
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Fields of Mistria Greenhouse Tutorial" />
     <meta itemprop="description"
         content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
     <meta itemprop="image" content="https://mistria.app/images/greenhouse/meta.png" /> <!-- Facebook Meta Tags -->
-    
+
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://mistria.app/" />
     <meta property="og:type" content="website" />
@@ -24,28 +24,28 @@
     <meta property="og:description"
         content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
     <meta property="og:image" content="https://mistria.app/images/greenhouse/meta.png" />
-   
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Fields of Mistria Greenhouse Tutorial" />
     <meta name="twitter:description"
         content="This tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file" />
     <meta name="twitter:image" content="https://mistria.app/images/greenhouse/meta.png" />
-    
+
     <link rel="author" href="https://www.reddit.com/user/HozBlic/" />
-    
+
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96px.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon-96px.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96px.png">
 
-    <link rel="stylesheet" href="../css/style.css?v=50">
-    <link rel="stylesheet" href="../css/popups.css?v=3">
+    <link rel="stylesheet" href="../css/style.css?v=51">
+    <link rel="stylesheet" href="../css/popups.css?v=4">
     <link rel="stylesheet" href="../css/greenhouse.css">
 
-    <script type="text/javascript" src="../json/build.json.js"></script>
-    <script type="text/javascript" src="../json/changelog.json.js"></script>
+    <script type="text/javascript" src="../json/build.json.js?v=9"></script>
+    <script type="text/javascript" src="../json/changelog.json.js?v=2"></script>
 
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/popper.min.js"></script>
@@ -53,7 +53,7 @@
     <script type="text/javascript" src="../js/chart.js"></script>
     <script type="text/javascript" src="../js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="../js/script.js?v=55"></script>
+    <script type="text/javascript" src="../js/script.js?v=56"></script>
     <script type="text/javascript" src="../js/greenhouse.js?v=3"></script>
 </head>
 
@@ -62,8 +62,20 @@
         <div id="triangle">
             <a href="https://paypal.me/hozblic?country.x=LV&locale.x=en_US"><img src="../images/items/rose_tea.png"></a>
         </div>
+        <label class="mode_collapse side_menu_btn">
+            <input type='checkbox' id="mode_collapse"></input>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path fill="#fff" fill-rule="evenodd"
+                    d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
+                </path>
+            </svg>
+        </label>
         <div id="side_menu">
-            <div id="title">Fields of Mistria<span class="version">v.0.14.2</span></div>
+            <div id="title">
+                <div class="text">
+                    Fields of Mistria<span class="version"></span>
+                </div>
+            </div>
             <div id="filter_content">
                 <div class="switches">
                     <div class="switch_wrap switch_wrap_dark"> <label class="switch mode_dark"> <input type='checkbox'
@@ -422,13 +434,6 @@
             </div>
         </div>
         <div id="header">
-            <label class="mode_collapse side_menu_btn"> <input type='checkbox' id="mode_collapse"></input>
-                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <path fill="#fff" fill-rule="evenodd"
-                        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
-                    </path>
-                </svg>
-            </label>
             <div id="tabs">
                 <div class="tab active" id="tab_tutorial" data-tab="tutorial">
                     <img src="../images/items/small_greenhouse_wood_blueprint.png">Tutorial
