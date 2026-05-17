@@ -1,0 +1,342 @@
+{
+    "mystery_bag": {
+        "name": "Magic Seed",
+        "img": "items/seed_mystery_bag"
+    },
+    "tile_main_exteriors": {
+        "name": "Soil",
+        "img": "items/shovel_iron"
+    },
+    "tile_soil": {
+        "name": "Tilled soil",
+        "img": "items/hoe_iron"
+    },
+    "tile_soil_wet": {
+        "name": "Wet soil",
+        "img": "items/watering_can_iron"
+    },
+    "tile_grassautotile": {
+        "name": "Grass",
+        "img": "items/field_grass"
+    },
+    "tree_apple": {
+        "name": "Apple",
+        "img": "items/apple"
+    },
+    "tree_cherry": {
+        "name": "Cherry",
+        "img": "items/cherry"
+    },
+    "tree_lemon": {
+        "name": "Lemon",
+        "img": "items/lemon"
+    },
+    "tree_oak": {
+        "name": "Oak",
+        "img": "items/acorn"
+    },
+    "tree_orange": {
+        "name": "Orange",
+        "img": "items/orange"
+    },
+    "tree_peach": {
+        "name": "Peach",
+        "img": "items/peach"
+    },
+    "tree_pear": {
+        "name": "Pear",
+        "img": "items/pear"
+    },
+    "tree_pine": {
+        "name": "Pine",
+        "img": "items/pinecone"
+    },
+    "tree_pomegranate": {
+        "name": "Pomegranate",
+        "img": "items/pomegranate"
+    },
+    "small_barn": {
+        "name": "Small Barn",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "medium_barn": {
+        "name": "Medium Barn",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "large_barn": {
+        "name": "Large Barn",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "small_coop": {
+        "name": "Small Coop",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "medium_coop": {
+        "name": "Medium Coop",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "large_coop": {
+        "name": "Large Coop",
+        "colors": [
+            "red",
+            "black"
+        ]
+    },
+    "small_greenhouse": {
+        "name": "Small Greenhouse",
+        "colors": [
+            "white",
+            "wood"
+        ]
+    },
+    "large_greenhouse": {
+        "name": "Large Greenhouse",
+        "colors": [
+            "white",
+            "wood"
+        ]
+    },
+    "weed": {
+        "name": "weed"
+    },
+    "leaf_pile": {
+        "name": "leaf_pile"
+    },
+    "treasure_chest_wood": {
+        "name": "treasure_chest_wood"
+    },
+    "treasure_chest_copper": {
+        "name": "treasure_chest_copper"
+    },
+    "treasure_chest_silver": {
+        "name": "treasure_chest_silver"
+    },
+    "treasure_chest_gold": {
+        "name": "treasure_chest_gold"
+    },
+    "wilted_plant": {
+        "name": "wilted_plant"
+    },
+    "treasure_chest_secret": {
+        "name": "treasure_chest_secret"
+    },
+    "grass_small": {
+        "name": "grass_small"
+    },
+    "grass_medium": {
+        "name": "grass_medium"
+    },
+    "grass_large": {
+        "name": "grass_large"
+    },
+    "marsh_grass_small": {
+        "name": "marsh_grass_small"
+    },
+    "marsh_grass_medium": {
+        "name": "marsh_grass_medium"
+    },
+    "marsh_grass_large": {
+        "name": "marsh_grass_large"
+    },
+    "dig_site": {
+        "name": "dig_site"
+    },
+    "dig_site_destroyed": {
+        "name": "dig_site_destroyed"
+    },
+    "branch": {
+        "name": "branch"
+    },
+    "stump_apple": {
+        "name": "stump_apple"
+    },
+    "stump_cherry": {
+        "name": "stump_cherry"
+    },
+    "stump_large": {
+        "name": "stump_large"
+    },
+    "stump_lemon": {
+        "name": "stump_lemon"
+    },
+    "stump_orange": {
+        "name": "stump_orange"
+    },
+    "stump_peach": {
+        "name": "stump_peach"
+    },
+    "stump_pear": {
+        "name": "stump_pear"
+    },
+    "stump_pomegranate": {
+        "name": "stump_pomegranate"
+    },
+    "stump_small_oak": {
+        "name": "stump_small_oak"
+    },
+    "stump_small_pine": {
+        "name": "stump_small_pine"
+    },
+    "stump_deep_woods": {
+        "name": "stump_deep_woods"
+    },
+    "stump_plum_blossom": {
+        "name": "stump_plum_blossom"
+    },
+    "stump_coconut": {
+        "name": "stump_coconut"
+    },
+    "stump_small_pine_special": {
+        "name": "stump_small_pine_special"
+    },
+    "boulder_rock_stone": {
+        "name": "boulder_rock_stone"
+    },
+    "small_rock_stone_one": {
+        "name": "small_rock_stone_one"
+    },
+    "small_rock_stone_upper": {
+        "name": "small_rock_stone_upper"
+    },
+    "small_rock_stone_two": {
+        "name": "small_rock_stone_two"
+    },
+    "small_rock_stone_three": {
+        "name": "small_rock_stone_three"
+    },
+    "small_rock_stone_four": {
+        "name": "small_rock_stone_four"
+    },
+    "small_rock_stone_five": {
+        "name": "small_rock_stone_five"
+    },
+    "small_rock_priestess_quarters": {
+        "name": "small_rock_priestess_quarters"
+    },
+    "large_rock_stone_one": {
+        "name": "large_rock_stone_one"
+    },
+    "large_rock_stone_upper": {
+        "name": "large_rock_stone_upper"
+    },
+    "large_rock_stone_two": {
+        "name": "large_rock_stone_two"
+    },
+    "large_rock_stone_three": {
+        "name": "large_rock_stone_three"
+    },
+    "large_rock_stone_four": {
+        "name": "large_rock_stone_four"
+    },
+    "large_rock_stone_five": {
+        "name": "large_rock_stone_five"
+    },
+    "seam_rock_copper": {
+        "name": "seam_rock_copper"
+    },
+    "seam_rock_iron": {
+        "name": "seam_rock_iron"
+    },
+    "seam_rock_silver": {
+        "name": "seam_rock_silver"
+    },
+    "seam_rock_gold": {
+        "name": "seam_rock_gold"
+    },
+    "seam_rock_mistril": {
+        "name": "seam_rock_mistril"
+    },
+    "small_dirt_rock_one": {
+        "name": "small_dirt_rock_one"
+    },
+    "small_dirt_rock_two": {
+        "name": "small_dirt_rock_two"
+    },
+    "small_dirt_rock_three": {
+        "name": "small_dirt_rock_three"
+    },
+    "small_dirt_rock_four": {
+        "name": "small_dirt_rock_four"
+    },
+    "small_dirt_rock_five": {
+        "name": "small_dirt_rock_five"
+    },
+    "node_copper": {
+        "name": "node_copper"
+    },
+    "rock_copper": {
+        "name": "rock_copper"
+    },
+    "node_ruby": {
+        "name": "node_ruby"
+    },
+    "rock_ruby": {
+        "name": "rock_ruby"
+    },
+    "node_iron": {
+        "name": "node_iron"
+    },
+    "rock_iron": {
+        "name": "rock_iron"
+    },
+    "node_sapphire": {
+        "name": "node_sapphire"
+    },
+    "rock_sapphire": {
+        "name": "rock_sapphire"
+    },
+    "node_silver": {
+        "name": "node_silver"
+    },
+    "rock_silver": {
+        "name": "rock_silver"
+    },
+    "node_emerald": {
+        "name": "node_emerald"
+    },
+    "rock_emerald": {
+        "name": "rock_emerald"
+    },
+    "node_gold": {
+        "name": "node_gold"
+    },
+    "rock_gold": {
+        "name": "rock_gold"
+    },
+    "node_diamond": {
+        "name": "node_diamond"
+    },
+    "rock_diamond": {
+        "name": "rock_diamond"
+    },
+    "node_mistril": {
+        "name": "node_mistril"
+    },
+    "rock_mistril": {
+        "name": "rock_mistril"
+    },
+    "node_pink_diamond": {
+        "name": "node_pink_diamond"
+    },
+    "rock_pink_diamond": {
+        "name": "rock_pink_diamond"
+    },
+    "rock_void": {
+        "name": "rock_void"
+    }
+}
