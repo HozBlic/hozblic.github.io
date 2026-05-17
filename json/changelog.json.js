@@ -166,6 +166,7 @@ var objChangelog =
                     </li>
                     <li>show Water Sprite Statue radius</li>
                     <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
+                    <li>import soil and grass info (decode farm.bin)</li>
                 </ul>`,
                 `optimization
                 <ul>

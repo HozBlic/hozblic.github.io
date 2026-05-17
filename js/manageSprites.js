@@ -495,6 +495,7 @@ class SpriteStore {
         let possibleKeys = []
 
         if (color && season) possibleKeys.push(`${textureKey}_${color}_south_${season}`)
+        if (color) possibleKeys.push(...seasons.map(testSeason => `${textureKey}_${color}_south_${testSeason}`))
         if (direction && season) possibleKeys.push(`${textureKey}_${direction}_${season}`)
         if (direction === "west" && season) possibleKeys.push(`${textureKey}_east_${season}`)
         if (direction) possibleKeys.push(`${textureKey}_${direction}`)
