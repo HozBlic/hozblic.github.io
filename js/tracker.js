@@ -4110,10 +4110,10 @@ $(function () {
     resizeObserver.observe(document.getElementById("wrapped"));
 
 
-    // if (!localStorage.getItem('mistria_move')) {
-    //     localStorage.setItem('mistria_move', 1);
-    //     $('#popup_move').show();
-    // }
+    if (!localStorage.getItem('new_planner')) {
+        localStorage.setItem('new_planner', 1);
+        $('#popup_planner').show();
+    }
 });
 
 function throttle(fn, time) {

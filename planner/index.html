@@ -37,7 +37,7 @@
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96px.png">
 
     <link rel="stylesheet" href="../css/style.css?v=51">
-    <link rel="stylesheet" href="../css/popups.css?v=4">
+    <link rel="stylesheet" href="../css/popups.css?v=5">
     <link rel="stylesheet" href="../css/planner.css">
 
     <script type="text/javascript" src="../json/build.json.js?v=9"></script>
@@ -55,9 +55,9 @@
     <script type="text/javascript" src="../js/chartjs-plugin-colorschemes.min.js"></script>
 
     <script type="text/javascript" src="../js/script.js?v=56"></script>
-    <script type="text/javascript" src="../js/planner.js"></script>
+    <script type="text/javascript" src="../js/planner.js?v=2"></script>
     <script type="text/javascript" src="../js/manageSprites.js"></script>
-    <script type="text/javascript" src="../js/save_file.js?v=25"></script>
+    <script type="text/javascript" src="../js/save_file.js?v=26"></script>
 </head>
 
 <body>
@@ -357,9 +357,7 @@
                     </label>
                 </div>
 
-
                 <div class="bottom_info">
-
                     <div id="drawn_elements">
                         <div class="button_item copy_button" onclick="copyChecklist(this)">
                             <div class="icon">
@@ -406,7 +404,7 @@
                             <div class="text">Upload save file</div>
                         </div>
 
-                        <!-- <div id="controls_button" class="button_item" onclick=" $('#popup_controls').show();">
+                        <div id="controls_button" class="button_item" onclick=" $('#popup_controls').show();">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -416,7 +414,7 @@
                                 </svg>
                             </div>
                             <div class="text">Controls help</div>
-                        </div> -->
+                        </div>
 
                         <div id="changelog_button" class="button_item" onclick="openChangelogPopup();">
                             <div class="icon">
@@ -601,7 +599,7 @@
                     </div>
 
                     <a id="suggestion"
-                        href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">
+                        href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1tfxn3b/farm_layout_planner_mistriaapp_update/">
                         <div id="suggestion_question">
                             <p>Have a suggestion or feedback?</p>
                             <p>Leave a comment!
@@ -1403,9 +1401,10 @@
                             For full list of changes, visit <a
                                 href="https://github.com/HozBlic/hozblic.github.io">GitHub repo</a>
                             </br>
-                            Suggestions are always welcome, <a
-                                href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">leave
-                                a comment</a>
+                            Suggestions are always welcome, leave a comment for
+                            <a href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">tracker</a>
+                            or
+                            <a href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1tfxn3b/farm_layout_planner_mistriaapp_update/">planner</a>
                         </div>
                         <div id="changelog_tabs">
                             <div data-tab="tracker" class="changelog_tab button_item">
@@ -1413,8 +1412,8 @@
                                 Tracker
                             </div>
                             <div data-tab="planner" class="changelog_tab button_item">
-                                <div class="icon"><img src="../images/items/large_barn_red_blueprint.png"></div>
-                                Planner
+                                <div class="icon"><img src="../images/blueprint.png"></div>
+                                Layout Planner
                             </div>
                         </div>
                         <div id="changelog_tab_content">
@@ -1820,7 +1819,7 @@
                     <ul id="changes"></ul>
                     <div class="button_set">
                         <div onclick="$('#accept_delete_data').hide();" class="button_item no_icon">Cancel</div>
-                        <div id="popup-selete-data" class="button_item delete">
+                        <div id="popup-delete-data" class="button_item delete">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

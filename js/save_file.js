@@ -561,9 +561,9 @@ function compareData(strJson) {
 function deleteData() {
     $('#accept_delete_data').show();
 
-    $('#popup-selete-data').off('click').on('click', function () {
+    $('#popup-delete-data').off('click').on('click', function () {
         localStorage.clear();
-        // localStorage.setItem('mistria_move', 1);
+        localStorage.setItem('mistria_planner', 1);
         window.location.reload();
     });
 }

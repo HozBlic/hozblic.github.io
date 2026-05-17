@@ -3469,6 +3469,10 @@ function sectionActions(strAction) {
 
 $(function () {
 
+    if (!localStorage.getItem('new_planner')) {
+        localStorage.setItem('new_planner', 1);
+    }
+
     (async () => {
         objKeyItemDict = await (await fetch('../json/dict.json')).json();
         objItemKeyDict = await (await fetch('../json/dict_reverse.json')).json();
