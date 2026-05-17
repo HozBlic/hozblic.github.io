@@ -1,15 +1,19 @@
-# Fields of Mistria Progress Tracker
+# Fields of Mistria Progress Tracker and Layout Planner
 
 Source code of [mistria.app](https://mistria.app)
 
 ## Project
 
-Interactive visual progress tracker for the game [Fields of Mistria][def_fom]
+Interactive visual **progress tracker** for the game [Fields of Mistria][def_fom]
 - **Progression trackers** - keep track of completion for things - such as gifts, museum and almanac
 - **Interactive** - click on each item to mark it as obtained, hover to learn where to find it
 - **Customizable** - change visual look to fit your preferences - dark mode, traditional checklist, toggle items' names
 - **Save file import** - import save file to automatically check everything
 - **Mistria Wrapped** - see charts and statistics about your game play
+  
+Farm layout planner
+- **Save file import** - import save file to start with layout you have
+- add, move, delete items without wasting resources and time in the game
 
 ## Tech
 
@@ -25,7 +29,7 @@ Reddit - [/u/HozBlic](https://www.reddit.com/user/HozBlic/)
 ## Credits
 
 Coding and data compilation completed by [HozBlic][def_hozblic]<br />
-Save file import functionality implemented by [Demango](https://github.com/demango)<br />
+Save file decoding and sprite management implemented by [Demango](https://github.com/demango)<br />
 Information about items by [Fields of Mistria Wiki][def_wiki] and [NPC Studio](https://www.fieldsofmistria.com/)<br />
 All [Fields of Mistria][def_fom] assets owned by [NPC Studio](https://www.fieldsofmistria.com/)
 
