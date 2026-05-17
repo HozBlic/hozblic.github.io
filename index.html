@@ -65,8 +65,32 @@
         <div id="triangle">
             <div onclick="openDonatePopup()"><img src="images/items/rose_tea.png"></div>
         </div>
+        <label class="mode_collapse side_menu_btn">
+            <input type='checkbox' id="mode_collapse"></input>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path fill="#fff" fill-rule="evenodd"
+                    d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
+                </path>
+            </svg>
+        </label>
         <div id="side_menu">
-            <div id="title">Fields of Mistria<span class="version">v.0.14.2</span></div>
+            <div id="title">
+                <div class="dropdown_wrap">
+                    <div class="button_item dropdown_button no_icon">
+                        <div class="text">Mistria Planner 
+                            <span class="version">v.0.14.2</span>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropdown-item" target="_self" href="/">
+                            <div class="icon">
+                                <img src="../images/gift.png">
+                            </div>
+                            Tracker
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div id="filter_content">
                 <div id="search_items_wrapper" class="dropdown_wrap">
                     <div class="input-label">
@@ -698,13 +722,6 @@
             </div>
         </div>
         <div id="header">
-            <label class="mode_collapse side_menu_btn"> <input type='checkbox' id="mode_collapse"></input>
-                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <path fill="#fff" fill-rule="evenodd"
-                        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
-                    </path>
-                </svg>
-            </label>
             <div id="tabs">
                 <div class="tab button_item button-notext" data-tab="dragging_mode"
                     onclick="updateCursorMode('dragging_mode')">

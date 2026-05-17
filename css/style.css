@@ -183,7 +183,7 @@ svg:focus {
 
 #page:not(.mode_collapse) #side_menu {
     max-width: var(--menu-size);
-    z-index: 2;
+    z-index: 3;
     min-width: var(--menu-size);
     overflow: unset;
 }
@@ -191,19 +191,42 @@ svg:focus {
 #side_menu #title {
     transition: margin 0.3s ease;
     height: 51px;
+    margin-left: 50px;
+    border-bottom: 1px solid var(--color-bg-darkest);
     display: flex;
     align-items: center;
-    margin-left: 50px;
-    white-space: nowrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 7px;
+    padding: 7.5px 8px 7.5px 0;
 }
 
-#side_menu #title .version {
+#side_menu #title .dropdown_wrap {
+    width: 100%;
+}
+
+#side_menu #title .dropdown_wrap .button_item {
+    --button-height: 34px;
+    background-color: transparent;
+    padding-left: 7px;
+    padding-top: 6px;
+}
+
+#side_menu #title .dropdown_wrap .button_item:hover {
+    background-color: var(--color-btn);
+}
+
+#side_menu #title .text {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: row;
+    gap: 7px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#side_menu #title .text .version {
     font-size: 12px;
     opacity: 0.3;
-    line-height: 14px;
+    line-height: 12px;
     display: inline-block;
     margin-top: 2px;
 }
@@ -231,13 +254,17 @@ svg:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
 }
 
 .side_menu_btn input {
     display: none;
 }
 
-#page #header .side_menu_btn.side_menu_btn:before {
+#page .side_menu_btn.side_menu_btn:before {
     content: '';
     position: fixed;
     top: 0;
@@ -254,7 +281,7 @@ svg:focus {
     cursor: default;
 }
 
-#page:not(.mode_collapse) #header .side_menu_btn.side_menu_btn:before {
+#page:not(.mode_collapse) .side_menu_btn.side_menu_btn:before {
     opacity: 1;
     pointer-events: all;
 }
@@ -264,10 +291,9 @@ svg:focus {
         transform: scale(1.1);
     }
 
-    #page:not(.mode_collapse) #header .side_menu_btn.side_menu_btn:before {
+    #page:not(.mode_collapse) .side_menu_btn.side_menu_btn:before {
         display: none;
     }
-
 }
 
 .side_menu_btn svg {
@@ -541,6 +567,7 @@ textarea {
 }
 
 @media only screen and (min-width: 550px) {
+
     .buttons,
     .dropdowns {
         gap: 7px 6px;
@@ -658,7 +685,7 @@ textarea {
 /* END: Layout and sort dropdowns */
 
 #mode_chbexpand_switches {
-  display: none;
+    display: none;
 }
 
 #mode_chbexpand_switches:not(:checked)+.switches .secondary {
@@ -997,14 +1024,13 @@ label[for="mode_chbexpand_switches"] svg {
     height: 50px;
     min-height: 50px;
     align-items: center;
-
     font-size: 16px;
     flex: 1;
     width: 100%;
     position: fixed;
     z-index: 3;
     top: 0;
-    transition: top 0.3s ease;
+    transition: top 0.3s ease, left 0.3s ease;
     background: var(--color-bg);
     box-shadow: 0 0 10px 0px var(--color-bg-darkest);
 }
@@ -1012,7 +1038,6 @@ label[for="mode_chbexpand_switches"] svg {
 #page:not(.mode_collapse) #header {
     background: unset;
     top: 0;
-    border-bottom: 1px solid var(--color-bg-darkest);
     box-shadow: unset;
 }
 
@@ -1022,9 +1047,15 @@ label[for="mode_chbexpand_switches"] svg {
 
 @media only screen and (min-width: 550px) {
     #header {
-        top: 0;
         border-bottom: 1px solid var(--color-bg-darkest);
         box-shadow: unset;
+        left: 50px;
+        width: calc(100% - 50px);
+    }
+
+    #page:not(.mode_collapse) #header {
+        width: calc(100% - var(--menu-size));
+        left: var(--menu-size);
     }
 
     #header.hidden {
@@ -1042,7 +1073,7 @@ label[for="mode_chbexpand_switches"] svg {
     align-items: center;
     flex-wrap: wrap;
     overflow: hidden;
-    padding: 4.5px 0;
+    padding: 4.5px 8px;
     position: fixed;
     bottom: 0;
     height: 49px;
@@ -1060,6 +1091,7 @@ label[for="mode_chbexpand_switches"] svg {
         position: unset;
         box-shadow: unset;
         justify-content: flex-start;
+        padding-right: calc(var(--triangle-size) * 2 - 15px);
     }
 }
 
@@ -1067,6 +1099,7 @@ label[for="mode_chbexpand_switches"] svg {
 @media only screen and (min-width: 700px) {
     #tabs {
         padding: 7.5px 0;
+        padding-right: calc(var(--triangle-size) * 2 - 15px);
     }
 }
 
@@ -1129,7 +1162,7 @@ label[for="mode_chbexpand_switches"] svg {
 
 @media only screen and (min-width: 550px) {
     #page:not(.mode_collapse) #header #tabs {
-        margin-left: calc(var(--menu-size) - 50px + 8px);
+        padding-left: 8px;
         padding-right: calc(var(--triangle-size) * 2 - 15px);
     }
 
@@ -1257,9 +1290,10 @@ label[for="mode_chbexpand_switches"] svg {
     align-items: center;
     gap: 8px;
 }
+
 [data-tippy-root] .tippy-box .tippy-content .save_file.with_icon svg {
     width: 17px;
-    height: 17px; 
+    height: 17px;
 }
 
 [data-tippy-root] .tippy-box .tippy-content .save_file+.save_file {
