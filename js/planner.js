@@ -2494,6 +2494,9 @@ async function loadMenuItems() {
         }
     });
 
+    tippy('#sparkle', {
+        content: 'Serves no purpose, just thought it was cute',
+    });
     tippy('#wet_soil', {
         content: 'When placing crops on the map, automatically place wet soil underneath them',
     });
@@ -2535,8 +2538,20 @@ async function loadMenuItems() {
                   <p style="display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content: center;" class="save_file">Shortcut: <code class="shortcut">del</code></p>`,
         allowHTML: true,
     });
+
     tippy('#save_image', {
-        content: 'Save as image',
+        content: `
+        <div class="tip">
+            Save as image
+            <div class="direction_icons">
+                <div class="direction_icon" onclick="saveImage(1)">1x</div>
+                <div class="direction_icon" onclick="saveImage(2)">2x</div>
+                <div class="direction_icon" onclick="saveImage(5)">5x</div>
+            </div>
+        </div>
+        `,
+        allowHTML: true,
+        interactive: true,
     });
     tippy('#upload_file', {
         content: 'Upload save file',
@@ -3350,7 +3365,8 @@ function preventAction() {
 
 }
 
-function saveImage() {
+function saveImage(intScale) {
+    objContainer_Wrapper.scale = intScale;
     const canvas = objPIXIapp.renderer.extract.canvas(objPIXIapp.stage);
 
     canvas.toBlob((blob) => {
@@ -3371,6 +3387,7 @@ function saveImage() {
 
         URL.revokeObjectURL(url);
     });
+    objContainer_Wrapper.scale = intMultiplierCanvas;
 }
 
 function sectionActions(strAction) {

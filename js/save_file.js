@@ -849,6 +849,12 @@ $(function () {
                             }
 
                             const [objLayout, intCountItems, intCountTotal] = extractPlannerData(jsonBlocks, 'farm');
+                            const objInfoGameData = objGAMEDATA(jsonBlocks);
+
+                            const arrSeasons = ['spring', 'summer', 'fall', 'winter'];
+                            const intSeason = objInfoGameData['t2_world_facts']['season'];
+                            const intCurrentSeason = arrSeasons[Math.floor(((intSeason / 86400)) / 28)];
+                            objOldData.season = intCurrentSeason;
 
                             if (objLayout) {
                                 objOldData.layout[intSaveSlot].farm = objLayout;
