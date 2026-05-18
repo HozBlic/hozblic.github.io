@@ -154,6 +154,11 @@ var objChangelog =
                     <li>multiple saved layout slots</li>
                     <li>placing items on things (tables, counters..)</li>
                 </ul>`,
+                `bug fixes
+                <ul>
+                    <li>sometimes it is not possible to place items on eachother, even if in game it's allowed (ex. Spring Potted Tree and Stone Path)</li>
+                    <li>item layering fixes</li>
+                </ul>`,
                 `UI/UX
                 <ul>
                     <li>mobile support</li>
@@ -162,14 +167,13 @@ var objChangelog =
                     <li>import soil and grass info (decode farm.bin)</li>
                     <li>dropdowns
                         <ul>
-                            <li>filter out items that can not be placed on farm (autopetter, wallpapers..)</li>
+                            <li>filter out items that can not be placed on farm (autopetter, wall decorations..)</li>
                             <li>recently used items</li>
                         </ul>
                     </li>
                     <li>visuals
                         <ul>
                             <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
-                            <li>item layering fixes</li>
                             <li>show Water Sprite Statue radius</li>
                         </ul>
                     </li>
