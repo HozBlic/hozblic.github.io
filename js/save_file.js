@@ -216,7 +216,7 @@ function extractPerksData(objPlayerData, boolDisabled = false) {
 
 function objLOCATION(obj, strLocationID) {
     if (obj && typeof obj === 'object') {
-        if ('location_id' in obj && typeof obj['location_id'] === 'string' && obj['location_id'] === strLocationID) {
+        if ('size_x' in obj && 'location_id' in obj && typeof obj['location_id'] === 'string' && obj['location_id'] === strLocationID) {
             return obj;
         }
         for (const key in obj) {
@@ -657,6 +657,8 @@ function extractPlannerData(jsonBlocks, strLocation) {
     let objLayout = {};
     let setItems = new Set();
     let intCountTotal = 0;
+    // console.log(jsonBlocks)
+    console.log(objLocation)
     if (objLocation) {
         objLocation['object_list'].forEach(function (objItem) {
 
@@ -901,6 +903,7 @@ $(function () {
                 $('#json_button_popup').removeClass('loading');
                 $('#extracting_alert').addClass('show');
                 $('#extracting_alert .info').html("Failed to decode file:\n" + err);
+                console.log(err)
                 showParsingError()
             }
         };
