@@ -6,24 +6,24 @@ var objBuild =
         "datasets": [
             {
                 "label": "mistria.app",
-                "data": [97, 6, 227, 13, 0, 4, 3, 0, 29, 50]
+                "data": [97, 6, 227, 13, 0, 4, 3, 0, 29, 48]
             },
             {
                 "label": "Layout planner (v0.1)",
-                "data": [766, 1784, 986, 1140, 319, 488, 186, 565, 1176, 1426]
+                "data": [766, 1784, 986, 1140, 319, 488, 186, 565, 1176, 1385]
             },
             {
                 "label": "Python scripts",
-                "data": [12, 69, 348, 28, 119, 14, 1, 0, 274, 204]
+                "data": [12, 69, 348, 28, 119, 14, 1, 0, 274, 219]
             },
             {
                 "label": "Total",
-                "data": [875, 1859, 1561, 1181, 438, 506, 190, 565, 1479, 1680],
+                "data": [875, 1859, 1561, 1181, 438, 506, 190, 565, 1479, 1652],
                 "type": "bar"
             }
         ]
     },
-    "spent_time_total": 10334,
+    "spent_time_total": 10306,
     "maxSkillLevel": 60,
     "tabsOrder": ["gifts", "museum", "almanac", "animals", "scrolls", "customization", "perks", "perks_disabled"],
     "objMistriaDataDefault": {

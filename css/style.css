@@ -1036,6 +1036,7 @@ label[for="mode_chbexpand_switches"] svg {
     background: unset;
     top: 0;
     box-shadow: unset;
+    z-index: 0;
 }
 
 #header.hidden {
@@ -1053,6 +1054,7 @@ label[for="mode_chbexpand_switches"] svg {
     #page:not(.mode_collapse) #header {
         width: calc(100% - var(--menu-size));
         left: var(--menu-size);
+        z-index: 3;
     }
 
     #header.hidden {
@@ -1295,6 +1297,9 @@ label[for="mode_chbexpand_switches"] svg {
 
 [data-tippy-root] .tippy-box .tippy-content .save_file+.save_file {
     margin-top: 5px;
+}
+[data-tippy-root] .tippy-box .tippy-content .save_file.with_icon+.save_file.with_icon {
+    margin-top: 0;
 }
 
 
