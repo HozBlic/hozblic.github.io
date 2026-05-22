@@ -34,7 +34,7 @@ const fruits = [
     'orange'
 ]
 const buildingColors = ['black', 'red', 'white', 'wood']
-const childCategories = ['top_sprite', 'door_closed', 'farm_plate', 'floor_sprite', 'farm_bell', 'ramp']
+const childCategories = ['top_sprite', 'door_closed', 'farm_plate', 'floor_sprite', 'farm_bell', 'ramp', 'on_sprite']
 const childOffsetKey = {
     door_closed: 'door_offset',
     ramp: 'ramp_offset',
@@ -94,10 +94,6 @@ class SpriteStore {
 
         if (isChild){
             pivot = {
-                // x: originX - targetX - (meta?.offset?.[0] || 0) - parent.w/2 + parent.pivot.x,
-                // // y:  h + parent?.pivot?.y - parent?.h - (meta?.offset?.[1] || 0)
-                // y: parent?.pivot?.y - parent?.h + originY - targetY + 2 - (meta?.offset?.[1] || 0)
-                // // y: h - parent.h - parent.pivot.y + 3
                 x: origin.x - parent.origin.x + parent.pivot.x - (meta?.offset?.[0] || 0),
                 y: origin.y - parent.origin.y + parent.pivot.y - (meta?.offset?.[1] || 0),
             }
@@ -106,8 +102,6 @@ class SpriteStore {
             pivot = {
                 x: originX - (meta?.offset?.[0] || 0) - targetX,
                 y: originY - (meta?.offset?.[1] || 0) - targetY
-                // x: originX - targetX - (meta?.offset?.[0] || 0),
-                // y: originY - targetY - (meta?.offset?.[1] || 0)
             }
         }
 
