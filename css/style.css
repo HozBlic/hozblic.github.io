@@ -183,7 +183,7 @@ svg:focus {
 
 #page:not(.mode_collapse) #side_menu {
     max-width: var(--menu-size);
-    z-index: 3;
+    z-index: 4;
     min-width: var(--menu-size);
     overflow: unset;
 }
@@ -250,7 +250,7 @@ svg:focus {
     height: 50px;
     min-width: 50px;
     min-height: 50px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, top 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1039,7 +1039,8 @@ label[for="mode_chbexpand_switches"] svg {
     z-index: 0;
 }
 
-#header.hidden {
+#page.mode_collapse.header_hidden .side_menu_btn,
+#page.header_hidden #header {
     top: -60px;
 }
 
@@ -1057,7 +1058,8 @@ label[for="mode_chbexpand_switches"] svg {
         z-index: 3;
     }
 
-    #header.hidden {
+    #page.mode_collapse.header_hidden .side_menu_btn,
+    #page.header_hidden #header {
         top: 0;
     }
 }
@@ -1081,7 +1083,7 @@ label[for="mode_chbexpand_switches"] svg {
     box-shadow: 0 0 10px 0px var(--color-bg-darkest);
 }
 
-#header.hidden #tabs {
+#page.header_hidden #header #tabs {
     bottom: -60px;
 }
 
@@ -1091,13 +1093,17 @@ label[for="mode_chbexpand_switches"] svg {
         box-shadow: unset;
         justify-content: flex-start;
         padding-right: calc(var(--triangle-size) * 2 - 15px);
+        padding-left: 58px;
+        margin-left: -50px;
+        width: calc(100% + 50px);
     }
 }
 
 
 @media only screen and (min-width: 700px) {
     #tabs {
-        padding: 7.5px 0;
+        padding-top: 7.5px;
+        padding-bottom: 7.5px;
         padding-right: calc(var(--triangle-size) * 2 - 15px);
     }
 }
@@ -1161,7 +1167,7 @@ label[for="mode_chbexpand_switches"] svg {
 
 @media only screen and (min-width: 550px) {
     #page:not(.mode_collapse) #header #tabs {
-        padding-left: 8px;
+        /* padding-left: 8px; */
         padding-right: calc(var(--triangle-size) * 2 - 15px);
     }
 
@@ -1298,6 +1304,7 @@ label[for="mode_chbexpand_switches"] svg {
 [data-tippy-root] .tippy-box .tippy-content .save_file+.save_file {
     margin-top: 5px;
 }
+
 [data-tippy-root] .tippy-box .tippy-content .save_file.with_icon+.save_file.with_icon {
     margin-top: 0;
 }

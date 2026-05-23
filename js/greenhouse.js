@@ -1,6 +1,6 @@
 function loadMenuItems() {
 
-    
+
     let bolScrolled = false;
     let intPrevScrollPos = 0;
 
@@ -14,18 +14,18 @@ function loadMenuItems() {
             var intCurrentScrollPos = $('.tab_content:visible').scrollTop();
             if (intPrevScrollPos < intCurrentScrollPos && intCurrentScrollPos > 500) {
                 if (intCurrentScrollPos - intPrevScrollPos > 30) {
-                    $('#header').addClass('hidden');
+                    $('#page').addClass('header_hidden');
                 }
             } else {
-                $('#header').removeClass('hidden');
+                $('#page').removeClass('header_hidden');
             }
             intPrevScrollPos = intCurrentScrollPos;
         }
     }, 150);
-    
+
     $('#side_menu #title .version').text(`v${objBuild.version}`);
 
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
+    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_lategame', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -46,7 +46,7 @@ function loadMenuItems() {
         $('#page').addClass(key);
     })
 
-    
+
     //hide dropdowns on outside click
     $(document).on('click', function (e) {
         var jqTarget = $(e.target).closest('.dropdown_wrap');

@@ -3894,10 +3894,10 @@ function loadMenuItems() {
             var intCurrentScrollPos = $('.tab_content:visible').scrollTop();
             if (intPrevScrollPos < intCurrentScrollPos && intCurrentScrollPos > 500) {
                 if (intCurrentScrollPos - intPrevScrollPos > 30) {
-                    $('#header').addClass('hidden');
+                    $('#page').addClass('header_hidden');
                 }
             } else {
-                $('#header').removeClass('hidden');
+                $('#page').removeClass('header_hidden');
             }
             intPrevScrollPos = intCurrentScrollPos;
         }
@@ -4201,7 +4201,7 @@ function loadTab(strTabKey) {
 
     $('#page').removeClass(arrTabs.join(' '));
     $('#page').removeClass('wrapped');
-    $('#header').removeClass('hidden');
+    $('#page').removeClass('header_hidden');
 
     $('#page').addClass(strTabKey);
 
