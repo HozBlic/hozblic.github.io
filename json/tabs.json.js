@@ -938,7 +938,8 @@ var objTabs =
                     "img": "Seridia",
                     "img_mini": "Seridia",
                     "wikilink": "Seridia",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>",
+                    "lategame": 1
                 },
                 "subcategories": {
                     "liked": {
@@ -1255,7 +1256,8 @@ var objTabs =
                     "img": "Caldarus",
                     "img_mini": "Caldarus",
                     "wikilink": "Caldarus",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 25</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 25</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>",
+                    "lategame": 1
                 },
                 "subcategories": {
                     "liked": {

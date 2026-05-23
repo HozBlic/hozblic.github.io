@@ -51,16 +51,16 @@
 
     <link rel="stylesheet" href="css/style.css?v=52">
     <link rel="stylesheet" href="css/popups.css?v=5">
-    <link rel="stylesheet" href="css/tracker.css?v=10">
+    <link rel="stylesheet" href="css/tracker.css?v=11">
     <link rel="stylesheet" href="css/wrapped.css?v=2">
 
-    <script type="text/javascript" src="json/items.json.js?v=32"></script>
+    <script type="text/javascript" src="json/items.json.js?v=33"></script>
     <script type="text/javascript" src="json/items_accessories.json.js?v=12"></script>
     <script type="text/javascript" src="json/items_animals.json.js?v=9"></script>
     <script type="text/javascript" src="json/items_perks.json.js?v=6"></script>
     <script type="text/javascript" src="json/build.json.js?v=11"></script>
     <script type="text/javascript" src="json/changelog.json.js?v=4"></script>
-    <script type="text/javascript" src="json/tabs.json.js?v=10"></script>
+    <script type="text/javascript" src="json/tabs.json.js?v=11"></script>
 
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -73,7 +73,7 @@
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
     <script type="text/javascript" src="js/script.js?v=57"></script>
-    <script type="text/javascript" src="js/tracker.js?v=7"></script>
+    <script type="text/javascript" src="js/tracker.js?v=8"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
     <script type="text/javascript" src="js/save_file.js?v=28"></script>
 </head>
@@ -353,6 +353,24 @@
                                 d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
                             <line x1="12" x2="12" y1="9" y2="13" />
                             <line x1="12" x2="12.01" y1="17" y2="17" />
+                        </svg>
+                    </div>
+
+                    <div class="switch_wrap gifts_show switch_wrap_lategame">
+                        <label class="switch mode_lategame">
+                            <input type='checkbox' id="mode_lategame"></input>
+                            <div class='toggler'>
+                            </div>
+                        </label>
+                        <span>
+                            Show late game content
+                        </span>
+                        <svg id="lategame_content" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>
                     </div>
 

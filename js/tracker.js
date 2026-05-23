@@ -360,6 +360,9 @@ function sortItems() {
     if (typeof (objMistriaData.sort) !== undefined && $(`#scraped .sortable[data-sort-${objMistriaData.sort}]`).length) {
         $(`#scraped .sortable[data-sort-${objMistriaData.sort}]`).each(function () {
             let intSortIndex = $(this).attr(`data-sort-${objMistriaData.sort}`);
+            if (!objMistriaData.options.has('mode_lategame') && $(this).hasClass('lategame')) {
+                intSortIndex = 999;
+            }
             $(this).css('order', intSortIndex);
         });
     }
@@ -397,6 +400,20 @@ function loadScrapedTab(strTab) {
     let strImageMiniPath = `images/${objTabs[strTab].info.img_mini_path}`;
     let strImageItemPath = `images/${objTabs[strTab].info.img_item_path}`;
     let objItemsTemp = {};
+    const strLateGameDiv = `
+        <div class="lategame_overlay">
+            <div class="lategame_desc">
+                <div class="icon">
+                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7071 5.70711C20.0976 5.31658 20.0976 4.68342 19.7071 4.29289C19.3166 3.90237 18.6834 3.90237 18.2929 4.29289L14.032 8.55382C13.4365 8.20193 12.7418 8 12 8C9.79086 8 8 9.79086 8 12C8 12.7418 8.20193 13.4365 8.55382 14.032L4.29289 18.2929C3.90237 18.6834 3.90237 19.3166 4.29289 19.7071C4.68342 20.0976 5.31658 20.0976 5.70711 19.7071L9.96803 15.4462C10.5635 15.7981 11.2582 16 12 16C14.2091 16 16 14.2091 16 12C16 11.2582 15.7981 10.5635 15.4462 9.96803L19.7071 5.70711ZM12.518 10.0677C12.3528 10.0236 12.1792 10 12 10C10.8954 10 10 10.8954 10 12C10 12.1792 10.0236 12.3528 10.0677 12.518L12.518 10.0677ZM11.482 13.9323L13.9323 11.482C13.9764 11.6472 14 11.8208 14 12C14 13.1046 13.1046 14 12 14C11.8208 14 11.6472 13.9764 11.482 13.9323ZM15.7651 4.8207C14.6287 4.32049 13.3675 4 12 4C9.14754 4 6.75717 5.39462 4.99812 6.90595C3.23268 8.42276 2.00757 10.1376 1.46387 10.9698C1.05306 11.5985 1.05306 12.4015 1.46387 13.0302C1.92276 13.7326 2.86706 15.0637 4.21194 16.3739L5.62626 14.9596C4.4555 13.8229 3.61144 12.6531 3.18002 12C3.6904 11.2274 4.77832 9.73158 6.30147 8.42294C7.87402 7.07185 9.81574 6 12 6C12.7719 6 13.5135 6.13385 14.2193 6.36658L15.7651 4.8207ZM12 18C11.2282 18 10.4866 17.8661 9.78083 17.6334L8.23496 19.1793C9.37136 19.6795 10.6326 20 12 20C14.8525 20 17.2429 18.6054 19.002 17.0941C20.7674 15.5772 21.9925 13.8624 22.5362 13.0302C22.947 12.4015 22.947 11.5985 22.5362 10.9698C22.0773 10.2674 21.133 8.93627 19.7881 7.62611L18.3738 9.04043C19.5446 10.1771 20.3887 11.3469 20.8201 12C20.3097 12.7726 19.2218 14.2684 17.6986 15.5771C16.1261 16.9282 14.1843 18 12 18Z" fill="#000000"/>
+                    </svg>
+                </div>
+                Late game content
+            </div>
+            <div class="lategame_desc info">
+                toggle "Show late game content" to turn this off
+            </div> 
+        </div>`;
 
     switch (objTabs[strTab].info.item_json) {
         case 'accessories':
@@ -435,7 +452,12 @@ function loadScrapedTab(strTab) {
         `);
 
         if (objCategory.info.spoiler || objCategory.info.nodata || objCategory.info.noimage) {
-            $divCategory.addClass('spoiler')
+            $divCategory.addClass('spoiler');
+        }
+
+        if (objCategory.info.lategame) {
+            $divCategory.addClass('lategame');
+            $divCategory.append(strLateGameDiv);
         }
 
         if ('img' in objCategory.info) {
@@ -523,10 +545,18 @@ function loadScrapedTab(strTab) {
             if (objSubcategory.info.spoiler || objSubcategory.info.nodata) {
                 $divSubcategory.addClass('spoiler')
             }
+            if (objSubcategory.info.lategame) {
+                $divSubcategory.addClass('lategame')
+            }
 
             $divSubcategories.append($divSubcategory);
 
             let $divItems = $('<div>', { 'class': 'subcategory_items' });
+
+            if (objSubcategory.info.lategame && !objCategory.info.lategame) {
+                $divItems.append(strLateGameDiv);
+            }
+
             $divSubcategory.append($divItems);
 
             if ('name' in objSubcategory.info) {
@@ -561,7 +591,7 @@ function loadScrapedTab(strTab) {
                     bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
                 }
                 $divItems.append(`
-                    <div class="item ${objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
+                    <div class="item ${objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''} ${objItemsTemp[strItemKey]['lategame'] ? 'lategame' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
                         <input class="item_cbx" ${objMistriaData[strTab].has(strLocalstorageKey) ? 'checked' : ''} type="checkbox" id="${strCbxID}" name="${strTab}" value="${strLocalstorageKey}">
                         <label for="${strCbxID}" class="has_tip" id="label_${strCbxID}">
                             <div class="image ${objItemsTemp[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(${strImageItemPath}${strItemKey}.png)"></div>
@@ -3660,14 +3690,16 @@ function updateStatistics() {
 
     let sortedEntries = Object.entries(objTabs.gifts.categories);
     sortedEntries.forEach(([strCharacterKey, objCharacter]) => {
-        if ((objCharacter.info.spoiler || objCharacter.info.noimage) && !objMistriaData.options.has('mode_spoilers')) {
+        if (((objCharacter.info.spoiler || objCharacter.info.noimage) && !objMistriaData.options.has('mode_spoilers')) ||
+            (objCharacter.info.lategame && !objMistriaData.options.has('mode_lategame'))) {
             return;
         }
 
         objCharacter.subcategories.loved.items.forEach(function (strGiftKey) {
             strID = strCharacterKey + '_' + strGiftKey;
 
-            if (objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+            if ((objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) ||
+                (objItems[strGiftKey]['lategame'] && !objMistriaData.options.has('mode_lategame'))) {
                 return;
             }
             intItemsGiftable++;
@@ -3679,7 +3711,8 @@ function updateStatistics() {
         objCharacter.subcategories.liked.items.forEach(function (strGiftKey) {
             strID = strCharacterKey + '_' + strGiftKey;
 
-            if (objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+            if ((objItems[strGiftKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) ||
+                (objItems[strGiftKey]['lategame'] && !objMistriaData.options.has('mode_lategame'))) {
                 return;
             }
             intItemsGiftable++;
@@ -3699,12 +3732,14 @@ function updateStatistics() {
 
         sortedEntriesSets.forEach(([strSetKey, objSet]) => {
 
-            if (objSet.info.spoiler && !objMistriaData.options.has('mode_spoilers')) {
+            if ((objSet.info.spoiler && !objMistriaData.options.has('mode_spoilers')) ||
+                (objSet.info.lategame && !objMistriaData.options.has('mode_lategame'))) {
                 return;
             }
 
             objSet['items'].forEach((strItemKey) => {
-                if (objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                if ((objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) ||
+                    (objItems[strItemKey]['lategame'] && !objMistriaData.options.has('mode_lategame'))) {
                     return;
                 }
                 intItemsDonatable++;
@@ -3729,13 +3764,14 @@ function updateStatistics() {
         sortedEntriesSets.forEach(([strSetKey, objSet]) => {
 
 
-            if (objSet.info.spoiler && !objMistriaData.options.has('mode_spoilers')) {
+            if ((objSet.info.spoiler && !objMistriaData.options.has('mode_spoilers')) ||
+                (objSet.info.lategame && !objMistriaData.options.has('mode_lategame'))) {
                 return;
             }
 
-
             objSet['items'].forEach((strItemKey) => {
-                if (objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) {
+                if ((objItems[strItemKey]['spoiler'] && !objMistriaData.options.has('mode_spoilers')) ||
+                    (objItems[strItemKey]['lategame'] && !objMistriaData.options.has('mode_lategame'))) {
                     return;
                 }
 
@@ -3961,7 +3997,8 @@ function loadMenuItems() {
                 const text = $(this).text().trim().toLowerCase();
                 const matchesAll = keywords.some(word => text.includes(word));
 
-                if (matchesAll) {
+                if (matchesAll && !(!objMistriaData.options.has('mode_lategame') && $(this).closest('.lategame').length)) {
+                    //skip lategame content
                     $(this).removeClass('hide_search');
                 } else {
                     $(this).addClass('hide_search');
@@ -3971,13 +4008,15 @@ function loadMenuItems() {
             keywords.forEach(word => {
                 $('#scraped .category').highlight(word);
             });
-
         }
 
         $('#scraped .category .subcategory').each(function () {
             if (value !== '') {
-                if ($(this).find('.subcategory_name').length && $(this).find('.subcategory_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
+                if (!(!objMistriaData.options.has('mode_lategame') && $(this).closest('.lategame').length)) {
+                    //skip lategame content
+                    if ($(this).find('.subcategory_name').length && $(this).find('.subcategory_name').html().includes('highlight')) {
+                        $(this).find('.item').removeClass('hide_search');
+                    }
                 }
             }
 
@@ -3988,8 +4027,11 @@ function loadMenuItems() {
 
         $('#scraped .category').each(function () {
             if (value !== '') {
-                if ($(this).find('.category_name').html().includes('highlight')) {
-                    $(this).find('.item').removeClass('hide_search');
+                if (!(!objMistriaData.options.has('mode_lategame') && $(this).closest('.lategame').length)) {
+                    //skip lategame content
+                    if ($(this).find('.category_name').html().includes('highlight')) {
+                        $(this).find('.item').removeClass('hide_search');
+                    }
                 }
             }
 
@@ -4001,7 +4043,7 @@ function loadMenuItems() {
         checkScrapedTabVisibility();
     });
 
-    var arrModes = ['mode_dark', 'mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
+    var arrModes = ['mode_dark', 'mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_lategame', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -4042,10 +4084,18 @@ function loadMenuItems() {
                 disableTippy();
             }
 
-            if (strMode === 'mode_spoilers' || strMode === 'mode_gift') {
+            if (strMode === 'mode_spoilers' || strMode === 'mode_lategame' || strMode === 'mode_gift') {
                 checkScrapedTabVisibility();
-                if (strMode === 'mode_spoilers') {
+                if (strMode === 'mode_spoilers' || strMode === 'mode_lategame') {
                     updateStatistics();
+                }
+            }
+            if (strMode === 'mode_lategame') {
+                $('#search_items').trigger('keyup');
+                if (bolChecked) {
+                    $('.switch_wrap_lategame').addClass('secondary');
+                } else {
+                    $('.switch_wrap_lategame').removeClass('secondary');
                 }
             }
         });
@@ -4056,6 +4106,9 @@ function loadMenuItems() {
         $('#page').addClass(key);
     })
 
+    if (objMistriaData.options.has('mode_lategame')) {
+        $('.switch_wrap_lategame').addClass('secondary');
+    }
 
     tippy('#older_browsers', {
         content: 'Does not work in older browsers',
@@ -4067,6 +4120,9 @@ function loadMenuItems() {
         content: `<p class="save_file">Content obtained via datamining, has not been implemented in the game yet</p>
                   <p class="save_file">Can also contain released content from latest update (if it has no information in Wiki yet)</p>`,
         allowHTML: true,
+    });
+    tippy('#lategame_content', {
+        content: 'Secret Bachelorette and Bachelor',
     });
     tippy('#minimaze_tooltips', {
         content: 'Hides table in tooltips (price, museum set, recipe source, location..)',
