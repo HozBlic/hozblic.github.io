@@ -189,6 +189,8 @@ function extractAnimalData(objAnimalsData) {
         var arrVariants = objAnimalsData['pet_cosmetic_sets_unlocked'].map(function (x) { return `pets_${x}`; });
         arrAnimalsData.push(...arrVariants);
 
+        var arrPetSkins = objAnimalsData['items_acquired'].filter(strItemKey => strItemKey.startsWith("pet_skin_"));
+        arrAnimalsData.push(...arrPetSkins);
         return arrAnimalsData;
     } else {
         return false;
@@ -657,8 +659,7 @@ function extractPlannerData(jsonBlocks, strLocation) {
     let objLayout = {};
     let setItems = new Set();
     let intCountTotal = 0;
-    // console.log(jsonBlocks)
-    console.log(objLocation)
+
     if (objLocation) {
         objLocation['object_list'].forEach(function (objItem) {
 
@@ -781,6 +782,7 @@ $(function () {
                 if (cleaned) {
                     const strPage = $('#json_button_popup').attr('data-page');
                     let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
+                    // console.log(jsonBlocks)
 
                     let objOldData = {};
                     let arrFound = [];
@@ -794,7 +796,7 @@ $(function () {
                                 almanac: extractAlmanacKeys(objPLAYER(jsonBlocks)['items_acquired']) || false,
                                 scrolls: objPLAYER(jsonBlocks)['morning_recipe_unlocks'] || false,
                                 animals: extractAnimalData(objPLAYER(jsonBlocks)) || false,
-                                customization: objPLAYER(jsonBlocks)['seen_cosmetics'] || false,
+                                customization: objPLAYER(jsonBlocks)['cosmetic_unlocks'] || false,
                                 perks: extractPerksData(objPLAYER(jsonBlocks)) || false,
                                 perks_disabled: extractPerksData(objPLAYER(jsonBlocks), true) || false,
                             }

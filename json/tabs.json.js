@@ -4424,6 +4424,20 @@ var objTabs =
                             "pets_unicorn_horn",
                             "pets_skull_mask"
                         ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Pet Skins",
+                            "wikilink": "Pets#Pet_Skins",
+                            "item_json": "items",
+                            "img_item_path": "items/"
+                        },
+                        "items": [
+                            "pet_skin_mushroom",
+                            "pet_skin_rockclod",
+                            "pet_skin_oreclod",
+                            "pet_skin_sapling"
+                        ]
                     }
                 }
             }

@@ -154,14 +154,12 @@ var objLocations = {
     'dells_bedroom': { x: 86, y: 42 },
     'dragonsworn_glade': { x: 112, y: 70 },
     'dungeon': { x: 49, y: 50 },
-    'earth_seal': { x: 48, y: 49 },
     'eastern_road': { x: 112, y: 47 },
     'eilands_bedroom': { x: 86, y: 52 },
     'eilands_office': { x: 86, y: 51 },
     'elsies_bedroom': { x: 85, y: 52 },
     'errols_bedroom': { x: 52, y: 43 },
     'farm': { x: 82, y: 30 },
-    'fire_seal': { x: 48, y: 50 },
     'general_store_home': { x: 87, y: 42 },
     'general_store_store': { x: 87, y: 41 },
     'haydens_bedroom': { x: 56, y: 32 },
@@ -194,7 +192,6 @@ var objLocations = {
     'player_home_upper_west': { x: 81, y: 33 },
     'player_home_west': { x: 81, y: 32 },
     'reinas_room': { x: 84, y: 41 },
-    'ruins_seal': { x: 50, y: 49 },
     'seridias_chamber': { x: 49, y: 48 },
     'small_barn': { x: 79, y: 26 },
     'small_coop': { x: 76, y: 26 },
@@ -202,8 +199,15 @@ var objLocations = {
     'summit': { x: 51, y: 58 },
     'terithias_house': { x: 49, y: 13 },
     'town': { x: 85, y: 43 },
-    'water_seal': { x: 50, y: 50 },
     'western_ruins': { x: 19, y: 44 },
+    'seridias_house': { x: 19, y: 51 },
+    'seridias_house_back': { x: 19, y: 50 },
+    'priestess_quarters': { x: 49, y: 52 },
+    'earth_seal': { x: 48, y: 49 },
+    'fire_seal': { x: 48, y: 50 },
+    'ruins_seal': { x: 50, y: 49 },
+    'water_seal': { x: 50, y: 50 },
+    'void_seal': { x: 52, y: 49 },
 }
 
 Object.filter = (obj, predicate) =>
@@ -391,6 +395,24 @@ function disableTippy() {
         }
     });
 }
+
+function getItemDict(strDict) {
+    let objItemsTemp;
+    switch (strDict) {
+        case 'accessories':
+            objItemsTemp = objItemsAccessories;
+            break;
+        case 'animals':
+            objItemsTemp = objItemsAnimals;
+            break;
+        case 'perks':
+            objItemsTemp = objItemsPerks;
+            break;
+        default:
+            objItemsTemp = objItems;
+    }
+    return objItemsTemp;
+}
 function loadScrapedTab(strTab) {
     let arrAllItems = [];
 
@@ -398,8 +420,8 @@ function loadScrapedTab(strTab) {
 
     let strImagePath = `images/${objTabs[strTab].info.img_path}`;
     let strImageMiniPath = `images/${objTabs[strTab].info.img_mini_path}`;
-    let strImageItemPath = `images/${objTabs[strTab].info.img_item_path}`;
-    let objItemsTemp = {};
+    let strImageItemPathCategory = `images/${objTabs[strTab].info.img_item_path}`;
+
     const strLateGameDiv = `
         <div class="lategame_overlay">
             <div class="lategame_desc">
@@ -414,20 +436,6 @@ function loadScrapedTab(strTab) {
                 toggle "Show late game content" to turn this off
             </div> 
         </div>`;
-
-    switch (objTabs[strTab].info.item_json) {
-        case 'accessories':
-            objItemsTemp = objItemsAccessories;
-            break;
-        case 'animals':
-            objItemsTemp = objItemsAnimals;
-            break;
-        case 'perks':
-            objItemsTemp = objItemsPerks;
-            break;
-        default:
-            objItemsTemp = objItems;
-    }
 
     let arrCategoryKeys = Object.keys(objCategories);
     let arrCategoryKeysAlphabetical = arrCategoryKeys.sort((a, b) => objCategories[a].info.name.localeCompare(objCategories[b].info.name));
@@ -533,6 +541,16 @@ function loadScrapedTab(strTab) {
 
         Object.entries(objCategory.subcategories).forEach(([strSubcategoryKey, objSubcategory]) => {
 
+            let objItemsTemp = getItemDict(objTabs[strTab].info.item_json);
+            if (objSubcategory.info.item_json) {
+                objItemsTemp = getItemDict(objSubcategory.info.item_json)
+            }
+            let strImageItemPathSubCategory = strImageItemPathCategory;
+            
+            if (objSubcategory.info.img_item_path) {
+                strImageItemPathSubCategory = `images/${objSubcategory.info.img_item_path}`;
+            }
+
             let $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCatgoryKey}_${strSubcategoryKey}` });
 
             $divSubcategory.addClass('sortable');
@@ -594,7 +612,7 @@ function loadScrapedTab(strTab) {
                     <div class="item ${objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''} ${objItemsTemp[strItemKey]['lategame'] ? 'lategame' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
                         <input class="item_cbx" ${objMistriaData[strTab].has(strLocalstorageKey) ? 'checked' : ''} type="checkbox" id="${strCbxID}" name="${strTab}" value="${strLocalstorageKey}">
                         <label for="${strCbxID}" class="has_tip" id="label_${strCbxID}">
-                            <div class="image ${objItemsTemp[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(${strImageItemPath}${strItemKey}.png)"></div>
+                            <div class="image ${objItemsTemp[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(${strImageItemPathSubCategory}${strItemKey}.png)"></div>
                             <div class="name">${objItemsTemp[strItemKey]['name']}</div>
                         </label>
                     </div>
@@ -606,8 +624,8 @@ function loadScrapedTab(strTab) {
                     }
                 }
 
-                if (!(strTab === 'animals' && objSubcategory.info.name !== 'Cosmetics')) {
-                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, (strTab === 'animals' ? objItemsAnimals : objItemsTemp), (strTab === 'buffs' && 'buff' in objItemsTemp[strItemKey] ? objItemsTemp[strItemKey]['buff'] : false))}`);
+                if (!(strTab === 'animals' && objSubcategory.info.name.includes('Tier '))) {
+                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, objItemsTemp, (strTab === 'buffs' && 'buff' in objItemsTemp[strItemKey] ? objItemsTemp[strItemKey]['buff'] : false))}`);
                     const template = $(`#tip_${strCbxID}`)[0];
                     template.style.display = 'block';
                     tippy(`#label_${strCbxID}`, {

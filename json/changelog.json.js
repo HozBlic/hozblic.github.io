@@ -9,27 +9,31 @@ var objChangelog =
                     <li>{{feedback}}add seasons (checkbox)</li>
                     <li>add missing events (checkbox)</li>
                     <li>{{feedback}}Gossip mode (show only gifts that are revealed by gossip mechanic) (toggle)</li>
-                    <li>{{feedback}}figure out a way to deal with spoilers (toggle)
+                    <li>{{feedback}}late game spoilers
                         <ul>
-                            <li>how to determine that something is spoiler? Feedback about this would be appreciated</li>
+                            <li>how to determine that something is late game spoiler? Feedback about this would be appreciated</li>
                         </ul>
                     </li>
                 </ul>`,
                 `wrapped tab
                 <ul>
                     <li>{{feedback}}add animals and their heart levels</li>
-                    <li>add missing locations</li>
-                </ul>`,
-                `animal tab
-                <ul>
-                    <li>{{feedback}}add pet appearances</li>
                 </ul>`,
                 `UI/UX
                 <ul>
-                    <li>{{feedback}}Check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)</li>
                     <li>{{feedback}}apply layout settings to each tab separately</li>
                 </ul>`,
             ],
+        },
+        {
+            "date": "24/05/2026",
+            "tags": ["feedback"],
+            "info": ["pet appearances", "missing locations (wrapped tab)", "check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)"],
+        },
+        {
+            "date": "23/05/2026",
+            "tags": ["feedback"],
+            "info": ["lategame toggle"],
         },
         {
             "date": "26/03/2026",
@@ -173,7 +177,7 @@ var objChangelog =
                     </li>
                     <li>visuals
                         <ul>
-                            <li>colors, outline and variants for spawnable items, such as grass, rocks, stumps</li>
+                            <li>colors, outline and variants for spawnable items, such as grass, rocks, branches</li>
                             <li>show Water Sprite Statue radius</li>
                         </ul>
                     </li>
