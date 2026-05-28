@@ -8,6 +8,7 @@ const arrObtain = [
     "Wishing Well",
     "spacing",
 
+    "Ship a",
     "Birthday gift",
     "Quest",
     "Request",
@@ -546,7 +547,7 @@ function loadScrapedTab(strTab) {
                 objItemsTemp = getItemDict(objSubcategory.info.item_json)
             }
             let strImageItemPathSubCategory = strImageItemPathCategory;
-            
+
             if (objSubcategory.info.img_item_path) {
                 strImageItemPathSubCategory = `images/${objSubcategory.info.img_item_path}`;
             }
@@ -603,6 +604,9 @@ function loadScrapedTab(strTab) {
 
                 let strCbxID = `${strCatgoryKey}_${strSubcategoryKey}_${strItemKey}`;
                 let strDataCbx = $($.parseHTML(objItemsTemp[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
+                if ("tip_extra" in objItems[strItemKey] && "recipeSource" in objItems[strItemKey]["tip_extra"]) {
+                    strDataCbx += ' ' + $($.parseHTML(objItemsTemp[strItemKey]["tip_extra"]["recipeSource"])).text().replace(/["'&<>]/g, '').trim();
+                }
 
                 let bolAdditionalSpoiler = false;
                 if (strTab === 'scrolls') {
@@ -3950,7 +3954,7 @@ function loadMenuItems() {
             $('#checkbox_filter_items').append(`<div class="spacing"></div>`)
         } else {
             $('#checkbox_filter_items').append(`<input value="${strObtain.replace('\'', '')}" type='checkbox' class="styled obtain_cbx" id="chb_${i}"></input>
-                <label for="chb_${i}">${strObtain}</label>`);
+                <label for="chb_${i}">${strObtain == 'Ship a' ? 'Ship an item' : strObtain}</label>`);
         }
     });
 

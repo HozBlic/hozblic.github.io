@@ -22,6 +22,7 @@ var objChangelog =
                 `UI/UX
                 <ul>
                     <li>{{feedback}}apply layout settings to each tab separately</li>
+                    <li>printable checklist sheets</li>
                 </ul>`,
             ],
         },
@@ -157,6 +158,7 @@ var objChangelog =
                     <li>room planning</li>
                     <li>multiple saved layout slots</li>
                     <li>placing items on things (tables, counters..)</li>
+                    <li>apply created layout to save file (so you can use it in game straight away as well)</li>
                 </ul>`,
                 `bug fixes
                 <ul>
