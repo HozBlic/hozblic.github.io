@@ -604,7 +604,7 @@ function loadScrapedTab(strTab) {
 
                 let strCbxID = `${strCatgoryKey}_${strSubcategoryKey}_${strItemKey}`;
                 let strDataCbx = $($.parseHTML(objItemsTemp[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-                if ("tip_extra" in objItems[strItemKey] && "recipeSource" in objItems[strItemKey]["tip_extra"]) {
+                if ("tip_extra" in objItemsTemp[strItemKey] && "recipeSource" in objItemsTemp[strItemKey]["tip_extra"]) {
                     strDataCbx += ' ' + $($.parseHTML(objItemsTemp[strItemKey]["tip_extra"]["recipeSource"])).text().replace(/["'&<>]/g, '').trim();
                 }
 
