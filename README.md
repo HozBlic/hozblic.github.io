@@ -39,6 +39,19 @@ All [Fields of Mistria][def_fom] assets owned by [NPC Studio](https://www.fields
 [Fields of Mistria Wiki][def_wiki] content is covered by [Creative Commons Attribution-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) <br />
 All other files are covered by [AGPL license](https://github.com/HozBlic/hozblic.github.io/blob/main/LICENSE)
 
+<hr>
+
+<p>
+  <sub>
+     Powered by late night coding and Red Bull - support is appreciated! 
+  </sub>
+</p>
+<p>
+  <a href="https://ko-fi.com/C0C71ZJ4OT">
+    <img src="https://github.com/HozBlic/HozBlic/raw/main/images/button.svg" style="height:30px;" />
+  </a>
+</p>
+
 
 [def_hozblic]: https://github.com/HozBlic
 [def_fom]: https://store.steampowered.com/app/2142790/Fields_of_Mistria/
