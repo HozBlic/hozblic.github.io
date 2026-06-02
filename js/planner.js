@@ -3491,7 +3491,7 @@ $(function () {
     }
 
     (async () => {
-        objKeyItemDict = await (await fetch('../json/dict.json')).json();
+        objKeyItemDict = await (await fetch('../json/dict.json?v=1')).json();
         objItemKeyDict = await (await fetch('../json/dict_reverse.json')).json();
 
         objSoilIndex = {
