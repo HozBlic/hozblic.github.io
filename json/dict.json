@@ -1410,7 +1410,7 @@
     "1409": ["artifact_replica_vintage_cow_bell"],
     "1410": ["void_bonsai_v2"],
     "1411": ["artifact_replica_ritual_beads"],
-    "1412": ["large_animal_ball"],
+    "1412": ["large_animal_ball_court", "large_animal_ball"],
     "1413": ["artifact_replica_vintage_sickle"],
     "1414": ["bronze_sheep_trophy"],
     "1415": ["mist_lamp_v1"],
