@@ -3628,13 +3628,13 @@ var objTabs =
         "info": {
             "name": "Animals",
             "icon": "rabbit.png",
-            "only_mini": 1,
             "img_item_path": "animals/",
             "item_json": "animals"
         },
         "categories": {
             "cow": {
                 "info": {
+                    "img": "cow",
                     "img_mini": "cow",
                     "name": "Cow",
                     "wikilink": "Cow"
@@ -3731,6 +3731,7 @@ var objTabs =
             },
             "rabbit": {
                 "info": {
+                    "img": "rabbit",
                     "img_mini": "rabbit",
                     "name": "Rabbit",
                     "wikilink": "Rabbit"
@@ -3825,6 +3826,7 @@ var objTabs =
             },
             "horse": {
                 "info": {
+                    "img": "horse",
                     "img_mini": "horse",
                     "name": "Horse",
                     "wikilink": "Horse"
@@ -3919,6 +3921,7 @@ var objTabs =
             },
             "chicken": {
                 "info": {
+                    "img": "chicken",
                     "img_mini": "chicken",
                     "name": "Chicken",
                     "wikilink": "Chicken"
@@ -4014,6 +4017,7 @@ var objTabs =
             },
             "duck": {
                 "info": {
+                    "img": "duck",
                     "img_mini": "duck",
                     "name": "Duck",
                     "wikilink": "Duck"
@@ -4108,6 +4112,7 @@ var objTabs =
             },
             "capybara": {
                 "info": {
+                    "img": "capybara",
                     "img_mini": "capybara",
                     "name": "Capybara",
                     "wikilink": "Capybara"
@@ -4202,6 +4207,7 @@ var objTabs =
             },
             "sheep": {
                 "info": {
+                    "img": "sheep",
                     "img_mini": "sheep",
                     "name": "Sheep",
                     "wikilink": "Sheep"
@@ -4296,6 +4302,7 @@ var objTabs =
             },
             "alpaca": {
                 "info": {
+                    "img": "alpaca",
                     "img_mini": "alpaca",
                     "name": "Alpaca",
                     "wikilink": "Alpaca"
@@ -4390,6 +4397,7 @@ var objTabs =
             },
             "pets": {
                 "info": {
+                    "img": "pets",
                     "img_mini": "pets",
                     "name": "Pets",
                     "wikilink": "Pets"
