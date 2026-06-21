@@ -4,19 +4,17 @@ var objTabs =
         "info": {
             "name": "Gifts",
             "icon": "gift.png",
-            "img_path": "profiles/",
-            "img_mini_path": "mini_profiles/",
             "img_item_path": "items/",
             "item_json": "items"
         },
         "categories": {
-            "wheedle": {
+            "adeline": {
                 "info": {
-                    "name": "Wheedle",
-                    "img": "Wheedle",
-                    "img_mini": "Wheedle",
-                    "wikilink": "Wheedle",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                    "name": "Adeline",
+                    "img": "Adeline",
+                    "img_mini": "Adeline",
+                    "wikilink": "Adeline",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 18</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -24,1074 +22,54 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
+                            "candied_lemon_peel",
                             "ore_diamond",
-                            "ore_emerald",
-                            "gold_ingot",
-                            "ore_gold",
-                            "golden_alpaca_wool",
-                            "golden_bristle",
-                            "golden_bull_horn",
-                            "golden_cheesecake",
-                            "golden_cookies",
-                            "golden_duck_egg",
-                            "golden_duck_feather",
-                            "golden_egg",
-                            "golden_feather",
-                            "golden_horse_hair",
-                            "golden_rabbit_wool",
-                            "golden_sheep_wool",
-                            "dragon_forged_bracelet",
-                            "ore_ruby",
-                            "rusted_treasure_chest",
-                            "ore_sapphire"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "ancient_gold_coin",
-                            "coin_lump",
-                            "fiber",
-                            "perfect_diamond",
-                            "perfect_emerald",
-                            "perfect_gold_ore",
-                            "perfect_pink_diamond",
-                            "perfect_ruby",
-                            "perfect_sapphire",
-                            "ore_pink_diamond"
-                        ]
-                    }
-                }
-            },
-            "errol": {
-                "info": {
-                    "name": "Errol",
-                    "img": "Errol",
-                    "img_mini": "Errol",
-                    "wikilink": "Errol",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 11</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "apple",
-                            "beer",
-                            "breaded_catfish",
-                            "canned_sardines",
-                            "ore_copper",
-                            "fish_stew",
-                            "ore_gold",
-                            "hot_toddy",
-                            "ore_iron",
-                            "ore_mistril",
-                            "latte",
-                            "mocha",
-                            "pear",
-                            "peat",
-                            "pomegranate",
-                            "red_wine",
-                            "ore_silver",
-                            "sweetroot",
-                            "upper_mines_mushroom",
-                            "wintergreen_ice_cream"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "baked_sweetroot",
-                            "braised_burdock",
-                            "clam_chowder",
-                            "fish_skewer",
-                            "miners_helmet",
-                            "miners_mushroom_stew",
-                            "pan_fried_bream",
-                            "perch_risotto",
-                            "shard_mass",
-                            "white_wine"
-                        ]
-                    }
-                }
-            },
-            "ryis": {
-                "info": {
-                    "name": "Ryis",
-                    "img": "Ryis",
-                    "img_mini": "Ryis",
-                    "wikilink": "Ryis",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 4</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "basic_wood",
-                            "beer",
-                            "bread",
-                            "bristle",
-                            "bull_horn",
-                            "clay",
-                            "cranberry_orange_scone",
-                            "crystal",
-                            "duck_feather",
-                            "feather",
-                            "garlic_bread",
-                            "glass",
-                            "glowberry_cookies",
-                            "horse_hair",
-                            "iced_coffee",
-                            "lilac",
-                            "obsidian",
-                            "paper",
-                            "ore_stone",
-                            "strawberry_shortcake"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "golden_bristle",
-                            "golden_bull_horn",
-                            "golden_cheesecake",
-                            "golden_cookies",
-                            "golden_duck_feather",
-                            "golden_feather",
-                            "golden_horse_hair",
-                            "hard_wood",
-                            "lobster_roll",
-                            "veggie_sub_sandwich"
-                        ]
-                    }
-                }
-            },
-            "josephine": {
-                "info": {
-                    "name": "Josephine",
-                    "img": "Josephine",
-                    "img_mini": "Josephine",
-                    "wikilink": "Josephine",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "breath_of_fire",
-                            "chili_pepper",
-                            "curry_powder",
-                            "essence_blossom",
-                            "flour",
-                            "honey",
-                            "jam_sandwich",
-                            "jasmine",
-                            "oil",
-                            "rice",
-                            "rose",
-                            "soy_sauce",
-                            "spicy_cheddar_biscuit",
-                            "spicy_corn",
-                            "spicy_crab_sushi",
-                            "spicy_water_chestnuts",
-                            "sugar",
-                            "sunflower",
-                            "tea",
-                            "wild_berry_jam"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "jasmine_tea",
-                            "green_tea",
-                            "lavender_tea",
-                            "quiche",
-                            "roasted_rice_tea",
-                            "rose_tea",
-                            "cup_of_tea",
-                            "incredibly_hot_pot",
-                            "chili_coconut_curry",
-                            "crayfish_etouffee"
-                        ]
-                    }
-                }
-            },
-            "henrietta": {
-                "info": {
-                    "name": "Henrietta",
-                    "img": "Henrietta",
-                    "img_mini": "Henrietta",
-                    "wikilink": "Henrietta",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 7</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "apple",
-                            "blackberry",
-                            "blueberry",
-                            "broccoli",
-                            "cherry",
-                            "chestnut",
-                            "coconut",
-                            "cranberry",
-                            "cucumber",
-                            "grass_seed",
-                            "moon_fruit",
-                            "orange",
-                            "peach",
-                            "pear",
-                            "peas",
-                            "pomegranate",
-                            "pumpkin",
-                            "wild_berries",
-                            "wild_grapes",
-                            "wintergreen_berry"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "berry_bowl",
-                            "animal_currency",
-                            "corn",
-                            "glowberry",
-                            "grilled_corn",
-                            "strawberry",
-                            "watermelon",
-                            "quality_small_animal_feed",
-                            "deluxe_small_animal_feed",
-                            "ultimate_small_animal_feed"
-                        ]
-                    }
-                }
-            },
-            "louis": {
-                "info": {
-                    "name": "Louis",
-                    "img": "Louis",
-                    "img_mini": "Louis",
-                    "wikilink": "Louis",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 20</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "alpaca_wool",
-                            "breath_of_fire",
-                            "bristle",
-                            "cattail",
-                            "celosia",
-                            "crystal",
-                            "crystal_rose",
-                            "duck_feather",
-                            "essence_blossom",
-                            "feather",
-                            "cup_of_tea",
-                            "frost_lily",
-                            "horse_hair",
-                            "lilac",
-                            "marigold",
-                            "rabbit_wool",
-                            "shadow_flower",
-                            "snapdragon",
-                            "viola",
-                            "sheep_wool"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "golden_alpaca_wool",
-                            "golden_bristle",
-                            "golden_duck_feather",
-                            "golden_feather",
-                            "golden_horse_hair",
-                            "golden_rabbit_wool",
-                            "golden_sheep_wool",
-                            "middlemist",
-                            "red_wine",
-                            "white_wine"
-                        ]
-                    }
-                }
-            },
-            "dell": {
-                "info": {
-                    "name": "Dell",
-                    "img": "Dell",
-                    "img_mini": "Dell",
-                    "wikilink": "Dell",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 3</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "apple",
-                            "basic_wood",
-                            "blackberry",
-                            "caramel_candy",
-                            "cattail",
-                            "clay",
-                            "frog",
-                            "glowberry_cookies",
-                            "grape_juice",
-                            "grilled_cheese",
-                            "hot_cocoa",
+                            "heather",
+                            "lemon",
                             "sour_lemon_cake",
                             "lemonade",
-                            "lightning_dragonfly",
-                            "monster_cookie",
-                            "pudding",
-                            "snail",
-                            "ore_stone",
-                            "trail_mix",
-                            "turtle"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "alda_bronze_sword",
-                            "aldarian_sword",
-                            "apple_juice",
-                            "bullfrog",
-                            "caldosian_sword",
-                            "chocolate",
-                            "golden_cookies",
-                            "hermit_crab",
-                            "ice_cream_sundae",
-                            "jam_sandwich"
-                        ]
-                    }
-                }
-            },
-            "elsie": {
-                "info": {
-                    "name": "Elsie",
-                    "img": "Elsie",
-                    "img_mini": "Elsie",
-                    "wikilink": "Elsie",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "blackberry_jam",
-                            "blueberry_jam",
-                            "cherry_tart",
-                            "chrysanthemum",
-                            "cosmos",
-                            "crystal_berry_pie",
-                            "ore_diamond",
-                            "iris",
-                            "jasmine",
-                            "lilac",
-                            "marmalade",
-                            "moon_fruit_cake",
-                            "pomegranate_sorbet",
-                            "quiche",
-                            "red_wine",
-                            "rosehip_jam",
-                            "rose_hip",
-                            "tulip",
-                            "white_wine",
-                            "wild_berry_jam"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "alda_feather_pendant",
-                            "cranberry_orange_scone",
-                            "crystal_rose",
-                            "jasmine_tea",
-                            "mont_blanc",
+                            "ore_mistril",
                             "paper",
-                            "perfect_diamond",
-                            "poached_pear",
-                            "rose",
+                            "peach",
+                            "pineshroom_toast",
+                            "ore_pink_diamond",
+                            "pumpkin_stew",
+                            "red_wine",
+                            "snapdragon",
+                            "spicy_cheddar_biscuit",
+                            "tulip",
+                            "vegetable_soup",
+                            "white_wine",
+                            "wildberry_pie",
                             "wildberry_scone"
                         ]
-                    }
-                }
-            },
-            "maple": {
-                "info": {
-                    "name": "Maple",
-                    "img": "Maple",
-                    "img_mini": "Maple",
-                    "wikilink": "Maple",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 26</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "blackberry",
-                            "blue_conch_shell",
-                            "cheese",
-                            "daisy",
-                            "glowberry_cookies",
-                            "golden_cookies",
-                            "grilled_cheese",
-                            "ice_cream_sundae",
-                            "jam_sandwich",
-                            "pink_scallop_shell",
-                            "pomegranate_sorbet",
-                            "pudding",
-                            "sand_dollar",
-                            "spirula_shell",
-                            "strawberry_shortcake",
-                            "sunflower",
-                            "trail_mix",
-                            "tulip",
-                            "wildberry_pie",
-                            "wintergreen_ice_cream"
-                        ]
                     },
                     "loved": {
                         "info": {
                             "name": "Loved"
-                        },
-                        "items": [
-                            "ancient_horn_circlet",
-                            "berries_and_cream",
-                            "chocolate",
-                            "hot_cocoa",
-                            "lemon_pie",
-                            "lost_crown_of_aldaria",
-                            "middlemist",
-                            "monarch_butterfly",
-                            "mont_blanc",
-                            "stone_shell"
-                        ]
-                    }
-                }
-            },
-            "olric": {
-                "info": {
-                    "name": "Olric",
-                    "img": "Olric",
-                    "img_mini": "Olric",
-                    "wikilink": "Olric",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 10</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "ore_copper",
-                            "crystal",
-                            "ore_diamond",
-                            "ore_emerald",
-                            "ore_gold",
-                            "hard_boiled_egg",
-                            "ore_iron",
-                            "miners_mushroom_stew",
-                            "ore_mistril",
-                            "obsidian",
-                            "ore_pink_diamond",
-                            "rock_with_a_hole",
-                            "rockroot",
-                            "ore_ruby",
-                            "ore_sapphire",
-                            "ore_silver",
-                            "ore_stone",
-                            "stone_horse",
-                            "rock_statue",
-                            "weightless_stone"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "perfect_copper_ore",
-                            "perfect_diamond",
-                            "perfect_emerald",
-                            "perfect_gold_ore",
-                            "perfect_iron_ore",
-                            "perfect_mistril_ore",
-                            "perfect_pink_diamond",
-                            "perfect_ruby",
-                            "perfect_sapphire",
-                            "perfect_silver_ore"
-                        ]
-                    }
-                }
-            },
-            "valen": {
-                "info": {
-                    "name": "Valen",
-                    "img": "Valen",
-                    "img_mini": "Valen",
-                    "wikilink": "Valen",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 1</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
                         },
                         "items": [
                             "coffee",
-                            "cucumber",
-                            "cucumber_salad",
-                            "dandelion",
-                            "garlic",
-                            "green_tea",
-                            "herb_salad",
-                            "honey",
-                            "nettle",
-                            "pan_fried_salmon",
-                            "red_wine",
-                            "rose_hip",
-                            "rosehip_jam",
-                            "rosemary",
-                            "seaweed",
-                            "seaweed_salad",
-                            "spring_salad",
-                            "sweetroot",
-                            "underseaweed",
-                            "white_wine"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "beet",
-                            "beet_salad",
-                            "beet_soup",
-                            "deep_sea_soup",
-                            "dragon_scale",
-                            "harvest_plate",
-                            "rosemary_garlic_noodles",
-                            "summer_salad",
-                            "sushi_platter",
-                            "vegetable_soup"
-                        ]
-                    }
-                }
-            },
-            "zorel": {
-                "info": {
-                    "name": "Zorel",
-                    "img": "Zorel",
-                    "img_mini": "Zorel",
-                    "wikilink": "Zorel",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
-                    "noimage": 1
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "mushroom_rice",
-                            "red_toadstool",
-                            "upper_mines_mushroom",
-                            "glowing_mushroom",
-                            "miners_mushroom_stew",
-                            "wild_mushroom",
-                            "dandelion",
-                            "fiddlehead",
-                            "nettle",
-                            "wild_leek",
-                            "fennel",
-                            "sage"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "middlemist",
-                            "sunflower",
-                            "heather",
-                            "morel_mushroom"
-                        ]
-                    }
-                }
-            },
-            "nora": {
-                "info": {
-                    "name": "Nora",
-                    "img": "Nora",
-                    "img_mini": "Nora",
-                    "wikilink": "Nora",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 24</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "baked_potato",
-                            "beet_salad",
-                            "braised_burdock",
-                            "braised_carrots",
-                            "butter",
-                            "cabbage_slaw",
-                            "candied_lemon_peel",
-                            "coconut_milk",
-                            "coffee",
-                            "cucumber_salad",
-                            "grilled_corn",
-                            "latte",
-                            "poached_pear",
-                            "salted_watermelon",
-                            "sesame_broccoli",
-                            "simmered_daikon",
-                            "sliced_turnip",
-                            "spicy_water_chestnuts",
-                            "strawberries_and_cream",
-                            "tomato_soup"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "ancient_gold_coin",
-                            "cherry_cobbler",
-                            "fried_rice",
-                            "onion_soup",
-                            "peaches_and_cream",
-                            "pumpkin_stew",
-                            "roasted_cauliflower",
-                            "roasted_sweet_potato",
-                            "sauteed_snow_peas",
-                            "toasted_sunflower_seeds"
-                        ]
-                    }
-                }
-            },
-            "vera": {
-                "info": {
-                    "name": "Vera",
-                    "img": "Vera",
-                    "img_mini": "Vera",
-                    "wikilink": "Vera",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "beet_salad",
-                            "braised_burdock",
-                            "cauliflower_curry",
-                            "chickpea_curry",
-                            "coconut_milk",
-                            "cranberry_juice",
-                            "crispy_fried_earthshroom",
-                            "cucumber_salad",
-                            "orange_juice",
-                            "pomegranate",
-                            "pomegranate_juice",
-                            "roasted_cauliflower",
-                            "salted_watermelon",
-                            "sauteed_snow_peas",
-                            "seaweed_salad",
-                            "sesame_broccoli",
-                            "simmered_daikon",
-                            "steamed_broccoli",
-                            "tide_salad",
-                            "turnip_and_cabbage_salad"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "beet_soup",
-                            "chili_coconut_curry",
                             "gazpacho",
-                            "harvest_plate",
-                            "mushroom_steak_dinner",
-                            "pomegranate_sorbet",
-                            "summer_salad",
-                            "sweet_potato_pie",
-                            "vegetable_pot_pie",
-                            "winter_stew"
-                        ]
-                    }
-                }
-            },
-            "holt": {
-                "info": {
-                    "name": "Holt",
-                    "img": "Holt",
-                    "img_mini": "Holt",
-                    "wikilink": "Holt",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 14</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "potato",
-                            "beet",
-                            "broccoli",
-                            "cabbage",
-                            "carrot",
-                            "cauliflower",
-                            "chili_pepper",
-                            "corn",
-                            "cranberry",
-                            "cucumber",
-                            "daikon_radish",
-                            "onion",
-                            "peas",
-                            "pumpkin",
-                            "rice_stalk",
-                            "snow_peas",
-                            "strawberry",
-                            "sugar_cane",
-                            "sweet_potato",
-                            "turnip"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "flour",
-                            "gazpacho",
-                            "hard_wood",
-                            "loaded_baked_potato",
-                            "baked_potato",
-                            "stone_horse",
-                            "narrows_moss",
-                            "coffee",
-                            "watermelon",
-                            "wheat"
-                        ]
-                    }
-                }
-            },
-            "reina": {
-                "info": {
-                    "name": "Reina",
-                    "img": "Reina",
-                    "img_mini": "Reina",
-                    "wikilink": "Reina",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 12</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "cauliflower_curry",
-                            "cheese",
-                            "cod_with_thyme",
-                            "coffee",
-                            "crystal_berry_pie",
-                            "daffodil",
-                            "deep_sea_soup",
-                            "flour",
-                            "garlic",
-                            "garlic_bread",
-                            "grilled_cheese",
-                            "iced_coffee",
-                            "miners_mushroom_stew",
-                            "pizza",
-                            "rice",
-                            "spicy_cheddar_biscuit",
-                            "sugar",
-                            "turnip_and_potato_gratin",
-                            "upper_mines_mushroom",
-                            "wildberry_pie"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "apple_honey_curry",
-                            "breaded_catfish",
-                            "cabbage_slaw",
-                            "ice_cream_sundae",
-                            "incredibly_hot_pot",
-                            "rosemary_garlic_noodles",
-                            "seafood_boil",
-                            "seafood_snow_pea_noodles",
-                            "spell_fruit_parfait",
-                            "sushi_platter"
-                        ]
-                    }
-                }
-            },
-            "hayden": {
-                "info": {
-                    "name": "Hayden",
-                    "img": "Hayden",
-                    "img_mini": "Hayden",
-                    "wikilink": "Hayden",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 8</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "apple_pie",
-                            "butter",
-                            "cheese",
-                            "coconut_cream_pie",
-                            "coffee",
-                            "crystal_berry_pie",
-                            "duck_egg",
-                            "duck_mayonnaise",
-                            "egg",
                             "lemon_pie",
-                            "loaded_baked_potato",
-                            "mayonnaise",
-                            "cow_milk",
-                            "mushroom_steak_dinner",
-                            "pumpkin_stew",
-                            "quiche",
-                            "sweet_potato_pie",
-                            "cup_of_tea",
-                            "vegetable_pot_pie",
-                            "wildberry_pie"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "golden_butter",
-                            "golden_cheese",
-                            "golden_duck_egg",
-                            "golden_duck_mayonnaise",
-                            "golden_egg",
-                            "golden_mayonnaise",
-                            "golden_cow_milk",
-                            "pumpkin_pie",
-                            "stone_horse",
-                            "vegetable_quiche"
-                        ]
-                    }
-                }
-            },
-            "seridia": {
-                "info": {
-                    "name": "Seridia",
-                    "img": "Seridia",
-                    "img_mini": "Seridia",
-                    "wikilink": "Seridia",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>",
-                    "lategame": 1
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "void_powder",
-                            "void_pearl",
-                            "void_stone",
-                            "void_herb",
-                            "essence_blossom",
-                            "monster_cookie",
-                            "monster_horn",
-                            "monster_powder",
-                            "monster_shell",
-                            "monster_fang",
-                            "monster_whisker",
-                            "monster_block",
-                            "monster_wing",
-                            "night_queen",
-                            "ore_pink_diamond",
-                            "plum_blossom",
-                            "ancient_royal_scepter",
-                            "dragon_forged_bracelet",
-                            "purple_mushroom",
-                            "red_toadstool"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "dragon_forged_fang",
-                            "dragon_forged_core",
-                            "dragon_forged_horn",
-                            "dragon_forged_powder",
-                            "dragon_pact_tablet",
-                            "monster_mash",
-                            "perfect_mistril_ore",
-                            "spell_fruit_parfait",
-                            "hardened_essence",
-                            "unknown_dragon_statuette"
-                        ]
-                    }
-                }
-            },
-            "march": {
-                "info": {
-                    "name": "March",
-                    "img": "March",
-                    "img_mini": "March",
-                    "wikilink": "March",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "beer",
-                            "chocolate",
-                            "caldosian_chocolate_cake",
-                            "coffee",
-                            "copper_ingot",
-                            "ore_copper",
-                            "ore_gold",
-                            "grilled_eel_rice_bowl",
-                            "hot_cocoa",
-                            "iron_ingot",
-                            "ore_iron",
-                            "ore_mistril",
-                            "mocha",
-                            "perch_risotto",
-                            "red_snapper_sushi",
-                            "sea_bream_rice",
-                            "sesame_tuna_bowl",
-                            "silver_ingot",
-                            "ore_silver",
-                            "spicy_crab_sushi"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "dragon_forged_bracelet",
-                            "gold_ingot",
-                            "meteorite",
+                            "middlemist",
                             "mistril_ingot",
-                            "perfect_copper_ore",
-                            "perfect_gold_ore",
-                            "perfect_iron_ore",
-                            "perfect_mistril_ore",
-                            "perfect_silver_ore",
-                            "sushi_platter"
-                        ]
-                    }
-                }
-            },
-            "stillwell": {
-                "info": {
-                    "name": "Stillwell",
-                    "img": "Stillwell",
-                    "img_mini": "Stillwell",
-                    "wikilink": "Stillwell",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 27</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
-                    "noimage": 1
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "glass",
-                            "muttering_cube",
-                            "crystal",
-                            "night_queen",
-                            "shardfin",
-                            "shadow_flower",
-                            "crystal_rose",
-                            "red_toadstool",
-                            "middlemist",
-                            "crystal_wing_moth",
-                            "coffee",
+                            "peaches_and_cream",
+                            "perfect_pink_diamond",
+                            "plum_blossom",
+                            "pumpkin_pie",
                             "cup_of_tea"
                         ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "fog_orchid",
-                            "black_tablet",
-                            "weightless_stone",
-                            "red_wine"
-                        ]
                     }
                 }
             },
-            "terithia": {
+            "balor": {
                 "info": {
-                    "name": "Terithia",
-                    "img": "Terithia",
-                    "img_mini": "Terithia",
-                    "wikilink": "Terithia",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 22</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                    "name": "Balor",
+                    "img": "Balor",
+                    "img_mini": "Balor",
+                    "wikilink": "Balor",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 10</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1099,136 +77,26 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
-                            "breaded_catfish",
-                            "canned_sardines",
-                            "clam_chowder",
-                            "crayfish_etouffee",
-                            "deep_sea_soup",
-                            "dried_squid",
-                            "fish_skewer",
-                            "fish_tacos",
-                            "grilled_eel_rice_bowl",
-                            "horseradish_salmon",
-                            "mackerel_sashimi",
-                            "pan_fried_bream",
-                            "pan_fried_salmon",
-                            "pan_fried_snapper",
-                            "red_snapper_sushi",
-                            "salmon_sashimi",
-                            "sesame_tuna_bowl",
-                            "smoked_trout_soup",
-                            "spicy_crab_sushi",
-                            "tuna_sashimi"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "cod_with_thyme",
-                            "fish_stew",
-                            "giant_fish_scale",
-                            "lobster_roll",
-                            "perch_risotto",
-                            "rubber_fish",
-                            "sea_bream_rice",
-                            "seafood_boil",
-                            "seafood_snow_pea_noodles",
-                            "sushi_platter"
-                        ]
-                    }
-                }
-            },
-            "juniper": {
-                "info": {
-                    "name": "Juniper",
-                    "img": "Juniper",
-                    "img_mini": "Juniper",
-                    "wikilink": "Juniper",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 26</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "crunchy_chickpeas",
-                            "crystal",
-                            "fog_orchid",
-                            "frog",
-                            "latte",
-                            "middlemist",
-                            "morel_mushroom",
-                            "nettle",
-                            "newt",
-                            "night_queen",
-                            "essence_blossom",
-                            "poinsettia",
-                            "red_toadstool",
-                            "red_wine",
-                            "monster_powder",
-                            "shadow_flower",
-                            "spell_fruit",
-                            "toasted_sunflower_seeds",
-                            "water_chestnut_fritters",
-                            "white_wine"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "ancient_royal_scepter",
-                            "black_tablet",
+                            "cauliflower_curry",
+                            "chickpea_curry",
                             "crystal_rose",
-                            "fish_tacos",
+                            "ore_diamond",
+                            "ore_emerald",
+                            "fog_orchid",
+                            "frost_lily",
+                            "gold_ingot",
+                            "ore_gold",
                             "golden_cookies",
-                            "hardened_essence",
-                            "moon_fruit_cake",
-                            "mushroom_brew",
-                            "pizza",
-                            "spell_fruit_parfait"
-                        ]
-                    }
-                }
-            },
-            "dozy": {
-                "info": {
-                    "name": "Dozy",
-                    "img": "Dozy",
-                    "img_mini": "Dozy",
-                    "wikilink": "Dozy",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "butterfly",
-                            "carrot",
-                            "cicada",
-                            "cod",
-                            "cricket",
-                            "duck_egg",
-                            "egg",
-                            "firefly",
-                            "fuzzy_moth",
-                            "grasshopper",
-                            "mackerel",
-                            "monster_shell",
-                            "monster_whisker",
-                            "pumpkin",
-                            "red_snapper",
-                            "rockroot",
-                            "salmon",
-                            "sardine",
-                            "sod",
-                            "tuna"
+                            "golden_cheesecake",
+                            "jasmine",
+                            "perfect_gold_ore",
+                            "ore_pink_diamond",
+                            "rose",
+                            "ore_ruby",
+                            "rusted_treasure_chest",
+                            "ore_sapphire",
+                            "sapphire_betta",
+                            "snowdrop_anemone"
                         ]
                     },
                     "loved": {
@@ -1236,16 +104,16 @@ var objTabs =
                             "name": "Loved"
                         },
                         "items": [
-                            "basic_wood",
-                            "hard_boiled_egg",
-                            "catfish",
-                            "crystalline_cricket",
-                            "golden_duck_egg",
-                            "golden_egg",
-                            "hard_wood",
-                            "dog_treat",
-                            "petrified_wood",
-                            "tiny_dinosaur_skeleton"
+                            "alda_gem_bracelet",
+                            "apple_honey_curry",
+                            "chili_coconut_curry",
+                            "deluxe_curry",
+                            "family_crest_pendant",
+                            "perfect_diamond",
+                            "perfect_emerald",
+                            "perfect_pink_diamond",
+                            "perfect_ruby",
+                            "perfect_sapphire"
                         ]
                     }
                 }
@@ -1306,13 +174,13 @@ var objTabs =
                     }
                 }
             },
-            "merri": {
+            "celine": {
                 "info": {
-                    "name": "Merri",
-                    "img": "Merri",
-                    "img_mini": "Merri",
-                    "wikilink": "Merri",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                    "name": "Celine",
+                    "img": "Celine",
+                    "img_mini": "Celine",
+                    "wikilink": "Celine",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 14</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1320,26 +188,26 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
-                            "alpaca_wool",
-                            "basic_wood",
-                            "bristle",
-                            "bull_horn",
-                            "clay",
-                            "coral",
-                            "crystal",
-                            "ore_diamond",
-                            "duck_feather",
-                            "glass",
-                            "hard_wood",
-                            "horse_hair",
-                            "latte",
-                            "obsidian",
-                            "paper",
-                            "ore_pink_diamond",
-                            "rabbit_wool",
-                            "feather",
-                            "sheep_wool",
-                            "ore_stone"
+                            "catmint",
+                            "celosia",
+                            "chrysanthemum",
+                            "cosmos",
+                            "crocus",
+                            "daffodil",
+                            "daisy",
+                            "dandelion",
+                            "heather",
+                            "iris",
+                            "jasmine",
+                            "lilac",
+                            "marigold",
+                            "poinsettia",
+                            "rose_tea",
+                            "snapdragon",
+                            "spring_salad",
+                            "sunflower",
+                            "tulip",
+                            "viola"
                         ]
                     },
                     "loved": {
@@ -1347,71 +215,16 @@ var objTabs =
                             "name": "Loved"
                         },
                         "items": [
-                            "golden_alpaca_wool",
-                            "golden_bristle",
-                            "golden_bull_horn",
-                            "golden_duck_feather",
-                            "golden_horse_hair",
-                            "golden_rabbit_wool",
-                            "golden_feather",
-                            "golden_sheep_wool",
-                            "perfect_diamond",
-                            "perfect_pink_diamond"
-                        ]
-                    }
-                }
-            },
-            "taliferro": {
-                "info": {
-                    "name": "Taliferro",
-                    "img": "Taliferro",
-                    "img_mini": "Taliferro",
-                    "wikilink": "Taliferro",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 13</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "chili_coconut_curry",
-                            "coconut_cream_pie",
-                            "crab_cakes",
-                            "fish_tacos",
-                            "glowberry_cookies",
-                            "golden_cheesecake",
-                            "golden_cookies",
-                            "herb_salad",
-                            "ice_cream_sundae",
-                            "incredibly_hot_pot",
-                            "lobster_roll",
-                            "mushroom_steak_dinner",
-                            "perch_risotto",
-                            "pumpkin_pie",
-                            "red_wine",
-                            "sea_bream_rice",
-                            "vegetable_pot_pie",
-                            "vegetable_quiche",
-                            "veggie_sub_sandwich",
-                            "white_wine"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "apple_honey_curry",
-                            "beet_soup",
-                            "fried_rice",
-                            "harvest_plate",
-                            "mont_blanc",
-                            "seafood_boil",
-                            "seafood_snow_pea_noodles",
-                            "spell_fruit_parfait",
-                            "spring_galette",
-                            "sushi_platter"
+                            "breath_of_fire",
+                            "crystal_rose",
+                            "essence_blossom",
+                            "frost_lily",
+                            "hydrangea",
+                            "middlemist",
+                            "plum_blossom",
+                            "rose",
+                            "snowdrop_anemone",
+                            "temple_flower"
                         ]
                     }
                 }
@@ -1471,13 +284,13 @@ var objTabs =
                     }
                 }
             },
-            "balor": {
+            "dell": {
                 "info": {
-                    "name": "Balor",
-                    "img": "Balor",
-                    "img_mini": "Balor",
-                    "wikilink": "Balor",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 10</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                    "name": "Dell",
+                    "img": "Dell",
+                    "img_mini": "Dell",
+                    "wikilink": "Dell",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 3</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1485,81 +298,26 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
-                            "cauliflower_curry",
-                            "chickpea_curry",
-                            "crystal_rose",
-                            "ore_diamond",
-                            "ore_emerald",
-                            "fog_orchid",
-                            "frost_lily",
-                            "gold_ingot",
-                            "ore_gold",
-                            "golden_cookies",
-                            "golden_cheesecake",
-                            "jasmine",
-                            "perfect_gold_ore",
-                            "ore_pink_diamond",
-                            "rose",
-                            "ore_ruby",
-                            "rusted_treasure_chest",
-                            "ore_sapphire",
-                            "sapphire_betta",
-                            "snowdrop_anemone"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "alda_gem_bracelet",
-                            "apple_honey_curry",
-                            "chili_coconut_curry",
-                            "deluxe_curry",
-                            "family_crest_pendant",
-                            "perfect_diamond",
-                            "perfect_emerald",
-                            "perfect_pink_diamond",
-                            "perfect_ruby",
-                            "perfect_sapphire"
-                        ]
-                    }
-                }
-            },
-            "hemlock": {
-                "info": {
-                    "name": "Hemlock",
-                    "img": "Hemlock",
-                    "img_mini": "Hemlock",
-                    "wikilink": "Hemlock",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 23</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
-                },
-                "subcategories": {
-                    "liked": {
-                        "info": {
-                            "name": "Liked"
-                        },
-                        "items": [
-                            "basil",
-                            "chili_pepper",
-                            "coffee",
-                            "crunchy_chickpeas",
-                            "dried_squid",
-                            "honey",
-                            "lemon",
-                            "roasted_chestnuts",
-                            "rock_salt",
-                            "sesame_broccoli",
-                            "spicy_cheddar_biscuit",
+                            "apple",
+                            "basic_wood",
+                            "blackberry",
+                            "caramel_candy",
+                            "cattail",
+                            "clay",
+                            "frog",
+                            "glowberry_cookies",
                             "grape_juice",
-                            "spicy_crab_sushi",
-                            "spicy_water_chestnuts",
-                            "summer_salad",
-                            "tea",
-                            "thyme",
-                            "toasted_sunflower_seeds",
+                            "grilled_cheese",
+                            "hot_cocoa",
+                            "sour_lemon_cake",
+                            "lemonade",
+                            "lightning_dragonfly",
+                            "monster_cookie",
+                            "pudding",
+                            "snail",
+                            "ore_stone",
                             "trail_mix",
-                            "water_chestnut_fritters"
+                            "turtle"
                         ]
                     },
                     "loved": {
@@ -1567,71 +325,71 @@ var objTabs =
                             "name": "Loved"
                         },
                         "items": [
-                            "beer",
-                            "chili_coconut_curry",
-                            "crayfish_etouffee",
-                            "crispy_fried_earthshroom",
-                            "caldosian_drinking_horn",
-                            "hot_toddy",
-                            "incredibly_hot_pot",
-                            "white_wine",
-                            "wild_grapes",
-                            "spicy_corn"
+                            "alda_bronze_sword",
+                            "aldarian_sword",
+                            "apple_juice",
+                            "bullfrog",
+                            "caldosian_sword",
+                            "chocolate",
+                            "golden_cookies",
+                            "hermit_crab",
+                            "ice_cream_sundae",
+                            "jam_sandwich"
                         ]
                     }
                 }
             },
-            "landen": {
+            "dozy": {
                 "info": {
-                    "name": "Landen",
-                    "img": "Landen",
-                    "img_mini": "Landen",
-                    "wikilink": "Landen",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 4</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                    "name": "Dozy",
+                    "img": "Dozy",
+                    "img_mini": "Dozy",
+                    "wikilink": "Dozy",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
                         "info": {
                             "name": "Liked"
+                        },
+                        "items": [
+                            "butterfly",
+                            "carrot",
+                            "cicada",
+                            "cod",
+                            "cricket",
+                            "duck_egg",
+                            "egg",
+                            "firefly",
+                            "fuzzy_moth",
+                            "grasshopper",
+                            "mackerel",
+                            "monster_shell",
+                            "monster_whisker",
+                            "pumpkin",
+                            "red_snapper",
+                            "rockroot",
+                            "salmon",
+                            "sardine",
+                            "sod",
+                            "tuna"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
                         },
                         "items": [
                             "basic_wood",
-                            "bristle",
-                            "bull_horn",
-                            "canned_sardines",
-                            "clay",
-                            "coconut",
-                            "coconut_milk",
-                            "crystal",
-                            "deep_sea_soup",
-                            "duck_feather",
-                            "glass",
-                            "horse_hair",
-                            "obsidian",
-                            "paper",
-                            "feather",
-                            "ore_stone",
-                            "shards",
-                            "tomato_soup",
-                            "vegetable_pot_pie",
-                            "vegetable_soup"
-                        ]
-                    },
-                    "loved": {
-                        "info": {
-                            "name": "Loved"
-                        },
-                        "items": [
-                            "coconut_cream_pie",
-                            "golden_bristle",
-                            "golden_bull_horn",
-                            "golden_cheesecake",
-                            "golden_cookies",
-                            "golden_duck_feather",
-                            "golden_horse_hair",
-                            "golden_feather",
+                            "hard_boiled_egg",
+                            "catfish",
+                            "crystalline_cricket",
+                            "golden_duck_egg",
+                            "golden_egg",
                             "hard_wood",
-                            "shard_mass"
+                            "dog_treat",
+                            "petrified_wood",
+                            "tiny_dinosaur_skeleton"
                         ]
                     }
                 }
@@ -1691,13 +449,13 @@ var objTabs =
                     }
                 }
             },
-            "adeline": {
+            "elsie": {
                 "info": {
-                    "name": "Adeline",
-                    "img": "Adeline",
-                    "img_mini": "Adeline",
-                    "wikilink": "Adeline",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 18</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                    "name": "Elsie",
+                    "img": "Elsie",
+                    "img_mini": "Elsie",
+                    "wikilink": "Elsie",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1705,26 +463,26 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
-                            "candied_lemon_peel",
+                            "blackberry_jam",
+                            "blueberry_jam",
+                            "cherry_tart",
+                            "chrysanthemum",
+                            "cosmos",
+                            "crystal_berry_pie",
                             "ore_diamond",
-                            "heather",
-                            "lemon",
-                            "sour_lemon_cake",
-                            "lemonade",
-                            "ore_mistril",
-                            "paper",
-                            "peach",
-                            "pineshroom_toast",
-                            "ore_pink_diamond",
-                            "pumpkin_stew",
+                            "iris",
+                            "jasmine",
+                            "lilac",
+                            "marmalade",
+                            "moon_fruit_cake",
+                            "pomegranate_sorbet",
+                            "quiche",
                             "red_wine",
-                            "snapdragon",
-                            "spicy_cheddar_biscuit",
+                            "rosehip_jam",
+                            "rose_hip",
                             "tulip",
-                            "vegetable_soup",
                             "white_wine",
-                            "wildberry_pie",
-                            "wildberry_scone"
+                            "wild_berry_jam"
                         ]
                     },
                     "loved": {
@@ -1732,27 +490,27 @@ var objTabs =
                             "name": "Loved"
                         },
                         "items": [
-                            "coffee",
-                            "gazpacho",
-                            "lemon_pie",
-                            "middlemist",
-                            "mistril_ingot",
-                            "peaches_and_cream",
-                            "perfect_pink_diamond",
-                            "plum_blossom",
-                            "pumpkin_pie",
-                            "cup_of_tea"
+                            "alda_feather_pendant",
+                            "cranberry_orange_scone",
+                            "crystal_rose",
+                            "jasmine_tea",
+                            "mont_blanc",
+                            "paper",
+                            "perfect_diamond",
+                            "poached_pear",
+                            "rose",
+                            "wildberry_scone"
                         ]
                     }
                 }
             },
-            "celine": {
+            "errol": {
                 "info": {
-                    "name": "Celine",
-                    "img": "Celine",
-                    "img_mini": "Celine",
-                    "wikilink": "Celine",
-                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 14</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                    "name": "Errol",
+                    "img": "Errol",
+                    "img_mini": "Errol",
+                    "wikilink": "Errol",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 11</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
                 },
                 "subcategories": {
                     "liked": {
@@ -1760,26 +518,26 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
-                            "catmint",
-                            "celosia",
-                            "chrysanthemum",
-                            "cosmos",
-                            "crocus",
-                            "daffodil",
-                            "daisy",
-                            "dandelion",
-                            "heather",
-                            "iris",
-                            "jasmine",
-                            "lilac",
-                            "marigold",
-                            "poinsettia",
-                            "rose_tea",
-                            "snapdragon",
-                            "spring_salad",
-                            "sunflower",
-                            "tulip",
-                            "viola"
+                            "apple",
+                            "beer",
+                            "breaded_catfish",
+                            "canned_sardines",
+                            "ore_copper",
+                            "fish_stew",
+                            "ore_gold",
+                            "hot_toddy",
+                            "ore_iron",
+                            "ore_mistril",
+                            "latte",
+                            "mocha",
+                            "pear",
+                            "peat",
+                            "pomegranate",
+                            "red_wine",
+                            "ore_silver",
+                            "sweetroot",
+                            "upper_mines_mushroom",
+                            "wintergreen_ice_cream"
                         ]
                     },
                     "loved": {
@@ -1787,16 +545,456 @@ var objTabs =
                             "name": "Loved"
                         },
                         "items": [
+                            "baked_sweetroot",
+                            "braised_burdock",
+                            "clam_chowder",
+                            "fish_skewer",
+                            "miners_helmet",
+                            "miners_mushroom_stew",
+                            "pan_fried_bream",
+                            "perch_risotto",
+                            "shard_mass",
+                            "white_wine"
+                        ]
+                    }
+                }
+            },
+            "hayden": {
+                "info": {
+                    "name": "Hayden",
+                    "img": "Hayden",
+                    "img_mini": "Hayden",
+                    "wikilink": "Hayden",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 8</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "apple_pie",
+                            "butter",
+                            "cheese",
+                            "coconut_cream_pie",
+                            "coffee",
+                            "crystal_berry_pie",
+                            "duck_egg",
+                            "duck_mayonnaise",
+                            "egg",
+                            "lemon_pie",
+                            "loaded_baked_potato",
+                            "mayonnaise",
+                            "cow_milk",
+                            "mushroom_steak_dinner",
+                            "pumpkin_stew",
+                            "quiche",
+                            "sweet_potato_pie",
+                            "cup_of_tea",
+                            "vegetable_pot_pie",
+                            "wildberry_pie"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "golden_butter",
+                            "golden_cheese",
+                            "golden_duck_egg",
+                            "golden_duck_mayonnaise",
+                            "golden_egg",
+                            "golden_mayonnaise",
+                            "golden_cow_milk",
+                            "pumpkin_pie",
+                            "stone_horse",
+                            "vegetable_quiche"
+                        ]
+                    }
+                }
+            },
+            "hemlock": {
+                "info": {
+                    "name": "Hemlock",
+                    "img": "Hemlock",
+                    "img_mini": "Hemlock",
+                    "wikilink": "Hemlock",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 23</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "basil",
+                            "chili_pepper",
+                            "coffee",
+                            "crunchy_chickpeas",
+                            "dried_squid",
+                            "honey",
+                            "lemon",
+                            "roasted_chestnuts",
+                            "rock_salt",
+                            "sesame_broccoli",
+                            "spicy_cheddar_biscuit",
+                            "grape_juice",
+                            "spicy_crab_sushi",
+                            "spicy_water_chestnuts",
+                            "summer_salad",
+                            "tea",
+                            "thyme",
+                            "toasted_sunflower_seeds",
+                            "trail_mix",
+                            "water_chestnut_fritters"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "beer",
+                            "chili_coconut_curry",
+                            "crayfish_etouffee",
+                            "crispy_fried_earthshroom",
+                            "caldosian_drinking_horn",
+                            "hot_toddy",
+                            "incredibly_hot_pot",
+                            "white_wine",
+                            "wild_grapes",
+                            "spicy_corn"
+                        ]
+                    }
+                }
+            },
+            "henrietta": {
+                "info": {
+                    "name": "Henrietta",
+                    "img": "Henrietta",
+                    "img_mini": "Henrietta",
+                    "wikilink": "Henrietta",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 7</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "apple",
+                            "blackberry",
+                            "blueberry",
+                            "broccoli",
+                            "cherry",
+                            "chestnut",
+                            "coconut",
+                            "cranberry",
+                            "cucumber",
+                            "grass_seed",
+                            "moon_fruit",
+                            "orange",
+                            "peach",
+                            "pear",
+                            "peas",
+                            "pomegranate",
+                            "pumpkin",
+                            "wild_berries",
+                            "wild_grapes",
+                            "wintergreen_berry"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "berry_bowl",
+                            "animal_currency",
+                            "corn",
+                            "glowberry",
+                            "grilled_corn",
+                            "strawberry",
+                            "watermelon",
+                            "quality_small_animal_feed",
+                            "deluxe_small_animal_feed",
+                            "ultimate_small_animal_feed"
+                        ]
+                    }
+                }
+            },
+            "holt": {
+                "info": {
+                    "name": "Holt",
+                    "img": "Holt",
+                    "img_mini": "Holt",
+                    "wikilink": "Holt",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 14</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "potato",
+                            "beet",
+                            "broccoli",
+                            "cabbage",
+                            "carrot",
+                            "cauliflower",
+                            "chili_pepper",
+                            "corn",
+                            "cranberry",
+                            "cucumber",
+                            "daikon_radish",
+                            "onion",
+                            "peas",
+                            "pumpkin",
+                            "rice_stalk",
+                            "snow_peas",
+                            "strawberry",
+                            "sugar_cane",
+                            "sweet_potato",
+                            "turnip"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "flour",
+                            "gazpacho",
+                            "hard_wood",
+                            "loaded_baked_potato",
+                            "baked_potato",
+                            "stone_horse",
+                            "narrows_moss",
+                            "coffee",
+                            "watermelon",
+                            "wheat"
+                        ]
+                    }
+                }
+            },
+            "josephine": {
+                "info": {
+                    "name": "Josephine",
+                    "img": "Josephine",
+                    "img_mini": "Josephine",
+                    "wikilink": "Josephine",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
                             "breath_of_fire",
-                            "crystal_rose",
+                            "chili_pepper",
+                            "curry_powder",
                             "essence_blossom",
-                            "frost_lily",
-                            "hydrangea",
-                            "middlemist",
-                            "plum_blossom",
+                            "flour",
+                            "honey",
+                            "jam_sandwich",
+                            "jasmine",
+                            "oil",
+                            "rice",
                             "rose",
-                            "snowdrop_anemone",
-                            "temple_flower"
+                            "soy_sauce",
+                            "spicy_cheddar_biscuit",
+                            "spicy_corn",
+                            "spicy_crab_sushi",
+                            "spicy_water_chestnuts",
+                            "sugar",
+                            "sunflower",
+                            "tea",
+                            "wild_berry_jam"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "jasmine_tea",
+                            "green_tea",
+                            "lavender_tea",
+                            "quiche",
+                            "roasted_rice_tea",
+                            "rose_tea",
+                            "cup_of_tea",
+                            "incredibly_hot_pot",
+                            "chili_coconut_curry",
+                            "crayfish_etouffee"
+                        ]
+                    }
+                }
+            },
+            "juniper": {
+                "info": {
+                    "name": "Juniper",
+                    "img": "Juniper",
+                    "img_mini": "Juniper",
+                    "wikilink": "Juniper",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 26</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "crunchy_chickpeas",
+                            "crystal",
+                            "fog_orchid",
+                            "frog",
+                            "latte",
+                            "middlemist",
+                            "morel_mushroom",
+                            "nettle",
+                            "newt",
+                            "night_queen",
+                            "essence_blossom",
+                            "poinsettia",
+                            "red_toadstool",
+                            "red_wine",
+                            "monster_powder",
+                            "shadow_flower",
+                            "spell_fruit",
+                            "toasted_sunflower_seeds",
+                            "water_chestnut_fritters",
+                            "white_wine"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "ancient_royal_scepter",
+                            "black_tablet",
+                            "crystal_rose",
+                            "fish_tacos",
+                            "golden_cookies",
+                            "hardened_essence",
+                            "moon_fruit_cake",
+                            "mushroom_brew",
+                            "pizza",
+                            "spell_fruit_parfait"
+                        ]
+                    }
+                }
+            },
+            "landen": {
+                "info": {
+                    "name": "Landen",
+                    "img": "Landen",
+                    "img_mini": "Landen",
+                    "wikilink": "Landen",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 4</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "basic_wood",
+                            "bristle",
+                            "bull_horn",
+                            "canned_sardines",
+                            "clay",
+                            "coconut",
+                            "coconut_milk",
+                            "crystal",
+                            "deep_sea_soup",
+                            "duck_feather",
+                            "glass",
+                            "horse_hair",
+                            "obsidian",
+                            "paper",
+                            "feather",
+                            "ore_stone",
+                            "shards",
+                            "tomato_soup",
+                            "vegetable_pot_pie",
+                            "vegetable_soup"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "coconut_cream_pie",
+                            "golden_bristle",
+                            "golden_bull_horn",
+                            "golden_cheesecake",
+                            "golden_cookies",
+                            "golden_duck_feather",
+                            "golden_horse_hair",
+                            "golden_feather",
+                            "hard_wood",
+                            "shard_mass"
+                        ]
+                    }
+                }
+            },
+            "louis": {
+                "info": {
+                    "name": "Louis",
+                    "img": "Louis",
+                    "img_mini": "Louis",
+                    "wikilink": "Louis",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 20</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "alpaca_wool",
+                            "breath_of_fire",
+                            "bristle",
+                            "cattail",
+                            "celosia",
+                            "crystal",
+                            "crystal_rose",
+                            "duck_feather",
+                            "essence_blossom",
+                            "feather",
+                            "cup_of_tea",
+                            "frost_lily",
+                            "horse_hair",
+                            "lilac",
+                            "marigold",
+                            "rabbit_wool",
+                            "shadow_flower",
+                            "snapdragon",
+                            "viola",
+                            "sheep_wool"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "golden_alpaca_wool",
+                            "golden_bristle",
+                            "golden_duck_feather",
+                            "golden_feather",
+                            "golden_horse_hair",
+                            "golden_rabbit_wool",
+                            "golden_sheep_wool",
+                            "middlemist",
+                            "red_wine",
+                            "white_wine"
                         ]
                     }
                 }
@@ -1855,6 +1053,810 @@ var objTabs =
                         ]
                     }
                 }
+            },
+            "maple": {
+                "info": {
+                    "name": "Maple",
+                    "img": "Maple",
+                    "img_mini": "Maple",
+                    "wikilink": "Maple",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 26</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "blackberry",
+                            "blue_conch_shell",
+                            "cheese",
+                            "daisy",
+                            "glowberry_cookies",
+                            "golden_cookies",
+                            "grilled_cheese",
+                            "ice_cream_sundae",
+                            "jam_sandwich",
+                            "pink_scallop_shell",
+                            "pomegranate_sorbet",
+                            "pudding",
+                            "sand_dollar",
+                            "spirula_shell",
+                            "strawberry_shortcake",
+                            "sunflower",
+                            "trail_mix",
+                            "tulip",
+                            "wildberry_pie",
+                            "wintergreen_ice_cream"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "ancient_horn_circlet",
+                            "berries_and_cream",
+                            "chocolate",
+                            "hot_cocoa",
+                            "lemon_pie",
+                            "lost_crown_of_aldaria",
+                            "middlemist",
+                            "monarch_butterfly",
+                            "mont_blanc",
+                            "stone_shell"
+                        ]
+                    }
+                }
+            },
+            "march": {
+                "info": {
+                    "name": "March",
+                    "img": "March",
+                    "img_mini": "March",
+                    "wikilink": "March",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 16</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "beer",
+                            "chocolate",
+                            "caldosian_chocolate_cake",
+                            "coffee",
+                            "copper_ingot",
+                            "ore_copper",
+                            "ore_gold",
+                            "grilled_eel_rice_bowl",
+                            "hot_cocoa",
+                            "iron_ingot",
+                            "ore_iron",
+                            "ore_mistril",
+                            "mocha",
+                            "perch_risotto",
+                            "red_snapper_sushi",
+                            "sea_bream_rice",
+                            "sesame_tuna_bowl",
+                            "silver_ingot",
+                            "ore_silver",
+                            "spicy_crab_sushi"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "dragon_forged_bracelet",
+                            "gold_ingot",
+                            "meteorite",
+                            "mistril_ingot",
+                            "perfect_copper_ore",
+                            "perfect_gold_ore",
+                            "perfect_iron_ore",
+                            "perfect_mistril_ore",
+                            "perfect_silver_ore",
+                            "sushi_platter"
+                        ]
+                    }
+                }
+            },
+            "merri": {
+                "info": {
+                    "name": "Merri",
+                    "img": "Merri",
+                    "img_mini": "Merri",
+                    "wikilink": "Merri",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "alpaca_wool",
+                            "basic_wood",
+                            "bristle",
+                            "bull_horn",
+                            "clay",
+                            "coral",
+                            "crystal",
+                            "ore_diamond",
+                            "duck_feather",
+                            "glass",
+                            "hard_wood",
+                            "horse_hair",
+                            "latte",
+                            "obsidian",
+                            "paper",
+                            "ore_pink_diamond",
+                            "rabbit_wool",
+                            "feather",
+                            "sheep_wool",
+                            "ore_stone"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "golden_alpaca_wool",
+                            "golden_bristle",
+                            "golden_bull_horn",
+                            "golden_duck_feather",
+                            "golden_horse_hair",
+                            "golden_rabbit_wool",
+                            "golden_feather",
+                            "golden_sheep_wool",
+                            "perfect_diamond",
+                            "perfect_pink_diamond"
+                        ]
+                    }
+                }
+            },
+            "nora": {
+                "info": {
+                    "name": "Nora",
+                    "img": "Nora",
+                    "img_mini": "Nora",
+                    "wikilink": "Nora",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 24</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "baked_potato",
+                            "beet_salad",
+                            "braised_burdock",
+                            "braised_carrots",
+                            "butter",
+                            "cabbage_slaw",
+                            "candied_lemon_peel",
+                            "coconut_milk",
+                            "coffee",
+                            "cucumber_salad",
+                            "grilled_corn",
+                            "latte",
+                            "poached_pear",
+                            "salted_watermelon",
+                            "sesame_broccoli",
+                            "simmered_daikon",
+                            "sliced_turnip",
+                            "spicy_water_chestnuts",
+                            "strawberries_and_cream",
+                            "tomato_soup"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "ancient_gold_coin",
+                            "cherry_cobbler",
+                            "fried_rice",
+                            "onion_soup",
+                            "peaches_and_cream",
+                            "pumpkin_stew",
+                            "roasted_cauliflower",
+                            "roasted_sweet_potato",
+                            "sauteed_snow_peas",
+                            "toasted_sunflower_seeds"
+                        ]
+                    }
+                }
+            },
+            "olric": {
+                "info": {
+                    "name": "Olric",
+                    "img": "Olric",
+                    "img_mini": "Olric",
+                    "wikilink": "Olric",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 10</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "ore_copper",
+                            "crystal",
+                            "ore_diamond",
+                            "ore_emerald",
+                            "ore_gold",
+                            "hard_boiled_egg",
+                            "ore_iron",
+                            "miners_mushroom_stew",
+                            "ore_mistril",
+                            "obsidian",
+                            "ore_pink_diamond",
+                            "rock_with_a_hole",
+                            "rockroot",
+                            "ore_ruby",
+                            "ore_sapphire",
+                            "ore_silver",
+                            "ore_stone",
+                            "stone_horse",
+                            "rock_statue",
+                            "weightless_stone"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "perfect_copper_ore",
+                            "perfect_diamond",
+                            "perfect_emerald",
+                            "perfect_gold_ore",
+                            "perfect_iron_ore",
+                            "perfect_mistril_ore",
+                            "perfect_pink_diamond",
+                            "perfect_ruby",
+                            "perfect_sapphire",
+                            "perfect_silver_ore"
+                        ]
+                    }
+                }
+            },
+            "reina": {
+                "info": {
+                    "name": "Reina",
+                    "img": "Reina",
+                    "img_mini": "Reina",
+                    "wikilink": "Reina",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 12</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "cauliflower_curry",
+                            "cheese",
+                            "cod_with_thyme",
+                            "coffee",
+                            "crystal_berry_pie",
+                            "daffodil",
+                            "deep_sea_soup",
+                            "flour",
+                            "garlic",
+                            "garlic_bread",
+                            "grilled_cheese",
+                            "iced_coffee",
+                            "miners_mushroom_stew",
+                            "pizza",
+                            "rice",
+                            "spicy_cheddar_biscuit",
+                            "sugar",
+                            "turnip_and_potato_gratin",
+                            "upper_mines_mushroom",
+                            "wildberry_pie"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "apple_honey_curry",
+                            "breaded_catfish",
+                            "cabbage_slaw",
+                            "ice_cream_sundae",
+                            "incredibly_hot_pot",
+                            "rosemary_garlic_noodles",
+                            "seafood_boil",
+                            "seafood_snow_pea_noodles",
+                            "spell_fruit_parfait",
+                            "sushi_platter"
+                        ]
+                    }
+                }
+            },
+            "ryis": {
+                "info": {
+                    "name": "Ryis",
+                    "img": "Ryis",
+                    "img_mini": "Ryis",
+                    "wikilink": "Ryis",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 4</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "basic_wood",
+                            "beer",
+                            "bread",
+                            "bristle",
+                            "bull_horn",
+                            "clay",
+                            "cranberry_orange_scone",
+                            "crystal",
+                            "duck_feather",
+                            "feather",
+                            "garlic_bread",
+                            "glass",
+                            "glowberry_cookies",
+                            "horse_hair",
+                            "iced_coffee",
+                            "lilac",
+                            "obsidian",
+                            "paper",
+                            "ore_stone",
+                            "strawberry_shortcake"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "golden_bristle",
+                            "golden_bull_horn",
+                            "golden_cheesecake",
+                            "golden_cookies",
+                            "golden_duck_feather",
+                            "golden_feather",
+                            "golden_horse_hair",
+                            "hard_wood",
+                            "lobster_roll",
+                            "veggie_sub_sandwich"
+                        ]
+                    }
+                }
+            },
+            "seridia": {
+                "info": {
+                    "name": "Seridia",
+                    "img": "Seridia",
+                    "img_mini": "Seridia",
+                    "wikilink": "Seridia",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 2</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>",
+                    "lategame": 1
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "void_powder",
+                            "void_pearl",
+                            "void_stone",
+                            "void_herb",
+                            "essence_blossom",
+                            "monster_cookie",
+                            "monster_horn",
+                            "monster_powder",
+                            "monster_shell",
+                            "monster_fang",
+                            "monster_whisker",
+                            "monster_block",
+                            "monster_wing",
+                            "night_queen",
+                            "ore_pink_diamond",
+                            "plum_blossom",
+                            "ancient_royal_scepter",
+                            "dragon_forged_bracelet",
+                            "purple_mushroom",
+                            "red_toadstool"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "dragon_forged_fang",
+                            "dragon_forged_core",
+                            "dragon_forged_horn",
+                            "dragon_forged_powder",
+                            "dragon_pact_tablet",
+                            "monster_mash",
+                            "perfect_mistril_ore",
+                            "spell_fruit_parfait",
+                            "hardened_essence",
+                            "unknown_dragon_statuette"
+                        ]
+                    }
+                }
+            },
+            "stillwell": {
+                "info": {
+                    "name": "Stillwell",
+                    "img": "Stillwell",
+                    "img_mini": "Stillwell",
+                    "wikilink": "Stillwell",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 27</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
+                    "spoiler": 1,
+                    "noimage": 1,
+                    "lategame": 1
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "glass",
+                            "muttering_cube",
+                            "crystal",
+                            "night_queen",
+                            "shardfin",
+                            "shadow_flower",
+                            "crystal_rose",
+                            "red_toadstool",
+                            "middlemist",
+                            "crystal_wing_moth",
+                            "coffee",
+                            "cup_of_tea"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "fog_orchid",
+                            "black_tablet",
+                            "weightless_stone",
+                            "red_wine"
+                        ]
+                    }
+                }
+            },
+            "taliferro": {
+                "info": {
+                    "name": "Taliferro",
+                    "img": "Taliferro",
+                    "img_mini": "Taliferro",
+                    "wikilink": "Taliferro",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 13</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "chili_coconut_curry",
+                            "coconut_cream_pie",
+                            "crab_cakes",
+                            "fish_tacos",
+                            "glowberry_cookies",
+                            "golden_cheesecake",
+                            "golden_cookies",
+                            "herb_salad",
+                            "ice_cream_sundae",
+                            "incredibly_hot_pot",
+                            "lobster_roll",
+                            "mushroom_steak_dinner",
+                            "perch_risotto",
+                            "pumpkin_pie",
+                            "red_wine",
+                            "sea_bream_rice",
+                            "vegetable_pot_pie",
+                            "vegetable_quiche",
+                            "veggie_sub_sandwich",
+                            "white_wine"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "apple_honey_curry",
+                            "beet_soup",
+                            "fried_rice",
+                            "harvest_plate",
+                            "mont_blanc",
+                            "seafood_boil",
+                            "seafood_snow_pea_noodles",
+                            "spell_fruit_parfait",
+                            "spring_galette",
+                            "sushi_platter"
+                        ]
+                    }
+                }
+            },
+            "terithia": {
+                "info": {
+                    "name": "Terithia",
+                    "img": "Terithia",
+                    "img_mini": "Terithia",
+                    "wikilink": "Terithia",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 22</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "breaded_catfish",
+                            "canned_sardines",
+                            "clam_chowder",
+                            "crayfish_etouffee",
+                            "deep_sea_soup",
+                            "dried_squid",
+                            "fish_skewer",
+                            "fish_tacos",
+                            "grilled_eel_rice_bowl",
+                            "horseradish_salmon",
+                            "mackerel_sashimi",
+                            "pan_fried_bream",
+                            "pan_fried_salmon",
+                            "pan_fried_snapper",
+                            "red_snapper_sushi",
+                            "salmon_sashimi",
+                            "sesame_tuna_bowl",
+                            "smoked_trout_soup",
+                            "spicy_crab_sushi",
+                            "tuna_sashimi"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "cod_with_thyme",
+                            "fish_stew",
+                            "giant_fish_scale",
+                            "lobster_roll",
+                            "perch_risotto",
+                            "rubber_fish",
+                            "sea_bream_rice",
+                            "seafood_boil",
+                            "seafood_snow_pea_noodles",
+                            "sushi_platter"
+                        ]
+                    }
+                }
+            },
+            "valen": {
+                "info": {
+                    "name": "Valen",
+                    "img": "Valen",
+                    "img_mini": "Valen",
+                    "wikilink": "Valen",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Fall 1</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "coffee",
+                            "cucumber",
+                            "cucumber_salad",
+                            "dandelion",
+                            "garlic",
+                            "green_tea",
+                            "herb_salad",
+                            "honey",
+                            "nettle",
+                            "pan_fried_salmon",
+                            "red_wine",
+                            "rose_hip",
+                            "rosehip_jam",
+                            "rosemary",
+                            "seaweed",
+                            "seaweed_salad",
+                            "spring_salad",
+                            "sweetroot",
+                            "underseaweed",
+                            "white_wine"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "beet",
+                            "beet_salad",
+                            "beet_soup",
+                            "deep_sea_soup",
+                            "dragon_scale",
+                            "harvest_plate",
+                            "rosemary_garlic_noodles",
+                            "summer_salad",
+                            "sushi_platter",
+                            "vegetable_soup"
+                        ]
+                    }
+                }
+            },
+            "vera": {
+                "info": {
+                    "name": "Vera",
+                    "img": "Vera",
+                    "img_mini": "Vera",
+                    "wikilink": "Vera",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Summer 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "beet_salad",
+                            "braised_burdock",
+                            "cauliflower_curry",
+                            "chickpea_curry",
+                            "coconut_milk",
+                            "cranberry_juice",
+                            "crispy_fried_earthshroom",
+                            "cucumber_salad",
+                            "orange_juice",
+                            "pomegranate",
+                            "pomegranate_juice",
+                            "roasted_cauliflower",
+                            "salted_watermelon",
+                            "sauteed_snow_peas",
+                            "seaweed_salad",
+                            "sesame_broccoli",
+                            "simmered_daikon",
+                            "steamed_broccoli",
+                            "tide_salad",
+                            "turnip_and_cabbage_salad"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "beet_soup",
+                            "chili_coconut_curry",
+                            "gazpacho",
+                            "harvest_plate",
+                            "mushroom_steak_dinner",
+                            "pomegranate_sorbet",
+                            "summer_salad",
+                            "sweet_potato_pie",
+                            "vegetable_pot_pie",
+                            "winter_stew"
+                        ]
+                    }
+                }
+            },
+            "wheedle": {
+                "info": {
+                    "name": "Wheedle",
+                    "img": "Wheedle",
+                    "img_mini": "Wheedle",
+                    "wikilink": "Wheedle",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>"
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "ore_diamond",
+                            "ore_emerald",
+                            "gold_ingot",
+                            "ore_gold",
+                            "golden_alpaca_wool",
+                            "golden_bristle",
+                            "golden_bull_horn",
+                            "golden_cheesecake",
+                            "golden_cookies",
+                            "golden_duck_egg",
+                            "golden_duck_feather",
+                            "golden_egg",
+                            "golden_feather",
+                            "golden_horse_hair",
+                            "golden_rabbit_wool",
+                            "golden_sheep_wool",
+                            "dragon_forged_bracelet",
+                            "ore_ruby",
+                            "rusted_treasure_chest",
+                            "ore_sapphire"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "ancient_gold_coin",
+                            "coin_lump",
+                            "fiber",
+                            "perfect_diamond",
+                            "perfect_emerald",
+                            "perfect_gold_ore",
+                            "perfect_pink_diamond",
+                            "perfect_ruby",
+                            "perfect_sapphire",
+                            "ore_pink_diamond"
+                        ]
+                    }
+                }
+            },
+            "zorel": {
+                "info": {
+                    "name": "Zorel",
+                    "img": "Zorel",
+                    "img_mini": "Zorel",
+                    "wikilink": "Zorel",
+                    "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
+                    "spoiler": 1,
+                    "noimage": 1,
+                    "lategame": 1
+                },
+                "subcategories": {
+                    "liked": {
+                        "info": {
+                            "name": "Liked"
+                        },
+                        "items": [
+                            "mushroom_rice",
+                            "red_toadstool",
+                            "upper_mines_mushroom",
+                            "glowing_mushroom",
+                            "miners_mushroom_stew",
+                            "wild_mushroom",
+                            "dandelion",
+                            "fiddlehead",
+                            "nettle",
+                            "wild_leek",
+                            "fennel",
+                            "sage"
+                        ]
+                    },
+                    "loved": {
+                        "info": {
+                            "name": "Loved"
+                        },
+                        "items": [
+                            "middlemist",
+                            "sunflower",
+                            "heather",
+                            "morel_mushroom"
+                        ]
+                    }
+                }
             }
         }
     },
@@ -1862,8 +1864,7 @@ var objTabs =
         "info": {
             "name": "Customization",
             "icon": "customization.png",
-            "img_path": "",
-            "img_mini_path": "",
+            "img_mini_path": "customization/",
             "img_item_path": "accessories/",
             "item_json": "accessories"
         },
@@ -1871,8 +1872,8 @@ var objTabs =
             "head_gear": {
                 "info": {
                     "name": "Head Gear",
-                    "img": "customization_head_accessory",
-                    "img_mini": "customization_head_accessory",
+                    "img": "head_gear",
+                    "img_mini": "head_gear",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2016,8 +2017,8 @@ var objTabs =
             "face_gear": {
                 "info": {
                     "name": "Face Gear",
-                    "img": "customization_face_accessory",
-                    "img_mini": "customization_face_accessory",
+                    "img": "face_gear",
+                    "img_mini": "face_gear",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2062,8 +2063,8 @@ var objTabs =
             "hair": {
                 "info": {
                     "name": "Hair",
-                    "img": "customization_hairstyle",
-                    "img_mini": "customization_hairstyle",
+                    "img": "hair",
+                    "img_mini": "hair",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2146,8 +2147,8 @@ var objTabs =
             "facial_hair": {
                 "info": {
                     "name": "Facial Hair",
-                    "img": "customization_facial_hair",
-                    "img_mini": "customization_facial_hair",
+                    "img": "facial_hair",
+                    "img_mini": "facial_hair",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2171,8 +2172,8 @@ var objTabs =
             "top": {
                 "info": {
                     "name": "Top",
-                    "img": "customization_top",
-                    "img_mini": "customization_top",
+                    "img": "top",
+                    "img_mini": "top",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2310,8 +2311,8 @@ var objTabs =
             "bottom": {
                 "info": {
                     "name": "Bottom",
-                    "img": "customization_bottom",
-                    "img_mini": "customization_bottom",
+                    "img": "bottom",
+                    "img_mini": "bottom",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2385,8 +2386,8 @@ var objTabs =
             "feet": {
                 "info": {
                     "name": "Feet",
-                    "img": "customization_shoe",
-                    "img_mini": "customization_shoe",
+                    "img": "feet",
+                    "img_mini": "feet",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2465,8 +2466,8 @@ var objTabs =
             "back": {
                 "info": {
                     "name": "Back",
-                    "img": "customization_back",
-                    "img_mini": "customization_back",
+                    "img": "back",
+                    "img_mini": "back",
                     "wikilink": "Cosmetics"
                 },
                 "subcategories": {
@@ -2537,8 +2538,7 @@ var objTabs =
         "info": {
             "name": "Museum",
             "icon": "museum.png",
-            "img_path": "",
-            "img_mini_path": "",
+            "img_mini_path": "museum/",
             "img_item_path": "items/",
             "item_json": "items"
         },
@@ -2546,8 +2546,8 @@ var objTabs =
             "archaeology": {
                 "info": {
                     "name": "Archaeology",
-                    "img": "Archaeology_wing",
-                    "img_mini": "Archaeology_wing",
+                    "img": "archaeology",
+                    "img_mini": "archaeology",
                     "wikilink": "Archaeology_Wing"
                 },
                 "subcategories": {
@@ -2839,499 +2839,11 @@ var objTabs =
                     }
                 }
             },
-            "insect": {
-                "info": {
-                    "name": "Insects",
-                    "img": "Insects_wing",
-                    "img_mini": "Insects_wing",
-                    "wikilink": "Insects_Wing"
-                },
-                "subcategories": {
-                    "multi_season": {
-                        "info": {
-                            "name": "Multi-Season Insect Set",
-                            "wikilink": "Insects_Wing#Multi-Season"
-                        },
-                        "items": [
-                            "ant",
-                            "bumblebee",
-                            "fuzzy_moth",
-                            "praying_mantis",
-                            "hummingbird_hawk_moth"
-                        ]
-                    },
-                    "spring": {
-                        "info": {
-                            "name": "Spring Insect Set",
-                            "wikilink": "Insects_Wing#Spring"
-                        },
-                        "items": [
-                            "luna_moth",
-                            "butterfly",
-                            "ladybug",
-                            "caterpillar",
-                            "roly_poly"
-                        ]
-                    },
-                    "summer": {
-                        "info": {
-                            "name": "Summer Insect Set",
-                            "wikilink": "Insects_Wing#Summer"
-                        },
-                        "items": [
-                            "cicada",
-                            "cricket",
-                            "dragonfly",
-                            "firefly",
-                            "sand_bug"
-                        ]
-                    },
-                    "fall": {
-                        "info": {
-                            "name": "Fall Insect Set",
-                            "wikilink": "Insects_Wing#Fall"
-                        },
-                        "items": [
-                            "walking_leaf",
-                            "cicada_nymph",
-                            "monarch_butterfly",
-                            "inchworm",
-                            "tiger_swallowtail_butterfly"
-                        ]
-                    },
-                    "winter": {
-                        "info": {
-                            "name": "Winter Insect Set",
-                            "wikilink": "Insects_Wing#Winter"
-                        },
-                        "items": [
-                            "crystal_caterpillar",
-                            "walking_stick",
-                            "brightbulb_moth",
-                            "frost_flutter_butterfly",
-                            "winterpillar"
-                        ]
-                    },
-                    "rare": {
-                        "info": {
-                            "name": "Rare Insect Set",
-                            "wikilink": "Insects_Wing#Rare"
-                        },
-                        "items": [
-                            "jewel_beetle",
-                            "lightning_dragonfly",
-                            "magma_beetle",
-                            "mistmoth",
-                            "orchid_mantis"
-                        ]
-                    },
-                    "upper_mines": {
-                        "info": {
-                            "name": "Upper Mines Insect Set",
-                            "wikilink": "Insects_Wing#Upper_Mines"
-                        },
-                        "items": [
-                            "lantern_moth",
-                            "copper_beetle",
-                            "worm",
-                            "mine_cricket",
-                            "tunnel_millipede"
-                        ]
-                    },
-                    "tide_caverns": {
-                        "info": {
-                            "name": "Tide Caverns Insect Set",
-                            "wikilink": "Insects_Wing#Tide_Caverns"
-                        },
-                        "items": [
-                            "sea_scarab",
-                            "waterfly",
-                            "hermit_snail",
-                            "puddle_spider",
-                            "coral_mantis"
-                        ]
-                    },
-                    "deep_earth": {
-                        "info": {
-                            "name": "Deep Earth Insect Set",
-                            "wikilink": "Insects_Wing#Deep_Earth"
-                        },
-                        "items": [
-                            "rock_roach",
-                            "deep_earthworm",
-                            "crystalline_cricket",
-                            "gem_shard_caterpillar",
-                            "crystal_wing_moth"
-                        ]
-                    },
-                    "lava_caves": {
-                        "info": {
-                            "name": "Lava Caves Insect Set",
-                            "wikilink": "Insects_Wing#Lava_Caves"
-                        },
-                        "items": [
-                            "fire_wasp",
-                            "cooktop_beetle",
-                            "lava_snail",
-                            "smoke_moth",
-                            "diamond_beetle"
-                        ]
-                    },
-                    "ruins": {
-                        "info": {
-                            "name": "Ruins Insect Set",
-                            "wikilink": "Insects_Wing#Ruins"
-                        },
-                        "items": [
-                            "ancient_firefly",
-                            "void_snail",
-                            "giant_worm",
-                            "parchment_moth",
-                            "hidden_beetle"
-                        ]
-                    },
-                    "deep_woods": {
-                        "info": {
-                            "name": "Deep Woods Insect Set",
-                            "wikilink": "Insects_Wing#Deep_Woods"
-                        },
-                        "items": [
-                            "windleaf_butterfly",
-                            "mote_firefly",
-                            "loam_caterpillar",
-                            "dragon_horn_beetle",
-                            "singing_katydid"
-                        ]
-                    },
-                    "bee": {
-                        "info": {
-                            "name": "Bee Insect Set",
-                            "wikilink": "Insects_Wing#Bee"
-                        },
-                        "items": [
-                            "fur_bee",
-                            "sweet_bee",
-                            "big_bee",
-                            "flower_bee",
-                            "moonlight_bee"
-                        ]
-                    },
-                    "bug_pheromone": {
-                        "info": {
-                            "name": "Bug Pheromone Set",
-                            "wikilink": "Insects_Wing#Bug_Pheromone"
-                        },
-                        "items": [
-                            "ant_queen",
-                            "sunset_moth",
-                            "saint_mantis",
-                            "queens_birdwing",
-                            "biggest_beetle"
-                        ]
-                    },
-                    "grass": {
-                        "info": {
-                            "name": "Grass Insect Set",
-                            "wikilink": "Insects_Wing#Grass"
-                        },
-                        "items": [
-                            "grasshopper",
-                            "petalhopper",
-                            "strawhopper",
-                            "leafhopper",
-                            "icehopper"
-                        ]
-                    },
-                    "beach": {
-                        "info": {
-                            "name": "Beach Insect Set",
-                            "wikilink": "Insects_Wing#Beach"
-                        },
-                        "items": [
-                            "hermit_crab",
-                            "relic_crab",
-                            "waterbug",
-                            "surf_beetle",
-                            "beach_hopper"
-                        ]
-                    },
-                    "legendary": {
-                        "info": {
-                            "name": "Legendary Insect Set",
-                            "wikilink": "Insects_Wing#Legendary"
-                        },
-                        "items": [
-                            "fairy_bee",
-                            "flower_crown_beetle",
-                            "snowball_beetle",
-                            "speedy_snail",
-                            "strobe_firefly"
-                        ]
-                    }
-                }
-            },
-            "flora": {
-                "info": {
-                    "name": "Flora",
-                    "img": "Flora_wing",
-                    "img_mini": "Flora_wing",
-                    "wikilink": "Flora_Wing"
-                },
-                "subcategories": {
-                    "spring_crops": {
-                        "info": {
-                            "name": "Spring Crop Set",
-                            "wikilink": "Flora_Wing#Spring"
-                        },
-                        "items": [
-                            "cabbage",
-                            "potato",
-                            "strawberry",
-                            "turnip",
-                            "cherry"
-                        ]
-                    },
-                    "spring_flowers": {
-                        "info": {
-                            "name": "Spring Flower Set",
-                            "wikilink": "Flora_Wing#Spring"
-                        },
-                        "items": [
-                            "daffodil",
-                            "tulip",
-                            "dandelion",
-                            "lilac",
-                            "snowdrop_anemone"
-                        ]
-                    },
-                    "spring_forage": {
-                        "info": {
-                            "name": "Spring Forage Set",
-                            "wikilink": "Flora_Wing#Spring"
-                        },
-                        "items": [
-                            "fennel",
-                            "fiddlehead",
-                            "morel_mushroom",
-                            "nettle",
-                            "wild_leek"
-                        ]
-                    },
-                    "summer_crops": {
-                        "info": {
-                            "name": "Summer Crop Set",
-                            "wikilink": "Flora_Wing#Summer"
-                        },
-                        "items": [
-                            "cucumber",
-                            "chili_pepper",
-                            "watermelon",
-                            "tomato",
-                            "corn"
-                        ]
-                    },
-                    "summer_flowers": {
-                        "info": {
-                            "name": "Summer Flower Set",
-                            "wikilink": "Flora_Wing#Summer"
-                        },
-                        "items": [
-                            "daisy",
-                            "iris",
-                            "marigold",
-                            "catmint",
-                            "cosmos"
-                        ]
-                    },
-                    "summer_forage": {
-                        "info": {
-                            "name": "Summer Forage Set",
-                            "wikilink": "Flora_Wing#Summer"
-                        },
-                        "items": [
-                            "sage",
-                            "basil",
-                            "thyme",
-                            "oregano",
-                            "dill"
-                        ]
-                    },
-                    "fall_crops": {
-                        "info": {
-                            "name": "Fall Crop Set",
-                            "wikilink": "Flora_Wing#Fall"
-                        },
-                        "items": [
-                            "broccoli",
-                            "cranberry",
-                            "pumpkin",
-                            "sweet_potato",
-                            "apple"
-                        ]
-                    },
-                    "fall_flowers": {
-                        "info": {
-                            "name": "Fall Flower Set",
-                            "wikilink": "Flora_Wing#Fall"
-                        },
-                        "items": [
-                            "celosia",
-                            "chrysanthemum",
-                            "fog_orchid",
-                            "heather",
-                            "viola"
-                        ]
-                    },
-                    "fall_forage": {
-                        "info": {
-                            "name": "Fall Forage Set",
-                            "wikilink": "Flora_Wing#Fall"
-                        },
-                        "items": [
-                            "rosemary",
-                            "garlic",
-                            "horseradish",
-                            "moon_fruit",
-                            "chestnut"
-                        ]
-                    },
-                    "winter_crops": {
-                        "info": {
-                            "name": "Winter Crop Set",
-                            "wikilink": "Flora_Wing#Winter"
-                        },
-                        "items": [
-                            "beet",
-                            "cauliflower",
-                            "snow_peas",
-                            "daikon_radish",
-                            "pomegranate"
-                        ]
-                    },
-                    "winter_flowers": {
-                        "info": {
-                            "name": "Winter Flower Set",
-                            "wikilink": "Flora_Wing#Winter"
-                        },
-                        "items": [
-                            "frost_lily",
-                            "poinsettia",
-                            "jasmine",
-                            "crocus",
-                            "snapdragon"
-                        ]
-                    },
-                    "winter_forage": {
-                        "info": {
-                            "name": "Winter Forage Set",
-                            "wikilink": "Flora_Wing#Winter"
-                        },
-                        "items": [
-                            "burdock_root",
-                            "holly",
-                            "pineshroom",
-                            "oyster_mushroom",
-                            "rose_hip"
-                        ]
-                    },
-                    "deep_woods": {
-                        "info": {
-                            "name": "Deep Woods Forage Set",
-                            "wikilink": "Flora_Wing#Deep_Woods"
-                        },
-                        "items": [
-                            "thorn_vine",
-                            "spirit_mushroom",
-                            "temple_flower",
-                            "walnut",
-                            "bell_berry"
-                        ]
-                    },
-                    "upper_mines": {
-                        "info": {
-                            "name": "Upper Mines Forage Set",
-                            "wikilink": "Flora_Wing#Upper_Mines"
-                        },
-                        "items": [
-                            "upper_mines_mushroom",
-                            "red_toadstool",
-                            "sweetroot",
-                            "shadow_flower",
-                            "narrows_moss"
-                        ]
-                    },
-                    "tide_caverns": {
-                        "info": {
-                            "name": "Tide Caverns Forage Set",
-                            "wikilink": "Flora_Wing#Tide_Caverns"
-                        },
-                        "items": [
-                            "underseaweed",
-                            "sea_grapes",
-                            "cave_kelp",
-                            "mines_mussels",
-                            "tide_lettuce"
-                        ]
-                    },
-                    "deep_earth": {
-                        "info": {
-                            "name": "Deep Earth Forage Set",
-                            "wikilink": "Flora_Wing#Deep_Earth"
-                        },
-                        "items": [
-                            "crystal_berries",
-                            "shale_grass",
-                            "earthshroom",
-                            "rockroot",
-                            "crystal_rose"
-                        ]
-                    },
-                    "lava_caves": {
-                        "info": {
-                            "name": "Lava Caves Forage Set",
-                            "wikilink": "Flora_Wing#Lava_Caves"
-                        },
-                        "items": [
-                            "flame_pepper",
-                            "ash_mushroom",
-                            "lava_chestnuts",
-                            "hot_potato",
-                            "breath_of_fire"
-                        ]
-                    },
-                    "ruins": {
-                        "info": {
-                            "name": "Ruins Forage Set",
-                            "wikilink": "Flora_Wing#Ruins"
-                        },
-                        "items": [
-                            "spell_fruit",
-                            "written_root",
-                            "essence_blossom",
-                            "ethereal_grass",
-                            "chirping_fern"
-                        ]
-                    },
-                    "void": {
-                        "info": {
-                            "name": "Void Forage Set",
-                            "wikilink": "Flora_Wing#Void"
-                        },
-                        "items": [
-                            "void_herb",
-                            "void_stone",
-                            "void_powder",
-                            "void_pearl",
-                            "voidite"
-                        ]
-                    }
-                }
-            },
             "fish": {
                 "info": {
                     "name": "Fish",
-                    "img": "Fish_wing",
-                    "img_mini": "Fish_wing",
+                    "img": "fish",
+                    "img_mini": "fish",
                     "wikilink": "Fish_Wing"
                 },
                 "subcategories": {
@@ -3621,6 +3133,494 @@ var objTabs =
                         ]
                     }
                 }
+            },
+            "flora": {
+                "info": {
+                    "name": "Flora",
+                    "img": "flora",
+                    "img_mini": "flora",
+                    "wikilink": "Flora_Wing"
+                },
+                "subcategories": {
+                    "spring_crops": {
+                        "info": {
+                            "name": "Spring Crop Set",
+                            "wikilink": "Flora_Wing#Spring"
+                        },
+                        "items": [
+                            "cabbage",
+                            "potato",
+                            "strawberry",
+                            "turnip",
+                            "cherry"
+                        ]
+                    },
+                    "spring_flowers": {
+                        "info": {
+                            "name": "Spring Flower Set",
+                            "wikilink": "Flora_Wing#Spring"
+                        },
+                        "items": [
+                            "daffodil",
+                            "tulip",
+                            "dandelion",
+                            "lilac",
+                            "snowdrop_anemone"
+                        ]
+                    },
+                    "spring_forage": {
+                        "info": {
+                            "name": "Spring Forage Set",
+                            "wikilink": "Flora_Wing#Spring"
+                        },
+                        "items": [
+                            "fennel",
+                            "fiddlehead",
+                            "morel_mushroom",
+                            "nettle",
+                            "wild_leek"
+                        ]
+                    },
+                    "summer_crops": {
+                        "info": {
+                            "name": "Summer Crop Set",
+                            "wikilink": "Flora_Wing#Summer"
+                        },
+                        "items": [
+                            "cucumber",
+                            "chili_pepper",
+                            "watermelon",
+                            "tomato",
+                            "corn"
+                        ]
+                    },
+                    "summer_flowers": {
+                        "info": {
+                            "name": "Summer Flower Set",
+                            "wikilink": "Flora_Wing#Summer"
+                        },
+                        "items": [
+                            "daisy",
+                            "iris",
+                            "marigold",
+                            "catmint",
+                            "cosmos"
+                        ]
+                    },
+                    "summer_forage": {
+                        "info": {
+                            "name": "Summer Forage Set",
+                            "wikilink": "Flora_Wing#Summer"
+                        },
+                        "items": [
+                            "sage",
+                            "basil",
+                            "thyme",
+                            "oregano",
+                            "dill"
+                        ]
+                    },
+                    "fall_crops": {
+                        "info": {
+                            "name": "Fall Crop Set",
+                            "wikilink": "Flora_Wing#Fall"
+                        },
+                        "items": [
+                            "broccoli",
+                            "cranberry",
+                            "pumpkin",
+                            "sweet_potato",
+                            "apple"
+                        ]
+                    },
+                    "fall_flowers": {
+                        "info": {
+                            "name": "Fall Flower Set",
+                            "wikilink": "Flora_Wing#Fall"
+                        },
+                        "items": [
+                            "celosia",
+                            "chrysanthemum",
+                            "fog_orchid",
+                            "heather",
+                            "viola"
+                        ]
+                    },
+                    "fall_forage": {
+                        "info": {
+                            "name": "Fall Forage Set",
+                            "wikilink": "Flora_Wing#Fall"
+                        },
+                        "items": [
+                            "rosemary",
+                            "garlic",
+                            "horseradish",
+                            "moon_fruit",
+                            "chestnut"
+                        ]
+                    },
+                    "winter_crops": {
+                        "info": {
+                            "name": "Winter Crop Set",
+                            "wikilink": "Flora_Wing#Winter"
+                        },
+                        "items": [
+                            "beet",
+                            "cauliflower",
+                            "snow_peas",
+                            "daikon_radish",
+                            "pomegranate"
+                        ]
+                    },
+                    "winter_flowers": {
+                        "info": {
+                            "name": "Winter Flower Set",
+                            "wikilink": "Flora_Wing#Winter"
+                        },
+                        "items": [
+                            "frost_lily",
+                            "poinsettia",
+                            "jasmine",
+                            "crocus",
+                            "snapdragon"
+                        ]
+                    },
+                    "winter_forage": {
+                        "info": {
+                            "name": "Winter Forage Set",
+                            "wikilink": "Flora_Wing#Winter"
+                        },
+                        "items": [
+                            "burdock_root",
+                            "holly",
+                            "pineshroom",
+                            "oyster_mushroom",
+                            "rose_hip"
+                        ]
+                    },
+                    "deep_woods": {
+                        "info": {
+                            "name": "Deep Woods Forage Set",
+                            "wikilink": "Flora_Wing#Deep_Woods"
+                        },
+                        "items": [
+                            "thorn_vine",
+                            "spirit_mushroom",
+                            "temple_flower",
+                            "walnut",
+                            "bell_berry"
+                        ]
+                    },
+                    "upper_mines": {
+                        "info": {
+                            "name": "Upper Mines Forage Set",
+                            "wikilink": "Flora_Wing#Upper_Mines"
+                        },
+                        "items": [
+                            "upper_mines_mushroom",
+                            "red_toadstool",
+                            "sweetroot",
+                            "shadow_flower",
+                            "narrows_moss"
+                        ]
+                    },
+                    "tide_caverns": {
+                        "info": {
+                            "name": "Tide Caverns Forage Set",
+                            "wikilink": "Flora_Wing#Tide_Caverns"
+                        },
+                        "items": [
+                            "underseaweed",
+                            "sea_grapes",
+                            "cave_kelp",
+                            "mines_mussels",
+                            "tide_lettuce"
+                        ]
+                    },
+                    "deep_earth": {
+                        "info": {
+                            "name": "Deep Earth Forage Set",
+                            "wikilink": "Flora_Wing#Deep_Earth"
+                        },
+                        "items": [
+                            "crystal_berries",
+                            "shale_grass",
+                            "earthshroom",
+                            "rockroot",
+                            "crystal_rose"
+                        ]
+                    },
+                    "lava_caves": {
+                        "info": {
+                            "name": "Lava Caves Forage Set",
+                            "wikilink": "Flora_Wing#Lava_Caves"
+                        },
+                        "items": [
+                            "flame_pepper",
+                            "ash_mushroom",
+                            "lava_chestnuts",
+                            "hot_potato",
+                            "breath_of_fire"
+                        ]
+                    },
+                    "ruins": {
+                        "info": {
+                            "name": "Ruins Forage Set",
+                            "wikilink": "Flora_Wing#Ruins"
+                        },
+                        "items": [
+                            "spell_fruit",
+                            "written_root",
+                            "essence_blossom",
+                            "ethereal_grass",
+                            "chirping_fern"
+                        ]
+                    },
+                    "void": {
+                        "info": {
+                            "name": "Void Forage Set",
+                            "wikilink": "Flora_Wing#Void"
+                        },
+                        "items": [
+                            "void_herb",
+                            "void_stone",
+                            "void_powder",
+                            "void_pearl",
+                            "voidite"
+                        ]
+                    }
+                }
+            },
+            "insect": {
+                "info": {
+                    "name": "Insects",
+                    "img": "insect",
+                    "img_mini": "insect",
+                    "wikilink": "Insects_Wing"
+                },
+                "subcategories": {
+                    "multi_season": {
+                        "info": {
+                            "name": "Multi-Season Insect Set",
+                            "wikilink": "Insects_Wing#Multi-Season"
+                        },
+                        "items": [
+                            "ant",
+                            "bumblebee",
+                            "fuzzy_moth",
+                            "praying_mantis",
+                            "hummingbird_hawk_moth"
+                        ]
+                    },
+                    "spring": {
+                        "info": {
+                            "name": "Spring Insect Set",
+                            "wikilink": "Insects_Wing#Spring"
+                        },
+                        "items": [
+                            "luna_moth",
+                            "butterfly",
+                            "ladybug",
+                            "caterpillar",
+                            "roly_poly"
+                        ]
+                    },
+                    "summer": {
+                        "info": {
+                            "name": "Summer Insect Set",
+                            "wikilink": "Insects_Wing#Summer"
+                        },
+                        "items": [
+                            "cicada",
+                            "cricket",
+                            "dragonfly",
+                            "firefly",
+                            "sand_bug"
+                        ]
+                    },
+                    "fall": {
+                        "info": {
+                            "name": "Fall Insect Set",
+                            "wikilink": "Insects_Wing#Fall"
+                        },
+                        "items": [
+                            "walking_leaf",
+                            "cicada_nymph",
+                            "monarch_butterfly",
+                            "inchworm",
+                            "tiger_swallowtail_butterfly"
+                        ]
+                    },
+                    "winter": {
+                        "info": {
+                            "name": "Winter Insect Set",
+                            "wikilink": "Insects_Wing#Winter"
+                        },
+                        "items": [
+                            "crystal_caterpillar",
+                            "walking_stick",
+                            "brightbulb_moth",
+                            "frost_flutter_butterfly",
+                            "winterpillar"
+                        ]
+                    },
+                    "rare": {
+                        "info": {
+                            "name": "Rare Insect Set",
+                            "wikilink": "Insects_Wing#Rare"
+                        },
+                        "items": [
+                            "jewel_beetle",
+                            "lightning_dragonfly",
+                            "magma_beetle",
+                            "mistmoth",
+                            "orchid_mantis"
+                        ]
+                    },
+                    "upper_mines": {
+                        "info": {
+                            "name": "Upper Mines Insect Set",
+                            "wikilink": "Insects_Wing#Upper_Mines"
+                        },
+                        "items": [
+                            "lantern_moth",
+                            "copper_beetle",
+                            "worm",
+                            "mine_cricket",
+                            "tunnel_millipede"
+                        ]
+                    },
+                    "tide_caverns": {
+                        "info": {
+                            "name": "Tide Caverns Insect Set",
+                            "wikilink": "Insects_Wing#Tide_Caverns"
+                        },
+                        "items": [
+                            "sea_scarab",
+                            "waterfly",
+                            "hermit_snail",
+                            "puddle_spider",
+                            "coral_mantis"
+                        ]
+                    },
+                    "deep_earth": {
+                        "info": {
+                            "name": "Deep Earth Insect Set",
+                            "wikilink": "Insects_Wing#Deep_Earth"
+                        },
+                        "items": [
+                            "rock_roach",
+                            "deep_earthworm",
+                            "crystalline_cricket",
+                            "gem_shard_caterpillar",
+                            "crystal_wing_moth"
+                        ]
+                    },
+                    "lava_caves": {
+                        "info": {
+                            "name": "Lava Caves Insect Set",
+                            "wikilink": "Insects_Wing#Lava_Caves"
+                        },
+                        "items": [
+                            "fire_wasp",
+                            "cooktop_beetle",
+                            "lava_snail",
+                            "smoke_moth",
+                            "diamond_beetle"
+                        ]
+                    },
+                    "ruins": {
+                        "info": {
+                            "name": "Ruins Insect Set",
+                            "wikilink": "Insects_Wing#Ruins"
+                        },
+                        "items": [
+                            "ancient_firefly",
+                            "void_snail",
+                            "giant_worm",
+                            "parchment_moth",
+                            "hidden_beetle"
+                        ]
+                    },
+                    "deep_woods": {
+                        "info": {
+                            "name": "Deep Woods Insect Set",
+                            "wikilink": "Insects_Wing#Deep_Woods"
+                        },
+                        "items": [
+                            "windleaf_butterfly",
+                            "mote_firefly",
+                            "loam_caterpillar",
+                            "dragon_horn_beetle",
+                            "singing_katydid"
+                        ]
+                    },
+                    "bee": {
+                        "info": {
+                            "name": "Bee Insect Set",
+                            "wikilink": "Insects_Wing#Bee"
+                        },
+                        "items": [
+                            "fur_bee",
+                            "sweet_bee",
+                            "big_bee",
+                            "flower_bee",
+                            "moonlight_bee"
+                        ]
+                    },
+                    "bug_pheromone": {
+                        "info": {
+                            "name": "Bug Pheromone Set",
+                            "wikilink": "Insects_Wing#Bug_Pheromone"
+                        },
+                        "items": [
+                            "ant_queen",
+                            "sunset_moth",
+                            "saint_mantis",
+                            "queens_birdwing",
+                            "biggest_beetle"
+                        ]
+                    },
+                    "grass": {
+                        "info": {
+                            "name": "Grass Insect Set",
+                            "wikilink": "Insects_Wing#Grass"
+                        },
+                        "items": [
+                            "grasshopper",
+                            "petalhopper",
+                            "strawhopper",
+                            "leafhopper",
+                            "icehopper"
+                        ]
+                    },
+                    "beach": {
+                        "info": {
+                            "name": "Beach Insect Set",
+                            "wikilink": "Insects_Wing#Beach"
+                        },
+                        "items": [
+                            "hermit_crab",
+                            "relic_crab",
+                            "waterbug",
+                            "surf_beetle",
+                            "beach_hopper"
+                        ]
+                    },
+                    "legendary": {
+                        "info": {
+                            "name": "Legendary Insect Set",
+                            "wikilink": "Insects_Wing#Legendary"
+                        },
+                        "items": [
+                            "fairy_bee",
+                            "flower_crown_beetle",
+                            "snowball_beetle",
+                            "speedy_snail",
+                            "strobe_firefly"
+                        ]
+                    }
+                }
             }
         }
     },
@@ -3628,16 +3628,14 @@ var objTabs =
         "info": {
             "name": "Animals",
             "icon": "rabbit.png",
-            "img_path": "animals/",
-            "img_mini_path": "animals/",
+            "only_mini": 1,
             "img_item_path": "animals/",
             "item_json": "animals"
         },
         "categories": {
             "cow": {
                 "info": {
-                    "img": "cow_brown",
-                    "img_mini": "cow_brown",
+                    "img_mini": "cow",
                     "name": "Cow",
                     "wikilink": "Cow"
                 },
@@ -3733,8 +3731,7 @@ var objTabs =
             },
             "rabbit": {
                 "info": {
-                    "img": "rabbit_white",
-                    "img_mini": "rabbit_white",
+                    "img_mini": "rabbit",
                     "name": "Rabbit",
                     "wikilink": "Rabbit"
                 },
@@ -3828,8 +3825,7 @@ var objTabs =
             },
             "horse": {
                 "info": {
-                    "img": "horse_spotted",
-                    "img_mini": "horse_spotted",
+                    "img_mini": "horse",
                     "name": "Horse",
                     "wikilink": "Horse"
                 },
@@ -3923,8 +3919,7 @@ var objTabs =
             },
             "chicken": {
                 "info": {
-                    "img": "chicken_white",
-                    "img_mini": "chicken_white",
+                    "img_mini": "chicken",
                     "name": "Chicken",
                     "wikilink": "Chicken"
                 },
@@ -4019,8 +4014,7 @@ var objTabs =
             },
             "duck": {
                 "info": {
-                    "img": "duck_mallard",
-                    "img_mini": "duck_mallard",
+                    "img_mini": "duck",
                     "name": "Duck",
                     "wikilink": "Duck"
                 },
@@ -4114,8 +4108,7 @@ var objTabs =
             },
             "capybara": {
                 "info": {
-                    "img": "capybara_light_brown",
-                    "img_mini": "capybara_light_brown",
+                    "img_mini": "capybara",
                     "name": "Capybara",
                     "wikilink": "Capybara"
                 },
@@ -4209,8 +4202,7 @@ var objTabs =
             },
             "sheep": {
                 "info": {
-                    "img": "sheep_white",
-                    "img_mini": "sheep_white",
+                    "img_mini": "sheep",
                     "name": "Sheep",
                     "wikilink": "Sheep"
                 },
@@ -4304,8 +4296,7 @@ var objTabs =
             },
             "alpaca": {
                 "info": {
-                    "img": "alpaca_white",
-                    "img_mini": "alpaca_white",
+                    "img_mini": "alpaca",
                     "name": "Alpaca",
                     "wikilink": "Alpaca"
                 },
@@ -4399,7 +4390,6 @@ var objTabs =
             },
             "pets": {
                 "info": {
-                    "img": "pets",
                     "img_mini": "pets",
                     "name": "Pets",
                     "wikilink": "Pets"
@@ -4447,8 +4437,8 @@ var objTabs =
         "info": {
             "name": "Scrolls",
             "icon": "scroll.png",
-            "img_path": "",
             "img_mini_path": "items/",
+            "only_mini": 1,
             "img_item_path": "items/",
             "item_json": "items"
         },
@@ -6079,7 +6069,6 @@ var objTabs =
                             "pan_fried_bream",
                             "pan_fried_salmon",
                             "pan_fried_snapper",
-                            "spicy_corn",
                             "baked_potato",
                             "baked_sweetroot",
                             "cod_with_thyme",
@@ -6191,8 +6180,8 @@ var objTabs =
         "info": {
             "name": "Almanac",
             "icon": "almanac.png",
-            "img_path": "",
             "img_mini_path": "almanac/",
+            "only_mini": 1,
             "img_item_path": "items/",
             "item_json": "items"
         },
@@ -8041,79 +8030,11 @@ var objTabs =
         "info": {
             "name": "Perks",
             "icon": "fake_essence.png",
-            "img_path": "perks/",
             "img_mini_path": "perks/",
             "img_item_path": "perks/",
             "item_json": "perks"
         },
         "categories": {
-            "blacksmithing": {
-                "info": {
-                    "img": "blacksmithing",
-                    "img_mini": "blacksmithing",
-                    "name": "Blacksmithing",
-                    "wikilink": "Skills#Blacksmithing"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "copper_expert",
-                            "time_sensitive",
-                            "sharp_blacksmithing",
-                            "fortified_blacksmithing"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "iron_expert",
-                            "time_sensitive_two",
-                            "leech_blacksmithing",
-                            "lightweight_blacksmithing"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "silver_expert",
-                            "hasty_blacksmithing",
-                            "time_sensitive_three",
-                            "empowered"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "empowered_two",
-                            "gold_expert",
-                            "tireless_blacksmithing",
-                            "time_sensitive_four"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "mistril_expert"
-                        ]
-                    }
-                }
-            },
             "farming": {
                 "info": {
                     "img": "farming",
@@ -8244,234 +8165,6 @@ var objTabs =
                         },
                         "items": [
                             "abyssal_ascendence"
-                        ]
-                    }
-                }
-            },
-            "combat": {
-                "info": {
-                    "img": "combat",
-                    "img_mini": "combat",
-                    "name": "Combat",
-                    "wikilink": "Skills#Combat"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "guardians_shield",
-                            "true_strike",
-                            "jump_attack",
-                            "well_armed"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "quick_footed",
-                            "shrine_savant",
-                            "generous_in_defeat",
-                            "dungeon_delicacies"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "perfect_prefix",
-                            "rocking",
-                            "in_motion",
-                            "out_of_juice"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "sonic_boom",
-                            "gift_exchange",
-                            "guardians_shield_two",
-                            "true_strike_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "sure_strike",
-                            "generous_in_defeat_two",
-                            "friend_shaped"
-                        ]
-                    }
-                }
-            },
-            "mining": {
-                "info": {
-                    "img": "mining",
-                    "img_mini": "mining",
-                    "name": "Mining",
-                    "wikilink": "Skills#Mining"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "earth_breaker",
-                            "ore_riginal",
-                            "reclaimer",
-                            "treasure_hunter"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "iron_hound",
-                            "true_blue",
-                            "treasured",
-                            "mine_time"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "resonance",
-                            "earth_breaker_two",
-                            "silver_seeker",
-                            "fantastic_finds"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "lost_to_history",
-                            "good_as_gold",
-                            "refined_rockery",
-                            "break_one_get_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "mistril_mastery",
-                            "perfect_pick",
-                            "void_value",
-                            "lost_to_history_two"
-                        ]
-                    }
-                }
-            },
-            "mount": {
-                "info": {
-                    "img": "mount",
-                    "img_mini": "mount",
-                    "name": "Mistmare",
-                    "wikilink": "Skills#Mistmare"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Mistmare"
-                        },
-                        "items": [
-                            "horsepower",
-                            "harvest_horse",
-                            "nice_ride"
-                        ]
-                    }
-                }
-            },
-            "woodcrafting": {
-                "info": {
-                    "img": "woodcrafting",
-                    "img_mini": "woodcrafting",
-                    "name": "Woodcrafting",
-                    "wikilink": "Skills#Woodcrafting"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "hammer_timing",
-                            "lumberjack",
-                            "masonry",
-                            "forager"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "working_with_the_grain",
-                            "quality_crafting",
-                            "natural",
-                            "hammer_timing_two"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "material_world",
-                            "steady_supplies",
-                            "set_pieces",
-                            "hammer_timing_three"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "lumberjack_two",
-                            "underground_inspiration",
-                            "deliberate_debris",
-                            "working_with_the_grain_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "void_crafting",
-                            "big_water_sprites"
                         ]
                     }
                 }
@@ -8663,6 +8356,301 @@ var objTabs =
                             "the_bell_tolls",
                             "maximum_milling",
                             "barnyard_bounty_three"
+                        ]
+                    }
+                }
+            },
+            "woodcrafting": {
+                "info": {
+                    "img": "woodcrafting",
+                    "img_mini": "woodcrafting",
+                    "name": "Woodcrafting",
+                    "wikilink": "Skills#Woodcrafting"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "hammer_timing",
+                            "lumberjack",
+                            "masonry",
+                            "forager"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "working_with_the_grain",
+                            "quality_crafting",
+                            "natural",
+                            "hammer_timing_two"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "material_world",
+                            "steady_supplies",
+                            "set_pieces",
+                            "hammer_timing_three"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "lumberjack_two",
+                            "underground_inspiration",
+                            "deliberate_debris",
+                            "working_with_the_grain_two"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Woodcrafting"
+                        },
+                        "items": [
+                            "void_crafting",
+                            "big_water_sprites"
+                        ]
+                    }
+                }
+            },
+            "blacksmithing": {
+                "info": {
+                    "img": "blacksmithing",
+                    "img_mini": "blacksmithing",
+                    "name": "Blacksmithing",
+                    "wikilink": "Skills#Blacksmithing"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "copper_expert",
+                            "time_sensitive",
+                            "sharp_blacksmithing",
+                            "fortified_blacksmithing"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "iron_expert",
+                            "time_sensitive_two",
+                            "leech_blacksmithing",
+                            "lightweight_blacksmithing"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "silver_expert",
+                            "hasty_blacksmithing",
+                            "time_sensitive_three",
+                            "empowered"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "empowered_two",
+                            "gold_expert",
+                            "tireless_blacksmithing",
+                            "time_sensitive_four"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Blacksmithing"
+                        },
+                        "items": [
+                            "mistril_expert"
+                        ]
+                    }
+                }
+            },
+            "mining": {
+                "info": {
+                    "img": "mining",
+                    "img_mini": "mining",
+                    "name": "Mining",
+                    "wikilink": "Skills#Mining"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Mining"
+                        },
+                        "items": [
+                            "earth_breaker",
+                            "ore_riginal",
+                            "reclaimer",
+                            "treasure_hunter"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Skills#Mining"
+                        },
+                        "items": [
+                            "iron_hound",
+                            "true_blue",
+                            "treasured",
+                            "mine_time"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Skills#Mining"
+                        },
+                        "items": [
+                            "resonance",
+                            "earth_breaker_two",
+                            "silver_seeker",
+                            "fantastic_finds"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Skills#Mining"
+                        },
+                        "items": [
+                            "lost_to_history",
+                            "good_as_gold",
+                            "refined_rockery",
+                            "break_one_get_two"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Mining"
+                        },
+                        "items": [
+                            "mistril_mastery",
+                            "perfect_pick",
+                            "void_value",
+                            "lost_to_history_two"
+                        ]
+                    }
+                }
+            },
+            "combat": {
+                "info": {
+                    "img": "combat",
+                    "img_mini": "combat",
+                    "name": "Combat",
+                    "wikilink": "Skills#Combat"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "guardians_shield",
+                            "true_strike",
+                            "jump_attack",
+                            "well_armed"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "quick_footed",
+                            "shrine_savant",
+                            "generous_in_defeat",
+                            "dungeon_delicacies"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "perfect_prefix",
+                            "rocking",
+                            "in_motion",
+                            "out_of_juice"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "sonic_boom",
+                            "gift_exchange",
+                            "guardians_shield_two",
+                            "true_strike_two"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "sure_strike",
+                            "generous_in_defeat_two",
+                            "friend_shaped"
+                        ]
+                    }
+                }
+            },
+            "mount": {
+                "info": {
+                    "img": "mount",
+                    "img_mini": "mount",
+                    "name": "Mistmare",
+                    "wikilink": "Skills#Mistmare"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Mistmare"
+                        },
+                        "items": [
+                            "horsepower",
+                            "harvest_horse",
+                            "nice_ride"
                         ]
                     }
                 }

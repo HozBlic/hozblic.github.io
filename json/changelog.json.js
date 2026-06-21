@@ -19,10 +19,15 @@ var objChangelog =
                 <ul>
                     <li>{{feedback}}add animals and their heart levels</li>
                 </ul>`,
+                `bug fixes
+                <ul>
+                    <li>{{feedback}}save file importing on Chrome crashes sometimes</li>
+                </ul>`,
                 `UI/UX
                 <ul>
                     <li>{{feedback}}apply layout settings to each tab separately</li>
                     <li>printable checklist sheets</li>
+                    <li>set column count in categories</li>
                 </ul>`,
             ],
         },

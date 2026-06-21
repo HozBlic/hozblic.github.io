@@ -309,8 +309,8 @@ function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
             <div class="tip">
                 <div class="tip_name ${strChecked} ${strTab === 'perks' ? 'is_perk' : ''} ${strDisabled} ${bolDonatable ? 'donatable' : ''}">
                     ${strTab === 'customization' ? objItemTemp['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItemTemp['url']}">${objItemTemp['name']}</a>`}
-                    ${strTab === 'perks' ? '<img src="images/fake_essence.png">' : ''}
-                    ${bolDonatable ? '<img src="images/museum.png">' : ''}
+                    ${strTab === 'perks' ? '<img src="images/tabs/fake_essence.png">' : ''}
+                    ${bolDonatable ? '<img src="images/tabs/museum.png">' : ''}
                 </div>
                 ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
                 <div class="tip_info">${objItemTemp['tip']}</div>
@@ -419,8 +419,11 @@ function loadScrapedTab(strTab) {
 
     let objCategories = objTabs[strTab].categories;
 
-    let strImagePath = `images/${objTabs[strTab].info.img_path}`;
-    let strImageMiniPath = `images/${objTabs[strTab].info.img_mini_path}`;
+    let strImagePath = `images/${strTab}/`;
+    let strImageMiniPath = `images/${strTab}_mini/`;
+    if ('img_mini_path' in objTabs[strTab].info) {
+        strImageMiniPath = `images/${objTabs[strTab].info.img_mini_path}`;
+    }
     let strImageItemPathCategory = `images/${objTabs[strTab].info.img_item_path}`;
 
     const strLateGameDiv = `
@@ -469,7 +472,9 @@ function loadScrapedTab(strTab) {
             $divCategory.append(strLateGameDiv);
         }
 
-        if ('img' in objCategory.info) {
+        if ('only_mini' in objTabs[strTab].info) {
+            $divCategory.addClass('only_mini')
+        } else {
             $divCategory.append(` 
                 <div class="category_img">
                     <img src="${strImagePath}${objCategory.info.img}.png">
@@ -1290,7 +1295,7 @@ function loadWrappedTab() {
                     i++;
                     let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
                     strTableSpokenTo += `<tr>
-                                <td><img data-tippy-content="${objCharInfo.name}" src="images/${objTabs.gifts.info.img_mini_path}${objCharInfo.img_mini}.png"></td>
+                                <td><img data-tippy-content="${objCharInfo.name}" src="images/gifts_mini/${objCharInfo.img_mini}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
                 });
@@ -1331,7 +1336,7 @@ function loadWrappedTab() {
                     i++;
                     let objCharInfo = objTabs.gifts.categories[strCharacterKey].info;
                     strTableSpokenTo += `<tr>
-                                <td><img data-tippy-content="${objCharInfo.name}" src="images/${objTabs.gifts.info.img_mini_path}${objCharInfo.img_mini}.png"></td>
+                                <td><img data-tippy-content="${objCharInfo.name}" src="images/gifts_mini/${objCharInfo.img_mini}.png"></td>
                                 <td>${intValue}</td>
                             </tr>`;
                 });
@@ -3931,7 +3936,7 @@ function loadMenuItems() {
     objBuild.tabsOrder.forEach(function (strTab) {
         if (!(strTab in objTabs)) return;
         let objTabInfo = objTabs[strTab].info;
-        $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/${objTabInfo.icon}">${objTabInfo.name}</div>`)
+        $('#tabs').append(`<div class="tab" data-tab="${strTab}"><img src="images/tabs/${objTabInfo.icon}">${objTabInfo.name}</div>`)
     });
     $('#tabs').append(` 
         <div class="tab" data-tab="wrapped">
