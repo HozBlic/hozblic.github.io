@@ -1,0 +1,339 @@
+.table_show {
+    display: none;
+}
+
+#tabs {
+    display: none;
+}
+
+#page:not(.mode_spoilers) .spoiler {
+    display: none;
+}
+
+
+@media only screen and (min-width: 550px) {
+    #tabs {
+        display: flex;
+    }
+}
+
+
+#column_toggle {}
+
+#column_toggle .dropdown {
+    min-width: 100%;
+    max-height: 0;
+    overflow-y: auto;
+}
+
+#column_toggle.open .dropdown {
+    max-height: 320px;
+}
+
+#column_toggle_list .column_toggle_input,
+#page_length .dropdown {
+    min-width: 100%;
+    max-height: 0;
+    overflow-y: auto;
+}
+
+#page_length.open .dropdown {
+    max-height: 320px;
+}
+
+.page_length_item {
+    padding-left: 16px;
+}
+
+#column_toggle_list {
+    gap: 3px;
+}
+
+input[type="checkbox"].styled {
+    display: none;
+}
+
+input[type="checkbox"].styled+label {
+    min-height: 16px;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 15px;
+    background-position: 0 center;
+    line-height: 16px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#column_toggle_list input[type="checkbox"].styled+label {
+    min-height: 19px;
+    padding-left: 26px;
+    line-height: 19px;
+    background-size: 18px;
+}
+
+@media screen and (min-width: 575px) {
+    #column_toggle_list input[type="checkbox"].styled+label {
+        min-height: 16px;
+        padding-left: 24px;
+        line-height: 16px;
+        background-size: 15px;
+    }
+}
+
+input[type="checkbox"].styled:checked+label {
+    font-weight: bold;
+}
+
+input[type="checkbox"].styled:checked+label:after {
+    display: none;
+}
+
+input[type="checkbox"].styled+label {
+    background-image: url(../images/checkbox.svg);
+}
+
+input[type="checkbox"].styled:checked+label {
+    background-image: url(../images/checkbox_ch.svg);
+}
+
+input[type="checkbox"].styled:indeterminate+label {
+    background-image: url(../images/checkbox_indeterminate.svg);
+}
+
+#column_toggle_list input[type="checkbox"].styled+label.column_toggle_item {
+    width: 100%;
+    transition: background-color 0.3s ease;
+    padding-left: 32px;
+    background-position: 7px center;
+}
+
+
+@media screen and (min-width: 575px) {
+    #column_toggle_list input[type="checkbox"].styled+label.column_toggle_item {
+        padding-left: 32px;
+        background-position: 8px center;
+    }
+}
+
+#page.table .table_show {
+    display: block;
+}
+
+#table {}
+
+#tooltip_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#tooltip_grid [data-tippy-root] {
+    max-width: 250px;
+}
+
+.tab:not(.delete) .icon {
+    color: var(--color-txt);
+    fill: var(--color-txt);
+    stroke: var(--color-txt);
+}
+
+.table_image {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+}
+
+.table_item_name {
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+}
+
+.table_hidden {
+    display: none;
+}
+
+#table table.dataTable {
+    table-layout: fixed;
+}
+
+#table div.dt-container div.dt-layout-row {
+    margin: 0;
+}
+
+#table div.dt-container div.dt-layout-row+div.dt-layout-row {
+    margin-top: 10px;
+}
+
+/* header */
+#table table.dataTable>thead>tr>th {
+    padding: 5px 10px;
+}
+
+#table table.dataTable>thead>tr>th:first-child {
+    border-top-left-radius: 10px;
+}
+
+#table table.dataTable>thead>tr>th:last-child {
+    border-top-right-radius: 10px;
+}
+
+#table table.dataTable thead>tr>th.dt-orderable-asc .dt-column-order:before,
+#table table.dataTable thead>tr>th.dt-ordering-asc .dt-column-order:before,
+#table table.dataTable thead>tr>td.dt-orderable-asc .dt-column-order:before,
+#table table.dataTable thead>tr>td.dt-ordering-asc .dt-column-order:before {
+    background-image: var(--caret-up);
+}
+
+#table table.dataTable thead>tr>th.dt-orderable-desc .dt-column-order:after,
+#table table.dataTable thead>tr>th.dt-ordering-desc .dt-column-order:after,
+#table table.dataTable thead>tr>td.dt-orderable-desc .dt-column-order:after,
+#table table.dataTable thead>tr>td.dt-ordering-desc .dt-column-order:after {
+    background-image: var(--caret-down);
+}
+
+#table table.dataTable thead>tr>th.dt-orderable-asc .dt-column-order:before,
+#table table.dataTable thead>tr>th.dt-ordering-asc .dt-column-order:before,
+#table table.dataTable thead>tr>td.dt-orderable-asc .dt-column-order:before,
+#table table.dataTable thead>tr>td.dt-ordering-asc .dt-column-order:before,
+#table table.dataTable thead>tr>th.dt-orderable-desc .dt-column-order:after,
+#table table.dataTable thead>tr>th.dt-ordering-desc .dt-column-order:after,
+#table table.dataTable thead>tr>td.dt-orderable-desc .dt-column-order:after,
+#table table.dataTable thead>tr>td.dt-ordering-desc .dt-column-order:after {
+    content: '';
+    width: 10px;
+    height: 8px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+#table table.dataTable thead>tr>th.dt-ordering-asc .dt-column-order:before,
+#table table.dataTable thead>tr>th.dt-ordering-desc .dt-column-order:after,
+#table table.dataTable thead>tr>td.dt-ordering-asc .dt-column-order:before,
+#table table.dataTable thead>tr>td.dt-ordering-desc .dt-column-order:after {
+    opacity: 1;
+}
+
+/* rows and cells */
+#table table.dataTable>thead>tr>th,
+#table table.dataTable>tbody>tr>td {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background: var(--color-bg-darkest);
+    background-clip: padding-box;
+}
+
+#table table.dataTable>tbody>tr>td {
+    white-space: normal;
+    word-break: break-word;
+    overflow: hidden;
+    vertical-align: middle;
+    border-top: 3px solid transparent;
+    transition: box-shadow 0.5s ease;
+}
+
+#table table.dataTable>tbody>tr:first-child>* {
+    border-top: 3px solid transparent !important;
+}
+
+#table table.dataTable>tbody>tr:last-child>td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+#table table.dataTable>tbody>tr:last-child>td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+#table table.dataTable.display>tbody>tr:hover>* {
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.035);
+    box-shadow: inset 0 0 0 9999px rgba(var(--color-btn-rgb), 0.3);
+}
+
+/* #table table.dataTable td.highlight {
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.035);
+    box-shadow: inset 0 0 0 9999px rgba(var(--color-btn-rgb), 0.2);
+} */
+
+
+
+/* info in cells */
+#table table.dataTable a {
+    text-decoration: unset;
+    color: var(--link);
+    height: 19px;
+    line-height: 19px;
+    display: inline-block;
+}
+
+#table table.dataTable a:visited {
+    color: var(--link-visited);
+}
+
+#table [data-tippy-root] .tippy-box .tippy-content .tip a {
+    color: #a2d2ff;
+}
+
+#table [data-tippy-root] .tippy-box .tippy-content .tip a:visited {
+    color: #cdb4db;
+}
+
+#table table.dataTable img {
+    height: 19px;
+    width: 19px;
+    object-fit: contain;
+    display: block;
+    display: inline-block;
+    image-rendering: pixelated;
+    vertical-align: bottom;
+}
+
+#table table.dataTable img[alt^=Season] {
+    width: 14px;
+}
+
+/* pagination */
+#table div.dt-container .dt-paging .dt-paging-button {
+    border-radius: 5px;
+    border: unset;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    background: unset;
+    transition: background-color 0.3s ease;
+    color: var(--color-txt);
+}
+
+#table div.dt-container .dt-paging .dt-paging-button.disabled {
+    color: var(--color-txt) !important;
+    opacity: 0.5;
+}
+
+#table div.dt-container .dt-paging .dt-paging-button:hover {
+    background-color: var(--color-btn);
+}
+
+#table div.dt-container .dt-paging .dt-paging-button.current,
+#table div.dt-container .dt-paging .dt-paging-button.current:hover {
+    background-color: var(--color-btn);
+}
+
+#table div.dt-container .dt-paging .dt-paging-button.disabled:hover,
+#table div.dt-container .dt-paging .dt-paging-button.disabled.current:hover {
+    background-color: unset;
+}
+
+
+
+/* [data-tippy-root] {
+    width: fit-content;
+    margin: auto;
+} */

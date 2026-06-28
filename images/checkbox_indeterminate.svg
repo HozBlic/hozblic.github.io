@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="checkbox_indeterminate_box" data-name="checkbox indeterminate box" d="M2,16a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H14a2,2,0,0,1,2,2V14a2,2,0,0,1-2,2ZM1,2V14a1,1,0,0,0,1,1H14a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2A1,1,0,0,0,1,2Z" fill="#b9a8b6"/>
+  <rect x="4" y="7" width="8" height="2" rx="1" fill="#b9a8b6"/>
+</svg>

@@ -2196,27 +2196,6 @@ async function loadMenuItems() {
         checkDropdownVisibility(this);
     });
 
-
-    var arrModes = ['mode_dark', 'mode_stars', 'mode_collapse'];
-    arrModes.forEach(function (strMode) {
-        $(`#${strMode}`).prop('checked', false);
-        $(`#${strMode}`).change(function () {
-            let bolChecked = $(this).is(':checked');
-            if (bolChecked) {
-                $('#page').addClass(strMode);
-                objMistriaData.options.add(strMode);
-            } else {
-                $('#page').removeClass(strMode);
-                objMistriaData.options.delete(strMode);
-            }
-
-            if (strMode === 'mode_collapse') {
-                resize()
-            }
-            saveData();
-        });
-    })
-
     objMistriaData.options.forEach(key => {
         $(`#${key}`).prop('checked', true);
         $('#page').addClass(key);
@@ -2230,7 +2209,7 @@ async function loadMenuItems() {
     }
 
 
-    var arrModes = ['mode_dark'];
+    var arrModes = ['mode_dark', 'mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_lategame', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {
@@ -3486,11 +3465,6 @@ function sectionActions(strAction) {
 }
 
 $(function () {
-
-    if (!localStorage.getItem('new_planner')) {
-        localStorage.setItem('new_planner', 1);
-    }
-
     (async () => {
         objKeyItemDict = await (await fetch('../json/dict.json?v=1')).json();
         objItemKeyDict = await (await fetch('../json/dict_reverse.json')).json();

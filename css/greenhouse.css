@@ -10,7 +10,7 @@
 
 #tutorial a {
     text-decoration: unset;
-    color: #a2d2ff;
+    color: var(--link);
     height: 19px;
     line-height: 19px;
     display: inline-block;
@@ -18,7 +18,7 @@
 }
 
 #tutorial a:visited {
-    color: #cdb4db;
+    color: var(--link-visited);
 }
 
 #tutorial .subSections {

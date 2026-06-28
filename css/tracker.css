@@ -135,7 +135,8 @@
     max-height: unset;
 }
 
-#checkbox_filter #filter_show, #checkbox_filter #filter_collapse {
+#checkbox_filter #filter_show, 
+#checkbox_filter #filter_collapse {
     cursor: pointer;
     display: none;
     gap: 3px;
@@ -833,124 +834,6 @@ input[type="checkbox"].styled:checked+label {
     line-height: var(--line-height);
 }
 
-/* tippy */
-.tip_wrap {
-    padding: 4px 0;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name {
-    flex: 1;
-    text-align: center;
-    text-decoration: unset;
-    color: white;
-    margin-bottom: 5px;
-    position: relative;
-    display: inline-flex;
-    gap: 7px;
-    align-items: center;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name:is(.donatable, .is_perk) {
-    padding-left: 10px;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name:is(.donatable, .is_perk) img {
-    margin-left: 20px;
-    opacity: 0.8;
-    height: 18px;
-    width: 18px;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name:is(.donatable, .is_perk):before,
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 18px;
-    top: 0;
-    width: 20px;
-    height: 100%;
-    text-align: center;
-    background-image: url(../images/checkbox.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 12px;
-    opacity: 1;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked:after {
-    background-image: url(../images/check.svg);
-    opacity: 0.8;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_name.checked.disabled:after {
-    background-image: url(../images/close.svg);
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_buff {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
-    margin-top: -10px;
-    font-size: 11px;
-    opacity: 0.5;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_info {
-    width: 100%;
-    text-align: left;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .tip_info p {
-    margin: 0;
-    display: inline-block;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip .no-wrap {
-    white-space: nowrap;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip span {
-    line-height: 19px;
-}
-
-
-[data-tippy-root] .tippy-box .tippy-content .tip span:not([style="display:none"]) {
-    display: inline-block !important;
-}
-
-
-[data-tippy-root] .tippy-box .tippy-content .tip a {
-    text-decoration: unset;
-    color: #a2d2ff;
-    height: 19px;
-    line-height: 19px;
-    display: inline-block;
-    /* vertical-align: top; */
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip a:visited {
-    color: #cdb4db;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip a:hover {
-    text-decoration: underline;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip img {
-    height: 19px;
-    width: 19px;
-    object-fit: contain;
-    display: block;
-    display: inline-block;
-    image-rendering: pixelated;
-    vertical-align: bottom;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip img[alt^=Season] {
-    width: 14px;
-}
-
 .statistics_header {
     width: 100%;
     box-sizing: border-box;
@@ -958,59 +841,26 @@ input[type="checkbox"].styled:checked+label {
     padding: 5px;
 }
 
-.statistics_table,
-[data-tippy-root] .tippy-box .tippy-content .tip table {
+.statistics_table {
     font-size: 11px;
     line-height: 19px;
     border-collapse: collapse;
-    margin-top: 5px;
-    width: 100%;
-}
-
-.statistics_table {
     width: unset;
     margin: 5px;
 }
 
-#page.mode_mini_tooltip [data-tippy-root]+.tippy-box .tippy-content .tip table {
-    display: none;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip table tr {}
-
-.statistics_table td,
-[data-tippy-root] .tippy-box .tippy-content .tip table td {
+.statistics_table td {
     padding: 4px 3px;
     border-top: 1px solid #00000099;
-    width: 99%;
-}
-
-[data-tippy-root] .tippy-box .tippy-content .tip table td {
-    font-size: 11px;
-    line-height: 19px;
-    text-align: left;
-}
-
-.statistics_table td {
     width: unset;
     padding: 2px 3px;
 }
 
-.statistics_table td:first-child,
-[data-tippy-root] .tippy-box .tippy-content .tip table td:first-child {
+.statistics_table td:first-child{
     font-size: 10px;
     text-transform: uppercase;
     width: unset;
     opacity: 0.5;
     padding-right: 10px;
     white-space: nowrap;
-}
-
-/* end: tippy */
-
-
-
-.highlight {
-    background-color: #8338ec;
-    color: white;
 }

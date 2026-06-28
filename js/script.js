@@ -233,6 +233,91 @@ function createChartConfig(objData) {
     }
 }
 
+var objTips = {
+    'price': 'Price',
+    'museum_set': 'Museum Set',
+    'recipe_source': 'Recipe Source',
+    'ingredients': 'Ingredients',
+    'size': 'Size',
+    'rarity': 'Rarity',
+    'location': 'Location',
+    'season': 'Season',
+    'weather': 'Weather',
+    'time': 'Time',
+    'spawn_condition': 'Spawn condition',
+    'fishable': 'Fishing pole',
+    'diveable': 'Diveable'
+}
+
+function createTip(strID, strItemKey, strTab, strBuff = false) {
+
+    let strTableHTML = '';
+    let bolDonatable = false;
+
+    const objItem = objItems[strItemKey];
+
+    if ('tip_extra' in objItem) {
+        strTableHTML = '<table>';
+
+        Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
+            if (strTipKey in objItem['tip_extra']) {
+                if (strTipKey == 'ingredients') {
+                    strTableHTML += `<tr><td>${strTipValue}</td><td>`;
+                    objItem['tip_extra'][strTipKey].forEach(function (objItem, index) {
+                        if ('item' in objItem) {
+                            intCount = objItem['count'];
+                            strItemKeyTemp = objItem['item'];
+                            strItemName = objItems[strItemKeyTemp]['name'];
+                            strItemUrl = objItems[strItemKeyTemp]['url'];
+                            strTableHTML += `<a href="https://fieldsofmistria.wiki.gg${strItemUrl}" title="${strItemName}"><img alt="${strItemName}.png" src="../images/items/${strItemKeyTemp}.png"></a><a href="https://fieldsofmistria.wiki.gg${strItemUrl}" title="${strItemName}">${strItemName}</a> (${intCount})<br>`;
+                        }
+                    });
+                    strTableHTML = strTableHTML.substring(0, strTableHTML.length - 4); // remove last <br>
+                    strTableHTML += `</td></tr>`;
+                    return;
+                }
+                if (strTipKey === 'museum_set' && strTab !== 'table') {
+                    bolDonatable = true;
+                    if (strTab === 'museum') {
+                        return;
+                    }
+                }
+                strTableHTML += `<tr><td>${strTipValue}</td><td>${objItem['tip_extra'][strTipKey]}</td></tr>`;
+            }
+        });
+        strTableHTML += '</table>';
+    }
+
+    let strChecked = '';
+    if (objMistriaData.museum.has(strItemKey) && strTab !== 'table') {
+        strChecked = 'checked';
+    }
+
+    let strNameLinkHTML = objItem['name'];
+    if ('url' in objItem) {
+        strNameLinkHTML = `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItem['url']}">${objItem['name']}</a>`;
+    }
+
+    let strTipHTML = `
+        <div id="tip_${strID}" class="tip_wrap">
+            <div class="tip">
+                <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
+                    ${strNameLinkHTML}
+                    ${bolDonatable ? '<img src="../images/tabs/museum.png">' : ''}
+                </div>
+                ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
+                ${'tip' in objItem ? `<div class="tip_info">${objItem['tip']}</div>` : ''}
+                ${objItems['no_data'] ? 'No data available' : ''}
+                ${strTableHTML}
+            </div>
+        </div>`;
+    strTipHTML = strTipHTML.replaceAll('src="images/', 'src="../images/')
+
+    let $objTip = $(strTipHTML);
+
+    return $objTip.prop('outerHTML');
+}
+
 function loadData() {
     objMistriaData = JSON.parse(localStorage.getItem('mistria_data'));
 

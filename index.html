@@ -37,7 +37,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon-180px.png" />
     <link rel="icon" type="image/png" href="/images/favicon/favicon-96px.png">
 
-    <link rel="manifest" href="manifest.json?v=3">
+    <link rel="manifest" href="manifest.json?v=4">
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,18 +49,15 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/style.css?v=53">
-    <link rel="stylesheet" href="css/popups.css?v=5">
-    <link rel="stylesheet" href="css/tracker.css?v=12">
+    <link rel="stylesheet" href="css/style.css?v=54">
+    <link rel="stylesheet" href="css/popups.css?v=6">
+    <link rel="stylesheet" href="css/tracker.css?v=13">
     <link rel="stylesheet" href="css/wrapped.css?v=2">
 
-    <script type="text/javascript" src="json/items.json.js?v=33"></script>
-    <script type="text/javascript" src="json/items_accessories.json.js?v=12"></script>
-    <script type="text/javascript" src="json/items_animals.json.js?v=9"></script>
-    <script type="text/javascript" src="json/items_perks.json.js?v=6"></script>
-    <script type="text/javascript" src="json/build.json.js?v=14"></script>
-    <script type="text/javascript" src="json/changelog.json.js?v=7"></script>
-    <script type="text/javascript" src="json/tabs.json.js?v=14"></script>
+    <script type="text/javascript" src="json/items.json.js?v=34"></script>
+    <script type="text/javascript" src="json/build.json.js?v=15"></script>
+    <script type="text/javascript" src="json/changelog.json.js?v=8"></script>
+    <script type="text/javascript" src="json/tabs.json.js?v=15"></script>
 
     <script type="text/javascript" src="json/wrapped_dummy.json.js?v=1"></script>
 
@@ -72,10 +69,10 @@
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript" src="js/chartjs-plugin-colorschemes.min.js"></script>
 
-    <script type="text/javascript" src="js/script.js?v=57"></script>
-    <script type="text/javascript" src="js/tracker.js?v=13"></script>
+    <script type="text/javascript" src="js/script.js?v=58"></script>
+    <script type="text/javascript" src="js/tracker.js?v=14"></script>
     <script>navigator.serviceWorker.register("js/service-worker.js")</script>
-    <script type="text/javascript" src="js/save_file.js?v=29"></script>
+    <script type="text/javascript" src="js/save_file.js?v=30"></script>
 </head>
 
 <body>
@@ -115,6 +112,31 @@
                 <div class="input-label">
                     <label for="search_items">Search items, characters..</label>
                     <input id="search_items" type="text" placeholder="Adeline + gold">
+                    <div id="cancel_search">
+                        <div class="icon">
+                            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+                                <defs>
+                                    <clipPath id="clip-Artboard_2">
+                                        <rect width="18" height="18" />
+                                    </clipPath>
+                                </defs>
+                                <g id="Artboard_2" data-name="Artboard – 2" clip-path="url(#clip-Artboard_2)">
+                                    <g id="Group_752" data-name="Group 752" transform="translate(0 1)">
+                                        <g transform="matrix(1, 0, 0, 1, 0, -1)">
+                                            <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close"
+                                                d="M18.769,17.276l4.979-4.988a1.018,1.018,0,0,0,0-1.439,1.033,1.033,0,0,0-1.448,0l-4.979,4.988-4.972-4.988a1.033,1.033,0,0,0-1.448,0,1.011,1.011,0,0,0,0,1.439l4.972,4.988-4.818,4.832a1.011,1.011,0,0,0,0,1.439,1.033,1.033,0,0,0,1.448,0l4.818-4.832,4.9,4.832a1.033,1.033,0,0,0,1.448,0,1.018,1.018,0,0,0,0-1.439Z"
+                                                transform="translate(-8.33 -8.28)" />
+                                        </g>
+                                        <path id="Icon_ionic-ios-close-3" data-name="Icon ionic-ios-close"
+                                            d="M19.944,18.289l5-5a1.172,1.172,0,0,0-1.657-1.657l-5,5-5-5a1.172,1.172,0,1,0-1.657,1.657l5,5-5,5a1.172,1.172,0,1,0,1.657,1.657l5-5,5,5a1.172,1.172,0,0,0,1.657-1.657Z"
+                                            transform="translate(-9.285 -10.289)" />
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div id="checkbox_filter"
@@ -484,7 +506,7 @@
                             <div class="text">Changelog and plans</div>
                         </div>
 
-                        <div class="dropdown_wrap">
+                        <div class="dropdown_wrap top">
                             <div class="button_item dropdown_button">
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -503,6 +525,18 @@
                                         <img src="/images/blueprint.png">
                                     </div>
                                     Layout Planner
+                                </a>
+                                <a class="dropdown-item" target="_self" href="/item_table">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-table">
+                                            <path
+                                                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    Item table
                                 </a>
                                 <a class="dropdown-item" target="_self" href="/greenhouse">
                                     <div class="icon">
@@ -723,9 +757,11 @@
                                 href="https://github.com/HozBlic/hozblic.github.io">GitHub repo</a>
                             </br>
                             Suggestions are always welcome, leave a comment for
-                            <a href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">tracker</a>
+                            <a
+                                href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1rjqnvu/progress_tracker_v0151/">tracker</a>
                             or
-                            <a href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1tfxn3b/farm_layout_planner_mistriaapp_update/">planner</a>
+                            <a
+                                href="https://www.reddit.com/r/FieldsOfMistriaGame/comments/1tfxn3b/farm_layout_planner_mistriaapp_update/">planner</a>
                         </div>
                         <div id="changelog_tabs">
                             <div data-tab="tracker" class="changelog_tab button_item">
@@ -1204,4 +1240,5 @@
         </div>
     </div>
 </body>
+
 </html>

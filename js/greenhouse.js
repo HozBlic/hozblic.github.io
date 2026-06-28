@@ -25,7 +25,7 @@ function loadMenuItems() {
 
     $('#side_menu #title .version').text(`v${objBuild.version}`);
 
-    var arrModes = ['mode_dark', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_lategame', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
+    var arrModes = ['mode_dark', 'mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_lategame', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
     arrModes.forEach(function (strMode) {
         $(`#${strMode}`).prop('checked', false);
         $(`#${strMode}`).change(function () {

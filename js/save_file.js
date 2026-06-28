@@ -565,7 +565,7 @@ function deleteData() {
 
     $('#popup-delete-data').off('click').on('click', function () {
         localStorage.clear();
-        localStorage.setItem('mistria_planner', 1);
+        // localStorage.setItem('new_planner', 1);
         window.location.reload();
     });
 }

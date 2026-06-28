@@ -40,9 +40,14 @@
 "prefer_related_applications": false,
 "shortcuts": [
     {
-        "name":"Open greenhouse tutorial",
-        "url":"/greenhouse/",
-        "description":"Tutorial explains how to obtain the seeds required for a herb greenhouse by editing the game save file"
+        "name":"Layout Planner",
+        "url":"/planner/",
+        "description":"Farm layout planner for Fields of Mistria"
+    },
+    {
+        "name":"Item table",
+        "url":"/item_table/",
+        "description":"Detailed information about every item in Fields of Mistria"
     }
 ]
 }

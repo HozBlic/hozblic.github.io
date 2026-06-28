@@ -234,96 +234,6 @@ if (objDataWrapped === null) {
     objDataWrapped = objDataWrappedDummy;
 }
 
-var objTips = {
-    'price': 'Price',
-    'museumSet': 'Museum Set',
-    'recipeSource': 'Recipe Source',
-    'ingredients': 'Ingredients',
-    'size': 'Size',
-    'rarity': 'Rarity',
-    'location': 'Location',
-    'season': 'Season',
-    'weather': 'Weather',
-    'time': 'Time',
-    'spawnCondition': 'Spawn condition',
-    'fishing': 'Fishing pole',
-    'diving': 'Diveable'
-}
-
-function createTip(strID, strItemKey, strTab, objItemsTemp, strBuff = false) {
-
-    let strTableHTML = '';
-    let bolDonatable = false;
-    let objItemTemp = objItemsTemp[strItemKey];
-
-    if ('tip_extra' in objItemTemp) {
-        strTableHTML = '<table>';
-
-        Object.entries(objTips).forEach(([strTipKey, strTipValue]) => {
-            if (strTipKey in objItemTemp['tip_extra']) {
-                if (strTipKey == 'ingredients') {
-                    strTableHTML += `<tr><td>${strTipValue}</td><td>`;
-                    objItemTemp['tip_extra'][strTipKey].forEach(function (objItem, index) {
-                        if ('item' in objItem) {
-                            intCount = objItem['count'];
-                            strItemKeyTemp = objItem['item'];
-                            strItemName = objItems[strItemKeyTemp]['name'];
-                            strItemUrl = objItems[strItemKeyTemp]['url'];
-                            strTableHTML += `<a href="https://fieldsofmistria.wiki.gg${strItemUrl}" title="${strItemName}"><img alt="${strItemName}.png" src="images/items/${strItemKeyTemp}.png"></a><a href="https://fieldsofmistria.wiki.gg${strItemUrl}" title="${strItemName}">${strItemName}</a> (${intCount})<br>`;
-                        }
-                    });
-                    strTableHTML = strTableHTML.substring(0, strTableHTML.length - 4); // remove last <br>
-                    strTableHTML += `</td></tr>`;
-                    return;
-                }
-                if (strTipKey === 'museumSet') {
-                    bolDonatable = true;
-                    if (strTab === 'museum') {
-                        return;
-                    }
-                }
-                strTableHTML += `<tr><td>${strTipValue}</td><td>${objItemTemp['tip_extra'][strTipKey]}</td></tr>`;
-            }
-        });
-        strTableHTML += '</table>';
-    }
-
-    let strChecked = '';
-    if (objMistriaData.museum.has(strItemKey)) {
-        strChecked = 'checked';
-    }
-
-    let strDisabled = '';
-    if (strTab === 'perks') {
-        if (objMistriaData.perks.has(strItemKey)) {
-            strChecked = 'checked';
-        }
-
-        if (objMistriaData.perks_disabled.has(strItemKey)) {
-            strDisabled = 'disabled';
-        }
-    }
-
-    let strTipHTML = $(`
-        <div id="tip_${strID}" class="tip_wrap">
-            <div class="tip">
-                <div class="tip_name ${strChecked} ${strTab === 'perks' ? 'is_perk' : ''} ${strDisabled} ${bolDonatable ? 'donatable' : ''}">
-                    ${strTab === 'customization' ? objItemTemp['name'] : `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItemTemp['url']}">${objItemTemp['name']}</a>`}
-                    ${strTab === 'perks' ? '<img src="images/tabs/fake_essence.png">' : ''}
-                    ${bolDonatable ? '<img src="images/tabs/museum.png">' : ''}
-                </div>
-                ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
-                <div class="tip_info">${objItemTemp['tip']}</div>
-                ${objItemTemp['nodata'] ? 'No data available' : ''}
-                ${strTableHTML}
-            </div>
-        </div>`);
-
-    let $objTip = $(strTipHTML);
-
-    return $objTip.prop('outerHTML');
-}
-
 function changeLayout(objElem) {
     if ($(objElem).hasClass('selected')) return;
 
@@ -397,23 +307,6 @@ function disableTippy() {
     });
 }
 
-function getItemDict(strDict) {
-    let objItemsTemp;
-    switch (strDict) {
-        case 'accessories':
-            objItemsTemp = objItemsAccessories;
-            break;
-        case 'animals':
-            objItemsTemp = objItemsAnimals;
-            break;
-        case 'perks':
-            objItemsTemp = objItemsPerks;
-            break;
-        default:
-            objItemsTemp = objItems;
-    }
-    return objItemsTemp;
-}
 function loadScrapedTab(strTab) {
     let arrAllItems = [];
 
@@ -463,7 +356,7 @@ function loadScrapedTab(strTab) {
             </div>
         `);
 
-        if (objCategory.info.spoiler || objCategory.info.nodata || objCategory.info.noimage) {
+        if (objCategory.info.spoiler || objCategory.info.no_data || objCategory.info.noimage) {
             $divCategory.addClass('spoiler');
         }
 
@@ -546,17 +439,6 @@ function loadScrapedTab(strTab) {
         }
 
         Object.entries(objCategory.subcategories).forEach(([strSubcategoryKey, objSubcategory]) => {
-
-            let objItemsTemp = getItemDict(objTabs[strTab].info.item_json);
-            if (objSubcategory.info.item_json) {
-                objItemsTemp = getItemDict(objSubcategory.info.item_json)
-            }
-            let strImageItemPathSubCategory = strImageItemPathCategory;
-
-            if (objSubcategory.info.img_item_path) {
-                strImageItemPathSubCategory = `images/${objSubcategory.info.img_item_path}`;
-            }
-
             let $divSubcategory = $('<div>', { 'class': 'subcategory', 'id': `subcategory_${strCatgoryKey}_${strSubcategoryKey}` });
 
             $divSubcategory.addClass('sortable');
@@ -566,7 +448,7 @@ function loadScrapedTab(strTab) {
                 $divSubcategory.attr('data-sort-za', objSubcategoriesSorted.za.indexOf(strSubcategoryKey));
             }
 
-            if (objSubcategory.info.spoiler || objSubcategory.info.nodata) {
+            if (objSubcategory.info.spoiler || objSubcategory.info.no_data) {
                 $divSubcategory.addClass('spoiler')
             }
             if (objSubcategory.info.lategame) {
@@ -608,33 +490,33 @@ function loadScrapedTab(strTab) {
                 arrAllItems.push(strLocalstorageKey);
 
                 let strCbxID = `${strCatgoryKey}_${strSubcategoryKey}_${strItemKey}`;
-                let strDataCbx = $($.parseHTML(objItemsTemp[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
-                if ("tip_extra" in objItemsTemp[strItemKey] && "recipeSource" in objItemsTemp[strItemKey]["tip_extra"]) {
-                    strDataCbx += ' ' + $($.parseHTML(objItemsTemp[strItemKey]["tip_extra"]["recipeSource"])).text().replace(/["'&<>]/g, '').trim();
+                let strDataCbx = $($.parseHTML(objItems[strItemKey]['tip'])).text().replace(/["'&<>]/g, '').trim();
+                if ("tip_extra" in objItems[strItemKey] && "recipe_source" in objItems[strItemKey]["tip_extra"]) {
+                    strDataCbx += ' ' + $($.parseHTML(objItems[strItemKey]["tip_extra"]["recipe_source"])).text().replace(/["'&<>]/g, '').trim();
                 }
 
                 let bolAdditionalSpoiler = false;
                 if (strTab === 'scrolls') {
-                    bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipeSource" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipeSource'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
+                    bolAdditionalSpoiler = (("tip_extra" in objItems[strItemKey] && (!("recipe_source" in objItems[strItemKey]["tip_extra"]) || objItems[strItemKey]["tip_extra"]['recipe_source'] == "Available From Start")) || !("tip_extra" in objItems[strItemKey]));
                 }
                 $divItems.append(`
-                    <div class="item ${objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler ? 'spoiler' : ''} ${objItemsTemp[strItemKey]['lategame'] ? 'lategame' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
+                    <div class="item ${objItems[strItemKey]['spoiler'] || objItems[strItemKey]['no_data'] || bolAdditionalSpoiler ? 'spoiler' : ''} ${objItems[strItemKey]['lategame'] ? 'lategame' : ''}" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}">
                         <input class="item_cbx" ${objMistriaData[strTab].has(strLocalstorageKey) ? 'checked' : ''} type="checkbox" id="${strCbxID}" name="${strTab}" value="${strLocalstorageKey}">
                         <label for="${strCbxID}" class="has_tip" id="label_${strCbxID}">
-                            <div class="image ${objItemsTemp[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(${strImageItemPathSubCategory}${strItemKey}.png)"></div>
-                            <div class="name">${objItemsTemp[strItemKey]['name']}</div>
+                            <div class="image ${objItems[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strItemKey}.png)"></div>
+                            <div class="name">${objItems[strItemKey]['name']}</div>
                         </label>
                     </div>
                 `);
 
                 if (strTab === 'scrolls' || strTab === 'almanac') {
-                    if (objItemsTemp[strItemKey]['spoiler'] || objItemsTemp[strItemKey]['nodata'] || bolAdditionalSpoiler) {
+                    if (objItems[strItemKey]['spoiler'] || objItems[strItemKey]['no_data'] || bolAdditionalSpoiler) {
                         $divItems.append(`<div class="item spoiler_placeholder" data-cbx="${!arrObtainEasy.some(v => strDataCbx.includes(v)) ? 'Difficult to obtain' : ''} ${strDataCbx}"></div>`);
                     }
                 }
 
                 if (!(strTab === 'animals' && objSubcategory.info.name.includes('Tier '))) {
-                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, objItemsTemp, (strTab === 'buffs' && 'buff' in objItemsTemp[strItemKey] ? objItemsTemp[strItemKey]['buff'] : false))}`);
+                    $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, (strTab === 'buffs' && 'buff' in objItems[strItemKey] ? objItems[strItemKey]['buff'] : false))}`);
                     const template = $(`#tip_${strCbxID}`)[0];
                     template.style.display = 'block';
                     tippy(`#label_${strCbxID}`, {
@@ -4014,10 +3896,12 @@ function loadMenuItems() {
     $('#search_items').on('keyup', function () {
         $('#page').removeHighlight();
         $('.hide_search').removeClass('hide_search');
+        $('#cancel_search').hide();
 
         const value = $(this).val().toLowerCase();
 
         if (value !== '') {
+            $('#cancel_search').show();
             const keywords = value.split('+').map(s => s.trim()).filter(Boolean);
 
             $('#scraped .item').filter(function () {
@@ -4068,6 +3952,10 @@ function loadMenuItems() {
         });
 
         checkScrapedTabVisibility();
+    });
+    $('#cancel_search').on('click', function (e) {
+        $('#search_items').val('');
+        $('#search_items').trigger('keyup');
     });
 
     var arrModes = ['mode_dark', 'mode_stars', 'mode_name', 'mode_gift', 'mode_collapse', 'mode_chbexpand', 'mode_spoilers', 'mode_lategame', 'mode_mini', 'mode_disable_tooltip', 'mode_mini_tooltip'];
@@ -4193,10 +4081,10 @@ $(function () {
     resizeObserver.observe(document.getElementById("wrapped"));
 
 
-    if (!localStorage.getItem('new_planner')) {
-        localStorage.setItem('new_planner', 1);
-        $('#popup_planner').show();
-    }
+    // if (!localStorage.getItem('new_planner')) {
+    //     localStorage.setItem('new_planner', 1);
+    //     $('#popup_planner').show();
+    // }
 });
 
 function throttle(fn, time) {

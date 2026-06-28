@@ -141,11 +141,11 @@
 
 .popup_wrapper a:not(.button_item) {
     text-decoration: unset;
-    color: #a2d2ff;
+    color: var(--link);
 }
 
 .popup_wrapper a:not(.button_item):visited {
-    color: #cdb4db;
+    color: var(--link-visited);
 }
 
 .inner_divider+.inner_divider {

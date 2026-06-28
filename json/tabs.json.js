@@ -1,5 +1,3346 @@
 var objTabs =
 {
+    "almanac": {
+        "info": {
+            "name": "Almanac",
+            "icon": "almanac.png",
+            "img_mini_path": "almanac/",
+            "only_mini": 1,
+            "img_item_path": "items/",
+            "item_json": "items"
+        },
+        "categories": {
+            "artifacts": {
+                "info": {
+                    "name": "Artifacts",
+                    "img_mini": "artifacts",
+                    "wikilink": "Artifacts"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "alda_bronze_sword",
+                            "alda_clay_pot",
+                            "alda_feather_pendant",
+                            "alda_gem_bracelet",
+                            "alda_mural_tablet",
+                            "aldarian_gauntlet",
+                            "aldarian_sword",
+                            "aldarian_war_banner",
+                            "amber_trapped_insect",
+                            "ancient_crystal_goblet",
+                            "ancient_gold_coin",
+                            "ancient_horn_circlet",
+                            "ancient_royal_scepter",
+                            "ancient_stone_lantern",
+                            "black_tablet",
+                            "caldosian_breastplate",
+                            "caldosian_drinking_horn",
+                            "caldosian_emperor_bust",
+                            "caldosian_sword",
+                            "clay_amphora",
+                            "coin_lump",
+                            "completely_wrong_map",
+                            "crab_statue",
+                            "criminal_confession",
+                            "crystal_apple",
+                            "dense_water",
+                            "diamond_backed_mirror",
+                            "dragon_claw",
+                            "dragon_pact_tablet",
+                            "dragon_scale",
+                            "dragon_forged_bracelet",
+                            "earth_infused_stone",
+                            "faceted_rock_gem",
+                            "family_crest_pendant",
+                            "fire_crystal",
+                            "flint_arrowhead",
+                            "fossilized_egg",
+                            "fossilized_mandrake_root",
+                            "gathering_basket",
+                            "giant_fish_scale",
+                            "hardened_essence",
+                            "lost_crown_of_aldaria",
+                            "mermaids_comb",
+                            "message_in_a_bottle",
+                            "metal_leaf",
+                            "meteorite",
+                            "miners_helmet",
+                            "miners_pickaxe",
+                            "miners_rucksack",
+                            "miners_slab",
+                            "mist_crystal",
+                            "mist_flute",
+                            "mist_scroll",
+                            "misty_black_mirror",
+                            "misty_feather_quill",
+                            "muttering_cube",
+                            "obsidian_blade",
+                            "perfect_copper_ore",
+                            "perfect_diamond",
+                            "perfect_emerald",
+                            "perfect_gold_ore",
+                            "perfect_iron_ore",
+                            "perfect_mistril_ore",
+                            "perfect_pink_diamond",
+                            "perfect_ruby",
+                            "perfect_sapphire",
+                            "perfect_silver_ore",
+                            "petrified_wood",
+                            "porcelain_figurine",
+                            "rainbow_geode",
+                            "rainbow_seaweed",
+                            "really_round_rock",
+                            "red_obsidian",
+                            "ritual_beads",
+                            "ritual_chalice",
+                            "ritual_incense_burner",
+                            "ritual_scepter",
+                            "ritual_tablet",
+                            "rock_statue",
+                            "rock_with_a_hole",
+                            "rubber_fish",
+                            "rusted_shield",
+                            "rusted_treasure_chest",
+                            "sea_glass",
+                            "seriously_square_stone",
+                            "shortcut_scroll",
+                            "starlight_coral",
+                            "statuette_of_caldarus",
+                            "stone_horse",
+                            "stone_shell",
+                            "tidestone",
+                            "tin_lunchbox",
+                            "tiny_dinosaur_skeleton",
+                            "tiny_volcano",
+                            "trilobite_fossil",
+                            "unknown_dragon_statuette",
+                            "vintage_brush",
+                            "vintage_cow_bell",
+                            "vintage_hammer",
+                            "vintage_sickle",
+                            "vintage_watering_can",
+                            "warm_rock",
+                            "water_sphere",
+                            "weightless_stone",
+                            "worn_pendant"
+                        ]
+                    }
+                }
+            },
+            "blacksmithing": {
+                "info": {
+                    "name": "Blacksmithing",
+                    "img_mini": "blacksmithing",
+                    "wikilink": "Blacksmithing"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "copper_armor",
+                            "axe_copper",
+                            "fishing_rod_copper",
+                            "copper_greaves",
+                            "copper_helmet",
+                            "hoe_copper",
+                            "copper_ingot",
+                            "copper_legplates",
+                            "net_copper",
+                            "pick_axe_copper",
+                            "copper_ring",
+                            "shovel_copper",
+                            "sword_copper",
+                            "watering_can_copper",
+                            "dragon_forged_core",
+                            "dragon_forged_fang",
+                            "dragon_forged_horn",
+                            "dragon_forged_powder",
+                            "sword_dragon_forged",
+                            "gold_armor",
+                            "axe_gold",
+                            "fishing_rod_gold",
+                            "gold_greaves",
+                            "gold_helmet",
+                            "hoe_gold",
+                            "gold_ingot",
+                            "gold_legplates",
+                            "net_gold",
+                            "pick_axe_gold",
+                            "gold_ring",
+                            "shovel_gold",
+                            "sword_gold",
+                            "watering_can_gold",
+                            "iron_armor",
+                            "axe_iron",
+                            "fishing_rod_iron",
+                            "iron_greaves",
+                            "iron_helmet",
+                            "hoe_iron",
+                            "iron_ingot",
+                            "iron_legplates",
+                            "net_iron",
+                            "pick_axe_iron",
+                            "iron_ring",
+                            "shovel_iron",
+                            "sword_iron",
+                            "watering_can_iron",
+                            "mistril_armor",
+                            "axe_mistril",
+                            "fishing_rod_mistril",
+                            "mistril_boots",
+                            "mistril_helmet",
+                            "hoe_mistril",
+                            "mistril_ingot",
+                            "mistril_legplates",
+                            "net_mistril",
+                            "pick_axe_mistril",
+                            "mistril_ring",
+                            "shovel_mistril",
+                            "sword_mistril",
+                            "watering_can_mistril",
+                            "silver_armor",
+                            "axe_silver",
+                            "fishing_rod_silver",
+                            "silver_greaves",
+                            "silver_helmet",
+                            "hoe_silver",
+                            "silver_ingot",
+                            "silver_legplates",
+                            "net_silver",
+                            "pick_axe_silver",
+                            "silver_ring",
+                            "shovel_silver",
+                            "sword_silver",
+                            "watering_can_silver"
+                        ]
+                    }
+                }
+            },
+            "bugs": {
+                "info": {
+                    "name": "Bugs",
+                    "img_mini": "bugs",
+                    "wikilink": "Bugs"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "ancient_firefly",
+                            "ant",
+                            "ant_queen",
+                            "beach_hopper",
+                            "big_bee",
+                            "biggest_beetle",
+                            "brightbulb_moth",
+                            "bumblebee",
+                            "butterfly",
+                            "caterpillar",
+                            "chillipede",
+                            "cicada",
+                            "cicada_nymph",
+                            "cooktop_beetle",
+                            "copper_beetle",
+                            "coral_mantis",
+                            "cricket",
+                            "crystal_caterpillar",
+                            "crystal_wing_moth",
+                            "crystalline_cricket",
+                            "deep_earthworm",
+                            "diamond_beetle",
+                            "dragon_horn_beetle",
+                            "dragonfly",
+                            "fairy_bee",
+                            "fire_wasp",
+                            "firefly",
+                            "flower_bee",
+                            "flower_crown_beetle",
+                            "frost_flutter_butterfly",
+                            "fur_bee",
+                            "fuzzy_moth",
+                            "gem_shard_caterpillar",
+                            "giant_worm",
+                            "grasshopper",
+                            "hermit_crab",
+                            "hermit_snail",
+                            "hidden_beetle",
+                            "hummingbird_hawk_moth",
+                            "icehopper",
+                            "inchworm",
+                            "jewel_beetle",
+                            "ladybug",
+                            "lantern_moth",
+                            "lava_snail",
+                            "leafhopper",
+                            "lightning_dragonfly",
+                            "loam_caterpillar",
+                            "luna_moth",
+                            "magma_beetle",
+                            "mine_cricket",
+                            "mistmoth",
+                            "monarch_butterfly",
+                            "moonlight_bee",
+                            "mote_firefly",
+                            "orchid_mantis",
+                            "parchment_moth",
+                            "petalhopper",
+                            "polar_fly",
+                            "pond_skater",
+                            "praying_mantis",
+                            "puddle_spider",
+                            "queens_birdwing",
+                            "question_mark_butterfly",
+                            "redhead_worm",
+                            "relic_crab",
+                            "rhinoceros_beetle",
+                            "rock_roach",
+                            "roly_poly",
+                            "saint_mantis",
+                            "sand_bug",
+                            "sea_scarab",
+                            "singing_katydid",
+                            "smoke_moth",
+                            "snail",
+                            "snowball_beetle",
+                            "snug_bug",
+                            "speedy_snail",
+                            "strawhopper",
+                            "strobe_firefly",
+                            "sunset_moth",
+                            "surf_beetle",
+                            "sweet_bee",
+                            "tiger_swallowtail_butterfly",
+                            "tunnel_millipede",
+                            "void_snail",
+                            "walking_leaf",
+                            "walking_stick",
+                            "waterbug",
+                            "waterfly",
+                            "windleaf_butterfly",
+                            "winterpillar",
+                            "worm"
+                        ]
+                    }
+                }
+            },
+            "cooked_dishes": {
+                "info": {
+                    "name": "Cooked Dishes",
+                    "img_mini": "cooked_dishes",
+                    "wikilink": "Cooked Dishes"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "apple_honey_curry",
+                            "apple_juice",
+                            "apple_pie",
+                            "baked_potato",
+                            "baked_sweetroot",
+                            "beet_salad",
+                            "beet_soup",
+                            "bell_berry_bakewell_tart",
+                            "berries_and_cream",
+                            "berry_bowl",
+                            "blackberry_jam",
+                            "blueberry_jam",
+                            "braised_burdock",
+                            "braised_carrots",
+                            "bread",
+                            "breaded_catfish",
+                            "broccoli_salad",
+                            "buttered_peas",
+                            "cabbage_slaw",
+                            "candied_lemon_peel",
+                            "candied_queen_berries",
+                            "candied_strawberries",
+                            "candied_walnuts",
+                            "canned_sardines",
+                            "caramel_candy",
+                            "caramelized_moon_fruit",
+                            "cauliflower_curry",
+                            "cherry_cobbler",
+                            "cherry_smoothie",
+                            "cherry_tart",
+                            "chickpea_curry",
+                            "chili_coconut_curry",
+                            "caldosian_chocolate_cake",
+                            "clam_chowder",
+                            "coconut_cream_pie",
+                            "coconut_milk",
+                            "cod_with_thyme",
+                            "crab_cakes",
+                            "cranberry_juice",
+                            "cranberry_orange_scone",
+                            "crayfish_etouffee",
+                            "crispy_fried_earthshroom",
+                            "crunchy_chickpeas",
+                            "crystal_berry_pie",
+                            "cucumber_salad",
+                            "cucumber_sandwich",
+                            "deep_sea_soup",
+                            "deluxe_curry",
+                            "deviled_eggs",
+                            "dried_squid",
+                            "fast_food",
+                            "fish_skewer",
+                            "fish_stew",
+                            "fish_tacos",
+                            "fried_rice",
+                            "garlic_bread",
+                            "gazpacho",
+                            "glowberry_cookies",
+                            "golden_cheesecake",
+                            "golden_cookies",
+                            "grape_juice",
+                            "green_tea",
+                            "grilled_cheese",
+                            "grilled_corn",
+                            "grilled_eel_rice_bowl",
+                            "hard_boiled_egg",
+                            "harvest_plate",
+                            "herb_butter_pasta",
+                            "herb_salad",
+                            "horseradish_salmon",
+                            "hot_cocoa",
+                            "ice_cream_sundae",
+                            "iced_coffee",
+                            "incredibly_hot_pot",
+                            "jam_sandwich",
+                            "jasmine_tea",
+                            "latte",
+                            "sour_lemon_cake",
+                            "lemon_pie",
+                            "lemonade",
+                            "loaded_baked_potato",
+                            "lobster_roll",
+                            "mackerel_sashimi",
+                            "marmalade",
+                            "miners_mushroom_stew",
+                            "mocha",
+                            "monster_cookie",
+                            "monster_mash",
+                            "mont_blanc",
+                            "moon_fruit_cake",
+                            "mushroom_rice",
+                            "mushroom_steak_dinner",
+                            "noodles",
+                            "omelet",
+                            "onion_soup",
+                            "orange_juice",
+                            "pan_fried_bream",
+                            "pan_fried_salmon",
+                            "pan_fried_snapper",
+                            "peaches_and_cream",
+                            "perch_risotto",
+                            "pineshroom_toast",
+                            "pizza",
+                            "poached_pear",
+                            "pomegranate_juice",
+                            "pomegranate_sorbet",
+                            "potato_soup",
+                            "pudding",
+                            "pumpkin_pie",
+                            "pumpkin_stew",
+                            "queen_berry_pie",
+                            "quiche",
+                            "red_snapper_sushi",
+                            "riceball",
+                            "roasted_cauliflower",
+                            "roasted_chestnuts",
+                            "roasted_rice_tea",
+                            "roasted_sweet_potato",
+                            "rosehip_jam",
+                            "rose_tea",
+                            "rosemary_garlic_noodles",
+                            "salmon_sashimi",
+                            "salted_watermelon",
+                            "sauteed_snow_peas",
+                            "sea_bream_rice",
+                            "seafood_boil",
+                            "seafood_snow_pea_noodles",
+                            "seaweed_salad",
+                            "sesame_broccoli",
+                            "sesame_tuna_bowl",
+                            "simmered_daikon",
+                            "sliced_turnip",
+                            "smoked_trout_soup",
+                            "harvest_day_pie",
+                            "spell_fruit_parfait",
+                            "spicy_cheddar_biscuit",
+                            "spicy_corn",
+                            "spicy_crab_sushi",
+                            "spicy_water_chestnuts",
+                            "spirit_mushroom_tea",
+                            "spring_galette",
+                            "spring_salad",
+                            "steamed_broccoli",
+                            "strawberries_and_cream",
+                            "strawberry_shortcake",
+                            "summer_salad",
+                            "sushi_platter",
+                            "sweet_potato_pie",
+                            "sweet_sesame_balls",
+                            "cup_of_tea",
+                            "tide_salad",
+                            "toasted_sunflower_seeds",
+                            "tomato_soup",
+                            "trail_mix",
+                            "tuna_sashimi",
+                            "turnip_and_cabbage_salad",
+                            "turnip_and_potato_gratin",
+                            "vegetable_pot_pie",
+                            "vegetable_quiche",
+                            "vegetable_soup",
+                            "veggie_sub_sandwich",
+                            "water_chestnut_fritters",
+                            "wild_berry_jam",
+                            "wildberry_pie",
+                            "wildberry_scone",
+                            "winter_stew",
+                            "wintergreen_ice_cream"
+                        ]
+                    }
+                }
+            },
+            "crops": {
+                "info": {
+                    "name": "Crops",
+                    "img_mini": "crops",
+                    "wikilink": "Crops"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "apple",
+                            "beet",
+                            "broccoli",
+                            "cabbage",
+                            "carrot",
+                            "cauliflower",
+                            "celosia",
+                            "cherry",
+                            "chili_pepper",
+                            "chrysanthemum",
+                            "corn",
+                            "cranberry",
+                            "cucumber",
+                            "daikon_radish",
+                            "small_grass_starter",
+                            "lemon",
+                            "sapling_oak",
+                            "onion",
+                            "orange",
+                            "peach",
+                            "pear",
+                            "peas",
+                            "sapling_pine",
+                            "pomegranate",
+                            "potato",
+                            "pumpkin",
+                            "rice_stalk",
+                            "snow_peas",
+                            "strawberry",
+                            "sugar_cane",
+                            "sunflower",
+                            "sweet_potato",
+                            "tea",
+                            "tomato",
+                            "turnip",
+                            "watermelon",
+                            "wheat"
+                        ]
+                    }
+                }
+            },
+            "date_inspiration": {
+                "info": {
+                    "name": "Date Inspiration",
+                    "img_mini": "date_inspiration",
+                    "wikilink": "Date Inspiration"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "bath_soap",
+                            "dollhouse_bench",
+                            "inn_menu",
+                            "lovely_seashell",
+                            "picnic_set",
+                            "rough_gemstone"
+                        ]
+                    }
+                }
+            },
+            "fish": {
+                "info": {
+                    "name": "Fish",
+                    "img_mini": "fish",
+                    "wikilink": "Fish"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "alligator_gar",
+                            "amberjack",
+                            "anchovy",
+                            "angel_fish",
+                            "archerfish",
+                            "armored_bass",
+                            "bait_thief",
+                            "barb",
+                            "blue_crab",
+                            "bluegill",
+                            "bluefish",
+                            "bonito",
+                            "bowfish",
+                            "bream",
+                            "brown_bullhead",
+                            "brown_trout",
+                            "bullfrog",
+                            "burbot",
+                            "butterfish",
+                            "candelabra_seadragon",
+                            "carp",
+                            "catfish",
+                            "cave_eel",
+                            "cave_shark",
+                            "cave_shrimp",
+                            "char",
+                            "cherry_fish",
+                            "chub",
+                            "chum",
+                            "clam",
+                            "cod",
+                            "coelacanth",
+                            "copper_rockfish",
+                            "crab",
+                            "crayfish",
+                            "crucian_carp",
+                            "dace",
+                            "dart",
+                            "earth_eel",
+                            "emerald_horned_charger",
+                            "fiber",
+                            "firesail_fish",
+                            "flathead_catfish",
+                            "forest_perch",
+                            "freshwater_eel",
+                            "freshwater_oyster",
+                            "frog",
+                            "gar",
+                            "gazer",
+                            "giant_jellyfish",
+                            "giant_koi",
+                            "giant_tilapia",
+                            "goby",
+                            "golden_eel",
+                            "golden_shiner",
+                            "goldfish",
+                            "grayling",
+                            "grouper",
+                            "hake",
+                            "halibut",
+                            "herring",
+                            "horse_mackerel",
+                            "iron_fish",
+                            "jellyfish",
+                            "killifish",
+                            "king_crab",
+                            "koi",
+                            "lake_chub",
+                            "lake_trout",
+                            "lamprey",
+                            "lava_piranha",
+                            "leaf_fish",
+                            "lightning_fish",
+                            "loach",
+                            "lobster",
+                            "luminescent_crab",
+                            "mackerel",
+                            "massive_minnow",
+                            "mini_whale_shark",
+                            "minnow",
+                            "mullet",
+                            "muskie",
+                            "newt",
+                            "oarfish",
+                            "ocean_sunfish",
+                            "octopus",
+                            "paddlefish",
+                            "paper_pondshell",
+                            "pearl_clam",
+                            "pebble_minnow",
+                            "perch",
+                            "pike",
+                            "pink_scallop_shell",
+                            "pollock",
+                            "pond_snail",
+                            "puffer_fish",
+                            "rainbow_trout",
+                            "razorback",
+                            "red_snapper",
+                            "river_snail",
+                            "roach",
+                            "rock_bass",
+                            "rock_guppy",
+                            "rockbiter",
+                            "salmon",
+                            "sand_dollar",
+                            "sand_lance",
+                            "sapphire_betta",
+                            "sardine",
+                            "sauger",
+                            "saury",
+                            "sea_bass",
+                            "sea_bream",
+                            "sea_urchin",
+                            "seaweed",
+                            "shad",
+                            "shadow_bass",
+                            "shardfin",
+                            "shark",
+                            "shrimp",
+                            "silver_redhorse",
+                            "silver_squid",
+                            "smallmouth_bass",
+                            "snakehead",
+                            "snapping_turtle",
+                            "snow_fish",
+                            "spirula_shell",
+                            "squid",
+                            "stingray",
+                            "stone_loach",
+                            "striped_bass",
+                            "sturgeon",
+                            "sulfur_crab",
+                            "sunny",
+                            "sweetfish",
+                            "swordfish",
+                            "tarpon",
+                            "tetra",
+                            "tilapia",
+                            "transparent_jellyfish",
+                            "trout",
+                            "tuna",
+                            "turtle",
+                            "walleye",
+                            "water_balloon_fish",
+                            "white_perch",
+                            "winged_shrimp",
+                            "basic_wood"
+                        ]
+                    }
+                }
+            },
+            "forageables": {
+                "info": {
+                    "name": "Forageables",
+                    "img_mini": "forageables",
+                    "wikilink": "Forageables"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "acorn",
+                            "ash_mushroom",
+                            "basil",
+                            "bell_berry",
+                            "blackberry",
+                            "blue_conch_shell",
+                            "blueberry",
+                            "breath_of_fire",
+                            "breath_of_spring",
+                            "burdock_root",
+                            "catmint",
+                            "cattail",
+                            "chestnut",
+                            "chickpea",
+                            "chirping_fern",
+                            "coconut",
+                            "cosmos",
+                            "crocus",
+                            "crystal_berries",
+                            "crystal_rose",
+                            "daffodil",
+                            "daisy",
+                            "dandelion",
+                            "dill",
+                            "earthshroom",
+                            "essence_blossom",
+                            "ethereal_grass",
+                            "fennel",
+                            "fiddlehead",
+                            "flame_pepper",
+                            "fog_orchid",
+                            "frost_lily",
+                            "garlic",
+                            "glowberry",
+                            "heather",
+                            "holly",
+                            "horseradish",
+                            "hot_potato",
+                            "hydrangea",
+                            "iris",
+                            "cave_kelp",
+                            "jasmine",
+                            "lava_chestnuts",
+                            "lilac",
+                            "marigold",
+                            "middlemist",
+                            "mines_mussels",
+                            "moon_fruit",
+                            "morel_mushroom",
+                            "narrows_moss",
+                            "nettle",
+                            "night_queen",
+                            "oregano",
+                            "oyster_mushroom",
+                            "pinecone",
+                            "pineshroom",
+                            "pink_scallop_shell",
+                            "plum_blossom",
+                            "poinsettia",
+                            "queen_berry",
+                            "rockroot",
+                            "rose",
+                            "rose_hip",
+                            "rosemary",
+                            "sage",
+                            "sand_dollar",
+                            "sea_grapes",
+                            "sesame",
+                            "shadow_flower",
+                            "shale_grass",
+                            "snapdragon",
+                            "snowdrop_anemone",
+                            "spell_fruit",
+                            "spirit_mushroom",
+                            "spirula_shell",
+                            "sweetroot",
+                            "temple_flower",
+                            "thorn_vine",
+                            "thyme",
+                            "tide_lettuce",
+                            "tulip",
+                            "underseaweed",
+                            "upper_mines_mushroom",
+                            "viola",
+                            "void_herb",
+                            "walnut",
+                            "water_chestnut",
+                            "wild_berries",
+                            "wild_grapes",
+                            "wild_leek",
+                            "wintergreen_berry",
+                            "written_root"
+                        ]
+                    }
+                }
+            },
+            "furniture": {
+                "info": {
+                    "name": "Furniture",
+                    "img_mini": "furniture",
+                    "wikilink": "Furniture"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "glass_absinthe",
+                            "alpaca_plushie",
+                            "pirate_anchor_v1",
+                            "pirate_anchor_v2",
+                            "ocarina_sprite_statue",
+                            "animated_bird_fountain",
+                            "animated_snow_globe",
+                            "animated_waterfall_v1",
+                            "apiary",
+                            "crop_sign_apple",
+                            "autumn_scarecrow",
+                            "bakery_bread_basket_coffee",
+                            "bakery_cookie_jar_coffee",
+                            "bakery_cutting_board_coffee",
+                            "bakery_cake_case_coffee",
+                            "bakery_cake_coffee",
+                            "bakery_cake_slice_coffee",
+                            "basic_area_rug_green",
+                            "basic_bookshelf_oak",
+                            "basic_chair_oak",
+                            "counter_basic_v1",
+                            "counter_basic_v2",
+                            "basic_doormat_green",
+                            "basic_bed_double_oak",
+                            "basic_dresser_oak",
+                            "basic_flooring_oak",
+                            "basic_flower_pot_orange",
+                            "basic_nightstand_oak",
+                            "basic_oil_lamp_grey",
+                            "basic_bed_oak",
+                            "basic_table_oak",
+                            "basic_wallpaper_oak",
+                            "basic_wall_window_oak",
+                            "basic_wood_chest_black",
+                            "crop_sign_basil",
+                            "basket",
+                            "bathroom_bench_black",
+                            "bathroom_curtain_stand_black",
+                            "bathroom_floor_mirror_black",
+                            "bathroom_sink_black",
+                            "bathroom_tile_wall_blue",
+                            "bathroom_wall_mirror_black",
+                            "bathroom_wall_sconce",
+                            "bathroom_wall_towel_black",
+                            "bathtub_black",
+                            "beer_mug",
+                            "crop_sign_beet",
+                            "big_bell",
+                            "starter_bird_house_red",
+                            "tea_black",
+                            "blue_capybara_wall_ribbon",
+                            "blue_chicken_wall_ribbon",
+                            "blue_duck_wall_ribbon",
+                            "blue_rabbit_wall_ribbon",
+                            "spring_festival_basket",
+                            "spring_festival_large_planter",
+                            "spring_festival_planter",
+                            "spring_festival_flower_chest",
+                            "spring_festival_wreath",
+                            "crop_sign_broccoli",
+                            "dingy_broken_bottle_v1",
+                            "dingy_broken_bottle_v2",
+                            "broken_pillar_v1_gray",
+                            "dingy_broken_plate_v1",
+                            "dingy_broken_plate_v2",
+                            "dingy_couch_v1",
+                            "dingy_couch_v2",
+                            "dingy_window_v1",
+                            "dingy_window_v2",
+                            "bronze_alpaca_trophy",
+                            "bronze_cow_trophy",
+                            "bronze_horse_trophy",
+                            "bronze_sheep_trophy",
+                            "bumblebee_plushie",
+                            "crop_sign_burdock_root",
+                            "butterfly_bed_v1",
+                            "butterfly_double_bed_v1",
+                            "butterfly_painting_v1",
+                            "butterfly_wall_lamp_bronze",
+                            "crop_sign_cabbage",
+                            "counter_cabin_cherry",
+                            "counter_cabin_oak",
+                            "counter_cabin_walnut",
+                            "counter_cake_chocolate",
+                            "counter_cake_double_chocolate",
+                            "counter_cake_strawberry",
+                            "mistria_history_scroll_v1",
+                            "campfire",
+                            "candle",
+                            "candle_chamberstick",
+                            "capybara_plushie",
+                            "dingy_chair_v1",
+                            "dingy_chair_v2",
+                            "crop_sign_carrot",
+                            "caterpillar_chair_v1",
+                            "crop_sign_catmint",
+                            "crop_sign_cauliflower",
+                            "crop_sign_celosia",
+                            "champions_kitchen_blue",
+                            "counter_kitchen_blue",
+                            "hero_shield_bronze",
+                            "cherry_bonsai",
+                            "cherry_chair",
+                            "cherry_flooring",
+                            "cherry_fruit_bowl",
+                            "cherry_rug",
+                            "crop_sign_cherry",
+                            "cherry_table",
+                            "cherry_table_lamp",
+                            "cherry_wallpaper",
+                            "chess_bishop_black",
+                            "chess_king_black",
+                            "chess_knight_black",
+                            "chess_pawn_black",
+                            "chess_queen_black",
+                            "chess_rook_black",
+                            "chess_table_black",
+                            "chicken_plushie",
+                            "crop_sign_chickpea",
+                            "crop_sign_chili_pepper",
+                            "dingy_chipped_cup_v1",
+                            "dingy_chipped_cup_v2",
+                            "crop_sign_chrysanthemum",
+                            "haunted_attic_wall_cobweb_left",
+                            "haunted_attic_wall_cobweb_right",
+                            "glass_cocktail",
+                            "crop_sign_coconut",
+                            "coffee_mug_v1",
+                            "color_paving_stone_v01",
+                            "coral_chair_blue",
+                            "coral_lamp_blue",
+                            "coral_storage_chest_blue",
+                            "coral_table_blue",
+                            "coral_stone_archway",
+                            "crop_sign_corn",
+                            "cornucopia",
+                            "crop_sign_cosmos",
+                            "cottage_garden_arch_v1",
+                            "cottage_garden_planter_v1",
+                            "cottage_garden_shed_v1",
+                            "cottage_garden_trellis_v1",
+                            "cottage_garden_workbench_v1",
+                            "pirate_counterfeit_gold_pile_v1",
+                            "pirate_counterfeit_gold_pile_v2",
+                            "cow_plushie",
+                            "craft_rug_v1",
+                            "craft_fabric_rack_v1",
+                            "craft_closed_sewing_tin_v1",
+                            "craft_yarn_basket_v1",
+                            "crop_sign_cranberry",
+                            "crystal_string_lights_blue",
+                            "crop_sign_cucumber",
+                            "crop_sign_daffodil",
+                            "crop_sign_daikon_radish",
+                            "crop_sign_daisy",
+                            "spring_festival_breath_of_spring_wreath",
+                            "deluxe_icebox_blue",
+                            "deluxe_icebox_green",
+                            "deluxe_icebox_pink",
+                            "deluxe_icebox_white",
+                            "deluxe_icebox_yellow",
+                            "deluxe_storage_chest_aqua",
+                            "deluxe_storage_chest_black",
+                            "deluxe_storage_chest_blue",
+                            "deluxe_storage_chest_dark_brown",
+                            "deluxe_storage_chest_gold",
+                            "deluxe_storage_chest_gray",
+                            "deluxe_storage_chest_green",
+                            "deluxe_storage_chest_light_brown",
+                            "deluxe_storage_chest_orange",
+                            "deluxe_storage_chest_pink",
+                            "deluxe_storage_chest_purple",
+                            "deluxe_storage_chest_red",
+                            "deluxe_storage_chest_white",
+                            "journal",
+                            "crop_sign_dill",
+                            "dirt_dot_one",
+                            "dirt_dot_two",
+                            "dirt_dot_three",
+                            "dirt_clear",
+                            "dingy_flooring_v1",
+                            "dingy_flooring_v2",
+                            "dragon_altar_earth",
+                            "dragon_priestess_fountain_v1",
+                            "dragon_statue_replica_v1",
+                            "duck_plushie",
+                            "emerald_chair_v1",
+                            "emerald_double_bed_v1",
+                            "emerald_nightstand_v1",
+                            "emerald_rug_v1",
+                            "emerald_wallpaper_v1",
+                            "espresso_cup_v1",
+                            "espresso_machine",
+                            "explorer_bed_beige",
+                            "explorer_chair_beige",
+                            "explorer_double_bed_beige",
+                            "explorer_flooring_beige",
+                            "explorer_globe_beige",
+                            "explorer_lamp_beige",
+                            "explorer_rug_beige",
+                            "explorer_trunk_table_beige",
+                            "explorer_wallpaper_beige",
+                            "extra_large_decorative_pumpkin_black",
+                            "extra_large_decorative_pumpkin_green",
+                            "extra_large_decorative_pumpkin_orange",
+                            "extra_large_decorative_pumpkin_purple",
+                            "extra_large_decorative_pumpkin_white",
+                            "extra_large_decorative_pumpkin_yellow",
+                            "fall_table_cream",
+                            "fall_double_bed_cream",
+                            "fall_bed_cream",
+                            "farm_house_calendar",
+                            "crop_faux_ash_mushroom",
+                            "crop_faux_basil",
+                            "crop_faux_beet",
+                            "crop_faux_blue_conch_shell",
+                            "crop_faux_breath_of_fire",
+                            "crop_faux_broccoli",
+                            "crop_faux_burdock_root",
+                            "crop_faux_cabbage",
+                            "crop_faux_carrot",
+                            "crop_faux_catmint",
+                            "crop_faux_cauliflower",
+                            "crop_faux_celosia",
+                            "crop_faux_chestnut",
+                            "crop_faux_chickpea",
+                            "crop_faux_chili_pepper",
+                            "crop_faux_chirping_fern",
+                            "crop_faux_chrysanthemum",
+                            "crop_faux_corn",
+                            "crop_faux_cosmos",
+                            "crop_faux_cranberry",
+                            "crop_faux_crocus",
+                            "crop_faux_crystal_berries",
+                            "crop_faux_crystal_rose",
+                            "crop_faux_cucumber",
+                            "crop_faux_daffodil",
+                            "crop_faux_daikon_radish",
+                            "crop_faux_daisy",
+                            "crop_faux_dandelion",
+                            "crop_faux_dill",
+                            "crop_faux_earthshroom",
+                            "crop_faux_essence_blossom",
+                            "crop_faux_ethereal_grass",
+                            "crop_faux_fennel",
+                            "crop_faux_fiddlehead",
+                            "fishing_plaque_blue",
+                            "crop_faux_flame_pepper",
+                            "crop_faux_fog_orchid",
+                            "crop_faux_frost_lily",
+                            "crop_faux_garlic",
+                            "crop_faux_heather",
+                            "crop_faux_holly",
+                            "crop_faux_horseradish",
+                            "crop_faux_hot_potato",
+                            "crop_faux_ice_block",
+                            "crop_faux_iris",
+                            "crop_faux_cave_kelp",
+                            "crop_faux_jasmine",
+                            "crop_faux_lava_chestnuts",
+                            "crop_faux_lilac",
+                            "crop_faux_mystery_bag",
+                            "crop_faux_marigold",
+                            "crop_faux_middlemist",
+                            "crop_faux_mines_mussels",
+                            "crop_faux_moon_fruit",
+                            "crop_faux_morel_mushroom",
+                            "crop_faux_narrows_moss",
+                            "crop_faux_nettle",
+                            "crop_faux_night_queen",
+                            "crop_faux_onion",
+                            "crop_faux_oregano",
+                            "crop_faux_oyster_mushroom",
+                            "crop_faux_peas",
+                            "crop_faux_pineshroom",
+                            "crop_faux_pink_scallop_shell",
+                            "crop_faux_poinsettia",
+                            "crop_faux_potato",
+                            "crop_faux_pumpkin",
+                            "crop_faux_rice",
+                            "crop_faux_rockroot",
+                            "crop_faux_rosemary",
+                            "crop_faux_sage",
+                            "crop_faux_sand_dollar",
+                            "crop_faux_sea_grapes",
+                            "crop_faux_sesame",
+                            "crop_faux_shadow_flower",
+                            "crop_faux_shale_grass",
+                            "crop_faux_snapdragon",
+                            "crop_faux_snow_peas",
+                            "crop_faux_snowdrop_anemone",
+                            "crop_faux_spell_fruit",
+                            "crop_faux_spirit_mushroom",
+                            "crop_faux_spirula_shell",
+                            "crop_faux_strawberry",
+                            "crop_faux_sugar_cane",
+                            "crop_faux_sunflower",
+                            "crop_faux_sweet_potato",
+                            "crop_faux_sweetroot",
+                            "crop_faux_tea",
+                            "crop_faux_temple_flower",
+                            "crop_faux_thorn_vine",
+                            "crop_faux_thyme",
+                            "crop_faux_tide_lettuce",
+                            "crop_faux_tomato",
+                            "crop_faux_tulip",
+                            "crop_faux_turnip",
+                            "crop_faux_upper_mines_mushroom",
+                            "crop_faux_viola",
+                            "crop_faux_void_herb",
+                            "crop_faux_walnut",
+                            "crop_faux_watermelon",
+                            "crop_faux_wheat",
+                            "crop_faux_wild_leek",
+                            "crop_faux_written_root",
+                            "field_grass_two",
+                            "firefly_wall_string_lights_blue",
+                            "fish_plush_toy",
+                            "fishing_tank_gold",
+                            "fishing_bed_blue",
+                            "fishing_chair_blue",
+                            "fishing_double_bed_blue",
+                            "fishing_flooring_blue",
+                            "fishing_rug_blue",
+                            "fishing_table_blue",
+                            "fishing_trophy_shelf_blue",
+                            "fishing_wallpaper_blue",
+                            "cavern_floor_brazier_blue",
+                            "crop_sign_frost_lily",
+                            "cooking_frying_pan_v1",
+                            "dingy_garbage_bag_v1",
+                            "dingy_garbage_bag_v2",
+                            "kitchen_garlic_braid",
+                            "crop_sign_garlic",
+                            "gemstone_bridge_v1",
+                            "cavern_crystal_lamp_green",
+                            "gold_alpaca_trophy",
+                            "gold_cow_trophy",
+                            "gold_floor_mirror",
+                            "gold_horse_trophy",
+                            "gold_sheep_trophy",
+                            "gold_wall_mirror",
+                            "queen_berry_trophy",
+                            "field_flower_two",
+                            "field_grass",
+                            "field_clear",
+                            "field_flower",
+                            "green_bottle",
+                            "tea_green",
+                            "gryphon_statue_replica_v1",
+                            "kitchen_hanging_onion_basket",
+                            "cooking_hanging_pans_v1",
+                            "harvest_festival_arch",
+                            "harvest_festival_centerpiece",
+                            "haunted_attic_armoire_dark",
+                            "haunted_attic_bed_dark",
+                            "haunted_attic_chair_dark",
+                            "haunted_attic_double_bed_dark",
+                            "haunted_attic_dress_form_dark",
+                            "haunted_attic_flooring_dark",
+                            "haunted_attic_nightstand_dark",
+                            "haunted_attic_rocking_chair_dark",
+                            "haunted_attic_table_dark",
+                            "haunted_attic_wall_shelf_dark",
+                            "haunted_attic_wallpaper_dark",
+                            "haunted_attic_wall_window_dark",
+                            "spooky_haybale",
+                            "crop_sign_heather",
+                            "kitchen_herb_planter_v1",
+                            "herringbone_tile_floor_blue",
+                            "cavern_hewn_rock_bookshelf",
+                            "cavern_hewn_rock_table",
+                            "honeycomb_shelf",
+                            "horse_plushie",
+                            "ladder",
+                            "stairs",
+                            "inn_candle",
+                            "inn_counter",
+                            "inn_cross_stitch",
+                            "inn_kitchen_shelves",
+                            "inn_stool",
+                            "inn_tile_flooring",
+                            "inn_wooden_flooring",
+                            "insect_flooring_v1",
+                            "insect_rug_v1",
+                            "insect_wallpaper_v1",
+                            "crop_sign_iris",
+                            "crop_sign_jasmine",
+                            "kitchen_scale_blue",
+                            "ladybug_table_v1",
+                            "alda_pot_replica_blue",
+                            "large_decorative_pumpkin_black",
+                            "large_decorative_pumpkin_green",
+                            "large_decorative_pumpkin_orange",
+                            "large_decorative_pumpkin_purple",
+                            "large_decorative_pumpkin_white",
+                            "large_decorative_pumpkin_yellow",
+                            "large_fluffy_rug_beige",
+                            "jar_large",
+                            "large_paving_stone_v1",
+                            "void_flagstone_large_v1",
+                            "water_sprite_statue_large_v1",
+                            "lava_caves_stone_arch",
+                            "lava_caves_flooring",
+                            "lava_caves_wallpaper",
+                            "lemon_bonsai",
+                            "lemon_flooring",
+                            "lemon_fruit_bowl",
+                            "lemon_rug",
+                            "crop_sign_lemon",
+                            "lemon_stool",
+                            "lemon_table",
+                            "lemon_table_lamp",
+                            "lemon_wallpaper",
+                            "glass_lemonade",
+                            "fishing_lamp_blue",
+                            "crop_sign_lilac",
+                            "cottage_chair_ash",
+                            "counter_cottage_v1",
+                            "counter_cottage_v2",
+                            "cottage_bed_double_ash",
+                            "cottage_dresser_ash",
+                            "cottage_flooring_ash",
+                            "cottage_fridge_ash",
+                            "cottage_nightstand_ash",
+                            "cottage_plant_shelf_ash",
+                            "cottage_potted_fig_ash",
+                            "cottage_potted_flowers_ash",
+                            "cottage_rug_ash",
+                            "cottage_bed_ash",
+                            "cottage_table_ash",
+                            "cottage_wall_flowers_ash",
+                            "cottage_wallpaper_ash",
+                            "cottage_wall_window_ash",
+                            "low_tide_flooring",
+                            "crop_sign_mystery_bag",
+                            "maples_drawing",
+                            "crop_sign_marigold",
+                            "box_medium_v1",
+                            "medium_decorative_pumpkin_black",
+                            "medium_decorative_pumpkin_green",
+                            "medium_decorative_pumpkin_orange",
+                            "medium_decorative_pumpkin_purple",
+                            "medium_decorative_pumpkin_white",
+                            "medium_decorative_pumpkin_yellow",
+                            "jar_medium",
+                            "haunted_attic_candle_single",
+                            "haunted_attic_candle_cluster",
+                            "mermaid_double_bed_v1",
+                            "glass_milk",
+                            "miners_minecart_v1",
+                            "mines_wooden_arch",
+                            "miners_crate_chair_v1",
+                            "miners_floor_lamp_v1",
+                            "miners_flooring",
+                            "miners_shelves_v1",
+                            "miners_crate_chest_v1",
+                            "miners_wallpaper",
+                            "miners_wall_lamp_v1",
+                            "mist_bed_v1",
+                            "mist_bed_v2",
+                            "mist_bed_v3",
+                            "mist_bed_v4",
+                            "mist_cushion_v1",
+                            "mist_cushion_v2",
+                            "mist_cushion_v3",
+                            "mist_cushion_v4",
+                            "mist_double_bed_v1",
+                            "mist_double_bed_v2",
+                            "mist_double_bed_v3",
+                            "mist_double_bed_v4",
+                            "mist_lamp_v1",
+                            "mist_lamp_v2",
+                            "mist_lamp_v3",
+                            "mist_lamp_v4",
+                            "mist_pet_bed_v1",
+                            "mist_pet_bed_v2",
+                            "mist_pet_bed_v3",
+                            "mist_pet_bed_v4",
+                            "mist_rug_v1",
+                            "mist_rug_v2",
+                            "mist_rug_v3",
+                            "mist_rug_v4",
+                            "mist_storage_chest_v1",
+                            "mist_storage_chest_v2",
+                            "mist_storage_chest_v3",
+                            "mist_storage_chest_v4",
+                            "mistria_history_book_v1",
+                            "mistria_wall_map_v1",
+                            "forge_mistril",
+                            "kitchen_mixing_bowls_v1",
+                            "crop_sign_moon_fruit",
+                            "moon_gate_v1",
+                            "cavern_mossy_rug_v1",
+                            "dingy_string_lights_v1",
+                            "dingy_string_lights_v2",
+                            "moth_lamp_v1",
+                            "mournful_clown_painting",
+                            "dingy_mouse_hole_v1",
+                            "dingy_mouse_hole_v2",
+                            "cavern_mushroom_stool_green",
+                            "pirate_nautical_compass_v1",
+                            "pirate_nautical_compass_v2",
+                            "crop_sign_night_queen",
+                            "notepad_white",
+                            "fishing_oar_wall_decor_blue",
+                            "obelisk_beige",
+                            "lava_caves_obsidian_bed_blue",
+                            "lava_caves_obsidian_chair_blue",
+                            "lava_caves_obsidian_fence_blue",
+                            "lava_caves_obsidian_floor_lamp_blue",
+                            "lava_caves_obsidian_storage_chest_blue",
+                            "lava_caves_obsidian_table_blue",
+                            "octopus_plushie",
+                            "kitchen_oil_and_vinegar_basket_v1",
+                            "crop_sign_onion",
+                            "crop_sign_orange",
+                            "crop_sign_oregano",
+                            "miners_copper_node",
+                            "lava_caves_diamond_rock",
+                            "cavern_emerald_rock",
+                            "lava_caves_gold_node",
+                            "ornamental_iron_node",
+                            "ruins_mistril_node",
+                            "ruins_pink_diamond_rock",
+                            "miners_ruby_rock",
+                            "ornamental_sapphire_rock",
+                            "cavern_silver_node",
+                            "ornate_flagstone_v1",
+                            "ornate_rug_large_rectangle_blue",
+                            "ornate_rug_large_round_blue",
+                            "ornate_rug_large_square_blue",
+                            "ornate_rug_medium_round_blue",
+                            "ornate_rug_medium_square_blue",
+                            "ornate_rug_small_blue",
+                            "jar_pair",
+                            "paper_stack",
+                            "crop_sign_peach",
+                            "crop_sign_pear",
+                            "crop_sign_peas",
+                            "dingy_wallpaper_v1",
+                            "dingy_wallpaper_v2",
+                            "picket_fence",
+                            "picnic_basket_pink",
+                            "picnic_rug_pink",
+                            "picnic_hamburger_plate",
+                            "picnic_donut_plate",
+                            "picnic_pie_plate_pink",
+                            "picnic_sandwich_plate",
+                            "picnic_place_setting_pink",
+                            "picnic_sunflower_vase_pink",
+                            "dingy_pile_of_laundry_v1",
+                            "dingy_pile_of_laundry_v2",
+                            "dingy_pile_of_newspapers_v1",
+                            "dingy_pile_of_newspapers_v2",
+                            "pirate_wall_flag_v1",
+                            "pirate_wall_flag_v2",
+                            "crop_sign_poinsettia",
+                            "crop_sign_pomegranate",
+                            "fishing_window_gold",
+                            "crop_sign_potato",
+                            "starter_potted_plant",
+                            "pumpkin_pile_black",
+                            "pumpkin_pile_green",
+                            "pumpkin_pile_orange",
+                            "pumpkin_pile_purple",
+                            "pumpkin_pile_white",
+                            "pumpkin_pile_yellow",
+                            "crop_sign_pumpkin",
+                            "rabbit_plushie",
+                            "red_capybara_wall_ribbon",
+                            "red_chicken_wall_ribbon",
+                            "red_duck_wall_ribbon",
+                            "red_rabbit_wall_ribbon",
+                            "wine_glass_red",
+                            "artifact_replica_alda_bronze_sword",
+                            "artifact_replica_alda_clay_pot",
+                            "artifact_replica_alda_feather_pendant",
+                            "artifact_replica_alda_gem_bracelet",
+                            "artifact_replica_alda_mural_tablet",
+                            "artifact_replica_aldarian_gauntlet",
+                            "artifact_replica_aldarian_sword",
+                            "artifact_replica_aldarian_war_banner",
+                            "artifact_replica_amber_trapped_insect",
+                            "artifact_replica_ancient_crystal_goblet",
+                            "artifact_replica_ancient_gold_coin",
+                            "artifact_replica_ancient_horn_circlet",
+                            "artifact_replica_ancient_royal_scepter",
+                            "artifact_replica_ancient_stone_lantern",
+                            "artifact_replica_black_tablet",
+                            "artifact_replica_caldosian_breastplate",
+                            "artifact_replica_caldosian_drinking_horn",
+                            "artifact_replica_caldosian_emperor_bust",
+                            "artifact_replica_caldosian_sword",
+                            "artifact_replica_clay_amphora",
+                            "artifact_replica_coin_lump",
+                            "artifact_replica_completely_wrong_map",
+                            "artifact_replica_crab_statue",
+                            "artifact_replica_criminal_confession",
+                            "artifact_replica_crystal_apple",
+                            "artifact_replica_dense_water",
+                            "artifact_replica_diamond_backed_mirror",
+                            "artifact_replica_dragon_claw",
+                            "artifact_replica_dragon_pact_tablet",
+                            "artifact_replica_dragon_scale",
+                            "artifact_replica_dragon_forged_bracelet",
+                            "artifact_replica_earth_infused_stone",
+                            "artifact_replica_faceted_rock_gem",
+                            "artifact_replica_family_crest_pendant",
+                            "artifact_replica_fire_crystal",
+                            "artifact_replica_flint_arrowhead",
+                            "artifact_replica_fossilized_egg",
+                            "artifact_replica_fossilized_mandrake_root",
+                            "artifact_replica_gathering_basket",
+                            "artifact_replica_giant_fish_scale",
+                            "artifact_replica_hardened_essence",
+                            "artifact_replica_lost_crown_of_aldaria",
+                            "artifact_replica_mermaids_comb",
+                            "artifact_replica_message_in_a_bottle",
+                            "artifact_replica_metal_leaf",
+                            "artifact_replica_meteorite",
+                            "artifact_replica_miners_helmet",
+                            "artifact_replica_miners_pickaxe",
+                            "artifact_replica_miners_rucksack",
+                            "artifact_replica_miners_slab",
+                            "artifact_replica_mist_crystal",
+                            "artifact_replica_mist_flute",
+                            "artifact_replica_mist_scroll",
+                            "artifact_replica_misty_black_mirror",
+                            "artifact_replica_misty_feather_quill",
+                            "artifact_replica_muttering_cube",
+                            "artifact_replica_obsidian_blade",
+                            "artifact_replica_perfect_copper_ore",
+                            "artifact_replica_perfect_diamond",
+                            "artifact_replica_perfect_emerald",
+                            "artifact_replica_perfect_gold_ore",
+                            "artifact_replica_perfect_iron_ore",
+                            "artifact_replica_perfect_mistril_ore",
+                            "artifact_replica_perfect_pink_diamond",
+                            "artifact_replica_perfect_ruby",
+                            "artifact_replica_perfect_sapphire",
+                            "artifact_replica_perfect_silver_ore",
+                            "artifact_replica_petrified_wood",
+                            "artifact_replica_porcelain_figurine",
+                            "artifact_replica_rainbow_geode",
+                            "artifact_replica_rainbow_seaweed",
+                            "artifact_replica_really_round_rock",
+                            "artifact_replica_red_obsidian",
+                            "artifact_replica_ritual_beads",
+                            "artifact_replica_ritual_chalice",
+                            "artifact_replica_ritual_incense_burner",
+                            "artifact_replica_ritual_scepter",
+                            "artifact_replica_ritual_tablet",
+                            "artifact_replica_rock_statue",
+                            "artifact_replica_rock_with_a_hole",
+                            "artifact_replica_rubber_fish",
+                            "artifact_replica_rusted_shield",
+                            "artifact_replica_rusted_treasure_chest",
+                            "artifact_replica_sea_glass",
+                            "artifact_replica_seriously_square_stone",
+                            "artifact_replica_shortcut_scroll",
+                            "artifact_replica_starlight_coral",
+                            "artifact_replica_statuette_of_caldarus",
+                            "artifact_replica_stone_horse",
+                            "artifact_replica_stone_shell",
+                            "artifact_replica_tidestone",
+                            "artifact_replica_tin_lunchbox",
+                            "artifact_replica_tiny_dinosaur_skeleton",
+                            "artifact_replica_tiny_volcano",
+                            "artifact_replica_trilobite_fossil",
+                            "artifact_replica_unknown_dragon_statuette",
+                            "artifact_replica_vintage_brush",
+                            "artifact_replica_vintage_cow_bell",
+                            "artifact_replica_vintage_hammer",
+                            "artifact_replica_vintage_sickle",
+                            "artifact_replica_vintage_watering_can",
+                            "artifact_replica_warm_rock",
+                            "artifact_replica_water_sphere",
+                            "artifact_replica_weightless_stone",
+                            "artifact_replica_worn_pendant",
+                            "crop_sign_rice",
+                            "dingy_table_v1",
+                            "dingy_table_v2",
+                            "cavern_rock_flooring",
+                            "cavern_rock_wallpaper",
+                            "wine_glass_rose",
+                            "crop_sign_rosemary",
+                            "round_cushioned_stool_beige",
+                            "royal_chest_blue",
+                            "ruins_crystal_light",
+                            "ruins_wall_crystal_light",
+                            "ruins_flooring",
+                            "ruins_floor_brazier_blue",
+                            "ruins_floor_brazier_orange",
+                            "ruins_floor_brazier_purple",
+                            "ruins_pot1",
+                            "ruins_pot2",
+                            "ruins_pot5",
+                            "ruins_stone_arch",
+                            "ruins_wallpaper",
+                            "ruins_window_v1",
+                            "ruins_window_v2",
+                            "ruins_window_v3",
+                            "cabin_bed_cherry",
+                            "cabin_bookshelf_cherry",
+                            "cabin_chair_cherry",
+                            "cabin_bed_double_cherry",
+                            "cabin_dresser_cherry",
+                            "cabin_firewood_cherry",
+                            "cabin_flooring_cherry",
+                            "cabin_lamp_cherry",
+                            "cabin_nightstand_cherry",
+                            "cabin_stove_cherry",
+                            "cabin_table_cherry",
+                            "cabin_wall_shelf_cherry",
+                            "cabin_wallpaper_cherry",
+                            "cabin_wall_window_cherry",
+                            "crop_sign_sage",
+                            "kitchen_salt_and_pepper_shakers",
+                            "sand_rug",
+                            "starter_scarecrow",
+                            "sheep_plushie",
+                            "pirate_ship_in_a_bottle_v1",
+                            "pirate_ship_in_a_bottle_v2",
+                            "starter_shipping_box",
+                            "silver_alpaca_trophy",
+                            "silver_cow_trophy",
+                            "silver_horse_trophy",
+                            "silver_sheep_trophy",
+                            "small_bathmat_beige",
+                            "box_small_v1",
+                            "small_decorative_pumpkin_black",
+                            "small_decorative_pumpkin_green",
+                            "small_decorative_pumpkin_orange",
+                            "small_decorative_pumpkin_purple",
+                            "small_decorative_pumpkin_white",
+                            "small_decorative_pumpkin_yellow",
+                            "jar_small",
+                            "small_vase_v1",
+                            "void_flagstone_small_v1",
+                            "crop_sign_snapdragon",
+                            "crop_sign_snow_peas",
+                            "crop_sign_snowdrop_anemone",
+                            "spring_bed_orange",
+                            "spring_double_bed_orange",
+                            "spring_flooring_orange",
+                            "spring_rug_orange",
+                            "spring_lamp_orange",
+                            "spring_potted_tree_orange",
+                            "spring_sofa_orange",
+                            "spring_wallpaper_orange",
+                            "square_tile_floor",
+                            "cavern_stone_arch",
+                            "star_cushion_blue",
+                            "star_lantern_blue",
+                            "star_viewing_blanket_blue",
+                            "starry_flooring_v1",
+                            "farm_bridge",
+                            "cooking_stockpot_v1",
+                            "stone_bench_v1",
+                            "stone_dragon_figure_v1",
+                            "stone_lamp_v1",
+                            "starter_stone_path",
+                            "starter_stone_path_double",
+                            "stone_storage_chest_v1",
+                            "stone_table_v1",
+                            "stone_wall",
+                            "crop_sign_strawberry",
+                            "crop_sign_sugar_cane",
+                            "summer_bed_red",
+                            "summer_chair_red",
+                            "summer_double_bed_red",
+                            "summer_flooring_red",
+                            "summer_rug_red",
+                            "summer_jar_lamp_red",
+                            "summer_table_red",
+                            "summer_wallpaper_red",
+                            "summit_wallpaper_v1",
+                            "crop_sign_sunflower",
+                            "crop_sign_sweet_potato",
+                            "dingy_rug_v1",
+                            "dingy_rug_v2",
+                            "cooking_tea_kettle_v1",
+                            "crop_sign_tea",
+                            "teleportation_pad",
+                            "crop_sign_temple_flower",
+                            "terrarium",
+                            "tesserae_tree",
+                            "crop_sign_thyme",
+                            "tide_touched_cavern_wall",
+                            "tile_roof_fence_v1",
+                            "toilet_black",
+                            "crop_sign_tomato",
+                            "training_dummy_clod",
+                            "crop_sign_tulip",
+                            "crop_sign_turnip",
+                            "kitchen_utensil_holder_blue",
+                            "crop_sign_viola",
+                            "void_bonsai_v1",
+                            "void_fireplace_v1",
+                            "void_flooring_v1",
+                            "void_lamp_v1",
+                            "void_storage_chest_v1",
+                            "void_throne_one_v1",
+                            "void_throne_two_v1",
+                            "void_wallpaper_v1",
+                            "void_window_v1",
+                            "cavern_wall_brazier_blue",
+                            "glass_water",
+                            "water_sprite_statue_v1",
+                            "starter_well",
+                            "crop_sign_watermelon",
+                            "crop_sign_wheat",
+                            "starter_wheelbarrow",
+                            "glass_whisky",
+                            "white_capybara_wall_ribbon",
+                            "white_chicken_wall_ribbon",
+                            "white_duck_wall_ribbon",
+                            "white_rabbit_wall_ribbon",
+                            "wine_glass_white",
+                            "witch_queen_bed_v1",
+                            "witch_queen_cauldron_v1",
+                            "witch_queen_chair_v1",
+                            "witch_queen_double_bed_v1",
+                            "witch_queen_dressing_table_v1",
+                            "witch_queen_flooring_v1",
+                            "witch_queen_moon_lamp_v1",
+                            "witch_queen_nightstand_v1",
+                            "witch_queen_pillar_v1",
+                            "witch_queen_rug_v1",
+                            "witch_queen_table_v1",
+                            "witch_queen_throne_v1",
+                            "witch_queen_wallpaper_v1",
+                            "starter_wood_fence",
+                            "worn_bed",
+                            "worn_chair",
+                            "worn_fireplace",
+                            "worn_flooring",
+                            "worn_garden_lamp",
+                            "worn_nightstand",
+                            "worn_rug",
+                            "worn_table",
+                            "worn_wallpaper",
+                            "worn_well",
+                            "worn_window"
+                        ]
+                    }
+                }
+            },
+            "materials": {
+                "info": {
+                    "name": "Materials",
+                    "img_mini": "materials",
+                    "wikilink": "Materials"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "blue_conch_shell",
+                            "wild_mushroom",
+                            "chocolate",
+                            "clay",
+                            "ore_copper",
+                            "coral",
+                            "crystal",
+                            "curry_powder",
+                            "honey_deluxe",
+                            "ore_diamond",
+                            "dragon_forged_core",
+                            "dragon_forged_fang",
+                            "dragon_forged_horn",
+                            "dragon_forged_powder",
+                            "ore_emerald",
+                            "essence_drop",
+                            "fiber",
+                            "flour",
+                            "essence_stone_giant",
+                            "glass",
+                            "glowing_mushroom",
+                            "ore_gold",
+                            "hard_wood",
+                            "honey",
+                            "ice_block",
+                            "ore_iron",
+                            "essence_stone_large",
+                            "honey_legendary",
+                            "essence_stone_medium",
+                            "ore_mistril",
+                            "monster_core",
+                            "monster_fang",
+                            "monster_horn",
+                            "monster_powder",
+                            "monster_shell",
+                            "monster_wing",
+                            "obsidian",
+                            "oil",
+                            "paper",
+                            "peat",
+                            "perfect_copper_ore",
+                            "perfect_diamond",
+                            "perfect_emerald",
+                            "perfect_gold_ore",
+                            "perfect_iron_ore",
+                            "perfect_mistril_ore",
+                            "perfect_pink_diamond",
+                            "perfect_ruby",
+                            "perfect_sapphire",
+                            "perfect_silver_ore",
+                            "ore_pink_diamond",
+                            "pink_scallop_shell",
+                            "honey_premium",
+                            "purple_mushroom",
+                            "red_toadstool",
+                            "refined_stone",
+                            "rice",
+                            "rock_salt",
+                            "ore_ruby",
+                            "sand_dollar",
+                            "sap",
+                            "ore_sapphire",
+                            "shard_mass",
+                            "shards",
+                            "ore_silver",
+                            "essence_stone_small",
+                            "sod",
+                            "soy_sauce",
+                            "spirula_shell",
+                            "ore_stone",
+                            "sugar",
+                            "essence_stone_tiny",
+                            "void_pearl",
+                            "void_powder",
+                            "void_stone",
+                            "voidite",
+                            "basic_wood"
+                        ]
+                    }
+                }
+            },
+            "ranching": {
+                "info": {
+                    "name": "Ranching",
+                    "img_mini": "ranching",
+                    "wikilink": "Ranching"
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "alpaca_wool",
+                            "bristle",
+                            "bull_horn",
+                            "butter",
+                            "cheese",
+                            "egg",
+                            "deluxe_hay",
+                            "deluxe_small_animal_feed",
+                            "duck_egg",
+                            "duck_feather",
+                            "duck_mayonnaise",
+                            "golden_alpaca_wool",
+                            "golden_bristle",
+                            "golden_bull_horn",
+                            "golden_butter",
+                            "golden_cheese",
+                            "golden_duck_egg",
+                            "golden_duck_feather",
+                            "golden_duck_mayonnaise",
+                            "golden_egg",
+                            "golden_horse_hair",
+                            "golden_mayonnaise",
+                            "golden_cow_milk",
+                            "golden_rabbit_wool",
+                            "golden_feather",
+                            "golden_sheep_wool",
+                            "grass_seed",
+                            "hay",
+                            "horse_hair",
+                            "mayonnaise",
+                            "cow_milk",
+                            "quality_hay",
+                            "quality_small_animal_feed",
+                            "rabbit_wool",
+                            "feather",
+                            "sheep_wool",
+                            "animal_currency",
+                            "ultimate_hay",
+                            "ultimate_small_animal_feed"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "animals": {
+        "info": {
+            "name": "Animals",
+            "icon": "rabbit.png",
+            "img_item_path": "animals/",
+            "item_json": "animals"
+        },
+        "categories": {
+            "cow": {
+                "info": {
+                    "img": "cow",
+                    "img_mini": "cow",
+                    "name": "Cow",
+                    "wikilink": "Cow"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Cow"
+                        },
+                        "items": [
+                            "cow_brown",
+                            "cow_spotted",
+                            "cow_black"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Cow"
+                        },
+                        "items": [
+                            "cow_chocolate",
+                            "cow_red",
+                            "cow_white"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Cow"
+                        },
+                        "items": [
+                            "cow_blue",
+                            "cow_purple",
+                            "cow_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Cow"
+                        },
+                        "items": [
+                            "cow_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Cow"
+                        },
+                        "items": [
+                            "cow_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Cow"
+                        },
+                        "items": [
+                            "cow_spring",
+                            "cow_summer",
+                            "cow_fall",
+                            "cow_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Cow"
+                        },
+                        "items": [
+                            "cow_antlers",
+                            "cow_beret",
+                            "cow_cheese_hat",
+                            "cow_cowboy_hat",
+                            "cow_crown",
+                            "cow_flower_crown",
+                            "cow_halo",
+                            "cow_horns",
+                            "cow_pink_bow",
+                            "cow_pink_sunglasses",
+                            "cow_ribbon_blue",
+                            "cow_ribbon_red",
+                            "cow_ribbon_white",
+                            "cow_sun_hat",
+                            "cow_bell_collar",
+                            "cow_laurels"
+                        ]
+                    }
+                }
+            },
+            "rabbit": {
+                "info": {
+                    "img": "rabbit",
+                    "img_mini": "rabbit",
+                    "name": "Rabbit",
+                    "wikilink": "Rabbit"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Rabbit"
+                        },
+                        "items": [
+                            "rabbit_white",
+                            "rabbit_brown",
+                            "rabbit_black_and_white"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Rabbit"
+                        },
+                        "items": [
+                            "rabbit_brown_sable",
+                            "rabbit_orange_sable",
+                            "rabbit_black"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Rabbit"
+                        },
+                        "items": [
+                            "rabbit_blue",
+                            "rabbit_purple",
+                            "rabbit_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Rabbit"
+                        },
+                        "items": [
+                            "rabbit_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Rabbit"
+                        },
+                        "items": [
+                            "rabbit_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Rabbit"
+                        },
+                        "items": [
+                            "rabbit_spring",
+                            "rabbit_summer",
+                            "rabbit_fall",
+                            "rabbit_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Rabbit"
+                        },
+                        "items": [
+                            "rabbit_daisy_clips",
+                            "rabbit_flower_crown",
+                            "rabbit_halo",
+                            "rabbit_heart_clips",
+                            "rabbit_horn",
+                            "rabbit_pink_bow",
+                            "rabbit_ribbon_blue",
+                            "rabbit_ribbon_red",
+                            "rabbit_ribbon_white",
+                            "rabbit_sunglasses",
+                            "rabbit_top_hat",
+                            "rabbit_winter_hat",
+                            "rabbit_cowboy_hat",
+                            "rabbit_chef_hat"
+                        ]
+                    }
+                }
+            },
+            "horse": {
+                "info": {
+                    "img": "horse",
+                    "img_mini": "horse",
+                    "name": "Horse",
+                    "wikilink": "Horse"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Horse"
+                        },
+                        "items": [
+                            "horse_spotted",
+                            "horse_sandy_bay",
+                            "horse_champagne"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Horse"
+                        },
+                        "items": [
+                            "horse_chestnut",
+                            "horse_black",
+                            "horse_white"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Horse"
+                        },
+                        "items": [
+                            "horse_blue",
+                            "horse_purple",
+                            "horse_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Horse"
+                        },
+                        "items": [
+                            "horse_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Horse"
+                        },
+                        "items": [
+                            "horse_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Horse"
+                        },
+                        "items": [
+                            "horse_spring",
+                            "horse_summer",
+                            "horse_fall",
+                            "horse_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Horse"
+                        },
+                        "items": [
+                            "horse_antlers",
+                            "horse_cowboy_hat",
+                            "horse_crown",
+                            "horse_derby_hat",
+                            "horse_dark_unicorn_horn",
+                            "horse_flower_crown",
+                            "horse_pink_bow",
+                            "horse_ribbon_blue",
+                            "horse_ribbon_red",
+                            "horse_ribbon_white",
+                            "horse_unicorn_horn",
+                            "horse_seashell_clips",
+                            "horse_monocle",
+                            "horse_bandana"
+                        ]
+                    }
+                }
+            },
+            "chicken": {
+                "info": {
+                    "img": "chicken",
+                    "img_mini": "chicken",
+                    "name": "Chicken",
+                    "wikilink": "Chicken"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Chicken"
+                        },
+                        "items": [
+                            "chicken_white",
+                            "chicken_brown",
+                            "chicken_spotted"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Chicken"
+                        },
+                        "items": [
+                            "chicken_red",
+                            "chicken_yellow",
+                            "chicken_gray"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Chicken"
+                        },
+                        "items": [
+                            "chicken_blue",
+                            "chicken_purple",
+                            "chicken_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Chicken"
+                        },
+                        "items": [
+                            "chicken_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Chicken"
+                        },
+                        "items": [
+                            "chicken_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Chicken"
+                        },
+                        "items": [
+                            "chicken_spring",
+                            "chicken_summer",
+                            "chicken_fall",
+                            "chicken_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Chicken"
+                        },
+                        "items": [
+                            "chicken_business_tie",
+                            "chicken_ear_muffs",
+                            "chicken_egg_hat",
+                            "chicken_sunglasses",
+                            "chicken_flower_crown",
+                            "chicken_pearl_necklace",
+                            "chicken_red_eyes",
+                            "chicken_ribbon_blue",
+                            "chicken_ribbon_red",
+                            "chicken_ribbon_white",
+                            "chicken_top_hat",
+                            "chicken_winter_hat",
+                            "chicken_yellow_bow",
+                            "chicken_apple",
+                            "chicken_baseball_cap"
+                        ]
+                    }
+                }
+            },
+            "duck": {
+                "info": {
+                    "img": "duck",
+                    "img_mini": "duck",
+                    "name": "Duck",
+                    "wikilink": "Duck"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Duck"
+                        },
+                        "items": [
+                            "duck_mallard",
+                            "duck_muscovy",
+                            "duck_white"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Duck"
+                        },
+                        "items": [
+                            "duck_mandarin",
+                            "duck_ruddy_shelduck",
+                            "duck_cayuga"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Duck"
+                        },
+                        "items": [
+                            "duck_blue",
+                            "duck_purple",
+                            "duck_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Duck"
+                        },
+                        "items": [
+                            "duck_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Duck"
+                        },
+                        "items": [
+                            "duck_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Duck"
+                        },
+                        "items": [
+                            "duck_spring",
+                            "duck_summer",
+                            "duck_fall",
+                            "duck_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Duck"
+                        },
+                        "items": [
+                            "duck_black_bowtie",
+                            "duck_bonnet",
+                            "duck_flower_crown",
+                            "duck_pink_bow",
+                            "duck_red_eyes",
+                            "duck_ribbon_blue",
+                            "duck_ribbon_red",
+                            "duck_ribbon_white",
+                            "duck_ruffled_collar",
+                            "duck_sun_hat",
+                            "duck_sunglasses",
+                            "duck_winter_hat",
+                            "duck_backwards_cap",
+                            "duck_strawberry_hat"
+                        ]
+                    }
+                }
+            },
+            "capybara": {
+                "info": {
+                    "img": "capybara",
+                    "img_mini": "capybara",
+                    "name": "Capybara",
+                    "wikilink": "Capybara"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Capybara"
+                        },
+                        "items": [
+                            "capybara_light_brown",
+                            "capybara_dark_brown",
+                            "capybara_pale"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Capybara"
+                        },
+                        "items": [
+                            "capybara_gray",
+                            "capybara_white",
+                            "capybara_red"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Capybara"
+                        },
+                        "items": [
+                            "capybara_blue",
+                            "capybara_purple",
+                            "capybara_pink"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Capybara"
+                        },
+                        "items": [
+                            "capybara_gold"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Capybara"
+                        },
+                        "items": [
+                            "capybara_silver"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Capybara"
+                        },
+                        "items": [
+                            "capybara_spring",
+                            "capybara_summer",
+                            "capybara_fall",
+                            "capybara_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Capybara"
+                        },
+                        "items": [
+                            "capybara_baseball_cap",
+                            "capybara_bow",
+                            "capybara_bowler_hat",
+                            "capybara_flower_crown",
+                            "capybara_horns",
+                            "capybara_leaf",
+                            "capybara_ribbon_blue",
+                            "capybara_ribbon_red",
+                            "capybara_ribbon_white",
+                            "capybara_umbrella_hat",
+                            "capybara_winter_hat",
+                            "capybara_yuzu",
+                            "capybara_angel_wings",
+                            "capybara_bat_wings"
+                        ]
+                    }
+                }
+            },
+            "sheep": {
+                "info": {
+                    "img": "sheep",
+                    "img_mini": "sheep",
+                    "name": "Sheep",
+                    "wikilink": "Sheep"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Sheep"
+                        },
+                        "items": [
+                            "sheep_white",
+                            "sheep_black",
+                            "sheep_brown"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Sheep"
+                        },
+                        "items": [
+                            "sheep_black_nosed",
+                            "sheep_beige",
+                            "sheep_white_nosed"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Sheep"
+                        },
+                        "items": [
+                            "sheep_blue",
+                            "sheep_purple",
+                            "sheep_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Sheep"
+                        },
+                        "items": [
+                            "sheep_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Sheep"
+                        },
+                        "items": [
+                            "sheep_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Sheep"
+                        },
+                        "items": [
+                            "sheep_spring",
+                            "sheep_summer",
+                            "sheep_fall",
+                            "sheep_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Sheep"
+                        },
+                        "items": [
+                            "sheep_flower_crown",
+                            "sheep_palm_tree",
+                            "sheep_party_hat",
+                            "sheep_pink_bow",
+                            "sheep_mushroom_hat",
+                            "sheep_horns",
+                            "sheep_winter_hat",
+                            "sheep_ribbon_blue",
+                            "sheep_ribbon_red",
+                            "sheep_ribbon_white",
+                            "sheep_tartan_beret",
+                            "sheep_unicorn_horn",
+                            "sheep_hot_water_bottle",
+                            "sheep_green_visor"
+                        ]
+                    }
+                }
+            },
+            "alpaca": {
+                "info": {
+                    "img": "alpaca",
+                    "img_mini": "alpaca",
+                    "name": "Alpaca",
+                    "wikilink": "Alpaca"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Alpaca"
+                        },
+                        "items": [
+                            "alpaca_white",
+                            "alpaca_black",
+                            "alpaca_brown"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Tier 2",
+                            "wikilink": "Alpaca"
+                        },
+                        "items": [
+                            "alpaca_snowy",
+                            "alpaca_desert",
+                            "alpaca_indigo"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Alpaca"
+                        },
+                        "items": [
+                            "alpaca_blue",
+                            "alpaca_purple",
+                            "alpaca_pink"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Alpaca"
+                        },
+                        "items": [
+                            "alpaca_silver"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Alpaca"
+                        },
+                        "items": [
+                            "alpaca_gold"
+                        ]
+                    },
+                    "6": {
+                        "info": {
+                            "name": "Tier 6",
+                            "wikilink": "Alpaca"
+                        },
+                        "items": [
+                            "alpaca_spring",
+                            "alpaca_summer",
+                            "alpaca_fall",
+                            "alpaca_winter"
+                        ]
+                    },
+                    "cosmetics": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Alpaca"
+                        },
+                        "items": [
+                            "alpaca_beaded_necklace",
+                            "alpaca_bowtie",
+                            "alpaca_flower_crown",
+                            "alpaca_gold_pendant",
+                            "alpaca_horns",
+                            "alpaca_ribbon_blue",
+                            "alpaca_ribbon_red",
+                            "alpaca_ribbon_white",
+                            "alpaca_scarf",
+                            "alpaca_spiked_collar",
+                            "alpaca_sunglasses",
+                            "alpaca_winter_hat",
+                            "alpaca_beret",
+                            "alpaca_lacy_collar"
+                        ]
+                    }
+                }
+            },
+            "pets": {
+                "info": {
+                    "img": "pets",
+                    "img_mini": "pets",
+                    "name": "Pets",
+                    "wikilink": "Pets"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Cosmetics",
+                            "wikilink": "Animal_Cosmetics#Pets"
+                        },
+                        "items": [
+                            "pets_halo",
+                            "pets_flower_crown",
+                            "pets_purple_bow",
+                            "pets_green_bow",
+                            "pets_yellow_bow",
+                            "pets_red_bow",
+                            "pets_blue_bow",
+                            "pets_black_bow",
+                            "pets_pink_bow",
+                            "pets_sun_hat",
+                            "pets_unicorn_horn",
+                            "pets_skull_mask"
+                        ]
+                    },
+                    "2": {
+                        "info": {
+                            "name": "Pet Skins",
+                            "wikilink": "Pets#Pet_Skins",
+                            "item_json": "items",
+                            "img_item_path": "items/"
+                        },
+                        "items": [
+                            "pet_skin_mushroom",
+                            "pet_skin_rockclod",
+                            "pet_skin_oreclod",
+                            "pet_skin_sapling"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "customization": {
+        "info": {
+            "name": "Customization",
+            "icon": "customization.png",
+            "img_mini_path": "customization/",
+            "img_item_path": "accessories/",
+            "item_json": "accessories"
+        },
+        "categories": {
+            "head_gear": {
+                "info": {
+                    "name": "Head Gear",
+                    "img": "head_gear",
+                    "img_mini": "head_gear",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "hat": {
+                        "info": {
+                            "name": "Hats",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "head_baseball_cap",
+                            "head_beekeeper_hat",
+                            "head_beret",
+                            "head_berry_hat",
+                            "head_cap_basic",
+                            "head_caldosian_hat",
+                            "head_cherry_beret",
+                            "head_cowboy_hat_basic",
+                            "head_enchantern_hat",
+                            "head_essence_bat_hat",
+                            "head_explorer_hat",
+                            "head_farmer_cap",
+                            "head_fishing_hat",
+                            "head_flame_spirit_hat",
+                            "head_flower_hat",
+                            "head_flower_top_hat",
+                            "head_flying_tome_hat",
+                            "head_griffin_statue_hat",
+                            "head_hunter_hat",
+                            "head_lava_cat_hat",
+                            "head_lemon_beret",
+                            "head_miners_helmet",
+                            "head_mimic_hat",
+                            "head_mushroom_hat",
+                            "head_noble_hat",
+                            "head_oreclod_hat",
+                            "head_pumpkin_beanie",
+                            "head_rain_hat",
+                            "head_rockclod_hat",
+                            "head_rock_stack_hat",
+                            "head_sapling_hat",
+                            "head_stalagmite_hat",
+                            "head_strawberry_beret",
+                            "head_striped_bucket_hat",
+                            "head_sunhat_straw",
+                            "head_void_cat_hat",
+                            "head_winter_beanie",
+                            "head_witch_hat",
+                            "head_barrel_roller_hat"
+                        ]
+                    },
+                    "hair_accessory": {
+                        "info": {
+                            "name": "Hair Accessories",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "head_bandana",
+                            "head_clips_angel_wing",
+                            "head_clips_bat_wing",
+                            "head_clips_fin",
+                            "head_clips_moon",
+                            "head_clips_heart",
+                            "head_clips_star",
+                            "head_clips_strawberry",
+                            "head_dancer_flower",
+                            "head_headband_basic",
+                            "head_paisley_bandana",
+                            "head_ranger_leaves",
+                            "head_ribbons_basic",
+                            "head_short_bow",
+                            "head_striped_bow"
+                        ]
+                    },
+                    "helmet": {
+                        "info": {
+                            "name": "Helmets",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "head_cloth_helmet",
+                            "head_scrap_metal_helmet",
+                            "head_copper_helmet",
+                            "head_verdigris_helmet",
+                            "head_iron_helmet",
+                            "head_crystal_helmet",
+                            "head_silver_helmet",
+                            "head_tarnished_gold_helmet",
+                            "head_gold_helmet",
+                            "head_corrupted_mistril_helmet",
+                            "head_mistril_helmet",
+                            "head_dragonsworn_helmet"
+                        ]
+                    },
+                    "crown": {
+                        "info": {
+                            "name": "Crowns",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "head_ancient_witch_tiara",
+                            "head_berry_crown",
+                            "head_circlet_earth",
+                            "head_crown",
+                            "head_crown_tide",
+                            "head_dark_regent_crown",
+                            "head_exalted_crown",
+                            "head_dragon_cleric_diadem",
+                            "head_flower_crown",
+                            "head_halo",
+                            "head_special_flower_crown"
+                        ]
+                    },
+                    "head_gear_misc": {
+                        "info": {
+                            "name": "Miscellaneous",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "head_adventurer_hood",
+                            "head_aviator_goggles",
+                            "head_bunny_ears",
+                            "head_cat_ears",
+                            "head_devil_horns",
+                            "head_ear_muffs",
+                            "head_fighter_headband",
+                            "head_fire_hood",
+                            "head_floating_cloud_headpiece",
+                            "head_hijab",
+                            "head_lily_pad",
+                            "head_mini_horns",
+                            "head_rogue_hood",
+                            "head_skull_mask",
+                            "head_soup_pot",
+                            "head_sprout_hat",
+                            "head_tangerine",
+                            "head_teapot"
+                        ]
+                    }
+                }
+            },
+            "face_gear": {
+                "info": {
+                    "name": "Face Gear",
+                    "img": "face_gear",
+                    "img_mini": "face_gear",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "glasses": {
+                        "info": {
+                            "name": "Glasses",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "face_gear_glasses",
+                            "face_gear_reading_glasses",
+                            "face_gear_reading_glasses_small",
+                            "face_gear_sunglasses"
+                        ]
+                    },
+                    "ear_accessory": {
+                        "info": {
+                            "name": "Ear Accessories",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "face_gear_caldosian_moon_earrings",
+                            "face_gear_dragon_cleric_earrings",
+                            "face_gear_flower_earrings",
+                            "face_gear_hoop_earrings",
+                            "face_gear_pumpkin_earrings",
+                            "face_gear_stud_earrings"
+                        ]
+                    },
+                    "face_accessory": {
+                        "info": {
+                            "name": "Face Accessory",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "face_gear_blush",
+                            "face_gear_face_mask"
+                        ]
+                    }
+                }
+            },
+            "hair": {
+                "info": {
+                    "name": "Hair",
+                    "img": "hair",
+                    "img_mini": "hair",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "short_hair": {
+                        "info": {
+                            "name": "Short Hair",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "hair_afro_puffs",
+                            "hair_buzzcut",
+                            "hair_cowlick",
+                            "hair_curly_short",
+                            "hair_curly_shorter",
+                            "hair_fade",
+                            "hair_mushroom",
+                            "hair_parted_mushroom",
+                            "hair_pixie",
+                            "hair_short_parted_straight",
+                            "hair_short_parted_curls",
+                            "hair_straight_buns_fringed",
+                            "hair_straight_pompadour",
+                            "hair_straight_shaved_side",
+                            "hair_textured_buzzcut"
+                        ]
+                    },
+                    "medium_hair": {
+                        "info": {
+                            "name": "Medium Hair",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "hair_afro",
+                            "hair_blown_out_twist",
+                            "hair_curly_high_top",
+                            "hair_curly_medium",
+                            "hair_curly_medium_fringe",
+                            "hair_curly_pompadour",
+                            "hair_curly_shaved_side",
+                            "hair_medium_boyish",
+                            "hair_medium_half_bun",
+                            "hair_medium_half_bun_fringe",
+                            "hair_medium_pigtails",
+                            "hair_mohawk",
+                            "hair_rounded_afro",
+                            "hair_shaggy_bob",
+                            "hair_straight_medium",
+                            "hair_straight_medium_ponytail",
+                            "hair_straight_medium_ponytail_fluffy_bangs",
+                            "hair_wavy_medium",
+                            "hair_wavy_medium_twin_buns",
+                            "hair_wavy_medium_fringed",
+                            "hair_wavy_rugged"
+                        ]
+                    },
+                    "long_hair": {
+                        "info": {
+                            "name": "Long Hair",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "hair_braided_pigtails",
+                            "hair_curly_updo",
+                            "hair_dreadlocks_bun",
+                            "hair_dreadlocks_long",
+                            "hair_dreadlock_twin_buns",
+                            "hair_straight_long",
+                            "hair_straight_long_bun",
+                            "hair_straight_long_fringed",
+                            "hair_straight_long_tucked",
+                            "hair_straight_long_twin_buns",
+                            "hair_wavy_long",
+                            "hair_wavy_long_fringed",
+                            "hair_wavy_long_ponytail",
+                            "hair_wavy_long_twin_buns"
+                        ]
+                    }
+                }
+            },
+            "facial_hair": {
+                "info": {
+                    "name": "Facial Hair",
+                    "img": "facial_hair",
+                    "img_mini": "facial_hair",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "facial_hair": {
+                        "info": {
+                            "name": "Facial Hair",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "beard_basic",
+                            "beard_thick",
+                            "facial_hair_handlebar_moustache",
+                            "facial_hair_moustache",
+                            "facial_hair_short_beard",
+                            "facial_hair_soul_patch",
+                            "facial_hair_stubble"
+                        ]
+                    }
+                }
+            },
+            "top": {
+                "info": {
+                    "name": "Top",
+                    "img": "top",
+                    "img_mini": "top",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "sleeveless": {
+                        "info": {
+                            "name": "Sleeveless Tops",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "top_cami",
+                            "top_halter_bikini",
+                            "top_tanktop",
+                            "top_tanktop_buttons",
+                            "underwear_tank"
+                        ]
+                    },
+                    "short_sleeve": {
+                        "info": {
+                            "name": "Short Sleeved Tops",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "top_dancer",
+                            "top_ranger",
+                            "top_tee_basic",
+                            "top_tee_oversized",
+                            "top_tee_ringer_basic"
+                        ]
+                    },
+                    "long_sleeve": {
+                        "info": {
+                            "name": "Long Sleeved Tops",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "top_adventurer",
+                            "top_ancient_witch",
+                            "top_fishing_vest",
+                            "top_exalted",
+                            "top_long_sleeve_baseball",
+                            "top_long_sleeve_basic",
+                            "top_long_sleeve_basic_cropped",
+                            "top_long_sleeve_beekeeper",
+                            "top_long_sleeve_striped",
+                            "top_plaid_flannel",
+                            "top_rogue"
+                        ]
+                    },
+                    "jacket": {
+                        "info": {
+                            "name": "Jackets",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "top_cropped_puff_jacket",
+                            "top_explorer",
+                            "top_jacket_and_tee_basic",
+                            "top_noble_jacket",
+                            "top_puff_jacket",
+                            "top_wool_lined_jacket"
+                        ]
+                    },
+                    "dress": {
+                        "info": {
+                            "name": "Dresses",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "dress_berry",
+                            "dress_court",
+                            "dress_maid",
+                            "dress_modest",
+                            "dress_sleeveless_basic",
+                            "dress_spring_festival"
+                        ]
+                    },
+                    "robe": {
+                        "info": {
+                            "name": "Robes and Coats",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "robe_dark_regent",
+                            "robe_dragon_cleric",
+                            "robe_earth",
+                            "robe_fire",
+                            "robe_tide",
+                            "top_caldosian_overcoat",
+                            "top_noble_tunic",
+                            "top_ranger_jacket"
+                        ]
+                    },
+                    "suit": {
+                        "info": {
+                            "name": "Suits",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "suit_berry",
+                            "suit_court",
+                            "suit_spring_festival",
+                            "suit_miner",
+                            "suit_halter_bikini_set"
+                        ]
+                    },
+                    "top_misc": {
+                        "info": {
+                            "name": "Miscellaneous",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "overalls_basic",
+                            "overalls_farmer",
+                            "overalls_shorts",
+                            "overalls_skirt",
+                            "top_hunter",
+                            "underwear_bra",
+                            "underwear_bra_small",
+                            "top_cloth_armor",
+                            "top_scrap_metal",
+                            "top_copper_armor",
+                            "top_verdigris_armor",
+                            "top_iron_armor",
+                            "top_crystal_armor",
+                            "top_silver_armor",
+                            "top_tarnished_gold_armor",
+                            "top_gold_armor",
+                            "top_corrupted_mistril",
+                            "top_mistril",
+                            "top_dragonsworn_armor"
+                        ]
+                    }
+                }
+            },
+            "bottom": {
+                "info": {
+                    "name": "Bottom",
+                    "img": "bottom",
+                    "img_mini": "bottom",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "pants": {
+                        "info": {
+                            "name": "Pants",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "pants_adventurer",
+                            "pants_basic",
+                            "pants_beekeeper",
+                            "pants_exalted",
+                            "pants_explorer",
+                            "pants_hunter",
+                            "pants_rogue"
+                        ]
+                    },
+                    "shorts": {
+                        "info": {
+                            "name": "Shorts",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "shorts_basic",
+                            "shorts_fishing",
+                            "shorts_swimtrunks",
+                            "underwear_bottoms_polkadot",
+                            "underwear_briefs",
+                            "underwear_shorts"
+                        ]
+                    },
+                    "skirt": {
+                        "info": {
+                            "name": "Skirts",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "skirt_ancient_witch",
+                            "skirt_dancer",
+                            "skirt_long_basic",
+                            "skirt_long_scalloped",
+                            "skirt_maid",
+                            "skirt_pleated_medium",
+                            "skirt_pleated_short",
+                            "skirt_short_basic"
+                        ]
+                    },
+                    "bottom_misc": {
+                        "info": {
+                            "name": "Miscellaneous",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "pants_cloth_armor",
+                            "pants_scrap_metal",
+                            "pants_copper_armor",
+                            "pants_verdigris_armor",
+                            "pants_iron_armor",
+                            "pants_crystal_armor",
+                            "pants_silver_armor",
+                            "pants_tarnished_gold_armor",
+                            "pants_gold_armor",
+                            "pants_corrupted_mistril",
+                            "pants_mistril",
+                            "pants_dragonsworn_armor"
+                        ]
+                    }
+                }
+            },
+            "feet": {
+                "info": {
+                    "name": "Feet",
+                    "img": "feet",
+                    "img_mini": "feet",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "boots": {
+                        "info": {
+                            "name": "Boots",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "shoes_boots",
+                            "shoes_boots_adventurer",
+                            "shoes_boots_ancient_witch",
+                            "shoes_boots_beekeeper",
+                            "shoes_boots_caldosian",
+                            "shoes_boots_dark_regent",
+                            "shoes_boots_exalted",
+                            "shoes_boots_explorer",
+                            "shoes_boots_fire",
+                            "shoes_boots_hunter",
+                            "shoes_boots_noble",
+                            "shoes_boots_pirate",
+                            "shoes_boots_ranger",
+                            "shoes_boots_rogue",
+                            "shoes_boots_farmer",
+                            "shoes_boots_fishing",
+                            "shoes_boots_miner",
+                            "shoes_boots_pumpkin",
+                            "shoes_boots_short_basic",
+                            "shoes_boots_work"
+                        ]
+                    },
+                    "shoes": {
+                        "info": {
+                            "name": "Shoes",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "shoes_sneakers_basic"
+                        ]
+                    },
+                    "sandals": {
+                        "info": {
+                            "name": "Sandals",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "shoes_sandals_earth",
+                            "shoes_sandals_tide",
+                            "shoes_sandals_worn"
+                        ]
+                    },
+                    "feet_misc": {
+                        "info": {
+                            "name": "Miscellaneous",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "shoes_boots_dragon_cleric",
+                            "shoes_dressy_stockings",
+                            "shoes_boots_cloth_armor",
+                            "shoes_boots_scrap_metal",
+                            "shoes_boots_copper_armor",
+                            "shoes_boots_verdigris_armor",
+                            "shoes_boots_iron_armor",
+                            "shoes_boots_crystal_armor",
+                            "shoes_boots_silver_armor",
+                            "shoes_boots_tarnished_gold_armor",
+                            "shoes_boots_gold_armor",
+                            "shoes_boots_corrupted_mistril",
+                            "shoes_boots_mistril",
+                            "shoes_boots_dragonsworn_armor"
+                        ]
+                    }
+                }
+            },
+            "back": {
+                "info": {
+                    "name": "Back",
+                    "img": "back",
+                    "img_mini": "back",
+                    "wikilink": "Cosmetics"
+                },
+                "subcategories": {
+                    "backpacks": {
+                        "info": {
+                            "name": "Backpacks",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "back_gear_basic_backpack",
+                            "back_gear_cabbage_backpack",
+                            "back_gear_cauliflower_backpack",
+                            "back_gear_cloud_backpack",
+                            "back_gear_daikon_radish_backpack",
+                            "back_gear_daisy_backpack",
+                            "back_gear_frost_lily_backpack",
+                            "back_gear_jasmine_backpack",
+                            "back_gear_onion_backpack",
+                            "back_gear_pumpkin_backpack",
+                            "back_gear_snowdrop_anemone_backpack",
+                            "back_gear_strawberry_backpack",
+                            "back_gear_turnip_backpack",
+                            "back_gear_sunflower_backpack",
+                            "back_gear_sweet_potato_backpack",
+                            "back_gear_tomato_backpack",
+                            "back_gear_watermelon_backpack",
+                            "back_gear_wheat_backpack"
+                        ]
+                    },
+                    "capes": {
+                        "info": {
+                            "name": "Capes",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "back_gear_basic_cape",
+                            "back_gear_dark_regent_cape",
+                            "back_gear_dragon_cleric_cape",
+                            "back_gear_fire_cloak",
+                            "back_gear_fish_scale_cape",
+                            "back_gear_exalted_cloak",
+                            "back_gear_hunter_cape",
+                            "back_gear_noble_cape",
+                            "back_gear_rogue_cape",
+                            "back_gear_dragonsworn_cloak"
+                        ]
+                    },
+                    "back_gear_misc": {
+                        "info": {
+                            "name": "Miscellaneous",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": [
+                            "back_gear_ancient_witch_broom",
+                            "back_gear_butterfly_wings",
+                            "back_gear_hunter_bow",
+                            "back_gear_mini_wings",
+                            "back_gear_ornate_round_shield",
+                            "back_gear_ornate_shield",
+                            "back_gear_sheathed_sword"
+                        ]
+                    }
+                }
+            }
+        }
+    },
     "gifts": {
         "info": {
             "name": "Gifts",
@@ -1860,680 +5201,6 @@ var objTabs =
             }
         }
     },
-    "customization": {
-        "info": {
-            "name": "Customization",
-            "icon": "customization.png",
-            "img_mini_path": "customization/",
-            "img_item_path": "accessories/",
-            "item_json": "accessories"
-        },
-        "categories": {
-            "head_gear": {
-                "info": {
-                    "name": "Head Gear",
-                    "img": "head_gear",
-                    "img_mini": "head_gear",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "hat": {
-                        "info": {
-                            "name": "Hats",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "head_baseball_cap",
-                            "head_beekeeper_hat",
-                            "head_beret",
-                            "head_berry_hat",
-                            "head_cap_basic",
-                            "head_caldosian_hat",
-                            "head_cherry_beret",
-                            "head_cowboy_hat_basic",
-                            "head_enchantern_hat",
-                            "head_essence_bat_hat",
-                            "head_explorer_hat",
-                            "head_farmer_cap",
-                            "head_fishing_hat",
-                            "head_flame_spirit_hat",
-                            "head_flower_hat",
-                            "head_flower_top_hat",
-                            "head_flying_tome_hat",
-                            "head_griffin_statue_hat",
-                            "head_hunter_hat",
-                            "head_lava_cat_hat",
-                            "head_lemon_beret",
-                            "head_miners_helmet",
-                            "head_mimic_hat",
-                            "head_mushroom_hat",
-                            "head_noble_hat",
-                            "head_oreclod_hat",
-                            "head_pumpkin_beanie",
-                            "head_rain_hat",
-                            "head_rockclod_hat",
-                            "head_rock_stack_hat",
-                            "head_sapling_hat",
-                            "head_stalagmite_hat",
-                            "head_strawberry_beret",
-                            "head_striped_bucket_hat",
-                            "head_sunhat_straw",
-                            "head_void_cat_hat",
-                            "head_winter_beanie",
-                            "head_witch_hat",
-                            "head_barrel_roller_hat"
-                        ]
-                    },
-                    "hair_accessory": {
-                        "info": {
-                            "name": "Hair Accessories",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "head_bandana",
-                            "head_clips_angel_wing",
-                            "head_clips_bat_wing",
-                            "head_clips_fin",
-                            "head_clips_moon",
-                            "head_clips_heart",
-                            "head_clips_star",
-                            "head_clips_strawberry",
-                            "head_dancer_flower",
-                            "head_headband_basic",
-                            "head_paisley_bandana",
-                            "head_ranger_leaves",
-                            "head_ribbons_basic",
-                            "head_short_bow",
-                            "head_striped_bow"
-                        ]
-                    },
-                    "helmet": {
-                        "info": {
-                            "name": "Helmets",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "head_cloth_helmet",
-                            "head_scrap_metal_helmet",
-                            "head_copper_helmet",
-                            "head_verdigris_helmet",
-                            "head_iron_helmet",
-                            "head_crystal_helmet",
-                            "head_silver_helmet",
-                            "head_tarnished_gold_helmet",
-                            "head_gold_helmet",
-                            "head_corrupted_mistril_helmet",
-                            "head_mistril_helmet",
-                            "head_dragonsworn_helmet"
-                        ]
-                    },
-                    "crown": {
-                        "info": {
-                            "name": "Crowns",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "head_ancient_witch_tiara",
-                            "head_berry_crown",
-                            "head_circlet_earth",
-                            "head_crown",
-                            "head_crown_tide",
-                            "head_dark_regent_crown",
-                            "head_exalted_crown",
-                            "head_dragon_cleric_diadem",
-                            "head_flower_crown",
-                            "head_halo",
-                            "head_special_flower_crown"
-                        ]
-                    },
-                    "head_gear_misc": {
-                        "info": {
-                            "name": "Miscellaneous",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "head_adventurer_hood",
-                            "head_aviator_goggles",
-                            "head_bunny_ears",
-                            "head_cat_ears",
-                            "head_devil_horns",
-                            "head_ear_muffs",
-                            "head_fighter_headband",
-                            "head_fire_hood",
-                            "head_floating_cloud_headpiece",
-                            "head_hijab",
-                            "head_lily_pad",
-                            "head_mini_horns",
-                            "head_rogue_hood",
-                            "head_skull_mask",
-                            "head_soup_pot",
-                            "head_sprout_hat",
-                            "head_tangerine",
-                            "head_teapot"
-                        ]
-                    }
-                }
-            },
-            "face_gear": {
-                "info": {
-                    "name": "Face Gear",
-                    "img": "face_gear",
-                    "img_mini": "face_gear",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "glasses": {
-                        "info": {
-                            "name": "Glasses",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "face_gear_glasses",
-                            "face_gear_reading_glasses",
-                            "face_gear_reading_glasses_small",
-                            "face_gear_sunglasses"
-                        ]
-                    },
-                    "ear_accessory": {
-                        "info": {
-                            "name": "Ear Accessories",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "face_gear_caldosian_moon_earrings",
-                            "face_gear_dragon_cleric_earrings",
-                            "face_gear_flower_earrings",
-                            "face_gear_hoop_earrings",
-                            "face_gear_pumpkin_earrings",
-                            "face_gear_stud_earrings"
-                        ]
-                    },
-                    "face_accessory": {
-                        "info": {
-                            "name": "Face Accessory",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "face_gear_blush",
-                            "face_gear_face_mask"
-                        ]
-                    }
-                }
-            },
-            "hair": {
-                "info": {
-                    "name": "Hair",
-                    "img": "hair",
-                    "img_mini": "hair",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "short_hair": {
-                        "info": {
-                            "name": "Short Hair",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "hair_afro_puffs",
-                            "hair_buzzcut",
-                            "hair_cowlick",
-                            "hair_curly_short",
-                            "hair_curly_shorter",
-                            "hair_fade",
-                            "hair_mushroom",
-                            "hair_parted_mushroom",
-                            "hair_pixie",
-                            "hair_short_parted_straight",
-                            "hair_short_parted_curls",
-                            "hair_straight_buns_fringed",
-                            "hair_straight_pompadour",
-                            "hair_straight_shaved_side",
-                            "hair_textured_buzzcut"
-                        ]
-                    },
-                    "medium_hair": {
-                        "info": {
-                            "name": "Medium Hair",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "hair_afro",
-                            "hair_blown_out_twist",
-                            "hair_curly_high_top",
-                            "hair_curly_medium",
-                            "hair_curly_medium_fringe",
-                            "hair_curly_pompadour",
-                            "hair_curly_shaved_side",
-                            "hair_medium_boyish",
-                            "hair_medium_half_bun",
-                            "hair_medium_half_bun_fringe",
-                            "hair_medium_pigtails",
-                            "hair_mohawk",
-                            "hair_rounded_afro",
-                            "hair_shaggy_bob",
-                            "hair_straight_medium",
-                            "hair_straight_medium_ponytail",
-                            "hair_straight_medium_ponytail_fluffy_bangs",
-                            "hair_wavy_medium",
-                            "hair_wavy_medium_twin_buns",
-                            "hair_wavy_medium_fringed",
-                            "hair_wavy_rugged"
-                        ]
-                    },
-                    "long_hair": {
-                        "info": {
-                            "name": "Long Hair",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "hair_braided_pigtails",
-                            "hair_curly_updo",
-                            "hair_dreadlocks_bun",
-                            "hair_dreadlocks_long",
-                            "hair_dreadlock_twin_buns",
-                            "hair_straight_long",
-                            "hair_straight_long_bun",
-                            "hair_straight_long_fringed",
-                            "hair_straight_long_tucked",
-                            "hair_straight_long_twin_buns",
-                            "hair_wavy_long",
-                            "hair_wavy_long_fringed",
-                            "hair_wavy_long_ponytail",
-                            "hair_wavy_long_twin_buns"
-                        ]
-                    }
-                }
-            },
-            "facial_hair": {
-                "info": {
-                    "name": "Facial Hair",
-                    "img": "facial_hair",
-                    "img_mini": "facial_hair",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "facial_hair": {
-                        "info": {
-                            "name": "Facial Hair",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "beard_basic",
-                            "beard_thick",
-                            "facial_hair_handlebar_moustache",
-                            "facial_hair_moustache",
-                            "facial_hair_short_beard",
-                            "facial_hair_soul_patch",
-                            "facial_hair_stubble"
-                        ]
-                    }
-                }
-            },
-            "top": {
-                "info": {
-                    "name": "Top",
-                    "img": "top",
-                    "img_mini": "top",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "sleeveless": {
-                        "info": {
-                            "name": "Sleeveless Tops",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "top_cami",
-                            "top_halter_bikini",
-                            "top_tanktop",
-                            "top_tanktop_buttons",
-                            "underwear_tank"
-                        ]
-                    },
-                    "short_sleeve": {
-                        "info": {
-                            "name": "Short Sleeved Tops",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "top_dancer",
-                            "top_ranger",
-                            "top_tee_basic",
-                            "top_tee_oversized",
-                            "top_tee_ringer_basic"
-                        ]
-                    },
-                    "long_sleeve": {
-                        "info": {
-                            "name": "Long Sleeved Tops",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "top_adventurer",
-                            "top_ancient_witch",
-                            "top_fishing_vest",
-                            "top_exalted",
-                            "top_long_sleeve_baseball",
-                            "top_long_sleeve_basic",
-                            "top_long_sleeve_basic_cropped",
-                            "top_long_sleeve_beekeeper",
-                            "top_long_sleeve_striped",
-                            "top_plaid_flannel",
-                            "top_rogue"
-                        ]
-                    },
-                    "jacket": {
-                        "info": {
-                            "name": "Jackets",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "top_cropped_puff_jacket",
-                            "top_explorer",
-                            "top_jacket_and_tee_basic",
-                            "top_noble_jacket",
-                            "top_puff_jacket",
-                            "top_wool_lined_jacket"
-                        ]
-                    },
-                    "dress": {
-                        "info": {
-                            "name": "Dresses",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "dress_berry",
-                            "dress_court",
-                            "dress_maid",
-                            "dress_modest",
-                            "dress_sleeveless_basic",
-                            "dress_spring_festival"
-                        ]
-                    },
-                    "robe": {
-                        "info": {
-                            "name": "Robes and Coats",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "robe_dark_regent",
-                            "robe_dragon_cleric",
-                            "robe_earth",
-                            "robe_fire",
-                            "robe_tide",
-                            "top_caldosian_overcoat",
-                            "top_noble_tunic",
-                            "top_ranger_jacket"
-                        ]
-                    },
-                    "suit": {
-                        "info": {
-                            "name": "Suits",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "suit_berry",
-                            "suit_court",
-                            "suit_spring_festival",
-                            "suit_miner",
-                            "suit_halter_bikini_set"
-                        ]
-                    },
-                    "top_misc": {
-                        "info": {
-                            "name": "Miscellaneous",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "overalls_basic",
-                            "overalls_farmer",
-                            "overalls_shorts",
-                            "overalls_skirt",
-                            "top_hunter",
-                            "underwear_bra",
-                            "underwear_bra_small",
-                            "top_cloth_armor",
-                            "top_scrap_metal",
-                            "top_copper_armor",
-                            "top_verdigris_armor",
-                            "top_iron_armor",
-                            "top_crystal_armor",
-                            "top_silver_armor",
-                            "top_tarnished_gold_armor",
-                            "top_gold_armor",
-                            "top_corrupted_mistril",
-                            "top_mistril",
-                            "top_dragonsworn_armor"
-                        ]
-                    }
-                }
-            },
-            "bottom": {
-                "info": {
-                    "name": "Bottom",
-                    "img": "bottom",
-                    "img_mini": "bottom",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "pants": {
-                        "info": {
-                            "name": "Pants",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "pants_adventurer",
-                            "pants_basic",
-                            "pants_beekeeper",
-                            "pants_exalted",
-                            "pants_explorer",
-                            "pants_hunter",
-                            "pants_rogue"
-                        ]
-                    },
-                    "shorts": {
-                        "info": {
-                            "name": "Shorts",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "shorts_basic",
-                            "shorts_fishing",
-                            "shorts_swimtrunks",
-                            "underwear_bottoms_polkadot",
-                            "underwear_briefs",
-                            "underwear_shorts"
-                        ]
-                    },
-                    "skirt": {
-                        "info": {
-                            "name": "Skirts",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "skirt_ancient_witch",
-                            "skirt_dancer",
-                            "skirt_long_basic",
-                            "skirt_long_scalloped",
-                            "skirt_maid",
-                            "skirt_pleated_medium",
-                            "skirt_pleated_short",
-                            "skirt_short_basic"
-                        ]
-                    },
-                    "bottom_misc": {
-                        "info": {
-                            "name": "Miscellaneous",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "pants_cloth_armor",
-                            "pants_scrap_metal",
-                            "pants_copper_armor",
-                            "pants_verdigris_armor",
-                            "pants_iron_armor",
-                            "pants_crystal_armor",
-                            "pants_silver_armor",
-                            "pants_tarnished_gold_armor",
-                            "pants_gold_armor",
-                            "pants_corrupted_mistril",
-                            "pants_mistril",
-                            "pants_dragonsworn_armor"
-                        ]
-                    }
-                }
-            },
-            "feet": {
-                "info": {
-                    "name": "Feet",
-                    "img": "feet",
-                    "img_mini": "feet",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "boots": {
-                        "info": {
-                            "name": "Boots",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "shoes_boots",
-                            "shoes_boots_adventurer",
-                            "shoes_boots_ancient_witch",
-                            "shoes_boots_beekeeper",
-                            "shoes_boots_caldosian",
-                            "shoes_boots_dark_regent",
-                            "shoes_boots_exalted",
-                            "shoes_boots_explorer",
-                            "shoes_boots_fire",
-                            "shoes_boots_hunter",
-                            "shoes_boots_noble",
-                            "shoes_boots_pirate",
-                            "shoes_boots_ranger",
-                            "shoes_boots_rogue",
-                            "shoes_boots_farmer",
-                            "shoes_boots_fishing",
-                            "shoes_boots_miner",
-                            "shoes_boots_pumpkin",
-                            "shoes_boots_short_basic",
-                            "shoes_boots_work"
-                        ]
-                    },
-                    "shoes": {
-                        "info": {
-                            "name": "Shoes",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "shoes_sneakers_basic"
-                        ]
-                    },
-                    "sandals": {
-                        "info": {
-                            "name": "Sandals",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "shoes_sandals_earth",
-                            "shoes_sandals_tide",
-                            "shoes_sandals_worn"
-                        ]
-                    },
-                    "feet_misc": {
-                        "info": {
-                            "name": "Miscellaneous",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "shoes_boots_dragon_cleric",
-                            "shoes_dressy_stockings",
-                            "shoes_boots_cloth_armor",
-                            "shoes_boots_scrap_metal",
-                            "shoes_boots_copper_armor",
-                            "shoes_boots_verdigris_armor",
-                            "shoes_boots_iron_armor",
-                            "shoes_boots_crystal_armor",
-                            "shoes_boots_silver_armor",
-                            "shoes_boots_tarnished_gold_armor",
-                            "shoes_boots_gold_armor",
-                            "shoes_boots_corrupted_mistril",
-                            "shoes_boots_mistril",
-                            "shoes_boots_dragonsworn_armor"
-                        ]
-                    }
-                }
-            },
-            "back": {
-                "info": {
-                    "name": "Back",
-                    "img": "back",
-                    "img_mini": "back",
-                    "wikilink": "Cosmetics"
-                },
-                "subcategories": {
-                    "backpacks": {
-                        "info": {
-                            "name": "Backpacks",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "back_gear_basic_backpack",
-                            "back_gear_cabbage_backpack",
-                            "back_gear_cauliflower_backpack",
-                            "back_gear_cloud_backpack",
-                            "back_gear_daikon_radish_backpack",
-                            "back_gear_daisy_backpack",
-                            "back_gear_frost_lily_backpack",
-                            "back_gear_jasmine_backpack",
-                            "back_gear_onion_backpack",
-                            "back_gear_pumpkin_backpack",
-                            "back_gear_snowdrop_anemone_backpack",
-                            "back_gear_strawberry_backpack",
-                            "back_gear_turnip_backpack",
-                            "back_gear_sunflower_backpack",
-                            "back_gear_sweet_potato_backpack",
-                            "back_gear_tomato_backpack",
-                            "back_gear_watermelon_backpack",
-                            "back_gear_wheat_backpack"
-                        ]
-                    },
-                    "capes": {
-                        "info": {
-                            "name": "Capes",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "back_gear_basic_cape",
-                            "back_gear_dark_regent_cape",
-                            "back_gear_dragon_cleric_cape",
-                            "back_gear_fire_cloak",
-                            "back_gear_fish_scale_cape",
-                            "back_gear_exalted_cloak",
-                            "back_gear_hunter_cape",
-                            "back_gear_noble_cape",
-                            "back_gear_rogue_cape",
-                            "back_gear_dragonsworn_cloak"
-                        ]
-                    },
-                    "back_gear_misc": {
-                        "info": {
-                            "name": "Miscellaneous",
-                            "wikilink": "Cosmetics"
-                        },
-                        "items": [
-                            "back_gear_ancient_witch_broom",
-                            "back_gear_butterfly_wings",
-                            "back_gear_hunter_bow",
-                            "back_gear_mini_wings",
-                            "back_gear_ornate_round_shield",
-                            "back_gear_ornate_shield",
-                            "back_gear_sheathed_sword"
-                        ]
-                    }
-                }
-            }
-        }
-    },
     "museum": {
         "info": {
             "name": "Museum",
@@ -3624,817 +6291,631 @@ var objTabs =
             }
         }
     },
-    "animals": {
+    "perks": {
         "info": {
-            "name": "Animals",
-            "icon": "rabbit.png",
-            "img_item_path": "animals/",
-            "item_json": "animals"
+            "name": "Perks",
+            "icon": "fake_essence.png",
+            "img_mini_path": "perks/",
+            "img_item_path": "perks/",
+            "item_json": "perks"
         },
         "categories": {
-            "cow": {
+            "farming": {
                 "info": {
-                    "img": "cow",
-                    "img_mini": "cow",
-                    "name": "Cow",
-                    "wikilink": "Cow"
+                    "img": "farming",
+                    "img_mini": "farming",
+                    "name": "Farming",
+                    "wikilink": "Skills#Farming"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Cow"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
-                            "cow_brown",
-                            "cow_spotted",
-                            "cow_black"
+                            "prepared_picker",
+                            "a_day_well_spent",
+                            "green_thumb",
+                            "refreshing"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Cow"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
-                            "cow_chocolate",
-                            "cow_red",
-                            "cow_white"
+                            "bountiful",
+                            "heavy_duty",
+                            "well_watered",
+                            "nice_swing"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Cow"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
-                            "cow_blue",
-                            "cow_purple",
-                            "cow_pink"
+                            "living_off_the_land",
+                            "superb_sower",
+                            "harvest_time",
+                            "prize_winning"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Cow"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
-                            "cow_silver"
+                            "sickle_sword",
+                            "ornamental",
+                            "perfect_pollinators",
+                            "magic_design"
                         ]
                     },
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "Cow"
+                            "wikilink": "Skills#Farming"
                         },
                         "items": [
-                            "cow_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Cow"
-                        },
-                        "items": [
-                            "cow_spring",
-                            "cow_summer",
-                            "cow_fall",
-                            "cow_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Cow"
-                        },
-                        "items": [
-                            "cow_antlers",
-                            "cow_beret",
-                            "cow_cheese_hat",
-                            "cow_cowboy_hat",
-                            "cow_crown",
-                            "cow_flower_crown",
-                            "cow_halo",
-                            "cow_horns",
-                            "cow_pink_bow",
-                            "cow_pink_sunglasses",
-                            "cow_ribbon_blue",
-                            "cow_ribbon_red",
-                            "cow_ribbon_white",
-                            "cow_sun_hat",
-                            "cow_bell_collar",
-                            "cow_laurels"
+                            "earthly_essence"
                         ]
                     }
                 }
             },
-            "rabbit": {
+            "fishing": {
                 "info": {
-                    "img": "rabbit",
-                    "img_mini": "rabbit",
-                    "name": "Rabbit",
-                    "wikilink": "Rabbit"
+                    "img": "fishing",
+                    "img_mini": "fishing",
+                    "name": "Fishing",
+                    "wikilink": "Skills#Fishing"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Rabbit"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
-                            "rabbit_white",
-                            "rabbit_brown",
-                            "rabbit_black_and_white"
+                            "weedline_watcher",
+                            "aquatic_antiquities",
+                            "appealing_reeling",
+                            "catch_of_the_day"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Rabbit"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
-                            "rabbit_brown_sable",
-                            "rabbit_orange_sable",
-                            "rabbit_black"
+                            "school_crasher",
+                            "lucky_haul",
+                            "perfect_catch",
+                            "unexpected_haul"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Rabbit"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
-                            "rabbit_blue",
-                            "rabbit_purple",
-                            "rabbit_pink"
+                            "full_class",
+                            "legendary",
+                            "treasure_trove",
+                            "weedline_watcher_two"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Rabbit"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
-                            "rabbit_silver"
+                            "appealing_reeling_two",
+                            "frenzy",
+                            "what_a_catch",
+                            "lucky_haul_two"
                         ]
                     },
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "Rabbit"
+                            "wikilink": "Skills#Fishing"
                         },
                         "items": [
-                            "rabbit_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Rabbit"
-                        },
-                        "items": [
-                            "rabbit_spring",
-                            "rabbit_summer",
-                            "rabbit_fall",
-                            "rabbit_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Rabbit"
-                        },
-                        "items": [
-                            "rabbit_daisy_clips",
-                            "rabbit_flower_crown",
-                            "rabbit_halo",
-                            "rabbit_heart_clips",
-                            "rabbit_horn",
-                            "rabbit_pink_bow",
-                            "rabbit_ribbon_blue",
-                            "rabbit_ribbon_red",
-                            "rabbit_ribbon_white",
-                            "rabbit_sunglasses",
-                            "rabbit_top_hat",
-                            "rabbit_winter_hat",
-                            "rabbit_cowboy_hat",
-                            "rabbit_chef_hat"
+                            "abyssal_ascendence"
                         ]
                     }
                 }
             },
-            "horse": {
+            "archaeology": {
                 "info": {
-                    "img": "horse",
-                    "img_mini": "horse",
-                    "name": "Horse",
-                    "wikilink": "Horse"
+                    "img": "archaeology",
+                    "img_mini": "archaeology",
+                    "name": "Archaeology",
+                    "wikilink": "Skills#Archaeology"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Horse"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
-                            "horse_spotted",
-                            "horse_sandy_bay",
-                            "horse_champagne"
+                            "museum_quality_one",
+                            "unpeatable",
+                            "sunken_secrets",
+                            "western_ruins_scholar"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Horse"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
-                            "horse_chestnut",
-                            "horse_black",
-                            "horse_white"
+                            "sunken_treasure",
+                            "stoneturner",
+                            "eastern_road_scholar",
+                            "pursuit"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Horse"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
-                            "horse_blue",
-                            "horse_purple",
-                            "horse_pink"
+                            "back_in_vogue",
+                            "natural_beauty",
+                            "well_placed",
+                            "museum_quality_two"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Horse"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
-                            "horse_silver"
+                            "former_farmers",
+                            "museum_quality_three",
+                            "back_in_vogue_two",
+                            "natural_beauty_two"
                         ]
                     },
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "Horse"
+                            "wikilink": "Skills#Archaeology"
                         },
                         "items": [
-                            "horse_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Horse"
-                        },
-                        "items": [
-                            "horse_spring",
-                            "horse_summer",
-                            "horse_fall",
-                            "horse_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Horse"
-                        },
-                        "items": [
-                            "horse_antlers",
-                            "horse_cowboy_hat",
-                            "horse_crown",
-                            "horse_derby_hat",
-                            "horse_dark_unicorn_horn",
-                            "horse_flower_crown",
-                            "horse_pink_bow",
-                            "horse_ribbon_blue",
-                            "horse_ribbon_red",
-                            "horse_ribbon_white",
-                            "horse_unicorn_horn",
-                            "horse_seashell_clips",
-                            "horse_monocle",
-                            "horse_bandana"
+                            "mist_sight"
                         ]
                     }
                 }
             },
-            "chicken": {
+            "cooking": {
                 "info": {
-                    "img": "chicken",
-                    "img_mini": "chicken",
-                    "name": "Chicken",
-                    "wikilink": "Chicken"
+                    "img": "cooking",
+                    "img_mini": "cooking",
+                    "name": "Cooking",
+                    "wikilink": "Skills#Cooking"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Chicken"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
-                            "chicken_white",
-                            "chicken_brown",
-                            "chicken_spotted"
+                            "waste_not_want_not",
+                            "time_to_eat",
+                            "restorative_cooking",
+                            "taste_maker"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Chicken"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
-                            "chicken_red",
-                            "chicken_yellow",
-                            "chicken_gray"
+                            "seasoned",
+                            "time_to_eat_two",
+                            "award_winning",
+                            "likable_cooking"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Chicken"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
-                            "chicken_blue",
-                            "chicken_purple",
-                            "chicken_pink"
+                            "speedy_cooking",
+                            "dinner_for_two",
+                            "a_way_to_the_heart",
+                            "time_to_eat_three"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Chicken"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
-                            "chicken_silver"
+                            "loveable_cooking",
+                            "snacktime",
+                            "caffeine_crimes",
+                            "magical_meals"
                         ]
                     },
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "Chicken"
+                            "wikilink": "Skills#Cooking"
                         },
                         "items": [
-                            "chicken_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Chicken"
-                        },
-                        "items": [
-                            "chicken_spring",
-                            "chicken_summer",
-                            "chicken_fall",
-                            "chicken_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Chicken"
-                        },
-                        "items": [
-                            "chicken_business_tie",
-                            "chicken_ear_muffs",
-                            "chicken_egg_hat",
-                            "chicken_sunglasses",
-                            "chicken_flower_crown",
-                            "chicken_pearl_necklace",
-                            "chicken_red_eyes",
-                            "chicken_ribbon_blue",
-                            "chicken_ribbon_red",
-                            "chicken_ribbon_white",
-                            "chicken_top_hat",
-                            "chicken_winter_hat",
-                            "chicken_yellow_bow",
-                            "chicken_apple",
-                            "chicken_baseball_cap"
+                            "fairy_cooking"
                         ]
                     }
                 }
             },
-            "duck": {
+            "ranching": {
                 "info": {
-                    "img": "duck",
-                    "img_mini": "duck",
-                    "name": "Duck",
-                    "wikilink": "Duck"
+                    "img": "ranching",
+                    "img_mini": "ranching",
+                    "name": "Ranching",
+                    "wikilink": "Skills#Ranching"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Duck"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
-                            "duck_mallard",
-                            "duck_muscovy",
-                            "duck_white"
+                            "feeding_frenzy",
+                            "close_bond",
+                            "barnyard_bounty",
+                            "currency_of_care"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Duck"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
-                            "duck_mandarin",
-                            "duck_ruddy_shelduck",
-                            "duck_cayuga"
+                            "currency_of_care_two",
+                            "feed_prepper",
+                            "welcome_home",
+                            "discount_treats"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Duck"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
-                            "duck_blue",
-                            "duck_purple",
-                            "duck_pink"
+                            "currency_of_care_three",
+                            "welcome_home_two",
+                            "barnyard_bounty_two",
+                            "wind_down"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Duck"
+                            "wikilink": "Skills#Ranching"
                         },
                         "items": [
-                            "duck_silver"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Duck"
-                        },
-                        "items": [
-                            "duck_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Duck"
-                        },
-                        "items": [
-                            "duck_spring",
-                            "duck_summer",
-                            "duck_fall",
-                            "duck_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Duck"
-                        },
-                        "items": [
-                            "duck_black_bowtie",
-                            "duck_bonnet",
-                            "duck_flower_crown",
-                            "duck_pink_bow",
-                            "duck_red_eyes",
-                            "duck_ribbon_blue",
-                            "duck_ribbon_red",
-                            "duck_ribbon_white",
-                            "duck_ruffled_collar",
-                            "duck_sun_hat",
-                            "duck_sunglasses",
-                            "duck_winter_hat",
-                            "duck_backwards_cap",
-                            "duck_strawberry_hat"
+                            "the_bell_tolls",
+                            "maximum_milling",
+                            "barnyard_bounty_three"
                         ]
                     }
                 }
             },
-            "capybara": {
+            "woodcrafting": {
                 "info": {
-                    "img": "capybara",
-                    "img_mini": "capybara",
-                    "name": "Capybara",
-                    "wikilink": "Capybara"
+                    "img": "woodcrafting",
+                    "img_mini": "woodcrafting",
+                    "name": "Woodcrafting",
+                    "wikilink": "Skills#Woodcrafting"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Capybara"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
-                            "capybara_light_brown",
-                            "capybara_dark_brown",
-                            "capybara_pale"
+                            "hammer_timing",
+                            "lumberjack",
+                            "masonry",
+                            "forager"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Capybara"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
-                            "capybara_gray",
-                            "capybara_white",
-                            "capybara_red"
+                            "working_with_the_grain",
+                            "quality_crafting",
+                            "natural",
+                            "hammer_timing_two"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Capybara"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
-                            "capybara_blue",
-                            "capybara_purple",
-                            "capybara_pink"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Capybara"
-                        },
-                        "items": [
-                            "capybara_gold"
+                            "material_world",
+                            "steady_supplies",
+                            "set_pieces",
+                            "hammer_timing_three"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Capybara"
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
-                            "capybara_silver"
+                            "lumberjack_two",
+                            "underground_inspiration",
+                            "deliberate_debris",
+                            "working_with_the_grain_two"
                         ]
                     },
-                    "6": {
+                    "5": {
                         "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Capybara"
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Woodcrafting"
                         },
                         "items": [
-                            "capybara_spring",
-                            "capybara_summer",
-                            "capybara_fall",
-                            "capybara_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Capybara"
-                        },
-                        "items": [
-                            "capybara_baseball_cap",
-                            "capybara_bow",
-                            "capybara_bowler_hat",
-                            "capybara_flower_crown",
-                            "capybara_horns",
-                            "capybara_leaf",
-                            "capybara_ribbon_blue",
-                            "capybara_ribbon_red",
-                            "capybara_ribbon_white",
-                            "capybara_umbrella_hat",
-                            "capybara_winter_hat",
-                            "capybara_yuzu",
-                            "capybara_angel_wings",
-                            "capybara_bat_wings"
+                            "void_crafting",
+                            "big_water_sprites"
                         ]
                     }
                 }
             },
-            "sheep": {
+            "blacksmithing": {
                 "info": {
-                    "img": "sheep",
-                    "img_mini": "sheep",
-                    "name": "Sheep",
-                    "wikilink": "Sheep"
+                    "img": "blacksmithing",
+                    "img_mini": "blacksmithing",
+                    "name": "Blacksmithing",
+                    "wikilink": "Skills#Blacksmithing"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Sheep"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
-                            "sheep_white",
-                            "sheep_black",
-                            "sheep_brown"
+                            "copper_expert",
+                            "time_sensitive",
+                            "sharp_blacksmithing",
+                            "fortified_blacksmithing"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Sheep"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
-                            "sheep_black_nosed",
-                            "sheep_beige",
-                            "sheep_white_nosed"
+                            "iron_expert",
+                            "time_sensitive_two",
+                            "leech_blacksmithing",
+                            "lightweight_blacksmithing"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Sheep"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
-                            "sheep_blue",
-                            "sheep_purple",
-                            "sheep_pink"
+                            "silver_expert",
+                            "hasty_blacksmithing",
+                            "time_sensitive_three",
+                            "empowered"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Sheep"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
-                            "sheep_silver"
+                            "empowered_two",
+                            "gold_expert",
+                            "tireless_blacksmithing",
+                            "time_sensitive_four"
                         ]
                     },
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "Sheep"
+                            "wikilink": "Skills#Blacksmithing"
                         },
                         "items": [
-                            "sheep_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Sheep"
-                        },
-                        "items": [
-                            "sheep_spring",
-                            "sheep_summer",
-                            "sheep_fall",
-                            "sheep_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Sheep"
-                        },
-                        "items": [
-                            "sheep_flower_crown",
-                            "sheep_palm_tree",
-                            "sheep_party_hat",
-                            "sheep_pink_bow",
-                            "sheep_mushroom_hat",
-                            "sheep_horns",
-                            "sheep_winter_hat",
-                            "sheep_ribbon_blue",
-                            "sheep_ribbon_red",
-                            "sheep_ribbon_white",
-                            "sheep_tartan_beret",
-                            "sheep_unicorn_horn",
-                            "sheep_hot_water_bottle",
-                            "sheep_green_visor"
+                            "mistril_expert"
                         ]
                     }
                 }
             },
-            "alpaca": {
+            "mining": {
                 "info": {
-                    "img": "alpaca",
-                    "img_mini": "alpaca",
-                    "name": "Alpaca",
-                    "wikilink": "Alpaca"
+                    "img": "mining",
+                    "img_mini": "mining",
+                    "name": "Mining",
+                    "wikilink": "Skills#Mining"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
                             "name": "Tier 1",
-                            "wikilink": "Alpaca"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
-                            "alpaca_white",
-                            "alpaca_black",
-                            "alpaca_brown"
+                            "earth_breaker",
+                            "ore_riginal",
+                            "reclaimer",
+                            "treasure_hunter"
                         ]
                     },
                     "2": {
                         "info": {
                             "name": "Tier 2",
-                            "wikilink": "Alpaca"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
-                            "alpaca_snowy",
-                            "alpaca_desert",
-                            "alpaca_indigo"
+                            "iron_hound",
+                            "true_blue",
+                            "treasured",
+                            "mine_time"
                         ]
                     },
                     "3": {
                         "info": {
                             "name": "Tier 3",
-                            "wikilink": "Alpaca"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
-                            "alpaca_blue",
-                            "alpaca_purple",
-                            "alpaca_pink"
+                            "resonance",
+                            "earth_breaker_two",
+                            "silver_seeker",
+                            "fantastic_finds"
                         ]
                     },
                     "4": {
                         "info": {
                             "name": "Tier 4",
-                            "wikilink": "Alpaca"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
-                            "alpaca_silver"
+                            "lost_to_history",
+                            "good_as_gold",
+                            "refined_rockery",
+                            "break_one_get_two"
                         ]
                     },
                     "5": {
                         "info": {
                             "name": "Tier 5",
-                            "wikilink": "Alpaca"
+                            "wikilink": "Skills#Mining"
                         },
                         "items": [
-                            "alpaca_gold"
-                        ]
-                    },
-                    "6": {
-                        "info": {
-                            "name": "Tier 6",
-                            "wikilink": "Alpaca"
-                        },
-                        "items": [
-                            "alpaca_spring",
-                            "alpaca_summer",
-                            "alpaca_fall",
-                            "alpaca_winter"
-                        ]
-                    },
-                    "cosmetics": {
-                        "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Alpaca"
-                        },
-                        "items": [
-                            "alpaca_beaded_necklace",
-                            "alpaca_bowtie",
-                            "alpaca_flower_crown",
-                            "alpaca_gold_pendant",
-                            "alpaca_horns",
-                            "alpaca_ribbon_blue",
-                            "alpaca_ribbon_red",
-                            "alpaca_ribbon_white",
-                            "alpaca_scarf",
-                            "alpaca_spiked_collar",
-                            "alpaca_sunglasses",
-                            "alpaca_winter_hat",
-                            "alpaca_beret",
-                            "alpaca_lacy_collar"
+                            "mistril_mastery",
+                            "perfect_pick",
+                            "void_value",
+                            "lost_to_history_two"
                         ]
                     }
                 }
             },
-            "pets": {
+            "combat": {
                 "info": {
-                    "img": "pets",
-                    "img_mini": "pets",
-                    "name": "Pets",
-                    "wikilink": "Pets"
+                    "img": "combat",
+                    "img_mini": "combat",
+                    "name": "Combat",
+                    "wikilink": "Skills#Combat"
                 },
                 "subcategories": {
                     "1": {
                         "info": {
-                            "name": "Cosmetics",
-                            "wikilink": "Animal_Cosmetics#Pets"
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Combat"
                         },
                         "items": [
-                            "pets_halo",
-                            "pets_flower_crown",
-                            "pets_purple_bow",
-                            "pets_green_bow",
-                            "pets_yellow_bow",
-                            "pets_red_bow",
-                            "pets_blue_bow",
-                            "pets_black_bow",
-                            "pets_pink_bow",
-                            "pets_sun_hat",
-                            "pets_unicorn_horn",
-                            "pets_skull_mask"
+                            "guardians_shield",
+                            "true_strike",
+                            "jump_attack",
+                            "well_armed"
                         ]
                     },
                     "2": {
                         "info": {
-                            "name": "Pet Skins",
-                            "wikilink": "Pets#Pet_Skins",
-                            "item_json": "items",
-                            "img_item_path": "items/"
+                            "name": "Tier 2",
+                            "wikilink": "Skills#Combat"
                         },
                         "items": [
-                            "pet_skin_mushroom",
-                            "pet_skin_rockclod",
-                            "pet_skin_oreclod",
-                            "pet_skin_sapling"
+                            "quick_footed",
+                            "shrine_savant",
+                            "generous_in_defeat",
+                            "dungeon_delicacies"
+                        ]
+                    },
+                    "3": {
+                        "info": {
+                            "name": "Tier 3",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "perfect_prefix",
+                            "rocking",
+                            "in_motion",
+                            "out_of_juice"
+                        ]
+                    },
+                    "4": {
+                        "info": {
+                            "name": "Tier 4",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "sonic_boom",
+                            "gift_exchange",
+                            "guardians_shield_two",
+                            "true_strike_two"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Combat"
+                        },
+                        "items": [
+                            "sure_strike",
+                            "generous_in_defeat_two",
+                            "friend_shaped"
+                        ]
+                    }
+                }
+            },
+            "mount": {
+                "info": {
+                    "img": "mount",
+                    "img_mini": "mount",
+                    "name": "Mistmare",
+                    "wikilink": "Skills#Mistmare"
+                },
+                "subcategories": {
+                    "1": {
+                        "info": {
+                            "name": "Tier 1",
+                            "wikilink": "Skills#Mistmare"
+                        },
+                        "items": [
+                            "horsepower",
+                            "harvest_horse",
+                            "nice_ride"
                         ]
                     }
                 }
@@ -6178,2487 +8659,6 @@ var objTabs =
                             "roasted_rice_tea",
                             "rose_tea",
                             "spirit_mushroom_tea"
-                        ]
-                    }
-                }
-            }
-        }
-    },
-    "almanac": {
-        "info": {
-            "name": "Almanac",
-            "icon": "almanac.png",
-            "img_mini_path": "almanac/",
-            "only_mini": 1,
-            "img_item_path": "items/",
-            "item_json": "items"
-        },
-        "categories": {
-            "artifacts": {
-                "info": {
-                    "name": "Artifacts",
-                    "img_mini": "artifacts",
-                    "wikilink": "Artifacts"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "alda_bronze_sword",
-                            "alda_clay_pot",
-                            "alda_feather_pendant",
-                            "alda_gem_bracelet",
-                            "alda_mural_tablet",
-                            "aldarian_gauntlet",
-                            "aldarian_sword",
-                            "aldarian_war_banner",
-                            "amber_trapped_insect",
-                            "ancient_crystal_goblet",
-                            "ancient_gold_coin",
-                            "ancient_horn_circlet",
-                            "ancient_royal_scepter",
-                            "ancient_stone_lantern",
-                            "black_tablet",
-                            "caldosian_breastplate",
-                            "caldosian_drinking_horn",
-                            "caldosian_emperor_bust",
-                            "caldosian_sword",
-                            "clay_amphora",
-                            "coin_lump",
-                            "completely_wrong_map",
-                            "crab_statue",
-                            "criminal_confession",
-                            "crystal_apple",
-                            "dense_water",
-                            "diamond_backed_mirror",
-                            "dragon_claw",
-                            "dragon_pact_tablet",
-                            "dragon_scale",
-                            "dragon_forged_bracelet",
-                            "earth_infused_stone",
-                            "faceted_rock_gem",
-                            "family_crest_pendant",
-                            "fire_crystal",
-                            "flint_arrowhead",
-                            "fossilized_egg",
-                            "fossilized_mandrake_root",
-                            "gathering_basket",
-                            "giant_fish_scale",
-                            "hardened_essence",
-                            "lost_crown_of_aldaria",
-                            "mermaids_comb",
-                            "message_in_a_bottle",
-                            "metal_leaf",
-                            "meteorite",
-                            "miners_helmet",
-                            "miners_pickaxe",
-                            "miners_rucksack",
-                            "miners_slab",
-                            "mist_crystal",
-                            "mist_flute",
-                            "mist_scroll",
-                            "misty_black_mirror",
-                            "misty_feather_quill",
-                            "muttering_cube",
-                            "obsidian_blade",
-                            "perfect_copper_ore",
-                            "perfect_diamond",
-                            "perfect_emerald",
-                            "perfect_gold_ore",
-                            "perfect_iron_ore",
-                            "perfect_mistril_ore",
-                            "perfect_pink_diamond",
-                            "perfect_ruby",
-                            "perfect_sapphire",
-                            "perfect_silver_ore",
-                            "petrified_wood",
-                            "porcelain_figurine",
-                            "rainbow_geode",
-                            "rainbow_seaweed",
-                            "really_round_rock",
-                            "red_obsidian",
-                            "ritual_beads",
-                            "ritual_chalice",
-                            "ritual_incense_burner",
-                            "ritual_scepter",
-                            "ritual_tablet",
-                            "rock_statue",
-                            "rock_with_a_hole",
-                            "rubber_fish",
-                            "rusted_shield",
-                            "rusted_treasure_chest",
-                            "sea_glass",
-                            "seriously_square_stone",
-                            "shortcut_scroll",
-                            "starlight_coral",
-                            "statuette_of_caldarus",
-                            "stone_horse",
-                            "stone_shell",
-                            "tidestone",
-                            "tin_lunchbox",
-                            "tiny_dinosaur_skeleton",
-                            "tiny_volcano",
-                            "trilobite_fossil",
-                            "unknown_dragon_statuette",
-                            "vintage_brush",
-                            "vintage_cow_bell",
-                            "vintage_hammer",
-                            "vintage_sickle",
-                            "vintage_watering_can",
-                            "warm_rock",
-                            "water_sphere",
-                            "weightless_stone",
-                            "worn_pendant"
-                        ]
-                    }
-                }
-            },
-            "blacksmithing": {
-                "info": {
-                    "name": "Blacksmithing",
-                    "img_mini": "blacksmithing",
-                    "wikilink": "Blacksmithing"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "copper_armor",
-                            "axe_copper",
-                            "fishing_rod_copper",
-                            "copper_greaves",
-                            "copper_helmet",
-                            "hoe_copper",
-                            "copper_ingot",
-                            "copper_legplates",
-                            "net_copper",
-                            "pick_axe_copper",
-                            "copper_ring",
-                            "shovel_copper",
-                            "sword_copper",
-                            "watering_can_copper",
-                            "dragon_forged_core",
-                            "dragon_forged_fang",
-                            "dragon_forged_horn",
-                            "dragon_forged_powder",
-                            "sword_dragon_forged",
-                            "gold_armor",
-                            "axe_gold",
-                            "fishing_rod_gold",
-                            "gold_greaves",
-                            "gold_helmet",
-                            "hoe_gold",
-                            "gold_ingot",
-                            "gold_legplates",
-                            "net_gold",
-                            "pick_axe_gold",
-                            "gold_ring",
-                            "shovel_gold",
-                            "sword_gold",
-                            "watering_can_gold",
-                            "iron_armor",
-                            "axe_iron",
-                            "fishing_rod_iron",
-                            "iron_greaves",
-                            "iron_helmet",
-                            "hoe_iron",
-                            "iron_ingot",
-                            "iron_legplates",
-                            "net_iron",
-                            "pick_axe_iron",
-                            "iron_ring",
-                            "shovel_iron",
-                            "sword_iron",
-                            "watering_can_iron",
-                            "mistril_armor",
-                            "axe_mistril",
-                            "fishing_rod_mistril",
-                            "mistril_boots",
-                            "mistril_helmet",
-                            "hoe_mistril",
-                            "mistril_ingot",
-                            "mistril_legplates",
-                            "net_mistril",
-                            "pick_axe_mistril",
-                            "mistril_ring",
-                            "shovel_mistril",
-                            "sword_mistril",
-                            "watering_can_mistril",
-                            "silver_armor",
-                            "axe_silver",
-                            "fishing_rod_silver",
-                            "silver_greaves",
-                            "silver_helmet",
-                            "hoe_silver",
-                            "silver_ingot",
-                            "silver_legplates",
-                            "net_silver",
-                            "pick_axe_silver",
-                            "silver_ring",
-                            "shovel_silver",
-                            "sword_silver",
-                            "watering_can_silver"
-                        ]
-                    }
-                }
-            },
-            "bugs": {
-                "info": {
-                    "name": "Bugs",
-                    "img_mini": "bugs",
-                    "wikilink": "Bugs"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "ancient_firefly",
-                            "ant",
-                            "ant_queen",
-                            "beach_hopper",
-                            "big_bee",
-                            "biggest_beetle",
-                            "brightbulb_moth",
-                            "bumblebee",
-                            "butterfly",
-                            "caterpillar",
-                            "chillipede",
-                            "cicada",
-                            "cicada_nymph",
-                            "cooktop_beetle",
-                            "copper_beetle",
-                            "coral_mantis",
-                            "cricket",
-                            "crystal_caterpillar",
-                            "crystal_wing_moth",
-                            "crystalline_cricket",
-                            "deep_earthworm",
-                            "diamond_beetle",
-                            "dragon_horn_beetle",
-                            "dragonfly",
-                            "fairy_bee",
-                            "fire_wasp",
-                            "firefly",
-                            "flower_bee",
-                            "flower_crown_beetle",
-                            "frost_flutter_butterfly",
-                            "fur_bee",
-                            "fuzzy_moth",
-                            "gem_shard_caterpillar",
-                            "giant_worm",
-                            "grasshopper",
-                            "hermit_crab",
-                            "hermit_snail",
-                            "hidden_beetle",
-                            "hummingbird_hawk_moth",
-                            "icehopper",
-                            "inchworm",
-                            "jewel_beetle",
-                            "ladybug",
-                            "lantern_moth",
-                            "lava_snail",
-                            "leafhopper",
-                            "lightning_dragonfly",
-                            "loam_caterpillar",
-                            "luna_moth",
-                            "magma_beetle",
-                            "mine_cricket",
-                            "mistmoth",
-                            "monarch_butterfly",
-                            "moonlight_bee",
-                            "mote_firefly",
-                            "orchid_mantis",
-                            "parchment_moth",
-                            "petalhopper",
-                            "polar_fly",
-                            "pond_skater",
-                            "praying_mantis",
-                            "puddle_spider",
-                            "queens_birdwing",
-                            "question_mark_butterfly",
-                            "redhead_worm",
-                            "relic_crab",
-                            "rhinoceros_beetle",
-                            "rock_roach",
-                            "roly_poly",
-                            "saint_mantis",
-                            "sand_bug",
-                            "sea_scarab",
-                            "singing_katydid",
-                            "smoke_moth",
-                            "snail",
-                            "snowball_beetle",
-                            "snug_bug",
-                            "speedy_snail",
-                            "strawhopper",
-                            "strobe_firefly",
-                            "sunset_moth",
-                            "surf_beetle",
-                            "sweet_bee",
-                            "tiger_swallowtail_butterfly",
-                            "tunnel_millipede",
-                            "void_snail",
-                            "walking_leaf",
-                            "walking_stick",
-                            "waterbug",
-                            "waterfly",
-                            "windleaf_butterfly",
-                            "winterpillar",
-                            "worm"
-                        ]
-                    }
-                }
-            },
-            "cooked_dishes": {
-                "info": {
-                    "name": "Cooked Dishes",
-                    "img_mini": "cooked_dishes",
-                    "wikilink": "Cooked Dishes"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "apple_honey_curry",
-                            "apple_juice",
-                            "apple_pie",
-                            "baked_potato",
-                            "baked_sweetroot",
-                            "beet_salad",
-                            "beet_soup",
-                            "bell_berry_bakewell_tart",
-                            "berries_and_cream",
-                            "berry_bowl",
-                            "blackberry_jam",
-                            "blueberry_jam",
-                            "braised_burdock",
-                            "braised_carrots",
-                            "bread",
-                            "breaded_catfish",
-                            "broccoli_salad",
-                            "buttered_peas",
-                            "cabbage_slaw",
-                            "candied_lemon_peel",
-                            "candied_queen_berries",
-                            "candied_strawberries",
-                            "candied_walnuts",
-                            "canned_sardines",
-                            "caramel_candy",
-                            "caramelized_moon_fruit",
-                            "cauliflower_curry",
-                            "cherry_cobbler",
-                            "cherry_smoothie",
-                            "cherry_tart",
-                            "chickpea_curry",
-                            "chili_coconut_curry",
-                            "caldosian_chocolate_cake",
-                            "clam_chowder",
-                            "coconut_cream_pie",
-                            "coconut_milk",
-                            "cod_with_thyme",
-                            "crab_cakes",
-                            "cranberry_juice",
-                            "cranberry_orange_scone",
-                            "crayfish_etouffee",
-                            "crispy_fried_earthshroom",
-                            "crunchy_chickpeas",
-                            "crystal_berry_pie",
-                            "cucumber_salad",
-                            "cucumber_sandwich",
-                            "deep_sea_soup",
-                            "deluxe_curry",
-                            "deviled_eggs",
-                            "dried_squid",
-                            "fast_food",
-                            "fish_skewer",
-                            "fish_stew",
-                            "fish_tacos",
-                            "fried_rice",
-                            "garlic_bread",
-                            "gazpacho",
-                            "glowberry_cookies",
-                            "golden_cheesecake",
-                            "golden_cookies",
-                            "grape_juice",
-                            "green_tea",
-                            "grilled_cheese",
-                            "grilled_corn",
-                            "grilled_eel_rice_bowl",
-                            "hard_boiled_egg",
-                            "harvest_plate",
-                            "herb_butter_pasta",
-                            "herb_salad",
-                            "horseradish_salmon",
-                            "hot_cocoa",
-                            "ice_cream_sundae",
-                            "iced_coffee",
-                            "incredibly_hot_pot",
-                            "jam_sandwich",
-                            "jasmine_tea",
-                            "latte",
-                            "sour_lemon_cake",
-                            "lemon_pie",
-                            "lemonade",
-                            "loaded_baked_potato",
-                            "lobster_roll",
-                            "mackerel_sashimi",
-                            "marmalade",
-                            "miners_mushroom_stew",
-                            "mocha",
-                            "monster_cookie",
-                            "monster_mash",
-                            "mont_blanc",
-                            "moon_fruit_cake",
-                            "mushroom_rice",
-                            "mushroom_steak_dinner",
-                            "noodles",
-                            "omelet",
-                            "onion_soup",
-                            "orange_juice",
-                            "pan_fried_bream",
-                            "pan_fried_salmon",
-                            "pan_fried_snapper",
-                            "peaches_and_cream",
-                            "perch_risotto",
-                            "pineshroom_toast",
-                            "pizza",
-                            "poached_pear",
-                            "pomegranate_juice",
-                            "pomegranate_sorbet",
-                            "potato_soup",
-                            "pudding",
-                            "pumpkin_pie",
-                            "pumpkin_stew",
-                            "queen_berry_pie",
-                            "quiche",
-                            "red_snapper_sushi",
-                            "riceball",
-                            "roasted_cauliflower",
-                            "roasted_chestnuts",
-                            "roasted_rice_tea",
-                            "roasted_sweet_potato",
-                            "rosehip_jam",
-                            "rose_tea",
-                            "rosemary_garlic_noodles",
-                            "salmon_sashimi",
-                            "salted_watermelon",
-                            "sauteed_snow_peas",
-                            "sea_bream_rice",
-                            "seafood_boil",
-                            "seafood_snow_pea_noodles",
-                            "seaweed_salad",
-                            "sesame_broccoli",
-                            "sesame_tuna_bowl",
-                            "simmered_daikon",
-                            "sliced_turnip",
-                            "smoked_trout_soup",
-                            "harvest_day_pie",
-                            "spell_fruit_parfait",
-                            "spicy_cheddar_biscuit",
-                            "spicy_corn",
-                            "spicy_crab_sushi",
-                            "spicy_water_chestnuts",
-                            "spirit_mushroom_tea",
-                            "spring_galette",
-                            "spring_salad",
-                            "steamed_broccoli",
-                            "strawberries_and_cream",
-                            "strawberry_shortcake",
-                            "summer_salad",
-                            "sushi_platter",
-                            "sweet_potato_pie",
-                            "sweet_sesame_balls",
-                            "cup_of_tea",
-                            "tide_salad",
-                            "toasted_sunflower_seeds",
-                            "tomato_soup",
-                            "trail_mix",
-                            "tuna_sashimi",
-                            "turnip_and_cabbage_salad",
-                            "turnip_and_potato_gratin",
-                            "vegetable_pot_pie",
-                            "vegetable_quiche",
-                            "vegetable_soup",
-                            "veggie_sub_sandwich",
-                            "water_chestnut_fritters",
-                            "wild_berry_jam",
-                            "wildberry_pie",
-                            "wildberry_scone",
-                            "winter_stew",
-                            "wintergreen_ice_cream"
-                        ]
-                    }
-                }
-            },
-            "crops": {
-                "info": {
-                    "name": "Crops",
-                    "img_mini": "crops",
-                    "wikilink": "Crops"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "apple",
-                            "beet",
-                            "broccoli",
-                            "cabbage",
-                            "carrot",
-                            "cauliflower",
-                            "celosia",
-                            "cherry",
-                            "chili_pepper",
-                            "chrysanthemum",
-                            "corn",
-                            "cranberry",
-                            "cucumber",
-                            "daikon_radish",
-                            "small_grass_starter",
-                            "lemon",
-                            "sapling_oak",
-                            "onion",
-                            "orange",
-                            "peach",
-                            "pear",
-                            "peas",
-                            "sapling_pine",
-                            "pomegranate",
-                            "potato",
-                            "pumpkin",
-                            "rice_stalk",
-                            "snow_peas",
-                            "strawberry",
-                            "sugar_cane",
-                            "sunflower",
-                            "sweet_potato",
-                            "tea",
-                            "tomato",
-                            "turnip",
-                            "watermelon",
-                            "wheat"
-                        ]
-                    }
-                }
-            },
-            "date_inspiration": {
-                "info": {
-                    "name": "Date Inspiration",
-                    "img_mini": "date_inspiration",
-                    "wikilink": "Date Inspiration"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "bath_soap",
-                            "dollhouse_bench",
-                            "inn_menu",
-                            "lovely_seashell",
-                            "picnic_set",
-                            "rough_gemstone"
-                        ]
-                    }
-                }
-            },
-            "fish": {
-                "info": {
-                    "name": "Fish",
-                    "img_mini": "fish",
-                    "wikilink": "Fish"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "alligator_gar",
-                            "amberjack",
-                            "anchovy",
-                            "angel_fish",
-                            "archerfish",
-                            "armored_bass",
-                            "bait_thief",
-                            "barb",
-                            "blue_crab",
-                            "bluegill",
-                            "bluefish",
-                            "bonito",
-                            "bowfish",
-                            "bream",
-                            "brown_bullhead",
-                            "brown_trout",
-                            "bullfrog",
-                            "burbot",
-                            "butterfish",
-                            "candelabra_seadragon",
-                            "carp",
-                            "catfish",
-                            "cave_eel",
-                            "cave_shark",
-                            "cave_shrimp",
-                            "char",
-                            "cherry_fish",
-                            "chub",
-                            "chum",
-                            "clam",
-                            "cod",
-                            "coelacanth",
-                            "copper_rockfish",
-                            "crab",
-                            "crayfish",
-                            "crucian_carp",
-                            "dace",
-                            "dart",
-                            "earth_eel",
-                            "emerald_horned_charger",
-                            "fiber",
-                            "firesail_fish",
-                            "flathead_catfish",
-                            "forest_perch",
-                            "freshwater_eel",
-                            "freshwater_oyster",
-                            "frog",
-                            "gar",
-                            "gazer",
-                            "giant_jellyfish",
-                            "giant_koi",
-                            "giant_tilapia",
-                            "goby",
-                            "golden_eel",
-                            "golden_shiner",
-                            "goldfish",
-                            "grayling",
-                            "grouper",
-                            "hake",
-                            "halibut",
-                            "herring",
-                            "horse_mackerel",
-                            "iron_fish",
-                            "jellyfish",
-                            "killifish",
-                            "king_crab",
-                            "koi",
-                            "lake_chub",
-                            "lake_trout",
-                            "lamprey",
-                            "lava_piranha",
-                            "leaf_fish",
-                            "lightning_fish",
-                            "loach",
-                            "lobster",
-                            "luminescent_crab",
-                            "mackerel",
-                            "massive_minnow",
-                            "mini_whale_shark",
-                            "minnow",
-                            "mullet",
-                            "muskie",
-                            "newt",
-                            "oarfish",
-                            "ocean_sunfish",
-                            "octopus",
-                            "paddlefish",
-                            "paper_pondshell",
-                            "pearl_clam",
-                            "pebble_minnow",
-                            "perch",
-                            "pike",
-                            "pink_scallop_shell",
-                            "pollock",
-                            "pond_snail",
-                            "puffer_fish",
-                            "rainbow_trout",
-                            "razorback",
-                            "red_snapper",
-                            "river_snail",
-                            "roach",
-                            "rock_bass",
-                            "rock_guppy",
-                            "rockbiter",
-                            "salmon",
-                            "sand_dollar",
-                            "sand_lance",
-                            "sapphire_betta",
-                            "sardine",
-                            "sauger",
-                            "saury",
-                            "sea_bass",
-                            "sea_bream",
-                            "sea_urchin",
-                            "seaweed",
-                            "shad",
-                            "shadow_bass",
-                            "shardfin",
-                            "shark",
-                            "shrimp",
-                            "silver_redhorse",
-                            "silver_squid",
-                            "smallmouth_bass",
-                            "snakehead",
-                            "snapping_turtle",
-                            "snow_fish",
-                            "spirula_shell",
-                            "squid",
-                            "stingray",
-                            "stone_loach",
-                            "striped_bass",
-                            "sturgeon",
-                            "sulfur_crab",
-                            "sunny",
-                            "sweetfish",
-                            "swordfish",
-                            "tarpon",
-                            "tetra",
-                            "tilapia",
-                            "transparent_jellyfish",
-                            "trout",
-                            "tuna",
-                            "turtle",
-                            "walleye",
-                            "water_balloon_fish",
-                            "white_perch",
-                            "winged_shrimp",
-                            "basic_wood"
-                        ]
-                    }
-                }
-            },
-            "forageables": {
-                "info": {
-                    "name": "Forageables",
-                    "img_mini": "forageables",
-                    "wikilink": "Forageables"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "acorn",
-                            "ash_mushroom",
-                            "basil",
-                            "bell_berry",
-                            "blackberry",
-                            "blue_conch_shell",
-                            "blueberry",
-                            "breath_of_fire",
-                            "breath_of_spring",
-                            "burdock_root",
-                            "catmint",
-                            "cattail",
-                            "chestnut",
-                            "chickpea",
-                            "chirping_fern",
-                            "coconut",
-                            "cosmos",
-                            "crocus",
-                            "crystal_berries",
-                            "crystal_rose",
-                            "daffodil",
-                            "daisy",
-                            "dandelion",
-                            "dill",
-                            "earthshroom",
-                            "essence_blossom",
-                            "ethereal_grass",
-                            "fennel",
-                            "fiddlehead",
-                            "flame_pepper",
-                            "fog_orchid",
-                            "frost_lily",
-                            "garlic",
-                            "glowberry",
-                            "heather",
-                            "holly",
-                            "horseradish",
-                            "hot_potato",
-                            "hydrangea",
-                            "iris",
-                            "cave_kelp",
-                            "jasmine",
-                            "lava_chestnuts",
-                            "lilac",
-                            "marigold",
-                            "middlemist",
-                            "mines_mussels",
-                            "moon_fruit",
-                            "morel_mushroom",
-                            "narrows_moss",
-                            "nettle",
-                            "night_queen",
-                            "oregano",
-                            "oyster_mushroom",
-                            "pinecone",
-                            "pineshroom",
-                            "pink_scallop_shell",
-                            "plum_blossom",
-                            "poinsettia",
-                            "queen_berry",
-                            "rockroot",
-                            "rose",
-                            "rose_hip",
-                            "rosemary",
-                            "sage",
-                            "sand_dollar",
-                            "sea_grapes",
-                            "sesame",
-                            "shadow_flower",
-                            "shale_grass",
-                            "snapdragon",
-                            "snowdrop_anemone",
-                            "spell_fruit",
-                            "spirit_mushroom",
-                            "spirula_shell",
-                            "sweetroot",
-                            "temple_flower",
-                            "thorn_vine",
-                            "thyme",
-                            "tide_lettuce",
-                            "tulip",
-                            "underseaweed",
-                            "upper_mines_mushroom",
-                            "viola",
-                            "void_herb",
-                            "walnut",
-                            "water_chestnut",
-                            "wild_berries",
-                            "wild_grapes",
-                            "wild_leek",
-                            "wintergreen_berry",
-                            "written_root"
-                        ]
-                    }
-                }
-            },
-            "furniture": {
-                "info": {
-                    "name": "Furniture",
-                    "img_mini": "furniture",
-                    "wikilink": "Furniture"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "glass_absinthe",
-                            "alpaca_plushie",
-                            "pirate_anchor_v1",
-                            "pirate_anchor_v2",
-                            "ocarina_sprite_statue",
-                            "animated_bird_fountain",
-                            "animated_snow_globe",
-                            "animated_waterfall_v1",
-                            "apiary",
-                            "crop_sign_apple",
-                            "autumn_scarecrow",
-                            "bakery_bread_basket_coffee",
-                            "bakery_cookie_jar_coffee",
-                            "bakery_cutting_board_coffee",
-                            "bakery_cake_case_coffee",
-                            "bakery_cake_coffee",
-                            "bakery_cake_slice_coffee",
-                            "basic_area_rug_green",
-                            "basic_bookshelf_oak",
-                            "basic_chair_oak",
-                            "counter_basic_v1",
-                            "counter_basic_v2",
-                            "basic_doormat_green",
-                            "basic_bed_double_oak",
-                            "basic_dresser_oak",
-                            "basic_flooring_oak",
-                            "basic_flower_pot_orange",
-                            "basic_nightstand_oak",
-                            "basic_oil_lamp_grey",
-                            "basic_bed_oak",
-                            "basic_table_oak",
-                            "basic_wallpaper_oak",
-                            "basic_wall_window_oak",
-                            "basic_wood_chest_black",
-                            "crop_sign_basil",
-                            "basket",
-                            "bathroom_bench_black",
-                            "bathroom_curtain_stand_black",
-                            "bathroom_floor_mirror_black",
-                            "bathroom_sink_black",
-                            "bathroom_tile_wall_blue",
-                            "bathroom_wall_mirror_black",
-                            "bathroom_wall_sconce",
-                            "bathroom_wall_towel_black",
-                            "bathtub_black",
-                            "beer_mug",
-                            "crop_sign_beet",
-                            "big_bell",
-                            "starter_bird_house_red",
-                            "tea_black",
-                            "blue_capybara_wall_ribbon",
-                            "blue_chicken_wall_ribbon",
-                            "blue_duck_wall_ribbon",
-                            "blue_rabbit_wall_ribbon",
-                            "spring_festival_basket",
-                            "spring_festival_large_planter",
-                            "spring_festival_planter",
-                            "spring_festival_flower_chest",
-                            "spring_festival_wreath",
-                            "crop_sign_broccoli",
-                            "dingy_broken_bottle_v1",
-                            "dingy_broken_bottle_v2",
-                            "broken_pillar_v1_gray",
-                            "dingy_broken_plate_v1",
-                            "dingy_broken_plate_v2",
-                            "dingy_couch_v1",
-                            "dingy_couch_v2",
-                            "dingy_window_v1",
-                            "dingy_window_v2",
-                            "bronze_alpaca_trophy",
-                            "bronze_cow_trophy",
-                            "bronze_horse_trophy",
-                            "bronze_sheep_trophy",
-                            "bumblebee_plushie",
-                            "crop_sign_burdock_root",
-                            "butterfly_bed_v1",
-                            "butterfly_double_bed_v1",
-                            "butterfly_painting_v1",
-                            "butterfly_wall_lamp_bronze",
-                            "crop_sign_cabbage",
-                            "counter_cabin_cherry",
-                            "counter_cabin_oak",
-                            "counter_cabin_walnut",
-                            "counter_cake_chocolate",
-                            "counter_cake_double_chocolate",
-                            "counter_cake_strawberry",
-                            "mistria_history_scroll_v1",
-                            "campfire",
-                            "candle",
-                            "candle_chamberstick",
-                            "capybara_plushie",
-                            "dingy_chair_v1",
-                            "dingy_chair_v2",
-                            "crop_sign_carrot",
-                            "caterpillar_chair_v1",
-                            "crop_sign_catmint",
-                            "crop_sign_cauliflower",
-                            "crop_sign_celosia",
-                            "champions_kitchen_blue",
-                            "counter_kitchen_blue",
-                            "hero_shield_bronze",
-                            "cherry_bonsai",
-                            "cherry_chair",
-                            "cherry_flooring",
-                            "cherry_fruit_bowl",
-                            "cherry_rug",
-                            "crop_sign_cherry",
-                            "cherry_table",
-                            "cherry_table_lamp",
-                            "cherry_wallpaper",
-                            "chess_bishop_black",
-                            "chess_king_black",
-                            "chess_knight_black",
-                            "chess_pawn_black",
-                            "chess_queen_black",
-                            "chess_rook_black",
-                            "chess_table_black",
-                            "chicken_plushie",
-                            "crop_sign_chickpea",
-                            "crop_sign_chili_pepper",
-                            "dingy_chipped_cup_v1",
-                            "dingy_chipped_cup_v2",
-                            "crop_sign_chrysanthemum",
-                            "haunted_attic_wall_cobweb_left",
-                            "haunted_attic_wall_cobweb_right",
-                            "glass_cocktail",
-                            "crop_sign_coconut",
-                            "coffee_mug_v1",
-                            "color_paving_stone_v01",
-                            "coral_chair_blue",
-                            "coral_lamp_blue",
-                            "coral_storage_chest_blue",
-                            "coral_table_blue",
-                            "coral_stone_archway",
-                            "crop_sign_corn",
-                            "cornucopia",
-                            "crop_sign_cosmos",
-                            "cottage_garden_arch_v1",
-                            "cottage_garden_planter_v1",
-                            "cottage_garden_shed_v1",
-                            "cottage_garden_trellis_v1",
-                            "cottage_garden_workbench_v1",
-                            "pirate_counterfeit_gold_pile_v1",
-                            "pirate_counterfeit_gold_pile_v2",
-                            "cow_plushie",
-                            "craft_rug_v1",
-                            "craft_fabric_rack_v1",
-                            "craft_closed_sewing_tin_v1",
-                            "craft_yarn_basket_v1",
-                            "crop_sign_cranberry",
-                            "crystal_string_lights_blue",
-                            "crop_sign_cucumber",
-                            "crop_sign_daffodil",
-                            "crop_sign_daikon_radish",
-                            "crop_sign_daisy",
-                            "spring_festival_breath_of_spring_wreath",
-                            "deluxe_icebox_blue",
-                            "deluxe_icebox_green",
-                            "deluxe_icebox_pink",
-                            "deluxe_icebox_white",
-                            "deluxe_icebox_yellow",
-                            "deluxe_storage_chest_aqua",
-                            "deluxe_storage_chest_black",
-                            "deluxe_storage_chest_blue",
-                            "deluxe_storage_chest_dark_brown",
-                            "deluxe_storage_chest_gold",
-                            "deluxe_storage_chest_gray",
-                            "deluxe_storage_chest_green",
-                            "deluxe_storage_chest_light_brown",
-                            "deluxe_storage_chest_orange",
-                            "deluxe_storage_chest_pink",
-                            "deluxe_storage_chest_purple",
-                            "deluxe_storage_chest_red",
-                            "deluxe_storage_chest_white",
-                            "journal",
-                            "crop_sign_dill",
-                            "dirt_dot_one",
-                            "dirt_dot_two",
-                            "dirt_dot_three",
-                            "dirt_clear",
-                            "dingy_flooring_v1",
-                            "dingy_flooring_v2",
-                            "dragon_altar_earth",
-                            "dragon_priestess_fountain_v1",
-                            "dragon_statue_replica_v1",
-                            "duck_plushie",
-                            "emerald_chair_v1",
-                            "emerald_double_bed_v1",
-                            "emerald_nightstand_v1",
-                            "emerald_rug_v1",
-                            "emerald_wallpaper_v1",
-                            "espresso_cup_v1",
-                            "espresso_machine",
-                            "explorer_bed_beige",
-                            "explorer_chair_beige",
-                            "explorer_double_bed_beige",
-                            "explorer_flooring_beige",
-                            "explorer_globe_beige",
-                            "explorer_lamp_beige",
-                            "explorer_rug_beige",
-                            "explorer_trunk_table_beige",
-                            "explorer_wallpaper_beige",
-                            "extra_large_decorative_pumpkin_black",
-                            "extra_large_decorative_pumpkin_green",
-                            "extra_large_decorative_pumpkin_orange",
-                            "extra_large_decorative_pumpkin_purple",
-                            "extra_large_decorative_pumpkin_white",
-                            "extra_large_decorative_pumpkin_yellow",
-                            "fall_table_cream",
-                            "fall_double_bed_cream",
-                            "fall_bed_cream",
-                            "farm_house_calendar",
-                            "crop_faux_ash_mushroom",
-                            "crop_faux_basil",
-                            "crop_faux_beet",
-                            "crop_faux_blue_conch_shell",
-                            "crop_faux_breath_of_fire",
-                            "crop_faux_broccoli",
-                            "crop_faux_burdock_root",
-                            "crop_faux_cabbage",
-                            "crop_faux_carrot",
-                            "crop_faux_catmint",
-                            "crop_faux_cauliflower",
-                            "crop_faux_celosia",
-                            "crop_faux_chestnut",
-                            "crop_faux_chickpea",
-                            "crop_faux_chili_pepper",
-                            "crop_faux_chirping_fern",
-                            "crop_faux_chrysanthemum",
-                            "crop_faux_corn",
-                            "crop_faux_cosmos",
-                            "crop_faux_cranberry",
-                            "crop_faux_crocus",
-                            "crop_faux_crystal_berries",
-                            "crop_faux_crystal_rose",
-                            "crop_faux_cucumber",
-                            "crop_faux_daffodil",
-                            "crop_faux_daikon_radish",
-                            "crop_faux_daisy",
-                            "crop_faux_dandelion",
-                            "crop_faux_dill",
-                            "crop_faux_earthshroom",
-                            "crop_faux_essence_blossom",
-                            "crop_faux_ethereal_grass",
-                            "crop_faux_fennel",
-                            "crop_faux_fiddlehead",
-                            "fishing_plaque_blue",
-                            "crop_faux_flame_pepper",
-                            "crop_faux_fog_orchid",
-                            "crop_faux_frost_lily",
-                            "crop_faux_garlic",
-                            "crop_faux_heather",
-                            "crop_faux_holly",
-                            "crop_faux_horseradish",
-                            "crop_faux_hot_potato",
-                            "crop_faux_ice_block",
-                            "crop_faux_iris",
-                            "crop_faux_cave_kelp",
-                            "crop_faux_jasmine",
-                            "crop_faux_lava_chestnuts",
-                            "crop_faux_lilac",
-                            "crop_faux_mystery_bag",
-                            "crop_faux_marigold",
-                            "crop_faux_middlemist",
-                            "crop_faux_mines_mussels",
-                            "crop_faux_moon_fruit",
-                            "crop_faux_morel_mushroom",
-                            "crop_faux_narrows_moss",
-                            "crop_faux_nettle",
-                            "crop_faux_night_queen",
-                            "crop_faux_onion",
-                            "crop_faux_oregano",
-                            "crop_faux_oyster_mushroom",
-                            "crop_faux_peas",
-                            "crop_faux_pineshroom",
-                            "crop_faux_pink_scallop_shell",
-                            "crop_faux_poinsettia",
-                            "crop_faux_potato",
-                            "crop_faux_pumpkin",
-                            "crop_faux_rice",
-                            "crop_faux_rockroot",
-                            "crop_faux_rosemary",
-                            "crop_faux_sage",
-                            "crop_faux_sand_dollar",
-                            "crop_faux_sea_grapes",
-                            "crop_faux_sesame",
-                            "crop_faux_shadow_flower",
-                            "crop_faux_shale_grass",
-                            "crop_faux_snapdragon",
-                            "crop_faux_snow_peas",
-                            "crop_faux_snowdrop_anemone",
-                            "crop_faux_spell_fruit",
-                            "crop_faux_spirit_mushroom",
-                            "crop_faux_spirula_shell",
-                            "crop_faux_strawberry",
-                            "crop_faux_sugar_cane",
-                            "crop_faux_sunflower",
-                            "crop_faux_sweet_potato",
-                            "crop_faux_sweetroot",
-                            "crop_faux_tea",
-                            "crop_faux_temple_flower",
-                            "crop_faux_thorn_vine",
-                            "crop_faux_thyme",
-                            "crop_faux_tide_lettuce",
-                            "crop_faux_tomato",
-                            "crop_faux_tulip",
-                            "crop_faux_turnip",
-                            "crop_faux_upper_mines_mushroom",
-                            "crop_faux_viola",
-                            "crop_faux_void_herb",
-                            "crop_faux_walnut",
-                            "crop_faux_watermelon",
-                            "crop_faux_wheat",
-                            "crop_faux_wild_leek",
-                            "crop_faux_written_root",
-                            "field_grass_two",
-                            "firefly_wall_string_lights_blue",
-                            "fish_plush_toy",
-                            "fishing_tank_gold",
-                            "fishing_bed_blue",
-                            "fishing_chair_blue",
-                            "fishing_double_bed_blue",
-                            "fishing_flooring_blue",
-                            "fishing_rug_blue",
-                            "fishing_table_blue",
-                            "fishing_trophy_shelf_blue",
-                            "fishing_wallpaper_blue",
-                            "cavern_floor_brazier_blue",
-                            "crop_sign_frost_lily",
-                            "cooking_frying_pan_v1",
-                            "dingy_garbage_bag_v1",
-                            "dingy_garbage_bag_v2",
-                            "kitchen_garlic_braid",
-                            "crop_sign_garlic",
-                            "gemstone_bridge_v1",
-                            "cavern_crystal_lamp_green",
-                            "gold_alpaca_trophy",
-                            "gold_cow_trophy",
-                            "gold_floor_mirror",
-                            "gold_horse_trophy",
-                            "gold_sheep_trophy",
-                            "gold_wall_mirror",
-                            "queen_berry_trophy",
-                            "field_flower_two",
-                            "field_grass",
-                            "field_clear",
-                            "field_flower",
-                            "green_bottle",
-                            "tea_green",
-                            "gryphon_statue_replica_v1",
-                            "kitchen_hanging_onion_basket",
-                            "cooking_hanging_pans_v1",
-                            "harvest_festival_arch",
-                            "harvest_festival_centerpiece",
-                            "haunted_attic_armoire_dark",
-                            "haunted_attic_bed_dark",
-                            "haunted_attic_chair_dark",
-                            "haunted_attic_double_bed_dark",
-                            "haunted_attic_dress_form_dark",
-                            "haunted_attic_flooring_dark",
-                            "haunted_attic_nightstand_dark",
-                            "haunted_attic_rocking_chair_dark",
-                            "haunted_attic_table_dark",
-                            "haunted_attic_wall_shelf_dark",
-                            "haunted_attic_wallpaper_dark",
-                            "haunted_attic_wall_window_dark",
-                            "spooky_haybale",
-                            "crop_sign_heather",
-                            "kitchen_herb_planter_v1",
-                            "herringbone_tile_floor_blue",
-                            "cavern_hewn_rock_bookshelf",
-                            "cavern_hewn_rock_table",
-                            "honeycomb_shelf",
-                            "horse_plushie",
-                            "ladder",
-                            "stairs",
-                            "inn_candle",
-                            "inn_counter",
-                            "inn_cross_stitch",
-                            "inn_kitchen_shelves",
-                            "inn_stool",
-                            "inn_tile_flooring",
-                            "inn_wooden_flooring",
-                            "insect_flooring_v1",
-                            "insect_rug_v1",
-                            "insect_wallpaper_v1",
-                            "crop_sign_iris",
-                            "crop_sign_jasmine",
-                            "kitchen_scale_blue",
-                            "ladybug_table_v1",
-                            "alda_pot_replica_blue",
-                            "large_decorative_pumpkin_black",
-                            "large_decorative_pumpkin_green",
-                            "large_decorative_pumpkin_orange",
-                            "large_decorative_pumpkin_purple",
-                            "large_decorative_pumpkin_white",
-                            "large_decorative_pumpkin_yellow",
-                            "large_fluffy_rug_beige",
-                            "jar_large",
-                            "large_paving_stone_v1",
-                            "void_flagstone_large_v1",
-                            "water_sprite_statue_large_v1",
-                            "lava_caves_stone_arch",
-                            "lava_caves_flooring",
-                            "lava_caves_wallpaper",
-                            "lemon_bonsai",
-                            "lemon_flooring",
-                            "lemon_fruit_bowl",
-                            "lemon_rug",
-                            "crop_sign_lemon",
-                            "lemon_stool",
-                            "lemon_table",
-                            "lemon_table_lamp",
-                            "lemon_wallpaper",
-                            "glass_lemonade",
-                            "fishing_lamp_blue",
-                            "crop_sign_lilac",
-                            "cottage_chair_ash",
-                            "counter_cottage_v1",
-                            "counter_cottage_v2",
-                            "cottage_bed_double_ash",
-                            "cottage_dresser_ash",
-                            "cottage_flooring_ash",
-                            "cottage_fridge_ash",
-                            "cottage_nightstand_ash",
-                            "cottage_plant_shelf_ash",
-                            "cottage_potted_fig_ash",
-                            "cottage_potted_flowers_ash",
-                            "cottage_rug_ash",
-                            "cottage_bed_ash",
-                            "cottage_table_ash",
-                            "cottage_wall_flowers_ash",
-                            "cottage_wallpaper_ash",
-                            "cottage_wall_window_ash",
-                            "low_tide_flooring",
-                            "crop_sign_mystery_bag",
-                            "maples_drawing",
-                            "crop_sign_marigold",
-                            "box_medium_v1",
-                            "medium_decorative_pumpkin_black",
-                            "medium_decorative_pumpkin_green",
-                            "medium_decorative_pumpkin_orange",
-                            "medium_decorative_pumpkin_purple",
-                            "medium_decorative_pumpkin_white",
-                            "medium_decorative_pumpkin_yellow",
-                            "jar_medium",
-                            "haunted_attic_candle_single",
-                            "haunted_attic_candle_cluster",
-                            "mermaid_double_bed_v1",
-                            "glass_milk",
-                            "miners_minecart_v1",
-                            "mines_wooden_arch",
-                            "miners_crate_chair_v1",
-                            "miners_floor_lamp_v1",
-                            "miners_flooring",
-                            "miners_shelves_v1",
-                            "miners_crate_chest_v1",
-                            "miners_wallpaper",
-                            "miners_wall_lamp_v1",
-                            "mist_bed_v1",
-                            "mist_bed_v2",
-                            "mist_bed_v3",
-                            "mist_bed_v4",
-                            "mist_cushion_v1",
-                            "mist_cushion_v2",
-                            "mist_cushion_v3",
-                            "mist_cushion_v4",
-                            "mist_double_bed_v1",
-                            "mist_double_bed_v2",
-                            "mist_double_bed_v3",
-                            "mist_double_bed_v4",
-                            "mist_lamp_v1",
-                            "mist_lamp_v2",
-                            "mist_lamp_v3",
-                            "mist_lamp_v4",
-                            "mist_pet_bed_v1",
-                            "mist_pet_bed_v2",
-                            "mist_pet_bed_v3",
-                            "mist_pet_bed_v4",
-                            "mist_rug_v1",
-                            "mist_rug_v2",
-                            "mist_rug_v3",
-                            "mist_rug_v4",
-                            "mist_storage_chest_v1",
-                            "mist_storage_chest_v2",
-                            "mist_storage_chest_v3",
-                            "mist_storage_chest_v4",
-                            "mistria_history_book_v1",
-                            "mistria_wall_map_v1",
-                            "forge_mistril",
-                            "kitchen_mixing_bowls_v1",
-                            "crop_sign_moon_fruit",
-                            "moon_gate_v1",
-                            "cavern_mossy_rug_v1",
-                            "dingy_string_lights_v1",
-                            "dingy_string_lights_v2",
-                            "moth_lamp_v1",
-                            "mournful_clown_painting",
-                            "dingy_mouse_hole_v1",
-                            "dingy_mouse_hole_v2",
-                            "cavern_mushroom_stool_green",
-                            "pirate_nautical_compass_v1",
-                            "pirate_nautical_compass_v2",
-                            "crop_sign_night_queen",
-                            "notepad_white",
-                            "fishing_oar_wall_decor_blue",
-                            "obelisk_beige",
-                            "lava_caves_obsidian_bed_blue",
-                            "lava_caves_obsidian_chair_blue",
-                            "lava_caves_obsidian_fence_blue",
-                            "lava_caves_obsidian_floor_lamp_blue",
-                            "lava_caves_obsidian_storage_chest_blue",
-                            "lava_caves_obsidian_table_blue",
-                            "octopus_plushie",
-                            "kitchen_oil_and_vinegar_basket_v1",
-                            "crop_sign_onion",
-                            "crop_sign_orange",
-                            "crop_sign_oregano",
-                            "miners_copper_node",
-                            "lava_caves_diamond_rock",
-                            "cavern_emerald_rock",
-                            "lava_caves_gold_node",
-                            "ornamental_iron_node",
-                            "ruins_mistril_node",
-                            "ruins_pink_diamond_rock",
-                            "miners_ruby_rock",
-                            "ornamental_sapphire_rock",
-                            "cavern_silver_node",
-                            "ornate_flagstone_v1",
-                            "ornate_rug_large_rectangle_blue",
-                            "ornate_rug_large_round_blue",
-                            "ornate_rug_large_square_blue",
-                            "ornate_rug_medium_round_blue",
-                            "ornate_rug_medium_square_blue",
-                            "ornate_rug_small_blue",
-                            "jar_pair",
-                            "paper_stack",
-                            "crop_sign_peach",
-                            "crop_sign_pear",
-                            "crop_sign_peas",
-                            "dingy_wallpaper_v1",
-                            "dingy_wallpaper_v2",
-                            "picket_fence",
-                            "picnic_basket_pink",
-                            "picnic_rug_pink",
-                            "picnic_hamburger_plate",
-                            "picnic_donut_plate",
-                            "picnic_pie_plate_pink",
-                            "picnic_sandwich_plate",
-                            "picnic_place_setting_pink",
-                            "picnic_sunflower_vase_pink",
-                            "dingy_pile_of_laundry_v1",
-                            "dingy_pile_of_laundry_v2",
-                            "dingy_pile_of_newspapers_v1",
-                            "dingy_pile_of_newspapers_v2",
-                            "pirate_wall_flag_v1",
-                            "pirate_wall_flag_v2",
-                            "crop_sign_poinsettia",
-                            "crop_sign_pomegranate",
-                            "fishing_window_gold",
-                            "crop_sign_potato",
-                            "starter_potted_plant",
-                            "pumpkin_pile_black",
-                            "pumpkin_pile_green",
-                            "pumpkin_pile_orange",
-                            "pumpkin_pile_purple",
-                            "pumpkin_pile_white",
-                            "pumpkin_pile_yellow",
-                            "crop_sign_pumpkin",
-                            "rabbit_plushie",
-                            "red_capybara_wall_ribbon",
-                            "red_chicken_wall_ribbon",
-                            "red_duck_wall_ribbon",
-                            "red_rabbit_wall_ribbon",
-                            "wine_glass_red",
-                            "artifact_replica_alda_bronze_sword",
-                            "artifact_replica_alda_clay_pot",
-                            "artifact_replica_alda_feather_pendant",
-                            "artifact_replica_alda_gem_bracelet",
-                            "artifact_replica_alda_mural_tablet",
-                            "artifact_replica_aldarian_gauntlet",
-                            "artifact_replica_aldarian_sword",
-                            "artifact_replica_aldarian_war_banner",
-                            "artifact_replica_amber_trapped_insect",
-                            "artifact_replica_ancient_crystal_goblet",
-                            "artifact_replica_ancient_gold_coin",
-                            "artifact_replica_ancient_horn_circlet",
-                            "artifact_replica_ancient_royal_scepter",
-                            "artifact_replica_ancient_stone_lantern",
-                            "artifact_replica_black_tablet",
-                            "artifact_replica_caldosian_breastplate",
-                            "artifact_replica_caldosian_drinking_horn",
-                            "artifact_replica_caldosian_emperor_bust",
-                            "artifact_replica_caldosian_sword",
-                            "artifact_replica_clay_amphora",
-                            "artifact_replica_coin_lump",
-                            "artifact_replica_completely_wrong_map",
-                            "artifact_replica_crab_statue",
-                            "artifact_replica_criminal_confession",
-                            "artifact_replica_crystal_apple",
-                            "artifact_replica_dense_water",
-                            "artifact_replica_diamond_backed_mirror",
-                            "artifact_replica_dragon_claw",
-                            "artifact_replica_dragon_pact_tablet",
-                            "artifact_replica_dragon_scale",
-                            "artifact_replica_dragon_forged_bracelet",
-                            "artifact_replica_earth_infused_stone",
-                            "artifact_replica_faceted_rock_gem",
-                            "artifact_replica_family_crest_pendant",
-                            "artifact_replica_fire_crystal",
-                            "artifact_replica_flint_arrowhead",
-                            "artifact_replica_fossilized_egg",
-                            "artifact_replica_fossilized_mandrake_root",
-                            "artifact_replica_gathering_basket",
-                            "artifact_replica_giant_fish_scale",
-                            "artifact_replica_hardened_essence",
-                            "artifact_replica_lost_crown_of_aldaria",
-                            "artifact_replica_mermaids_comb",
-                            "artifact_replica_message_in_a_bottle",
-                            "artifact_replica_metal_leaf",
-                            "artifact_replica_meteorite",
-                            "artifact_replica_miners_helmet",
-                            "artifact_replica_miners_pickaxe",
-                            "artifact_replica_miners_rucksack",
-                            "artifact_replica_miners_slab",
-                            "artifact_replica_mist_crystal",
-                            "artifact_replica_mist_flute",
-                            "artifact_replica_mist_scroll",
-                            "artifact_replica_misty_black_mirror",
-                            "artifact_replica_misty_feather_quill",
-                            "artifact_replica_muttering_cube",
-                            "artifact_replica_obsidian_blade",
-                            "artifact_replica_perfect_copper_ore",
-                            "artifact_replica_perfect_diamond",
-                            "artifact_replica_perfect_emerald",
-                            "artifact_replica_perfect_gold_ore",
-                            "artifact_replica_perfect_iron_ore",
-                            "artifact_replica_perfect_mistril_ore",
-                            "artifact_replica_perfect_pink_diamond",
-                            "artifact_replica_perfect_ruby",
-                            "artifact_replica_perfect_sapphire",
-                            "artifact_replica_perfect_silver_ore",
-                            "artifact_replica_petrified_wood",
-                            "artifact_replica_porcelain_figurine",
-                            "artifact_replica_rainbow_geode",
-                            "artifact_replica_rainbow_seaweed",
-                            "artifact_replica_really_round_rock",
-                            "artifact_replica_red_obsidian",
-                            "artifact_replica_ritual_beads",
-                            "artifact_replica_ritual_chalice",
-                            "artifact_replica_ritual_incense_burner",
-                            "artifact_replica_ritual_scepter",
-                            "artifact_replica_ritual_tablet",
-                            "artifact_replica_rock_statue",
-                            "artifact_replica_rock_with_a_hole",
-                            "artifact_replica_rubber_fish",
-                            "artifact_replica_rusted_shield",
-                            "artifact_replica_rusted_treasure_chest",
-                            "artifact_replica_sea_glass",
-                            "artifact_replica_seriously_square_stone",
-                            "artifact_replica_shortcut_scroll",
-                            "artifact_replica_starlight_coral",
-                            "artifact_replica_statuette_of_caldarus",
-                            "artifact_replica_stone_horse",
-                            "artifact_replica_stone_shell",
-                            "artifact_replica_tidestone",
-                            "artifact_replica_tin_lunchbox",
-                            "artifact_replica_tiny_dinosaur_skeleton",
-                            "artifact_replica_tiny_volcano",
-                            "artifact_replica_trilobite_fossil",
-                            "artifact_replica_unknown_dragon_statuette",
-                            "artifact_replica_vintage_brush",
-                            "artifact_replica_vintage_cow_bell",
-                            "artifact_replica_vintage_hammer",
-                            "artifact_replica_vintage_sickle",
-                            "artifact_replica_vintage_watering_can",
-                            "artifact_replica_warm_rock",
-                            "artifact_replica_water_sphere",
-                            "artifact_replica_weightless_stone",
-                            "artifact_replica_worn_pendant",
-                            "crop_sign_rice",
-                            "dingy_table_v1",
-                            "dingy_table_v2",
-                            "cavern_rock_flooring",
-                            "cavern_rock_wallpaper",
-                            "wine_glass_rose",
-                            "crop_sign_rosemary",
-                            "round_cushioned_stool_beige",
-                            "royal_chest_blue",
-                            "ruins_crystal_light",
-                            "ruins_wall_crystal_light",
-                            "ruins_flooring",
-                            "ruins_floor_brazier_blue",
-                            "ruins_floor_brazier_orange",
-                            "ruins_floor_brazier_purple",
-                            "ruins_pot1",
-                            "ruins_pot2",
-                            "ruins_pot5",
-                            "ruins_stone_arch",
-                            "ruins_wallpaper",
-                            "ruins_window_v1",
-                            "ruins_window_v2",
-                            "ruins_window_v3",
-                            "cabin_bed_cherry",
-                            "cabin_bookshelf_cherry",
-                            "cabin_chair_cherry",
-                            "cabin_bed_double_cherry",
-                            "cabin_dresser_cherry",
-                            "cabin_firewood_cherry",
-                            "cabin_flooring_cherry",
-                            "cabin_lamp_cherry",
-                            "cabin_nightstand_cherry",
-                            "cabin_stove_cherry",
-                            "cabin_table_cherry",
-                            "cabin_wall_shelf_cherry",
-                            "cabin_wallpaper_cherry",
-                            "cabin_wall_window_cherry",
-                            "crop_sign_sage",
-                            "kitchen_salt_and_pepper_shakers",
-                            "sand_rug",
-                            "starter_scarecrow",
-                            "sheep_plushie",
-                            "pirate_ship_in_a_bottle_v1",
-                            "pirate_ship_in_a_bottle_v2",
-                            "starter_shipping_box",
-                            "silver_alpaca_trophy",
-                            "silver_cow_trophy",
-                            "silver_horse_trophy",
-                            "silver_sheep_trophy",
-                            "small_bathmat_beige",
-                            "box_small_v1",
-                            "small_decorative_pumpkin_black",
-                            "small_decorative_pumpkin_green",
-                            "small_decorative_pumpkin_orange",
-                            "small_decorative_pumpkin_purple",
-                            "small_decorative_pumpkin_white",
-                            "small_decorative_pumpkin_yellow",
-                            "jar_small",
-                            "small_vase_v1",
-                            "void_flagstone_small_v1",
-                            "crop_sign_snapdragon",
-                            "crop_sign_snow_peas",
-                            "crop_sign_snowdrop_anemone",
-                            "spring_bed_orange",
-                            "spring_double_bed_orange",
-                            "spring_flooring_orange",
-                            "spring_rug_orange",
-                            "spring_lamp_orange",
-                            "spring_potted_tree_orange",
-                            "spring_sofa_orange",
-                            "spring_wallpaper_orange",
-                            "square_tile_floor",
-                            "cavern_stone_arch",
-                            "star_cushion_blue",
-                            "star_lantern_blue",
-                            "star_viewing_blanket_blue",
-                            "starry_flooring_v1",
-                            "farm_bridge",
-                            "cooking_stockpot_v1",
-                            "stone_bench_v1",
-                            "stone_dragon_figure_v1",
-                            "stone_lamp_v1",
-                            "starter_stone_path",
-                            "starter_stone_path_double",
-                            "stone_storage_chest_v1",
-                            "stone_table_v1",
-                            "stone_wall",
-                            "crop_sign_strawberry",
-                            "crop_sign_sugar_cane",
-                            "summer_bed_red",
-                            "summer_chair_red",
-                            "summer_double_bed_red",
-                            "summer_flooring_red",
-                            "summer_rug_red",
-                            "summer_jar_lamp_red",
-                            "summer_table_red",
-                            "summer_wallpaper_red",
-                            "summit_wallpaper_v1",
-                            "crop_sign_sunflower",
-                            "crop_sign_sweet_potato",
-                            "dingy_rug_v1",
-                            "dingy_rug_v2",
-                            "cooking_tea_kettle_v1",
-                            "crop_sign_tea",
-                            "teleportation_pad",
-                            "crop_sign_temple_flower",
-                            "terrarium",
-                            "tesserae_tree",
-                            "crop_sign_thyme",
-                            "tide_touched_cavern_wall",
-                            "tile_roof_fence_v1",
-                            "toilet_black",
-                            "crop_sign_tomato",
-                            "training_dummy_clod",
-                            "crop_sign_tulip",
-                            "crop_sign_turnip",
-                            "kitchen_utensil_holder_blue",
-                            "crop_sign_viola",
-                            "void_bonsai_v1",
-                            "void_fireplace_v1",
-                            "void_flooring_v1",
-                            "void_lamp_v1",
-                            "void_storage_chest_v1",
-                            "void_throne_one_v1",
-                            "void_throne_two_v1",
-                            "void_wallpaper_v1",
-                            "void_window_v1",
-                            "cavern_wall_brazier_blue",
-                            "glass_water",
-                            "water_sprite_statue_v1",
-                            "starter_well",
-                            "crop_sign_watermelon",
-                            "crop_sign_wheat",
-                            "starter_wheelbarrow",
-                            "glass_whisky",
-                            "white_capybara_wall_ribbon",
-                            "white_chicken_wall_ribbon",
-                            "white_duck_wall_ribbon",
-                            "white_rabbit_wall_ribbon",
-                            "wine_glass_white",
-                            "witch_queen_bed_v1",
-                            "witch_queen_cauldron_v1",
-                            "witch_queen_chair_v1",
-                            "witch_queen_double_bed_v1",
-                            "witch_queen_dressing_table_v1",
-                            "witch_queen_flooring_v1",
-                            "witch_queen_moon_lamp_v1",
-                            "witch_queen_nightstand_v1",
-                            "witch_queen_pillar_v1",
-                            "witch_queen_rug_v1",
-                            "witch_queen_table_v1",
-                            "witch_queen_throne_v1",
-                            "witch_queen_wallpaper_v1",
-                            "starter_wood_fence",
-                            "worn_bed",
-                            "worn_chair",
-                            "worn_fireplace",
-                            "worn_flooring",
-                            "worn_garden_lamp",
-                            "worn_nightstand",
-                            "worn_rug",
-                            "worn_table",
-                            "worn_wallpaper",
-                            "worn_well",
-                            "worn_window"
-                        ]
-                    }
-                }
-            },
-            "materials": {
-                "info": {
-                    "name": "Materials",
-                    "img_mini": "materials",
-                    "wikilink": "Materials"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "blue_conch_shell",
-                            "wild_mushroom",
-                            "chocolate",
-                            "clay",
-                            "ore_copper",
-                            "coral",
-                            "crystal",
-                            "curry_powder",
-                            "honey_deluxe",
-                            "ore_diamond",
-                            "dragon_forged_core",
-                            "dragon_forged_fang",
-                            "dragon_forged_horn",
-                            "dragon_forged_powder",
-                            "ore_emerald",
-                            "essence_drop",
-                            "fiber",
-                            "flour",
-                            "essence_stone_giant",
-                            "glass",
-                            "glowing_mushroom",
-                            "ore_gold",
-                            "hard_wood",
-                            "honey",
-                            "ice_block",
-                            "ore_iron",
-                            "essence_stone_large",
-                            "honey_legendary",
-                            "essence_stone_medium",
-                            "ore_mistril",
-                            "monster_core",
-                            "monster_fang",
-                            "monster_horn",
-                            "monster_powder",
-                            "monster_shell",
-                            "monster_wing",
-                            "obsidian",
-                            "oil",
-                            "paper",
-                            "peat",
-                            "perfect_copper_ore",
-                            "perfect_diamond",
-                            "perfect_emerald",
-                            "perfect_gold_ore",
-                            "perfect_iron_ore",
-                            "perfect_mistril_ore",
-                            "perfect_pink_diamond",
-                            "perfect_ruby",
-                            "perfect_sapphire",
-                            "perfect_silver_ore",
-                            "ore_pink_diamond",
-                            "pink_scallop_shell",
-                            "honey_premium",
-                            "purple_mushroom",
-                            "red_toadstool",
-                            "refined_stone",
-                            "rice",
-                            "rock_salt",
-                            "ore_ruby",
-                            "sand_dollar",
-                            "sap",
-                            "ore_sapphire",
-                            "shard_mass",
-                            "shards",
-                            "ore_silver",
-                            "essence_stone_small",
-                            "sod",
-                            "soy_sauce",
-                            "spirula_shell",
-                            "ore_stone",
-                            "sugar",
-                            "essence_stone_tiny",
-                            "void_pearl",
-                            "void_powder",
-                            "void_stone",
-                            "voidite",
-                            "basic_wood"
-                        ]
-                    }
-                }
-            },
-            "ranching": {
-                "info": {
-                    "name": "Ranching",
-                    "img_mini": "ranching",
-                    "wikilink": "Ranching"
-                },
-                "subcategories": {
-                    "0": {
-                        "info": {},
-                        "items": [
-                            "alpaca_wool",
-                            "bristle",
-                            "bull_horn",
-                            "butter",
-                            "cheese",
-                            "egg",
-                            "deluxe_hay",
-                            "deluxe_small_animal_feed",
-                            "duck_egg",
-                            "duck_feather",
-                            "duck_mayonnaise",
-                            "golden_alpaca_wool",
-                            "golden_bristle",
-                            "golden_bull_horn",
-                            "golden_butter",
-                            "golden_cheese",
-                            "golden_duck_egg",
-                            "golden_duck_feather",
-                            "golden_duck_mayonnaise",
-                            "golden_egg",
-                            "golden_horse_hair",
-                            "golden_mayonnaise",
-                            "golden_cow_milk",
-                            "golden_rabbit_wool",
-                            "golden_feather",
-                            "golden_sheep_wool",
-                            "grass_seed",
-                            "hay",
-                            "horse_hair",
-                            "mayonnaise",
-                            "cow_milk",
-                            "quality_hay",
-                            "quality_small_animal_feed",
-                            "rabbit_wool",
-                            "feather",
-                            "sheep_wool",
-                            "animal_currency",
-                            "ultimate_hay",
-                            "ultimate_small_animal_feed"
-                        ]
-                    }
-                }
-            }
-        }
-    },
-    "perks": {
-        "info": {
-            "name": "Perks",
-            "icon": "fake_essence.png",
-            "img_mini_path": "perks/",
-            "img_item_path": "perks/",
-            "item_json": "perks"
-        },
-        "categories": {
-            "farming": {
-                "info": {
-                    "img": "farming",
-                    "img_mini": "farming",
-                    "name": "Farming",
-                    "wikilink": "Skills#Farming"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Farming"
-                        },
-                        "items": [
-                            "prepared_picker",
-                            "a_day_well_spent",
-                            "green_thumb",
-                            "refreshing"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Farming"
-                        },
-                        "items": [
-                            "bountiful",
-                            "heavy_duty",
-                            "well_watered",
-                            "nice_swing"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Farming"
-                        },
-                        "items": [
-                            "living_off_the_land",
-                            "superb_sower",
-                            "harvest_time",
-                            "prize_winning"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Farming"
-                        },
-                        "items": [
-                            "sickle_sword",
-                            "ornamental",
-                            "perfect_pollinators",
-                            "magic_design"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Farming"
-                        },
-                        "items": [
-                            "earthly_essence"
-                        ]
-                    }
-                }
-            },
-            "fishing": {
-                "info": {
-                    "img": "fishing",
-                    "img_mini": "fishing",
-                    "name": "Fishing",
-                    "wikilink": "Skills#Fishing"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Fishing"
-                        },
-                        "items": [
-                            "weedline_watcher",
-                            "aquatic_antiquities",
-                            "appealing_reeling",
-                            "catch_of_the_day"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Fishing"
-                        },
-                        "items": [
-                            "school_crasher",
-                            "lucky_haul",
-                            "perfect_catch",
-                            "unexpected_haul"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Fishing"
-                        },
-                        "items": [
-                            "full_class",
-                            "legendary",
-                            "treasure_trove",
-                            "weedline_watcher_two"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Fishing"
-                        },
-                        "items": [
-                            "appealing_reeling_two",
-                            "frenzy",
-                            "what_a_catch",
-                            "lucky_haul_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Fishing"
-                        },
-                        "items": [
-                            "abyssal_ascendence"
-                        ]
-                    }
-                }
-            },
-            "archaeology": {
-                "info": {
-                    "img": "archaeology",
-                    "img_mini": "archaeology",
-                    "name": "Archaeology",
-                    "wikilink": "Skills#Archaeology"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Archaeology"
-                        },
-                        "items": [
-                            "museum_quality_one",
-                            "unpeatable",
-                            "sunken_secrets",
-                            "western_ruins_scholar"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Archaeology"
-                        },
-                        "items": [
-                            "sunken_treasure",
-                            "stoneturner",
-                            "eastern_road_scholar",
-                            "pursuit"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Archaeology"
-                        },
-                        "items": [
-                            "back_in_vogue",
-                            "natural_beauty",
-                            "well_placed",
-                            "museum_quality_two"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Archaeology"
-                        },
-                        "items": [
-                            "former_farmers",
-                            "museum_quality_three",
-                            "back_in_vogue_two",
-                            "natural_beauty_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Archaeology"
-                        },
-                        "items": [
-                            "mist_sight"
-                        ]
-                    }
-                }
-            },
-            "cooking": {
-                "info": {
-                    "img": "cooking",
-                    "img_mini": "cooking",
-                    "name": "Cooking",
-                    "wikilink": "Skills#Cooking"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Cooking"
-                        },
-                        "items": [
-                            "waste_not_want_not",
-                            "time_to_eat",
-                            "restorative_cooking",
-                            "taste_maker"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Cooking"
-                        },
-                        "items": [
-                            "seasoned",
-                            "time_to_eat_two",
-                            "award_winning",
-                            "likable_cooking"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Cooking"
-                        },
-                        "items": [
-                            "speedy_cooking",
-                            "dinner_for_two",
-                            "a_way_to_the_heart",
-                            "time_to_eat_three"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Cooking"
-                        },
-                        "items": [
-                            "loveable_cooking",
-                            "snacktime",
-                            "caffeine_crimes",
-                            "magical_meals"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Cooking"
-                        },
-                        "items": [
-                            "fairy_cooking"
-                        ]
-                    }
-                }
-            },
-            "ranching": {
-                "info": {
-                    "img": "ranching",
-                    "img_mini": "ranching",
-                    "name": "Ranching",
-                    "wikilink": "Skills#Ranching"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Ranching"
-                        },
-                        "items": [
-                            "feeding_frenzy",
-                            "close_bond",
-                            "barnyard_bounty",
-                            "currency_of_care"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Ranching"
-                        },
-                        "items": [
-                            "currency_of_care_two",
-                            "feed_prepper",
-                            "welcome_home",
-                            "discount_treats"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Ranching"
-                        },
-                        "items": [
-                            "currency_of_care_three",
-                            "welcome_home_two",
-                            "barnyard_bounty_two",
-                            "wind_down"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Ranching"
-                        },
-                        "items": [
-                            "the_bell_tolls",
-                            "maximum_milling",
-                            "barnyard_bounty_three"
-                        ]
-                    }
-                }
-            },
-            "woodcrafting": {
-                "info": {
-                    "img": "woodcrafting",
-                    "img_mini": "woodcrafting",
-                    "name": "Woodcrafting",
-                    "wikilink": "Skills#Woodcrafting"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "hammer_timing",
-                            "lumberjack",
-                            "masonry",
-                            "forager"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "working_with_the_grain",
-                            "quality_crafting",
-                            "natural",
-                            "hammer_timing_two"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "material_world",
-                            "steady_supplies",
-                            "set_pieces",
-                            "hammer_timing_three"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "lumberjack_two",
-                            "underground_inspiration",
-                            "deliberate_debris",
-                            "working_with_the_grain_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Woodcrafting"
-                        },
-                        "items": [
-                            "void_crafting",
-                            "big_water_sprites"
-                        ]
-                    }
-                }
-            },
-            "blacksmithing": {
-                "info": {
-                    "img": "blacksmithing",
-                    "img_mini": "blacksmithing",
-                    "name": "Blacksmithing",
-                    "wikilink": "Skills#Blacksmithing"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "copper_expert",
-                            "time_sensitive",
-                            "sharp_blacksmithing",
-                            "fortified_blacksmithing"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "iron_expert",
-                            "time_sensitive_two",
-                            "leech_blacksmithing",
-                            "lightweight_blacksmithing"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "silver_expert",
-                            "hasty_blacksmithing",
-                            "time_sensitive_three",
-                            "empowered"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "empowered_two",
-                            "gold_expert",
-                            "tireless_blacksmithing",
-                            "time_sensitive_four"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Blacksmithing"
-                        },
-                        "items": [
-                            "mistril_expert"
-                        ]
-                    }
-                }
-            },
-            "mining": {
-                "info": {
-                    "img": "mining",
-                    "img_mini": "mining",
-                    "name": "Mining",
-                    "wikilink": "Skills#Mining"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "earth_breaker",
-                            "ore_riginal",
-                            "reclaimer",
-                            "treasure_hunter"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "iron_hound",
-                            "true_blue",
-                            "treasured",
-                            "mine_time"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "resonance",
-                            "earth_breaker_two",
-                            "silver_seeker",
-                            "fantastic_finds"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "lost_to_history",
-                            "good_as_gold",
-                            "refined_rockery",
-                            "break_one_get_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Mining"
-                        },
-                        "items": [
-                            "mistril_mastery",
-                            "perfect_pick",
-                            "void_value",
-                            "lost_to_history_two"
-                        ]
-                    }
-                }
-            },
-            "combat": {
-                "info": {
-                    "img": "combat",
-                    "img_mini": "combat",
-                    "name": "Combat",
-                    "wikilink": "Skills#Combat"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "guardians_shield",
-                            "true_strike",
-                            "jump_attack",
-                            "well_armed"
-                        ]
-                    },
-                    "2": {
-                        "info": {
-                            "name": "Tier 2",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "quick_footed",
-                            "shrine_savant",
-                            "generous_in_defeat",
-                            "dungeon_delicacies"
-                        ]
-                    },
-                    "3": {
-                        "info": {
-                            "name": "Tier 3",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "perfect_prefix",
-                            "rocking",
-                            "in_motion",
-                            "out_of_juice"
-                        ]
-                    },
-                    "4": {
-                        "info": {
-                            "name": "Tier 4",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "sonic_boom",
-                            "gift_exchange",
-                            "guardians_shield_two",
-                            "true_strike_two"
-                        ]
-                    },
-                    "5": {
-                        "info": {
-                            "name": "Tier 5",
-                            "wikilink": "Skills#Combat"
-                        },
-                        "items": [
-                            "sure_strike",
-                            "generous_in_defeat_two",
-                            "friend_shaped"
-                        ]
-                    }
-                }
-            },
-            "mount": {
-                "info": {
-                    "img": "mount",
-                    "img_mini": "mount",
-                    "name": "Mistmare",
-                    "wikilink": "Skills#Mistmare"
-                },
-                "subcategories": {
-                    "1": {
-                        "info": {
-                            "name": "Tier 1",
-                            "wikilink": "Skills#Mistmare"
-                        },
-                        "items": [
-                            "horsepower",
-                            "harvest_horse",
-                            "nice_ride"
                         ]
                     }
                 }

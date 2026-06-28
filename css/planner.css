@@ -83,27 +83,6 @@
     padding-right: 40px;
 }
 
-#search_items_wrapper #cancel_search {
-    position: absolute;
-    width: 35px;
-    right: 0;
-    bottom: 0;
-    top: 8px;
-    fill: var(--color-txt);
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    opacity: 0.5;
-    display: none;
-}
-
-#search_items_wrapper #cancel_search svg {
-    --icon-size: 15px;
-}
-
-#search_items_wrapper #cancel_search:hover {
-    opacity: 1;
-}
-
 #search_items_wrapper.searching #cancel_search {
     display: block;
 }
@@ -133,7 +112,7 @@
 }
 
 .dropdown-section .dropdown-section-item {
-    background-image: url(../images/dropdown_grey.svg);
+    background-image: var(--caret-down);
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
     background-size: 8px 8px;
@@ -155,7 +134,6 @@
 #page.mode_dark .dropdown-section .dropdown-section-item,
 #page.mode_dark .dropdown-section.open>.dropdown-section-item {
     color: var(--color-txt);
-    background-image: url(../images/dropdown_white_transparent.svg);
 }
 
 #page.mode_byset [data-tab-dropdown="furniture_categories"],

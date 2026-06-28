@@ -176,6 +176,7 @@ var objChangelog =
                     <li>do not treat moving action as two separate ones (when you move an item, you have to click undo button two times to reverse that action)</li>
                     <li>after trying to place an item in an illegal place, do not deselect </li>
                     <li>import soil and grass info (decode farm.bin)</li>
+                    <li>pickup button</li>
                     <li>dropdowns
                         <ul>
                             <li>filter out items that can not be placed on farm (autopetter, wall decorations..)</li>
