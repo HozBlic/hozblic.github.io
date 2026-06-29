@@ -32,6 +32,10 @@ var objChangelog =
             ],
         },
         {
+            "date": "28/06/2026",
+            "info": ["item database table", "data scraping Python scripts now support new engine"],
+        },
+        {
             "date": "24/05/2026",
             "tags": ["feedback"],
             "info": ["pet appearances", "missing locations (wrapped tab)", "check off obtained customization items even if they haven't been opened in customization menu (green exclamation mark still visible)"],
