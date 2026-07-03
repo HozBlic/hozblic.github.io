@@ -114,8 +114,8 @@
                     "img_item_path": "items/"
                 },
                 "items": [
-                    15,
-                    10
+                    10,
+                    15
                 ]
             },
             "soil": {
@@ -162,7 +162,7 @@
                 "info": {
                     "name": "Automation Set",
                     "img": "0",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -182,7 +182,7 @@
                 "info": {
                     "name": "All Misc. Functional",
                     "img": "1",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -205,7 +205,7 @@
                 "info": {
                     "name": "Bakery Decor Set",
                     "img": "2",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -227,7 +227,7 @@
                 "info": {
                     "name": "Basic Chest Set",
                     "img": "3",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -252,7 +252,7 @@
                 "info": {
                     "name": "Basic Set",
                     "img": "4",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -286,7 +286,7 @@
                 "info": {
                     "name": "Bathroom Set",
                     "img": "5",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -349,7 +349,7 @@
                 "info": {
                     "name": "Cavern Set",
                     "img": "6",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -378,7 +378,7 @@
                 "info": {
                     "name": "Cherry Set",
                     "img": "7",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -394,7 +394,7 @@
                 "info": {
                     "name": "Chess Piece Set",
                     "img": "8",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -432,7 +432,7 @@
                 "info": {
                     "name": "Cooking Set",
                     "img": "9",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -453,7 +453,7 @@
                 "info": {
                     "name": "Cottage Garden Set",
                     "img": "10",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -477,7 +477,7 @@
                 "info": {
                     "name": "Counter Set",
                     "img": "11",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -501,7 +501,7 @@
                 "info": {
                     "name": "Craft Set",
                     "img": "12",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -526,7 +526,7 @@
                 "info": {
                     "name": "Crop Sign Set (Spring)",
                     "img": "13",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -551,7 +551,7 @@
                 "info": {
                     "name": "Crop Sign Set (Summer)",
                     "img": "14",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -583,7 +583,7 @@
                 "info": {
                     "name": "Crop Sign Set (Fall)",
                     "img": "15",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -609,7 +609,7 @@
                 "info": {
                     "name": "Crop Sign Set (Winter)",
                     "img": "16",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -629,7 +629,7 @@
                 "info": {
                     "name": "Dragon Claw Altar Set",
                     "img": "17",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -643,7 +643,7 @@
                 "info": {
                     "name": "Emerald Set",
                     "img": "18",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -663,7 +663,7 @@
                 "info": {
                     "name": "Explorer Set",
                     "img": "19",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -694,7 +694,7 @@
                 "info": {
                     "name": "Fall Set",
                     "img": "20",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -716,7 +716,7 @@
                 "info": {
                     "name": "Faux Spring Plant Set",
                     "img": "21",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -745,7 +745,7 @@
                 "info": {
                     "name": "Faux Summer Plant Set",
                     "img": "22",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -775,7 +775,7 @@
                 "info": {
                     "name": "Faux Fall Plant Set",
                     "img": "23",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -802,7 +802,7 @@
                 "info": {
                     "name": "Faux Winter Plant Set",
                     "img": "24",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -826,7 +826,7 @@
                 "info": {
                     "name": "Faux Deep Woods Set",
                     "img": "25",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -840,7 +840,7 @@
                 "info": {
                     "name": "Faux Mines Plant Set",
                     "img": "26",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -874,7 +874,7 @@
                 "info": {
                     "name": "Faux Shell Set",
                     "img": "27",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -888,7 +888,7 @@
                 "info": {
                     "name": "Fishing Set",
                     "img": "28",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -922,7 +922,7 @@
                 "info": {
                     "name": "Haunted Attic Set",
                     "img": "29",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -960,7 +960,7 @@
                 "info": {
                     "name": "Insect Set",
                     "img": "30",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1001,7 +1001,7 @@
                 "info": {
                     "name": "Kitchen Set",
                     "img": "31",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1034,7 +1034,7 @@
                 "info": {
                     "name": "Lava Caves Set",
                     "img": "32",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1061,7 +1061,7 @@
                 "info": {
                     "name": "Lemon Set",
                     "img": "33",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1077,7 +1077,7 @@
                 "info": {
                     "name": "Lovely Cottage Set",
                     "img": "34",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1113,7 +1113,7 @@
                 "info": {
                     "name": "Mermaid Set",
                     "img": "35",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1129,7 +1129,7 @@
                 "info": {
                     "name": "Mineshaft Set",
                     "img": "36",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1154,7 +1154,7 @@
                 "info": {
                     "name": "Mistrian History Set",
                     "img": "37",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1209,7 +1209,7 @@
                 "info": {
                     "name": "Ornate Rug Set",
                     "img": "38",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1237,7 +1237,7 @@
                 "info": {
                     "name": "Paving Stone Set",
                     "img": "39",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1289,7 +1289,7 @@
                 "info": {
                     "name": "Picnic Decor Set",
                     "img": "40",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1317,7 +1317,7 @@
                 "info": {
                     "name": "Ruins Set",
                     "img": "41",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1347,7 +1347,7 @@
                 "info": {
                     "name": "Rustic Cabin Set",
                     "img": "42",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1392,7 +1392,7 @@
                 "info": {
                     "name": "Shooting Star Set",
                     "img": "43",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1417,7 +1417,7 @@
                 "info": {
                     "name": "Spring Set",
                     "img": "44",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1445,7 +1445,7 @@
                 "info": {
                     "name": "Starter Farm Set",
                     "img": "45",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1469,7 +1469,7 @@
                 "info": {
                     "name": "Stone Garden Set",
                     "img": "46",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1494,7 +1494,7 @@
                 "info": {
                     "name": "Summer Set",
                     "img": "47",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1516,7 +1516,7 @@
                 "info": {
                     "name": "Tabletop Clutter Set",
                     "img": "48",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1562,7 +1562,7 @@
                 "info": {
                     "name": "Tide Set",
                     "img": "49",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1584,7 +1584,7 @@
                 "info": {
                     "name": "Training Dummy Set",
                     "img": "50",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1597,7 +1597,7 @@
                 "info": {
                     "name": "Void Set",
                     "img": "51",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1623,7 +1623,7 @@
                 "info": {
                     "name": "Witch Queen Set",
                     "img": "52",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1655,7 +1655,7 @@
                 "info": {
                     "name": "Worn Set",
                     "img": "53",
-                    "img_item_section_path": "sets/",
+                    "img_item_section_path": "furniture_sets/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -1673,7 +1673,7 @@
             },
             "54": {
                 "info": {
-                    "name": "Not crafted",
+                    "name": "Without set",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2053,7 +2053,7 @@
                 "info": {
                     "name": "Functional",
                     "img": "0",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2128,7 +2128,7 @@
                 "info": {
                     "name": "Farm & Outdoor",
                     "img": "1",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2407,7 +2407,7 @@
                 "info": {
                     "name": "Seating",
                     "img": "4",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2489,7 +2489,7 @@
                 "info": {
                     "name": "Beds",
                     "img": "5",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2572,7 +2572,7 @@
                 "info": {
                     "name": "Tables",
                     "img": "6",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2646,7 +2646,7 @@
                 "info": {
                     "name": "Shelves & Drawers",
                     "img": "7",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2702,7 +2702,7 @@
                 "info": {
                     "name": "Lighting",
                     "img": "8",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2789,7 +2789,7 @@
                 "info": {
                     "name": "Rugs",
                     "img": "9",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2877,7 +2877,7 @@
                 "info": {
                     "name": "Windows",
                     "img": "10",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2907,7 +2907,7 @@
                 "info": {
                     "name": "Wall Decor",
                     "img": "11",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2951,7 +2951,7 @@
                 "info": {
                     "name": "Plants",
                     "img": "12",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -2986,7 +2986,7 @@
                 "info": {
                     "name": "Decorative Items",
                     "img": "13",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -3175,7 +3175,7 @@
                 "info": {
                     "name": "Miscellaneous",
                     "img": "14",
-                    "img_item_section_path": "categories/",
+                    "img_item_section_path": "furniture_categories/",
                     "img_item_path": "items/"
                 },
                 "items": [
@@ -3254,7 +3254,7 @@
             },
             "15": {
                 "info": {
-                    "name": "Not crafted",
+                    "name": "Without category",
                     "img_item_path": "items/"
                 },
                 "items": [

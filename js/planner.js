@@ -2266,7 +2266,7 @@ async function loadMenuItems() {
     $('.dropdown-item.house_upgrade').removeClass('selected');
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
-    const objTabs = await (await fetch('json/tabs_planner.json?v=2')).json();
+    const objTabs = await (await fetch('json/tabs_planner.json?v=3')).json();
     objItemsPlanner = await (await fetch('json/items_planner.json')).json();
 
     var setTips = new Set();
@@ -3466,8 +3466,8 @@ function sectionActions(strAction) {
 
 $(function () {
     (async () => {
-        objKeyItemDict = await (await fetch('../json/dict.json?v=1')).json();
-        objItemKeyDict = await (await fetch('../json/dict_reverse.json')).json();
+        objKeyItemDict = await (await fetch('../json/dict.json?v=2')).json();
+        objItemKeyDict = await (await fetch('../json/dict_reverse.json?v=2')).json();
 
         objSoilIndex = {
             'grass': objItemKeyDict['tile_grassautotile'][0],
@@ -3481,7 +3481,7 @@ $(function () {
         const objDefaultItems = objMistriaDataPlannerDefault.layout[0].farm.none;
         arrDefaultElements = objDefaultItems[intBorderFenceIndex].concat(objDefaultItems[intStarterFenceIndex]).map(arrCoord => arrCoord.join(","));
 
-        objSpriteCategories = await (await fetch('../json/categories.json')).json();
+        objSpriteCategories = await (await fetch('../json/categories.json?v=2')).json();
         objZindex_Items = await (await fetch('../json/zindexes.json')).json();
 
         arrGrid_Collision = await (await fetch('../json/collision.json')).json();
