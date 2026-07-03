@@ -3633,7 +3633,7 @@ $(function () {
             } else if (e.data.originalEvent.button === 0 || e.data.originalEvent.button === 1) {  // left click or middle
                 bolIsDragging = true;
                 if (e.data.originalEvent.button === 1) { //if was dragged with middle click
-                    $('#canvas_wrapper').css('cursor', 'move');
+                    $('#canvas_wrapper').css('cursor', 'grabbing');
 
                     bolPreventDrawing = true;
                     if (strMode == "selection_mode") {
@@ -3660,6 +3660,11 @@ $(function () {
                     return;
                 }
                 dragMap(objCurrentCellCoord);
+                if (bolIsDragging) {
+                    // dragging mode with left click
+                    $('#canvas_wrapper').css('cursor', 'grabbing');
+                }
+
                 bolPickup = false;
             } else {
                 if (objPrevCellCoord.x === objCurrentCellCoord.x && objPrevCellCoord.y === objCurrentCellCoord.y) {
@@ -3726,6 +3731,7 @@ $(function () {
                     resize();
                 }
                 resetDrawingVariables();
+                $('#canvas_wrapper').css('cursor', '');
             } else {
                 if (bolPickup) {
                     let objSelection = getSelection(objCurrentCellCoord);

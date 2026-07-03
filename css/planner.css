@@ -206,7 +206,7 @@
 }
 
 #page.dragging_mode #canvas_wrapper {
-    cursor: move;
+    cursor: pointer;
 }
 
 #canvas_wrapper canvas {
