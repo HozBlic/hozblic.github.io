@@ -293,6 +293,17 @@ function createTip(strID, strItemKey, strTab, strBuff = false) {
         strChecked = 'checked';
     }
 
+    let strDisabled = '';
+    if (strTab === 'perks') {
+        if (objMistriaData.perks.has(strItemKey)) {
+            strChecked = 'checked';
+        }
+
+        if (objMistriaData.perks_disabled.has(strItemKey)) {
+            strDisabled = 'disabled';
+        }
+    }
+
     let strNameLinkHTML = objItem['name'];
     if ('url' in objItem) {
         strNameLinkHTML = `<a target="_blank" href="https://fieldsofmistria.wiki.gg${objItem['url']}">${objItem['name']}</a>`;
@@ -301,8 +312,9 @@ function createTip(strID, strItemKey, strTab, strBuff = false) {
     let strTipHTML = `
         <div id="tip_${strID}" class="tip_wrap">
             <div class="tip">
-                <div class="tip_name ${strChecked} ${bolDonatable ? 'donatable' : ''}">
+                <div class="tip_name ${strChecked} ${strTab === 'perks' ? 'is_perk' : ''} ${strDisabled} ${bolDonatable ? 'donatable' : ''}">
                     ${strNameLinkHTML}
+                    ${strTab === 'perks' ? '<img src="../images/tabs/fake_essence.png">' : ''}
                     ${bolDonatable ? '<img src="../images/tabs/museum.png">' : ''}
                 </div>
                 ${strBuff ? `<div class="tip_buff">${strBuff}</div>` : ''}
