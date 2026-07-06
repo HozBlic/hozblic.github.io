@@ -1807,7 +1807,7 @@ function loadWrappedTab() {
             }
 
             arrTips.push(strID);
-            arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
+            arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', strBuff));
             if (strItemKey in objItems) {
                 strTableSold += `<tr>
                                 <td><img id="item_${strID}" src="images/items/${strItemKey}.png"></td>
@@ -1886,7 +1886,7 @@ function loadWrappedTab() {
                 }
 
                 arrTips.push(strID);
-                arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems));
+                arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', strBuff));
 
                 if (strItemKey in objItems) {
                     strTableSold += `<tr>
@@ -2901,7 +2901,7 @@ function generateGenericTableGrid(objData, strTitle, bolAllData = false) {
             }
 
             arrTips.push(strID);
-            arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', objItems, strBuff));
+            arrTipsHtml.push(createTip(strID, strItemKey, 'wrapped', strBuff));
 
             prevValue = intValue;
             i++;
