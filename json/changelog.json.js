@@ -200,7 +200,12 @@ var objChangelog =
                     <li>run manageScripts.js from Python</li>
                 </ul>`,
             ],
-        }, {
+        }, 
+        {
+            "date": "09/07/2026",
+            "info": ["new engine is now supported"],
+        },
+        {
             "date": "17/05/2026",
             "info": ["first version"],
             "tags": ["star"]
