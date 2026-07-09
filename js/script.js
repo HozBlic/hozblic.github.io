@@ -505,7 +505,7 @@ function loadChangelogTab(strTabKey) {
         return;
     }
 
-    $('#changelog_content').removeClass(['tracker', 'planner'].join(' '));
+    $('#changelog_content').removeClass(['tracker', 'planner', 'misc'].join(' '));
     $('#changelog_content').addClass(strTabKey);
 }
 

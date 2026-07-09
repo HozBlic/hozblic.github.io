@@ -205,5 +205,13 @@ var objChangelog =
             "info": ["first version"],
             "tags": ["star"]
         },
+    ], 
+    "misc": [
+        {
+            "date": "Future",
+            "info": [
+                `{{feedback}}outfit editor`,
+            ],
+        }
     ],
 }

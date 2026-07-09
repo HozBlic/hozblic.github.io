@@ -603,17 +603,20 @@ code.shortcut {
 }
 
 #popup_changelog #changelog_content.planner #changelog_tab_planner,
-#popup_changelog #changelog_content.tracker #changelog_tab_tracker {
+#popup_changelog #changelog_content.tracker #changelog_tab_tracker,
+#popup_changelog #changelog_content.misc #changelog_tab_misc {
     display: block;
 }
 
 #popup_changelog #changelog_content.planner .changelog_tab[data-tab="planner"],
-#popup_changelog #changelog_content.tracker .changelog_tab[data-tab="tracker"] {
+#popup_changelog #changelog_content.tracker .changelog_tab[data-tab="tracker"],
+#popup_changelog #changelog_content.misc .changelog_tab[data-tab="misc"] {
     background-color: var(--color-btn);
 }
 
 #page:not(.mode_dark) #popup_changelog #changelog_content.planner .changelog_tab[data-tab="planner"],
-#page:not(.mode_dark) #popup_changelog #changelog_content.tracker .changelog_tab[data-tab="tracker"] {
+#page:not(.mode_dark) #popup_changelog #changelog_content.tracker .changelog_tab[data-tab="tracker"],
+#page:not(.mode_dark) #popup_changelog #changelog_content.misc .changelog_tab[data-tab="misc"] {
     color: var(--color-bg);
     fill: var(--color-bg);
     stroke: var(--color-bg);
