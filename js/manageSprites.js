@@ -446,37 +446,45 @@ class SpriteStore {
     }
 
     #getTile(tile, neighbors, isGrass) {
-        let [
-            d1, o1, d2,
-            o2,     o3,
-            d3, o4, d4
-        ] = neighbors
+        let foundTexture
+        
+        if (neighbors) {
+            let [
+                d1, o1, d2,
+                o2,     o3,
+                d3, o4, d4
+            ] = neighbors
 
-    
-        if (isGrass) {
-            // treating orthogonals as a full line
-            if (o1) {d1=1; d2=1}
-            if (o2) {d1=1; d3=1}
-            if (o3) {d2=1; d4=1}
-            if (o4) {d3=1; d4=1}
+        
+            if (isGrass) {
+                // treating orthogonals as a full line
+                if (o1) {d1=1; d2=1}
+                if (o2) {d1=1; d3=1}
+                if (o3) {d2=1; d4=1}
+                if (o4) {d3=1; d4=1}
+            } else {
+                // un-neighbored diagonals have no separate case
+                if (!o1 || !o2) {d1 = 0}
+                if (!o1 || !o3) {d2 = 0}
+                if (!o2 || !o4) {d3 = 0}
+                if (!o3 || !o4) {d4 = 0}
+            }
+
+            const combinedNeighbors = [d1, o1, d2, o2, o3, d3, o4, d4]
+
+            const textureLookup = `${tile}_${combinedNeighbors}`
+
+            foundTexture = this.textures[`${tile}_${combinedNeighbors}`]
         } else {
-            // un-neighbored diagonals have no separate case
-            if (!o1 || !o2) {d1 = 0}
-            if (!o1 || !o3) {d2 = 0}
-            if (!o2 || !o4) {d3 = 0}
-            if (!o3 || !o4) {d4 = 0}
+            foundTexture = this.textures[tile]
         }
 
-        const combinedNeighbors = [d1, o1, d2, o2, o3, d3, o4, d4]
-
-        const foundTexture = this.textures[`${tile}_${combinedNeighbors}`]
-
         if (!foundTexture) {
-            this.#logBroken(`Tile not found: ${tile}_${combinedNeighbors}`)
+            this.#logBroken(`Tile not found: ${textureLookup}`)
             return this.get('illegal')
         }
 
-        const sprite = new PIXI.Sprite(this.textures[`${tile}_${combinedNeighbors}`])
+        const sprite = new PIXI.Sprite(foundTexture)
         sprite.meta = { size: [2,2] }
 
         return sprite
@@ -511,7 +519,8 @@ class SpriteStore {
         return crop
     }
 
-    get(textureKey, {direction, season, color} = {}) {    
+    get(textureKey, {direction, season, color} = {}) {
+        if (textureKey.includes('exteriors')) {return this.#getTile(textureKey)}
         // Build possible keys from most specific to least
         let possibleKeys = []
 
