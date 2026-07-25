@@ -1,0 +1,739 @@
+{
+    "frames": {
+        "spr_main_exteriors_water_spring": {
+            "frame": {
+                "x": 2,
+                "y": 2,
+                "w": 336,
+                "h": 1040
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 336,
+                "h": 1040
+            },
+            "sourceSize": {
+                "w": 336,
+                "h": 1040
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    336,
+                    1040
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_exteriors_autumn": {
+            "frame": {
+                "x": 340,
+                "y": 2,
+                "w": 1024,
+                "h": 1024
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 1024
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 1024
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    1024,
+                    1024
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_exteriors_spring": {
+            "frame": {
+                "x": 340,
+                "y": 1028,
+                "w": 1024,
+                "h": 1024
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 1024
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 1024
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    1024,
+                    1024
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_exteriors_summer": {
+            "frame": {
+                "x": 2,
+                "y": 2054,
+                "w": 1024,
+                "h": 1024
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 1024
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 1024
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    1024,
+                    1024
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_exteriors_winter": {
+            "frame": {
+                "x": 1028,
+                "y": 2054,
+                "w": 1024,
+                "h": 1024
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 1024
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 1024
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    1024,
+                    1024
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_interiors_spring": {
+            "frame": {
+                "x": 2054,
+                "y": 2,
+                "w": 1024,
+                "h": 1024
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 1024,
+                "h": 1024
+            },
+            "sourceSize": {
+                "w": 1024,
+                "h": 1024
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    1024,
+                    1024
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_exteriors_shadow_spring": {
+            "frame": {
+                "x": 1366,
+                "y": 2,
+                "w": 512,
+                "h": 512
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 512,
+                "h": 512
+            },
+            "sourceSize": {
+                "w": 512,
+                "h": 512
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    512,
+                    512
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_main_interiors_shadow_spring": {
+            "frame": {
+                "x": 2,
+                "y": 1044,
+                "w": 256,
+                "h": 256
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 256,
+                "h": 256
+            },
+            "sourceSize": {
+                "w": 256,
+                "h": 256
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    256,
+                    256
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_grass_autumn": {
+            "frame": {
+                "x": 1880,
+                "y": 2,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_grass_spring": {
+            "frame": {
+                "x": 1880,
+                "y": 100,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_grass_summer": {
+            "frame": {
+                "x": 1880,
+                "y": 198,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_grass_winter": {
+            "frame": {
+                "x": 1880,
+                "y": 296,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_autumn_plow": {
+            "frame": {
+                "x": 1880,
+                "y": 394,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_autumn_watered": {
+            "frame": {
+                "x": 1880,
+                "y": 492,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_spring_plow": {
+            "frame": {
+                "x": 2,
+                "y": 1302,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_spring_watered": {
+            "frame": {
+                "x": 132,
+                "y": 1302,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_summer_plow": {
+            "frame": {
+                "x": 132,
+                "y": 1400,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_summer_watered": {
+            "frame": {
+                "x": 2,
+                "y": 1400,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_winter_plow": {
+            "frame": {
+                "x": 2,
+                "y": 1498,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_ground_soil_winter_watered": {
+            "frame": {
+                "x": 132,
+                "y": 1498,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    0,
+                    0
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                0,
+                0
+            ]
+        },
+        "spr_farm_leaves_t1_autumn": {
+            "frame": {
+                "x": 132,
+                "y": 1596,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    -64,
+                    -48
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                64,
+                48
+            ]
+        },
+        "spr_farm_leaves_t2_autumn": {
+            "frame": {
+                "x": 2,
+                "y": 1596,
+                "w": 128,
+                "h": 96
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 128,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 128,
+                "h": 96
+            },
+            "hitbox": {
+                "kind": "box",
+                "offset": [
+                    -64,
+                    -48
+                ],
+                "dimensions": [
+                    128,
+                    96
+                ]
+            },
+            "offset": [
+                64,
+                48
+            ]
+        }
+    },
+    "meta": {
+        "image": "sheet_exterior.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 4096,
+            "h": 4096
+        },
+        "scale": 1
+    }
+}

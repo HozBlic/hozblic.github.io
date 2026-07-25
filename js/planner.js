@@ -981,7 +981,7 @@ function drawGrassFix() {
     arrGrassFixCoord.forEach(function (arrTileCoord) {
         const x = arrTileCoord[0];
         const y = arrTileCoord[1];
-        const texture = sprites.getGrass(`tile_grassautotile_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
+        const texture = sprites.getGrass(`spr_farm_ground_grass_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, [0, 0, 0, 0, 0, 0, 0, 0])
         const elemSprite = new PIXI.Sprite(texture);
         elemSprite.position.set(x * intGridCellSize, y * intGridCellSize);
         objContainers.grassFix.addChild(elemSprite);
@@ -1060,16 +1060,16 @@ function getSprite(intItemIndex, arrNeighbours = [0, 0, 0, 0, 0, 0, 0, 0], strDi
     if (objSpriteCategories.soil.includes(intItemIndex)) {
         switch (intItemIndex) {
             case 1: //ground
-                sprite = sprites.get(`${strSpriteKey}_${objMistriaDataPlanner.season}`);
+                sprite = sprites.get(`spr_main_exteriors_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`);
                 break;
             case 3: //tilled wet
-                sprite = sprites.getSoil(`${strSpriteKey}_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
+                sprite = sprites.getSoil(`spr_farm_ground_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}_watered`, arrNeighbours)
                 break;
             case 2: //tilled
-                sprite = sprites.getSoil(`tile_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
+                sprite = sprites.getSoil(`spr_farm_ground_soil_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}_plow`, arrNeighbours)
                 break;
             case 4: //grass
-                sprite = sprites.getGrass(`tile_grassautotile_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
+                sprite = sprites.getGrass(`spr_farm_ground_grass_${objMistriaDataPlanner.season === 'fall' ? 'autumn' : objMistriaDataPlanner.season}`, arrNeighbours)
                 break;
         }
     } else if (objSpriteCategories.crops.includes(intItemIndex)) {
@@ -2133,9 +2133,7 @@ async function loadMenuItems() {
             intPrevScrollPos = intCurrentScrollPos;
         }
     }, 150);
-    // $('#side_menu #title .version').text(`v${objBuild.version}`);
-    $('#side_menu #title .version').text(`v0.15.3`);
-
+    $('#side_menu #title .version').text(`v${objBuild.version}`);
     $('#cancel_search').on('click', function (e) {
         $('#search_items').val('');
         $('#search_items').trigger('keyup');
@@ -3330,7 +3328,7 @@ function preventAction() {
     objSelectionItems = false;
     toggleAdditionalControls();
 
-    console.log('bolPreventDrawing')
+    // console.log('bolPreventDrawing')
     if (objGridCombined.cursor_corner !== false) {
         clearTempSection();
 
