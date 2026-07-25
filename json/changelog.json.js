@@ -33,7 +33,7 @@ var objChangelog =
         },
         {
             "date": "28/06/2026",
-            "info": ["item database table", "data scraping Python scripts now support new engine"],
+            "info": ["item database table", "new engine support"],
         },
         {
             "date": "24/05/2026",
@@ -200,12 +200,17 @@ var objChangelog =
                     <li>run manageScripts.js from Python</li>
                 </ul>`,
             ],
-        }, {
+        },
+        {
+            "date": "09/07/2026",
+            "info": ["new engine support"],
+        },
+        {
             "date": "17/05/2026",
             "info": ["first version"],
             "tags": ["star"]
         },
-    ], 
+    ],
     "misc": [
         {
             "date": "Future",

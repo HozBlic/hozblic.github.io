@@ -11,16 +11,23 @@ if ($(window).width() < 700) {
 }
 var arrTabs = objBuild.tabsOrder;
 
-const minutesToTime = (minutes) => {
+const minutesToTime = (minutes, bolOnlyH = false) => {
     if (!minutes) {
         return '0min'
     }
     const hours = Math.floor(minutes / 60);
     const mins = minutes % 60;
-    const arrTime = [
+
+    let arrTime = [
         hours ? hours + 'h' : '',
         mins ? mins + 'min' : ''
     ];
+    if (bolOnlyH) {
+        arrTime = [
+            hours ? hours + ' hours' : ''
+        ];
+    }
+
     return arrTime.join(' ');
     // return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
 };
@@ -96,12 +103,19 @@ const verticalLinePlugin = {
         ctx.fillStyle = '#b6b6b6';
         ctx.font = '10px Arial';
         ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
 
-        ctx.fillText(
-            text,
-            middleX,
-            yScale.top - 7
-        );
+        const offsetY = 5;
+        const lines = text.split('<br>');
+        const lineHeight = 11;
+
+        lines.forEach((line, i) => {
+            ctx.fillText(
+                line.trim(),
+                middleX,
+                yScale.top - offsetY + i * lineHeight
+            );
+        });
 
         ctx.restore();
     },
@@ -134,14 +148,24 @@ function createChartConfig(objData) {
     //     });
     // }
 
-    const index = objData.labels.findIndex(str => str.startsWith('2026/05/11'));
+
     let arrLineBetweenIndexes = [];
 
+    let index = objData.labels.findIndex(str => str.startsWith('2026/05/11'));
     if (index !== -1) {
         arrLineBetweenIndexes.push({
             start: index,
             end: index,
             text: 'Planner v1'
+        },)
+    }
+
+    index = objData.labels.findIndex(str => str.startsWith('2026/07/06'));
+    if (index !== -1) {
+        arrLineBetweenIndexes.push({
+            start: index,
+            end: index,
+            text: 'New engine <br> support'
         },)
     }
 
@@ -190,15 +214,15 @@ function createChartConfig(objData) {
                 },
                 tooltip: {
                     filter: function (tooltipItem) {
+                        if (tooltipItem.dataset.label === 'Total') {
+                            return true;
+                        }
+
                         return tooltipItem.raw !== 0;
                     },
                     callbacks: {
-                        title: ctx => {
-                            return ctx[0].label;
-                        },
-                        label: ctx => {
-                            return `${ctx.dataset.label}: ${minutesToTime(ctx.raw)}`;
-                        }
+                        title: items => items.length ? items[0].label : '',
+                        label: ctx => `${ctx.dataset.label}: ${minutesToTime(ctx.raw)}`
                     }
                 }
             },
@@ -365,7 +389,7 @@ function loadData() {
             document.getElementById('spent_time_chart_changelog').getContext('2d'),
             createChartConfig(objBuild.spent_time));
 
-        $('.spent_time_total span').html(`${minutesToTime((objBuild.spent_time_total + 120 * 60))}`);
+        $('.spent_time_total span').html(`${minutesToTime((objBuild.spent_time_total + 120 * 60), true)}`);
 
         const strBirthdayIcon = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="44" viewBox="0 0 48 44">
                     <path d="M0 0 C7.92 0 15.84 0 24 0 C24 1.32 24 2.64 24 4 C25.32 4 26.64 4 28 4 C28 6.64 28 9.28 28 12 C29.32 12 30.64 12 32 12 C32 18.6 32 25.2 32 32 C30.68 32 29.36 32 28 32 C28 33.32 28 34.64 28 36 C17.44 36 6.88 36 -4 36 C-4 34.68 -4 33.36 -4 32 C-5.32 32 -6.64 32 -8 32 C-8 25.4 -8 18.8 -8 12 C-6.68 12 -5.36 12 -4 12 C-4 9.36 -4 6.72 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#62A1BD" transform="translate(12,4)"/>
