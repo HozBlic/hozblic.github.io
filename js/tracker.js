@@ -1028,7 +1028,7 @@ function loadWrappedTab() {
                     arrBalance.push(objInfoGameStats['end_of_day_balance'][i]['balance'])
                     arrStamina.push(objInfoGameStats['end_of_day_stats'][i]['stamina'])
                     arrHealth.push(objInfoGameStats['end_of_day_stats'][i]['health'])
-                    arrSleeptime.push({ x: i, y: timetoint(objInfoGameStats['bedtimes'][i]) })
+                    arrSleeptime.push({ x: objInfoGameStats['end_of_day_balance'][i]['day'], y: timetoint(objInfoGameStats['bedtimes'][i]) })
                 }
             }
 

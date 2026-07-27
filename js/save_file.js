@@ -174,22 +174,35 @@ function extractGiftKeys(objNpcs) {
     }
 }
 
-function extractAnimalData(objAnimalsData) {
-    if (typeof objAnimalsData === 'object') {
+function extractAnimalData(objPlayerData) {
+
+    const arrAnimalHouses = {
+        'coop': ['capybara', 'duck', 'chicken', 'rabbit'],
+        'barn': ['alpaca', 'cow', 'horse', 'sheep'],
+    }
+
+    const getHouse = animal => Object.entries(arrAnimalHouses).find(([_, animals]) => animals.includes(animal))?.[0];
+
+    if (typeof objPlayerData === 'object') {
         var arrAnimalsData = [];
-        Object.entries(objAnimalsData['animal_variant_unlocks']).forEach(([strItemKey, arrAnimals]) => {
+        Object.entries(objPlayerData['animal_variant_unlocks']).forEach(([strItemKey, arrAnimals]) => {
+            const strRequiredHousing = getHouse(strItemKey);
+            const hasRequiredHousing = objPlayerData['items_acquired'].some(item => ["small", "medium", "large"].some(size => item.startsWith(`${size}_${strRequiredHousing}`)));
+            if (!hasRequiredHousing) {
+                return;
+            }
             var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
             arrAnimalsData.push(...arrVariants);
         });
-        Object.entries(objAnimalsData['animal_cosmetic_unlocks']).forEach(([strItemKey, arrAnimals]) => {
+        Object.entries(objPlayerData['animal_cosmetic_unlocks']).forEach(([strItemKey, arrAnimals]) => {
             var arrVariants = arrAnimals.map(function (x) { return `${strItemKey}_${x}`; });
             arrAnimalsData.push(...arrVariants);
         });
 
-        var arrVariants = objAnimalsData['pet_cosmetic_sets_unlocked'].map(function (x) { return `pets_${x}`; });
+        var arrVariants = objPlayerData['pet_cosmetic_sets_unlocked'].map(function (x) { return `pets_${x}`; });
         arrAnimalsData.push(...arrVariants);
 
-        var arrPetSkins = objAnimalsData['items_acquired'].filter(strItemKey => strItemKey.startsWith("pet_skin_"));
+        var arrPetSkins = objPlayerData['items_acquired'].filter(strItemKey => strItemKey.startsWith("pet_skin_"));
         arrAnimalsData.push(...arrPetSkins);
         return arrAnimalsData;
     } else {
@@ -201,16 +214,12 @@ function extractPerksData(objPlayerData, boolDisabled = false) {
     if (typeof objPlayerData === 'object') {
         var arrPerksData = [];
 
-        Object.entries(objPlayerData['stats']['perks_active']).forEach(([strItemKey, bolActive]) => {
-            if (boolDisabled && bolActive === false) {
-                arrPerksData.push(strItemKey);
-            }
-            if (!boolDisabled && (bolActive === true || bolActive === false)) {
-                arrPerksData.push(strItemKey);
-            }
-        });
+        if (!boolDisabled) {
+            return objPlayerData['perks'];
+        } else {
+            return Object.keys(objPlayerData['stats']['perks_active']).filter(key => objPlayerData['stats']['perks_active'][key] === false);
+        }
 
-        return arrPerksData;
     } else {
         return false;
     }
