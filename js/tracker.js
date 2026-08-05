@@ -392,7 +392,7 @@ function loadScrapedTab(strTab) {
         if ('img_mini' in objCategory.info) {
             $divCategory.find('.category_name').prepend(`
                 <div class="category_img_mini">
-                    <img src="${strImageMiniPath}${objCategory.info.img_mini}.png">
+                    <img src="${strImageMiniPath}${objCategory.info.img_mini}.png?v=2">
                 </div>
             `)
         }
