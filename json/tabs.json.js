@@ -158,6 +158,7 @@ var objTabs =
                             "dragon_forged_horn",
                             "dragon_forged_powder",
                             "sword_dragon_forged",
+                            "engagement_ring",
                             "gold_armor",
                             "axe_gold",
                             "fishing_rod_gold",
@@ -531,6 +532,7 @@ var objTabs =
                             "cucumber",
                             "daikon_radish",
                             "small_grass_starter",
+                            "honeycomb",
                             "lemon",
                             "sapling_oak",
                             "onion",
@@ -856,6 +858,9 @@ var objTabs =
                         "info": {},
                         "items": [
                             "glass_absinthe",
+                            "bonsai_accessory_plant_v1",
+                            "bonsai_accessory_plant_v2",
+                            "bonsai_accessory_plant_v3",
                             "alpaca_plushie",
                             "pirate_anchor_v1",
                             "pirate_anchor_v2",
@@ -904,9 +909,11 @@ var objTabs =
                             "crop_sign_beet",
                             "big_bell",
                             "starter_bird_house_red",
+                            "crystal_resonator_black",
                             "tea_black",
                             "blue_capybara_wall_ribbon",
                             "blue_chicken_wall_ribbon",
+                            "crystal_resonator_blue",
                             "blue_duck_wall_ribbon",
                             "blue_rabbit_wall_ribbon",
                             "spring_festival_basket",
@@ -978,6 +985,7 @@ var objTabs =
                             "dingy_chipped_cup_v1",
                             "dingy_chipped_cup_v2",
                             "crop_sign_chrysanthemum",
+                            "potted_landscape_v1",
                             "haunted_attic_wall_cobweb_left",
                             "haunted_attic_wall_cobweb_right",
                             "glass_cocktail",
@@ -1037,17 +1045,31 @@ var objTabs =
                             "dirt_clear",
                             "dingy_flooring_v1",
                             "dingy_flooring_v2",
+                            "dragon_chest",
                             "dragon_altar_earth",
+                            "dragon_fireplace",
+                            "dragon_lamp",
+                            "dragon_mosaic_flooring",
                             "dragon_priestess_fountain_v1",
+                            "dragon_relief_wallpaper",
+                            "dragon_road_wall",
+                            "dragon_ruins_pillar_v1",
+                            "dragon_ruins_pillar_v2",
+                            "dragon_stained_glass_window_v1",
+                            "dragon_stained_glass_window_v2",
                             "dragon_statue_replica_v1",
+                            "dragon_wall_head_piece",
+                            "dragon_wall_tail_piece",
                             "duck_plushie",
                             "emerald_chair_v1",
                             "emerald_double_bed_v1",
                             "emerald_nightstand_v1",
                             "emerald_rug_v1",
                             "emerald_wallpaper_v1",
+                            "enchantern_lamp_blue",
                             "espresso_cup_v1",
                             "espresso_machine",
+                            "essence_bat_garland_blue",
                             "explorer_bed_beige",
                             "explorer_chair_beige",
                             "explorer_double_bed_beige",
@@ -1065,7 +1087,9 @@ var objTabs =
                             "extra_large_decorative_pumpkin_yellow",
                             "fall_table_cream",
                             "fall_double_bed_cream",
+                            "potted_landscape_v4",
                             "fall_bed_cream",
+                            "potted_landscape_v3",
                             "farm_house_calendar",
                             "crop_faux_ash_mushroom",
                             "crop_faux_basil",
@@ -1182,7 +1206,10 @@ var objTabs =
                             "fishing_table_blue",
                             "fishing_trophy_shelf_blue",
                             "fishing_wallpaper_blue",
+                            "flame_spirit_lamp_orange",
+                            "floating_tome_lamp",
                             "cavern_floor_brazier_blue",
+                            "potted_landscape_v2",
                             "crop_sign_frost_lily",
                             "cooking_frying_pan_v1",
                             "dingy_garbage_bag_v1",
@@ -1193,6 +1220,7 @@ var objTabs =
                             "cavern_crystal_lamp_green",
                             "gold_alpaca_trophy",
                             "gold_cow_trophy",
+                            "crystal_resonator_gold",
                             "gold_floor_mirror",
                             "gold_horse_trophy",
                             "gold_sheep_trophy",
@@ -1203,6 +1231,7 @@ var objTabs =
                             "field_clear",
                             "field_flower",
                             "green_bottle",
+                            "crystal_resonator_green",
                             "tea_green",
                             "gryphon_statue_replica_v1",
                             "kitchen_hanging_onion_basket",
@@ -1231,6 +1260,13 @@ var objTabs =
                             "horse_plushie",
                             "ladder",
                             "stairs",
+                            "incense_burner_blue",
+                            "incense_burner_green",
+                            "incense_burner_purple",
+                            "incense_burner_white",
+                            "incense_stick_v1",
+                            "incense_stick_v2",
+                            "incense_stick_v3",
                             "inn_candle",
                             "inn_counter",
                             "inn_cross_stitch",
@@ -1242,21 +1278,29 @@ var objTabs =
                             "insect_rug_v1",
                             "insect_wallpaper_v1",
                             "crop_sign_iris",
+                            "jadeite_cabbage",
+                            "jadeite_daikon",
                             "crop_sign_jasmine",
                             "kitchen_scale_blue",
                             "ladybug_table_v1",
                             "alda_pot_replica_blue",
+                            "bonsai_large_v2",
                             "large_decorative_pumpkin_black",
                             "large_decorative_pumpkin_green",
                             "large_decorative_pumpkin_orange",
                             "large_decorative_pumpkin_purple",
                             "large_decorative_pumpkin_white",
                             "large_decorative_pumpkin_yellow",
+                            "large_dragon_rug",
+                            "medium_dragon_rug",
                             "large_fluffy_rug_beige",
                             "jar_large",
+                            "bonsai_large_v3",
                             "large_paving_stone_v1",
+                            "bonsai_large_v1",
                             "void_flagstone_large_v1",
                             "water_sprite_statue_large_v1",
+                            "lava_cat_bed_orange",
                             "lava_caves_stone_arch",
                             "lava_caves_flooring",
                             "lava_caves_wallpaper",
@@ -1300,11 +1344,15 @@ var objTabs =
                             "medium_decorative_pumpkin_purple",
                             "medium_decorative_pumpkin_white",
                             "medium_decorative_pumpkin_yellow",
+                            "bonsai_medium_v1",
                             "jar_medium",
+                            "bonsai_medium_v3",
+                            "bonsai_medium_v2",
                             "haunted_attic_candle_single",
                             "haunted_attic_candle_cluster",
                             "mermaid_double_bed_v1",
                             "glass_milk",
+                            "mimic_storage_chest",
                             "miners_minecart_v1",
                             "mines_wooden_arch",
                             "miners_crate_chair_v1",
@@ -1345,6 +1393,7 @@ var objTabs =
                             "mistria_history_book_v1",
                             "mistria_wall_map_v1",
                             "forge_mistril",
+                            "mistril_star_trophy",
                             "kitchen_mixing_bowls_v1",
                             "crop_sign_moon_fruit",
                             "moon_gate_v1",
@@ -1355,6 +1404,7 @@ var objTabs =
                             "mournful_clown_painting",
                             "dingy_mouse_hole_v1",
                             "dingy_mouse_hole_v2",
+                            "mushroom_sofa_blue",
                             "cavern_mushroom_stool_green",
                             "pirate_nautical_compass_v1",
                             "pirate_nautical_compass_v2",
@@ -1371,6 +1421,7 @@ var objTabs =
                             "octopus_plushie",
                             "kitchen_oil_and_vinegar_basket_v1",
                             "crop_sign_onion",
+                            "crystal_resonator_orange",
                             "crop_sign_orange",
                             "crop_sign_oregano",
                             "miners_copper_node",
@@ -1383,13 +1434,38 @@ var objTabs =
                             "miners_ruby_rock",
                             "ornamental_sapphire_rock",
                             "cavern_silver_node",
+                            "ornate_cabinet_v1",
+                            "ornate_cabinet_v2",
+                            "ornate_cabinet_v3",
+                            "ornate_cabinet_v4",
+                            "ornate_coffee_table_v1",
+                            "ornate_coffee_table_v2",
+                            "ornate_coffee_table_v3",
+                            "ornate_coffee_table_v4",
                             "ornate_flagstone_v1",
+                            "ornate_flooring_v1",
+                            "ornate_flooring_v2",
+                            "ornate_flooring_v3",
+                            "ornate_flooring_v4",
                             "ornate_rug_large_rectangle_blue",
                             "ornate_rug_large_round_blue",
                             "ornate_rug_large_square_blue",
                             "ornate_rug_medium_round_blue",
                             "ornate_rug_medium_square_blue",
+                            "ornate_privacy_screen_v1",
+                            "ornate_privacy_screen_v2",
+                            "ornate_privacy_screen_v3",
+                            "ornate_privacy_screen_v4",
+                            "ornate_privacy_screen_v5",
                             "ornate_rug_small_blue",
+                            "ornate_vase_blue",
+                            "ornate_vase_green",
+                            "ornate_vase_purple",
+                            "ornate_vase_white",
+                            "ornate_wallpaper_v1",
+                            "ornate_wallpaper_v2",
+                            "ornate_wallpaper_v3",
+                            "ornate_wallpaper_v4",
                             "jar_pair",
                             "paper_stack",
                             "crop_sign_peach",
@@ -1410,6 +1486,7 @@ var objTabs =
                             "dingy_pile_of_laundry_v2",
                             "dingy_pile_of_newspapers_v1",
                             "dingy_pile_of_newspapers_v2",
+                            "crystal_resonator_pink",
                             "pirate_wall_flag_v1",
                             "pirate_wall_flag_v2",
                             "crop_sign_poinsettia",
@@ -1424,9 +1501,11 @@ var objTabs =
                             "pumpkin_pile_white",
                             "pumpkin_pile_yellow",
                             "crop_sign_pumpkin",
+                            "crystal_resonator_purple",
                             "rabbit_plushie",
                             "red_capybara_wall_ribbon",
                             "red_chicken_wall_ribbon",
+                            "crystal_resonator_red",
                             "red_duck_wall_ribbon",
                             "red_rabbit_wall_ribbon",
                             "wine_glass_red",
@@ -1538,7 +1617,9 @@ var objTabs =
                             "crop_sign_rice",
                             "dingy_table_v1",
                             "dingy_table_v2",
+                            "rock_clod_garden_brown",
                             "cavern_rock_flooring",
+                            "rock_stack_shelf",
                             "cavern_rock_wallpaper",
                             "wine_glass_rose",
                             "crop_sign_rosemary",
@@ -1575,15 +1656,30 @@ var objTabs =
                             "crop_sign_sage",
                             "kitchen_salt_and_pepper_shakers",
                             "sand_rug",
+                            "sapling_beanbag_chair_blue",
                             "starter_scarecrow",
                             "sheep_plushie",
                             "pirate_ship_in_a_bottle_v1",
                             "pirate_ship_in_a_bottle_v2",
                             "starter_shipping_box",
+                            "bonsai_low_cabinet_black",
+                            "bonsai_low_cabinet_brown",
+                            "bonsai_low_cabinet_light_brown",
+                            "bonsai_low_cabinet_white",
+                            "bonsai_low_stand_black",
+                            "bonsai_low_stand_brown",
+                            "bonsai_low_stand_light_brown",
+                            "bonsai_low_stand_white",
+                            "bonsai_low_table_black",
+                            "bonsai_low_table_brown",
+                            "bonsai_low_table_light_brown",
+                            "bonsai_low_table_white",
                             "silver_alpaca_trophy",
                             "silver_cow_trophy",
+                            "crystal_resonator_silver",
                             "silver_horse_trophy",
                             "silver_sheep_trophy",
+                            "bonsai_small_v2",
                             "small_bathmat_beige",
                             "box_small_v1",
                             "small_decorative_pumpkin_black",
@@ -1593,6 +1689,9 @@ var objTabs =
                             "small_decorative_pumpkin_white",
                             "small_decorative_pumpkin_yellow",
                             "jar_small",
+                            "bonsai_small_v4",
+                            "bonsai_small_v3",
+                            "bonsai_small_v1",
                             "small_vase_v1",
                             "void_flagstone_small_v1",
                             "crop_sign_snapdragon",
@@ -1608,6 +1707,7 @@ var objTabs =
                             "spring_wallpaper_orange",
                             "square_tile_floor",
                             "cavern_stone_arch",
+                            "stalagmite_tile_blue",
                             "star_cushion_blue",
                             "star_lantern_blue",
                             "star_viewing_blanket_blue",
@@ -1622,6 +1722,8 @@ var objTabs =
                             "stone_storage_chest_v1",
                             "stone_table_v1",
                             "stone_wall",
+                            "strange_garden_stone_v1",
+                            "strange_garden_stone_v2",
                             "crop_sign_strawberry",
                             "crop_sign_sugar_cane",
                             "summer_bed_red",
@@ -1635,6 +1737,11 @@ var objTabs =
                             "summit_wallpaper_v1",
                             "crop_sign_sunflower",
                             "crop_sign_sweet_potato",
+                            "bonsai_high_stand_black",
+                            "bonsai_high_stand_brown",
+                            "bonsai_high_stand_light_brown",
+                            "bonsai_high_stand_white",
+                            "dragon_talon_chair",
                             "dingy_rug_v1",
                             "dingy_rug_v2",
                             "cooking_tea_kettle_v1",
@@ -1654,8 +1761,10 @@ var objTabs =
                             "kitchen_utensil_holder_blue",
                             "crop_sign_viola",
                             "void_bonsai_v1",
+                            "crystal_resonator_void",
                             "void_fireplace_v1",
                             "void_flooring_v1",
+                            "void_gryphon_statue_blue",
                             "void_lamp_v1",
                             "void_storage_chest_v1",
                             "void_throne_one_v1",
@@ -1663,6 +1772,8 @@ var objTabs =
                             "void_wallpaper_v1",
                             "void_window_v1",
                             "cavern_wall_brazier_blue",
+                            "dragon_water_altar_v1",
+                            "dragon_water_altar_v2",
                             "glass_water",
                             "water_sprite_statue_v1",
                             "starter_well",
@@ -1844,6 +1955,43 @@ var objTabs =
                             "animal_currency",
                             "ultimate_hay",
                             "ultimate_small_animal_feed"
+                        ]
+                    }
+                }
+            },
+            "song_crystal": {
+                "info": {
+                    "name": "Song Crystals",
+                    "img_mini": "song_crystal",
+                    "wikilink": "Song Crystals",
+                    "lategame": 1
+                },
+                "subcategories": {
+                    "0": {
+                        "info": {},
+                        "items": [
+                            "song_crystal_adelines_theme",
+                            "song_crystal_another_tower",
+                            "song_crystal_balors_theme",
+                            "song_crystal_caldarus_theme",
+                            "song_crystal_celines_theme",
+                            "song_crystal_crystal_caves",
+                            "song_crystal_dream_lobby",
+                            "song_crystal_eilands_theme",
+                            "song_crystal_farm_boy",
+                            "song_crystal_five_more_minutes",
+                            "song_crystal_haydens_theme",
+                            "song_crystal_heros_journey",
+                            "song_crystal_junipers_theme",
+                            "song_crystal_marchs_theme",
+                            "song_crystal_misty_pasture",
+                            "song_crystal_pink_twintails",
+                            "song_crystal_purple_potions",
+                            "song_crystal_rainy_window",
+                            "song_crystal_reinas_theme",
+                            "song_crystal_ryis_theme",
+                            "song_crystal_seridias_theme",
+                            "song_crystal_valens_theme"
                         ]
                     }
                 }
@@ -2066,7 +2214,9 @@ var objTabs =
                         "items": [
                             "horse_spotted",
                             "horse_sandy_bay",
-                            "horse_champagne"
+                            "horse_champagne",
+                            "horse_giant_chicken_white",
+                            "horse_giant_chicken_gold"
                         ]
                     },
                     "2": {
@@ -2657,10 +2807,20 @@ var objTabs =
                             "img_item_path": "items/"
                         },
                         "items": [
+                            "pet_skin_sapling",
                             "pet_skin_mushroom",
                             "pet_skin_rockclod",
                             "pet_skin_oreclod",
-                            "pet_skin_sapling"
+                            "pet_skin_stalagmite",
+                            "pet_skin_lava_cat",
+                            "pet_skin_void_cat",
+                            "pet_skin_flame_spirit",
+                            "pet_skin_rock_stack",
+                            "pet_skin_gryphon_statue",
+                            "pet_skin_flying_tome",
+                            "pet_skin_essence_bat",
+                            "pet_skin_enchantern",
+                            "pet_skin_mimic"
                         ]
                     }
                 }
@@ -2689,135 +2849,42 @@ var objTabs =
                             "name": "Hats",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "head_baseball_cap",
-                            "head_beekeeper_hat",
-                            "head_beret",
-                            "head_berry_hat",
-                            "head_cap_basic",
-                            "head_caldosian_hat",
-                            "head_cherry_beret",
-                            "head_cowboy_hat_basic",
-                            "head_enchantern_hat",
-                            "head_essence_bat_hat",
-                            "head_explorer_hat",
-                            "head_farmer_cap",
-                            "head_fishing_hat",
-                            "head_flame_spirit_hat",
-                            "head_flower_hat",
-                            "head_flower_top_hat",
-                            "head_flying_tome_hat",
-                            "head_griffin_statue_hat",
-                            "head_hunter_hat",
-                            "head_lava_cat_hat",
-                            "head_lemon_beret",
-                            "head_miners_helmet",
-                            "head_mimic_hat",
-                            "head_mushroom_hat",
-                            "head_noble_hat",
-                            "head_oreclod_hat",
-                            "head_pumpkin_beanie",
-                            "head_rain_hat",
-                            "head_rockclod_hat",
-                            "head_rock_stack_hat",
-                            "head_sapling_hat",
-                            "head_stalagmite_hat",
-                            "head_strawberry_beret",
-                            "head_striped_bucket_hat",
-                            "head_sunhat_straw",
-                            "head_void_cat_hat",
-                            "head_winter_beanie",
-                            "head_witch_hat",
-                            "head_barrel_roller_hat"
-                        ]
+                        "items": []
                     },
                     "hair_accessory": {
                         "info": {
                             "name": "Hair Accessories",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "head_bandana",
-                            "head_clips_angel_wing",
-                            "head_clips_bat_wing",
-                            "head_clips_fin",
-                            "head_clips_moon",
-                            "head_clips_heart",
-                            "head_clips_star",
-                            "head_clips_strawberry",
-                            "head_dancer_flower",
-                            "head_headband_basic",
-                            "head_paisley_bandana",
-                            "head_ranger_leaves",
-                            "head_ribbons_basic",
-                            "head_short_bow",
-                            "head_striped_bow"
-                        ]
+                        "items": []
                     },
                     "helmet": {
                         "info": {
                             "name": "Helmets",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "head_cloth_helmet",
-                            "head_scrap_metal_helmet",
-                            "head_copper_helmet",
-                            "head_verdigris_helmet",
-                            "head_iron_helmet",
-                            "head_crystal_helmet",
-                            "head_silver_helmet",
-                            "head_tarnished_gold_helmet",
-                            "head_gold_helmet",
-                            "head_corrupted_mistril_helmet",
-                            "head_mistril_helmet",
-                            "head_dragonsworn_helmet"
-                        ]
+                        "items": []
                     },
                     "crown": {
                         "info": {
                             "name": "Crowns",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "head_ancient_witch_tiara",
-                            "head_berry_crown",
-                            "head_circlet_earth",
-                            "head_crown",
-                            "head_crown_tide",
-                            "head_dark_regent_crown",
-                            "head_exalted_crown",
-                            "head_dragon_cleric_diadem",
-                            "head_flower_crown",
-                            "head_halo",
-                            "head_special_flower_crown"
-                        ]
+                        "items": []
+                    },
+                    "head_gear_wedding": {
+                        "info": {
+                            "name": "Wedding Accessories",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": []
                     },
                     "head_gear_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "head_adventurer_hood",
-                            "head_aviator_goggles",
-                            "head_bunny_ears",
-                            "head_cat_ears",
-                            "head_devil_horns",
-                            "head_ear_muffs",
-                            "head_fighter_headband",
-                            "head_fire_hood",
-                            "head_floating_cloud_headpiece",
-                            "head_hijab",
-                            "head_lily_pad",
-                            "head_mini_horns",
-                            "head_rogue_hood",
-                            "head_skull_mask",
-                            "head_soup_pot",
-                            "head_sprout_hat",
-                            "head_tangerine",
-                            "head_teapot"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -2834,36 +2901,21 @@ var objTabs =
                             "name": "Glasses",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "face_gear_glasses",
-                            "face_gear_reading_glasses",
-                            "face_gear_reading_glasses_small",
-                            "face_gear_sunglasses"
-                        ]
+                        "items": []
                     },
                     "ear_accessory": {
                         "info": {
                             "name": "Ear Accessories",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "face_gear_caldosian_moon_earrings",
-                            "face_gear_dragon_cleric_earrings",
-                            "face_gear_flower_earrings",
-                            "face_gear_hoop_earrings",
-                            "face_gear_pumpkin_earrings",
-                            "face_gear_stud_earrings"
-                        ]
+                        "items": []
                     },
                     "face_accessory": {
                         "info": {
                             "name": "Face Accessory",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "face_gear_blush",
-                            "face_gear_face_mask"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -2880,74 +2932,21 @@ var objTabs =
                             "name": "Short Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "hair_afro_puffs",
-                            "hair_buzzcut",
-                            "hair_cowlick",
-                            "hair_curly_short",
-                            "hair_curly_shorter",
-                            "hair_fade",
-                            "hair_mushroom",
-                            "hair_parted_mushroom",
-                            "hair_pixie",
-                            "hair_short_parted_straight",
-                            "hair_short_parted_curls",
-                            "hair_straight_buns_fringed",
-                            "hair_straight_pompadour",
-                            "hair_straight_shaved_side",
-                            "hair_textured_buzzcut"
-                        ]
+                        "items": []
                     },
                     "medium_hair": {
                         "info": {
                             "name": "Medium Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "hair_afro",
-                            "hair_blown_out_twist",
-                            "hair_curly_high_top",
-                            "hair_curly_medium",
-                            "hair_curly_medium_fringe",
-                            "hair_curly_pompadour",
-                            "hair_curly_shaved_side",
-                            "hair_medium_boyish",
-                            "hair_medium_half_bun",
-                            "hair_medium_half_bun_fringe",
-                            "hair_medium_pigtails",
-                            "hair_mohawk",
-                            "hair_rounded_afro",
-                            "hair_shaggy_bob",
-                            "hair_straight_medium",
-                            "hair_straight_medium_ponytail",
-                            "hair_straight_medium_ponytail_fluffy_bangs",
-                            "hair_wavy_medium",
-                            "hair_wavy_medium_twin_buns",
-                            "hair_wavy_medium_fringed",
-                            "hair_wavy_rugged"
-                        ]
+                        "items": []
                     },
                     "long_hair": {
                         "info": {
                             "name": "Long Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "hair_braided_pigtails",
-                            "hair_curly_updo",
-                            "hair_dreadlocks_bun",
-                            "hair_dreadlocks_long",
-                            "hair_dreadlock_twin_buns",
-                            "hair_straight_long",
-                            "hair_straight_long_bun",
-                            "hair_straight_long_fringed",
-                            "hair_straight_long_tucked",
-                            "hair_straight_long_twin_buns",
-                            "hair_wavy_long",
-                            "hair_wavy_long_fringed",
-                            "hair_wavy_long_ponytail",
-                            "hair_wavy_long_twin_buns"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -2964,15 +2963,7 @@ var objTabs =
                             "name": "Facial Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "beard_basic",
-                            "beard_thick",
-                            "facial_hair_handlebar_moustache",
-                            "facial_hair_moustache",
-                            "facial_hair_short_beard",
-                            "facial_hair_soul_patch",
-                            "facial_hair_stubble"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -2989,129 +2980,70 @@ var objTabs =
                             "name": "Sleeveless Tops",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "top_cami",
-                            "top_halter_bikini",
-                            "top_tanktop",
-                            "top_tanktop_buttons",
-                            "underwear_tank"
-                        ]
+                        "items": []
                     },
                     "short_sleeve": {
                         "info": {
                             "name": "Short Sleeved Tops",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "top_dancer",
-                            "top_ranger",
-                            "top_tee_basic",
-                            "top_tee_oversized",
-                            "top_tee_ringer_basic"
-                        ]
+                        "items": []
                     },
                     "long_sleeve": {
                         "info": {
                             "name": "Long Sleeved Tops",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "top_adventurer",
-                            "top_ancient_witch",
-                            "top_fishing_vest",
-                            "top_exalted",
-                            "top_long_sleeve_baseball",
-                            "top_long_sleeve_basic",
-                            "top_long_sleeve_basic_cropped",
-                            "top_long_sleeve_beekeeper",
-                            "top_long_sleeve_striped",
-                            "top_plaid_flannel",
-                            "top_rogue"
-                        ]
+                        "items": []
                     },
                     "jacket": {
                         "info": {
                             "name": "Jackets",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "top_cropped_puff_jacket",
-                            "top_explorer",
-                            "top_jacket_and_tee_basic",
-                            "top_noble_jacket",
-                            "top_puff_jacket",
-                            "top_wool_lined_jacket"
-                        ]
+                        "items": []
                     },
                     "dress": {
                         "info": {
                             "name": "Dresses",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "dress_berry",
-                            "dress_court",
-                            "dress_maid",
-                            "dress_modest",
-                            "dress_sleeveless_basic",
-                            "dress_spring_festival"
-                        ]
+                        "items": []
                     },
                     "robe": {
                         "info": {
                             "name": "Robes and Coats",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "robe_dark_regent",
-                            "robe_dragon_cleric",
-                            "robe_earth",
-                            "robe_fire",
-                            "robe_tide",
-                            "top_caldosian_overcoat",
-                            "top_noble_tunic",
-                            "top_ranger_jacket"
-                        ]
+                        "items": []
                     },
                     "suit": {
                         "info": {
                             "name": "Suits",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "suit_berry",
-                            "suit_court",
-                            "suit_spring_festival",
-                            "suit_miner",
-                            "suit_halter_bikini_set"
-                        ]
+                        "items": []
+                    },
+                    "wedding_dress": {
+                        "info": {
+                            "name": "Wedding Dresses",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": []
+                    },
+                    "wedding_suit": {
+                        "info": {
+                            "name": "Wedding Suits",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": []
                     },
                     "top_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "overalls_basic",
-                            "overalls_farmer",
-                            "overalls_shorts",
-                            "overalls_skirt",
-                            "top_hunter",
-                            "underwear_bra",
-                            "underwear_bra_small",
-                            "top_cloth_armor",
-                            "top_scrap_metal",
-                            "top_copper_armor",
-                            "top_verdigris_armor",
-                            "top_iron_armor",
-                            "top_crystal_armor",
-                            "top_silver_armor",
-                            "top_tarnished_gold_armor",
-                            "top_gold_armor",
-                            "top_corrupted_mistril",
-                            "top_mistril",
-                            "top_dragonsworn_armor"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -3128,65 +3060,28 @@ var objTabs =
                             "name": "Pants",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "pants_adventurer",
-                            "pants_basic",
-                            "pants_beekeeper",
-                            "pants_exalted",
-                            "pants_explorer",
-                            "pants_hunter",
-                            "pants_rogue"
-                        ]
+                        "items": []
                     },
                     "shorts": {
                         "info": {
                             "name": "Shorts",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "shorts_basic",
-                            "shorts_fishing",
-                            "shorts_swimtrunks",
-                            "underwear_bottoms_polkadot",
-                            "underwear_briefs",
-                            "underwear_shorts"
-                        ]
+                        "items": []
                     },
                     "skirt": {
                         "info": {
                             "name": "Skirts",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "skirt_ancient_witch",
-                            "skirt_dancer",
-                            "skirt_long_basic",
-                            "skirt_long_scalloped",
-                            "skirt_maid",
-                            "skirt_pleated_medium",
-                            "skirt_pleated_short",
-                            "skirt_short_basic"
-                        ]
+                        "items": []
                     },
                     "bottom_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "pants_cloth_armor",
-                            "pants_scrap_metal",
-                            "pants_copper_armor",
-                            "pants_verdigris_armor",
-                            "pants_iron_armor",
-                            "pants_crystal_armor",
-                            "pants_silver_armor",
-                            "pants_tarnished_gold_armor",
-                            "pants_gold_armor",
-                            "pants_corrupted_mistril",
-                            "pants_mistril",
-                            "pants_dragonsworn_armor"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -3203,70 +3098,35 @@ var objTabs =
                             "name": "Boots",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "shoes_boots",
-                            "shoes_boots_adventurer",
-                            "shoes_boots_ancient_witch",
-                            "shoes_boots_beekeeper",
-                            "shoes_boots_caldosian",
-                            "shoes_boots_dark_regent",
-                            "shoes_boots_exalted",
-                            "shoes_boots_explorer",
-                            "shoes_boots_fire",
-                            "shoes_boots_hunter",
-                            "shoes_boots_noble",
-                            "shoes_boots_pirate",
-                            "shoes_boots_ranger",
-                            "shoes_boots_rogue",
-                            "shoes_boots_farmer",
-                            "shoes_boots_fishing",
-                            "shoes_boots_miner",
-                            "shoes_boots_pumpkin",
-                            "shoes_boots_short_basic",
-                            "shoes_boots_work"
-                        ]
+                        "items": []
                     },
                     "shoes": {
                         "info": {
                             "name": "Shoes",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "shoes_sneakers_basic"
-                        ]
+                        "items": []
                     },
                     "sandals": {
                         "info": {
                             "name": "Sandals",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "shoes_sandals_earth",
-                            "shoes_sandals_tide",
-                            "shoes_sandals_worn"
-                        ]
+                        "items": []
+                    },
+                    "shoes_wedding": {
+                        "info": {
+                            "name": "Wedding Shoes",
+                            "wikilink": "Cosmetics"
+                        },
+                        "items": []
                     },
                     "feet_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "shoes_boots_dragon_cleric",
-                            "shoes_dressy_stockings",
-                            "shoes_boots_cloth_armor",
-                            "shoes_boots_scrap_metal",
-                            "shoes_boots_copper_armor",
-                            "shoes_boots_verdigris_armor",
-                            "shoes_boots_iron_armor",
-                            "shoes_boots_crystal_armor",
-                            "shoes_boots_silver_armor",
-                            "shoes_boots_tarnished_gold_armor",
-                            "shoes_boots_gold_armor",
-                            "shoes_boots_corrupted_mistril",
-                            "shoes_boots_mistril",
-                            "shoes_boots_dragonsworn_armor"
-                        ]
+                        "items": []
                     }
                 }
             },
@@ -3283,59 +3143,21 @@ var objTabs =
                             "name": "Backpacks",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "back_gear_basic_backpack",
-                            "back_gear_cabbage_backpack",
-                            "back_gear_cauliflower_backpack",
-                            "back_gear_cloud_backpack",
-                            "back_gear_daikon_radish_backpack",
-                            "back_gear_daisy_backpack",
-                            "back_gear_frost_lily_backpack",
-                            "back_gear_jasmine_backpack",
-                            "back_gear_onion_backpack",
-                            "back_gear_pumpkin_backpack",
-                            "back_gear_snowdrop_anemone_backpack",
-                            "back_gear_strawberry_backpack",
-                            "back_gear_turnip_backpack",
-                            "back_gear_sunflower_backpack",
-                            "back_gear_sweet_potato_backpack",
-                            "back_gear_tomato_backpack",
-                            "back_gear_watermelon_backpack",
-                            "back_gear_wheat_backpack"
-                        ]
+                        "items": []
                     },
                     "capes": {
                         "info": {
                             "name": "Capes",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "back_gear_basic_cape",
-                            "back_gear_dark_regent_cape",
-                            "back_gear_dragon_cleric_cape",
-                            "back_gear_fire_cloak",
-                            "back_gear_fish_scale_cape",
-                            "back_gear_exalted_cloak",
-                            "back_gear_hunter_cape",
-                            "back_gear_noble_cape",
-                            "back_gear_rogue_cape",
-                            "back_gear_dragonsworn_cloak"
-                        ]
+                        "items": []
                     },
                     "back_gear_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": [
-                            "back_gear_ancient_witch_broom",
-                            "back_gear_butterfly_wings",
-                            "back_gear_hunter_bow",
-                            "back_gear_mini_wings",
-                            "back_gear_ornate_round_shield",
-                            "back_gear_ornate_shield",
-                            "back_gear_sheathed_sword"
-                        ]
+                        "items": []
                     }
                 }
             }
@@ -4843,8 +4665,6 @@ var objTabs =
                     "img_mini": "Stillwell",
                     "wikilink": "Stillwell",
                     "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Winter 27</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
-                    "spoiler": 1,
-                    "noimage": 1,
                     "lategame": 1
                 },
                 "subcategories": {
@@ -4853,18 +4673,26 @@ var objTabs =
                             "name": "Liked"
                         },
                         "items": [
-                            "glass",
-                            "muttering_cube",
-                            "crystal",
-                            "night_queen",
-                            "shardfin",
-                            "shadow_flower",
-                            "crystal_rose",
-                            "red_toadstool",
-                            "middlemist",
-                            "crystal_wing_moth",
+                            "caramelized_moon_fruit",
                             "coffee",
-                            "cup_of_tea"
+                            "crystal",
+                            "crystal_berries",
+                            "crystal_rose",
+                            "crystal_wing_moth",
+                            "crystal_caterpillar",
+                            "crystalline_cricket",
+                            "monster_cookie",
+                            "obsidian",
+                            "voidite",
+                            "monster_mash",
+                            "moon_fruit",
+                            "moon_fruit_cake",
+                            "muttering_cube",
+                            "night_queen",
+                            "poached_pear",
+                            "rose",
+                            "shadow_flower",
+                            "spell_fruit"
                         ]
                     },
                     "loved": {
@@ -4872,10 +4700,16 @@ var objTabs =
                             "name": "Loved"
                         },
                         "items": [
-                            "fog_orchid",
+                            "ancient_crystal_goblet",
                             "black_tablet",
+                            "crystal_apple",
+                            "crystal_berry_pie",
+                            "fog_orchid",
+                            "red_wine",
+                            "spell_fruit_parfait",
                             "weightless_stone",
-                            "red_wine"
+                            "fire_crystal",
+                            "completely_wrong_map"
                         ]
                     }
                 }
@@ -5162,8 +4996,6 @@ var objTabs =
                     "img_mini": "Zorel",
                     "wikilink": "Zorel",
                     "tip": "<span><img loading=\"lazy\" src=\"images/tooltip/Calendar_icon_birthday.png\"/> Spring 6</span> <br> <span><img loading=\"lazy\" src=\"images/tooltip/20px-Quests_heart_icon.png\"/> Non-Romanceable</span>",
-                    "spoiler": 1,
-                    "noimage": 1,
                     "lategame": 1
                 },
                 "subcategories": {
@@ -6235,6 +6067,19 @@ var objTabs =
                             "moonlight_bee"
                         ]
                     },
+                    "honey": {
+                        "info": {
+                            "name": "Honey Set",
+                            "wikilink": "Insects_Wing#Honey"
+                        },
+                        "items": [
+                            "honey",
+                            "honey_premium",
+                            "honey_deluxe",
+                            "honey_legendary",
+                            "honeycomb"
+                        ]
+                    },
                     "bug_pheromone": {
                         "info": {
                             "name": "Bug Pheromone Set",
@@ -6246,6 +6091,19 @@ var objTabs =
                             "saint_mantis",
                             "queens_birdwing",
                             "biggest_beetle"
+                        ]
+                    },
+                    "terrarium": {
+                        "info": {
+                            "name": "Terrarium Treasures",
+                            "wikilink": "Insects_Wing#Terrarium_Treasures"
+                        },
+                        "items": [
+                            "bug_pheromone_uncommon",
+                            "bug_pheromone_rare",
+                            "bug_pheromone_legendary",
+                            "fish_bait_uncommon",
+                            "fish_bait_rare"
                         ]
                     },
                     "grass": {
@@ -6563,7 +6421,8 @@ var objTabs =
                             "wikilink": "Skills#Cooking"
                         },
                         "items": [
-                            "fairy_cooking"
+                            "fairy_cooking",
+                            "espresso_yourself"
                         ]
                     }
                 }
@@ -6620,7 +6479,19 @@ var objTabs =
                         "items": [
                             "the_bell_tolls",
                             "maximum_milling",
-                            "barnyard_bounty_three"
+                            "barnyard_bounty_three",
+                            "playtime"
+                        ]
+                    },
+                    "5": {
+                        "info": {
+                            "name": "Tier 5",
+                            "wikilink": "Skills#Ranching"
+                        },
+                        "items": [
+                            "eggstra",
+                            "close_bond_two",
+                            "true_trust"
                         ]
                     }
                 }
@@ -6688,7 +6559,9 @@ var objTabs =
                         },
                         "items": [
                             "void_crafting",
-                            "big_water_sprites"
+                            "big_water_sprites",
+                            "hammer_timing_four",
+                            "deliberate_debris_two"
                         ]
                     }
                 }
@@ -7960,6 +7833,43 @@ var objTabs =
                     },
                     "38": {
                         "info": {
+                            "name": "Monster Set",
+                            "wikilink": "Woodcrafting#Monster_Set"
+                        },
+                        "items": [
+                            "enchantern_lamp_blue",
+                            "enchantern_lamp_yellow",
+                            "essence_bat_garland_blue",
+                            "essence_bat_garland_purple",
+                            "flame_spirit_lamp_orange",
+                            "flame_spirit_lamp_purple",
+                            "floating_tome_lamp",
+                            "lava_cat_bed_orange",
+                            "lava_cat_bed_void",
+                            "mimic_storage_chest",
+                            "mushroom_sofa_blue",
+                            "mushroom_sofa_green",
+                            "mushroom_sofa_purple",
+                            "mushroom_sofa_red",
+                            "rock_clod_garden_brown",
+                            "rock_clod_garden_green",
+                            "rock_clod_garden_navy",
+                            "rock_clod_garden_red",
+                            "rock_stack_shelf",
+                            "sapling_beanbag_chair_blue",
+                            "sapling_beanbag_chair_green",
+                            "sapling_beanbag_chair_orange",
+                            "sapling_beanbag_chair_pink",
+                            "sapling_beanbag_chair_purple",
+                            "stalagmite_tile_blue",
+                            "stalagmite_tile_green",
+                            "stalagmite_tile_purple",
+                            "void_gryphon_statue_blue",
+                            "void_gryphon_statue_purple"
+                        ]
+                    },
+                    "39": {
+                        "info": {
                             "name": "Ornate Rug Set",
                             "wikilink": "Woodcrafting#Ornate_Rug_Set"
                         },
@@ -7984,7 +7894,7 @@ var objTabs =
                             "ornate_rug_small_red"
                         ]
                     },
-                    "39": {
+                    "40": {
                         "info": {
                             "name": "Paving Stone Set",
                             "wikilink": "Woodcrafting#Paving_Stone_Set"
@@ -8034,7 +7944,7 @@ var objTabs =
                             "color_paving_stone_v42"
                         ]
                     },
-                    "40": {
+                    "41": {
                         "info": {
                             "name": "Picnic Decor Set",
                             "wikilink": "Woodcrafting#Picnic_Decor_Set"
@@ -8060,7 +7970,7 @@ var objTabs =
                             "picnic_sunflower_vase_yellow"
                         ]
                     },
-                    "41": {
+                    "42": {
                         "info": {
                             "name": "Ruins Set",
                             "wikilink": "Woodcrafting#Ruins_Set"
@@ -8090,7 +8000,7 @@ var objTabs =
                             "ruins_window_v3"
                         ]
                     },
-                    "42": {
+                    "43": {
                         "info": {
                             "name": "Rustic Cabin Set",
                             "wikilink": "Woodcrafting#Rustic_Cabin_Set"
@@ -8139,7 +8049,7 @@ var objTabs =
                             "cabin_wall_window_walnut"
                         ]
                     },
-                    "43": {
+                    "44": {
                         "info": {
                             "name": "Shooting Star Set",
                             "wikilink": "Woodcrafting#Shooting_Star_Set"
@@ -8162,7 +8072,7 @@ var objTabs =
                             "star_viewing_blanket_yellow"
                         ]
                     },
-                    "44": {
+                    "45": {
                         "info": {
                             "name": "Spring Set",
                             "wikilink": "Woodcrafting#Spring_Set"
@@ -8194,7 +8104,7 @@ var objTabs =
                             "spring_wallpaper_purple"
                         ]
                     },
-                    "45": {
+                    "46": {
                         "info": {
                             "name": "Starter Farm Set",
                             "wikilink": "Woodcrafting#Starter_Farm_Set"
@@ -8225,7 +8135,7 @@ var objTabs =
                             "starter_wood_fence"
                         ]
                     },
-                    "46": {
+                    "47": {
                         "info": {
                             "name": "Stone Garden Set",
                             "wikilink": "Woodcrafting#Stone_Garden_Set"
@@ -8248,7 +8158,7 @@ var objTabs =
                             "stone_table_v3"
                         ]
                     },
-                    "47": {
+                    "48": {
                         "info": {
                             "name": "Summer Set",
                             "wikilink": "Woodcrafting#Summer_Set"
@@ -8272,7 +8182,7 @@ var objTabs =
                             "summer_wallpaper_yellow"
                         ]
                     },
-                    "48": {
+                    "49": {
                         "info": {
                             "name": "Tabletop Clutter Set",
                             "wikilink": "Woodcrafting#Tabletop_Clutter_Set"
@@ -8316,7 +8226,7 @@ var objTabs =
                             "wine_glass_white"
                         ]
                     },
-                    "49": {
+                    "50": {
                         "info": {
                             "name": "Tide Set",
                             "wikilink": "Woodcrafting#Tide_Set"
@@ -8338,7 +8248,7 @@ var objTabs =
                             "tide_touched_cavern_wall"
                         ]
                     },
-                    "50": {
+                    "51": {
                         "info": {
                             "name": "Training Dummy Set",
                             "wikilink": "Woodcrafting#Training_Dummy_Set"
@@ -8349,7 +8259,7 @@ var objTabs =
                             "training_dummy_sapling"
                         ]
                     },
-                    "51": {
+                    "52": {
                         "info": {
                             "name": "Void Set",
                             "wikilink": "Woodcrafting#Void_Set"
@@ -8377,7 +8287,7 @@ var objTabs =
                             "void_window_v2"
                         ]
                     },
-                    "52": {
+                    "53": {
                         "info": {
                             "name": "Witch Queen Set",
                             "wikilink": "Woodcrafting#Witch_Queen_Set"
@@ -8411,7 +8321,7 @@ var objTabs =
                             "witch_queen_wallpaper_v2"
                         ]
                     },
-                    "53": {
+                    "54": {
                         "info": {
                             "name": "Worn Set",
                             "wikilink": "Woodcrafting#Worn_Set"

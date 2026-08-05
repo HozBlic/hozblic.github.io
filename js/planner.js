@@ -2134,6 +2134,7 @@ async function loadMenuItems() {
         }
     }, 150);
     $('#side_menu #title .version').text(`v${objBuild.version}`);
+    $('#side_menu #title .version').text(`v0.16.5`);
     $('#cancel_search').on('click', function (e) {
         $('#search_items').val('');
         $('#search_items').trigger('keyup');
