@@ -32,6 +32,10 @@ var objChangelog =
             ],
         },
         {
+            "date": "05/08/2026",
+            "info": ["added v1.0.0 content"],
+        },
+        {
             "date": "28/06/2026",
             "info": ["item database table", "new engine support"],
         },
