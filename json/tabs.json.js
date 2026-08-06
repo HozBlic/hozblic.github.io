@@ -2866,42 +2866,149 @@ var objTabs =
                             "name": "Hats",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "head_baseball_cap",
+                            "head_beekeeper_hat",
+                            "head_beret",
+                            "head_berry_hat",
+                            "head_cap_basic",
+                            "head_caldosian_hat",
+                            "head_cherry_beret",
+                            "head_cowboy_hat_basic",
+                            "head_enchantern_hat",
+                            "head_essence_bat_hat",
+                            "head_explorer_hat",
+                            "head_farmer_cap",
+                            "head_fishing_hat",
+                            "head_flame_spirit_hat",
+                            "head_flower_hat",
+                            "head_flower_top_hat",
+                            "head_flying_tome_hat",
+                            "head_griffin_statue_hat",
+                            "head_hunter_hat",
+                            "head_lava_cat_hat",
+                            "head_lemon_beret",
+                            "head_miners_helmet",
+                            "head_mimic_hat",
+                            "head_mushroom_hat",
+                            "head_noble_hat",
+                            "head_oreclod_hat",
+                            "head_pumpkin_beanie",
+                            "head_rain_hat",
+                            "head_rockclod_hat",
+                            "head_rock_stack_hat",
+                            "head_sapling_hat",
+                            "head_stalagmite_hat",
+                            "head_strawberry_beret",
+                            "head_striped_bucket_hat",
+                            "head_sunhat_straw",
+                            "head_void_cat_hat",
+                            "head_winter_beanie",
+                            "head_witch_hat",
+                            "head_barrel_roller_hat"
+                        ]
                     },
                     "hair_accessory": {
                         "info": {
                             "name": "Hair Accessories",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "head_bandana",
+                            "head_clips_angel_wing",
+                            "head_clips_bat_wing",
+                            "head_clips_fin",
+                            "head_clips_moon",
+                            "head_clips_heart",
+                            "head_clips_star",
+                            "head_clips_strawberry",
+                            "head_dancer_flower",
+                            "head_headband_basic",
+                            "head_paisley_bandana",
+                            "head_ranger_leaves",
+                            "head_ribbons_basic",
+                            "head_short_bow",
+                            "head_striped_bow"
+                        ]
                     },
                     "helmet": {
                         "info": {
                             "name": "Helmets",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "head_cloth_helmet",
+                            "head_scrap_metal_helmet",
+                            "head_copper_helmet",
+                            "head_verdigris_helmet",
+                            "head_iron_helmet",
+                            "head_crystal_helmet",
+                            "head_silver_helmet",
+                            "head_tarnished_gold_helmet",
+                            "head_gold_helmet",
+                            "head_corrupted_mistril_helmet",
+                            "head_mistril_helmet",
+                            "head_dragonsworn_helmet",
+                            "head_dragonsworn_helmet_seridia"
+                        ]
                     },
                     "crown": {
                         "info": {
                             "name": "Crowns",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "head_ancient_witch_tiara",
+                            "head_berry_crown",
+                            "head_circlet_earth",
+                            "head_crown",
+                            "head_crown_tide",
+                            "head_dark_regent_crown",
+                            "head_exalted_crown",
+                            "head_dragon_cleric_diadem",
+                            "head_flower_crown",
+                            "head_halo",
+                            "head_special_flower_crown"
+                        ]
                     },
                     "head_gear_wedding": {
                         "info": {
                             "name": "Wedding Accessories",
-                            "wikilink": "Cosmetics"
+                            "wikilink": "Cosmetics",
+                            "lategame": 1
                         },
-                        "items": []
+                        "items": [
+                            "head_wedding_veil",
+                            "head_clips_wedding_flower",
+                            "head_wedding_top_hat"
+                        ]
                     },
                     "head_gear_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "head_adventurer_hood",
+                            "head_aviator_goggles",
+                            "head_bunny_ears",
+                            "head_cat_ears",
+                            "head_devil_horns",
+                            "head_ear_muffs",
+                            "head_fighter_headband",
+                            "head_fire_hood",
+                            "head_floating_cloud_headpiece",
+                            "head_hijab",
+                            "head_lily_pad",
+                            "head_mini_horns",
+                            "head_rogue_hood",
+                            "head_skull_mask",
+                            "head_soup_pot",
+                            "head_sprout_hat",
+                            "head_tangerine",
+                            "head_teapot",
+                            "head_beetle_mandible_horns"
+                        ]
                     }
                 }
             },
@@ -2918,21 +3025,36 @@ var objTabs =
                             "name": "Glasses",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "face_gear_glasses",
+                            "face_gear_reading_glasses",
+                            "face_gear_reading_glasses_small",
+                            "face_gear_sunglasses"
+                        ]
                     },
                     "ear_accessory": {
                         "info": {
                             "name": "Ear Accessories",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "face_gear_caldosian_moon_earrings",
+                            "face_gear_dragon_cleric_earrings",
+                            "face_gear_flower_earrings",
+                            "face_gear_hoop_earrings",
+                            "face_gear_pumpkin_earrings",
+                            "face_gear_stud_earrings"
+                        ]
                     },
                     "face_accessory": {
                         "info": {
                             "name": "Face Accessory",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "face_gear_blush",
+                            "face_gear_face_mask"
+                        ]
                     }
                 }
             },
@@ -2949,21 +3071,74 @@ var objTabs =
                             "name": "Short Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "hair_afro_puffs",
+                            "hair_buzzcut",
+                            "hair_cowlick",
+                            "hair_curly_short",
+                            "hair_curly_shorter",
+                            "hair_fade",
+                            "hair_mushroom",
+                            "hair_parted_mushroom",
+                            "hair_pixie",
+                            "hair_short_parted_straight",
+                            "hair_short_parted_curls",
+                            "hair_straight_buns_fringed",
+                            "hair_straight_pompadour",
+                            "hair_straight_shaved_side",
+                            "hair_textured_buzzcut"
+                        ]
                     },
                     "medium_hair": {
                         "info": {
                             "name": "Medium Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "hair_afro",
+                            "hair_blown_out_twist",
+                            "hair_curly_high_top",
+                            "hair_curly_medium",
+                            "hair_curly_medium_fringe",
+                            "hair_curly_pompadour",
+                            "hair_curly_shaved_side",
+                            "hair_medium_boyish",
+                            "hair_medium_half_bun",
+                            "hair_medium_half_bun_fringe",
+                            "hair_medium_pigtails",
+                            "hair_mohawk",
+                            "hair_rounded_afro",
+                            "hair_shaggy_bob",
+                            "hair_straight_medium",
+                            "hair_straight_medium_ponytail",
+                            "hair_straight_medium_ponytail_fluffy_bangs",
+                            "hair_wavy_medium",
+                            "hair_wavy_medium_twin_buns",
+                            "hair_wavy_medium_fringed",
+                            "hair_wavy_rugged"
+                        ]
                     },
                     "long_hair": {
                         "info": {
                             "name": "Long Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "hair_braided_pigtails",
+                            "hair_curly_updo",
+                            "hair_dreadlocks_bun",
+                            "hair_dreadlocks_long",
+                            "hair_dreadlock_twin_buns",
+                            "hair_straight_long",
+                            "hair_straight_long_bun",
+                            "hair_straight_long_fringed",
+                            "hair_straight_long_tucked",
+                            "hair_straight_long_twin_buns",
+                            "hair_wavy_long",
+                            "hair_wavy_long_fringed",
+                            "hair_wavy_long_ponytail",
+                            "hair_wavy_long_twin_buns"
+                        ]
                     }
                 }
             },
@@ -2980,7 +3155,15 @@ var objTabs =
                             "name": "Facial Hair",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "beard_basic",
+                            "beard_thick",
+                            "facial_hair_handlebar_moustache",
+                            "facial_hair_moustache",
+                            "facial_hair_short_beard",
+                            "facial_hair_soul_patch",
+                            "facial_hair_stubble"
+                        ]
                     }
                 }
             },
@@ -2997,70 +3180,154 @@ var objTabs =
                             "name": "Sleeveless Tops",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "top_cami",
+                            "top_halter_bikini",
+                            "top_tanktop",
+                            "top_tanktop_buttons",
+                            "underwear_tank"
+                        ]
                     },
                     "short_sleeve": {
                         "info": {
                             "name": "Short Sleeved Tops",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "top_dancer",
+                            "top_ranger",
+                            "top_tee_basic",
+                            "top_tee_oversized",
+                            "top_tee_ringer_basic"
+                        ]
                     },
                     "long_sleeve": {
                         "info": {
                             "name": "Long Sleeved Tops",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "top_adventurer",
+                            "top_ancient_witch",
+                            "top_fishing_vest",
+                            "top_exalted",
+                            "top_long_sleeve_baseball",
+                            "top_long_sleeve_basic",
+                            "top_long_sleeve_basic_cropped",
+                            "top_long_sleeve_beekeeper",
+                            "top_long_sleeve_striped",
+                            "top_plaid_flannel",
+                            "top_rogue"
+                        ]
                     },
                     "jacket": {
                         "info": {
                             "name": "Jackets",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "top_cropped_puff_jacket",
+                            "top_explorer",
+                            "top_jacket_and_tee_basic",
+                            "top_noble_jacket",
+                            "top_puff_jacket",
+                            "top_wool_lined_jacket"
+                        ]
                     },
                     "dress": {
                         "info": {
                             "name": "Dresses",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "dress_berry",
+                            "dress_court",
+                            "dress_maid",
+                            "dress_modest",
+                            "dress_sleeveless_basic",
+                            "dress_spring_festival"
+                        ]
                     },
                     "robe": {
                         "info": {
                             "name": "Robes and Coats",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "robe_dark_regent",
+                            "robe_dragon_cleric",
+                            "robe_earth",
+                            "robe_fire",
+                            "robe_tide",
+                            "top_caldosian_overcoat",
+                            "top_noble_tunic",
+                            "top_ranger_jacket"
+                        ]
                     },
                     "suit": {
                         "info": {
                             "name": "Suits",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "suit_berry",
+                            "suit_court",
+                            "suit_spring_festival",
+                            "suit_miner",
+                            "suit_halter_bikini_set"
+                        ]
                     },
                     "wedding_dress": {
                         "info": {
                             "name": "Wedding Dresses",
-                            "wikilink": "Cosmetics"
+                            "wikilink": "Cosmetics",
+                            "lategame": 1
                         },
-                        "items": []
+                        "items": [
+                            "dress_romantic_wedding_gown",
+                            "dress_mermaid_wedding_gown",
+                            "dress_caped_wedding_gown"
+                        ]
                     },
                     "wedding_suit": {
                         "info": {
                             "name": "Wedding Suits",
-                            "wikilink": "Cosmetics"
+                            "wikilink": "Cosmetics",
+                            "lategame": 1
                         },
-                        "items": []
+                        "items": [
+                            "suit_tailcoat_wedding_tuxedo",
+                            "suit_tailcoat_wedding",
+                            "suit_classy_bowtie_wedding"
+                        ]
                     },
                     "top_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "overalls_basic",
+                            "overalls_farmer",
+                            "overalls_shorts",
+                            "overalls_skirt",
+                            "top_hunter",
+                            "underwear_bra",
+                            "underwear_bra_small",
+                            "top_cloth_armor",
+                            "top_scrap_metal",
+                            "top_copper_armor",
+                            "top_verdigris_armor",
+                            "top_iron_armor",
+                            "top_crystal_armor",
+                            "top_silver_armor",
+                            "top_tarnished_gold_armor",
+                            "top_gold_armor",
+                            "top_corrupted_mistril",
+                            "top_mistril",
+                            "top_dragonsworn_armor",
+                            "top_dragonsworn_armor_seridia"
+                        ]
                     }
                 }
             },
@@ -3077,28 +3344,66 @@ var objTabs =
                             "name": "Pants",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "pants_adventurer",
+                            "pants_basic",
+                            "pants_beekeeper",
+                            "pants_exalted",
+                            "pants_explorer",
+                            "pants_hunter",
+                            "pants_rogue"
+                        ]
                     },
                     "shorts": {
                         "info": {
                             "name": "Shorts",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "shorts_basic",
+                            "shorts_fishing",
+                            "shorts_swimtrunks",
+                            "underwear_bottoms_polkadot",
+                            "underwear_briefs",
+                            "underwear_shorts"
+                        ]
                     },
                     "skirt": {
                         "info": {
                             "name": "Skirts",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "skirt_ancient_witch",
+                            "skirt_dancer",
+                            "skirt_long_basic",
+                            "skirt_long_scalloped",
+                            "skirt_maid",
+                            "skirt_pleated_medium",
+                            "skirt_pleated_short",
+                            "skirt_short_basic"
+                        ]
                     },
                     "bottom_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "pants_cloth_armor",
+                            "pants_scrap_metal",
+                            "pants_copper_armor",
+                            "pants_verdigris_armor",
+                            "pants_iron_armor",
+                            "pants_crystal_armor",
+                            "pants_silver_armor",
+                            "pants_tarnished_gold_armor",
+                            "pants_gold_armor",
+                            "pants_corrupted_mistril",
+                            "pants_mistril",
+                            "pants_dragonsworn_armor",
+                            "pants_dragonsworn_armor_seridia"
+                        ]
                     }
                 }
             },
@@ -3115,35 +3420,82 @@ var objTabs =
                             "name": "Boots",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "shoes_boots",
+                            "shoes_boots_adventurer",
+                            "shoes_boots_ancient_witch",
+                            "shoes_boots_beekeeper",
+                            "shoes_boots_caldosian",
+                            "shoes_boots_dark_regent",
+                            "shoes_boots_exalted",
+                            "shoes_boots_explorer",
+                            "shoes_boots_fire",
+                            "shoes_boots_hunter",
+                            "shoes_boots_noble",
+                            "shoes_boots_pirate",
+                            "shoes_boots_ranger",
+                            "shoes_boots_rogue",
+                            "shoes_boots_farmer",
+                            "shoes_boots_fishing",
+                            "shoes_boots_miner",
+                            "shoes_boots_pumpkin",
+                            "shoes_boots_short_basic",
+                            "shoes_boots_work"
+                        ]
                     },
                     "shoes": {
                         "info": {
                             "name": "Shoes",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "shoes_sneakers_basic"
+                        ]
                     },
                     "sandals": {
                         "info": {
                             "name": "Sandals",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "shoes_sandals_earth",
+                            "shoes_sandals_tide",
+                            "shoes_sandals_worn"
+                        ]
                     },
                     "shoes_wedding": {
                         "info": {
                             "name": "Wedding Shoes",
-                            "wikilink": "Cosmetics"
+                            "wikilink": "Cosmetics",
+                            "lategame": 1
                         },
-                        "items": []
+                        "items": [
+                            "shoes_floral_wedding_dress",
+                            "shoes_wedding_dress"
+                        ]
                     },
                     "feet_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "shoes_boots_dragon_cleric",
+                            "shoes_dressy_stockings",
+                            "shoes_boots_cloth_armor",
+                            "shoes_boots_scrap_metal",
+                            "shoes_boots_copper_armor",
+                            "shoes_boots_verdigris_armor",
+                            "shoes_boots_iron_armor",
+                            "shoes_boots_crystal_armor",
+                            "shoes_boots_silver_armor",
+                            "shoes_boots_tarnished_gold_armor",
+                            "shoes_boots_gold_armor",
+                            "shoes_boots_corrupted_mistril",
+                            "shoes_boots_mistril",
+                            "shoes_boots_dragonsworn_armor",
+                            "shoes_boots_dragonsworn_armor_seridia"
+                        ]
                     }
                 }
             },
@@ -3160,21 +3512,62 @@ var objTabs =
                             "name": "Backpacks",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "back_gear_basic_backpack",
+                            "back_gear_cabbage_backpack",
+                            "back_gear_cauliflower_backpack",
+                            "back_gear_cloud_backpack",
+                            "back_gear_daikon_radish_backpack",
+                            "back_gear_daisy_backpack",
+                            "back_gear_frost_lily_backpack",
+                            "back_gear_jasmine_backpack",
+                            "back_gear_onion_backpack",
+                            "back_gear_pumpkin_backpack",
+                            "back_gear_snowdrop_anemone_backpack",
+                            "back_gear_strawberry_backpack",
+                            "back_gear_turnip_backpack",
+                            "back_gear_sunflower_backpack",
+                            "back_gear_sweet_potato_backpack",
+                            "back_gear_tomato_backpack",
+                            "back_gear_watermelon_backpack",
+                            "back_gear_wheat_backpack"
+                        ]
                     },
                     "capes": {
                         "info": {
                             "name": "Capes",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "back_gear_basic_cape",
+                            "back_gear_dark_regent_cape",
+                            "back_gear_dragon_cleric_cape",
+                            "back_gear_fire_cloak",
+                            "back_gear_fish_scale_cape",
+                            "back_gear_exalted_cloak",
+                            "back_gear_hunter_cape",
+                            "back_gear_noble_cape",
+                            "back_gear_rogue_cape",
+                            "back_gear_dragonsworn_cloak",
+                            "back_gear_dragonsworn_cloak_seridia"
+                        ]
                     },
                     "back_gear_misc": {
                         "info": {
                             "name": "Miscellaneous",
                             "wikilink": "Cosmetics"
                         },
-                        "items": []
+                        "items": [
+                            "back_gear_ancient_witch_broom",
+                            "back_gear_butterfly_wings",
+                            "back_gear_hunter_bow",
+                            "back_gear_mini_wings",
+                            "back_gear_ornate_round_shield",
+                            "back_gear_ornate_shield",
+                            "back_gear_sheathed_sword",
+                            "back_gear_dragonfly_wings",
+                            "back_gear_march_mistrian_shield"
+                        ]
                     }
                 }
             }

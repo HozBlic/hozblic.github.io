@@ -31,15 +31,6 @@
     display: inline;
 }
 
-#page.animals #mode_chbexpand_switches+.switches .switch_wrap.animals_show:not(.secondary),
-#page.animals #mode_chbexpand_switches:checked+.switches .switch_wrap.animals_show.secondary,
-#page.almanac #mode_chbexpand_switches+.switches .switch_wrap.almanac_show:not(.secondary),
-#page.almanac #mode_chbexpand_switches:checked+.switches .switch_wrap.almanac_show.secondary,
-#page.gifts #mode_chbexpand_switches+.switches .switch_wrap.gifts_show:not(.secondary),
-#page.gifts #mode_chbexpand_switches:checked+.switches .switch_wrap.gifts_show.secondary {
-    display: flex;
-}
-
 #page:is(.mode_mini, .mode_list) .category_img {
     display: none;
 }

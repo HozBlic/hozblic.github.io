@@ -515,7 +515,7 @@ function loadScrapedTab(strTab) {
                     }
                 }
 
-                if (!(strTab === 'animals' && objSubcategory.info.name.includes('Tier '))) {
+                if (!(strTab === 'animals' && (objSubcategory.info.name.includes('Tier ') || objSubcategory.info.name.includes('Giant ')))) {
                     $divItems.append(`${createTip(`${strCbxID}`, strItemKey, strTab, (strTab === 'buffs' && 'buff' in objItems[strItemKey] ? objItems[strItemKey]['buff'] : false))}`);
                     const template = $(`#tip_${strCbxID}`)[0];
                     template.style.display = 'block';
@@ -527,7 +527,6 @@ function loadScrapedTab(strTab) {
                         delay: [500, 50],
                     });
                 }
-
             });
         });
     });
