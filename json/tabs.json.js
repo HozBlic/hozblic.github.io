@@ -2068,7 +2068,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Cow"
+                            "wikilink": "Cow",
+                            "lategame": 1
                         },
                         "items": [
                             "cow_spring",
@@ -2165,7 +2166,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Rabbit"
+                            "wikilink": "Rabbit",
+                            "lategame": 1
                         },
                         "items": [
                             "rabbit_spring",
@@ -2214,9 +2216,7 @@ var objTabs =
                         "items": [
                             "horse_spotted",
                             "horse_sandy_bay",
-                            "horse_champagne",
-                            "horse_giant_chicken_white",
-                            "horse_giant_chicken_gold"
+                            "horse_champagne"
                         ]
                     },
                     "2": {
@@ -2262,13 +2262,25 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Horse"
+                            "wikilink": "Horse",
+                            "lategame": 1
                         },
                         "items": [
                             "horse_spring",
                             "horse_summer",
                             "horse_fall",
                             "horse_winter"
+                        ]
+                    },
+                    "giant": {
+                        "info": {
+                            "name": "Giant Mount",
+                            "wikilink": "Horse",
+                            "lategame": 1
+                        },
+                        "items": [
+                            "horse_giant_chicken_white",
+                            "horse_giant_chicken_gold"
                         ]
                     },
                     "cosmetics": {
@@ -2357,7 +2369,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Chicken"
+                            "wikilink": "Chicken",
+                            "lategame": 1
                         },
                         "items": [
                             "chicken_spring",
@@ -2453,7 +2466,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Duck"
+                            "wikilink": "Duck",
+                            "lategame": 1
                         },
                         "items": [
                             "duck_spring",
@@ -2548,7 +2562,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Capybara"
+                            "wikilink": "Capybara",
+                            "lategame": 1
                         },
                         "items": [
                             "capybara_spring",
@@ -2643,7 +2658,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Sheep"
+                            "wikilink": "Sheep",
+                            "lategame": 1
                         },
                         "items": [
                             "sheep_spring",
@@ -2738,7 +2754,8 @@ var objTabs =
                     "6": {
                         "info": {
                             "name": "Tier 6",
-                            "wikilink": "Alpaca"
+                            "wikilink": "Alpaca",
+                            "lategame": 1
                         },
                         "items": [
                             "alpaca_spring",
