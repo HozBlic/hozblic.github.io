@@ -667,12 +667,18 @@ function extractPlannerData(jsonBlocks, strLocation) {
     const objLocation = objLOCATION(jsonBlocks, strLocation);
     let objLayout = {};
     let setItems = new Set();
+    let setItemsSkipped = new Set();
     let intCountTotal = 0;
 
     if (objLocation) {
         objLocation['object_list'].forEach(function (objItem) {
 
             const strItemKey = objItem['object_id'];
+
+            if (!(strItemKey in objItemKeyDict)) {
+                setItemsSkipped.add(strItemKey)
+                return;
+            }
 
             setItems.add(strItemKey)
             const intItemIndex = objItemKeyDict[strItemKey][0];
@@ -744,7 +750,7 @@ function extractPlannerData(jsonBlocks, strLocation) {
             intCountTotal++;
         });
 
-        return [objLayout, setItems.size, intCountTotal];
+        return [objLayout, setItems.size, intCountTotal, setItemsSkipped];
     }
     return [false, 0];
 }
@@ -795,6 +801,7 @@ $(function () {
 
                     let objOldData = {};
                     let arrFound = [];
+                    let setItemsSkipped;
                     let bolShowError = false;
 
                     switch (strPage) {
@@ -861,7 +868,8 @@ $(function () {
                                 objOldData.layout = JSON.parse(JSON.stringify(objMistriaDataPlanner.layout));
                             }
 
-                            const [objLayout, intCountItems, intCountTotal] = extractPlannerData(jsonBlocks, 'farm');
+                            const [objLayout, intCountItems, intCountTotal, setItemsSkippedTemp] = extractPlannerData(jsonBlocks, 'farm');
+                            setItemsSkipped = setItemsSkippedTemp;
                             const objInfoGameData = objGAMEDATA(jsonBlocks);
 
                             const arrSeasons = ['spring', 'summer', 'fall', 'winter'];
@@ -873,6 +881,9 @@ $(function () {
                                 objOldData.layout[intSaveSlot].farm = objLayout;
 
                                 arrFound.push(`${intCountItems} different items were found, ${intCountTotal} in total`);
+                                if (setItemsSkipped.size) {
+                                    arrFound.push(`Some items couldn't be placed - ${[...setItemsSkipped].join(', ')}`)
+                                }
                                 // objOldData[strTab] = [...new Set(objMistriaDataExtracted[strTab])];
                                 $('#settings_json').val(JSON.stringify(objOldData, undefined, 4));
 
@@ -891,11 +902,11 @@ $(function () {
                     }
 
                     if (typeof jsonBlocks === 'object') {
-                        $("#output").show().text(JSON.stringify(jsonBlocks, null, 2));
+                        $('#output').show().text(JSON.stringify(jsonBlocks, null, 2));
                     }
 
                     if (arrFound.length) {
-                        $('#json_alert .info').html(`Data extraction was ${strPage === 'planner' || arrFound.length == arrTabs.length ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
+                        $('#json_alert .info').html(`Data extraction was ${(strPage === 'planner' && !setItemsSkipped.size) || arrFound.length == arrTabs.length ? '' : 'partly'} succesful. Click "Save" to store changes:</br>
                             ${arrFound.join('</br>')}`
                         );
                         $('#json_alert').addClass('show').addClass('yellow');
@@ -906,7 +917,7 @@ $(function () {
 
                 } else {
                     $('#extracting_alert').addClass('show');
-                    $('#extracting_alert .info').html("Failed to decode file");
+                    $('#extracting_alert .info').html('Failed to decode file');
                     showParsingError()
                 }
 
