@@ -1,12 +1,12 @@
 var objBuild =
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "spent_time": {
-        "labels": ["2026/03/09 - 2026/03/15", "2026/03/16 - 2026/03/22", "2026/03/23 - 2026/03/29", "2026/03/30 - 2026/04/05", "2026/04/06 - 2026/04/12", "2026/04/13 - 2026/04/19", "2026/04/20 - 2026/04/26", "2026/04/27 - 2026/05/03", "2026/05/04 - 2026/05/10", "2026/05/11 - 2026/05/17", "2026/05/18 - 2026/05/24", "2026/05/25 - 2026/05/31", "2026/06/01 - 2026/06/07", "2026/06/08 - 2026/06/14", "2026/06/15 - 2026/06/21", "2026/06/22 - 2026/06/28", "2026/06/29 - 2026/07/05", "2026/07/06 - 2026/07/12", "2026/07/13 - 2026/07/19", "2026/07/20 - 2026/07/26", "2026/07/27 - 2026/08/02"],
+        "labels": ["2026/03/09 - 2026/03/15", "2026/03/16 - 2026/03/22", "2026/03/23 - 2026/03/29", "2026/03/30 - 2026/04/05", "2026/04/06 - 2026/04/12", "2026/04/13 - 2026/04/19", "2026/04/20 - 2026/04/26", "2026/04/27 - 2026/05/03", "2026/05/04 - 2026/05/10", "2026/05/11 - 2026/05/17", "2026/05/18 - 2026/05/24", "2026/05/25 - 2026/05/31", "2026/06/01 - 2026/06/07", "2026/06/08 - 2026/06/14", "2026/06/15 - 2026/06/21", "2026/06/22 - 2026/06/28", "2026/06/29 - 2026/07/05", "2026/07/06 - 2026/07/12", "2026/07/13 - 2026/07/19", "2026/07/20 - 2026/07/26", "2026/07/27 - 2026/08/02", "2026/08/03 - 2026/08/09"],
         "datasets": [
             {
                 "label": "mistria.app",
-                "data": [97, 6, 227, 13, 0, 4, 3, 0, 29, 378, 350, 38, 33, 43, 101, 641, 165, 185, 0, 49, 254]
+                "data": [97, 6, 227, 13, 0, 4, 3, 0, 29, 378, 350, 38, 33, 43, 101, 641, 165, 185, 0, 49, 254, 90]
             },
             {
                 "label": "Layout planner (v0.1)",
@@ -14,16 +14,16 @@ var objBuild =
             },
             {
                 "label": "Python scripts",
-                "data": [12, 69, 348, 28, 119, 14, 1, 0, 274, 219, 36, 0, 159, 140, 386, 749, 550, 105, 0, 12, 0]
+                "data": [12, 69, 348, 28, 119, 14, 1, 0, 274, 219, 36, 0, 159, 140, 386, 749, 550, 105, 0, 12, 0, 257]
             },
             {
                 "label": "Total",
-                "data": [875, 1859, 1561, 1181, 438, 506, 190, 565, 1479, 1982, 386, 38, 192, 183, 487, 1390, 715, 290, 0, 61, 254],
+                "data": [875, 1859, 1561, 1181, 438, 506, 190, 565, 1479, 1982, 386, 38, 192, 183, 487, 1390, 715, 290, 0, 61, 254, 347],
                 "type": "bar"
             }
         ]
     },
-    "spent_time_total": 14632,
+    "spent_time_total": 14979,
     "maxSkillLevel": 60,
     "tabsOrder": ["gifts", "museum", "almanac", "animals", "scrolls", "customization", "perks", "perks_disabled"],
     "objMistriaDataDefault": {
@@ -34,7 +34,7 @@ var objBuild =
         "scrolls": [],
         "perks": [],
         "perks_disabled": [],
-        "customization": ["back_gear_basic_backpack", "back_gear_basic_cape", "beard_basic", "beard_thick", "facial_hair_handlebar_moustache", "facial_hair_moustache", "facial_hair_short_beard", "facial_hair_soul_patch", "facial_hair_stubble", "dress_modest", "dress_sleeveless_basic", "face_gear_blush", "face_gear_glasses", "hair_afro", "hair_blown_out_twist", "hair_braided_pigtails", "hair_buzzcut", "hair_cowlick", "hair_curly_high_top", "hair_curly_medium", "hair_curly_medium_fringe", "hair_curly_shaved_side", "hair_curly_short", "hair_curly_shorter", "hair_curly_updo", "hair_dreadlocks_bun", "hair_dreadlocks_long", "hair_fade", "hair_medium_boyish", "hair_mohawk", "hair_mushroom", "hair_parted_mushroom", "hair_pixie", "hair_straight_long", "hair_straight_long_fringed", "hair_straight_long_tucked", "hair_straight_medium", "hair_straight_medium_ponytail", "hair_straight_medium_ponytail_fluffy_bangs", "hair_straight_shaved_side", "hair_textured_buzzcut", "hair_wavy_long", "hair_wavy_long_fringed", "hair_wavy_medium", "hair_wavy_medium_fringed", "head_aviator_goggles", "head_bandana", "head_baseball_cap", "head_beret", "head_cowboy_hat_basic", "head_fighter_headband", "head_hijab", "head_rain_hat", "head_ribbons_basic", "head_short_bow", "head_sunhat_straw", "head_witch_hat", "overalls_basic", "overalls_skirt", "pants_basic", "shoes_boots", "shoes_boots_short_basic", "shorts_basic", "skirt_long_basic", "skirt_short_basic", "top_cami", "top_jacket_and_tee_basic", "top_long_sleeve_baseball", "top_long_sleeve_basic", "top_long_sleeve_basic_cropped", "top_tanktop", "top_tee_basic", "underwear_bottoms_polkadot", "underwear_bra", "underwear_bra_small", "underwear_briefs", "underwear_shorts", "underwear_tank", "head_cloth_helmet", "pants_cloth_armor", "shoes_boots_cloth_armor", "top_cloth_armor"],
+        "customization": ["back_gear_basic_backpack", "back_gear_basic_cape", "beard_basic", "beard_thick", "facial_hair_handlebar_moustache", "facial_hair_moustache", "facial_hair_short_beard", "facial_hair_soul_patch", "facial_hair_stubble", "dress_modest", "dress_sleeveless_basic", "face_gear_blush", "face_gear_glasses", "hair_afro", "hair_blown_out_twist", "hair_braided_bun_fade", "hair_braided_pigtails", "hair_buzzcut", "hair_cowlick", "hair_curly_high_top", "hair_curly_medium", "hair_curly_medium_fringe", "hair_curly_shaved_side", "hair_curly_short", "hair_curly_shorter", "hair_curly_updo", "hair_dreadlocks_bun", "hair_dreadlocks_long", "hair_fade", "hair_medium_boyish", "hair_messy_short_fringed", "hair_mohawk", "hair_mushroom", "hair_parted_mushroom", "hair_pixie", "hair_straight_long", "hair_straight_long_fringed", "hair_straight_long_tucked", "hair_straight_medium", "hair_straight_medium_ponytail", "hair_straight_medium_ponytail_fluffy_bangs", "hair_straight_shaved_side", "hair_straight_short_fringed", "hair_textured_buzzcut", "hair_wavy_long", "hair_wavy_long_fringed", "hair_wavy_medium", "hair_wavy_medium_fringed", "head_aviator_goggles", "head_bandana", "head_baseball_cap", "head_beret", "head_cowboy_hat_basic", "head_fighter_headband", "head_hijab", "head_rain_hat", "head_ribbons_basic", "head_short_bow", "head_sunhat_straw", "head_witch_hat", "overalls_basic", "overalls_skirt", "pants_basic", "shoes_boots", "shoes_boots_short_basic", "shorts_basic", "skirt_long_basic", "skirt_short_basic", "top_cami", "top_jacket_and_tee_basic", "top_long_sleeve_baseball", "top_long_sleeve_basic", "top_long_sleeve_basic_cropped", "top_tanktop", "top_tee_basic", "underwear_bottoms_polkadot", "underwear_bra", "underwear_bra_small", "underwear_briefs", "underwear_shorts", "underwear_tank", "head_cloth_helmet", "pants_cloth_armor", "shoes_boots_cloth_armor", "top_cloth_armor"],
         "options": ["mode_dark"]
     },
     "objVariants": {
