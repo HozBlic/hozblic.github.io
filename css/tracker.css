@@ -109,7 +109,7 @@
     max-height: unset;
 }
 
-#checkbox_filter #filter_show, 
+#checkbox_filter #filter_show,
 #checkbox_filter #filter_collapse {
     cursor: pointer;
     display: none;
@@ -509,6 +509,15 @@ input[type="checkbox"].styled:checked+label {
     text-align: center;
 }
 
+.item.lategame>.lategame_overlay {
+    padding: 0;
+}
+
+#page.mode_list .item.lategame>.lategame_overlay {
+    border-radius: 4px;
+    flex-direction: row;
+}
+
 .lategame_overlay::before {
     content: '';
     position: absolute;
@@ -529,9 +538,27 @@ input[type="checkbox"].styled:checked+label {
     font-size: 14px;
 }
 
+#page.mode_list .item.lategame>.lategame_overlay .lategame_desc {
+    font-size: 12px;
+}
+
+#page.mode_list .item.lategame>.lategame_overlay .lategame_desc.info {
+    display: none;
+}
+
 .lategame_overlay .lategame_desc.info {
     font-size: 11px;
     opacity: 0.7;
+}
+
+#page:not(.mode_list) .item.lategame>.lategame_overlay .lategame_desc {
+    font-size: 0;
+    gap: 0;
+    align-content: center;
+}
+
+#page:not(.mode_list) .item.lategame>.lategame_overlay .lategame_desc.info {
+    display: none;
 }
 
 .lategame_overlay .icon svg {
@@ -539,8 +566,17 @@ input[type="checkbox"].styled:checked+label {
     fill: var(--color-txt);
 }
 
+#page.mode_list .item.lategame>.lategame_overlay .icon {
+    --icon-wrapper-size: 20px;
+}
+
+#page.mode_list .item.lategame>.lategame_overlay .icon svg {
+    --icon-size: 15px;
+}
+
 #page:not(.mode_lategame) .category.lategame>.lategame_overlay,
-#page:not(.mode_lategame) .subcategory.lategame .subcategory_items>.lategame_overlay {
+#page:not(.mode_lategame) .subcategory.lategame .subcategory_items>.lategame_overlay,
+#page:not(.mode_lategame) .item.lategame>.lategame_overlay {
     display: flex;
     z-index: 2;
 }
@@ -708,6 +744,9 @@ input[type="checkbox"].styled:checked+label {
 
 
 
+.item {
+    position: relative;
+}
 
 .item.hide_checkbox, .item.hide_search {
     display: none;
@@ -826,7 +865,7 @@ input[type="checkbox"].styled:checked+label {
     padding: 2px 3px;
 }
 
-.statistics_table td:first-child{
+.statistics_table td:first-child {
     font-size: 10px;
     text-transform: uppercase;
     width: unset;

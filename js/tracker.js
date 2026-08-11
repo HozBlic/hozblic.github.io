@@ -406,6 +406,13 @@ function loadScrapedTab(strTab) {
             delay: [500, 50],
         });
 
+        tippy(`.item .lategame_overlay`, {
+            content: `<p class="save_file">toggle "Show late game content" to turn this off</p>`,
+            allowHTML: true,
+            maxWidth: 370,
+            delay: [500, 50],
+        });
+
         if ('tip' in objCategory.info) {
             let strTipHTML = $(`
             <div id="tip_category_${strCatgoryKey}" class="tip_wrap">
@@ -506,6 +513,7 @@ function loadScrapedTab(strTab) {
                             <div class="image ${objItems[strItemKey]['noimage'] ? 'noimage' : ''}" style="background-image: url(images/items/${strItemKey}.png)"></div>
                             <div class="name">${objItems[strItemKey]['name']}</div>
                         </label>
+                        ${(objItems[strItemKey]['lategame'] && !objSubcategory.info.lategame && !objCategory.info.lategame) ? strLateGameDiv : ''}
                     </div>
                 `);
 
