@@ -1654,47 +1654,61 @@ function updateChecklist() {
             let bolImage = false;
 
             if (objSpriteCategories.building.includes(intItemIndex)) {
-                let objColors = {};
+                if (strItemKey in objBuild.objVariants) {
+                    let objColors = {};
 
-                objItemsForChecklist[strItemIndex].forEach(function (arrCoords) {
-                    if (bolIsDraggingSection) {
-                        const strColor = 'all'
-                        if (!(strColor in objColors)) {
-                            objColors[strColor] = 0;
+                    objItemsForChecklist[strItemIndex].forEach(function (arrCoords) {
+                        if (bolIsDraggingSection) {
+                            const strColor = 'all'
+                            if (!(strColor in objColors)) {
+                                objColors[strColor] = 0;
+                            }
+                            objColors[strColor] = objColors[strColor] + 1;
+                        } else {
+                            const strColor = objGridCombined.main_corner[arrCoords[1]][arrCoords[0]][intItemIndex]?.color
+                            if (!(strColor in objColors)) {
+                                objColors[strColor] = 0;
+                            }
+                            objColors[strColor] = objColors[strColor] + 1;
                         }
-                        objColors[strColor] = objColors[strColor] + 1;
-                    } else {
-                        const strColor = objGridCombined.main_corner[arrCoords[1]][arrCoords[0]][intItemIndex]?.color
-                        if (!(strColor in objColors)) {
-                            objColors[strColor] = 0;
-                        }
-                        objColors[strColor] = objColors[strColor] + 1;
-                    }
-                });
+                    });
 
-                Object.keys(objColors).forEach(function (strColor) {
-                    strName = `${objNameDict[strItemKey]} (${strColor})`;
-                    const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
+                    Object.keys(objColors).forEach(function (strColor) {
+                        strName = `${objNameDict[strItemKey]} (${strColor})`;
+                        const strSpriteKey = `${strItemKey}_${strColor}_blueprint`;
+
+                        bolImage = true;
+                        strImage = `../images/items/${strSpriteKey}.png`;
+                        if (strColor == 'all') {
+                            bolImage = false;
+                        }
+
+                        $elemChecklistList.append(`
+                            <div class="drawn_elements_item">
+                                ${bolImage ? '<div class="icon"><img src="' + strImage + '"></div>' : ''}
+                                <span class="drawn_elements_name">${strName}:</span>
+                                <div class="drawn_elements_count">${objColors[strColor]}</div>
+                            </div>`);
+                        arrChecklistItems.push(`${strName}: ${objColors[strColor]}`)
+                    });
+                } else {
+                    strName = objNameDict[strItemKey];
+                    const strSpriteKey = `${strItemKey}_blueprint`;
 
                     bolImage = true;
                     strImage = `../images/items/${strSpriteKey}.png`;
-                    if (strColor == 'all') {
-                        bolImage = false;
-                    }
 
                     $elemChecklistList.append(`
                         <div class="drawn_elements_item">
                             ${bolImage ? '<div class="icon"><img src="' + strImage + '"></div>' : ''}
                             <span class="drawn_elements_name">${strName}:</span>
-                            <div class="drawn_elements_count">${objColors[strColor]}</div>
+                            <div class="drawn_elements_count">${objItemsForChecklist[intItemIndex].length}</div>
                         </div>`);
-                    arrChecklistItems.push(`${strName}: ${objColors[strColor]}`)
-                });
+                    arrChecklistItems.push(`${strName}: ${objItemsForChecklist[intItemIndex].length}`)
+                }
             } else {
-
                 strName = objNameDict[strItemKey];
                 if (strItemKey in objItemsPlanner) {
-
                     if (typeof objItemsPlanner[strItemKey].img !== 'undefined') {
                         bolImage = true;
                         strImage = `../images/${objItemsPlanner[strItemKey].img}.png`;
@@ -2134,7 +2148,6 @@ async function loadMenuItems() {
         }
     }, 150);
     $('#side_menu #title .version').text(`v${objBuild.version}`);
-    $('#side_menu #title .version').text(`v0.16.5`);
     $('#cancel_search').on('click', function (e) {
         $('#search_items').val('');
         $('#search_items').trigger('keyup');
@@ -2265,8 +2278,8 @@ async function loadMenuItems() {
     $('.dropdown-item.house_upgrade').removeClass('selected');
     $(`.dropdown-item.house_upgrade[data-value="${objMistriaDataPlanner.house_upgrade}"]`).addClass('selected');
 
-    const objTabs = await (await fetch('json/tabs_planner.json?v=3')).json();
-    objItemsPlanner = await (await fetch('json/items_planner.json')).json();
+    const objTabs = await (await fetch('json/tabs_planner.json?v=4')).json();
+    objItemsPlanner = await (await fetch('json/items_planner.json?v=2')).json();
 
     var setTips = new Set();
     var setTipsHtml = new Set();
@@ -3465,8 +3478,8 @@ function sectionActions(strAction) {
 
 $(function () {
     (async () => {
-        objKeyItemDict = await (await fetch('../json/dict.json?v=2')).json();
-        objItemKeyDict = await (await fetch('../json/dict_reverse.json?v=2')).json();
+        objKeyItemDict = await (await fetch('../json/dict.json?v=3')).json();
+        objItemKeyDict = await (await fetch('../json/dict_reverse.json?v=3')).json();
 
         objSoilIndex = {
             'grass': objItemKeyDict['tile_grassautotile'][0],
@@ -3480,8 +3493,8 @@ $(function () {
         const objDefaultItems = objMistriaDataPlannerDefault.layout[0].farm.none;
         arrDefaultElements = objDefaultItems[intBorderFenceIndex].concat(objDefaultItems[intStarterFenceIndex]).map(arrCoord => arrCoord.join(","));
 
-        objSpriteCategories = await (await fetch('../json/categories.json?v=2')).json();
-        objZindex_Items = await (await fetch('../json/zindexes.json')).json();
+        objSpriteCategories = await (await fetch('../json/categories.json?v=3')).json();
+        objZindex_Items = await (await fetch('../json/zindexes.json?v=2')).json();
 
         arrGrid_Collision = await (await fetch('../json/collision.json')).json();
         arrCollisionUpgradeGrid = await (await fetch('../json/collision_houseupgrade.json')).json();

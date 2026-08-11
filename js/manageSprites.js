@@ -398,12 +398,12 @@ class SpriteStore {
 
     async loadTextures() {
         this.#logStage('LOADING DATA')
-        this.spriteMapping = (await (await fetch('../sprites/sheet_items.json')).json()).frames
-        this.objectData = await (await fetch('../sprites/fiddle_sprites.json')).json()
+        this.spriteMapping = (await (await fetch('../sprites/sheet_items.json?v=2')).json()).frames
+        this.objectData = await (await fetch('../sprites/fiddle_sprites.json?v=2')).json()
         // this.spriteSheetMeta = await (await fetch('../json/sheet_sprites.json')).json()
-        this.tileSpriteMeta = await (await fetch('../sprites/sheet_exterior.json')).json()
+        this.tileSpriteMeta = await (await fetch('../sprites/sheet_exterior.json?v=2')).json()
         this.tileSheetData.meta = this.tileSpriteMeta.meta
-        this.textureSheet = (await PIXI.Assets.load('../sprites/sheet_items.json'));
+        this.textureSheet = (await PIXI.Assets.load('../sprites/sheet_items.json?v=2'));
         this.textureSheet.textureSource.scaleMode = PIXI.SCALE_MODES.NEAREST
         this.textures = this.textureSheet.textures;
 
@@ -428,7 +428,7 @@ class SpriteStore {
 
         this.#mapTiles()
 
-        const tileSheet = await PIXI.Assets.load('../sprites/sheet_exterior.png')
+        const tileSheet = await PIXI.Assets.load('../sprites/sheet_exterior.png?v=2')
         tileSheet.source.scaleMode = PIXI.SCALE_MODES.NEAREST
         const sheet = new PIXI.Spritesheet(tileSheet, this.tileSheetData)
         await sheet.parse()

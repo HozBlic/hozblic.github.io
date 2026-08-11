@@ -45,8 +45,7 @@ var objBuild =
         "medium_coop": ["red", "black"],
         "large_coop": ["red", "black"],
         "small_greenhouse": ["white", "wood"],
-        "large_greenhouse": ["white", "wood"],
-        "mini_museum": [null]
+        "large_greenhouse": ["white", "wood"]
     },
     "objMistriaDataPlannerDefault": {
         "season": "spring",

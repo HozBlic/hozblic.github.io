@@ -17,17 +17,6 @@
                 "w": 336,
                 "h": 1040
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    336,
-                    1040
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -49,17 +38,6 @@
             "sourceSize": {
                 "w": 1024,
                 "h": 1024
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    1024,
-                    1024
-                ]
             },
             "offset": [
                 0,
@@ -83,17 +61,6 @@
                 "w": 1024,
                 "h": 1024
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    1024,
-                    1024
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -115,17 +82,6 @@
             "sourceSize": {
                 "w": 1024,
                 "h": 1024
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    1024,
-                    1024
-                ]
             },
             "offset": [
                 0,
@@ -149,17 +105,6 @@
                 "w": 1024,
                 "h": 1024
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    1024,
-                    1024
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -181,17 +126,6 @@
             "sourceSize": {
                 "w": 1024,
                 "h": 1024
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    1024,
-                    1024
-                ]
             },
             "offset": [
                 0,
@@ -215,17 +149,6 @@
                 "w": 512,
                 "h": 512
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    512,
-                    512
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -247,17 +170,6 @@
             "sourceSize": {
                 "w": 256,
                 "h": 256
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    256,
-                    256
-                ]
             },
             "offset": [
                 0,
@@ -281,17 +193,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -313,17 +214,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 0,
@@ -347,17 +237,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -379,17 +258,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 0,
@@ -413,17 +281,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -445,17 +302,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 0,
@@ -479,17 +325,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -511,17 +346,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 0,
@@ -545,17 +369,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -577,17 +390,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 0,
@@ -611,17 +413,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 0,
                 0
@@ -643,17 +434,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    0,
-                    0
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 0,
@@ -677,17 +457,6 @@
                 "w": 128,
                 "h": 96
             },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    -64,
-                    -48
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
-            },
             "offset": [
                 64,
                 48
@@ -709,17 +478,6 @@
             "sourceSize": {
                 "w": 128,
                 "h": 96
-            },
-            "hitbox": {
-                "kind": "box",
-                "offset": [
-                    -64,
-                    -48
-                ],
-                "dimensions": [
-                    128,
-                    96
-                ]
             },
             "offset": [
                 64,
