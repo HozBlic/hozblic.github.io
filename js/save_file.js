@@ -1,19 +1,156 @@
 var objErrors = {};
 
-function extractJsonBlocksFromMixedText(input) {
-    const result = {};
-    const regex = /([a-zA-Z0-9_]+).*?({[^\u1337]*})/g;
-    let match;
+const SAVE_FARM_MARKER = 0;
+const SAVE_NAME_PATTERN = /^[A-Za-z0-9_-]+$/;
+const SAVE_U64_SIZE = 8;
 
-    while ((match = regex.exec(input)) !== null) {
-        try {
-            result[match[1]] = JSON.parse(match[2]);
-        } catch (e) {
-            objErrors[match[1]] = e
+function SaveFormatError(message) {
+    const err = new Error(message);
+    err.name = "SaveFormatError";
+    return err;
+}
+
+function SaveReader(data) {
+    this.data = data instanceof Uint8Array ? data : new Uint8Array(data);
+    this.offset = 0;
+    this.view = new DataView(this.data.buffer, this.data.byteOffset, this.data.byteLength);
+}
+
+SaveReader.prototype.remaining = function () {
+    return this.data.length - this.offset;
+};
+
+SaveReader.prototype.read = function (size, label) {
+    const end = this.offset + size;
+    if (size < 0 || end > this.data.length) {
+        throw SaveFormatError("truncated " + label);
+    }
+    const value = this.data.subarray(this.offset, end);
+    this.offset = end;
+    return value;
+};
+
+SaveReader.prototype.readU64 = function (label) {
+    const start = this.offset;
+    this.read(SAVE_U64_SIZE, label);
+    const low = this.view.getUint32(start, true);
+    const high = this.view.getUint32(start + 4, true);
+    if (high > 0x1FFFFF) {
+        throw SaveFormatError(label + " is too large");
+    }
+    return high * 0x100000000 + low;
+};
+
+function inflateSave(data) {
+    try {
+        return pako.inflate(data);
+    } catch (exc) {
+        throw SaveFormatError("invalid zlib stream: " + (exc && exc.message ? exc.message : exc));
+    }
+}
+
+function validateSaveName(name) {
+    if (!SAVE_NAME_PATTERN.test(name)) {
+        throw SaveFormatError("unsafe or unsupported record name: '" + name + "'");
+    }
+    if (name === "checksums") {
+        throw SaveFormatError("record name 'checksums' is reserved");
+    }
+}
+
+function readSaveName(reader, label) {
+    const size = reader.readU64(label + " name length");
+    const rawName = reader.read(size, label + " name");
+    let name;
+    try {
+        name = new TextDecoder("utf-8", { fatal: true }).decode(rawName);
+    } catch (exc) {
+        throw SaveFormatError(label + " name is not UTF-8");
+    }
+    validateSaveName(name);
+    return name;
+}
+
+function readSaveCount(reader, label) {
+    const count = reader.readU64(label);
+    if (count > Math.floor(reader.remaining() / (SAVE_U64_SIZE * 2))) {
+        throw SaveFormatError("invalid " + label + ": " + count);
+    }
+    return count;
+}
+
+function parseSaveJson(data, label) {
+    let text;
+    try {
+        text = new TextDecoder("utf-8", { fatal: true }).decode(data);
+    } catch (exc) {
+        throw SaveFormatError(label + " is not UTF-8");
+    }
+    try {
+        return JSON.parse(text);
+    } catch (exc) {
+        throw SaveFormatError(label + " is not valid JSON: " + (exc && exc.message ? exc.message : exc));
+    }
+}
+
+function decodeSave(data) {
+    const reader = new SaveReader(inflateSave(data));
+    const recordCount = readSaveCount(reader, "record count");
+    const records = {};
+    const recordSizes = {};
+
+    for (let index = 0; index < recordCount; index++) {
+        const label = "record " + index;
+        const name = readSaveName(reader, label);
+        if (Object.prototype.hasOwnProperty.call(recordSizes, name)) {
+            throw SaveFormatError("duplicate record name: '" + name + "'");
+        }
+        const payloadSize = reader.readU64(label + " payload length");
+        const payload = reader.read(payloadSize, label + " payload");
+        records[name] = parseSaveJson(payload, name + ".json");
+        recordSizes[name] = payloadSize;
+    }
+
+    const marker = reader.read(1, "farm marker")[0];
+    if (marker !== SAVE_FARM_MARKER) {
+        throw SaveFormatError("unsupported farm marker: " + marker);
+    }
+    const farmSize = reader.readU64("farm data length");
+    const farm = reader.read(farmSize, "farm data");
+
+    const checksumCount = readSaveCount(reader, "checksum count");
+    const checksums = [];
+    const checksumNames = {};
+    for (let index = 0; index < checksumCount; index++) {
+        const name = readSaveName(reader, "checksum " + index);
+        if (Object.prototype.hasOwnProperty.call(checksumNames, name)) {
+            throw SaveFormatError("duplicate checksum name: '" + name + "'");
+        }
+        const value = reader.readU64("checksum " + index + " value");
+        checksums.push([name, value]);
+        checksumNames[name] = true;
+    }
+
+    if (reader.remaining()) {
+        throw SaveFormatError("unexpected " + reader.remaining() + " trailing decoded bytes");
+    }
+
+    const recordNames = Object.keys(recordSizes);
+    const checksumNameList = Object.keys(checksumNames);
+    const missing = recordNames.filter(function (name) { return !Object.prototype.hasOwnProperty.call(checksumNames, name); }).sort();
+    const extra = checksumNameList.filter(function (name) { return !Object.prototype.hasOwnProperty.call(recordSizes, name); }).sort();
+    if (missing.length || extra.length) {
+        throw SaveFormatError("checksum names do not match records (missing=" + missing + ", extra=" + extra + ")");
+    }
+    for (let i = 0; i < checksums.length; i++) {
+        const name = checksums[i][0];
+        const value = checksums[i][1];
+        if (value !== recordSizes[name]) {
+            throw SaveFormatError("checksum for '" + name + "' is " + value + ", expected " + recordSizes[name]);
         }
     }
 
-    return result;
+    return { records: records, farm: farm, checksums: checksums };
 }
 
 function showParsingError() {
@@ -774,29 +911,12 @@ $(function () {
             try {
                 let arrayBuffer = e.target.result;
                 let byteArray = new Uint8Array(arrayBuffer);
-
-                // Try to decompress
-                let inflated = pako.inflate(byteArray);
-
-                // Decode as UTF-8 first
-                let decodedText;
-                try {
-                    decodedText = new TextDecoder("iso-8859-1").decode(inflated);
-                } catch (utf8Error) {
-                    $('#json_button_popup').removeClass('loading');
-                    $('#extracting_alert').addClass('show');
-                    $('#extracting_alert .info').html(utf8Error.message);
-                    return;
-                }
-
-                // Remove unprintable characters
-                let cleaned = decodedText.replaceAll(/[^\x20-\xFE]/g, "\u1337");
+                let jsonBlocks = decodeSave(byteArray).records;
 
                 $("#json_button_popup").removeClass("loading");
 
-                if (cleaned) {
+                if (jsonBlocks && Object.keys(jsonBlocks).length) {
                     const strPage = $('#json_button_popup').attr('data-page');
-                    let jsonBlocks = extractJsonBlocksFromMixedText(cleaned);
                     // console.log(jsonBlocks)
 
                     let objOldData = {};

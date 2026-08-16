@@ -29,7 +29,7 @@ Reddit - [/u/HozBlic](https://www.reddit.com/user/HozBlic/)
 ## Credits
 
 Coding and data compilation completed by [HozBlic][def_hozblic]<br />
-Save file decoding and sprite management implemented by [Demango](https://github.com/demango)<br />
+Sprite management implemented by [Demango](https://github.com/demango)<br />
 Information about items by [Fields of Mistria Wiki][def_wiki] and [NPC Studio](https://www.fieldsofmistria.com/)<br />
 All [Fields of Mistria][def_fom] assets owned by [NPC Studio](https://www.fieldsofmistria.com/)
 
